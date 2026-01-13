@@ -82,6 +82,13 @@
                     <Attribute name="РазрешитьРучныеСкидки" type="Булево" />
                 </Attributes>
             </Catalog>
+			<Catalog name="Контрагенты">
+				<Description>Поставщики и оптовые покупатели.</Description>
+				<Attributes>
+					<Attribute name="ИНН" type="Строка(12)" />
+					<Attribute name="ПолноеНаименование" type="Строка" />
+				</Attributes>
+			</Catalog>
         </Catalogs>
 
         <Documents>
@@ -156,4 +163,5 @@
             </AccumulationRegister>
         </Registers>
     </MetadataSpecifications>
+	
 </ConfigurationDocumentation>
