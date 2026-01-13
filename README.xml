@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigurationDocumentation>
+    <Meta>
+        <Name>Public Trade Module (PTM)</Name>
+        <Version>1.5 (Final)</Version>
+        <Platform>1C:Enterprise 8.3.24+</Platform>
+        <Architecture>Native (No-BSP)</Architecture>
+        <Description>Легковесное решение для автоматизации розничной и мелкооптовой торговли с гибридным учетом продаж.</Description>
+    </Meta>
+
+    <FunctionalBlocks>
+        <Block id="Retail" title="Розничные Продажи (РМК)">
+            <Description>Обеспечение оперативной работы кассира, регистрация продаж и возвратов, взаимодействие с покупателем.</Description>
+            <KeyFeatures>
+                <Feature name="HybridCheck">Гибридный чек: Автоматическое разделение товаров на Фискальные и Внутренние в рамках одной продажи.</Feature>
+                <Feature name="SmartScan">Обработка неуникальных штрихкодов с выбором товара.</Feature>
+                <Feature name="ExciseSupport">Запрос и валидация акцизной марки (DataMatrix).</Feature>
+            </KeyFeatures>
+            <ObjectsList>
+                <Object>Документ.ФискальнаяПродажа</Object>
+                <Object>Документ.ВозвратТовараОтПокупателя</Object>
+                <Object>Документ.КассоваяСмена</Object>
+            </ObjectsList>
+        </Block>
+
+        <Block id="Warehouse" title="Склад и Товарный учет">
+            <Description>Контроль физических остатков, поступления, списания и инвентаризация.</Description>
+            <KeyFeatures>
+                <Feature name="SingleInventoryDoc">Инвентаризация единым документом (План/Факт/Отклонение).</Feature>
+                <Feature name="NegativeStockControl">Настраиваемый контроль отрицательных остатков.</Feature>
+            </KeyFeatures>
+            <ObjectsList>
+                <Object>Документ.ПриходТовара</Object>
+                <Object>Документ.СписаниеТовара</Object>
+                <Object>Документ.ИнвентаризацияТоваров</Object>
+                <Object>РегистрНакопления.ОстаткиТоваров</Object>
+            </ObjectsList>
+        </Block>
+
+        <Block id="Drivers" title="Драйверы и Оборудование">
+            <Description>Нативная интеграция с оборудованием без использования БПО.</Description>
+            <KeyFeatures>
+                <Feature name="NativeWrapper">Собственный модуль-обертка МенеджерОборудования.</Feature>
+                <Feature name="DirectPrinting">Прямая печать в драйвер с фильтрацией нефискальных строк.</Feature>
+            </KeyFeatures>
+            <ObjectsList>
+                <Object>Справочник.КассовоеОборудование</Object>
+                <Object>ОбщийМодуль.МенеджерОборудования</Object>
+            </ObjectsList>
+        </Block>
+    </FunctionalBlocks>
+
+    <MetadataSpecifications>
+        <Catalogs>
+            <Catalog name="Номенклатура">
+                <Description>Центральный справочник товаров.</Description>
+                <Structure type="Hierarchical" />
+                <Attributes>
+                    <Attribute name="Артикул" type="Строка(25)" />
+                    <Attribute name="ЕдиницаИзмерения" type="Перечисление" />
+                    <Attribute name="СтавкаНДС" type="Перечисление" />
+                    <Attribute name="НалоговаяГруппа" type="СправочникСсылка.НалоговыеГруппы" description="Маппинг ставок для ККТ" />
+                    <Attribute name="КодУКТЗЕД" type="Строка(20)" description="Для подакцизных товаров" />
+                    <Attribute name="ТребуетАкцизнуюМарку" type="Булево" description="Флаг запроса сканирования марки" />
+                </Attributes>
+            </Catalog>
+
+            <Catalog name="КассовоеОборудование">
+                <Description>Настройки подключения периферии.</Description>
+                <Attributes>
+                    <Attribute name="ТипОборудования" type="Перечисление" />
+                    <Attribute name="ДрайверID" type="Строка" description="ProgID компоненты" />
+                    <Attribute name="ПараметрыПодключения" type="ХранилищеЗначения" />
+                </Attributes>
+            </Catalog>
+
+            <Catalog name="Пользователи">
+                <Description>Права и настройки сотрудников.</Description>
+                <Attributes>
+                    <Attribute name="ИдентификаторПользователяИБ" type="UUID" />
+                    <Attribute name="РазрешитьПродажуВМинус" type="Булево" />
+                    <Attribute name="РазрешитьРучныеСкидки" type="Булево" />
+                </Attributes>
+            </Catalog>
+        </Catalogs>
+
+        <Documents>
+            <Document name="ФискальнаяПродажа">
+                <Description>Регистрация факта розничной продажи (Чек).</Description>
+                <Header>
+                    <Attribute name="Смена" type="ДокументСсылка.КассоваяСмена" />
+                    <Attribute name="КассаККМ" type="СправочникСсылка.КассовоеОборудование" />
+                    <Attribute name="СуммаДокумента" type="Число" />
+                </Header>
+                <TabularSection name="Товары">
+                    <Attribute name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+                    <Attribute name="Количество" type="Число" />
+                    <Attribute name="Цена" type="Число" />
+                    <Attribute name="Сумма" type="Число" />
+                    <Attribute name="АкцизнаяМарка" type="Строка" description="Код DataMatrix" />
+                    <Attribute name="ФискальнаяОперация" type="Булево" required="true" description="Истина = Печать в ККТ; Ложь = Внутренний учет" />
+                </TabularSection>
+                <Movements>
+                    <Register name="ОстаткиТоваров" type="Расход" logic="Списываются ВСЕ строки" />
+                    <Register name="Взаиморасчеты" type="Приход" logic="Вся сумма документа" />
+                </Movements>
+            </Document>
+
+            <Document name="ВозвратТовараОтПокупателя">
+                <Description>Возврат товаров и денег клиенту.</Description>
+                <Header>
+                    <Attribute name="ДокументОснование" type="ДокументСсылка.ФискальнаяПродажа" />
+                </Header>
+                <Logic>
+                    <Step>Возврат товаров на склад (все строки).</Step>
+                    <Step>Списание денег из кассы.</Step>
+                    <Step>Печать чека 'Возврат Прихода' только для строк с ФискальнаяОперация=Истина.</Step>
+                </Logic>
+            </Document>
+
+            <Document name="ИнвентаризацияТоваров">
+                <Description>Фиксация переучета (план/факт).</Description>
+                <Header>
+                    <Attribute name="Статус" type="Перечисление" values="ВРаботе, Выполнена" />
+                </Header>
+                <TabularSection name="Товары">
+                    <Attribute name="УчетноеКоличество" type="Число" />
+                    <Attribute name="ФактическоеКоличество" type="Число" />
+                    <Attribute name="Отклонение" type="Число" formula="Факт - Учет" />
+                </TabularSection>
+                <Movements>
+                    <Register name="ОстаткиТоваров" logic="Корректировка на разницу (Приход/Расход) при проведении" />
+                </Movements>
+            </Document>
+        </Documents>
+
+        <Registers>
+            <InformationRegister name="Штрихкоды">
+                <Description>Хранение кодов для сканирования (Многие-ко-многим).</Description>
+                <Dimensions>
+                    <Dimension name="Штрихкод" type="Строка" />
+                    <Dimension name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+                </Dimensions>
+                <Resources />
+            </InformationRegister>
+
+            <AccumulationRegister name="ОстаткиТоваров">
+                <Type>Остатки</Type>
+                <Dimensions>
+                    <Dimension name="Склад" />
+                    <Dimension name="Номенклатура" />
+                </Dimensions>
+                <Resources>
+                    <Resource name="Количество" />
+                </Resources>
+            </AccumulationRegister>
+        </Registers>
+    </MetadataSpecifications>
+</ConfigurationDocumentation>
