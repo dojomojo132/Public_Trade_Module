@@ -89,6 +89,24 @@
 					<Attribute name="ПолноеНаименование" type="Строка" />
 				</Attributes>
 			</Catalog>
+			<Catalog name="Склады">
+				<Description>Места хранения товаров.</Description>
+				<Attributes>
+					</Attributes>
+			</Catalog>
+
+			<Catalog name="НалоговыеГруппы">
+				<Description>Маппинг налоговых ставок для драйвера ККТ.</Description>
+				<Attributes>
+					<Attribute name="КодНалоговойГруппыККТ" type="Строка(10)" />
+				</Attributes>
+			</Catalog>	
+			<Catalog name="ТипыЦен">
+				<Description>Виды цен (Закупочная, Розничная и т.д.).</Description>
+				<Attributes>
+					<Attribute name="Комментарий" type="Строка" />
+				</Attributes>
+			</Catalog>
         </Catalogs>
 
         <Documents>
@@ -139,6 +157,37 @@
                     <Register name="ОстаткиТоваров" logic="Корректировка на разницу (Приход/Расход) при проведении" />
                 </Movements>
             </Document>
+			<Document name="ПриходТовара">
+					<Description>Поступление на склад.</Description>
+					<Header>
+						<Attribute name="Контрагент" type="СправочникСсылка.Контрагенты" />
+						<Attribute name="Склад" type="СправочникСсылка.Склады" />
+						<Attribute name="СуммаДокумента" type="Число" />
+					</Header>
+					<TabularSection name="Товары">
+						<Attribute name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+						<Attribute name="Количество" type="Число" />
+						<Attribute name="Цена" type="Число" />
+						<Attribute name="Сумма" type="Число" />
+					</TabularSection>
+					<Movements>
+						<Register name="ОстаткиТоваров" type="Приход" />
+					</Movements>
+				</Document>
+
+				<Document name="УстановкаЦен">
+					<Description>Изменение цен.</Description>
+					<Header>
+						<Attribute name="ТипЦен" type="СправочникСсылка.ТипыЦен" />
+					</Header>
+					<TabularSection name="Товары">
+						<Attribute name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+						<Attribute name="Цена" type="Число" />
+					</TabularSection>
+					<Movements>
+						<Register name="ЦеныНоменклатуры" type="Приход" />
+					</Movements>
+				</Document>
         </Documents>
 
         <Registers>
@@ -150,7 +199,18 @@
                 </Dimensions>
                 <Resources />
             </InformationRegister>
-
+			<InformationRegister name="ЦеныНоменклатуры">
+				<Description>Периодический регистр хранения цен.</Description>
+				<Type>Периодический (В пределах секунды)</Type>
+				<Mode>Подчинение регистратору</Mode>
+				<Dimensions>
+					<Dimension name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+					<Dimension name="ТипЦен" type="СправочникСсылка.ТипыЦен" />
+				</Dimensions>
+				<Resources>
+					<Resource name="Цена" type="Число" />
+				</Resources>
+			</InformationRegister>
             <AccumulationRegister name="ОстаткиТоваров">
                 <Type>Остатки</Type>
                 <Dimensions>
@@ -161,6 +221,16 @@
                     <Resource name="Количество" />
                 </Resources>
             </AccumulationRegister>
+			<InformationRegister name="ЦеныНоменклатуры">
+				<Type>Периодический</Type>
+				<Dimensions>
+					<Dimension name="Номенклатура" type="СправочникСсылка.Номенклатура" />
+					<Dimension name="ТипЦен" type="СправочникСсылка.ТипыЦен" />
+				</Dimensions>
+				<Resources>
+					<Resource name="Цена" type="Число" />
+				</Resources>
+    </InformationRegister>
         </Registers>
     </MetadataSpecifications>
 	

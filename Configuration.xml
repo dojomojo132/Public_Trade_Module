@@ -244,23 +244,27 @@
 			<Subsystem>Торговля</Subsystem>
 			<Subsystem>Склад</Subsystem>
 			<Subsystem>Настройки</Subsystem>
+			<CommonModule>ОбщегоНазначения</CommonModule>
 			<Catalog>НалоговыеГруппы</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>КассовоеОборудование</Catalog>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Склады</Catalog>
 			<Catalog>Контрагенты</Catalog>
+			<Catalog>ТипыЦен</Catalog>
 			<Document>КассоваяСмена</Document>
 			<Document>ФискальнаяПродажа</Document>
 			<Document>ВозвратТовараОтПокупателя</Document>
 			<Document>ИнвентаризацияТоваров</Document>
 			<Document>ПриходТовара</Document>
 			<Document>СписаниеТовара</Document>
+			<Document>УстановкаЦен</Document>
 			<Enum>СтавкиНДС</Enum>
 			<Enum>ТипыОборудования</Enum>
 			<Enum>СтатусыИнвентаризации</Enum>
 			<Enum>ЕдиницыИзмерения</Enum>
 			<InformationRegister>Штрихкоды</InformationRegister>
+			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
 		</ChildObjects>
