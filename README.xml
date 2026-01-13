@@ -116,6 +116,7 @@
                     <Attribute name="Смена" type="ДокументСсылка.КассоваяСмена" />
                     <Attribute name="КассаККМ" type="СправочникСсылка.КассовоеОборудование" />
                     <Attribute name="СуммаДокумента" type="Число" />
+					<Attribute name="Склад" type="СправочникСсылка.Склады" /> <Attribute name="СуммаДокумента" type="Число" />
                 </Header>
                 <TabularSection name="Товары">
                     <Attribute name="Номенклатура" type="СправочникСсылка.Номенклатура" />
