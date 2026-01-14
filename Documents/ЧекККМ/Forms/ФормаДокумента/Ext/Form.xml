@@ -61,14 +61,14 @@
 					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="60"/>
 					<ChildItems>
 						<InputField name="Смена" id="7">
-							<DataPath>Объект.Смена</DataPath>
+							<DataPath>Объект.КассоваяСмена</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 							<ContextMenu name="СменаКонтекстноеМеню" id="8"/>
 							<ExtendedTooltip name="СменаРасширеннаяПодсказка" id="9"/>
 						</InputField>
 						<InputField name="КассаККМ" id="10">
-							<DataPath>Объект.КассаККМ</DataPath>
+							<DataPath>Объект.Касса</DataPath>
 							<EditMode>EnterOnInput</EditMode>
 							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 							<ContextMenu name="КассаККМКонтекстноеМеню" id="11"/>
@@ -187,7 +187,7 @@
 					<ExtendedTooltip name="ТоварыАкцизнаяМаркаРасширеннаяПодсказка" id="49"/>
 				</InputField>
 				<CheckBoxField name="ТоварыФискальнаяОперация" id="50">
-					<DataPath>Объект.Товары.ФискальнаяОперация</DataPath>
+					<DataPath>1/0:93a8f514-b24f-46a8-9ac1-5f706a6e3346/0:a82a9315-8c40-415e-908b-9a5062540b74</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ТоварыФискальнаяОперацияКонтекстноеМеню" id="51"/>
@@ -199,7 +199,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:DocumentObject.ФискальнаяПродажа</v8:Type>
+				<v8:Type>cfg:DocumentObject.ЧекККМ</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>

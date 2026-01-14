@@ -245,6 +245,7 @@
 			<Subsystem>Склад</Subsystem>
 			<Subsystem>Настройки</Subsystem>
 			<Subsystem>Все</Subsystem>
+			<Subsystem>Фискал</Subsystem>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>
@@ -263,7 +264,7 @@
 			<Catalog>ДисконтныеКарты</Catalog>
 			<Catalog>Кассы</Catalog>
 			<Document>КассоваяСмена</Document>
-			<Document>ФискальнаяПродажа</Document>
+			<Document>ЧекККМ</Document>
 			<Document>ВозвратТовараОтПокупателя</Document>
 			<Document>ИнвентаризацияТоваров</Document>
 			<Document>ПриходТовара</Document>
@@ -271,20 +272,25 @@
 			<Document>Переоценка</Document>
 			<Document>ПриходныйКассовыйОрдер</Document>
 			<Document>РасходныйКассовыйОрдер</Document>
+			<Document>ФискальныйЧек</Document>
 			<Enum>СтавкиНДС</Enum>
 			<Enum>ТипыОборудования</Enum>
 			<Enum>ЕдиницыИзмерения</Enum>
 			<Enum>ТипыСкладов</Enum>
 			<Enum>ПорядкиОкругленияЦен</Enum>
+			<Enum>ВидыОплаты</Enum>
+			<Enum>СтатусыЧекаККМ</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>
+			<InformationRegister>НастройкиРаспределенияПродаж</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
 			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>
 			<AccumulationRegister>ПродажиПоДисконтнымКартам</AccumulationRegister>
+			<AccumulationRegister>Продажи</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

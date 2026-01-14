@@ -31,7 +31,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ВидыДисконтныхКарт</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДисконтныеКарты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.КассоваяСмена</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.ФискальнаяПродажа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ЧекККМ</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратТовараОтПокупателя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияТоваров</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходТовара</xr:Item>

@@ -1,34 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<Document uuid="0ca9be55-ff6c-48bd-83d9-b14c29a066fd">
+	<Document uuid="d31335d3-f317-4a54-9d48-0134e03fe9e9">
 		<InternalInfo>
-			<xr:GeneratedType name="DocumentObject.ФискальнаяПродажа" category="Object">
-				<xr:TypeId>b22553b2-df59-47af-96e4-e1e9c3e526e8</xr:TypeId>
-				<xr:ValueId>3471f9d3-bfa3-43da-ac12-4f753438fa69</xr:ValueId>
+			<xr:GeneratedType name="DocumentObject.ФискальныйЧек" category="Object">
+				<xr:TypeId>4f17cf87-6b6c-4ef1-b53f-5d73779686b9</xr:TypeId>
+				<xr:ValueId>39b8e019-6756-4650-a86d-3e27a7673b47</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DocumentRef.ФискальнаяПродажа" category="Ref">
-				<xr:TypeId>85f3930b-183a-4062-83b2-e4f6578612d1</xr:TypeId>
-				<xr:ValueId>7ad5b6aa-9177-4c66-adf9-6db4f92e30a6</xr:ValueId>
+			<xr:GeneratedType name="DocumentRef.ФискальныйЧек" category="Ref">
+				<xr:TypeId>ac12699d-d6c7-40d8-8da5-9620f74a40bd</xr:TypeId>
+				<xr:ValueId>966a6aec-9835-4dc2-b461-a4615301ad0b</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DocumentSelection.ФискальнаяПродажа" category="Selection">
-				<xr:TypeId>2aa9e73f-6bd0-4827-9252-7600f866a9f7</xr:TypeId>
-				<xr:ValueId>c9fe4eac-339d-4a1e-9df3-e1c5032551e0</xr:ValueId>
+			<xr:GeneratedType name="DocumentSelection.ФискальныйЧек" category="Selection">
+				<xr:TypeId>0d2503c8-fd0e-426b-8396-b0f6295b7e1f</xr:TypeId>
+				<xr:ValueId>b5dc8b06-284a-4a56-8a37-6354e2c7d279</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DocumentList.ФискальнаяПродажа" category="List">
-				<xr:TypeId>e32fceea-e833-4ad3-9da8-0e8c99780b54</xr:TypeId>
-				<xr:ValueId>49415c0c-64c2-4868-a74a-dfdbf897620f</xr:ValueId>
+			<xr:GeneratedType name="DocumentList.ФискальныйЧек" category="List">
+				<xr:TypeId>dffac21e-7ae5-42e7-a46a-ac94ba2ebf16</xr:TypeId>
+				<xr:ValueId>b3cac084-90c9-4148-9398-d11e4c7030de</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DocumentManager.ФискальнаяПродажа" category="Manager">
-				<xr:TypeId>68cc064f-068c-4f5e-aeda-369495f4124e</xr:TypeId>
-				<xr:ValueId>f8a3a919-ef08-4601-8053-e1363359627d</xr:ValueId>
+			<xr:GeneratedType name="DocumentManager.ФискальныйЧек" category="Manager">
+				<xr:TypeId>f4f08a1f-0b0c-47ac-8b78-9fa5be9c55d8</xr:TypeId>
+				<xr:ValueId>45311410-ae49-45cb-9263-66194b026d24</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ФискальнаяПродажа</Name>
+			<Name>ФискальныйЧек</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Фискальная продажа</v8:content>
+					<v8:content>Фискальный чек</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -41,15 +41,17 @@
 			<CheckUnique>true</CheckUnique>
 			<Autonumbering>true</Autonumbering>
 			<Characteristics/>
-			<BasedOn/>
+			<BasedOn>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ЧекККМ</xr:Item>
+			</BasedOn>
 			<InputByString>
-				<xr:Field>Document.ФискальнаяПродажа.StandardAttribute.Number</xr:Field>
+				<xr:Field>Document.ФискальныйЧек.StandardAttribute.Number</xr:Field>
 			</InputByString>
 			<CreateOnInput>Use</CreateOnInput>
 			<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
-			<DefaultObjectForm>Document.ФискальнаяПродажа.Form.ФормаДокумента</DefaultObjectForm>
+			<DefaultObjectForm/>
 			<DefaultListForm/>
 			<DefaultChoiceForm/>
 			<AuxiliaryObjectForm/>
@@ -60,9 +62,7 @@
 			<RegisterRecordsDeletion>AutoDeleteOnUnpost</RegisterRecordsDeletion>
 			<RegisterRecordsWritingOnPost>WriteSelected</RegisterRecordsWritingOnPost>
 			<SequenceFilling>AutoFill</SequenceFilling>
-			<RegisterRecords>
-				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПродажиПоДисконтнымКартам</xr:Item>
-			</RegisterRecords>
+			<RegisterRecords/>
 			<PostInPrivilegedMode>true</PostInPrivilegedMode>
 			<UnpostInPrivilegedMode>true</UnpostInPrivilegedMode>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
@@ -80,52 +80,13 @@
 			<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="0e37a3eb-97cc-4fb5-8433-b89e0c3b988b">
+			<Attribute uuid="76564734-5793-4141-8acd-fff60fbdcdf0">
 				<Properties>
-					<Name>Смена</Name>
+					<Name>Оборудование</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Смена</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment/>
-					<Type>
-						<v8:Type>cfg:DocumentRef.КассоваяСмена</v8:Type>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-					<Indexing>DontIndex</Indexing>
-					<FullTextSearch>Use</FullTextSearch>
-					<DataHistory>Use</DataHistory>
-				</Properties>
-			</Attribute>
-			<Attribute uuid="17120dc8-51cb-40ac-be1f-2ca519ca6d31">
-				<Properties>
-					<Name>КассаККМ</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Касса ККМ</v8:content>
+							<v8:content>Оборудование</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -158,13 +119,99 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="86c803c9-6156-4cd3-90ad-474233ee4136">
+			<Attribute uuid="c6fe73cc-632d-4ebf-a55c-879f5d3a8d83">
 				<Properties>
-					<Name>СуммаДокумента</Name>
+					<Name>НомерЧекаККМ</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Сумма документа</v8:content>
+							<v8:content>Номер чека ККМ</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillFromFillingValue>false</FillFromFillingValue>
+					<FillValue xsi:type="xs:string"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Indexing>DontIndex</Indexing>
+					<FullTextSearch>Use</FullTextSearch>
+					<DataHistory>Use</DataHistory>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="2fa9715a-d2e3-437a-be1e-5accef266b5b">
+				<Properties>
+					<Name>ФискальныйПризнак</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фискальный признак</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillFromFillingValue>false</FillFromFillingValue>
+					<FillValue xsi:type="xs:string"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Indexing>DontIndex</Indexing>
+					<FullTextSearch>Use</FullTextSearch>
+					<DataHistory>Use</DataHistory>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="086ddeb5-da8a-4d63-98cb-29aa2d8b3075">
+				<Properties>
+					<Name>Сумма</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -202,55 +249,15 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="3e317546-7ae1-4dd0-9d2e-fcaa947d3e27">
-				<Properties>
-					<Name>Склад</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Склад</v8:content>
-						</v8:item>
-					</Synonym>
-					<Comment/>
-					<Type>
-						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillFromFillingValue>false</FillFromFillingValue>
-					<FillValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-					<Indexing>DontIndex</Indexing>
-					<FullTextSearch>Use</FullTextSearch>
-					<DataHistory>Use</DataHistory>
-				</Properties>
-			</Attribute>
-			<Form>ФормаДокумента</Form>
-			<TabularSection uuid="93a8f514-b24f-46a8-9ac1-5f706a6e3346">
+			<TabularSection uuid="00a1e96e-bcc1-49f7-94e0-e49c9ea83458">
 				<InternalInfo>
-					<xr:GeneratedType name="DocumentTabularSection.ФискальнаяПродажа.Товары" category="TabularSection">
-						<xr:TypeId>fe9f14da-416a-4e79-b119-ff8af0682c56</xr:TypeId>
-						<xr:ValueId>6c9aba69-4aec-403d-8dbd-ff2cdf76f2f6</xr:ValueId>
+					<xr:GeneratedType name="DocumentTabularSection.ФискальныйЧек.Товары" category="TabularSection">
+						<xr:TypeId>0b27373d-50c4-4346-9366-2c9cab3a857a</xr:TypeId>
+						<xr:ValueId>f004e6d3-5cc6-46cf-bf54-d558b69eff3d</xr:ValueId>
 					</xr:GeneratedType>
-					<xr:GeneratedType name="DocumentTabularSectionRow.ФискальнаяПродажа.Товары" category="TabularSectionRow">
-						<xr:TypeId>cbecbf59-fb03-45b9-897b-a324fa9885e0</xr:TypeId>
-						<xr:ValueId>115da911-7627-4546-a387-dd7c713cd0f4</xr:ValueId>
+					<xr:GeneratedType name="DocumentTabularSectionRow.ФискальныйЧек.Товары" category="TabularSectionRow">
+						<xr:TypeId>dc3199b8-2fbd-41e2-be27-8799dca38ba3</xr:TypeId>
+						<xr:ValueId>6c0f96fa-4bc4-43ef-8d1e-8d487052e706</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -264,9 +271,37 @@
 					<Comment/>
 					<ToolTip/>
 					<FillChecking>DontCheck</FillChecking>
+					<StandardAttributes>
+						<xr:StandardAttribute name="LineNumber">
+							<xr:LinkByType/>
+							<xr:FillChecking>DontCheck</xr:FillChecking>
+							<xr:MultiLine>false</xr:MultiLine>
+							<xr:FillFromFillingValue>false</xr:FillFromFillingValue>
+							<xr:CreateOnInput>Auto</xr:CreateOnInput>
+							<xr:MaxValue xsi:nil="true"/>
+							<xr:ToolTip/>
+							<xr:ExtendedEdit>false</xr:ExtendedEdit>
+							<xr:Format/>
+							<xr:ChoiceForm/>
+							<xr:QuickChoice>Auto</xr:QuickChoice>
+							<xr:ChoiceHistoryOnInput>Auto</xr:ChoiceHistoryOnInput>
+							<xr:EditFormat/>
+							<xr:PasswordMode>false</xr:PasswordMode>
+							<xr:DataHistory>Use</xr:DataHistory>
+							<xr:MarkNegatives>false</xr:MarkNegatives>
+							<xr:MinValue xsi:nil="true"/>
+							<xr:Synonym/>
+							<xr:Comment/>
+							<xr:FullTextSearch>Use</xr:FullTextSearch>
+							<xr:ChoiceParameterLinks/>
+							<xr:FillValue xsi:nil="true"/>
+							<xr:Mask/>
+							<xr:ChoiceParameters/>
+						</xr:StandardAttribute>
+					</StandardAttributes>
 				</Properties>
 				<ChildObjects>
-					<Attribute uuid="46df5095-1d30-4911-993b-11e68a9ed41f">
+					<Attribute uuid="7f435f4c-8f70-43ed-9601-880ec1f51a87">
 						<Properties>
 							<Name>Номенклатура</Name>
 							<Synonym>
@@ -303,7 +338,7 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="ad376bd8-f424-4104-a0ff-9028b2082fd7">
+					<Attribute uuid="0add50c4-4c68-4a0c-be66-69b86ee63f1f">
 						<Properties>
 							<Name>Количество</Name>
 							<Synonym>
@@ -345,7 +380,7 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="3be9de29-58d3-44e9-9d87-661200a466ce">
+					<Attribute uuid="33200c4f-ebf4-4576-a1dc-5c01e9b6ce16">
 						<Properties>
 							<Name>Цена</Name>
 							<Synonym>
@@ -387,7 +422,7 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="3cbe6776-b414-4c0d-b7b3-dc086970b081">
+					<Attribute uuid="cc9a604d-100e-4d65-b59d-af1d7d4d6f05">
 						<Properties>
 							<Name>Сумма</Name>
 							<Synonym>
@@ -429,7 +464,7 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="3abf3b2c-af62-4a33-804a-815f290d0d6a">
+					<Attribute uuid="381c4659-61c5-4bfd-878a-bc303d8cd57e">
 						<Properties>
 							<Name>АкцизнаяМарка</Name>
 							<Synonym>
@@ -470,18 +505,60 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="a82a9315-8c40-415e-908b-9a5062540b74">
+					<Attribute uuid="91d42f8c-e479-4778-abca-f53ed7df6ecb">
 						<Properties>
-							<Name>ФискальнаяОперация</Name>
+							<Name>СуммаСкидки</Name>
 							<Synonym>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Фискальная операция</v8:content>
+									<v8:content>Сумма скидки</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>
 							<Type>
-								<v8:Type>xs:boolean</v8:Type>
+								<v8:Type>xs:decimal</v8:Type>
+								<v8:NumberQualifiers>
+									<v8:Digits>15</v8:Digits>
+									<v8:FractionDigits>2</v8:FractionDigits>
+									<v8:AllowedSign>Any</v8:AllowedSign>
+								</v8:NumberQualifiers>
+							</Type>
+							<PasswordMode>false</PasswordMode>
+							<Format/>
+							<EditFormat/>
+							<ToolTip/>
+							<MarkNegatives>false</MarkNegatives>
+							<Mask/>
+							<MultiLine>false</MultiLine>
+							<ExtendedEdit>false</ExtendedEdit>
+							<MinValue xsi:nil="true"/>
+							<MaxValue xsi:nil="true"/>
+							<FillChecking>DontCheck</FillChecking>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceParameterLinks/>
+							<ChoiceParameters/>
+							<QuickChoice>Auto</QuickChoice>
+							<CreateOnInput>Auto</CreateOnInput>
+							<ChoiceForm/>
+							<LinkByType/>
+							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+							<Indexing>DontIndex</Indexing>
+							<FullTextSearch>Use</FullTextSearch>
+							<DataHistory>Use</DataHistory>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="d27e47d4-223c-4d0e-b75c-88c2016c067b">
+						<Properties>
+							<Name>НалоговаяГруппа</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Налоговая группа</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>cfg:CatalogRef.НалоговыеГруппы</v8:Type>
 							</Type>
 							<PasswordMode>false</PasswordMode>
 							<Format/>

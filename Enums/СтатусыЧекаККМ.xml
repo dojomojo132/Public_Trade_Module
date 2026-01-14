@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+	<Enum uuid="9b83b7a6-b624-4f13-ad2d-814ed9cd7fbe">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.СтатусыЧекаККМ" category="Ref">
+				<xr:TypeId>8f5e6418-0c3f-4fe9-a6d2-7e5d2f6e0c4a</xr:TypeId>
+				<xr:ValueId>c2089e72-4c0c-43d8-ae61-abff9bd5a805</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.СтатусыЧекаККМ" category="Manager">
+				<xr:TypeId>4fe46ceb-c238-4a3e-b647-82c9ba4a4b84</xr:TypeId>
+				<xr:ValueId>a4a84043-459d-425e-8b37-527f8048e462</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.СтатусыЧекаККМ" category="List">
+				<xr:TypeId>94f5df28-b0ea-4f22-9e15-3bf087ea625c</xr:TypeId>
+				<xr:ValueId>7bafa39b-af82-4c2e-b14c-6140069158da</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>СтатусыЧекаККМ</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статусы чека ККМ</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="77f0a7a6-51b0-40f0-99c5-d602b37c7362">
+				<Properties>
+					<Name>Пробит</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пробит</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8efd8033-be3d-4f1f-a8e0-a8022e656c43">
+				<Properties>
+					<Name>Аннулирован</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аннулирован</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="0adb80e3-75af-435a-8246-dc3b3577e493">
+				<Properties>
+					<Name>Отложен</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отложен</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>
