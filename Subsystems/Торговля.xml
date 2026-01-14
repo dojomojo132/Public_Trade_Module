@@ -23,7 +23,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.НалоговыеГруппы</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтавкиНДС</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыОборудования</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыИнвентаризации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">77ce72ef-2b8d-4ca3-bd2a-5582d5ddec6c</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ЕдиницыИзмерения</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.Штрихкоды</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ОстаткиТоваров</xr:Item>

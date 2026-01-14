@@ -273,10 +273,10 @@
 			<Document>РасходныйКассовыйОрдер</Document>
 			<Enum>СтавкиНДС</Enum>
 			<Enum>ТипыОборудования</Enum>
-			<Enum>СтатусыИнвентаризации</Enum>
 			<Enum>ЕдиницыИзмерения</Enum>
 			<Enum>ТипыСкладов</Enum>
 			<Enum>ПорядкиОкругленияЦен</Enum>
+			<Report>ОстаткиТоваров</Report>
 			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
