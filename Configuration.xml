@@ -244,7 +244,9 @@
 			<Subsystem>Торговля</Subsystem>
 			<Subsystem>Склад</Subsystem>
 			<Subsystem>Настройки</Subsystem>
+			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
+			<CommonModule>МенеджерОборудования</CommonModule>
 			<Catalog>НалоговыеГруппы</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>КассовоеОборудование</Catalog>

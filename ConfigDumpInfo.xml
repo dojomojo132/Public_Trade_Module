@@ -10,10 +10,11 @@
 			<Metadata name="AccumulationRegister.ОстаткиТоваров.Dimension.Номенклатура" id="b34bd389-e76f-4dee-85d3-18352842172c"/>
 			<Metadata name="AccumulationRegister.ОстаткиТоваров.Dimension.Склад" id="f1171913-7e2a-4d03-a34f-921dd2a04448"/>
 		</Metadata>
-		<Metadata name="Catalog.КассовоеОборудование" id="d784e622-cc36-45d6-b937-8b4730b2c701" configVersion="c711b8e6ceb4a0438601907d168388de00000000">
+		<Metadata name="Catalog.КассовоеОборудование" id="d784e622-cc36-45d6-b937-8b4730b2c701" configVersion="83235f03334b214bb194f0e8b685106700000000">
 			<Metadata name="Catalog.КассовоеОборудование.Attribute.ТипОборудования" id="0a798a61-f10e-4ea3-a246-a9828db32fa6"/>
 			<Metadata name="Catalog.КассовоеОборудование.Attribute.ДрайверID" id="114cf068-a2a6-4160-bfa2-6094e67ecb47"/>
 			<Metadata name="Catalog.КассовоеОборудование.Attribute.ПараметрыПодключения" id="5ea2349e-0f4e-4240-bad5-6b8de53ba66e"/>
+			<Metadata name="Catalog.КассовоеОборудование.Attribute.Порт" id="7d97094a-014c-40b4-828c-62e70e2261d6"/>
 		</Metadata>
 		<Metadata name="Catalog.Контрагенты" id="15806fdf-6c4b-4657-853f-37bf85e5615a" configVersion="6b9734f94566314484f50ffc710e505300000000"/>
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="76c3901b896f2446a58324e14abf3af200000000">
@@ -35,9 +36,15 @@
 		<Metadata name="Catalog.Склады" id="35019ef0-07f4-499d-a967-d8c11123f94b" configVersion="22f37035db21f04caa4e7ede8450cf5b00000000"/>
 		<Metadata name="Catalog.ТипыЦен" id="873314f9-b1d9-42bc-bbe2-529148d593fc" configVersion="6b9d63511afd0844a0880c63f5a8a89f00000000"/>
 		<Metadata name="Catalog.ТипыЦен.Predefined" id="873314f9-b1d9-42bc-bbe2-529148d593fc.1c" configVersion="a0677daa905ba947bb6bdfd13e61ff2600000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="075778dd8b18544da1aeb9a833856ece00000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="4d424c001e578a46aa434a556dd99f2e00000000"/>
-		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="2601fb5653e05b4eb3478a7b2ca5bff700000000"/>
+		<Metadata name="CommonModule.МенеджерОборудования" id="0b1712c1-2604-4918-93cd-f63aeb9453e8" configVersion="0c101c2d79234a4d8dc04d909dcc3d9c00000000"/>
+		<Metadata name="CommonModule.МенеджерОборудования.Module" id="0b1712c1-2604-4918-93cd-f63aeb9453e8.0" configVersion="a4b9dd217dc5e84195965bbe893c2e5700000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="bc65501928a32b4e9a9a4b1a7c590d7700000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="4e1e0e39a210f44d8064074b86f670d100000000"/>
+		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="48b048e1beba824eae2545fe73ebd07f00000000"/>
+		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="65d92d577d18e342b20bfe8d5f75163100000000"/>
+		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="9b82a8e316a56c48bee5ed8311e4136800000000"/>
+		<Metadata name="Configuration.Конфигурация.ClientApplicationInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.b" configVersion="7e100d1337ea034fb31e85f7d0844f2600000000"/>
+		<Metadata name="Configuration.Конфигурация.ManagedApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.6" configVersion="70744291299391408b57793205fba3a000000000"/>
 		<Metadata name="Document.ВозвратТовараОтПокупателя" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747" configVersion="507f6586223aa84d99c088965cdaa7ca00000000"/>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="75dc5a91a42f6449938dd83157a12ad500000000"/>
 		<Metadata name="Document.КассоваяСмена" id="25758dba-a71b-4a22-a206-6f72aa9a04a8" configVersion="fcda641494ec4f4cabeff12816770b5d00000000">
@@ -83,8 +90,8 @@
 			<Metadata name="Document.ФискальнаяПродажа.TabularSection.Товары.Attribute.ФискальнаяОперация" id="a82a9315-8c40-415e-908b-9a5062540b74"/>
 			<Metadata name="Document.ФискальнаяПродажа.TabularSection.Товары.Attribute.Количество" id="ad376bd8-f424-4104-a0ff-9028b2082fd7"/>
 		</Metadata>
-		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента" id="0f606748-bf07-4da9-bfb4-f8939b446af5" configVersion="b5c42b5928787546b988a4002717827500000000"/>
-		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента.Form" id="0f606748-bf07-4da9-bfb4-f8939b446af5.0" configVersion="b6a9512c56bb0148a7a5c5fa80fc336c00000000"/>
+		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента" id="0f606748-bf07-4da9-bfb4-f8939b446af5" configVersion="369d840afc19d8429724c4cd913110d400000000"/>
+		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента.Form" id="0f606748-bf07-4da9-bfb4-f8939b446af5.0" configVersion="c95dd413cecc4c48b4a7d96f1d8351b700000000"/>
 		<Metadata name="Document.ФискальнаяПродажа.ManagerModule" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd.2" configVersion="7bc1f8cdb3d463468dfbe54f9eb0652400000000"/>
 		<Metadata name="Enum.ЕдиницыИзмерения" id="733ea925-1b59-4dfb-9c61-c7c0bf850bee" configVersion="4280995b966cfd479b4f65a339fc522800000000">
 			<Metadata name="Enum.ЕдиницыИзмерения.EnumValue.кг" id="7c5e87ca-112c-414e-a255-54deb2616bbe"/>

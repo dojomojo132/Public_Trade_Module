@@ -65,14 +65,15 @@
                 </Attributes>
             </Catalog>
 
-            <Catalog name="КассовоеОборудование">
-                <Description>Настройки подключения периферии.</Description>
-                <Attributes>
-                    <Attribute name="ТипОборудования" type="Перечисление" />
-                    <Attribute name="ДрайверID" type="Строка" description="ProgID компоненты" />
-                    <Attribute name="ПараметрыПодключения" type="ХранилищеЗначения" />
-                </Attributes>
-            </Catalog>
+			<Catalog name="КассовоеОборудование">
+				<Description>Настройки подключения периферии.</Description>
+				<Attributes>
+					<Attribute name="ТипОборудования" type="Перечисление" />
+					<Attribute name="ДрайверID" type="Строка" description="ProgID компоненты" />
+					<Attribute name="Порт" type="Число(2)" description="Номер COM-порта (например, 3)" /> 
+					<Attribute name="ПараметрыПодключения" type="ХранилищеЗначения" />
+				</Attributes>
+			</Catalog>
 
             <Catalog name="Пользователи">
                 <Description>Права и настройки сотрудников.</Description>
