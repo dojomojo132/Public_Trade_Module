@@ -90,8 +90,8 @@
 			<Metadata name="Document.ФискальнаяПродажа.TabularSection.Товары.Attribute.ФискальнаяОперация" id="a82a9315-8c40-415e-908b-9a5062540b74"/>
 			<Metadata name="Document.ФискальнаяПродажа.TabularSection.Товары.Attribute.Количество" id="ad376bd8-f424-4104-a0ff-9028b2082fd7"/>
 		</Metadata>
-		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента" id="0f606748-bf07-4da9-bfb4-f8939b446af5" configVersion="369d840afc19d8429724c4cd913110d400000000"/>
-		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента.Form" id="0f606748-bf07-4da9-bfb4-f8939b446af5.0" configVersion="c95dd413cecc4c48b4a7d96f1d8351b700000000"/>
+		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента" id="0f606748-bf07-4da9-bfb4-f8939b446af5" configVersion="0d3f923f6249b541a77b463ca9dcb2ed00000000"/>
+		<Metadata name="Document.ФискальнаяПродажа.Form.ФормаДокумента.Form" id="0f606748-bf07-4da9-bfb4-f8939b446af5.0" configVersion="32140d5a9282264ab718a11155ac972b00000000"/>
 		<Metadata name="Document.ФискальнаяПродажа.ManagerModule" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd.2" configVersion="7bc1f8cdb3d463468dfbe54f9eb0652400000000"/>
 		<Metadata name="Enum.ЕдиницыИзмерения" id="733ea925-1b59-4dfb-9c61-c7c0bf850bee" configVersion="4280995b966cfd479b4f65a339fc522800000000">
 			<Metadata name="Enum.ЕдиницыИзмерения.EnumValue.кг" id="7c5e87ca-112c-414e-a255-54deb2616bbe"/>
