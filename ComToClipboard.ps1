@@ -1,27 +1,26 @@
-# =========================================================
-# Драйвер: COM -> CLIPBOARD (STA MODE FIXED)
-# =========================================================
+# --- НАЧАЛО СКРИПТА ---
 
-# 1. Проверка режима запуска (Нам нужен STA для работы с буфером)
+# 1. Перезапуск в режиме STA (обязательно для буфера обмена)
 if ($host.Runspace.ApartmentState -ne 'STA') {
-    Write-Host "Перезапуск в режиме STA..." -ForegroundColor Cyan
-    # Перезапускаем сами себя с флагом -STA
     powershell.exe -NoProfile -STA -File $MyInvocation.MyCommand.Path
     Exit
 }
 
-# 2. Настройки
-$portName = "COM11"     # <--- ВАШ ПОРТ
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.IO.Ports
+# 2. Загрузка библиотек
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.IO.Ports")
+[void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
 
-# 3. Подключение
+# 3. Настройки
+$portName = "COM11"
+$baudRate = 9600
+
 Write-Host "--- PTM Driver (Clipboard) ---" -ForegroundColor Cyan
 
+# 4. Открытие порта
 Try {
     $port = New-Object System.IO.Ports.SerialPort
     $port.PortName = $portName
-    $port.BaudRate = 9600
+    $port.BaudRate = $baudRate
     $port.Parity   = [System.IO.Ports.Parity]::None
     $port.DataBits = 8
     $port.StopBits = [System.IO.Ports.StopBits]::One
@@ -30,28 +29,31 @@ Try {
     Write-Host "[OK] Порт $portName открыт." -ForegroundColor Green
 }
 Catch {
-    Write-Host "[ERROR] Ошибка порта: $_" -ForegroundColor Red
-    Write-Host "Нажмите Enter для выхода..."
-    Read-Host
+    Write-Host "[ERROR] Ошибка открытия порта!" -ForegroundColor Red
+    Write-Host $_ -ForegroundColor Red
+    Read-Host "Нажмите Enter для выхода..."
     Exit
 }
 
-# 4. Цикл
+# 5. Главный цикл
 While ($true) {
     Try {
         if ($port.IsOpen) {
+            # Читаем данные
             $barcode = $port.ReadLine()
             
+            # Если данные есть - пишем в буфер
             If (-not [string]::IsNullOrWhiteSpace($barcode)) {
                 $barcode = $barcode.Trim()
                 Write-Host "ШК: $barcode" -ForegroundColor Yellow
                 
-                # Запись в буфер
                 [System.Windows.Forms.Clipboard]::SetText("///SCAN:$barcode")
             }
         }
     }
     Catch {
-        # Игнорируем мелкие ошибки
+        # Игнорируем ошибки чтения
     }
 }
+
+# --- КОНЕЦ СКРИПТА ---

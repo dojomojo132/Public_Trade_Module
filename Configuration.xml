@@ -244,9 +244,14 @@
 			<Subsystem>Торговля</Subsystem>
 			<Subsystem>Склад</Subsystem>
 			<Subsystem>Настройки</Subsystem>
+			<Subsystem>Все</Subsystem>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>
+			<Constant>ПорядокОкругленияЦен</Constant>
+			<Constant>КонтролироватьОстаткиПриСписании</Constant>
+			<Constant>ОсновнойСклад</Constant>
+			<Constant>ОсновнойПоставщик</Constant>
 			<Catalog>НалоговыеГруппы</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>КассовоеОборудование</Catalog>
@@ -254,21 +259,32 @@
 			<Catalog>Склады</Catalog>
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>ТипыЦен</Catalog>
+			<Catalog>ВидыДисконтныхКарт</Catalog>
+			<Catalog>ДисконтныеКарты</Catalog>
+			<Catalog>Кассы</Catalog>
 			<Document>КассоваяСмена</Document>
 			<Document>ФискальнаяПродажа</Document>
 			<Document>ВозвратТовараОтПокупателя</Document>
 			<Document>ИнвентаризацияТоваров</Document>
 			<Document>ПриходТовара</Document>
 			<Document>СписаниеТовара</Document>
-			<Document>УстановкаЦен</Document>
+			<Document>Переоценка</Document>
+			<Document>ПриходныйКассовыйОрдер</Document>
+			<Document>РасходныйКассовыйОрдер</Document>
 			<Enum>СтавкиНДС</Enum>
 			<Enum>ТипыОборудования</Enum>
 			<Enum>СтатусыИнвентаризации</Enum>
 			<Enum>ЕдиницыИзмерения</Enum>
+			<Enum>ТипыСкладов</Enum>
+			<Enum>ПорядкиОкругленияЦен</Enum>
+			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
+			<InformationRegister>ЦеныЗакупки</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
+			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>
+			<AccumulationRegister>ПродажиПоДисконтнымКартам</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
