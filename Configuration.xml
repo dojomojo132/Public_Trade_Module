@@ -282,6 +282,7 @@
 			<Enum>СтатусыЧекаККМ</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
+			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>

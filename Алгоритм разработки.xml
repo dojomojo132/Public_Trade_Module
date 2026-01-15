@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DevelopmentProcess>
+    <Stage id="1">
+        <Name>Формирование ТЗ</Name>
+        <Description>Составление краткого задания. Если задача меняет структуру метаданных — подготовка текста изменений для спецификации.</Description>
+    </Stage>
+    <Stage id="2">
+        <Name>Утверждение ТЗ</Name>
+        <Description>Согласование задачи и планируемых изменений.</Description>
+    </Stage>
+    <Stage id="3">
+        <Name>Обновление документации (Spec-First)</Name>
+        <Description>Внесение новых объектов/полей в README.txt с пометкой — NEW! до начала кодирования (согласно Регламенту).</Description>
+    </Stage>
+    <Stage id="4">
+        <Name>Реализация</Name>
+        <Description>Написание программного кода и настройка метаданных.</Description>
+    </Stage>
+    <Stage id="5">
+        <Name>Верификация</Name>
+        <Description>Сверка реализованного функционала с README.txt (проверка целостности).</Description>
+    </Stage>
+    <Stage id="6">
+        <Name>Подтверждение</Name>
+        <Description>Финальная сдача этапа.</Description>
+    </Stage>
+</DevelopmentProcess>
