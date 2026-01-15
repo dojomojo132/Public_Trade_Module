@@ -164,11 +164,11 @@
 			</Attribute>
 			<Attribute uuid="2fa9715a-d2e3-437a-be1e-5accef266b5b">
 				<Properties>
-					<Name>ФискальныйПризнак</Name>
+					<Name>ФискальныйНомер</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Фискальный признак</v8:content>
+							<v8:content>Фискальный номер</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

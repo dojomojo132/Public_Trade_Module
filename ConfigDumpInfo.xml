@@ -140,11 +140,11 @@
 			<Metadata name="Document.СписаниеТовара.Attribute.Склад" id="818edd59-4dc4-43be-b7c6-4243580b7a3d"/>
 		</Metadata>
 		<Metadata name="Document.СписаниеТовара.ObjectModule" id="bcff37cb-5653-43ff-b217-7d388a9aaaca.0" configVersion="bf3a9948f9d07944ad3f8ccb84b1b5da00000000"/>
-		<Metadata name="Document.ФискальныйЧек" id="d31335d3-f317-4a54-9d48-0134e03fe9e9" configVersion="25acd7f8c935ef45a7067917f655ec7500000000">
+		<Metadata name="Document.ФискальныйЧек" id="d31335d3-f317-4a54-9d48-0134e03fe9e9" configVersion="5fcbb867e749c84cbab4eaec022ef0ce00000000">
 			<Metadata name="Document.ФискальныйЧек.TabularSection.Товары" id="00a1e96e-bcc1-49f7-94e0-e49c9ea83458"/>
 			<Metadata name="Document.ФискальныйЧек.Attribute.Сумма" id="086ddeb5-da8a-4d63-98cb-29aa2d8b3075"/>
 			<Metadata name="Document.ФискальныйЧек.TabularSection.Товары.Attribute.Количество" id="0add50c4-4c68-4a0c-be66-69b86ee63f1f"/>
-			<Metadata name="Document.ФискальныйЧек.Attribute.ФискальныйПризнак" id="2fa9715a-d2e3-437a-be1e-5accef266b5b"/>
+			<Metadata name="Document.ФискальныйЧек.Attribute.ФискальныйНомер" id="2fa9715a-d2e3-437a-be1e-5accef266b5b"/>
 			<Metadata name="Document.ФискальныйЧек.TabularSection.Товары.Attribute.Цена" id="33200c4f-ebf4-4576-a1dc-5c01e9b6ce16"/>
 			<Metadata name="Document.ФискальныйЧек.TabularSection.Товары.Attribute.АкцизнаяМарка" id="381c4659-61c5-4bfd-878a-bc303d8cd57e"/>
 			<Metadata name="Document.ФискальныйЧек.Attribute.Оборудование" id="76564734-5793-4141-8acd-fff60fbdcdf0"/>
@@ -156,7 +156,7 @@
 			<Metadata name="Document.ФискальныйЧек.TabularSection.Товары.Attribute.НалоговаяГруппа" id="d27e47d4-223c-4d0e-b75c-88c2016c067b"/>
 		</Metadata>
 		<Metadata name="Document.ФискальныйЧек.ObjectModule" id="d31335d3-f317-4a54-9d48-0134e03fe9e9.0" configVersion="cb5f829e09ef87488e0f1050218d4a9600000000"/>
-		<Metadata name="Document.ЧекККМ" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd" configVersion="0174d25057d24142b4b6d9fe1ab354b800000000">
+		<Metadata name="Document.ЧекККМ" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd" configVersion="da7e18ba0661174789ea7ab5f8b3932200000000">
 			<Metadata name="Document.ЧекККМ.Attribute.КассоваяСмена" id="0e37a3eb-97cc-4fb5-8433-b89e0c3b988b"/>
 			<Metadata name="Document.ЧекККМ.Attribute.Касса" id="17120dc8-51cb-40ac-be1f-2ca519ca6d31"/>
 			<Metadata name="Document.ЧекККМ.TabularSection.Товары.Attribute.АкцизнаяМарка" id="3abf3b2c-af62-4a33-804a-815f290d0d6a"/>
@@ -178,7 +178,7 @@
 		<Metadata name="Document.ЧекККМ.Form.ФормаДокумента" id="412eaf2e-2098-4df0-a33a-4cf9d24fc696" configVersion="a1b95d0f65db1c49bdbe830d71f53dc400000000"/>
 		<Metadata name="Document.ЧекККМ.Form.ФормаДокумента.Form" id="412eaf2e-2098-4df0-a33a-4cf9d24fc696.0" configVersion="b3826a2131c9fe4daa5a40c13a6d829c00000000"/>
 		<Metadata name="Document.ЧекККМ.ManagerModule" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd.2" configVersion="56dd0755897bce4099cccc5a9006792500000000"/>
-		<Metadata name="Document.ЧекККМ.ObjectModule" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd.0" configVersion="a9a9c798dd3cbe4f88624abea7d168bd00000000"/>
+		<Metadata name="Document.ЧекККМ.ObjectModule" id="0ca9be55-ff6c-48bd-83d9-b14c29a066fd.0" configVersion="d803bf2aff71934a8bccaf67cbc5ccc800000000"/>
 		<Metadata name="Enum.ВидыОплаты" id="88886a4e-be50-4ade-9113-363f3f5513db" configVersion="30e5aa33499fc04baaff10fdf99a984d00000000">
 			<Metadata name="Enum.ВидыОплаты.EnumValue.Безналичные" id="39cc7a0c-3300-4ea6-8c4b-2406d2f0a7eb"/>
 			<Metadata name="Enum.ВидыОплаты.EnumValue.Бонусы" id="76665466-c47f-43b0-973f-2dea10fd010b"/>
@@ -197,8 +197,10 @@
 			<Metadata name="Enum.ПорядкиОкругленияЦен.EnumValue.Окр010" id="d2f8d34f-b808-4cb0-8e2b-6eb73e649d68"/>
 			<Metadata name="Enum.ПорядкиОкругленияЦен.EnumValue.Окр001" id="d9ef1806-d9df-4da4-bf8f-ed17d5dfa918"/>
 		</Metadata>
-		<Metadata name="Enum.СтавкиНДС" id="1421b1fd-ccf7-456e-b6fa-959f1b85b08f" configVersion="d306d5b8e6a7f440a54f29eac70e856000000000">
+		<Metadata name="Enum.СтавкиНДС" id="1421b1fd-ccf7-456e-b6fa-959f1b85b08f" configVersion="79d1c1ccf3f2cd47852bce8a229af55000000000">
+			<Metadata name="Enum.СтавкиНДС.EnumValue.НДС7" id="11260093-951a-433f-831f-327eab51eea3"/>
 			<Metadata name="Enum.СтавкиНДС.EnumValue.НДС20" id="14750873-7387-40d5-b014-c1e39a5593c2"/>
+			<Metadata name="Enum.СтавкиНДС.EnumValue.НДС0" id="3113363b-f68d-4902-aa5d-f3fb33bbf14e"/>
 			<Metadata name="Enum.СтавкиНДС.EnumValue.БезНДС" id="8766575e-da65-47e3-a0b6-1359c34b3d4b"/>
 		</Metadata>
 		<Metadata name="Enum.СтатусыЧекаККМ" id="9b83b7a6-b624-4f13-ad2d-814ed9cd7fbe" configVersion="c2c53a80bf4836479519f1748ea448c800000000">
