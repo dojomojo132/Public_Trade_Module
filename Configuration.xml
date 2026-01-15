@@ -249,6 +249,7 @@
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>
+			<CommonModule>ОбщегоНазначенияКлиент</CommonModule>
 			<Constant>ПорядокОкругленияЦен</Constant>
 			<Constant>КонтролироватьОстаткиПриСписании</Constant>
 			<Constant>ОсновнойСклад</Constant>

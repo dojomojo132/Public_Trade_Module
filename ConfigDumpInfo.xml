@@ -60,13 +60,15 @@
 		</Metadata>
 		<Metadata name="Catalog.ТипыЦен" id="873314f9-b1d9-42bc-bbe2-529148d593fc" configVersion="96fccbf2f77e1344b8ba88348e51536900000000"/>
 		<Metadata name="Catalog.ТипыЦен.Predefined" id="873314f9-b1d9-42bc-bbe2-529148d593fc.1c" configVersion="e60834fb8b435e459f4c4902aa50048500000000"/>
-		<Metadata name="CommonModule.МенеджерОборудования" id="0b1712c1-2604-4918-93cd-f63aeb9453e8" configVersion="31a8dd369b571742b1aa9f9cf62ab9ba00000000"/>
+		<Metadata name="CommonModule.МенеджерОборудования" id="0b1712c1-2604-4918-93cd-f63aeb9453e8" configVersion="56aa315491ec4e499097890da4fe952e00000000"/>
 		<Metadata name="CommonModule.МенеджерОборудования.Module" id="0b1712c1-2604-4918-93cd-f63aeb9453e8.0" configVersion="5edcea4864de754393e26b3d4539327200000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="b1160719ef742e419aba01e79f70e6c600000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="8ade5eb453af324bb68fda25b506a65600000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="d30935ba50a1b649a2fc3e4710ca672400000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="2617e4fee5da4640aa1c8d642d176fad00000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначенияКлиент" id="78cd29de-0f3f-44ec-a2ef-c3a1287cc7d6" configVersion="77d6f0fb4a09064baed0c22d06082e1f00000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначенияКлиент.Module" id="78cd29de-0f3f-44ec-a2ef-c3a1287cc7d6.0" configVersion="47a46c8119bacf40af2d494591e934e000000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="cdcd43af6dbe9d4aa641bde55d71040200000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="ee0e88b432f8944f9a392779d493437600000000"/>
-		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="8d5f78a660927b4fa0f39c55f0f8d66a00000000"/>
+		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="9a8271e1390a2848beb702bdf04a96d400000000"/>
 		<Metadata name="Configuration.Конфигурация.ClientApplicationInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.b" configVersion="ff76a1266088a64ba79a5d9883f19e1900000000"/>
 		<Metadata name="Configuration.Конфигурация.ManagedApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.6" configVersion="5bc49df440e1684a86e1db5a0e3bc1c000000000"/>
 		<Metadata name="Constant.КонтролироватьОстаткиПриСписании" id="2c908745-ab76-4ca7-8739-9b0ae692bb7b" configVersion="00b5e0ed4a8c504db0c482aa70bb3ca300000000"/>
