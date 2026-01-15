@@ -157,21 +157,4 @@
         </Enum>
     </Enums>
 
-    <Modules>
-        <Module name="ОбщегоНазначенияКлиент">
-            <Description>Вспомогательные процедуры (Клиент).</Description>
-        </Module>
-    </Modules>
-
-    <Functions>
-        <Function name="НайтиТовар">
-            <Description>Поиск товара по строке.</Description>
-            <Module>ОбщегоНазначения</Module>
-        </Function>
-        <Function name="НайтиИОбработатьТовар">
-            <Description>Поиск и обработка товара по штрихкоду с оповещением.</Description>
-            <Module>ОбщегоНазначенияКлиент</Module>
-        </Function>
-    </Functions>
-
 </Configuration>
