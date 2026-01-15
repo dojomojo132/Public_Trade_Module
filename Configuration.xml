@@ -281,6 +281,7 @@
 			<Enum>ПорядкиОкругленияЦен</Enum>
 			<Enum>ВидыОплаты</Enum>
 			<Enum>СтатусыЧекаККМ</Enum>
+			<Enum>СтатусыКассовойСмены</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>

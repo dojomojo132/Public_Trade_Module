@@ -86,7 +86,9 @@
 							<DataPath>Объект.ТЧ</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ТЧКонтекстноеМеню" id="33"/>
-							<AutoCommandBar name="ТЧКоманднаяПанель" id="34"/>
+							<AutoCommandBar name="ТЧКоманднаяПанель" id="34">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
 							<ExtendedTooltip name="ТЧРасширеннаяПодсказка" id="35"/>
 							<SearchStringAddition name="ТЧСтрокаПоиска" id="36">
 								<AdditionSource>
@@ -129,6 +131,13 @@
 									<Events>
 										<Event name="OnChange">ТЧКоличествоПриИзменении</Event>
 									</Events>
+								</InputField>
+								<InputField name="ТЧАкцизнаяМарка" id="64">
+									<DataPath>Объект.ТЧ.АкцизнаяМарка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ТЧАкцизнаяМаркаКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ТЧАкцизнаяМаркаРасширеннаяПодсказка" id="66"/>
 								</InputField>
 								<InputField name="ТЧЦена" id="11">
 									<DataPath>Объект.ТЧ.Цена</DataPath>
