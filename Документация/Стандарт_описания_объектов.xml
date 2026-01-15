@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpecificationStandard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Description>
+        Этот файл является эталоном (Template). Любой новый объект в файле 
+        "ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ" должен быть описан строго по этой структуре.
+    </Description>
+
+    <Structure>
+        <Block name="Purpose" required="true">
+            <Content>Краткое описание бизнес-роли объекта.</Content>
+            <Example>Основной документ продажи. Фиксирует выручку.</Example>
+        </Block>
+
+        <Block name="DataModel" required="true">
+            <Content>Техническое описание для Конфигуратора.</Content>
+            <Fields>
+                <Field type="Header">Реквизиты шапки (Имя | Тип | Описание)</Field>
+                <Field type="TabularSection">Табличные части (ИмяТЧ -> Колонок)</Field>
+            </Fields>
+        </Block>
+
+        <Block name="Logic" required="true">
+            <Content>Алгоритмы поведения объекта.</Content>
+            <Items>
+                <Item>Движения по регистрам (Приход/Расход)</Item>
+                <Item>Проверки при проведении (ОбработкаПроведения)</Item>
+                <Item>Заполнение полей (ОбработкаЗаполнения)</Item>
+            </Items>
+        </Block>
+
+        <Block name="Interface" required="false">
+            <Content>Требования к формам и взаимодействию с пользователем.</Content>
+            <Items>
+                <Item>Автоматизация UI (Скрытые элементы, авторасчеты)</Item>
+                <Item>Команды и кнопки</Item>
+            </Items>
+        </Block>
+
+        <Block name="History" required="true">
+            <Content>Хронология изменений функционала объекта.</Content>
+            <Format>Дата | Автор | Суть изменения</Format>
+        </Block>
+    </Structure>
+</SpecificationStandard>

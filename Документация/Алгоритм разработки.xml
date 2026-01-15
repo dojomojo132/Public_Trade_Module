@@ -1,31 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DevelopmentProcess>
-    <Stage id="1">
-        <Name>Формирование ТЗ</Name>
-        <Description>Составление краткого задания. Если задача меняет структуру метаданных — подготовка текста изменений для спецификации.</Description>
+<DevelopmentAlgorithm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <Stage id="1" name="Анализ требований">
+        <Actions>
+            <Action>Изучить входящий запрос пользователя.</Action>
+            <Action>Проверить текущее состояние "ТЕХНИЧЕСКОЙ СПЕЦИФИКАЦИИ".</Action>
+            <Action>Выявить конфликты с существующей логикой.</Action>
+        </Actions>
     </Stage>
-    <Stage id="2">
-        <Name>Утверждение ТЗ</Name>
-        <Description>Согласование задачи и планируемых изменений.</Description>
+
+    <Stage id="2" name="Техническое задание">
+        <Actions>
+            <Action>Сформулировать список изменений (Архитектура, Метаданные, UI).</Action>
+            <Action>Согласовать план работ с Пользователем.</Action>
+        </Actions>
     </Stage>
-    <Stage id="3">
-        <Name>Обновление документации (Spec-First)</Name>
-        <Description>Внесение новых объектов/полей в ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).txt (согласно Регламенту акутализации документации).</Description>
+
+    <Stage id="3" name="Документирование">
+        <Description>Код не пишется, пока не обновлена Спецификация.</Description>
+        <Actions>
+            <Action>Открыть файл "ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM.txt".</Action>
+            <Action>Внести изменения, используя шаблон из "Стандарт_описания_объектов.xml".</Action>
+            <Validation>
+                Убедиться, что заполнены блоки: Назначение, Модель данных, Логика.
+            </Validation>
+        </Actions>
     </Stage>
-    <Stage id="4">
-        <Name>Реализация</Name>
-        <Description>Написание программного кода и настройка метаданных.</Description>
+
+    <Stage id="4" name="Кодирование">
+        <Actions>
+            <Action>Внести изменения в метаданные Конфигуратора (строго по Спецификации).</Action>
+            <Action>Написать программный код (Модули).</Action>
+        </Actions>
     </Stage>
-    <Stage id="5">
-        <Name>Верификация</Name>
-        <Description>Сверка реализованного функционала с ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).txt (проверка целостности).</Description>
+
+    <Stage id="5" name="Тестирование">
+        <Actions>
+            <Action>Запустить режим "1С:Предприятие".</Action>
+            <Action>Проверить тест-кейсы (Позитивные/Негативные).</Action>
+            <Action>При наличии ошибок — вернуться к Этапу 4.</Action>
+        </Actions>
     </Stage>
-	    <Stage id="6">
-        <Name>Тестирование</Name>
-        <Description>Тестирование реализованого функционала</Description>
+
+    <Stage id="6" name="Подтверждение">
+        <Actions>
+            <Action>
+                Обновить блок "История изменений" (History) внутри Спецификации для затронутых объектов.
+            </Action>
+            <Action>Выполнить коммит в репозиторий.</Action>
+            <Action>Перевести задачу в статус "ВЫПОЛНЕНО".</Action>
+        </Actions>
     </Stage>
-    <Stage id="7">
-        <Name>Подтверждение</Name>
-        <Description>Финальная сдача этапа.</Description>
-    </Stage>
-</DevelopmentProcess>
+
+</DevelopmentAlgorithm>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentationRegulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <Principle name="Spec-First">
+        <Description>
+            Любое изменение функционала или структуры данных начинается с обновления документации.
+            Кодирование начинается только после того, как изменения зафиксированы в Спецификации.
+        </Description>
+    </Principle>
+
+    <SingleSourceOfTruth>
+        <File>ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).txt</File>
+        <Description>
+            Все изменения (Архитектура, Метаданные, Бизнес-логика, Интерфейс) вносятся исключительно в этот файл.
+        </Description>
+    </SingleSourceOfTruth>
+
+    <DescriptionStandard>
+        <TemplateFile>Стандарт_описания_объектов.xml</TemplateFile>
+        <Requirement>
+            При добавлении или редактировании объектов структура описания должна СТРОГО соответствовать шаблону.
+        </Requirement>
+        <MandatoryBlocks>
+            <Block id="1">Назначение (Purpose)</Block>
+            <Block id="2">Модель данных (Metadata)</Block>
+            <Block id="3">Логика и Алгоритмы (Business Logic)</Block>
+            <Block id="4">Интерфейс (UI/UX) [Опционально]</Block>
+            <Block id="5">История изменений (Changelog)</Block>
+        </MandatoryBlocks>
+    </DescriptionStandard>
+
+    <ChangelogPolicy>
+        <Rule>История изменений не ведется в отдельном файле.</Rule>
+        <Location>Запись добавляется в Блок №5 ("История изменений") конкретного объекта в Спецификации.</Location>
+        <Format>[Дата] [Версия/Спринт] - Краткое описание изменений.</Format>
+    </ChangelogPolicy>
+
+    <Responsibility>
+        <Role>Ведущий разработчик</Role>
+        <Action>
+            Обязан проверять соответствие текста Спецификации утвержденному XML-стандарту перед завершением этапа "Формирование ТЗ".
+        </Action>
+    </Responsibility>
+
+</DocumentationRegulation>
