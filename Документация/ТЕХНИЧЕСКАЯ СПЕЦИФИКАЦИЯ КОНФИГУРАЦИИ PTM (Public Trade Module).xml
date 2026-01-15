@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="PTM - Public Trade Module" version="1.0.2" country="Ukraine">
+    
+    <Description>
+        Полная техническая спецификация конфигурации.
+        Является ЕДИНЫМ ИСТОЧНИКОМ ПРАВДЫ для разработки.
+    </Description>
+
+    </Configuration>
+
 <SpecificationPart type="Catalogs">
 
     <Object name="Номенклатура" synonym="Товары и услуги">
@@ -292,6 +301,85 @@
         <Block name="Purpose"><Content>Способы расчета.</Content></Block>
         <Block name="DataModel">
             <Fields><Field name="Значения">Наличные, Карта.</Field></Fields>
+        </Block>
+    </Object>
+
+</SpecificationPart>
+
+<SpecificationPart type="RegistersAndModules">
+
+    <Object name="Штрихкоды" synonym="Штрихкоды номенклатуры">
+        <Block name="Purpose">
+            <Content>Хранение штрихкодов для идентификации товаров сканером.</Content>
+        </Block>
+        <Block name="DataModel">
+            <Fields>
+                <Field name="Штрихкод" type="Строка(200)">Ключевое поле поиска.</Field>
+                <Field name="Владелец" type="Справочник.Номенклатура, Справочник.Кассы">Объект, которому принадлежит код.</Field>
+            </Fields>
+        </Block>
+        <Block name="Logic">
+            <Items>
+                <Item>Допускаются неуникальные штрихкоды (коллизии). Механизм поиска обрабатывает это выводом списка выбора.</Item>
+            </Items>
+        </Block>
+    </Object>
+
+    <Object name="ЦеныНоменклатуры" synonym="Цены номенклатуры">
+        <Block name="Purpose">
+            <Content>Хранение розничных цен. Периодический (в пределах дня).</Content>
+        </Block>
+        <Block name="DataModel">
+            <Fields>
+                <Field name="Период" type="Дата">Дата установки цены.</Field>
+                <Field name="Номенклатура" type="Справочник.Номенклатура">Товар.</Field>
+                <Field name="Цена" type="Число(15,2)">Стоимость.</Field>
+            </Fields>
+        </Block>
+    </Object>
+
+    <Object name="ОстаткиТоваров" synonym="Остатки товаров">
+        <Block name="Purpose">
+            <Content>Учет количественных остатков на складах.</Content>
+        </Block>
+        <Block name="DataModel">
+            <Fields>
+                <Field type="Dimension" name="Склад">Место хранения.</Field>
+                <Field type="Dimension" name="Номенклатура">Товар.</Field>
+                <Field type="Resource" name="Количество">Остаток.</Field>
+            </Fields>
+        </Block>
+    </Object>
+
+    <Object name="Продажи" synonym="Продажи (Обороты)">
+        <Block name="Purpose">
+            <Content>Фиксация выручки и себестоимости.</Content>
+        </Block>
+        <Block name="DataModel">
+            <Fields>
+                <Field type="Resource" name="Сумма">Выручка.</Field>
+                <Field type="Resource" name="Себестоимость">Закупочная стоимость.</Field>
+            </Fields>
+        </Block>
+    </Object>
+
+    <Object name="ОбщегоНазначенияКлиент" synonym="Общего назначения (Клиент)">
+        <Block name="Purpose">
+            <Content>Глобальные клиентские алгоритмы, доступные из любой формы.</Content>
+        </Block>
+        <Block name="Logic">
+            <Items>
+                <Item method="НайтиИОбработатьТовар(Штрихкод, Оповещение)">
+                    Входная точка алгоритма поиска.
+                    1. Ищет штрихкод. 
+                    2. Если найдено несколько — открывает список выбора. 
+                    3. Если не найдено — ищет по Артикулу/Коду.
+                    4. Возвращает ссылку в ОбработчикОповещения.
+                </Item>
+            </Items>
+        </Block>
+        <Block name="History">
+            <Record date="2025-10-15">Создан для реализации архитектуры "Тонкий клиент".</Record>
         </Block>
     </Object>
 
