@@ -40,7 +40,7 @@
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="3baf2cb16d27ca42bb1a2f7cc5e5df1100000000">
 			<Metadata name="Catalog.НалоговыеГруппы.Attribute.КодНалоговойГруппыККТ" id="5646d3e4-a785-42b3-b98f-f5e30e652ba7"/>
 		</Metadata>
-		<Metadata name="Catalog.Номенклатура" id="379863f4-aa81-4140-89a8-df74d8755af8" configVersion="66b0441889746d469cc95dbdd95e7a2500000000">
+		<Metadata name="Catalog.Номенклатура" id="379863f4-aa81-4140-89a8-df74d8755af8" configVersion="84b90ca38d50454b89c4a6920eb3fd3100000000">
 			<Metadata name="Catalog.Номенклатура.Attribute.ПроцентНаценки" id="21135baf-f71f-4c33-aa0b-f06257164d9c"/>
 			<Metadata name="Catalog.Номенклатура.Attribute.СтавкаНДС" id="67b1bf26-c26f-464f-b445-9ad9545e8425"/>
 			<Metadata name="Catalog.Номенклатура.Attribute.ТребуетАкцизнуюМарку" id="69be4717-4129-4532-9a76-22cea469942e"/>
@@ -49,6 +49,7 @@
 			<Metadata name="Catalog.Номенклатура.Attribute.ЕдиницаИзмерения" id="de2d503d-0f40-41fa-943e-b5189f87fa65"/>
 			<Metadata name="Catalog.Номенклатура.Attribute.НалоговаяГруппа" id="e33be658-80ff-47ea-b281-30dd18f0f5ad"/>
 		</Metadata>
+		<Metadata name="Catalog.Номенклатура.ObjectModule" id="379863f4-aa81-4140-89a8-df74d8755af8.0" configVersion="2cf0dc392445b446ba0e66f167a8750c00000000"/>
 		<Metadata name="Catalog.Пользователи" id="687330cf-b16a-4fc8-8469-aede06154929" configVersion="6cf33e06b4ab4944bbfb85972a968ec300000000">
 			<Metadata name="Catalog.Пользователи.Attribute.РазрешитьПродажуВМинус" id="235290f7-7be4-421d-b813-190eab5ab4e0"/>
 			<Metadata name="Catalog.Пользователи.Attribute.РазрешитьРучныеСкидки" id="4fc25efb-93ff-41e0-98a5-f10eda1fc3b0"/>
@@ -61,8 +62,8 @@
 		<Metadata name="Catalog.ТипыЦен.Predefined" id="873314f9-b1d9-42bc-bbe2-529148d593fc.1c" configVersion="e60834fb8b435e459f4c4902aa50048500000000"/>
 		<Metadata name="CommonModule.МенеджерОборудования" id="0b1712c1-2604-4918-93cd-f63aeb9453e8" configVersion="31a8dd369b571742b1aa9f9cf62ab9ba00000000"/>
 		<Metadata name="CommonModule.МенеджерОборудования.Module" id="0b1712c1-2604-4918-93cd-f63aeb9453e8.0" configVersion="5edcea4864de754393e26b3d4539327200000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="a322d10050ed054794378e5efcd2f35d00000000"/>
-		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="e65c13307170e1428ad592dab23a0fc100000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6" configVersion="b1160719ef742e419aba01e79f70e6c600000000"/>
+		<Metadata name="CommonModule.ОбщегоНазначения.Module" id="03750bfa-7126-4cf0-bb90-13f5eabfa4f6.0" configVersion="8ade5eb453af324bb68fda25b506a65600000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="cdcd43af6dbe9d4aa641bde55d71040200000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="ee0e88b432f8944f9a392779d493437600000000"/>
 		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="8d5f78a660927b4fa0f39c55f0f8d66a00000000"/>

@@ -10,7 +10,7 @@
     </Stage>
     <Stage id="3">
         <Name>Обновление документации (Spec-First)</Name>
-        <Description>Внесение новых объектов/полей в README.txt с пометкой — NEW! до начала кодирования (согласно Регламенту).</Description>
+        <Description>Внесение новых объектов/полей в ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).txt (согласно Регламенту акутализации документации).</Description>
     </Stage>
     <Stage id="4">
         <Name>Реализация</Name>
@@ -18,9 +18,13 @@
     </Stage>
     <Stage id="5">
         <Name>Верификация</Name>
-        <Description>Сверка реализованного функционала с README.txt (проверка целостности).</Description>
+        <Description>Сверка реализованного функционала с ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).txt (проверка целостности).</Description>
     </Stage>
-    <Stage id="6">
+	    <Stage id="6">
+        <Name>Тестирование</Name>
+        <Description>Тестирование реализованого функционала</Description>
+    </Stage>
+    <Stage id="7">
         <Name>Подтверждение</Name>
         <Description>Финальная сдача этапа.</Description>
     </Stage>
