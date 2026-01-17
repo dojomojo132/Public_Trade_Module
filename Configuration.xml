@@ -287,6 +287,7 @@
 			<Report>ОстаткиТоваров</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
+			<DataProcessor>ТестовоеЗаполнениеЦен</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>

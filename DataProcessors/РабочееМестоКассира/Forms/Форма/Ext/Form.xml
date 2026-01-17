@@ -222,16 +222,16 @@
 									<ContextMenu name="НомерСтраницыКонтекстноеМеню" id="61"/>
 									<ExtendedTooltip name="НомерСтраницыРасширеннаяПодсказка" id="62"/>
 								</LabelField>
-								<Button name="CледущаяСтраница" id="22">
+								<Button name="КнопкаВперед" id="69">
 									<Type>UsualButton</Type>
-									<CommandName>Form.Command.CледущаяСтраница</CommandName>
+									<CommandName>Form.Command.КнопкаВперед</CommandName>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>&gt;&gt;</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="CледущаяСтраницаРасширеннаяПодсказка" id="63"/>
+									<ExtendedTooltip name="КнопкаВпередРасширеннаяПодсказка" id="70"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
@@ -356,13 +356,19 @@
 			</Title>
 			<Action>Назад</Action>
 		</Command>
-		<Command name="CледущаяСтраница" id="6">
+		<Command name="СледующаяСтраница" id="6">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Вперед</v8:content>
+					<v8:content>&gt;&gt;</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующая страница</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Action>CледущаяСтраница</Action>
 		</Command>
 		<Command name="ПредыдущаяСтраница" id="7">
@@ -397,6 +403,21 @@
 		</Command>
 		<Command name="ОтчетПоДню" id="15">
 			<Action>ОтчетПоДню</Action>
+		</Command>
+		<Command name="КнопкаВперед" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка вперед</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопка вперед</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СледующаяСтраница</Action>
 		</Command>
 	</Commands>
 </Form>
