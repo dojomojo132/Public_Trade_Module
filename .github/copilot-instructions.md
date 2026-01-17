@@ -43,7 +43,7 @@ Access to the 1C configuration structure is strictly provided via the `mcp_1c_to
   2.  **`get_metadata_structure `**
       * **Description:** Returns detailed metadata information, including attributes, tabular sections, types, and properties of a specific object.
       * **When to use:** Call this IMMEDIATELY BEFORE generating any code that reads or writes data. You must base your code syntax (e.g., field names `Object.AttributeName`) strictly on the output of this tool.
-3.  **`1csyntax`**
+  3.  **`1csyntax`**
       * **Description:** Памятка по синтаксису 1С:Предприятие 8.3.24.
       * **When to use:** Всегда использовать для проверки синтаксиса сгенерированного кода.
 
