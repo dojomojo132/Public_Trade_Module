@@ -51,7 +51,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ДенежныеСредства</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПродажиПоДисконтнымКартам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Кассы</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗаполнениеНоменклатуры</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">61be3dc8-e41d-48f3-be21-a9d681d2fe1a</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОсновнойСклад</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОсновнойПоставщик</xr:Item>
 			</Content>

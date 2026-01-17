@@ -246,6 +246,7 @@
 			<Subsystem>Настройки</Subsystem>
 			<Subsystem>Все</Subsystem>
 			<Subsystem>Фискал</Subsystem>
+			<Subsystem>Тесты</Subsystem>
 			<Role>Администратор</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
@@ -284,8 +285,8 @@
 			<Enum>СтатусыЧекаККМ</Enum>
 			<Enum>СтатусыКассовойСмены</Enum>
 			<Report>ОстаткиТоваров</Report>
-			<DataProcessor>ЗаполнениеНоменклатуры</DataProcessor>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
+			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>

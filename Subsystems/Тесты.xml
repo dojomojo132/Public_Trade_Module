@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<Subsystem uuid="573d0659-135f-4ea9-874e-0cd4681b0b80">
+	<Subsystem uuid="2908850a-b895-4207-aa01-b6eb807dd5a1">
 		<Properties>
-			<Name>Склад</Name>
+			<Name>Тесты</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Склад</v8:content>
+					<v8:content>Тесты</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -16,14 +16,7 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Контрагенты</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Склады</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Номенклатура</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходТовара</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.СписаниеТовара</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">055da7cb-4936-4e89-b0b9-06c9916b4c35</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗаполниеТестовойНоменклатуры</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
