@@ -91,62 +91,50 @@
 	</Constants>
 
 	<Subsystems>
-        <Object name="Продажи" synonym="Розничные продажи">
-            <Block name="Purpose"><Content>Группировка объектов для кассира.</Content></Block>
-            <Block name="Composition">
-                <Content>Док.ЧекККМ, Док.КассоваяСмена, Обработка.РабочееМестоКассира, Спр.Номенклатура.</Content>
-            </Block>
-        </Object>
-        <Object name="Настройки" synonym="НСИ и Администрирование">
-            <Block name="Purpose"><Content>Группировка для администратора/товароведа.</Content></Block>
-            <Block name="Composition">
-                <Content>Спр.Кассы, Спр.Склады, Спр.НалоговыеГруппы, Регистры.</Content>
-            </Block>
-        </Object>
-		<Object name="Торговля" synonym="Торговля">
-			<Block name="Purpose">
-				<Content>Основной раздел для менеджеров и кассиров. Группирует функционал продаж и работы с клиентами.</Content>
-			</Block>
-			<Block name="DataModel">
-				<Fields>
-					<Field>Состав: Док.ЧекККМ, Док.КассоваяСмена, Спр.Контрагенты, Спр.НалоговыеГруппы, Спр.КассовоеОборудование.</Field>
-				</Fields>
-			</Block>
-			<Block name="Logic">
-				<Items>
-					<Item>Определяет видимость объектов в интерфейсе раздела "Торговля".</Item>
-				</Items>
+		<Object name="Все" synonym="Все объекты">
+			<Block name="Purpose"><Content>Корневая подсистема, содержащая все объекты конфигурации.</Content></Block>
+			<Block name="Composition">
+				<Content>Включает: Торговля, Склад, Настройки, Фискал, mcp_MCPСервер.</Content>
 			</Block>
 			<Block name="History">
-				<Record date="2026-01-15">Добавлена для группировки торговых операций.</Record>
+				<Record date="2026-01-17">Обновление описания структуры подсистем.</Record>
 			</Block>
 		</Object>
+        <Object name="Торговля" synonym="Розничные продажи">
+            <Block name="Purpose"><Content>Основной раздел для менеджеров и кассиров. Группирует функционал продаж.</Content></Block>
+            <Block name="Composition">
+                <Content>Док.ЧекККМ, Док.КассоваяСмена, Обработка.РабочееМестоКассира, Спр.Номенклатура, Спр.Контрагенты, Спр.НалоговыеГруппы, Спр.КассовоеОборудование.</Content>
+            </Block>
+			<Block name="History">
+				<Record date="2026-01-17">Расширение состава подсистемы.</Record>
+			</Block>
+        </Object>
+        <Object name="Настройки" synonym="НСИ и Администрирование">
+            <Block name="Purpose"><Content>Раздел для администратора и товароведа. Группирует справочники и настройки.</Content></Block>
+            <Block name="Composition">
+                <Content>Спр.Кассы, Спр.Склады, Спр.НалоговыеГруппы, Спр.ТипыЦен, Спр.ДисконтныеКарты, Спр.Пользователи, все Регистры.</Content>
+            </Block>
+			<Block name="History">
+				<Record date="2026-01-17">Обновление состава подсистемы.</Record>
+			</Block>
+        </Object>
 		<Object name="Склад" synonym="Склад">
 			<Block name="Purpose">
-				<Content>Раздел для кладовщиков. Группирует функционал учета запасов.</Content>
+				<Content>Раздел для кладовщиков. Группирует функционал учета запасов и инвентаризации.</Content>
 			</Block>
-			<Block name="DataModel">
-				<Fields>
-					<Field>Состав: Спр.Склады, Док.ПриходТовара, Док.СписаниеТовара, Док.ИнвентаризацияТоваров, Отчет.ОстаткиТоваров.</Field>
-				</Fields>
-			</Block>
-			<Block name="Logic">
-				<Items>
-					<Item>Определяет видимость объектов в интерфейсе раздела "Склад".</Item>
-				</Items>
+			<Block name="Composition">
+				<Content>Спр.Склады, Док.ПриходТовара, Док.СписаниеТовара, Док.ИнвентаризацияТоваров, Док.Переоценка, Отчет.ОстаткиТоваров.</Content>
 			</Block>
 			<Block name="History">
-				<Record date="2026-01-15">Добавлена для группировки складских операций.</Record>
+				<Record date="2026-01-17">Расширение состава подсистемы.</Record>
 			</Block>
 		</Object>
 		<Object name="Фискал" synonym="Фискал">
 			<Block name="Purpose">
-				<Content>Служебная подсистема для объектов взаимодействия с торговым оборудованием.</Content>
+				<Content>Служебная подсистема для объектов взаимодействия с торговым оборудованием (ПРРО, ККТ, сканеры).</Content>
 			</Block>
-			<Block name="DataModel">
-				<Fields>
-					<Field>Состав: Док.ФискальныйЧек, Спр.КассовоеОборудование, Обработка.РМК.</Field>
-				</Fields>
+			<Block name="Composition">
+				<Content>Док.ФискальныйЧек, Обработка.РабочееМестоКассира, Спр.КассовоеОборудование, модули МенеджерОборудования.</Content>
 			</Block>
 			<Block name="Logic">
 				<Items>
@@ -154,10 +142,49 @@
 				</Items>
 			</Block>
 			<Block name="History">
-				<Record date="2026-01-15">Выделена в отдельную подсистему для удобства администрирования.</Record>
+				<Record date="2026-01-17">Обновление описания и состава.</Record>
+			</Block>
+		</Object>
+		<Object name="mcp_MCPСервер" synonym="MCP-cервер">
+			<Block name="Purpose">
+				<Content>Служебная подсистема для модуля Model Context Protocol (MCP) расширения IDE.</Content>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Содержит утилиты для интеграции с VS Code и автоматизации разработки.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2026-01-17">Документирование MCP-серверов в спецификации.</Record>
 			</Block>
 		</Object>
     </Subsystems>
+
+    <Reports>
+		<Object name="ОстаткиТоваров" synonym="Остатки товаров">
+			<Block name="Purpose">
+				<Content>Отчет для анализа количественных остатков товаров на складах в разрезе номенклатуры и складов.</Content>
+			</Block>
+			<Block name="DataModel">
+				<Fields>
+					<Field type="Dimension">Склад (Справочник.Склады) - место хранения товара.</Field>
+					<Field type="Dimension">Номенклатура (Справочник.Номенклатура) - товар или услуга.</Field>
+					<Field type="Resource">Остаток (Число) - текущее количество товара на складе (срез по регистру ОстаткиТоваров).</Field>
+				</Fields>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item event="Источник">Использует регистр ОстаткиТоваров (AccumulationRegister).</Item>
+					<Item event="Фильтры">Предусмотрены фильтры по: Склад, Номенклатура, Диапазон дат.</Item>
+					<Item event="Группировка">По умолчанию группируется по Складу и Номенклатуре с итогами по количеству.</Item>
+					<Item event="Вывод">Печатная форма для инвентаризации или планирования закупок.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2026-01-17">Добавление описания отчета в спецификацию.</Record>
+			</Block>
+		</Object>
+	</Reports>
 
     <Catalogs>
 		<Object name="Номенклатура" synonym="Товары и услуги">
@@ -218,9 +245,15 @@
 
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Наименование" type="Строка(50)">Название кассы (пр. "Касса №1").</Field>
-					<Field name="ФискальныйНомерПРРО" type="Строка(20)">ID кассы на сервере налоговой (опционально).</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код кассы.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название кассы (пр. "Касса №1").</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
 			</Block>
 
 			<Block name="Logic">
@@ -237,155 +270,216 @@
 
 		<Object name="Склады" synonym="Склады и магазины">
 			<Block name="Purpose">
-				<Content>Места хранения товарных остатков.</Content>
+				<Content>Места хранения товарных остатков. Определяет места хранения для учета остатков и движения товаров.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="ТипСклада" type="Перечисление.ТипыСкладов">Розничный / Оптовый.</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код склада.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название склада.</Field>
+					<Field name="ТипСклада" type="Перечисление.ТипыСкладов">Классификация склада (основной, розничный и т.д.).</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
 			</Block>
 			<Block name="Logic">
 				<Items>
 					<Item>Разделитель учета в регистре "ОстаткиТоваров".</Item>
+					<Item>Обязательное заполнение в документах прихода и расхода товаров.</Item>
+					<Item>По умолчанию заполняется из константы ОсновнойСклад.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2025-10-01">Создание базовой структуры.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="НалоговыеГруппы" synonym="Налоговые группы (ПРРО)">
 			<Block name="Purpose">
 				<Content>
-					Хранение буквенных обозначений ставок НДС для фискального чека (А, Б, В...).
-					Необходимо для маппинга ставок 1С на ставки фискального регистратора.
+					Классификатор кодов налоговых групп для фискального чека (ПРРО). Необходимо для маппинга ставок НДС на коды ККТ.
 				</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Буква" type="Строка(1)">Код ставки (А, Б, В, Г...).</Field>
-					<Field name="Ставка" type="Число(5,2)">Процент налога.</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код налоговой группы.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название налоговой группы.</Field>
+					<Field type="Attribute" name="КодНалоговойГруппыККТ">Строка(10) - код налоговой группы для ККТ.</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Используется в справочнике Номенклатура для указания налоговой группы товара.</Item>
+					<Item>При фискализации чека код передается в ККТ для корректного расчета налогов.</Item>
+					<Item>Специализация для Украины и системы ПРРО.</Item>
+				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2025-10-20">Добавлен в рамках адаптации под законодательство Украины.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 	
 		<Object name="Пользователи" synonym="Список пользователей">
             <Block name="Purpose">
-                <Content>Список физических лиц, работающих с системой (для авторизации).</Content>
+                <Content>Список физических лиц, работающих с системой. Определяет права доступа и роли кассиров в системе.</Content>
             </Block>
             <Block name="DataModel">
                 <Fields>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код пользователя.</Field>
                     <Field name="Наименование" type="Строка(100)">ФИО.</Field>
                     <Field name="ИдентификаторПользователяИБ" type="УникальныйИдентификатор">Связь с пользователем платформы.</Field>
 					<Field name="РазрешитьПродажуВМинус" type="Булево">Право на проведение чека при недостатке остатка.</Field>
 					<Field name="РазрешитьРучныеСкидки" type="Булево">Право на редактирование цены/скидки в чеке.</Field>
                 </Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
             </Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Используется в параметре сеанса ТекущийПользователь для идентификации кассира.</Item>
+					<Item>Флаги прав проверяются в РМК при операциях продажи и применении скидок.</Item>
+					<Item>Используется как измерение в регистре Продажи (Сотрудник) для аналитики по кассирам.</Item>
+				</Items>
+			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Добавлены флаги дополнительных прав (продажа в минус, скидки).</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
         </Object>
 		
 		<Object name="Контрагенты" synonym="Контрагенты">
 			<Block name="Purpose">
-				<Content>Справочник для хранения списка поставщиков и покупателей.</Content>
+				<Content>Справочник для хранения списка поставщиков, покупателей и прочих бизнес-партнеров.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Наименование" type="Строка(100)">Название контрагента.</Field>
-					</Fields>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код контрагента.</Field>
+					<Field name="Наименование" type="Строка(25)">Название контрагента.</Field>
+				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
 			</Block>
 			<Block name="Logic">
 				<Items>
 					<Item>Используется как аналитика в регистре "Взаиморасчеты".</Item>
+					<Item>Обязательное заполнение в документах ПриходТовара.</Item>
+					<Item>Автоматическое заполнение из константы ОсновнойПоставщик.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="КассовоеОборудование" synonym="Кассовое оборудование">
 			<Block name="Purpose">
-				<Content>Хранение настроек подключения внешнего оборудования (ККТ, Сканеры, Принтеры).</Content>
+				<Content>Каталог внешнего оборудования (ККТ, сканеры, принтеры, весы) для хранения настроек подключения и конфигурации.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="ТипОборудования" type="Перечисление.ТипыОборудования">Вид устройства.</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код оборудования.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название устройства.</Field>
+					<Field name="ТипОборудования" type="Перечисление.ТипыОборудования">Вид устройства (ККТ, сканер, принтер, весы).</Field>
 					<Field name="ДрайверID" type="Строка(100)">Идентификатор драйвера в системе (AddIn).</Field>
 					<Field name="ПараметрыПодключения" type="ХранилищеЗначения">Сериализованные настройки (порт, скорость и т.д.).</Field>
 					<Field name="Порт" type="Число(2)">Номер COM-порта (устаревает).</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Используется общим модулем "МенеджерОборудования" для инициализации драйвера при запуске РМК.</Item>
+					<Item>Используется МенеджерОборудования для создания подключений к устройствам.</Item>
+					<Item>ПараметрыПодключения хранят специфичные настройки для разных моделей оборудования.</Item>
+					<Item>Поддержка библиотек для обмена с фискальными системами и периферийными устройствами.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="ТипыЦен" synonym="Типы цен">
 			<Block name="Purpose">
-				<Content>Классификатор видов цен (Закупочная, Розничная, Оптовая).</Content>
+				<Content>Классификатор видов цен (Закупочная, Розничная, Оптовая, Минимальная). Определяет назначение и политику ценообразования.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Наименование" type="Строка(50)">Название типа цены.</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код типа цены.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название типа цены.</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+					<PredefinedDataUpdate>Auto</PredefinedDataUpdate>
+				</Properties>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Используется как разделитель в регистре "ЦеныНоменклатуры".</Item>
+					<Item>Используется как измерение в регистрах ЦеныНоменклатуры и ЦеныЗакупки.</Item>
+					<Item>Предопределенные элементы: Закупочная, Розничная, Минимальная.</Item>
+					<Item>Определяет политику ценообразования и ограничения на продажу ниже минимальной цены.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
-			</Block>
-		</Object>
-
-		<Object name="ДисконтныеКарты" synonym="Дисконтные карты">
-			<Block name="Purpose">
-				<Content>Реестр выданных карт лояльности.</Content>
-			</Block>
-			<Block name="DataModel">
-				<Fields>
-					<Field name="Код" type="Строка(9)">Номер карты (штрихкод/магнитная полоса).</Field>
-					<Field name="ВладелецКарты" type="Справочник.Контрагенты">Клиент (опционально).</Field>
-					<Field name="ВидКарты" type="Справочник.ВидыДисконтныхКарт">Ссылка на вид.</Field>
-				</Fields>
-			</Block>
-			<Block name="Logic">
-				<Items>
-					<Item>Поиск по Коду в РМК при сканировании карты.</Item>
-				</Items>
-			</Block>
-			<Block name="History">
-				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="ВидыДисконтныхКарт" synonym="Виды дисконтных карт">
 			<Block name="Purpose">
-				<Content>Группировка дисконтных карт (Например: "Золотая", "Серебряная").</Content>
+				<Content>Классификатор типов карт лояльности ("Золотая", "Серебряная", "Платиновая"). Используется для группировки дисконтных карт по уровню привилегий.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Наименование" type="Строка(50)">Название вида.</Field>
+					<Field type="StandardAttribute" name="Код">Строка(9) - уникальный код вида карты.</Field>
+					<Field type="StandardAttribute" name="Наименование">Строка(25) - название вида карты.</Field>
 				</Fields>
+				<Properties>
+					<Hierarchical>false</Hierarchical>
+					<Autonumbering>true</Autonumbering>
+					<CheckUnique>true</CheckUnique>
+					<InputByString>Code, Description</InputByString>
+				</Properties>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Служит для аналитики продаж.</Item>
+					<Item>Служит родительским справочником для справочника ДисконтныеКарты.</Item>
+					<Item>Определяет правила начисления скидок и бонусов по программе лояльности.</Item>
+					<Item>Используется для аналитики продаж по видам карт лояльности.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 	</Catalogs>
@@ -402,6 +496,8 @@
 
         <Block name="DataModel">
             <Fields>
+                <Field type="StandardAttribute" name="Дата">Дата открытия смены (стандартный реквизит).</Field>
+                <Field type="StandardAttribute" name="Номер">Номер документа (стандартный реквизит).</Field>
                 <Field type="Header" name="Касса" type_val="Справочник.Кассы">Физическая касса, по которой открыта смена.</Field>
                 <Field type="Header" name="ДатаНачала" type_val="Дата">Время открытия смены.</Field>
                 <Field type="Header" name="ДатаОкончания" type_val="Дата">Время закрытия смены.</Field>
@@ -440,17 +536,18 @@
 					<Field type="Header" name="Касса" type_val="Справочник.Кассы">Касса пробития.</Field>
 					<Field type="Header" name="Склад" type_val="Справочник.Склады">Склад списания остатков.</Field>
 					<Field type="Header" name="СуммаДокумента" type_val="Число(15,2)">Итоговая сумма.</Field>
-					<Field type="Header" name="ФискальныйНомер" type_val="Строка(50)">Уникальный номер от сервера ПРРО/ГНС.</Field>
+					<Field type="Header" name="ДисконтнаяКарта" type_val="Справочник.ДисконтныеКарты">Дисконтная карта клиента (опционально).</Field>
 					<Field type="Header" name="Статус" type_val="Перечисление.СтатусыЧекаККМ">Пробит, Аннулирован, Отложен.</Field>
 					
 					<Field type="TabularSection" name="Товары.Номенклатура" type_val="Справочник.Номенклатура">Товар.</Field>
 					<Field type="TabularSection" name="Товары.Количество" type_val="Число(15,3)">Количество.</Field>
 					<Field type="TabularSection" name="Товары.Цена" type_val="Число(15,2)">Цена продажи.</Field>
 					<Field type="TabularSection" name="Товары.Сумма" type_val="Число(15,2)">Сумма строки.</Field>
+					<Field type="TabularSection" name="Товары.СуммаСкидки" type_val="Число(15,2)">Сумма скидки на товар.</Field>
 					<Field type="TabularSection" name="Товары.АкцизнаяМарка" type_val="Строка(200)">Код маркировки (Обязателен для акциза).</Field>
 					<Field type="TabularSection" name="Товары.НалоговаяГруппа" type_val="Справочник.НалоговыеГруппы">Ставка НДС для чека.</Field>
 
-					<Field type="TabularSection" name="Оплата.ВидОплаты" type_val="Перечисление.ВидыОплаты">Наличные / Карта.</Field>
+					<Field type="TabularSection" name="Оплата.ВидОплаты" type_val="Перечисление.ВидыОплаты">Наличные / Безналичные / Бонусы.</Field>
 					<Field type="TabularSection" name="Оплата.Сумма" type_val="Число(15,2)">Сумма оплаты.</Field>
 				</Fields>
 			</Block>
@@ -493,6 +590,7 @@
 					<Field type="TabularSection" name="Товары.Количество" type_val="Число(15,3)"/>
 					<Field type="TabularSection" name="Товары.Цена" type_val="Число(15,2)">Закупочная цена.</Field>
 					<Field type="TabularSection" name="Товары.Сумма" type_val="Число(15,2)"/>
+					<Field type="TabularSection" name="Товары.ЦенаРозничнаяТекущая" type_val="Число(15,2)">Текущая розничная цена товара.</Field>
 					<Field type="TabularSection" name="Товары.ЦенаРозничнаяНовая" type_val="Число(15,2)">Для быстрой переоценки.</Field>
 				</Fields>
 			</Block>
@@ -579,16 +677,24 @@
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Header" name="ДокументОснование" type_val="Документ.ЧекККМ"/>
-					<Field type="Header" name="ФискальныйНомер" type_val="Строка(50)"/>
-					<Field type="Header" name="Оборудование" type_val="Справочник.КассовоеОборудование"/>
-					<Field type="TabularSection" name="Товары" type_val="Аналогично ЧекуККМ"/>
+					<Field type="Header" name="ДокументОснование" type_val="Документ.ЧекККМ">Чек ККМ, который был пробит.</Field>
+					<Field type="Header" name="ФискальныйНомер" type_val="Строка(50)">Номер от ПРРО/ГНС.</Field>
+					<Field type="Header" name="НомерЧекаККМ" type_val="Строка(50)">Внутренний номер чека.</Field>
+					<Field type="Header" name="Сумма" type_val="Число(15,2)">Итоговая сумма чека.</Field>
+					<Field type="Header" name="Оборудование" type_val="Справочник.КассовоеОборудование">ККТ, выполнившая фискализацию.</Field>
+					<Field type="TabularSection" name="Товары.Номенклатура" type_val="Справочник.Номенклатура">Товар.</Field>
+					<Field type="TabularSection" name="Товары.Количество" type_val="Число(15,3)">Количество.</Field>
+					<Field type="TabularSection" name="Товары.Цена" type_val="Число(15,2)">Цена.</Field>
+					<Field type="TabularSection" name="Товары.Сумма" type_val="Число(15,2)">Сумма строки.</Field>
+					<Field type="TabularSection" name="Товары.СуммаСкидки" type_val="Число(15,2)">Сумма скидки.</Field>
+					<Field type="TabularSection" name="Товары.АкцизнаяМарка" type_val="Строка(200)">Акцизная марка.</Field>
+					<Field type="TabularSection" name="Товары.НалоговаяГруппа" type_val="Справочник.НалоговыеГруппы">Налоговая группа.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
 				<Items>
 					<Item>Создается программно при успешной фискализации чека.</Item>
-					<Item>Не делает движений по складским регистрам.</Item>
+					<Item>Не делает движений по складским регистрам (это делает ЧекККМ).</Item>
 				</Items>
 			</Block>
 			<Block name="History">
@@ -602,8 +708,10 @@
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Header" name="Касса" type_val="Справочник.Кассы"/>
-					<Field type="Header" name="СуммаДокумента" type_val="Число(15,2)"/>
+					<Field type="StandardAttribute" name="Дата">Дата поступления (стандартный реквизит).</Field>
+					<Field type="StandardAttribute" name="Номер">Номер документа (стандартный реквизит).</Field>
+					<Field type="Header" name="Касса" type_val="Справочник.Кассы">Касса, в которую поступили деньги.</Field>
+					<Field type="Header" name="СуммаДокумента" type_val="Число(15,2)">Сумма поступления.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
@@ -613,6 +721,7 @@
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
@@ -622,8 +731,10 @@
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Header" name="Касса" type_val="Справочник.Кассы"/>
-					<Field type="Header" name="СуммаДокумента" type_val="Число(15,2)"/>
+					<Field type="StandardAttribute" name="Дата">Дата выдачи (стандартный реквизит).</Field>
+					<Field type="StandardAttribute" name="Номер">Номер документа (стандартный реквизит).</Field>
+					<Field type="Header" name="Касса" type_val="Справочник.Кассы">Касса, из которой выданы деньги.</Field>
+					<Field type="Header" name="СуммаДокумента" type_val="Число(15,2)">Сумма выдачи.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
@@ -633,6 +744,7 @@
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
@@ -642,17 +754,19 @@
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Header" name="ДокументОснование" type_val="Документ.ЧекККМ"/>
-					<Field type="TabularSection" name="Товары" type_val="Список возвращаемых товаров"/>
+					<Field type="StandardAttribute" name="Дата">Дата возврата (стандартный реквизит).</Field>
+					<Field type="StandardAttribute" name="Номер">Номер документа (стандартный реквизит).</Field>
+					<Field type="Header" name="ДокументОснование" type_val="Документ.ЧекККМ">Чек, по которому произведена продажа.	</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item event="ОбработкаПроведения">Приход по "ОстаткиТоваров", Сторнирование продаж.</Item>
+					<Item event="ОбработкаПроведения">Приход по "ОстаткиТоваров", Сторнирование продаж в регистре "Продажи".</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 	</Documents>
@@ -690,9 +804,19 @@
 		</Object>
 
 		<Object name="ВидыОплаты" synonym="Виды оплаты">
-			<Block name="Purpose"><Content>Способы расчета.</Content></Block>
+			<Block name="Purpose"><Content>Способы расчета, поддерживаемые ККМ и кассиром.</Content></Block>
 			<Block name="DataModel">
-				<Fields><Field name="Значения">Наличные, Карта.</Field></Fields>
+				<Fields><Field name="Значения">Наличные, Безналичные, Бонусы.</Field></Fields>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Наличные: оплата наличными деньгами с зарегистрированием в ПРРО.</Item>
+					<Item>Безналичные: оплата картой или переводом; требует авторизации.</Item>
+					<Item>Бонусы: оплата за счет бонусных баллов дисконтной карты (Перечисление.ВидыОплаты = Бонусы).</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2026-01-17">Обновление видов оплаты: Карта -> Безналичные; добавлены Бонусы для поддержки дисконтных карт.</Record>
 			</Block>
 		</Object>
 
@@ -755,55 +879,121 @@
 	</Enums>
 
     <DataProcessors>
-		<Object name="РабочееМестоКассира" synonym="РМК (Касса)">
+		<Object name="РабочееМестоКассира" synonym="РМК (Рабочее место кассира)">
         
 			<Block name="Purpose">
 				<Content>
-					Основной рабочий интерфейс кассира. Обеспечивает подбор товаров, расчет скидок (в перспективе) 
-					и оформление чеков без прямого доступа к документам.
+					Основной рабочий интерфейс кассира для подбора товаров, управления текущей группой номенклатуры 
+					и оформления чеков. Поддерживает быстрый поиск по штрихкодам и артикулам с асинхронной обработкой платежей.
 				</Content>
 			</Block>
 
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Header" name="Касса" type_val="Справочник.Кассы">Контекст: Текущая касса сеанса.</Field>
-					<Field type="Header" name="КассоваяСмена" type_val="Документ.КассоваяСмена">Контекст: Текущая открытая смена.</Field>
-					<Field type="TabularSection" name="ТЧ.Номенклатура" type_val="Справочник.Номенклатура">Товар в корзине.</Field>
-					<Field type="TabularSection" name="ТЧ.Количество" type_val="Число">Количество.</Field>
-					<Field type="TabularSection" name="ТЧ.Цена" type_val="Число">Цена продажи.</Field>
-					<Field type="TabularSection" name="ТЧ.Сумма" type_val="Число">Сумма строки.</Field>
-					<Field type="TabularSection" name="ТЧ.АкцизнаяМарка" type_val="Строка(200)">Введенный код маркировки.</Field>
+					<Field type="Attribute" name="ТекущаяГруппа" type_val="Справочник.Номенклатура">Текущая выбранная группа товаров для фильтрации и быстрого доступа.</Field>
+					<Field type="Attribute" name="ПолеПоискаТовара" type_val="Строка(100)">Основной поиск: Штрихкод, Артикул или наименование товара (synonym: "Штрихкод (основной)").</Field>
+					<Field type="Attribute" name="ПолеПоискаТовара2" type_val="Строка">Дополнительный поиск: Альтернативный штрихкод или артикул (synonym: "Штрихкод (дополнительный)").</Field>
+					<Field type="Attribute" name="Касса" type_val="Справочник.Кассы">Контекст: Касса текущей сессии.</Field>
+					<Field type="Attribute" name="КассоваяСмена" type_val="Документ.КассоваяСмена">Контекст: Открытая кассовая смена.</Field>
+					<Field type="TabularSection" name="ТЧ.Номенклатура" type_val="Справочник.Номенклатура">Товар, добавленный в корзину.</Field>
+					<Field type="TabularSection" name="ТЧ.Количество" type_val="Число">Количество товара.</Field>
+					<Field type="TabularSection" name="ТЧ.Цена" type_val="Число">Розничная цена за единицу.</Field>
+					<Field type="TabularSection" name="ТЧ.Сумма" type_val="Число">Итоговая сумма строки (Количество × Цена).</Field>
+					<Field type="TabularSection" name="ТЧ.АкцизнаяМарка" type_val="Строка(200)">Код акцизной марки (для подакцизного товара).</Field>
 				</Fields>
 			</Block>
 
 			<Block name="Logic">
 				<Items>
 					<Item event="ПриОткрытии">
-						Проверка наличия открытой смены. Если нет — диалог "Открыть смену?". 
-						Если отказ — работа блокируется.
+						Проверка наличия открытой смены. Если смена закрыта — асинхронный диалог "Открыть смену?". 
+						При отказе окно кассира блокируется; при согласии открывается документ КассоваяСмена.
 					</Item>
 					<Item event="ПодборТовара">
-						Используется глобальный поиск (Штрихкод -> Артикул).
-						Если товар требует акциз (`Номенклатура.ТребуетАкцизнуюМарку`), открывается окно ввода марки.
-						Товар без марки в чек не добавляется.
+						Использует модуль ОбщегоНазначения.НайтиТоварыПоШтрихкоду() для поиска товара 
+						по основному и дополнительному штрихкоду через регистр Штрихкоды.
+						Если товар требует акциз (`Номенклатура.ТребуетАкцизнуюМарку`), открывается окно ввода акцизной марки.
+						Товар добавляется в ТЧ только при успешном вводе всех требуемых параметров.
 					</Item>
 					<Item event="Оплата">
-						Кнопка "Рассчитать" вызывает модальное окно выбора вида оплаты (Наличные / Карта).
-						После выбора создается документ "ЧекККМ".
+						Кнопка "Оплатить" вызывает асинхронный диалог выбора вида оплаты (Наличные / Безналичные / Бонусы)
+						с использованием ОписаниеОповещения для неблокирующего взаимодействия.
+						После выбора создается документ ЧекККМ с соответствующей суммой и типом оплаты.
 					</Item>
 				</Items>
 			</Block>
 
 			<Block name="Interface">
 				<Items>
-					<Item>Динамическая панель "Быстрые товары" (кнопки на экране).</Item>
-					<Item>Адаптация под сканер штрихкодов (перехват ввода).</Item>
+					<Item>Динамическая панель быстрых товаров (кнопки товаров из текущей группы ТекущаяГруппа).</Item>
+					<Item>Адаптивная подстановка размера шрифта и кнопок под разрешение экрана ККМ/планшета.</Item>
+					<Item>Перехват ввода сканером штрихкодов с автоматической трансляцией в ПолеПоискаТовара.</Item>
+					<Item>Асинхронные всплывающие диалоги (Оповещение с CallbackDescription) для платежей и акцизных марок.</Item>
+				</Items>
+			</Block>
+
+			<Block name="Dependencies">
+				<Items>
+					<Item>Модуль ОбщегоНазначения: НайтиТоварыПоШтрихкоду(), ПолучитьРозничнуюЦену().</Item>
+					<Item>Модуль МенеджерОборудования: ПодключитьСканер(), НапечататьЧек().</Item>
+					<Item>Регистр Штрихкоды: поиск товаров по штрихкодам.</Item>
+					<Item>Регистр ЦеныНоменклатуры: получение розничных цен.</Item>
+					<Item>Документ ЧекККМ: регистрация продаж и создание движений в Продажи.</Item>
 				</Items>
 			</Block>
 
 			<Block name="History">
-				<Record date="2025-10-15">Внедрение глобального поиска и панели быстрых товаров.</Record>
-				<Record date="2026-01-15">Адаптация под Украину: Логика акцизных марок, Интерактивное открытие смены.</Record>
+				<Record date="2025-10-15">Внедрение глобального поиска по Штрихкоды и динамической панели быстрых товаров.</Record>
+				<Record date="2026-01-15">Адаптация под Украину: поддержка акцизных марок, логика смены, интеграция с ККМ.</Record>
+				<Record date="2026-01-17">Обновление описания реквизитов, асинхронная обработка платежей, расширенный поиск товара.</Record>
+			</Block>
+		</Object>
+
+		<Object name="ЗаполнениеНоменклатуры" synonym="Заполнение номенклатуры">
+        
+			<Block name="Purpose">
+				<Content>
+					Административная обработка для массового заполнения, импорта и актуализации справочника Номенклатура.
+					Используется для начального завоза товаров, обновления прайсов и переоценки.
+				</Content>
+			</Block>
+
+			<Block name="Logic">
+				<Items>
+					<Item event="Импорт">
+						Загрузка товаров из файла (CSV, Excel) с маппингом полей на реквизиты Номенклатуры.
+						Поддерживает как создание новых позиций, так и обновление существующих по коду/артикулу.
+					</Item>
+					<Item event="ОбновлениеЦен">
+						Массовое обновление цен товаров через регистр ЦеныНоменклатуры.
+						Позволяет применять разные цены по типам цен (Розничная, Оптовая и т.д.).
+					</Item>
+					<Item event="Переоценка">
+						Логика создания документов Переоценка при изменении прайсов.
+						Автоматический расчет разниц между старой и новой ценой.
+					</Item>
+				</Items>
+			</Block>
+
+			<Block name="Interface">
+				<Items>
+					<Item>Форма загрузки файла с предпросмотром данных до подтверждения.</Item>
+					<Item>Диалоги выбора критериев обновления (по дате изменения, по коду товара, полное обновление).</Item>
+					<Item>Отчет о результатах обработки (добавлено/обновлено/ошибок).</Item>
+				</Items>
+			</Block>
+
+			<Block name="Dependencies">
+				<Items>
+					<Item>Справочник Номенклатура: создание и обновление позиций.</Item>
+					<Item>Регистр ЦеныНоменклатуры: обновление цен по типам.</Item>
+					<Item>Документ Переоценка: логика массовой переоценки товаров.</Item>
+					<Item>Справочник ТипыЦен: для маппинга типов цен из файла.</Item>
+				</Items>
+			</Block>
+
+			<Block name="History">
+				<Record date="2026-01-17">Добавление в спецификацию административной обработки загрузки и актуализации номенклатуры.</Record>
 			</Block>
 		</Object>
 	
@@ -816,8 +1006,8 @@
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Штрихкод" type="Строка(200)">Ключевое поле поиска.</Field>
-					<Field name="Владелец" type="Справочник.Номенклатура, Справочник.Кассы">Объект, которому принадлежит код.</Field>
+					<Field type="Dimension" name="Штрихкод" type_val="Строка(200)">Ключевое поле поиска штрихкода.</Field>
+					<Field type="Dimension" name="Номенклатура" type_val="Справочник.Номенклатура">Товар, которому принадлежит штрихкод.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
@@ -829,25 +1019,27 @@
 
 		<Object name="ЦеныНоменклатуры" synonym="Цены номенклатуры">
 			<Block name="Purpose">
-				<Content>Хранение розничных цен. Периодический (в пределах дня).</Content>
+				<Content>Периодический регистр сведений (в пределах дня) для хранения цен товаров по разным типам.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field name="Период" type="Дата">Дата установки цены.</Field>
-					<Field name="Номенклатура" type="Справочник.Номенклатура">Товар.</Field>
-					<Field name="Цена" type="Число(15,2)">Стоимость.</Field>
+					<Field type="StandardAttribute" name="Период" type_val="Дата">Дата установки цены (стандартный реквизит).</Field>
+					<Field type="StandardAttribute" name="Регистратор" type_val="Документ.Переоценка">Документ, создающий записи регистра (стандартный реквизит).</Field>
+					<Field type="Dimension" name="Номенклатура" type_val="Справочник.Номенклатура">Товар.</Field>
+					<Field type="Dimension" name="ТипЦен" type_val="Справочник.ТипыЦен">Вид цены (Розничная, Закупочная, Минимальная).</Field>
+					<Field type="Resource" name="Цена" type_val="Число(15,2)">Стоимость товара.</Field>
 				</Fields>
 			</Block>
 		</Object>
 
 		<Object name="ЦеныЗакупки" synonym="Цены закупки">
 			<Block name="Purpose">
-				<Content>Хранение истории закупочных цен (Last Price).</Content>
+				<Content>Периодический регистр для хранения последней закупочной цены товара (Last Price).</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="Номенклатура"/>
-					<Field type="Resource" name="Цена"/>
+					<Field type="Dimension" name="Номенклатура" type_val="Справочник.Номенклатура">Товар.</Field>
+					<Field type="Resource" name="Цена" type_val="Число(15,2)">Последняя известная закупочная цена.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
@@ -862,18 +1054,18 @@
 
 		<Object name="НастройкиРаспределенияПродаж" synonym="Настройки распределения продаж">
 			<Block name="Purpose">
-				<Content>Матрица распределения: Какая касса с каким фискальным регистратором работает.</Content>
+				<Content>Матрица распределения: связь между кассой и налоговой группой товара для выбора подходящего оборудования (ККТ).</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="Касса"/>
-					<Field type="Dimension" name="НалоговаяГруппа"/>
-					<Field type="Resource" name="Оборудование"/>
+					<Field type="Dimension" name="Касса" type_val="Справочник.Кассы">Касса, на которой происходит продажа.</Field>
+					<Field type="Dimension" name="НалоговаяГруппа" type_val="Справочник.НалоговыеГруппы">Налоговая группа товара (для маршрутизации на правильное ККТ).</Field>
+					<Field type="Resource" name="Оборудование" type_val="Справочник.КассовоеОборудование">Оборудование (ККТ), которое должно быть использовано.</Field>
 				</Fields>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Используется при пробитии чека для выбора оборудования.</Item>
+					<Item>Используется при пробитии чека для маршрутизации и выбора оборудования фискализации.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
@@ -885,89 +1077,146 @@
     <AccumulationRegisters>
 		<Object name="ОстаткиТоваров" synonym="Остатки товаров">
 			<Block name="Purpose">
-				<Content>Учет количественных остатков на складах.</Content>
+				<Content>Учет количественных остатков товаров на складах (регистр остатков).</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="Склад">Место хранения.</Field>
-					<Field type="Dimension" name="Номенклатура">Товар.</Field>
-					<Field type="Resource" name="Количество">Остаток.</Field>
+					<Field type="Dimension" name="Склад">Справочник.Склады - место хранения товара.</Field>
+					<Field type="Dimension" name="Номенклатура">Справочник.Номенклатура - товар или услуга.</Field>
+					<Field type="Resource" name="Количество">Число(15,4) - количественный остаток товара на складе.</Field>
 				</Fields>
+				<Registers>
+					<RegisterType>Balance</RegisterType>
+					<EnableTotalsSplitting>true</EnableTotalsSplitting>
+				</Registers>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Регистраторы: ПриходТовара, ЧекККМ, СписаниеТовара, ИнвентаризацияТоваров.</Item>
+					<Item>Движения по приходу: ПриходТовара, ИнвентаризацияТоваров (излишки).</Item>
+					<Item>Движения по расходу: ЧекККМ, СписаниеТовара, ИнвентаризацияТоваров (недостачи).</Item>
+					<Item>Контроль отрицательных остатков регулируется константой КонтролироватьОстаткиПриСписании.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2025-10-01">Создание регистра.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="Продажи" synonym="Продажи (Обороты)">
 			<Block name="Purpose">
-				<Content>Фиксация выручки и себестоимости.</Content>
+				<Content>Регистр накопления (обороты) для фиксации выручки, себестоимости и аналитики продаж по товарам, кассам, сменам, сотрудникам.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Resource" name="Сумма">Выручка.</Field>
-					<Field type="Resource" name="Себестоимость">Закупочная стоимость.</Field>
+					<Field type="Dimension" name="Номенклатура" type_val="Справочник.Номенклатура">Проданный товар.</Field>
+					<Field type="Dimension" name="Касса" type_val="Справочник.Кассы">Касса, на которой была продажа.</Field>
+					<Field type="Dimension" name="КассоваяСмена" type_val="Документ.КассоваяСмена">Смена, в рамках которой прошла продажа.</Field>
+					<Field type="Dimension" name="Сотрудник" type_val="Справочник.Пользователи">Кассир, проводивший операцию.</Field>
+					<Field type="Resource" name="Количество" type_val="Число(15,3)">Проданное количество.</Field>
+					<Field type="Resource" name="Сумма" type_val="Число(15,2)">Выручка от продажи.</Field>
+					<Field type="Resource" name="Себестоимость" type_val="Число(15,2)">Закупочная стоимость проданного товара.</Field>
 				</Fields>
+				<Registers>
+					<RegisterType>Turnovers</RegisterType>
+					<EnableTotalsSplitting>true</EnableTotalsSplitting>
+				</Registers>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item>Заполняется документом ЧекККМ при проведении.</Item>
+					<Item>Обеспечивает аналитику продаж по товарам, кассирам, сменам для отчетности.</Item>
+					<Item>Себестоимость берется из регистра ЦеныЗакупки на дату продажи.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2025-10-01">Создание регистра.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 	
 		<Object name="ДенежныеСредства" synonym="Денежные средства">
 			<Block name="Purpose">
-				<Content>Учет наличных денег в кассах ККМ.</Content>
+				<Content>Учет наличных денежных средств по кассам ККМ (регистр остатков).</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="Касса"/>
-					<Field type="Resource" name="Сумма"/>
+					<Field type="Dimension" name="Касса">Справочник.Кассы - кассовый аппарат.</Field>
+					<Field type="Resource" name="Сумма">Число(15,3) - остаток денежных средств в кассе.</Field>
 				</Fields>
+				<Registers>
+					<RegisterType>Balance</RegisterType>
+					<EnableTotalsSplitting>true</EnableTotalsSplitting>
+				</Registers>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Остатки.</Item>
-					<Item>Двигается ПКО, РКО, Чеками ККМ.</Item>
+					<Item>Регистраторы: ПриходныйКассовыйОрдер, РасходныйКассовыйОрдер, ЧекККМ.</Item>
+					<Item>Приход: ПриходныйКассовыйОрдер (инкассация, выручка), ЧекККМ (оплата наличными).</Item>
+					<Item>Расход: РасходныйКассовыйОрдер (инкассация, расходы).</Item>
+					<Item>Положительный остаток означает наличие денег в кассе.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="Взаиморасчеты" synonym="Взаиморасчеты">
 			<Block name="Purpose">
-				<Content>Учет долгов перед поставщиками.</Content>
+				<Content>Учет задолженности перед поставщиками и контрагентами (регистр остатков).</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="Контрагент"/>
-					<Field type="Resource" name="Сумма"/>
+					<Field type="Dimension" name="Контрагент">Справочник.Контрагенты - поставщик или клиент.</Field>
+					<Field type="Resource" name="Сумма">Число(15,3) - сумма задолженности.</Field>
 				</Fields>
+				<Registers>
+					<RegisterType>Balance</RegisterType>
+					<EnableTotalsSplitting>true</EnableTotalsSplitting>
+				</Registers>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Остатки.</Item>
-					<Item>Приход - долг перед поставщиком, Расход - оплата.</Item>
+					<Item>Регистратор: ПриходТовара (при поступлении товаров от поставщика).</Item>
+					<Item>Приход: ПриходТовара - возникновение долга перед поставщиком.</Item>
+					<Item>Расход: Оплата поставщику (документы оплаты).</Item>
+					<Item>Положительный остаток - наш долг перед контрагентом.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 
 		<Object name="ПродажиПоДисконтнымКартам" synonym="Продажи по дисконтным картам">
 			<Block name="Purpose">
-				<Content>Аналитика покупок в разрезе карт лояльности.</Content>
+				<Content>Программа лояльности: сбор аналитики покупок в разрезе дисконтных карт лояльности.</Content>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="Dimension" name="ДисконтнаяКарта"/>
-					<Field type="Resource" name="Сумма"/>
+					<Field type="Dimension" name="ДисконтнаяКарта">Справочник.ДисконтныеКарты - карта лояльности клиента.</Field>
+					<Field type="Resource" name="Сумма">Число(15,3) - сумма покупок по карте.</Field>
 				</Fields>
+				<Registers>
+					<RegisterType>Balance</RegisterType>
+					<EnableTotalsSplitting>true</EnableTotalsSplitting>
+				</Registers>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item>Обороты.</Item>
-					<Item>Записывается при проведении Чека ККМ с указанной картой.</Item>
+					<Item>Регистратор: ЧекККМ (при пробитии чека с дисконтной картой).</Item>
+					<Item>Записывается при проведении ЧекККМ с указанной дисконтной картой.</Item>
+					<Item>Служит для построения отчетов по программе лояльности и начисления бонусов.</Item>
+					<Item>Накопительные данные для аналитики по картам лояльности и клиентам.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
     </AccumulationRegisters>
@@ -976,21 +1225,21 @@
 		<Object name="ОбщегоНазначенияКлиент" synonym="Общего назначения (Клиент)">
 		
 			<Block name="Purpose">
-				<Content>Глобальные клиентские алгоритмы, доступные из любой формы.</Content>
+				<Content>Клиентский модуль с глобальными алгоритмами для работы с интерфейсом, доступный из любой формы.</Content>
 			</Block>
 			<Block name="Logic">
 				<Items>
 					<Item method="НайтиИОбработатьТовар(Штрихкод, Оповещение)">
-						Входная точка алгоритма поиска.
-						1. Ищет штрихкод. 
-						2. Если найдено несколько — открывает список выбора. 
-						3. Если не найдено — ищет по Артикулу/Коду.
-						4. Возвращает ссылку в ОбработчикОповещения.
+						Асинхронная точка входа для поиска товара.
+						1. Вызывает серверный метод ОбщегоНазначения.НайтиТовар(Штрихкод).
+						2. Если найдено несколько - показывает список выбора.
+						3. Возвращает результат через ОписаниеОповещения.
 					</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2025-10-15">Создан для реализации архитектуры "Тонкий клиент".</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 		
@@ -1009,35 +1258,59 @@
 						Алгоритм:
 						1. Ищет точное совпадение в регистре "Штрихкоды".
 						2. Если не найдено — ищет по полям "Код" ИЛИ "Артикул" в справочнике "Номенклатура".
+						3. Если найдено несколько товаров с одинаковым штрихкодом — возвращает массив для выбора.
 					</Item>
 					<Item method="НайтиТоварыПоШтрихкоду(Штрихкод, ДатаАктуальности)">
 						Вспомогательная функция. Возвращает массив структур с данными товаров (Номенклатура, Цена, Представление) по точному совпадению штрихкода.
+						Используется для отображения красивого списка с ценами.
 					</Item>
 					<Item method="ПолучитьНастройкиСканера()">
-						Ищет в справочнике "КассовоеОборудование" первое активное устройство с типом "СканерШтрихкода" и возвращает структуру параметров подключения (Порт, Скорость и др.).
+						Ищет в справочнике "КассовоеОборудование" первое активное устройство с типом "СканерШтрихкода" и возвращает структуру параметров подключения (ДрайверID, Порт, Скорость и др.).
+						Возвращает структуру {ДрайверID, Параметры} или Неопределено если оборудование не настроено.
 					</Item>
 					<Item method="ПолучитьРозничнуюЦену(Дата, Номенклатура)">
 						Получает срез последних цен из регистра "ЦеныНоменклатуры" по типу цен с наименованием "Розничная".
+						Возвращает число (цена) или 0 если цена не установлена.
 					</Item>
 				</Items>
 			</Block>
 
 			<Block name="History">
 				<Record date="2026-01-15">Создание модуля. Реализация поиска и функций работы с БД.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
 		<Object name="МенеджерОборудования" synonym="Менеджер оборудования">
 			<Block name="Purpose">
-				<Content>Серверная логика управления драйверами оборудования.</Content>
+				<Content>Клиентский модуль управления драйверами периферийного оборудования (сканеры, ККТ, весы).</Content>
 			</Block>
 			<Block name="Logic">
 				<Items>
-					<Item method="ПодключитьОборудование">Инициализация драйвера по ID.</Item>
-					<Item method="ФискализироватьЧек">Отправка XML-пакета чека на устройство.</Item>
+					<Item method="ПодключитьСканер()">
+						Инициализация драйвера сканера штрихкодов.
+						Поддерживает:
+						1. COM-драйверы (старые, через Scanner.ScanOPOS).
+						2. AddIn-компоненты (новые, асинхронные).
+						Настраивает параметры из справочника "КассовоеОборудование" (номер COM-порта, скорость, т.д.).
+						При получении события от сканера передает данные в форму через механизм Оповестить().
+					</Item>
+					<Item method="ОбработчикСобытияСканирования(Данные)">
+						Callback для обработки события сканирования (запуск при считывании штрихкода).
+						Передает данные активной форме через Оповестить().
+					</Item>
+					<Item method="ПослеПодключенияКомпоненты(Подключено, ДопПараметры)">
+						Callback асинхронного подключения AddIn-компоненты сканера.
+						Завершает инициализацию драйвера после загрузки компоненты.
+					</Item>
+					<Item method="НапечататьЧек(ОборудованиеСсылка, ДанныеЧека)">
+						Отправка данных чека на печать через ККТ.
+						Использует кэш драйверов для оптимизации повторных печатей.
+					</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание модуля.</Record>
+				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
 			</Block>
 		</Object>
     </CommonModules>

@@ -246,6 +246,7 @@
 			<Subsystem>Настройки</Subsystem>
 			<Subsystem>Все</Subsystem>
 			<Subsystem>Фискал</Subsystem>
+			<Role>Администратор</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>

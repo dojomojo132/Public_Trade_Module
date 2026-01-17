@@ -68,7 +68,7 @@
 		<Metadata name="CommonModule.ОбщегоНазначенияКлиент.Module" id="78cd29de-0f3f-44ec-a2ef-c3a1287cc7d6.0" configVersion="47a46c8119bacf40af2d494591e934e000000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="cdcd43af6dbe9d4aa641bde55d71040200000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="ee0e88b432f8944f9a392779d493437600000000"/>
-		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="1a2e709429c8564092cd5a286b7e6a7c00000000"/>
+		<Metadata name="Configuration.Конфигурация" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="26967be25fe666428b490ffce03b432900000000"/>
 		<Metadata name="Configuration.Конфигурация.ClientApplicationInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.b" configVersion="ff76a1266088a64ba79a5d9883f19e1900000000"/>
 		<Metadata name="Configuration.Конфигурация.ManagedApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.6" configVersion="5bc49df440e1684a86e1db5a0e3bc1c000000000"/>
 		<Metadata name="Constant.КонтролироватьОстаткиПриСписании" id="2c908745-ab76-4ca7-8739-9b0ae692bb7b" configVersion="00b5e0ed4a8c504db0c482aa70bb3ca300000000"/>
@@ -243,6 +243,8 @@
 		<Metadata name="Report.ОстаткиТоваров" id="500bef3f-d656-408b-8d87-f7f27862859a" configVersion="cf69c01d8feb3f42b551f1b7113aafd000000000"/>
 		<Metadata name="Report.ОстаткиТоваров.Template.ОсновнаяСхемаКомпоновкиДанных" id="107032bc-e00c-4e87-8294-b65fd66c81f6" configVersion="eeebdbb21861b6469b5f62060c7212ae00000000"/>
 		<Metadata name="Report.ОстаткиТоваров.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="107032bc-e00c-4e87-8294-b65fd66c81f6.0" configVersion="fd602948990a584eaf010286b1f04db100000000"/>
+		<Metadata name="Role.Администратор" id="709a7ae8-259d-4bd5-9df2-d99294330b75" configVersion="c814da12a011ae448ff86264e06c417400000000"/>
+		<Metadata name="Role.Администратор.Rights" id="709a7ae8-259d-4bd5-9df2-d99294330b75.0" configVersion="cfcbbbef067fe146a9d7d69aeebb9b0e00000000"/>
 		<Metadata name="Subsystem.Все" id="01280407-0f70-4d52-ae85-35069df24bf8" configVersion="45d85bce6a7a194bbc6314993e63b58600000000"/>
 		<Metadata name="Subsystem.Настройки" id="c524e644-653c-4ebe-a01f-a7838fb29015" configVersion="81a6f22cd6a2a94295bf3da3cbd7361100000000"/>
 		<Metadata name="Subsystem.Склад" id="573d0659-135f-4ea9-874e-0cd4681b0b80" configVersion="205d7827faa0ca4796174e66dadf407400000000"/>
