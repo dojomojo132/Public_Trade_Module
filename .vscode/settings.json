@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": false,
+    "files.encoding": "utf8bom",
+    "files.autoSave": "onFocusChange",
+    
+    "files.associations": {
+        "*.bsl": "bsl",
+        "*.os": "bsl"
+    },
+    
+    "[bsl]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.wordWrap": "on"
+    },
+    
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/DerivedData": true
+    },
+    
+    "github.copilot.chat.codeGeneration.useReferencedFiles": true
+}
