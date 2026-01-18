@@ -4,6 +4,25 @@
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
+	<ChildItems>
+		<InputField name="МинимальнаяЦена" id="12">
+			<DataPath>Объект.МинимальнаяЦена</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="МинимальнаяЦенаКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="МинимальнаяЦенаРасширеннаяПодсказка" id="14"/>
+		</InputField>
+		<InputField name="МаксимальнаяЦена" id="9">
+			<DataPath>Объект.МаксимальнаяЦена</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="МаксимальнаяЦенаКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="МаксимальнаяЦенаРасширеннаяПодсказка" id="11"/>
+		</InputField>
+		<Button name="СоздатьПереоценкуКоманда" id="7">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.СоздатьПереоценкуКоманда</CommandName>
+			<ExtendedTooltip name="СоздатьПереоценкуКомандаРасширеннаяПодсказка" id="8"/>
+		</Button>
+	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
@@ -11,5 +30,54 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
+		<Attribute name="МинимальнаяЦена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Минимальная цена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксимальнаяЦена" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимальная цена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="СоздатьПереоценкуКоманда" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать переоценку команда</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать переоценку команда</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьПереоценкуКоманда</Action>
+		</Command>
+	</Commands>
 </Form>

@@ -95,9 +95,12 @@
 		</Metadata>
 		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма" id="1876b53a-c567-4e3a-9e12-123456789acd" configVersion="a0fec4b23f6ae8459be2ae84df90b55b00000000"/>
 		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма.Form" id="1876b53a-c567-4e3a-9e12-123456789acd.0" configVersion="596f80feca695f4e965bccf003d201ce00000000"/>
-		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен" id="cae73a74-037f-4dec-8313-e8f06606dbad" configVersion="1958f5ae8efa08438ba4db576b1d50b200000000"/>
-		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Form.Форма" id="4d01be3c-dc10-4f41-aaee-9a083bda1c38" configVersion="282758d80be1ed44aac28615caf73cab00000000"/>
-		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Form.Форма.Form" id="4d01be3c-dc10-4f41-aaee-9a083bda1c38.0" configVersion="958e4022ab14244bb73a2a1bab28622800000000"/>
+		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен" id="cae73a74-037f-4dec-8313-e8f06606dbad" configVersion="0a135b31dce9a748a4342f0dd66c75be00000000">
+			<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Attribute.МинимальнаяЦена" id="91835997-61b5-41d8-bfac-a560037071f6"/>
+			<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Attribute.МаксимальнаяЦена" id="ad99d070-3d82-4fbb-9cd1-dd64e08e9532"/>
+		</Metadata>
+		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Form.Форма" id="4d01be3c-dc10-4f41-aaee-9a083bda1c38" configVersion="341fd04ba4bedf46b82586e41e2cc06200000000"/>
+		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.Form.Форма.Form" id="4d01be3c-dc10-4f41-aaee-9a083bda1c38.0" configVersion="677fca6f4cf24947b129205fc96816f700000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеЦен.ObjectModule" id="cae73a74-037f-4dec-8313-e8f06606dbad.0" configVersion="706990d7f36d524db735063075548bce00000000"/>
 		<Metadata name="Document.ВозвратТовараОтПокупателя" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747" configVersion="53f3ec3caf158547be2cb387ad82aaaf00000000"/>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="827cf5e1c83f28488c3b99f5264999fe00000000">
