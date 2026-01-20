@@ -16,14 +16,19 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Контрагенты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Склады</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Номенклатура</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Контрагенты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходТовара</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.СписаниеТовара</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ИнвентаризацияТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.Переоценка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОсновнойСклад</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОсновнойПоставщик</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.КонтролироватьОстаткиПриСписании</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ОстаткиТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЦеныЗакупки</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">055da7cb-4936-4e89-b0b9-06c9916b4c35</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
