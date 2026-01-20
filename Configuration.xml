@@ -289,6 +289,7 @@
 			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеЦен</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеШтрихкодов</DataProcessor>
+			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>
