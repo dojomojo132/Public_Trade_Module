@@ -51,6 +51,15 @@
 						<Event name="OnChange">ПолеПоискаТовараПриИзменении</Event>
 					</Events>
 				</InputField>
+				<InputField name="ПолеПоискаТовара2" id="71">
+					<DataPath>Объект.ПолеПоискаТовара2</DataPath>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПолеПоискаТовара2КонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ПолеПоискаТовара2РасширеннаяПодсказка" id="73"/>
+					<Events>
+						<Event name="OnChange">ПолеПоискаТовара2ПриИзменении</Event>
+					</Events>
+				</InputField>
 				<CheckBoxField name="ПоказатьПанельТоваров" id="5">
 					<DataPath>ПоказатьПанельТоваров</DataPath>
 					<TitleLocation>Right</TitleLocation>
@@ -115,6 +124,9 @@
 								<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="44"/>
 							</SearchControlAddition>
 							<Events>
+								<Event name="OnActivateRow">АктивироватьПоиск</Event>
+								<Event name="OnActivateField">АктивироватьПоиск</Event>
+								<Event name="AfterDeleteRow">АктивироватьПоиск</Event>
 								<Event name="OnChange">ТЧПриИзменении</Event>
 							</Events>
 							<ChildItems>
@@ -126,21 +138,20 @@
 								</InputField>
 								<InputField name="ТЧКоличество" id="10">
 									<DataPath>Объект.ТЧ.Количество</DataPath>
+									<Width>6</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ТЧКоличествоКонтекстноеМеню" id="47"/>
 									<ExtendedTooltip name="ТЧКоличествоРасширеннаяПодсказка" id="48"/>
 									<Events>
 										<Event name="OnChange">ТЧКоличествоПриИзменении</Event>
 									</Events>
 								</InputField>
-								<InputField name="ТЧАкцизнаяМарка" id="64">
-									<DataPath>Объект.ТЧ.АкцизнаяМарка</DataPath>
-									<EditMode>EnterOnInput</EditMode>
-									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-									<ContextMenu name="ТЧАкцизнаяМаркаКонтекстноеМеню" id="65"/>
-									<ExtendedTooltip name="ТЧАкцизнаяМаркаРасширеннаяПодсказка" id="66"/>
-								</InputField>
 								<InputField name="ТЧЦена" id="11">
 									<DataPath>Объект.ТЧ.Цена</DataPath>
+									<Width>6</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ТЧЦенаКонтекстноеМеню" id="49"/>
 									<ExtendedTooltip name="ТЧЦенаРасширеннаяПодсказка" id="50"/>
 									<Events>
@@ -150,8 +161,21 @@
 								<InputField name="ТЧСумма" id="12">
 									<DataPath>Объект.ТЧ.Сумма</DataPath>
 									<ReadOnly>true</ReadOnly>
+									<Width>10</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ТЧСуммаКонтекстноеМеню" id="51"/>
 									<ExtendedTooltip name="ТЧСуммаРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<InputField name="ТЧАкцизнаяМарка" id="64">
+									<DataPath>Объект.ТЧ.АкцизнаяМарка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>20</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ТЧАкцизнаяМаркаКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ТЧАкцизнаяМаркаРасширеннаяПодсказка" id="66"/>
 								</InputField>
 							</ChildItems>
 						</Table>

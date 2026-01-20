@@ -288,6 +288,7 @@
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеЦен</DataProcessor>
+			<DataProcessor>ТестовоеЗаполнениеШтрихкодов</DataProcessor>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>ЦеныЗакупки</InformationRegister>

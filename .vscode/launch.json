@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "oscript",
+      "request": "launch",
+      "name": "Отладка 1С через OneScript",
+      "program": "${file}",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "oscript.exe",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach к 1С через DBG",
+      "port": 1550,
+      "address": "localhost",
+      "restart": true
+    }
+  ]
+}

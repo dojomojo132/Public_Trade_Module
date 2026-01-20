@@ -1,0 +1,49 @@
+﻿{
+  "server": {
+    "name": "ptm-debug-server",
+    "version": "1.0.0",
+    "port": 3001
+  },
+  "connections": {
+    "development": {
+      "type": "file",
+      "path": "D:\\1C_Bases\\PTM_Development",
+      "user": "Admin",
+      "password": "",
+      "timeout": 30000,
+      "autoReconnect": true
+    },
+    "testing": {
+      "type": "file",
+      "path": "D:\\1C_Bases\\PTM_Test",
+      "user": "TestRunner",
+      "password": "",
+      "timeout": 30000,
+      "autoReconnect": true
+    }
+  },
+  "powerShell": {
+    "version": "5.1",
+    "executionPolicy": "Bypass",
+    "timeout": 30000,
+    "tempDir": "%TEMP%\\ptm-ps-scripts"
+  },
+  "debug": {
+    "enabled": true,
+    "logLevel": "info",
+    "breakpointsFile": ".vscode/breakpoints.json",
+    "watchExpressions": []
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 300,
+    "maxSize": 100
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "dir": "./logs",
+    "maxSize": "10m",
+    "maxFiles": 5
+  }
+}

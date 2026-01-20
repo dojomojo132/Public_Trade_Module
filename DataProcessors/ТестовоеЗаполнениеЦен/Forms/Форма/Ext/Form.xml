@@ -22,6 +22,11 @@
 			<CommandName>Form.Command.СоздатьПереоценкуКоманда</CommandName>
 			<ExtendedTooltip name="СоздатьПереоценкуКомандаРасширеннаяПодсказка" id="8"/>
 		</Button>
+		<Button name="ЗаполнитьШтрихкодыКоманда" id="15">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ЗаполнитьШтрихкодыКоманда</CommandName>
+			<ExtendedTooltip name="ЗаполнитьШтрихкодыРасширеннаяПодсказка" id="16"/>
+		</Button>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -78,6 +83,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СоздатьПереоценкуКоманда</Action>
+		</Command>
+		<Command name="ЗаполнитьШтрихкодыКоманда" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить штрихкоды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить всю номенклатуру случайными штрихкодами</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьШтрихкодыКоманда</Action>
 		</Command>
 	</Commands>
 </Form>

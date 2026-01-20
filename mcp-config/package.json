@@ -1,0 +1,30 @@
+﻿{
+  "name": "ptm-mcp-debug-server",
+  "version": "1.0.0",
+  "description": "MCP Debug Server for 1C:Enterprise 8.3.24 with PowerShell integration",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "verify": "node verify-setup.js",
+    "examples": "node examples.js",
+    "test": "node verify-setup.js"
+  },
+  "keywords": [
+    "1c",
+    "enterprise",
+    "mcp",
+    "debug",
+    "powershell",
+    "com"
+  ],
+  "author": "PTM Development Team",
+  "license": "ISC",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {}
+}
