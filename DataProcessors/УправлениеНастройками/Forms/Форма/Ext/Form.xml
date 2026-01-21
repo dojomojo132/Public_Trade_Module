@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ОсновнойСклад" id="8">
+			<DataPath>ОсновнойСклад</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной склад</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ОсновнойСкладКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ОсновнойСкладРасширеннаяПодсказка" id="17"/>
+		</InputField>
+		<InputField name="ОсновнойПоставщик" id="9">
+			<DataPath>ОсновнойПоставщик</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной поставщик</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ОсновнойПоставщикКонтекстноеМеню" id="18"/>
+			<ExtendedTooltip name="ОсновнойПоставщикРасширеннаяПодсказка" id="19"/>
+		</InputField>
+		<InputField name="ОсновнаяКасса" id="10">
+			<DataPath>ОсновнаяКасса</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная касса</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ОсновнаяКассаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ОсновнаяКассаРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="ОсновнойТипЦен" id="11">
+			<DataPath>ОсновнойТипЦен</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной тип цен</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ОсновнойТипЦенКонтекстноеМеню" id="22"/>
+			<ExtendedTooltip name="ОсновнойТипЦенРасширеннаяПодсказка" id="23"/>
+		</InputField>
+		<InputField name="ПорядокОкругленияЦен" id="12">
+			<DataPath>ПорядокОкругленияЦен</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок округления цен</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПорядокОкругленияЦенКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="ПорядокОкругленияЦенРасширеннаяПодсказка" id="25"/>
+		</InputField>
+		<InputField name="КонтролироватьОстаткиПриСписании" id="13">
+			<DataPath>КонтролироватьОстаткиПриСписании</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролировать остатки при списании</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="КонтролироватьОстаткиПриСписанииКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="КонтролироватьОстаткиПриСписанииРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<Button name="КнопкаСохранить" id="14">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.Сохранить</CommandName>
+			<ExtendedTooltip name="КнопкаСохранитьРасширеннаяПодсказка" id="28"/>
+		</Button>
+		<Button name="Закрыть" id="29">
+			<Type>UsualButton</Type>
+			<CommandName>Form.StandardCommand.Close</CommandName>
+			<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="30"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.УправлениеНастройками</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОсновнойСклад" id="2">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойПоставщик" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнаяКасса" id="4">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойТипЦен" id="5">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ТипыЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПорядокОкругленияЦен" id="6">
+			<Type>
+				<v8:Type>cfg:EnumRef.ПорядкиОкругленияЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтролироватьОстаткиПриСписании" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Сохранить</Action>
+		</Command>
+		<Command name="Закрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Закрыть</Action>
+		</Command>
+	</Commands>
+</Form>

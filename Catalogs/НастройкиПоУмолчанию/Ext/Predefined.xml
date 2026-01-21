@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
+	<Item id="392ce146-3b82-4939-a7ef-00851e801d13">
+		<Name>КоличествоКнопокВРяду</Name>
+		<Code>000000008</Code>
+		<Description>Количество кнопок в ряду</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="ca79a3db-c3ad-4e0b-abd5-ea25e26ce739">
+		<Name>КоличествоКнопокВСтроке</Name>
+		<Code>000000007</Code>
+		<Description>Количество кнопок в строке</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="c9a62bf1-84dc-443a-8fbb-73a2e1de2c25">
+		<Name>КонтролироватьОстаткиПриСписании</Name>
+		<Code>000000006</Code>
+		<Description>Контролировать остатки при списании</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="044ab805-321a-468a-8da8-5819aeef523f">
+		<Name>ОсновнаяКасса</Name>
+		<Code>000000003</Code>
+		<Description>Основная касса</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="92099aa2-beb5-4e3a-9f34-7bbcc4ff5869">
+		<Name>ОсновнойПоставщик</Name>
+		<Code>000000002</Code>
+		<Description>Основной поставщик</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="51185fc6-9997-420f-88b5-a1c04a14b14e">
+		<Name>ОсновнойСклад</Name>
+		<Code>000000001</Code>
+		<Description>Основной склад</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="6067e04f-19b2-4444-9e47-4c058ba10830">
+		<Name>ОсновнойТипЦен</Name>
+		<Code>000000004</Code>
+		<Description>Основной тип цен</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="6f03b460-b5e6-4756-bf26-a1595fd6df4a">
+		<Name>ПорядокОкругленияЦен</Name>
+		<Code>000000005</Code>
+		<Description>Порядок округления цен</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>
