@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
+	<Item id="810d6ced-ea1f-487b-b66b-7d2090d5295c">
+		<Name>КоличествоКнопокВКолонке</Name>
+		<Code>000000009</Code>
+		<Description>Количество кнопок в колонке</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
 	<Item id="392ce146-3b82-4939-a7ef-00851e801d13">
 		<Name>КоличествоКнопокВРяду</Name>
 		<Code>000000008</Code>
 		<Description>Количество кнопок в ряду</Description>
-		<IsFolder>false</IsFolder>
-	</Item>
-	<Item id="ca79a3db-c3ad-4e0b-abd5-ea25e26ce739">
-		<Name>КоличествоКнопокВСтроке</Name>
-		<Code>000000007</Code>
-		<Description>Количество кнопок в строке</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
 	<Item id="c9a62bf1-84dc-443a-8fbb-73a2e1de2c25">

@@ -40,8 +40,8 @@
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="322fb34a1cedfe438671d51b83c3ded000000000">
 			<Metadata name="Catalog.НалоговыеГруппы.Attribute.КодНалоговойГруппыККТ" id="5646d3e4-a785-42b3-b98f-f5e30e652ba7"/>
 		</Metadata>
-		<Metadata name="Catalog.НастройкиПоУмолчанию" id="e1234567-890a-bcde-f123-4567890abcde" configVersion="44670f728f2efc44ae37bebed7c8aa4a00000000"/>
-		<Metadata name="Catalog.НастройкиПоУмолчанию.Predefined" id="e1234567-890a-bcde-f123-4567890abcde.1c" configVersion="c79eb6ea73842e4daf4c7babf6f8976200000000"/>
+		<Metadata name="Catalog.НастройкиПоУмолчанию" id="e1234567-890a-bcde-f123-4567890abcde" configVersion="bb7220ce1da1254dafca08e7ca87100d00000000"/>
+		<Metadata name="Catalog.НастройкиПоУмолчанию.Predefined" id="e1234567-890a-bcde-f123-4567890abcde.1c" configVersion="7388d60d7917684fa30fb884aaf9c5b400000000"/>
 		<Metadata name="Catalog.Номенклатура" id="379863f4-aa81-4140-89a8-df74d8755af8" configVersion="9f9a4f36836dd143bb0809654a68748d00000000">
 			<Metadata name="Catalog.Номенклатура.Attribute.ПроцентНаценки" id="21135baf-f71f-4c33-aa0b-f06257164d9c"/>
 			<Metadata name="Catalog.Номенклатура.Attribute.СтавкаНДС" id="67b1bf26-c26f-464f-b445-9ad9545e8425"/>
@@ -114,8 +114,8 @@
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеШтрихкодов.Form.Форма" id="4bde464e-0c2b-4034-ac7b-3bfbc412ec96" configVersion="617c9a5bd1f6384aa0116d4d22568d8600000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеШтрихкодов.Form.Форма.Form" id="4bde464e-0c2b-4034-ac7b-3bfbc412ec96.0" configVersion="cc8a677d351d69488852c3f6ae5e52b000000000"/>
 		<Metadata name="DataProcessor.УправлениеНастройками" id="b7c8d9e0-f1a2-3b4c-5d6e-7f8a9b0c1d2e" configVersion="6f05e63160a028498eb3b3125bc8b14000000000"/>
-		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5" configVersion="bd6059133fce414293c45754621e321e00000000"/>
-		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма.Form" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5.0" configVersion="62399d20d4941f48b17e44622babbaa100000000"/>
+		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5" configVersion="8af4be563abe19459c197603d8d5973c00000000"/>
+		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма.Form" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5.0" configVersion="a69de317354b9c47bab2b1279983399000000000"/>
 		<Metadata name="Document.ВозвратТовараОтПокупателя" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747" configVersion="58fc061a2f191b4490458a4835ab333100000000"/>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="88625c99a4910f4481c08e028142c1d300000000">
 			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.Склад" id="10b65996-3df1-4425-85cc-4473231e12ea"/>
