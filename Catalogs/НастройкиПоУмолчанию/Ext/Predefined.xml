@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
+	<Item id="dd3bbb98-a48e-494e-8b32-e58ee54c1415">
+		<Name>ВысотаКнопок</Name>
+		<Code>000000010</Code>
+		<Description>Высота кнопок</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
 	<Item id="810d6ced-ea1f-487b-b66b-7d2090d5295c">
 		<Name>КоличествоКнопокВКолонке</Name>
 		<Code>000000009</Code>
@@ -46,6 +52,12 @@
 		<Name>ПорядокОкругленияЦен</Name>
 		<Code>000000005</Code>
 		<Description>Порядок округления цен</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="f86eb849-a6f9-48ec-9637-bce659c6598e">
+		<Name>ШиринаКнопок</Name>
+		<Code>000000011</Code>
+		<Description>Ширина кнопок</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
 </PredefinedData>

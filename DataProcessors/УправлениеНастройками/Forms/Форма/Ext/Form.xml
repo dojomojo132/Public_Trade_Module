@@ -156,6 +156,18 @@
 							<ContextMenu name="КоличествоКнопокВРядуКонтекстноеМеню" id="45"/>
 							<ExtendedTooltip name="КоличествоКнопокВРядуРасширеннаяПодсказка" id="46"/>
 						</InputField>
+						<InputField name="ШиринаКнопок" id="47">
+							<DataPath>ШиринаКнопок</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ШиринаКнопокКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ШиринаКнопокРасширеннаяПодсказка" id="49"/>
+						</InputField>
+						<InputField name="ВысотаКнопок" id="50">
+							<DataPath>ВысотаКнопок</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ВысотаКнопокКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ВысотаКнопокРасширеннаяПодсказка" id="52"/>
+						</InputField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -225,6 +237,38 @@
 				<v8:Type>xs:decimal</v8:Type>
 				<v8:NumberQualifiers>
 					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВысотаКнопок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Высота кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаКнопок" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>

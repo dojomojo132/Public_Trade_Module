@@ -1,0 +1,34 @@
+﻿{
+  "name": "ptm-scanner-emulator",
+  "version": "1.0.0",
+  "description": "USB Barcode Scanner Emulator for 1C PTM",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win --x64"
+  },
+  "keywords": [
+    "barcode",
+    "scanner",
+    "emulator",
+    "1c"
+  ],
+  "author": "PTM Team",
+  "license": "MIT",
+  "dependencies": {
+    "robotjs": "^0.6.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.0"
+  },
+  "build": {
+    "appId": "com.ptm.scanner-emulator",
+    "productName": "PTM Scanner Emulator",
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    }
+  }
+}
