@@ -116,7 +116,18 @@
 		<Metadata name="DataProcessor.УправлениеНастройками" id="b7c8d9e0-f1a2-3b4c-5d6e-7f8a9b0c1d2e" configVersion="b0c39cf64d4ba2489dbd2f3c4bc876d500000000"/>
 		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5" configVersion="05455afe97e85240b9ee8ee4261fc8b200000000"/>
 		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма.Form" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5.0" configVersion="97d9fc6a9f10fe43b1743443ab7290d100000000"/>
-		<Metadata name="Document.ВозвратТовараОтПокупателя" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747" configVersion="cc2a6b99a86732449653a0ac7c30277f00000000"/>
+		<Metadata name="Document.ВозвратТовараОтПокупателя" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747" configVersion="dd3b7ca9b97843559764 1b1b8d41388800000000">
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.ДокументОснование" id="a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.Склад" id="b2c3d4e5-f6a7-8901-b2c3-d4e5f6a78901"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.ФискальныйВозврат" id="c3d4e5f6-a7b8-9012-c3d4-e5f6a7b89012"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары" id="12345678-9012-3456-1234-567890123456"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары.Attribute.Номенклатура" id="23456789-0123-4567-2890-123456789012"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары.Attribute.Количество" id="34567890-1234-5678-3901-234567890123"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары.Attribute.Цена" id="45678901-2345-6789-4012-345678901234"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары.Attribute.Сумма" id="56789012-3456-7890-5123-456789012345"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Form.ФормаВыбораРежимаВозврата" id="f0e1d2c3-b4a5-9687-f1e2-d3c4b5a69788" configVersion="f6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d100000000"/>
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Form.ФормаВыбораРежимаВозврата.Form" id="f0e1d2c3-b4a5-9687-f1e2-d3c4b5a69788.0" configVersion="b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e700000000"/>
+		</Metadata>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="e84d3986ffd59b4ba3b88140a124cbc700000000">
 			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.Склад" id="10b65996-3df1-4425-85cc-4473231e12ea"/>
 			<Metadata name="Document.ИнвентаризацияТоваров.TabularSection.Товары.Attribute.Отклонение" id="464b5138-cc74-479a-acd3-b8170f6b843d"/>
