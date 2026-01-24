@@ -32,8 +32,13 @@
 			</xr:ContainedObject>
 		</InternalInfo>
 		<Properties>
-			<Name>Конфигурация</Name>
-			<Synonym/>
+			<Name>ТорговляРозница</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Торговля розница</v8:content>
+				</v8:item>
+			</Synonym>
 			<Comment/>
 			<NamePrefix/>
 			<ConfigurationExtensionCompatibilityMode>Version8_3_27</ConfigurationExtensionCompatibilityMode>
@@ -227,7 +232,7 @@
 			<AllowedIncomingShareRequestTypes/>
 			<MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
 			<DefaultInterface/>
-			<DefaultStyle/>
+			<DefaultStyle>Style.Черный</DefaultStyle>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
@@ -252,6 +257,23 @@
 			<Subsystem>Все</Subsystem>
 			<Subsystem>Фискал</Subsystem>
 			<Subsystem>Тесты</Subsystem>
+			<StyleItem>ЦветКнопкиГруппы</StyleItem>
+			<Style>ЧорныйРежим</Style>
+			<Style>Зелёный</Style>
+			<Style>Античный</Style>
+			<Style>Молодёжный</Style>
+			<Style>Классический</Style>
+			<Style>Розовый</Style>
+			<Style>Нэжный</Style>
+			<Style>Синий</Style>
+			<Style>Красный</Style>
+			<Style>Малиновый</Style>
+			<Style>Серый</Style>
+			<Style>Фиолетовый</Style>
+			<Style>Инфостарт</Style>
+			<Style>Белый</Style>
+			<Style>Черный</Style>
+			<CommonPicture>ИконкаПодсистем</CommonPicture>
 			<Role>Администратор</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
