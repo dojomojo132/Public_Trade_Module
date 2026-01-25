@@ -186,7 +186,7 @@ file_search(query="Конфигурация/Documents/ВозвратТовара
 ```cmd
 "C:\Program Files\1cv8\8.3.27.1719\bin\1cv8.exe" DESIGNER ^
   /S "localhost\ptm" ^
-  /N "Администратор" ^
+  /N "Админ" ^
   /LoadConfigFromFiles "D:\Git\Public_Trade_Module\Конфигурация" ^
   /UpdateDBCfg
 ```
