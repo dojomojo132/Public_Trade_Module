@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Родитель" id="7">
+			<DataPath>Объект.Parent</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="РодительКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Артикул" id="10">
+			<DataPath>Объект.Артикул</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="АртикулКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="АртикулРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ЕдиницаИзмерения" id="13">
+			<DataPath>Объект.ЕдиницаИзмерения</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="СтавкаНДС" id="16">
+			<DataPath>Объект.СтавкаНДС</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="НалоговаяГруппа" id="19">
+			<DataPath>Объект.НалоговаяГруппа</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НалоговаяГруппаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="НалоговаяГруппаРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="КодУКТЗЕД" id="22">
+			<DataPath>Объект.КодУКТЗЕД</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодУКТЗЕДКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="КодУКТЗЕДРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<CheckBoxField name="ТребуетАкцизнуюМарку" id="25">
+			<DataPath>Объект.ТребуетАкцизнуюМарку</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТребуетАкцизнуюМаркуКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ТребуетАкцизнуюМаркуРасширеннаяПодсказка" id="27"/>
+		</CheckBoxField>
+		<InputField name="ПроцентНаценки" id="28">
+			<DataPath>Объект.ПроцентНаценки</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ПроцентНаценкиКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ПроцентНаценкиРасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<Table name="Штрихкоды" id="31">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Штрихкоды</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ШтрихкодыКонтекстноеМеню" id="32"/>
+			<AutoCommandBar name="ШтрихкодыКоманднаяПанель" id="33"/>
+			<ExtendedTooltip name="ШтрихкодыРасширеннаяПодсказка" id="34"/>
+			<SearchStringAddition name="ШтрихкодыСтрокаПоиска" id="35">
+				<AdditionSource>
+					<Item>Штрихкоды</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ШтрихкодыСтрокаПоискаКонтекстноеМеню" id="36"/>
+				<ExtendedTooltip name="ШтрихкодыСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ШтрихкодыСостояниеПросмотра" id="38">
+				<AdditionSource>
+					<Item>Штрихкоды</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ШтрихкодыСостояниеПросмотраКонтекстноеМеню" id="39"/>
+				<ExtendedTooltip name="ШтрихкодыСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ШтрихкодыУправлениеПоиском" id="41">
+				<AdditionSource>
+					<Item>Штрихкоды</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ШтрихкодыУправлениеПоискомКонтекстноеМеню" id="42"/>
+				<ExtendedTooltip name="ШтрихкодыУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ШтрихкодыНомерСтроки" id="44">
+					<DataPath>Объект.Штрихкоды.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ШтрихкодыНомерСтрокиКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ШтрихкодыНомерСтрокиРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<InputField name="ШтрихкодыШтрихкод" id="47">
+					<DataPath>Объект.Штрихкоды.Штрихкод</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ШтрихкодыШтрихкодКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ШтрихкодыШтрихкодРасширеннаяПодсказка" id="49"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Номенклатура</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

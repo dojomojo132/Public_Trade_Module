@@ -4,11 +4,14 @@
 	<UsePostingMode>Auto</UsePostingMode>
 	<RepostOnWrite>true</RepostOnWrite>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
-		<UsualGroup name="Группа1" id="35">
+		<UsualGroup name="Группа1" id="41">
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="36"/>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="42"/>
 			<ChildItems>
 				<InputField name="Номер" id="1">
 					<DataPath>Объект.Number</DataPath>
@@ -26,12 +29,13 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="Склад" id="7">
-			<DataPath>Объект.Склад</DataPath>
+		<InputField name="ТипЦен" id="7">
+			<DataPath>Объект.ТипЦен</DataPath>
+			<Visible>false</Visible>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
+			<ContextMenu name="ТипЦенКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТипЦенРасширеннаяПодсказка" id="9"/>
 		</InputField>
 		<Table name="Товары" id="10">
 			<Representation>List</Representation>
@@ -74,12 +78,12 @@
 					<ContextMenu name="ТоварыНомерСтрокиКонтекстноеМеню" id="24"/>
 					<ExtendedTooltip name="ТоварыНомерСтрокиРасширеннаяПодсказка" id="25"/>
 				</LabelField>
-				<InputField name="ТоварыШтрихкод" id="29">
+				<InputField name="ТоварыШтрихкод" id="32">
 					<DataPath>Объект.Товары.Штрихкод</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="ТоварыШтрихкодКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ТоварыШтрихкодРасширеннаяПодсказка" id="31"/>
+					<ContextMenu name="ТоварыШтрихкодКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТоварыШтрихкодРасширеннаяПодсказка" id="34"/>
 					<Events>
 						<Event name="OnChange">ТоварыШтрихкодПриИзменении</Event>
 					</Events>
@@ -94,15 +98,31 @@
 						<Event name="OnChange">ТоварыНоменклатураПриИзменении</Event>
 					</Events>
 				</InputField>
-				<InputField name="ТоварыКоличество" id="32">
-					<DataPath>Объект.Товары.Количество</DataPath>
+				<InputField name="ТоварыСтараяЦена" id="35">
+					<DataPath>Объект.Товары.СтараяЦена</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="ТоварыКоличествоРасширеннаяПодсказка" id="34"/>
+					<ContextMenu name="ТоварыСтараяЦенаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТоварыСтараяЦенаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ТоварыЦена" id="29">
+					<DataPath>Объект.Товары.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыЦенаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТоварыЦенаРасширеннаяПодсказка" id="31"/>
 					<Events>
-						<Event name="OnChange">ТоварыКоличествоПриИзменении</Event>
+						<Event name="OnChange">ТоварыЦенаПриИзменении</Event>
 					</Events>
+				</InputField>
+				<InputField name="ТоварыПроцентИзменения" id="38">
+					<DataPath>Объект.Товары.ПроцентИзменения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ТоварыПроцентИзмененияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТоварыПроцентИзмененияРасширеннаяПодсказка" id="40"/>
 				</InputField>
 			</ChildItems>
 		</Table>
@@ -110,7 +130,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:DocumentObject.СписаниеТовара</v8:Type>
+				<v8:Type>cfg:DocumentObject.Переоценка</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
