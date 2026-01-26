@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Импорт номенклатуры из Excel</v8:content>
+		</v8:item>
+	</Title>
+	<Width>70</Width>
+	<Height>24</Height>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="200">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команды</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="318"/>
+			<ChildItems>
+				<Button name="КнопкаИмпорт" id="201">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ВыполнитьИмпорт</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Импортировать</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаИмпортРасширеннаяПодсказка" id="319"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаФайлНоменклатуры" id="100">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаФайлНоменклатурыРасширеннаяПодсказка" id="302"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлуНоменклатуры" id="101">
+					<DataPath>ПутьКФайлуНоменклатуры</DataPath>
+					<Width>55</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ContextMenu name="ПутьКФайлуНоменклатурыКонтекстноеМеню" id="303"/>
+					<ExtendedTooltip name="ПутьКФайлуНоменклатурыРасширеннаяПодсказка" id="304"/>
+					<Events>
+						<Event name="StartChoice">ВыбратьФайлНоменклатуры</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаФайлШтрихкодов" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл штрихкодов</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаФайлШтрихкодовРасширеннаяПодсказка" id="305"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлуШтрихкодов" id="111">
+					<DataPath>ПутьКФайлуШтрихкодов</DataPath>
+					<Width>55</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ПутьКФайлуШтрихкодовКонтекстноеМеню" id="306"/>
+					<ExtendedTooltip name="ПутьКФайлуШтрихкодовРасширеннаяПодсказка" id="307"/>
+					<Events>
+						<Event name="StartChoice">ВыбратьФайлШтрихкодов</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаФайлЦен" id="120">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл цен</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаФайлЦенРасширеннаяПодсказка" id="308"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлуЦен" id="121">
+					<DataPath>ПутьКФайлуЦен</DataPath>
+					<Width>40</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ПутьКФайлуЦенКонтекстноеМеню" id="309"/>
+					<ExtendedTooltip name="ПутьКФайлуЦенРасширеннаяПодсказка" id="310"/>
+					<Events>
+						<Event name="StartChoice">ВыбратьФайлЦен</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТипЦен" id="122">
+					<DataPath>ТипЦен</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип цен</v8:content>
+						</v8:item>
+					</Title>
+					<Width>15</Width>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="ТипЦенКонтекстноеМеню" id="311"/>
+					<ExtendedTooltip name="ТипЦенРасширеннаяПодсказка" id="312"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Button name="ВыполнитьИмпорт" id="323">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ВыполнитьИмпорт</CommandName>
+			<ExtendedTooltip name="ВыполнитьИмпортРасширеннаяПодсказка" id="324"/>
+		</Button>
+		<UsualGroup name="ГруппаФайлОстатков" id="130">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл остатков</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаФайлОстатковРасширеннаяПодсказка" id="313"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлуОстатков" id="131">
+					<DataPath>ПутьКФайлуОстатков</DataPath>
+					<Width>40</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ПутьКФайлуОстатковКонтекстноеМеню" id="314"/>
+					<ExtendedTooltip name="ПутьКФайлуОстатковРасширеннаяПодсказка" id="315"/>
+					<Events>
+						<Event name="StartChoice">ВыбратьФайлОстатков</Event>
+					</Events>
+				</InputField>
+				<InputField name="Склад" id="132">
+					<DataPath>Склад</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад</v8:content>
+						</v8:item>
+					</Title>
+					<Width>15</Width>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="СкладКонтекстноеМеню" id="316"/>
+					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="317"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаИнформация" id="300">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формат файлов</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="320"/>
+			<ChildItems>
+				<LabelDecoration name="НадписьИнформация" id="301">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>65</MaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура: Код, Наименование, На этикетке, Ед.изм., Код родитель, Наим. родитель
+Штрихкоды: Код товара, Штрихкод
+Цены: Код товара, Цена
+Остатки: Код товара, Остаток</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьИнформацияКонтекстноеМеню" id="321"/>
+					<ExtendedTooltip name="НадписьИнформацияРасширеннаяПодсказка" id="322"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИмпортЕкспортНоменклатуры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПутьКФайлуНоменклатуры" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлуШтрихкодов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл штрихкодов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлуЦен" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл цен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипЦен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип цен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ТипыЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьКФайлуОстатков" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файл остатков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Склад" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьИмпорт" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить импорт</v8:content>
+				</v8:item>
+			</Title>
+			<Use>
+				<xr:Common>false</xr:Common>
+			</Use>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

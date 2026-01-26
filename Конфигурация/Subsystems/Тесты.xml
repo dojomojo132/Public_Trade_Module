@@ -23,6 +23,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеЦен</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеШтрихкодов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеДанных</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ИмпортЕкспортНоменклатуры</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

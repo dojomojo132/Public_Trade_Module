@@ -60,4 +60,10 @@
 		<Description>Ширина кнопок</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
+	<Item id="a1b2c3d4-e5f6-7890-1234-567890abcdef">
+		<Name>ФискальныйРежим</Name>
+		<Code>000000012</Code>
+		<Description>Фискальный режим</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
 </PredefinedData>

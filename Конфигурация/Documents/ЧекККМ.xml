@@ -51,7 +51,7 @@
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
 			<DefaultObjectForm>Document.ЧекККМ.Form.ФормаДокумента</DefaultObjectForm>
 			<DefaultListForm/>
-			<DefaultChoiceForm/>
+			<DefaultChoiceForm>Document.ЧекККМ.Form.ФормаВыбораЧека</DefaultChoiceForm>
 			<AuxiliaryObjectForm/>
 			<AuxiliaryListForm/>
 			<AuxiliaryChoiceForm/>
@@ -323,6 +323,7 @@
 				</Properties>
 			</Attribute>
 			<Form>ФормаДокумента</Form>
+			<Form>ФормаВыбораЧека</Form>
 			<TabularSection uuid="93a8f514-b24f-46a8-9ac1-5f706a6e3346">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.ЧекККМ.Товары" category="TabularSection">
