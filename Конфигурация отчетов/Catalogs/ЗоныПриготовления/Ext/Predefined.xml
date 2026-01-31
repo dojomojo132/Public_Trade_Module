@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
+	<Item id="a4850f24-934f-4ab6-a9be-2e8f13d3aab2">
+		<Name>Общая</Name>
+		<Code>1</Code>
+		<Description>Общая</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="f86955a8-07c1-4cfe-8224-d811375c13d6">
+		<Name>ПоследовательностьЗаполнения</Name>
+		<Code>2</Code>
+		<Description>Последовательность заполнения</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>

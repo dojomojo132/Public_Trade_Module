@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="ДатаЗадач" id="1">
+			<DataPath>Объект.ДатаЗадач</DataPath>
+			<ContextMenu name="ДатаЗадачКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДатаЗадачРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ДатаЗадачПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="ДеревоЗадач" id="4">
+			<Representation>Tree</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ДеревоЗадач</DataPath>
+			<ContextMenu name="ДеревоЗадачКонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="ДеревоЗадачКоманднаяПанель" id="6"/>
+			<ExtendedTooltip name="ДеревоЗадачРасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="ДеревоЗадачСтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>ДеревоЗадач</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗадачСтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ДеревоЗадачСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоЗадачСостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>ДеревоЗадач</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗадачСостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ДеревоЗадачСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоЗадачУправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>ДеревоЗадач</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоЗадачУправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ДеревоЗадачУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ДеревоЗадачЗадача" id="17">
+					<DataPath>ДеревоЗадач.Задача</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоЗадачЗадачаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ДеревоЗадачЗадачаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ДеревоЗадачСтатус" id="20">
+					<DataPath>ДеревоЗадач.Статус</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДеревоЗадачСтатусКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДеревоЗадачСтатусРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗапланированыеЗадачи</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоЗадач" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Задача" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СписокЗадач</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Статус" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусВыполнения</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+</Form>

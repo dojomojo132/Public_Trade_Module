@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписать" id="70">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="71"/>
+			</Button>
+			<Button name="ФормаВыполнитьИЗакрыть" id="68">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.ExecuteAndClose</CommandName>
+				<ExtendedTooltip name="ФормаВыполнитьИЗакрытьРасширеннаяПодсказка" id="69"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="72">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="73"/>
+			</Button>
+			<Button name="ФормаСоздатьНовуюЗадачу" id="74">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.СоздатьНовуюЗадачу</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДобавитьЗадачу</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаСоздатьНовуюЗадачуРасширеннаяПодсказка" id="75"/>
+			</Button>
+			<Button name="ФормаПеречитать" id="79">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Reread</CommandName>
+				<ExtendedTooltip name="ФормаПеречитатьРасширеннаяПодсказка" id="80"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="10">
+			<Visible>false</Visible>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="7">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="Группа2" id="12">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<RadioButtonField name="СтатусЗадачи" id="17">
+					<DataPath>СтатусЗадачи</DataPath>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Создано</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусВыполнения.EnumValue.Создано</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выполняется</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусВыполнения.EnumValue.Выполняется</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Завершено</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусВыполнения.EnumValue.Завершено</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СтатусЗадачиКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СтатусЗадачиРасширеннаяПодсказка" id="19"/>
+					<Events>
+						<Event name="OnChange">ЭлементыПриИзминении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="Запланировано" id="14">
+					<DataPath>Запланировано</DataPath>
+					<ContextMenu name="ЗапланированоКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ЗапланированоРасширеннаяПодсказка" id="16"/>
+					<Events>
+						<Event name="OnChange">ЭлементыПриИзминении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа3" id="61">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="62"/>
+			<ChildItems>
+				<InputField name="Ответственый" id="55">
+					<DataPath>Ответственый</DataPath>
+					<ContextMenu name="ОтветственыйКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ОтветственыйРасширеннаяПодсказка" id="57"/>
+					<Events>
+						<Event name="OnChange">ЭлементыПриИзминении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОбъектКлиента" id="58">
+					<DataPath>ОбъектКлиента</DataPath>
+					<ContextMenu name="ОбъектКлиентаКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ОбъектКлиентаРасширеннаяПодсказка" id="60"/>
+					<Events>
+						<Event name="OnChange">ЭлементыПриИзминении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Родитель" id="76">
+			<DataPath>Родитель</DataPath>
+			<ContextMenu name="РодительКонтекстноеМеню" id="77"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="78"/>
+		</InputField>
+		<Table name="ПодЗадачи" id="22">
+			<ReadOnly>true</ReadOnly>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>ПодЗадачи</DataPath>
+			<RowPictureDataPath>ПодЗадачи.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="ПодЗадачиКонтекстноеМеню" id="23"/>
+			<AutoCommandBar name="ПодЗадачиКоманднаяПанель" id="24">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПодЗадачиРасширеннаяПодсказка" id="25"/>
+			<SearchStringAddition name="ПодЗадачиСтрокаПоиска" id="26">
+				<AdditionSource>
+					<Item>ПодЗадачи</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодЗадачиСтрокаПоискаКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ПодЗадачиСтрокаПоискаРасширеннаяПодсказка" id="28"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПодЗадачиСостояниеПросмотра" id="29">
+				<AdditionSource>
+					<Item>ПодЗадачи</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодЗадачиСостояниеПросмотраКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="ПодЗадачиСостояниеПросмотраРасширеннаяПодсказка" id="31"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПодЗадачиУправлениеПоиском" id="32">
+				<AdditionSource>
+					<Item>ПодЗадачи</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПодЗадачиУправлениеПоискомКонтекстноеМеню" id="33"/>
+				<ExtendedTooltip name="ПодЗадачиУправлениеПоискомРасширеннаяПодсказка" id="34"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnGetDataAtServer">ПодЗадачиПриПолученииДанныхНаСервере</Event>
+				<Event name="BeforeRowChange">ПодЗадачиПередНачаломИзменения</Event>
+				<Event name="OnStartEdit">ПодЗадачиПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПодЗадачиЗадача" id="38">
+					<DataPath>ПодЗадачи.Задача</DataPath>
+					<ContextMenu name="ПодЗадачиЗадачаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПодЗадачиЗадачаРасширеннаяПодсказка" id="40"/>
+				</LabelField>
+				<LabelField name="ПодЗадачиЗадачаНаименование" id="44">
+					<DataPath>ПодЗадачи.ЗадачаНаименование</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ПодЗадачиЗадачаНаименованиеКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ПодЗадачиЗадачаНаименованиеРасширеннаяПодсказка" id="46"/>
+				</LabelField>
+				<LabelField name="ПодЗадачиСтандартнаяКартинка" id="41">
+					<DataPath>ПодЗадачи.DefaultPicture</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ПодЗадачиСтандартнаяКартинкаКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ПодЗадачиСтандартнаяКартинкаРасширеннаяПодсказка" id="43"/>
+				</LabelField>
+				<LabelField name="ПодЗадачиАвтор" id="35">
+					<DataPath>ПодЗадачи.Автор</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ПодЗадачиАвторКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ПодЗадачиАвторРасширеннаяПодсказка" id="37"/>
+				</LabelField>
+				<LabelField name="ПодЗадачиСтатусВыполнения" id="52">
+					<DataPath>ПодЗадачи.СтатусВыполнения</DataPath>
+					<ContextMenu name="ПодЗадачиСтатусВыполненияКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ПодЗадачиСтатусВыполненияРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<CheckBoxField name="ПодЗадачиЗадачаВыполнена" id="47">
+					<DataPath>ПодЗадачи.ЗадачаВыполнена</DataPath>
+					<Visible>false</Visible>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПодЗадачиЗадачаВыполненаКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ПодЗадачиЗадачаВыполненаРасширеннаяПодсказка" id="49"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:TaskObject.Задачи</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СтатусЗадачи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтатусВыполнения</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Запланировано" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запланировано</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПодЗадачи" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Под задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РодительЗадачиСрезПоследних.Задача КАК Задача,
+	РодительЗадачиСрезПоследних.Автор КАК Автор,
+	РодительЗадачиСрезПоследних.Задача.Наименование КАК ЗадачаНаименование,
+	РодительЗадачиСрезПоследних.Задача.Выполнена КАК ЗадачаВыполнена,
+	"                        " КАК СтатусВыполнения
+ИЗ
+	РегистрСведений.РодительЗадачи.СрезПоследних(, Родитель = &amp;Родитель) КАК РодительЗадачиСрезПоследних</QueryText>
+				<MainTable>InformationRegister.РодительЗадачи.SliceLast</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Ответственый" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственый</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Сотрудники_Отделы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектКлиента" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Объекты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Родитель" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Родитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:TaskRef.Задачи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьЗадачу" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть задачу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть задачу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьЗадачу</Action>
+		</Command>
+		<Command name="СоздатьНовуюЗадачу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать новую задачу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать новую задачу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНовуюЗадачу</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Родитель">
+			<Type>
+				<v8:Type>cfg:TaskRef.Задачи</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

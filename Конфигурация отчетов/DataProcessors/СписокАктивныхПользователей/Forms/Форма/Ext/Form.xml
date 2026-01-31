@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОбновить" id="32">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Обновить</CommandName>
+				<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="33"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Table name="ИтогСписокСоединений" id="1">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ИтогСписокСоединений</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИтогСписокСоединенийКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ИтогСписокСоединенийКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ИтогСписокСоединенийРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ИтогСписокСоединенийСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ИтогСписокСоединений</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИтогСписокСоединенийСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ИтогСписокСоединенийСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИтогСписокСоединенийСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ИтогСписокСоединений</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИтогСписокСоединенийСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ИтогСписокСоединенийСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИтогСписокСоединенийУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ИтогСписокСоединений</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИтогСписокСоединенийУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ИтогСписокСоединенийУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ИтогСписокСоединенийНомерСтроки" id="14">
+					<DataPath>Объект.ИтогСписокСоединений.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийНомерСтрокиКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийНомерСтрокиРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+				<InputField name="ИтогСписокСоединенийПользователь" id="17">
+					<DataPath>Объект.ИтогСписокСоединений.Пользователь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийПользовательКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийПользовательРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ИтогСписокСоединенийПриложение" id="20">
+					<DataPath>Объект.ИтогСписокСоединений.Приложение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийПриложениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийПриложениеРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ИтогСписокСоединенийНачалоРаботы" id="23">
+					<DataPath>Объект.ИтогСписокСоединений.НачалоРаботы</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийНачалоРаботыКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийНачалоРаботыРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ИтогСписокСоединенийКомпьютер" id="26">
+					<DataPath>Объект.ИтогСписокСоединений.Компьютер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийКомпьютерКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийКомпьютерРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ИтогСписокСоединенийСоединение" id="29">
+					<DataPath>Объект.ИтогСписокСоединений.Соединение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИтогСписокСоединенийСоединениеКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ИтогСписокСоединенийСоединениеРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СписокАктивныхПользователей</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обновить</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Анализ" id="44">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Анализ</CommandName>
+				<ExtendedTooltip name="АнализРасширеннаяПодсказка" id="45"/>
+			</Button>
+			<Button name="ЗаполнитьТЧ" id="42">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьТЧ</CommandName>
+				<ExtendedTooltip name="ЗаполнитьТЧРасширеннаяПодсказка" id="43"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Pages name="Группа1" id="46">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<Page name="Группа2" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДанныеПереучета</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<Table name="ДанныеПереучета" id="52">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДанныеПереучета</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеПереучетаКонтекстноеМеню" id="53"/>
+							<AutoCommandBar name="ДанныеПереучетаКоманднаяПанель" id="54"/>
+							<ExtendedTooltip name="ДанныеПереучетаРасширеннаяПодсказка" id="55"/>
+							<SearchStringAddition name="ДанныеПереучетаСтрокаПоиска" id="56">
+								<AdditionSource>
+									<Item>ДанныеПереучета</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПереучетаСтрокаПоискаКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="ДанныеПереучетаСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеПереучетаСостояниеПросмотра" id="59">
+								<AdditionSource>
+									<Item>ДанныеПереучета</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПереучетаСостояниеПросмотраКонтекстноеМеню" id="60"/>
+								<ExtendedTooltip name="ДанныеПереучетаСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеПереучетаУправлениеПоиском" id="62">
+								<AdditionSource>
+									<Item>ДанныеПереучета</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеПереучетаУправлениеПоискомКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="ДанныеПереучетаУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДанныеПереучетаНомерСтроки" id="65">
+									<DataPath>Объект.ДанныеПереучета.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПереучетаНомерСтрокиКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ДанныеПереучетаНомерСтрокиРасширеннаяПодсказка" id="67"/>
+								</LabelField>
+								<InputField name="ДанныеПереучетаТовар" id="68">
+									<DataPath>Объект.ДанныеПереучета.Товар</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПереучетаТоварКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ДанныеПереучетаТоварРасширеннаяПодсказка" id="70"/>
+								</InputField>
+								<InputField name="ДанныеПереучетаКоличество" id="71">
+									<DataPath>Объект.ДанныеПереучета.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеПереучетаКоличествоКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="ДанныеПереучетаКоличествоРасширеннаяПодсказка" id="73"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа3" id="50">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пересорт</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="51"/>
+					<ChildItems>
+						<Table name="Пересорт" id="5">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Пересорт</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПересортКонтекстноеМеню" id="6"/>
+							<AutoCommandBar name="ПересортКоманднаяПанель" id="7"/>
+							<ExtendedTooltip name="ПересортРасширеннаяПодсказка" id="8"/>
+							<SearchStringAddition name="ПересортСтрокаПоиска" id="9">
+								<AdditionSource>
+									<Item>Пересорт</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПересортСтрокаПоискаКонтекстноеМеню" id="10"/>
+								<ExtendedTooltip name="ПересортСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПересортСостояниеПросмотра" id="12">
+								<AdditionSource>
+									<Item>Пересорт</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПересортСостояниеПросмотраКонтекстноеМеню" id="13"/>
+								<ExtendedTooltip name="ПересортСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПересортУправлениеПоиском" id="15">
+								<AdditionSource>
+									<Item>Пересорт</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПересортУправлениеПоискомКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="ПересортУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПересортНомерСтроки" id="18">
+									<DataPath>Объект.Пересорт.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортНомерСтрокиКонтекстноеМеню" id="19"/>
+									<ExtendedTooltip name="ПересортНомерСтрокиРасширеннаяПодсказка" id="20"/>
+								</LabelField>
+								<InputField name="ПересортТовар" id="21">
+									<DataPath>Объект.Пересорт.Товар</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортТоварКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="ПересортТоварРасширеннаяПодсказка" id="23"/>
+								</InputField>
+								<InputField name="ПересортКол_Нач_товар" id="24">
+									<DataPath>Объект.Пересорт.Кол_Нач_товар</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Было</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортКол_Нач_товарКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="ПересортКол_Нач_товарРасширеннаяПодсказка" id="26"/>
+								</InputField>
+								<InputField name="ПересортКол_Кон_Товар" id="27">
+									<DataPath>Объект.Пересорт.Кол_Кон_Товар</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стало</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортКол_Кон_ТоварКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ПересортКол_Кон_ТоварРасширеннаяПодсказка" id="29"/>
+								</InputField>
+								<InputField name="ПересортОперация" id="30" DisplayImportance="VeryHigh">
+									<DataPath>Объект.Пересорт.Операция</DataPath>
+									<TitleBackColor>style:ActivityColor</TitleBackColor>
+									<EditMode>EnterOnInput</EditMode>
+									<BackColor>style:ToolTipBackColor</BackColor>
+									<ContextMenu name="ПересортОперацияКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ПересортОперацияРасширеннаяПодсказка" id="32"/>
+								</InputField>
+								<InputField name="ПересортТовар2" id="33">
+									<DataPath>Объект.Пересорт.Товар2</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортТовар2КонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ПересортТовар2РасширеннаяПодсказка" id="35"/>
+								</InputField>
+								<InputField name="ПересортКол_Нач_товар2" id="36">
+									<DataPath>Объект.Пересорт.Кол_Нач_товар2</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Было</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортКол_Нач_товар2КонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="ПересортКол_Нач_товар2РасширеннаяПодсказка" id="38"/>
+								</InputField>
+								<InputField name="ПересортКол_Кон_Товар2" id="39">
+									<DataPath>Объект.Пересорт.Кол_Кон_Товар2</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Стало</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПересортКол_Кон_Товар2КонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ПересортКол_Кон_Товар2РасширеннаяПодсказка" id="41"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа4" id="74">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Списание</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="75"/>
+					<ChildItems>
+						<Table name="Списание" id="76">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.Списание</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Списание</v8:content>
+								</v8:item>
+							</Title>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СписаниеКонтекстноеМеню" id="77"/>
+							<AutoCommandBar name="СписаниеКоманднаяПанель" id="78"/>
+							<ExtendedTooltip name="СписаниеРасширеннаяПодсказка" id="79"/>
+							<SearchStringAddition name="СписаниеСтрокаПоиска" id="80">
+								<AdditionSource>
+									<Item>Списание</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписаниеСтрокаПоискаКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="СписаниеСтрокаПоискаРасширеннаяПодсказка" id="82"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписаниеСостояниеПросмотра" id="83">
+								<AdditionSource>
+									<Item>Списание</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписаниеСостояниеПросмотраКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="СписаниеСостояниеПросмотраРасширеннаяПодсказка" id="85"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписаниеУправлениеПоиском" id="86">
+								<AdditionSource>
+									<Item>Списание</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписаниеУправлениеПоискомКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="СписаниеУправлениеПоискомРасширеннаяПодсказка" id="88"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СписаниеНомерСтроки" id="89">
+									<DataPath>Объект.Списание.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписаниеНомерСтрокиКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="СписаниеНомерСтрокиРасширеннаяПодсказка" id="91"/>
+								</LabelField>
+								<InputField name="СписаниеТовар" id="92">
+									<DataPath>Объект.Списание.Товар</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписаниеТоварКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="СписаниеТоварРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="СписаниеКоличество" id="95">
+									<DataPath>Объект.Списание.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписаниеКоличествоКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="СписаниеКоличествоРасширеннаяПодсказка" id="97"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа5" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЗаполнениеПересорта</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<Table name="ЗаполнениеПересорта" id="100">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ЗаполнениеПересорта</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗаполнениеПересортаКонтекстноеМеню" id="101"/>
+							<AutoCommandBar name="ЗаполнениеПересортаКоманднаяПанель" id="102"/>
+							<ExtendedTooltip name="ЗаполнениеПересортаРасширеннаяПодсказка" id="103"/>
+							<SearchStringAddition name="ЗаполнениеПересортаСтрокаПоиска" id="104">
+								<AdditionSource>
+									<Item>ЗаполнениеПересорта</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПересортаСтрокаПоискаКонтекстноеМеню" id="105"/>
+								<ExtendedTooltip name="ЗаполнениеПересортаСтрокаПоискаРасширеннаяПодсказка" id="106"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаполнениеПересортаСостояниеПросмотра" id="107">
+								<AdditionSource>
+									<Item>ЗаполнениеПересорта</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПересортаСостояниеПросмотраКонтекстноеМеню" id="108"/>
+								<ExtendedTooltip name="ЗаполнениеПересортаСостояниеПросмотраРасширеннаяПодсказка" id="109"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаполнениеПересортаУправлениеПоиском" id="110">
+								<AdditionSource>
+									<Item>ЗаполнениеПересорта</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаполнениеПересортаУправлениеПоискомКонтекстноеМеню" id="111"/>
+								<ExtendedTooltip name="ЗаполнениеПересортаУправлениеПоискомРасширеннаяПодсказка" id="112"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЗаполнениеПересортаНомерСтроки" id="113">
+									<DataPath>Объект.ЗаполнениеПересорта.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПересортаНомерСтрокиКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="ЗаполнениеПересортаНомерСтрокиРасширеннаяПодсказка" id="115"/>
+								</LabelField>
+								<InputField name="ЗаполнениеПересортаРодитель" id="116">
+									<DataPath>Объект.ЗаполнениеПересорта.Родитель</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПересортаРодительКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="ЗаполнениеПересортаРодительРасширеннаяПодсказка" id="118"/>
+								</InputField>
+								<InputField name="ЗаполнениеПересортаПодчиненный" id="119">
+									<DataPath>Объект.ЗаполнениеПересорта.Подчиненный</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗаполнениеПересортаПодчиненныйКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="ЗаполнениеПересортаПодчиненныйРасширеннаяПодсказка" id="121"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТестированиеАнализа</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.ДанныеПереучета"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьТестовыйТовар" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать тестовый товар</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать тестовый товар</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьТестовыйТовар</Action>
+		</Command>
+		<Command name="ЗаполнитьСвязиТоваров" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить связи товаров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить связи товаров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьСвязиТоваров</Action>
+		</Command>
+		<Command name="ЗаполнитьТЧ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить ТЧ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить ТЧ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьТЧ</Action>
+		</Command>
+		<Command name="Анализ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Анализ</Action>
+		</Command>
+		<Command name="ЗаполнитьРегистр" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить регистр</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить регистр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьРегистр</Action>
+		</Command>
+	</Commands>
+</Form>

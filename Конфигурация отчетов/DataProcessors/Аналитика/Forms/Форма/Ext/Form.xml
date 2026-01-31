@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаПараметров" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПараметровРасширеннаяПодсказка" id="56"/>
+			<ChildItems>
+				<InputField name="ДатаНачало" id="1">
+					<DataPath>Объект.ДатаНачало</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаНачалоКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ДатаНачалоРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="ДатаКонец" id="4">
+					<DataPath>Объект.ДатаКонец</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонецКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаКонецРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Заведение" id="7">
+			<DataPath>Объект.Заведение</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ЗаведениеКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ЗаведениеРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<LabelField name="Перебор" id="59">
+			<DataPath>Объект.Перебор</DataPath>
+			<TitleFont ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Font ref="style:NormalTextFont" height="14" bold="false" italic="true" underline="true" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="ПереборКонтекстноеМеню" id="60"/>
+			<ExtendedTooltip name="ПереборРасширеннаяПодсказка" id="61"/>
+		</LabelField>
+		<Table name="ТЧ" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТЧ</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТЧКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ТЧКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ТЧРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ТЧСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТЧСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТЧСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТЧСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТЧУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ТЧДатаОтчета" id="23">
+					<DataPath>Объект.ТЧ.ДатаОтчета</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧДатаОтчетаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТЧДатаОтчетаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ТЧСуммаКассы" id="26">
+					<DataPath>Объект.ТЧ.СуммаКассы</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаКассыКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТЧСуммаКассыРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТЧСуммаХлеб" id="29">
+					<DataPath>Объект.ТЧ.СуммаХлеб</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаХлебКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТЧСуммаХлебРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ТЧСуммаРасхода" id="32">
+					<DataPath>Объект.ТЧ.СуммаРасхода</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаРасходаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТЧСуммаРасходаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ТЧСуммаДесерты" id="35">
+					<DataPath>Объект.ТЧ.СуммаДесерты</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаДесертыКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТЧСуммаДесертыРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ТЧПеребор" id="38">
+					<DataPath>Объект.ТЧ.Перебор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧПереборКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТЧПереборРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ТЧВозвратСредиНедели" id="41">
+					<DataPath>Объект.ТЧ.ВозвратСредиНедели</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧВозвратСредиНеделиКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ТЧВозвратСредиНеделиРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ТЧПроцент" id="44">
+					<DataPath>Объект.ТЧ.Процент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧПроцентКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ТЧПроцентРасширеннаяПодсказка" id="46"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Button name="ПоказатьОтчет" id="53">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ПоказатьОтчет</CommandName>
+			<ExtendedTooltip name="ПоказатьОтчетРасширеннаяПодсказка" id="54"/>
+		</Button>
+		<UsualGroup name="ГруппаИтогов" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итогов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа итогов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИтоговРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<LabelField name="ТЧИтогВозвратСредиНедели" id="50">
+					<DataPath>Объект.ТЧ.TotalВозвратСредиНедели</DataPath>
+					<ContextMenu name="ТЧИтогВозвратСредиНеделиКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ТЧИтогВозвратСредиНеделиРасширеннаяПодсказка" id="52"/>
+				</LabelField>
+				<LabelField name="ТЧИтогПеребор" id="47">
+					<DataPath>Объект.ТЧ.TotalПеребор</DataPath>
+					<ContextMenu name="ТЧИтогПереборКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ТЧИтогПереборРасширеннаяПодсказка" id="49"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Аналитика</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПоказатьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать отчет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПросмотретьОтчет</Action>
+		</Command>
+	</Commands>
+</Form>

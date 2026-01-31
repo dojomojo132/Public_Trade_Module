@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="32">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="33"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<Table name="Калькуляция" id="7">
+			<Representation>List</Representation>
+			<ReadOnly>true</ReadOnly>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<HorizontalStretch>false</HorizontalStretch>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Калькуляция</DataPath>
+			<Font ref="style:NormalTextFont" height="10" kind="StyleItem"/>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КалькуляцияКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="КалькуляцияКоманднаяПанель" id="9">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КалькуляцияРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="КалькуляцияСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>Калькуляция</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КалькуляцияСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="КалькуляцияСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КалькуляцияСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>Калькуляция</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КалькуляцияСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="КалькуляцияСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КалькуляцияУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Калькуляция</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КалькуляцияУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="КалькуляцияУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="КалькуляцияНомерСтроки" id="20">
+					<DataPath>Объект.Калькуляция.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалькуляцияНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КалькуляцияНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="КалькуляцияТМЦ" id="23">
+					<DataPath>Объект.Калькуляция.ТМЦ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>26</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>1</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КалькуляцияТМЦКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="КалькуляцияТМЦРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="КалькуляцияЕд" id="26">
+					<DataPath>Объект.Калькуляция.Ед</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>5</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КалькуляцияЕдКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="КалькуляцияЕдРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="КалькуляцияВес" id="29">
+					<DataPath>Объект.Калькуляция.Вес</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>8</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>1</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КалькуляцияВесКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="КалькуляцияВесРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Блюда</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

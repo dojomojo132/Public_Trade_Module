@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ДатаСмены" id="1">
+			<DataPath>Объект.ДатаСмены</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаСменыКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДатаСменыРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ДатаСменыПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="ТЧ" id="4">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТЧ</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТЧКонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="ТЧКоманднаяПанель" id="6">
+				<ChildItems>
+					<Button name="ТЧОбновить" id="38">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>Form.Command.Обновить</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.Refresh</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ТЧОбновитьРасширеннаяПодсказка" id="39"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТЧРасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="ТЧСтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТЧСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТЧСостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТЧСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТЧУправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧУправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТЧНомерСтроки" id="17">
+					<DataPath>Объект.ТЧ.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧНомерСтрокиКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТЧНомерСтрокиРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<InputField name="ТЧЗаведение" id="20">
+					<DataPath>Объект.ТЧ.Заведение</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧЗаведениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ТЧЗаведениеРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ТЧНомерСчета" id="23">
+					<DataPath>Объект.ТЧ.НомерСчета</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧНомерСчетаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТЧНомерСчетаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ТЧСумма" id="26">
+					<DataPath>Объект.ТЧ.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТЧСуммаРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТЧПричинаУдаления" id="29">
+					<DataPath>Объект.ТЧ.ПричинаУдаления</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧПричинаУдаленияКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТЧПричинаУдаленияРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ТЧКоментарий" id="32">
+					<DataPath>Объект.ТЧ.Коментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧКоментарийКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТЧКоментарийРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<CheckBoxField name="ТЧСтатус" id="35">
+					<DataPath>Объект.ТЧ.Статус</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТЧСтатусКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТЧСтатусРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">ТЧСтатусПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПанельУдаленияСчетов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДатаСменыПриИзменении</Action>
+		</Command>
+	</Commands>
+</Form>

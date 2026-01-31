@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОбработатьЦенны" id="43">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбработатьДанныеЦен</CommandName>
+				<BackColor>web:AliceBlue</BackColor>
+				<BorderColor>style:TableFooterTextColor</BorderColor>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Обработать Цены</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаОбработатьЦенныРасширеннаяПодсказка" id="44"/>
+			</Button>
+			<Button name="ФормаОбработатьОстатки" id="47">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбработатьОстатки</CommandName>
+				<BackColor>web:AliceBlue</BackColor>
+				<BorderColor>#000000</BorderColor>
+				<ExtendedTooltip name="ФормаОбработатьОстаткиРасширеннаяПодсказка" id="48"/>
+			</Button>
+			<Button name="ФормаПроверитьЗаполнение" id="45">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьЗаполнение</CommandName>
+				<ExtendedTooltip name="ФормаПроверитьЗаполнениеРасширеннаяПодсказка" id="46"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтандартныхРеквизитов" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартных реквизитов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартных реквизитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтандартныхРеквизитовРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Склад" id="7">
+			<DataPath>Объект.Склад</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="ДанныеНоменклатуры" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ДанныеНоменклатуры</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ДанныеНоменклатурыКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ДанныеНоменклатурыКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ДанныеНоменклатурыРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ДанныеНоменклатурыСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ДанныеНоменклатуры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеНоменклатурыСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ДанныеНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДанныеНоменклатурыСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ДанныеНоменклатуры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ДанныеНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДанныеНоменклатурыУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ДанныеНоменклатуры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеНоменклатурыУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ДанныеНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ДанныеНоменклатурыНомерСтроки" id="23">
+					<DataPath>Объект.ДанныеНоменклатуры.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеНоменклатурыНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ДанныеНоменклатурыШтрихКод" id="26">
+					<DataPath>Объект.ДанныеНоменклатуры.ШтрихКод</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧРГ=' '; ЧГ=0</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧРГ=' '; ЧГ=0</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ДанныеНоменклатурыШтрихКодКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыШтрихКодРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="OnChange">ДанныеНоменклатурыШтрихКодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДанныеНоменклатурыНоменклатура" id="29">
+					<DataPath>Объект.ДанныеНоменклатуры.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеНоменклатурыНоменклатураКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыНоменклатураРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДанныеНоменклатурыЦена" id="32">
+					<DataPath>Объект.ДанныеНоменклатуры.Цена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеНоменклатурыЦенаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыЦенаРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ОбработкаСуммы</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДанныеНоменклатурыОстаток" id="35">
+					<DataPath>Объект.ДанныеНоменклатуры.Остаток</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДанныеНоменклатурыОстатокКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыОстатокРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">ОбработкаСуммы</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДанныеНоменклатурыСумма" id="38">
+					<DataPath>Объект.ДанныеНоменклатуры.Сумма</DataPath>
+					<Enabled>false</Enabled>
+					<TitleBackColor>style:ActivityColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="ДанныеНоменклатурыСуммаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ДанныеНоменклатурыСуммаРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ВводПервичныхДанных</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбработатьДанныеЦен" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать данные цен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать данные цен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбработатьДанныеЦен</Action>
+		</Command>
+		<Command name="ПроверитьЗаполнение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить заполнение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить заполнение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьЗаполнениеДанных</Action>
+		</Command>
+		<Command name="ОбработатьОстатки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать остатки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать остатки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбработатьОстатки</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ПроверкаОстатков" id="58">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверкаОстатков</CommandName>
+				<ExtendedTooltip name="ПроверкаОстатковРасширеннаяПодсказка" id="59"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтандартныхРеквезитов" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартных реквезитов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стандартных реквезитов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтандартныхРеквезитовРасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Склад" id="7">
+			<DataPath>Объект.Склад</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СкладКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="ТЧ" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТЧ</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТЧКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ТЧКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="ТЧРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ТЧСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТЧСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТЧСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТЧСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТЧУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТЧНомерСтроки" id="23">
+					<DataPath>Объект.ТЧ.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТЧНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ТЧШтрихКод" id="26">
+					<DataPath>Объект.ТЧ.ШтрихКод</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧШтрихКодКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТЧШтрихКодРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ТЧНоменклатура" id="29">
+					<DataPath>Объект.ТЧ.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ТЧНоменклатураКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТЧНоменклатураРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">ТЧНоменклатураПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТЧЕдиницаИзминерения" id="32">
+					<DataPath>Объект.ТЧ.ЕдиницаИзминерения</DataPath>
+					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>4</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ТЧЕдиницаИзминеренияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТЧЕдиницаИзминеренияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ТЧТекущийОстаток" id="35">
+					<DataPath>Объект.ТЧ.ТекущийОстаток</DataPath>
+					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧТекущийОстатокКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТЧТекущийОстатокРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ТЧФактическийОстаток" id="38">
+					<DataPath>Объект.ТЧ.ФактическийОстаток</DataPath>
+					<TitleBackColor>style:AuxiliaryNavigationColor</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<ContextMenu name="ТЧФактическийОстатокКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТЧФактическийОстатокРасширеннаяПодсказка" id="40"/>
+					<Events>
+						<Event name="OnChange">ТЧФактическийОстатокПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТЧЦенаТовара" id="41">
+					<DataPath>Объект.ТЧ.ЦенаТовара</DataPath>
+					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧЦенаТовараКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ТЧЦенаТовараРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ТЧСуммаТовара" id="44">
+					<DataPath>Объект.ТЧ.СуммаТовара</DataPath>
+					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧСуммаТовараКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ТЧСуммаТовараРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ТЧКоличествоНедостачи" id="52">
+					<DataPath>Объект.ТЧ.КоличествоНедостачи</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<EditMode>EnterOnInput</EditMode>
+					<Font ref="style:NormalTextFont" height="0" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="ТЧКоличествоНедостачиКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ТЧКоличествоНедостачиРасширеннаяПодсказка" id="54"/>
+				</InputField>
+				<InputField name="ТЧСуммаНедостачи" id="47">
+					<DataPath>Объект.ТЧ.СуммаНедостачи</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleBackColor>style:ImportantColor</TitleBackColor>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<EditMode>EnterOnInput</EditMode>
+					<BackColor>style:ImportantColor</BackColor>
+					<Font ref="style:NormalTextFont" height="0" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="ТЧСуммаНедостачиКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ТЧСуммаНедостачиРасширеннаяПодсказка" id="49"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<LabelField name="ТЧИтогСуммаНедостачи" id="55">
+			<DataPath>Объект.ТЧ.TotalСуммаНедостачи</DataPath>
+			<TitleTextColor>style:SpecialTextColor</TitleTextColor>
+			<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="ТЧИтогСуммаНедостачиКонтекстноеМеню" id="56"/>
+			<ExtendedTooltip name="ТЧИтогСуммаНедостачиРасширеннаяПодсказка" id="57"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ВводОстатокТовараНаСкладе</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПроверкаОстатков" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка остатков</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка остатков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверкаОстатков</Action>
+		</Command>
+	</Commands>
+</Form>

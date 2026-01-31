@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Заведение" id="13">
+			<DataPath>Объект.Заведение</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ЗаведениеКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ЗаведениеРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<CalendarField name="ДатаОтчета" id="6">
+			<DataPath>Объект.ДатаОтчета</DataPath>
+			<ShowMonthsPanel>true</ShowMonthsPanel>
+			<ContextMenu name="ДатаОтчетаКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ДатаОтчетаРасширеннаяПодсказка" id="8"/>
+			<Events>
+				<Event name="OnActivateDate">ОткрытьОтчет</Event>
+			</Events>
+		</CalendarField>
+		<UsualGroup name="Группа1" id="11">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<Button name="ОткрытьОтчет" id="4">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<Width>30</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>2</Height>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОткрытьОтчет</CommandName>
+					<TextColor>style:ButtonTextColor</TextColor>
+					<BackColor>style:ReportGroup1BackColor</BackColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Picture>
+						<xr:Ref>StdPicture.QueryWizardTempTable</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть отчет</v8:content>
+						</v8:item>
+					</Title>
+					<Shape>Oval</Shape>
+					<PictureLocation>Right</PictureLocation>
+					<ExtendedTooltip name="ОткрытьОтчетРасширеннаяПодсказка" id="5"/>
+				</Button>
+				<Button name="ЗакрытьПрограму" id="9">
+					<Type>UsualButton</Type>
+					<Representation>PictureAndText</Representation>
+					<Width>30</Width>
+					<Height>2</Height>
+					<CommandName>Form.Command.ЗакрытьПрограму</CommandName>
+					<BackColor>style:ActivityColor</BackColor>
+					<BorderColor>style:FormTextColor</BorderColor>
+					<Font ref="style:NormalTextFont" height="14" bold="true" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+					<Picture>
+						<xr:Ref>StdPicture.Stop</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Shape>Oval</Shape>
+					<PictureLocation>Right</PictureLocation>
+					<ExtendedTooltip name="ЗакрытьПрограмуРасширеннаяПодсказка" id="10"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.МенюАдминистратора</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть отчет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьОтчет</Action>
+		</Command>
+		<Command name="ЗакрытьПрограму" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть програму</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть програму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗакрытьПрограму</Action>
+		</Command>
+		<Command name="Перебор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перебор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перебор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Перебор</Action>
+		</Command>
+	</Commands>
+</Form>

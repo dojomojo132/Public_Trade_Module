@@ -58,7 +58,6 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыОплаты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.Штрихкоды</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЦеныНоменклатуры</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЦеныЗакупки</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.НастройкиРаспределенияПродаж</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ОстаткиТоваров</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.Взаиморасчеты</xr:Item>

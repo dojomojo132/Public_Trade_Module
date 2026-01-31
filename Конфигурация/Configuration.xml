@@ -327,7 +327,6 @@
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
-			<InformationRegister>ЦеныЗакупки</InformationRegister>
 			<InformationRegister>НастройкиРаспределенияПродаж</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
