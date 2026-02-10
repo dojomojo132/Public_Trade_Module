@@ -78,7 +78,7 @@
 		<Metadata name="CommonPicture.ИконкаПодсистем.Picture" id="253c79e3-590b-47ff-8cf5-d09520f0a323.0" configVersion="b898d2ea76f9f942930756a9943ec26d00000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="85c9bfb6f1a1a940ab8670051ebb5d9700000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="e9bf45562bc10b489d6845781abeee6500000000"/>
-		<Metadata name="Configuration.ТорговляРозница" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="8261d48bfbd5ff42a20a356f689e0d2700000000"/>
+		<Metadata name="Configuration.ТорговляРозница" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="103017aaec71734288841c85fc4dbabd00000000"/>
 		<Metadata name="Configuration.ТорговляРозница.ClientApplicationInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.b" configVersion="843d1b7bca958e41ba0f86823da2854c00000000"/>
 		<Metadata name="Configuration.ТорговляРозница.ManagedApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.6" configVersion="f9ab4acc0c38134984e44bf8e019a94e00000000"/>
 		<Metadata name="Constant.КонтролироватьОстаткиПриСписании" id="2c908745-ab76-4ca7-8739-9b0ae692bb7b" configVersion="5974de61149ce747a30bc3c86740c7ad00000000"/>
@@ -93,6 +93,9 @@
 		<Metadata name="DataProcessor.ИмпортЕкспортНоменклатуры" id="5b6480da-e170-4dd2-a733-cb1c90faa201" configVersion="1e4613995f607a4e8c9c7c1a5e0fee4400000000"/>
 		<Metadata name="DataProcessor.ИмпортЕкспортНоменклатуры.Form.Форма" id="896918cf-4efc-420f-a978-8dd88bb34823" configVersion="c21bdab10a813f4a896585422f9928ae00000000"/>
 		<Metadata name="DataProcessor.ИмпортЕкспортНоменклатуры.Form.Форма.Form" id="896918cf-4efc-420f-a978-8dd88bb34823.0" configVersion="eb14ffc85f60394f8e21ef54941e3a6c00000000"/>
+		<Metadata name="DataProcessor.ИмпортНоменклатуры" id="36cae9a8-dc3b-4102-94af-5d920b8bb332" configVersion="b2bfc18d5104fc41a5c19d966337d6e200000000"/>
+		<Metadata name="DataProcessor.ИмпортНоменклатуры.Form.Форма" id="839d0212-fd3e-42f8-a26c-d657eb39a1b8" configVersion="89de8dd373af0a43985c52327604300000000000"/>
+		<Metadata name="DataProcessor.ИмпортНоменклатуры.Form.Форма.Form" id="839d0212-fd3e-42f8-a26c-d657eb39a1b8.0" configVersion="a4bf2831ed112e489a231687e6f6526400000000"/>
 		<Metadata name="DataProcessor.РабочееМестоКассира" id="1876b53a-c567-4e3a-9e12-123456789abc" configVersion="2bdfa01af5873b4ab0952320ada5180100000000">
 			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ТекущаяГруппа" id="1876b53a-c567-4e3a-9e12-123456789ac1"/>
 			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="1876b53a-c567-4e3a-9e12-123456789ac2"/>
@@ -350,7 +353,7 @@
 		<Metadata name="Subsystem.Все" id="01280407-0f70-4d52-ae85-35069df24bf8" configVersion="5b346f6541ae1742a4b1f6b78bd2c56900000000"/>
 		<Metadata name="Subsystem.Настройки" id="c524e644-653c-4ebe-a01f-a7838fb29015" configVersion="49d2482074cb994f895615f6232f403e00000000"/>
 		<Metadata name="Subsystem.Склад" id="573d0659-135f-4ea9-874e-0cd4681b0b80" configVersion="2b4902fadbad14439cb54d4a4fe2394e00000000"/>
-		<Metadata name="Subsystem.Тесты" id="2908850a-b895-4207-aa01-b6eb807dd5a1" configVersion="7b3ac537c8628e488de11ca668ea38b600000000"/>
+		<Metadata name="Subsystem.Тесты" id="2908850a-b895-4207-aa01-b6eb807dd5a1" configVersion="86186cc2f1c4554e850f0a35025250e400000000"/>
 		<Metadata name="Subsystem.Торговля" id="ce36a904-07a9-4005-9340-3b72dfc2e405" configVersion="828f902ef96cd14099fbda42770524c300000000"/>
 		<Metadata name="Subsystem.Финансы" id="f1a5b3c7-8d92-4e6a-9f2b-1a3c5d7e9f0b" configVersion="365078e26a065946b7e2d13fdd59f38300000000"/>
 		<Metadata name="Subsystem.Фискал" id="0453414f-d2c3-4b68-9e09-2418ab07c6f4" configVersion="320835d72a5abb49a8b1057f358d260500000000"/>

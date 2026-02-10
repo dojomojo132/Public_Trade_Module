@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<Page name="СтраницаНоменклатура" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНоменклатураРасширеннаяПодсказка" id="3"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНоменклатура" id="4">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры заполнения номенклатуры</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаНоменклатураРасширеннаяПодсказка" id="5"/>
+							<ChildItems>
+								<InputField name="КоличествоЭлементов" id="6">
+									<DataPath>КоличествоЭлементов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество товаров</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоЭлементовКонтекстноеМеню" id="7"/>
+									<ExtendedTooltip name="КоличествоЭлементовРасширеннаяПодсказка" id="8"/>
+								</InputField>
+								<InputField name="КоличествоГрупп" id="9">
+									<DataPath>КоличествоГрупп</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Количество групп</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоГруппКонтекстноеМеню" id="10"/>
+									<ExtendedTooltip name="КоличествоГруппРасширеннаяПодсказка" id="11"/>
+								</InputField>
+								<InputField name="КоличествоЭлементовВГруппе" id="12">
+									<DataPath>КоличествоЭлементовВГруппе</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Товаров в группе</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоЭлементовВГруппеКонтекстноеМеню" id="13"/>
+									<ExtendedTooltip name="КоличествоЭлементовВГруппеРасширеннаяПодсказка" id="14"/>
+								</InputField>
+								<Button name="КнопкаЗаполнитьНоменклатуру" id="15">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьНоменклатуру</CommandName>
+									<ExtendedTooltip name="КнопкаЗаполнитьНоменклатуруРасширеннаяПодсказка" id="16"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаКассы" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кассы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКассыРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаКассы" id="19">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка касс</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаКассыРасширеннаяПодсказка" id="20"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияКассы" id="21">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Будут созданы 2 кассы:
+- Касса №1 (Код: 001)
+- Касса №2 (Код: 002)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияКассыКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="ДекорацияКассыРасширеннаяПодсказка" id="23"/>
+								</LabelDecoration>
+								<Button name="КнопкаСоздатьКассы" id="24">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СоздатьКассы</CommandName>
+									<ExtendedTooltip name="КнопкаСоздатьКассыРасширеннаяПодсказка" id="25"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЦены" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цены</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЦеныРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЦены" id="28">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заполнение цен</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаЦеныРасширеннаяПодсказка" id="29"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияЦены" id="30">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнение случайных цен для всей номенклатуры</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияЦеныКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ДекорацияЦеныРасширеннаяПодсказка" id="32"/>
+								</LabelDecoration>
+								<Button name="КнопкаЗаполнитьЦены" id="33">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьЦены</CommandName>
+									<ExtendedTooltip name="КнопкаЗаполнитьЦеныРасширеннаяПодсказка" id="34"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаШтрихкоды" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Штрихкоды</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаШтрихкодыРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШтрихкоды" id="37">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заполнение штрихкодов</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаШтрихкодыРасширеннаяПодсказка" id="38"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияШтрихкоды" id="39">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнение штрихкодов для всей номенклатуры</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияШтрихкодыКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ДекорацияШтрихкодыРасширеннаяПодсказка" id="41"/>
+								</LabelDecoration>
+								<Button name="КнопкаЗаполнитьШтрихкоды" id="42">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьШтрихкоды</CommandName>
+									<ExtendedTooltip name="КнопкаЗаполнитьШтрихкодыРасширеннаяПодсказка" id="43"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОборудование" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оборудование</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОборудованиеРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОборудование" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заполнение оборудования</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаОборудованиеРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияОборудование" id="49">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Создание кассового оборудования:
+- Сканер штрихкода
+- Принтер чеков
+- ККТ (по количеству касс)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОборудованиеКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ДекорацияОборудованиеРасширеннаяПодсказка" id="51"/>
+								</LabelDecoration>
+								<Button name="КнопкаСоздатьОборудование" id="52">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СоздатьОборудование</CommandName>
+									<ExtendedTooltip name="КнопкаСоздатьОборудованиеРасширеннаяПодсказка" id="53"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНастройки" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНастройкиРасширеннаяПодсказка" id="55"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастройки" id="56">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки распределения</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="57"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияНастройки" id="58">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнение настроек распределения продаж:
+Связь Касса + НалоговаяГруппа → Оборудование</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияНастройкиКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ДекорацияНастройкиРасширеннаяПодсказка" id="60"/>
+								</LabelDecoration>
+								<Button name="КнопкаЗаполнитьНастройки" id="61">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьНастройки</CommandName>
+									<ExtendedTooltip name="КнопкаЗаполнитьНастройкиРасширеннаяПодсказка" id="62"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="100">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТестовоеЗаполнениеДанных</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КоличествоЭлементов" id="101">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество элементов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоГрупп" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество групп</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоЭлементовВГруппе" id="103">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество элементов в группе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьНоменклатуру" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить номенклатуру</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьНоменклатуру</Action>
+		</Command>
+		<Command name="СоздатьКассы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать кассы</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьКассы</Action>
+		</Command>
+		<Command name="ЗаполнитьЦены" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить цены</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьЦены</Action>
+		</Command>
+		<Command name="ЗаполнитьШтрихкоды" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить штрихкоды</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьШтрихкоды</Action>
+		</Command>
+		<Command name="СоздатьОборудование" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьОборудование</Action>
+		</Command>
+		<Command name="ЗаполнитьНастройки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗаполнитьНастройки</Action>
+		</Command>
+	</Commands>
+</Form>

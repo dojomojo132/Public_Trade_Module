@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="КнопкаСохранить" id="14">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Сохранить</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Write</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить настройки</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="КнопкаСохранитьРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="39">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="40"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ВидыНастроек" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды настроек</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды настроек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ВидыНастроекРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<Page name="НастройкиЗаполнения" id="33">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки заполнения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки заполнения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиЗаполненияРасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<InputField name="ОсновнойСклад" id="8">
+							<DataPath>ОсновнойСклад</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основной склад</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОсновнойСкладКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ОсновнойСкладРасширеннаяПодсказка" id="17"/>
+						</InputField>
+						<InputField name="ОсновнойПоставщик" id="9">
+							<DataPath>ОсновнойПоставщик</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основной поставщик</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОсновнойПоставщикКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="ОсновнойПоставщикРасширеннаяПодсказка" id="19"/>
+						</InputField>
+						<InputField name="ОсновнаяКасса" id="10">
+							<DataPath>ОсновнаяКасса</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основная касса</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОсновнаяКассаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ОсновнаяКассаРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="ОсновнойТипЦен" id="11">
+							<DataPath>ОсновнойТипЦен</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основной тип цен</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОсновнойТипЦенКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ОсновнойТипЦенРасширеннаяПодсказка" id="23"/>
+						</InputField>
+						<InputField name="ПорядокОкругленияЦен" id="12">
+							<DataPath>ПорядокОкругленияЦен</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Порядок округления цен</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПорядокОкругленияЦенКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ПорядокОкругленияЦенРасширеннаяПодсказка" id="25"/>
+						</InputField>
+						<InputField name="КонтролироватьОстаткиПриСписании" id="13">
+							<DataPath>КонтролироватьОстаткиПриСписании</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контролировать остатки при списании</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="КонтролироватьОстаткиПриСписанииКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="КонтролироватьОстаткиПриСписанииРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="НастройкиРМК" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки РМК</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки РМК</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="НастройкиРМКРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<InputField name="КоличествоКнопокВКолонке" id="41">
+							<DataPath>КоличествоКнопокВКолонке</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КоличествоКнопокВКолонкеКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="КоличествоКнопокВКолонкеРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="КоличествоКнопокВРяду" id="44">
+							<DataPath>КоличествоКнопокВРяду</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КоличествоКнопокВРядуКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="КоличествоКнопокВРядуРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<InputField name="ШиринаКнопок" id="47">
+							<DataPath>ШиринаКнопок</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ШиринаКнопокКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ШиринаКнопокРасширеннаяПодсказка" id="49"/>
+						</InputField>
+						<InputField name="ВысотаКнопок" id="50">
+							<DataPath>ВысотаКнопок</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ВысотаКнопокКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ВысотаКнопокРасширеннаяПодсказка" id="52"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.УправлениеНастройками</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОсновнойСклад" id="2">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойПоставщик" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнаяКасса" id="4">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойТипЦен" id="5">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ТипыЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПорядокОкругленияЦен" id="6">
+			<Type>
+				<v8:Type>cfg:EnumRef.ПорядкиОкругленияЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтролироватьОстаткиПриСписании" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоКнопокВРяду" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество кнопок в ряду</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоКнопокВКолонке" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество кнопок в колонке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВысотаКнопок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Высота кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаКнопок" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Сохранить</Action>
+		</Command>
+		<Command name="Закрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Закрыть</Action>
+		</Command>
+	</Commands>
+</Form>

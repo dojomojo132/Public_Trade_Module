@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Table name="ДанныеЗагрузки" id="1">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ДанныеЗагрузки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ДанныеЗагрузкиКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ДанныеЗагрузкиКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="ДанныеЗагрузкиРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ДанныеЗагрузкиСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ДанныеЗагрузки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеЗагрузкиСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ДанныеЗагрузкиСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДанныеЗагрузкиСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ДанныеЗагрузки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеЗагрузкиСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ДанныеЗагрузкиСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДанныеЗагрузкиУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ДанныеЗагрузки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДанныеЗагрузкиУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ДанныеЗагрузкиУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+		</Table>
+		<Pages name="Группа1" id="62">
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="63"/>
+			<ChildItems>
+				<Page name="Группа2" id="64">
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<Table name="ДанныеЗагрузки1" id="14">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДанныеЗагрузки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеЗагрузки1КонтекстноеМеню" id="15"/>
+							<AutoCommandBar name="ДанныеЗагрузки1КоманднаяПанель" id="16">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ДанныеЗагрузки1СоздатьГруппы" id="56">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СоздатьГруппы</CommandName>
+										<ExtendedTooltip name="ДанныеЗагрузки1СоздатьГруппыРасширеннаяПодсказка" id="57"/>
+									</Button>
+									<Button name="ЗагрузитьИзБуфера" id="54">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗагрузитьИзБуфера</CommandName>
+										<ExtendedTooltip name="ЗагрузитьИзБуфераРасширеннаяПодсказка" id="55"/>
+									</Button>
+									<Button name="ДанныеЗагрузки1ЗаполнитьРодителя" id="58">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗаполнитьРодителя</CommandName>
+										<ExtendedTooltip name="ДанныеЗагрузки1ЗаполнитьРодителяРасширеннаяПодсказка" id="59"/>
+									</Button>
+									<Button name="ДанныеЗагрузки1СоздатьНоменклатуру" id="60">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СоздатьНоменклатуру</CommandName>
+										<ExtendedTooltip name="ДанныеЗагрузки1СоздатьНоменклатуруРасширеннаяПодсказка" id="61"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДанныеЗагрузки1РасширеннаяПодсказка" id="17"/>
+							<SearchStringAddition name="ДанныеЗагрузки1СтрокаПоиска" id="18">
+								<AdditionSource>
+									<Item>ДанныеЗагрузки1</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЗагрузки1СтрокаПоискаКонтекстноеМеню" id="19"/>
+								<ExtendedTooltip name="ДанныеЗагрузки1СтрокаПоискаРасширеннаяПодсказка" id="20"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеЗагрузки1СостояниеПросмотра" id="21">
+								<AdditionSource>
+									<Item>ДанныеЗагрузки1</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЗагрузки1СостояниеПросмотраКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="ДанныеЗагрузки1СостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеЗагрузки1УправлениеПоиском" id="24">
+								<AdditionSource>
+									<Item>ДанныеЗагрузки1</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЗагрузки1УправлениеПоискомКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="ДанныеЗагрузки1УправлениеПоискомРасширеннаяПодсказка" id="26"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДанныеЗагрузки1НомерСтроки" id="27">
+									<DataPath>Объект.ДанныеЗагрузки.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеЗагрузки1НомерСтрокиКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1НомерСтрокиРасширеннаяПодсказка" id="29"/>
+								</LabelField>
+								<InputField name="ДанныеЗагрузки1Код" id="30">
+									<DataPath>Объект.ДанныеЗагрузки.Код</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1КодКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1КодРасширеннаяПодсказка" id="32"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1Наименование" id="33">
+									<DataPath>Объект.ДанныеЗагрузки.Наименование</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1НаименованиеКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1НаименованиеРасширеннаяПодсказка" id="35"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1НазваниеЭтикетка" id="36">
+									<DataPath>Объект.ДанныеЗагрузки.НазваниеЭтикетке</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1НазваниеЭтикеткаКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1НазваниеЭтикеткаРасширеннаяПодсказка" id="38"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1ЕдиницаИзмерения" id="39">
+									<DataPath>Объект.ДанныеЗагрузки.ЕдиницаИзмерения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1ЕдиницаИзмеренияКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1ЕдиницаИзмеренияРасширеннаяПодсказка" id="41"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1Штрихкод" id="42">
+									<DataPath>Объект.ДанныеЗагрузки.Штрихкод</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1ШтрихкодКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1ШтрихкодРасширеннаяПодсказка" id="44"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1ЭтоГруппа" id="45">
+									<DataPath>Объект.ДанныеЗагрузки.ЭтоГруппа</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1ЭтоГруппаКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1ЭтоГруппаРасширеннаяПодсказка" id="47"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1РодительКод" id="48">
+									<DataPath>Объект.ДанныеЗагрузки.РодительКод</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1РодительКодКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1РодительКодРасширеннаяПодсказка" id="50"/>
+								</InputField>
+								<InputField name="ДанныеЗагрузки1РодительНаименование" id="51">
+									<DataPath>Объект.ДанныеЗагрузки.РодительНаименование</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЗагрузки1РодительНаименованиеКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ДанныеЗагрузки1РодительНаименованиеРасширеннаяПодсказка" id="53"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа3" id="66">
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<Table name="ДанныеЦен" id="68">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДанныеЦен</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДанныеЦенКонтекстноеМеню" id="69"/>
+							<AutoCommandBar name="ДанныеЦенКоманднаяПанель" id="70">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ДанныеЦенЗагрузкаЦен" id="90">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗагрузкаЦен</CommandName>
+										<ExtendedTooltip name="ДанныеЦенЗагрузкаЦенРасширеннаяПодсказка" id="91"/>
+									</Button>
+									<Button name="ДанныеЦенЗаполнитьЦены" id="92">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЗаполнитьЦены</CommandName>
+										<ExtendedTooltip name="ДанныеЦенЗаполнитьЦеныРасширеннаяПодсказка" id="93"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДанныеЦенРасширеннаяПодсказка" id="71"/>
+							<SearchStringAddition name="ДанныеЦенСтрокаПоиска" id="72">
+								<AdditionSource>
+									<Item>ДанныеЦен</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЦенСтрокаПоискаКонтекстноеМеню" id="73"/>
+								<ExtendedTooltip name="ДанныеЦенСтрокаПоискаРасширеннаяПодсказка" id="74"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДанныеЦенСостояниеПросмотра" id="75">
+								<AdditionSource>
+									<Item>ДанныеЦен</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЦенСостояниеПросмотраКонтекстноеМеню" id="76"/>
+								<ExtendedTooltip name="ДанныеЦенСостояниеПросмотраРасширеннаяПодсказка" id="77"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДанныеЦенУправлениеПоиском" id="78">
+								<AdditionSource>
+									<Item>ДанныеЦен</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДанныеЦенУправлениеПоискомКонтекстноеМеню" id="79"/>
+								<ExtendedTooltip name="ДанныеЦенУправлениеПоискомРасширеннаяПодсказка" id="80"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДанныеЦенНомерСтроки" id="81">
+									<DataPath>Объект.ДанныеЦен.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДанныеЦенНомерСтрокиКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ДанныеЦенНомерСтрокиРасширеннаяПодсказка" id="83"/>
+								</LabelField>
+								<InputField name="ДанныеЦенНоменклатура" id="84">
+									<DataPath>Объект.ДанныеЦен.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЦенНоменклатураКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ДанныеЦенНоменклатураРасширеннаяПодсказка" id="86"/>
+								</InputField>
+								<InputField name="ДанныеЦенЦена" id="87">
+									<DataPath>Объект.ДанныеЦен.Цена</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="ДанныеЦенЦенаКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="ДанныеЦенЦенаРасширеннаяПодсказка" id="89"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗагрузкаТовараИзЕксель</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьИзБуфера" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из буфера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из буфера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьИзБуфера</Action>
+		</Command>
+		<Command name="СоздатьГруппы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать группы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать группы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьГруппы</Action>
+		</Command>
+		<Command name="ЗаполнитьРодителя" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить родителя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить родителя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьРодителя</Action>
+		</Command>
+		<Command name="СоздатьНоменклатуру" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать номенклатуру</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать номенклатуру</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНоменклатуру</Action>
+		</Command>
+		<Command name="ЗагрузкаЦен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка цен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка цен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьИзБуфераЦены</Action>
+		</Command>
+		<Command name="ЗаполнитьЦены" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить цены</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить цены</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьЦены</Action>
+		</Command>
+	</Commands>
+</Form>
