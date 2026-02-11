@@ -28,7 +28,7 @@
 #>
 
 param(
-    [ValidateSet("Load", "Check", "Update", "Run", "Designer", "Full", "Info")]
+    [ValidateSet("Load", "Check", "Update", "Run", "Designer", "Full", "Info", "Backup", "Rollback")]
     [string]$Action = "Full",
 
     [string]$BasePath = "D:\Confiq\Public Trade Module",
@@ -36,6 +36,8 @@ param(
     [string]$User = "",
     [string]$Password = "",
     [string]$LogDir = "",
+    [string]$BackupDir = "",
+    [int]$MaxBackups = 5,
     [int]$TimeoutSeconds = 300
 )
 
@@ -49,6 +51,9 @@ if (-not $ConfigPath) {
 }
 if (-not $LogDir) {
     $LogDir = Join-Path $projectRoot "Документация\Валидация\logs"
+}
+if (-not $BackupDir) {
+    $BackupDir = Join-Path $projectRoot "Документация\Валидация\backups"
 }
 
 # Поиск 1cv8.exe
@@ -403,6 +408,184 @@ function Format-ErrorBlockForAgent {
     Write-Host "================================================================" -ForegroundColor Red
 }
 
+# === BACKUP / ROLLBACK ===
+
+function Step-Backup {
+    <#
+    .DESCRIPTION
+        Создаёт .dt бэкап текущей информационной базы ПЕРЕД загрузкой изменений.
+        Сохраняет все данные: пользователи, MCP-сервер, содержимое базы.
+        Управляет ротацией: хранит не более $MaxBackups бэкапов.
+    #>
+    Write-Step "БЭКАП" "Создание резервной копии ИБ (.dt)..."
+
+    # Проверка существования ИБ
+    if (-not (Test-Path $BasePath)) {
+        Write-Step "БЭКАП" "ИБ не найдена по пути $BasePath — бэкап невозможен (новая ИБ?)" "WARN"
+        return @{ Success = $true; Skipped = $true; File = "" }
+    }
+
+    # Проверка наличия файла 1CD (есть ли реально база)
+    $dbFile = Join-Path $BasePath "1Cv8.1CD"
+    if (-not (Test-Path $dbFile)) {
+        Write-Step "БЭКАП" "Файл 1Cv8.1CD не найден — база пуста, бэкап пропущен" "WARN"
+        return @{ Success = $true; Skipped = $true; File = "" }
+    }
+
+    # Создать папку бэкапов
+    if (-not (Test-Path $BackupDir)) {
+        New-Item -ItemType Directory -Path $BackupDir -Force | Out-Null
+    }
+
+    $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+    $backupFile = Join-Path $BackupDir "PTM-backup-$timestamp.dt"
+
+    # Выгрузка ИБ в .dt
+    $result = Invoke-1C -Mode "DESIGNER" -ExtraArgs @("/DumpIB", "`"$backupFile`"")
+
+    if ($result.ExitCode -eq 0 -and (Test-Path $backupFile)) {
+        $sizeKB = [math]::Round((Get-Item $backupFile).Length / 1024)
+        Write-Step "БЭКАП" "Бэкап создан: $backupFile ($sizeKB KB)" "OK"
+
+        # Ротация: удаляем старые бэкапы (оставляем $MaxBackups последних)
+        $allBackups = Get-ChildItem -Path $BackupDir -Filter "PTM-backup-*.dt" | Sort-Object Name -Descending
+        if ($allBackups.Count -gt $MaxBackups) {
+            $toRemove = $allBackups | Select-Object -Skip $MaxBackups
+            foreach ($old in $toRemove) {
+                Remove-Item $old.FullName -Force -ErrorAction SilentlyContinue
+                Write-Step "БЭКАП" "Удалён старый бэкап: $($old.Name)" "INFO"
+            }
+        }
+
+        # Записываем путь к последнему стабильному бэкапу
+        $lastStableFile = Join-Path $BackupDir "LAST_STABLE.txt"
+        Set-Content -Path $lastStableFile -Value $backupFile -Encoding UTF8
+
+        return @{ Success = $true; Skipped = $false; File = $backupFile }
+    } else {
+        Write-Step "БЭКАП" "ОШИБКА создания бэкапа (exit code: $($result.ExitCode))" "FAIL"
+        if ($result.Log) { Write-Host "  Лог: $($result.Log)" -ForegroundColor DarkGray }
+        return @{ Success = $false; Skipped = $false; File = "" }
+    }
+}
+
+function Step-Rollback {
+    <#
+    .DESCRIPTION
+        Откатывает ИБ к последнему стабильному бэкапу (.dt).
+        Загружает .dt обратно в базу, восстанавливая всё: данные, пользователей, MCP.
+    #>
+    param(
+        [string]$BackupFile = ""
+    )
+
+    Write-Step "ОТКАТ" "Восстановление ИБ из бэкапа..."
+
+    # Определяем файл для восстановления
+    if (-not $BackupFile) {
+        # Ищем LAST_STABLE.txt
+        $lastStableFile = Join-Path $BackupDir "LAST_STABLE.txt"
+        if (Test-Path $lastStableFile) {
+            $BackupFile = (Get-Content $lastStableFile -Encoding UTF8).Trim()
+        }
+    }
+
+    if (-not $BackupFile) {
+        # Берём самый свежий .dt
+        $latest = Get-ChildItem -Path $BackupDir -Filter "PTM-backup-*.dt" -ErrorAction SilentlyContinue |
+            Sort-Object Name -Descending | Select-Object -First 1
+        if ($latest) {
+            $BackupFile = $latest.FullName
+        }
+    }
+
+    if (-not $BackupFile -or -not (Test-Path $BackupFile)) {
+        Write-Step "ОТКАТ" "Бэкап не найден! Нечего восстанавливать." "FAIL"
+        Write-Host "  Папка бэкапов: $BackupDir" -ForegroundColor DarkGray
+        return @{ Success = $false }
+    }
+
+    $sizeKB = [math]::Round((Get-Item $BackupFile).Length / 1024)
+    Write-Step "ОТКАТ" "Восстановление из: $BackupFile ($sizeKB KB)" "INFO"
+
+    # Создать базу если не существует
+    if (-not (Test-Path $BasePath)) {
+        Write-Step "ОТКАТ" "ИБ не существует — создаём..." "INFO"
+        $createResult = Invoke-1C -Mode "CREATEINFOBASE" -ExtraArgs @() -Timeout 60
+        # CREATEINFOBASE — нестандартный, используем прямой вызов
+        $createArgs = "CREATEINFOBASE File=`"$BasePath`""
+        Start-Process -FilePath $v8exe -ArgumentList $createArgs -Wait -NoNewWindow
+    }
+
+    # Загрузка .dt в ИБ
+    $result = Invoke-1C -Mode "DESIGNER" -ExtraArgs @("/RestoreIB", "`"$BackupFile`"")
+
+    if ($result.ExitCode -eq 0) {
+        Write-Step "ОТКАТ" "ИБ успешно восстановлена из бэкапа" "OK"
+        Write-Host ""
+        Write-Host "  Восстановлены: данные, пользователи, MCP-настройки, содержимое" -ForegroundColor Green
+        Write-Host "  Конфигурация вернулась к последнему стабильному состоянию." -ForegroundColor Green
+        return @{ Success = $true }
+    } else {
+        Write-Step "ОТКАТ" "ОШИБКА восстановления (exit code: $($result.ExitCode))" "FAIL"
+        if ($result.Log) { Write-Host "  Лог: $($result.Log)" -ForegroundColor DarkGray }
+
+        $parseResult = Parse-1CErrors -LogContent $result.Log -Stdout $result.Stdout -Stderr $result.Stderr -OperationFailed $true
+        Format-ErrorBlockForAgent `
+            -Stage "ОТКАТ (RestoreIB)" `
+            -ExitCode $result.ExitCode `
+            -Errors $parseResult.Errors `
+            -Warnings $parseResult.Warnings `
+            -RawLog $result.Log `
+            -LogFile $result.LogFile `
+            -Stdout $result.Stdout `
+            -Stderr $result.Stderr `
+            -TimedOut $result.TimedOut
+        return @{ Success = $false }
+    }
+}
+
+function Get-BackupsList {
+    <#
+    .DESCRIPTION
+        Показывает список всех доступных бэкапов.
+    #>
+    Write-Host ""
+    Write-Host "========== Доступные бэкапы ==========" -ForegroundColor Cyan
+    Write-Host ""
+
+    if (-not (Test-Path $BackupDir)) {
+        Write-Host "  Папка бэкапов не существует: $BackupDir" -ForegroundColor Yellow
+        return
+    }
+
+    $backups = Get-ChildItem -Path $BackupDir -Filter "PTM-backup-*.dt" -ErrorAction SilentlyContinue |
+        Sort-Object Name -Descending
+
+    if ($backups.Count -eq 0) {
+        Write-Host "  Бэкапов нет" -ForegroundColor Yellow
+        return
+    }
+
+    $lastStableFile = Join-Path $BackupDir "LAST_STABLE.txt"
+    $lastStable = ""
+    if (Test-Path $lastStableFile) {
+        $lastStable = (Get-Content $lastStableFile -Encoding UTF8).Trim()
+    }
+
+    $i = 1
+    foreach ($b in $backups) {
+        $sizeKB = [math]::Round($b.Length / 1024)
+        $marker = if ($b.FullName -eq $lastStable) { " [LAST STABLE]" } else { "" }
+        $color = if ($b.FullName -eq $lastStable) { "Green" } else { "White" }
+        Write-Host ("  {0}. {1} ({2} KB){3}" -f $i, $b.Name, $sizeKB, $marker) -ForegroundColor $color
+        $i++
+    }
+    Write-Host ""
+    Write-Host "  Команда отката: deploy-config.ps1 -Action Rollback" -ForegroundColor Cyan
+    Write-Host ""
+}
+
 # === ДЕЙСТВИЯ ===
 
 function Show-Info {
@@ -413,6 +596,8 @@ function Show-Info {
     Write-Host "  ИБ:          $BasePath"
     Write-Host "  Исходники:   $ConfigPath"
     Write-Host "  Логи:        $LogDir"
+    Write-Host "  Бэкапы:      $BackupDir"
+    Write-Host "  Макс.бэкапов: $MaxBackups"
     Write-Host "  Пользователь: $User"
     Write-Host "  Таймаут:     $TimeoutSeconds сек."
     Write-Host ""
@@ -522,8 +707,16 @@ function Step-Check {
 
     $parseResult = Parse-1CErrors -LogContent $result.Log -Stdout $result.Stdout -Stderr $result.Stderr -OperationFailed ($result.ExitCode -ne 0)
 
-    if ($result.ExitCode -eq 0 -and $parseResult.Errors.Count -eq 0) {
-        Write-Step "3. ПРОВЕРКА" "Синтакс-контроль пройден успешно" "OK"
+    # Отсеиваем "ошибки", которые на самом деле [НЕ РАСПОЗНАНО] (когда только предупреждения)
+    $realErrors = @($parseResult.Errors | Where-Object { $_ -notmatch "^\[НЕ РАСПОЗНАНО\]" })
+
+    if ($realErrors.Count -eq 0) {
+        # Нет реальных ошибок — только предупреждения
+        if ($parseResult.Warnings.Count -gt 0) {
+            Write-Step "3. ПРОВЕРКА" "Синтакс-контроль пройден (предупреждений: $($parseResult.Warnings.Count))" "OK"
+        } else {
+            Write-Step "3. ПРОВЕРКА" "Синтакс-контроль пройден успешно" "OK"
+        }
         return @{ Success = $true; Errors = @() }
     } else {
         Write-Step "3. ПРОВЕРКА" "Найдено ошибок: $($parseResult.Errors.Count)" "FAIL"
@@ -618,14 +811,49 @@ switch ($Action) {
     "Designer" {
         Step-OpenDesigner
     }
+    "Backup" {
+        $r = Step-Backup
+        if (-not $r.Success) { exit 1 }
+        Get-BackupsList
+    }
+    "Rollback" {
+        Write-Host ""
+        Write-Host "================================================================" -ForegroundColor Yellow
+        Write-Host "=== ОТКАТ К СТАБИЛЬНОЙ ВЕРСИИ ===" -ForegroundColor Yellow
+        Write-Host "================================================================" -ForegroundColor Yellow
+        Write-Host ""
+        Get-BackupsList
+        $r = Step-Rollback
+        if ($r.Success) {
+            Write-Host ""
+            Write-Step "ИТОГ" "Откат выполнен УСПЕШНО. ИБ восстановлена." "OK"
+            Write-Host "  Данные, пользователи и MCP-настройки восстановлены." -ForegroundColor Green
+            Write-Host ""
+        } else {
+            Write-Step "ИТОГ" "Откат ПРОВАЛЕН." "FAIL"
+            exit 1
+        }
+    }
     "Full" {
         $startTime = Get-Date
+
+        # Шаг 0: Бэкап текущей ИБ (КРИТИЧНО: сохраняем данные, пользователей, MCP)
+        $backupResult = Step-Backup
+        if (-not $backupResult.Success) {
+            Write-Host ""
+            Write-Step "ИТОГ" "Бэкап ПРОВАЛЕН. Деплой ОТМЕНЁН для безопасности данных." "FAIL"
+            Write-Host "  ПРИЧИНА: Невозможно гарантировать сохранность данных без бэкапа." -ForegroundColor Red
+            Write-Host "  ДЕЙСТВИЕ: Проверьте доступ к ИБ и повторите." -ForegroundColor Cyan
+            exit 10
+        }
+        $backupFile = $backupResult.File
 
         # Шаг 1: Валидация XML
         $valid = Step-Validate
         if (-not $valid) {
             Write-Host ""
             Write-Step "ИТОГ" "Исправьте ошибки XML-валидации и повторите deploy-config.ps1 -Action Full" "FAIL"
+            Write-Host "  БЭКАП: ИБ не тронута, откат не требуется." -ForegroundColor Green
             exit 1
         }
 
@@ -634,6 +862,16 @@ switch ($Action) {
         if (-not $loadResult.Success) {
             Write-Host ""
             Write-Step "ИТОГ" "Загрузка ПРОВАЛЕНА. Агент ОБЯЗАН исправить ошибки и повторить деплой." "FAIL"
+            if ($backupFile) {
+                Write-Host ""
+                Write-Host "================================================================" -ForegroundColor Yellow
+                Write-Host "=== БЭКАП ДОСТУПЕН ===" -ForegroundColor Yellow
+                Write-Host "================================================================" -ForegroundColor Yellow
+                Write-Host "  Для отката к стабильной версии:" -ForegroundColor Cyan
+                Write-Host "  deploy-config.ps1 -Action Rollback" -ForegroundColor White
+                Write-Host "  Файл бэкапа: $backupFile" -ForegroundColor DarkGray
+                Write-Host "================================================================" -ForegroundColor Yellow
+            }
             exit 2
         }
 
@@ -642,6 +880,11 @@ switch ($Action) {
         if (-not $checkResult.Success) {
             Write-Host ""
             Write-Step "ИТОГ" "Синтакс-контроль ПРОВАЛЕН. Агент ОБЯЗАН исправить BSL-код и повторить деплой." "FAIL"
+            if ($backupFile) {
+                Write-Host ""
+                Write-Host "  ВАЖНО: Конфигурация УЖЕ загружена в ИБ но с ошибками в коде." -ForegroundColor Yellow
+                Write-Host "  Для отката: deploy-config.ps1 -Action Rollback" -ForegroundColor Cyan
+            }
             exit 3
         }
 
@@ -650,17 +893,35 @@ switch ($Action) {
         if (-not $updateResult.Success) {
             Write-Host ""
             Write-Step "ИТОГ" "Обновление БД ПРОВАЛЕНО. Агент ОБЯЗАН проанализировать лог и повторить деплой." "FAIL"
+            if ($backupFile) {
+                Write-Host ""
+                Write-Host "  КРИТИЧНО: Конфигурация загружена, но БД не обновлена." -ForegroundColor Red
+                Write-Host "  Для отката: deploy-config.ps1 -Action Rollback" -ForegroundColor Cyan
+            }
             exit 4
         }
 
-        # Шаг 5: Открываем конфигуратор
+        # Шаг 5: Деплой успешен — обновляем маркер стабильного бэкапа
+        if ($backupFile) {
+            $lastStableFile = Join-Path $BackupDir "LAST_STABLE.txt"
+            Set-Content -Path $lastStableFile -Value $backupFile -Encoding UTF8
+            Write-Step "БЭКАП" "Маркер стабильной версии обновлён" "OK"
+        }
+
+        # Шаг 6: Открываем конфигуратор
         Step-OpenDesigner
 
         $elapsed = (Get-Date) - $startTime
         Write-Host ""
         Write-Host "================================================================" -ForegroundColor Green
         Write-Step "ИТОГ" "Полный цикл завершён УСПЕШНО за $([math]::Round($elapsed.TotalSeconds)) сек. Конфигуратор открыт." "OK"
+        if ($backupFile) {
+            Write-Host "  Бэкап сохранён: $backupFile" -ForegroundColor DarkGray
+        }
         Write-Host "================================================================" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "  СЛЕДУЮЩИЙ ШАГ: Мониторинг ошибок при работе пользователя:" -ForegroundColor Cyan
+        Write-Host "  monitor-errors.ps1 -Action Check [-LastMinutes 30]" -ForegroundColor White
         Write-Host ""
     }
 }

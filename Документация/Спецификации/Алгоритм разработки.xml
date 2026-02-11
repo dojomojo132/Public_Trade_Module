@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DevelopmentAlgorithm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     
+    <Stage id="0" name="Защита данных">
+        <Description>АВТОМАТИЧЕСКИ перед любыми изменениями. Бэкап .dt сохраняет данные, пользователей, MCP-настройки.</Description>
+        <Actions>
+            <Action>deploy-config.ps1 -Action Backup (или автоматически в -Action Full).</Action>
+            <Action>Создаётся .dt копия текущей ИБ в папку backups/.</Action>
+            <Action>Ротация: хранятся последние 5 бэкапов.</Action>
+        </Actions>
+        <Rollback>
+            <Action>При критических ошибках: deploy-config.ps1 -Action Rollback.</Action>
+            <Action>Восстанавливает ИБ из последнего стабильного .dt.</Action>
+            <Action>НИКОГДА не пересоздавать ИБ (CREATEINFOBASE) без разрешения пользователя.</Action>
+        </Rollback>
+    </Stage>
+
     <Stage id="1" name="Анализ требований">
         <Actions>
             <Action>Изучить входящий запрос пользователя.</Action>
@@ -34,15 +48,47 @@
         </Actions>
     </Stage>
 
-    <Stage id="5" name="Тестирование">
+    <Stage id="5" name="Деплой и автоматическая отладка">
+        <Description>deploy-config.ps1 -Action Full автоматически создаёт бэкап, загружает, проверяет, обновляет БД.</Description>
         <Actions>
-            <Action>Запустить режим "1С:Предприятие".</Action>
-            <Action>Проверить тест-кейсы (Позитивные/Негативные).</Action>
-            <Action>При наличии ошибок — вернуться к Этапу 4.</Action>
+            <Action>Запустить deploy-config.ps1 -Action Full.</Action>
+            <Action>При ошибках — исправить и повторить деплой (цикл).</Action>
+            <Action>Если ошибки не решаются за 2 попытки — ОТКАТИТЬ: deploy-config.ps1 -Action Rollback.</Action>
+            <Action>После отката — исправить XML/BSL и повторить деплой заново.</Action>
         </Actions>
     </Stage>
 
-    <Stage id="6" name="Подтверждение">
+    <Stage id="5.5" name="Начало сессии (ДИАЛОГ 3)">
+        <Description>При запросе "начать сессию" / "запускай" / "старт" — стартовый диалог выбора действия.</Description>
+        <Actions>
+            <Action>ДИАЛОГ 3 (ask_questions) — стартовый выбор:
+                1. "Мониторинг ошибок" → Сразу к ЭТАПУ 9 (Фаза мониторинга)
+                2. "Новый запрос" + поле ввода → Текст запроса → Фаза 1 (полный цикл реализации)</Action>
+        </Actions>
+    </Stage>
+
+    <Stage id="6" name="Непрерывный мониторинг">
+        <Description>Запрос НЕ закрывается после деплоя. Автоцикл: мониторинг → фикс → деплой → мониторинг.</Description>
+        <Actions>
+            <Action>ЭТАП 9: Запустить monitor-errors.ps1 -Action Check -LastMinutes 5.</Action>
+            <Action>ЭТАП 10: Если монитор нашёл ошибки — исправить → деплой → НАЗАД К ЭТАПУ 9.</Action>
+            <Action>ЭТАП 11: ДИАЛОГ 1 (ask_questions) — три варианта:
+                1. "Всё работает корректно" → ЭТАП 11а (ДИАЛОГ 2)
+                2. "Есть ошибка, проверь журналы" → агент читает журналы, фиксит → деплой → ЭТАП 9
+                3. "Нужно больше времени" → СТОП мониторинга</Action>
+            <Action>ЭТАП 11а: ДИАЛОГ 2 (ask_questions) — режим нового запроса:
+                1. "Остановить работу" → ЗАВЕРШЕНИЕ
+                2. "Новый запрос" + поле ввода → ОЧИСТКА КОНТЕКСТА:
+                   a) Сброс todo-листа (manage_todo_list с [])
+                   b) Не ссылаться на предыдущий запрос (новая изолированная задача)
+                   c) Заново проверить метаданные через MCP
+                   d) Полный цикл Фаза 1-4 с чистого листа → ЭТАП 9</Action>
+            <Action>ЭТАП 12: После любого фикса — деплой → ОБЯЗАТЕЛЬНО назад к ЭТАПУ 9.</Action>
+        </Actions>
+    </Stage>
+
+    <Stage id="7" name="Подтверждение">
+        <Description>Только после подтверждения пользователем.</Description>
         <Actions>
             <Action>
                 Обновить блок "История изменений" (History) внутри Спецификации для затронутых объектов.

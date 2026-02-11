@@ -500,6 +500,64 @@
 				<Record date="2026-02-11">Создание отчёта продаж по счетам (кассам) с группировкой по кассам.</Record>
 			</Block>
 		</Object>
+
+		<Object name="ДвижениеДенежныхСредств" synonym="Движение денежных средств">
+			<Block name="Purpose">
+				<Content>СКД-отчёт по регистру ДенежныеСредства. Показывает остатки и обороты по кассам за период.</Content>
+			</Block>
+			<Block name="DataModel">
+				<DataSource>РегистрНакопления.ДенежныеСредства.ОстаткиИОбороты</DataSource>
+				<Fields>
+					<Field name="Касса" type_val="Измерение">Касса (группировка).</Field>
+					<Field name="Регистратор" type_val="Измерение">Документ-основание.</Field>
+					<Field name="Период" type_val="Измерение">Период (основной).</Field>
+					<Field name="СуммаНачальныйОстаток" type_val="Ресурс">Остаток на начало.</Field>
+					<Field name="СуммаПриход" type_val="Ресурс">Приход за период.</Field>
+					<Field name="СуммаРасход" type_val="Ресурс">Расход за период.</Field>
+					<Field name="СуммаКонечныйОстаток" type_val="Ресурс">Остаток на конец.</Field>
+				</Fields>
+				<Parameters>
+					<Parameter name="Период" dataType="СтандартныйПериод">Период отчёта.</Parameter>
+				</Parameters>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item event="Реализация">СКД-отчёт. Группировка по Кассе. Поля: начальный остаток, приход, расход, конечный остаток.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2026-02-11">Создание отчёта движения денежных средств по кассам.</Record>
+			</Block>
+		</Object>
+
+		<Object name="Взаиморасчеты" synonym="Взаиморасчеты">
+			<Block name="Purpose">
+				<Content>СКД-отчёт по регистру Взаиморасчеты. Показывает остатки и обороты долга по контрагентам.</Content>
+			</Block>
+			<Block name="DataModel">
+				<DataSource>РегистрНакопления.Взаиморасчеты.ОстаткиИОбороты</DataSource>
+				<Fields>
+					<Field name="Контрагент" type_val="Измерение">Контрагент (группировка).</Field>
+					<Field name="Регистратор" type_val="Измерение">Документ-основание.</Field>
+					<Field name="Период" type_val="Измерение">Период.</Field>
+					<Field name="СуммаНачальныйОстаток" type_val="Ресурс">Долг на начало.</Field>
+					<Field name="СуммаПриход" type_val="Ресурс">Приход (увеличение долга).</Field>
+					<Field name="СуммаРасход" type_val="Ресурс">Расход (уменьшение долга).</Field>
+					<Field name="СуммаКонечныйОстаток" type_val="Ресурс">Долг на конец.</Field>
+				</Fields>
+				<Parameters>
+					<Parameter name="Период" dataType="СтандартныйПериод">Период отчёта.</Parameter>
+				</Parameters>
+			</Block>
+			<Block name="Logic">
+				<Items>
+					<Item event="Реализация">СКД-отчёт. Группировка по Контрагенту. Поля: долг на начало, приход, расход, долг на конец.</Item>
+				</Items>
+			</Block>
+			<Block name="History">
+				<Record date="2026-02-11">Создание отчёта взаиморасчётов с контрагентами.</Record>
+			</Block>
+		</Object>
 	</Reports>
 
     <Catalogs>
@@ -1180,6 +1238,7 @@
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
 				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
+				<Record date="2026-02-11">Реализация: XML-структура, модуль объекта (проведение по ДенежныеСредства), форма документа. Деплой.</Record>
 			</Block>
 		</Object>
 
@@ -1203,6 +1262,7 @@
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
 				<Record date="2026-01-17">Дополнение спецификации полной структурой согласно стандарту.</Record>
+				<Record date="2026-02-11">Реализация: XML-структура, модуль объекта (проведение по ДенежныеСредства), форма документа. Деплой.</Record>
 			</Block>
 		</Object>
 

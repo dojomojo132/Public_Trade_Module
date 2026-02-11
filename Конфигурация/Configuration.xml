@@ -322,6 +322,8 @@
 			<Report>ДвижениеТоваров</Report>
 			<Report>ВаловаяПрибыль</Report>
 			<Report>ПродажиПоСчетам</Report>
+			<Report>ДвижениеДенежныхСредств</Report>
+			<Report>Взаиморасчеты</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>

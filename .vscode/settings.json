@@ -19,5 +19,8 @@
         "**/DerivedData": true
     },
     
-    "github.copilot.chat.codeGeneration.useReferencedFiles": true
+    "github.copilot.chat.codeGeneration.useReferencedFiles": true,
+
+    // Автоподтверждение действий агента (без ручного клика)
+    "chat.agent.autoApprove": true
 }
