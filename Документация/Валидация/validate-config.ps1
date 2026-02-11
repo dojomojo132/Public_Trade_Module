@@ -353,25 +353,79 @@ if ($formFiles.Count -eq 0) {
             continue
         }
 
-        # Собираем все id элементов формы
-        $allIds = @()
+        # В 1С формах есть 3 НЕЗАВИСИМЫХ пространства id:
+        # 1. Визуальные элементы (ChildItems + AutoCommandBar и их дочерние)
+        # 2. Реквизиты формы (Attributes)
+        # 3. Команды формы (Commands)
+        # Каждое пространство нумерует id независимо начиная с 1
+        
+        $visualIds = @()     # ChildItems + AutoCommandBar (единое пространство визуальных элементов)
+        $attributeIds = @()  # Attributes
+        $commandIds = @()    # Commands
+        
         $allElements = $formXml.SelectNodes("//*[@id]")
         foreach ($elem in $allElements) {
             $id = $elem.GetAttribute("id")
-            if ($id) {
-                $allIds += $id
+            if (-not $id) { continue }
+            
+            # Определяем пространство: ищем ближайшего родителя-секцию
+            $section = "visual"  # по умолчанию — визуальный элемент
+            $parent = $elem.ParentNode
+            while ($parent -and $parent -is [System.Xml.XmlElement]) {
+                $ln = $parent.LocalName
+                if ($ln -eq "Attributes") {
+                    $section = "attributes"
+                    break
+                }
+                if ($ln -eq "Commands") {
+                    $section = "commands"
+                    break
+                }
+                if ($ln -eq "ChildItems" -or $ln -eq "AutoCommandBar") {
+                    $section = "visual"
+                    break
+                }
+                $parent = $parent.ParentNode
+            }
+            
+            switch ($section) {
+                "attributes" { $attributeIds += $id }
+                "commands"   { $commandIds += $id }
+                default      { $visualIds += $id }
             }
         }
 
-        # Проверяем уникальность id
-        $duplicateIds = $allIds | Group-Object | Where-Object { $_.Count -gt 1 }
-        if ($duplicateIds) {
-            foreach ($dup in $duplicateIds) {
-                Write-Check "FAIL" "$relativePath : дублирующийся id='$($dup.Name)' (встречается $($dup.Count) раз)"
+        # Проверяем уникальность id ОТДЕЛЬНО в каждом пространстве
+        $totalErrors = 0
+        
+        $dupVisual = $visualIds | Group-Object | Where-Object { $_.Count -gt 1 }
+        if ($dupVisual) {
+            foreach ($dup in $dupVisual) {
+                Write-Check "FAIL" "$relativePath : дублирующийся id='$($dup.Name)' в визуальных элементах (встречается $($dup.Count) раз)"
+                $totalErrors++
             }
-        } else {
-            if ($allIds.Count -gt 0) {
-                Write-Check "OK" "$relativePath : $($allIds.Count) элементов, id уникальны"
+        }
+        
+        $dupAttributes = $attributeIds | Group-Object | Where-Object { $_.Count -gt 1 }
+        if ($dupAttributes) {
+            foreach ($dup in $dupAttributes) {
+                Write-Check "FAIL" "$relativePath : дублирующийся id='$($dup.Name)' в Attributes (встречается $($dup.Count) раз)"
+                $totalErrors++
+            }
+        }
+        
+        $dupCommands = $commandIds | Group-Object | Where-Object { $_.Count -gt 1 }
+        if ($dupCommands) {
+            foreach ($dup in $dupCommands) {
+                Write-Check "FAIL" "$relativePath : дублирующийся id='$($dup.Name)' в Commands (встречается $($dup.Count) раз)"
+                $totalErrors++
+            }
+        }
+        
+        if ($totalErrors -eq 0) {
+            $totalIds = $visualIds.Count + $attributeIds.Count + $commandIds.Count
+            if ($totalIds -gt 0) {
+                Write-Check "OK" "$relativePath : $totalIds элементов ($($visualIds.Count) visual + $($attributeIds.Count) attrs + $($commandIds.Count) cmds), id уникальны"
             }
         }
 

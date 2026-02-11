@@ -78,6 +78,26 @@
 			<ContextMenu name="ПроцентНаценкиКонтекстноеМеню" id="29"/>
 			<ExtendedTooltip name="ПроцентНаценкиРасширеннаяПодсказка" id="30"/>
 		</InputField>
+		<InputField name="ФОП" id="50">
+			<DataPath>Объект.ФОП</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ФОП</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ФОПКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ФОПРасширеннаяПодсказка" id="52">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ФОП, к которому относится товар (для разделения фискальных чеков)</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
 		<Table name="Штрихкоды" id="31">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>

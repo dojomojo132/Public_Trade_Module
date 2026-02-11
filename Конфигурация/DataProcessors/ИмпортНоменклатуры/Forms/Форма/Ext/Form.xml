@@ -126,7 +126,7 @@
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
 			<Columns>
-				<Column name="ЭтоГруппа" id="1">
+				<Column name="ЭтоГруппа" id="8">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -137,7 +137,7 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
-				<Column name="Код" id="2">
+				<Column name="Код" id="9">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>

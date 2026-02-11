@@ -81,6 +81,7 @@
 			<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>
 		</Properties>
 		<ChildObjects>
+			<Form>ФормаВыбораРежимаВозврата</Form>
 			<Attribute uuid="a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890">
 				<Properties>
 					<Name>ДокументОснование</Name>

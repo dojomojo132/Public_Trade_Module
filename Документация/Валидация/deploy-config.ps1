@@ -33,7 +33,7 @@ param(
 
     [string]$BasePath = "D:\Confiq\Public Trade Module",
     [string]$ConfigPath = "",
-    [string]$User = "Admin",
+    [string]$User = "",
     [string]$Password = "",
     [string]$LogDir = "",
     [int]$TimeoutSeconds = 300

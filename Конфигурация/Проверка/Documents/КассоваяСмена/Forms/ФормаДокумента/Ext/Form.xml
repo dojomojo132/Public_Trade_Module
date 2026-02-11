@@ -2,52 +2,164 @@
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
-			<Button name="ФормаЗакрытьСмену" id="20">
+			<Button name="ФормаЗакрытьСмену" id="54">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ЗакрытьСмену</CommandName>
-				<ExtendedTooltip name="ФормаЗакрытьСменуРасширеннаяПодсказка" id="21"/>
+				<ExtendedTooltip name="ФормаЗакрытьСменуРасширеннаяПодсказка" id="55"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<ChildItems>
-		<InputField name="Номер" id="1">
-			<DataPath>Объект.Number</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
-		</InputField>
-		<InputField name="Дата" id="4">
-			<DataPath>Объект.Date</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
-		</InputField>
-		<InputField name="Касса" id="7">
-			<DataPath>Объект.Касса</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="КассаКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="КассаРасширеннаяПодсказка" id="9"/>
-		</InputField>
-		<InputField name="Статус" id="10">
-			<DataPath>Объект.Статус</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ReadOnly>true</ReadOnly>
-			<ContextMenu name="СтатусКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="12"/>
-		</InputField>
-		<InputField name="ДатаНачала" id="13">
-			<DataPath>Объект.ДатаНачала</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="14"/>
-			<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="15"/>
-		</InputField>
-		<InputField name="ДатаОкончания" id="16">
-			<DataPath>Объект.ДатаОкончания</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ReadOnly>true</ReadOnly>
-			<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="17"/>
-			<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="18"/>
-		</InputField>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСтрока1" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 1</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаСтрока1РасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Номер" id="5">
+							<DataPath>Объект.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НомерКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Дата" id="8">
+							<DataPath>Объект.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="10"/>
+						</InputField>
+						<InputField name="Статус" id="11">
+							<DataPath>Объект.Статус</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="СтатусКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="13"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСтрока2" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка 2</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаСтрока2РасширеннаяПодсказка" id="15"/>
+					<ChildItems>
+						<InputField name="ДатаНачала" id="16">
+							<DataPath>Объект.ДатаНачала</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="ДатаОкончания" id="19">
+							<DataPath>Объект.ДатаОкончания</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="21"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ЧекиККМ" id="22">
+			<DataPath>Объект.ЧекиККМ</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чеки ККМ</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ЧекиККМКонтекстноеМеню" id="23"/>
+			<AutoCommandBar name="ЧекиККМКоманднаяПанель" id="24"/>
+			<ExtendedTooltip name="ЧекиККМРасширеннаяПодсказка" id="25"/>
+			<SearchStringAddition name="ЧекиККМСтрокаПоиска" id="26"/>
+			<ViewStatusAddition name="ЧекиККМСостояниеПросмотра" id="27"/>
+			<SearchControlAddition name="ЧекиККМУправлениеПоиском" id="28"/>
+			<ChildItems>
+				<InputField name="ЧекиККМКасса" id="29">
+					<DataPath>Объект.ЧекиККМ.Касса</DataPath>
+					<ContextMenu name="ЧекиККМКассаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ЧекиККМКассаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ЧекиККМЧекККМ" id="32">
+					<DataPath>Объект.ЧекиККМ.ЧекККМ</DataPath>
+					<ContextMenu name="ЧекиККМЧекККМКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ЧекиККМЧекККМРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ЧекиККМСумма" id="35">
+					<DataPath>Объект.ЧекиККМ.Сумма</DataPath>
+					<ContextMenu name="ЧекиККМСуммаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ЧекиККМСуммаРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ЧекиККМСуммаСкидки" id="38">
+					<DataPath>Объект.ЧекиККМ.СуммаСкидки</DataPath>
+					<ContextMenu name="ЧекиККМСуммаСкидкиКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ЧекиККМСуммаСкидкиРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="ФискальныеЧеки" id="41">
+			<DataPath>Объект.ФискальныеЧеки</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фискальные чеки</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ФискальныеЧекиКонтекстноеМеню" id="42"/>
+			<AutoCommandBar name="ФискальныеЧекиКоманднаяПанель" id="43"/>
+			<ExtendedTooltip name="ФискальныеЧекиРасширеннаяПодсказка" id="44"/>
+			<SearchStringAddition name="ФискальныеЧекиСтрокаПоиска" id="45"/>
+			<ViewStatusAddition name="ФискальныеЧекиСостояниеПросмотра" id="46"/>
+			<SearchControlAddition name="ФискальныеЧекиУправлениеПоиском" id="47"/>
+			<ChildItems>
+				<InputField name="ФискальныеЧекиВидОперации" id="62">
+					<DataPath>Объект.ФискальныеЧеки.ВидОперации</DataPath>
+					<ContextMenu name="ФискальныеЧекиВидОперацииКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ФискальныеЧекиВидОперацииРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="ФискальныеЧекиФОП" id="48">
+					<DataPath>Объект.ФискальныеЧеки.ФОП</DataPath>
+					<ContextMenu name="ФискальныеЧекиФОПКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ФискальныеЧекиФОПРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<InputField name="ФискальныеЧекиФискальныйНомер" id="51">
+					<DataPath>Объект.ФискальныеЧеки.ФискальныйНомер</DataPath>
+					<ContextMenu name="ФискальныеЧекиФискальныйНомерКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="ФискальныеЧекиФискальныйНомерРасширеннаяПодсказка" id="53"/>
+				</InputField>
+				<InputField name="ФискальныеЧекиСумма" id="56">
+					<DataPath>Объект.ФискальныеЧеки.Сумма</DataPath>
+					<ContextMenu name="ФискальныеЧекиСуммаКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ФискальныеЧекиСуммаРасширеннаяПодсказка" id="58"/>
+				</InputField>
+				<InputField name="ФискальныеЧекиФискальныйЧек" id="59">
+					<DataPath>Объект.ФискальныеЧеки.ФискальныйЧек</DataPath>
+					<ContextMenu name="ФискальныеЧекиФискальныйЧекКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ФискальныеЧекиФискальныйЧекРасширеннаяПодсказка" id="61"/>
+				</InputField>
+			</ChildItems>
+		</Table>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">

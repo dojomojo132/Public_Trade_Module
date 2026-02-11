@@ -218,7 +218,7 @@
 									<ContextMenu name="ТЧАкцизнаяМаркаКонтекстноеМеню" id="65"/>
 									<ExtendedTooltip name="ТЧАкцизнаяМаркаРасширеннаяПодсказка" id="66"/>
 								</InputField>
-								<InputField name="ТЧШтрихкод" id="87">
+								<InputField name="ТЧШтрихкод" id="90">
 									<DataPath>Объект.ТЧ.Штрихкод</DataPath>
 									<ReadOnly>true</ReadOnly>
 									<Width>15</Width>

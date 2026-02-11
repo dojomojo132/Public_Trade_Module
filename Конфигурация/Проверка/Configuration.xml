@@ -294,6 +294,7 @@
 			<Catalog>ВидыДисконтныхКарт</Catalog>
 			<Catalog>ДисконтныеКарты</Catalog>
 			<Catalog>Кассы</Catalog>
+			<Catalog>ФОП</Catalog>
 			<Catalog>НастройкиПоУмолчанию</Catalog>
 			<Document>КассоваяСмена</Document>
 			<Document>ЧекККМ</Document>
@@ -314,6 +315,7 @@
 			<Enum>СтатусыЧекаККМ</Enum>
 			<Enum>СтатусыКассовойСмены</Enum>
 			<Enum>ВидыКасс</Enum>
+			<Enum>ВидыОперацийФискальногоЧека</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<Report>Продажи</Report>
 			<Report>Возвраты</Report>

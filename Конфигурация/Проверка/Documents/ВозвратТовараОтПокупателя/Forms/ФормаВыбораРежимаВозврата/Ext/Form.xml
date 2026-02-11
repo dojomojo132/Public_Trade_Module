@@ -40,6 +40,8 @@
 						</v8:item>
 					</Title>
 					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ФискальныйВозвратКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ФискальныйВозвратРасширеннаяПодсказка" id="8"/>
 				</CheckBoxField>
 				<UsualGroup name="ГруппаКнопки" id="4">
 					<Title>

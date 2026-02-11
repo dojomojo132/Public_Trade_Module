@@ -177,17 +177,7 @@
 							<ContextMenu name="КассаНаличныхКонтекстноеМеню" id="60"/>
 							<ExtendedTooltip name="КассаНаличныхРасширеннаяПодсказка" id="61"/>
 						</InputField>
-						<InputField name="КассаБезналичных" id="62">
-							<DataPath>КассаБезналичных</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Касса безналичных (карта)</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="КассаБезналичныхКонтекстноеМеню" id="63"/>
-							<ExtendedTooltip name="КассаБезналичныхРасширеннаяПодсказка" id="64"/>
-						</InputField>
+
 					</ChildItems>
 				</Page>
 				<Page name="НастройкиРМК" id="35">
@@ -368,17 +358,7 @@
 				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="КассаБезналичных" id="15">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Касса безналичных (карта)</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
-			</Type>
-		</Attribute>
+
 	</Attributes>
 	<Commands>
 		<Command name="Сохранить" id="1">
