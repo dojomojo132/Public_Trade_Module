@@ -7,7 +7,7 @@
   "connections": {
     "development": {
       "type": "file",
-      "path": "D:\\1C_Bases\\PTM_Development",
+      "path": "D:\\Confiq\\Public Trade Module",
       "user": "Admin",
       "password": "",
       "timeout": 30000,

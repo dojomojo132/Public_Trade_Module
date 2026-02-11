@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses"
+	xmlns:app="http://v8.1c.ru/8.2/managed-application/core"
+	xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config"
+	xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi"
+	xmlns:ent="http://v8.1c.ru/8.1/data/enterprise"
+	xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform"
+	xmlns:style="http://v8.1c.ru/8.1/data/ui/style"
+	xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system"
+	xmlns:v8="http://v8.1c.ru/8.1/data/core"
+	xmlns:v8ui="http://v8.1c.ru/8.1/data/ui"
+	xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web"
+	xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"
+	xmlns:xen="http://v8.1c.ru/8.3/xcf/enums"
+	xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef"
+	xmlns:xr="http://v8.1c.ru/8.3/xcf/readable"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.20">
+	<DataProcessor uuid="a9f8e7d6-c5b4-3a2b-1c0d-9e8f7a6b5c4d">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.ТестСозданиеФорм" category="Object">
+				<xr:TypeId>b0a9f8e7-d6c5-4b3a-2b1c-0d9e8f7a6b5c</xr:TypeId>
+				<xr:ValueId>c1b0a9f8-e7d6-5c4b-3a2b-1c0d9e8f7a6b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.ТестСозданиеФорм" category="Manager">
+				<xr:TypeId>d2c1b0a9-f8e7-6d5c-4b3a-2b1c0d9e8f7a</xr:TypeId>
+				<xr:ValueId>e3d2c1b0-a9f8-7e6d-5c4b-3a2b1c0d9e8f</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ТестСозданиеФорм</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест создание форм</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm>DataProcessor.ТестСозданиеФорм.Form.Форма</DefaultForm>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>

@@ -127,6 +127,67 @@
 							<ContextMenu name="КонтролироватьОстаткиПриСписанииКонтекстноеМеню" id="26"/>
 							<ExtendedTooltip name="КонтролироватьОстаткиПриСписанииРасширеннаяПодсказка" id="27"/>
 						</InputField>
+						<CheckBoxField name="ФискальныйРежим" id="53">
+							<DataPath>ФискальныйРежим</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фискальные продажи (печать чеков на ККМ)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ФискальныйРежимКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ФискальныйРежимРасширеннаяПодсказка" id="55">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Если отключено — продажи проходят без фискализации (без печати чеков на ККМ)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</CheckBoxField>
+						<CheckBoxField name="РазделениеФискальныхЧеков" id="56">
+							<DataPath>РазделениеФискальныхЧеков</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Разделение фискальных чеков (оплата по видам)</v8:content>
+								</v8:item>
+							</Title>
+							<Events>
+								<Event name="OnChange">РазделениеФискальныхЧековПриИзменении</Event>
+							</Events>
+							<ContextMenu name="РазделениеФискальныхЧековКонтекстноеМеню" id="57"/>
+							<ExtendedTooltip name="РазделениеФискальныхЧековРасширеннаяПодсказка" id="58">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Если включено — при оплате выбирается вид оплаты (Наличные/Карта), касса заполняется автоматически</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</CheckBoxField>
+						<InputField name="КассаНаличных" id="59">
+							<DataPath>КассаНаличных</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Касса наличных</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="КассаНаличныхКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="КассаНаличныхРасширеннаяПодсказка" id="61"/>
+						</InputField>
+						<InputField name="КассаБезналичных" id="62">
+							<DataPath>КассаБезналичных</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Касса безналичных (карта)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="КассаБезналичныхКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="КассаБезналичныхРасширеннаяПодсказка" id="64"/>
+						</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="НастройкиРМК" id="35">
@@ -272,6 +333,50 @@
 					<v8:FractionDigits>0</v8:FractionDigits>
 					<v8:AllowedSign>Any</v8:AllowedSign>
 				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФискальныйРежим" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фискальные продажи (печать чеков на ККМ)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазделениеФискальныхЧеков" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разделение фискальных чеков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КассаНаличных" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса наличных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КассаБезналичных" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Касса безналичных (карта)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

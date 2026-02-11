@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ШАБЛОН: Форма объекта (Form)
+    Инструкция: замени все {{PLACEHOLDER}} реальными значениями.
+    
+    КРИТИЧНО:
+    - Каждый элемент формы ОБЯЗАН иметь ContextMenu и ExtendedTooltip с уникальными id
+    - Таблица формы ОБЯЗАНА иметь: ContextMenu, AutoCommandBar, ExtendedTooltip,
+      SearchStringAddition, ViewStatusAddition, SearchControlAddition
+    - id элементов — уникальные числа внутри формы, начиная с 1
+    - AutoCommandBar формы имеет id="-1"
+-->
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform"
+	xmlns:app="http://v8.1c.ru/8.2/managed-application/core"
+	xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config"
+	xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi"
+	xmlns:ent="http://v8.1c.ru/8.1/data/enterprise"
+	xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform"
+	xmlns:style="http://v8.1c.ru/8.1/data/ui/style"
+	xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system"
+	xmlns:v8="http://v8.1c.ru/8.1/data/core"
+	xmlns:v8ui="http://v8.1c.ru/8.1/data/ui"
+	xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web"
+	xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"
+	xmlns:xen="http://v8.1c.ru/8.3/xcf/enums"
+	xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef"
+	xmlns:xr="http://v8.1c.ru/8.3/xcf/readable"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.20">
+
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>{{ЗАГОЛОВОК_ФОРМЫ}}</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+
+	<!-- Командная панель формы (id всегда -1) -->
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>true</Autofill>
+	</AutoCommandBar>
+
+	<!-- События формы -->
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+
+	<!-- Элементы формы -->
+	<ChildItems>
+
+		<!-- Группа шапка -->
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+
+				<!-- Пример InputField: раскомментировать и заполнить -->
+				<!--
+				<InputField name="{{ИМЯ_ПОЛЯ}}" id="3">
+					<DataPath>Объект.{{ИМЯ_РЕКВИЗИТА}}</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>{{ЗАГОЛОВОК_ПОЛЯ}}</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="{{ИМЯ_ПОЛЯ}}КонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="{{ИМЯ_ПОЛЯ}}РасширеннаяПодсказка" id="5"/>
+				</InputField>
+				-->
+
+			</ChildItems>
+		</UsualGroup>
+
+		<!-- Пример таблицы формы: раскомментировать и заполнить -->
+		<!--
+		<Table name="{{ИМЯ_ТЧ}}" id="10">
+			<Representation>List</Representation>
+			<DataPath>Объект.{{ИМЯ_ТЧ}}</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<Height>10</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+
+			<ContextMenu name="{{ИМЯ_ТЧ}}КонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="{{ИМЯ_ТЧ}}КоманднаяПанель" id="12">
+				<Autofill>true</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="{{ИМЯ_ТЧ}}РасширеннаяПодсказка" id="13"/>
+
+			<SearchStringAddition name="{{ИМЯ_ТЧ}}СтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>{{ИМЯ_ТЧ}}</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+			</SearchStringAddition>
+			<ViewStatusAddition name="{{ИМЯ_ТЧ}}СостояниеПросмотра" id="15">
+				<AdditionSource>
+					<Item>{{ИМЯ_ТЧ}}</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+			</ViewStatusAddition>
+			<SearchControlAddition name="{{ИМЯ_ТЧ}}УправлениеПоиском" id="16">
+				<AdditionSource>
+					<Item>{{ИМЯ_ТЧ}}</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+			</SearchControlAddition>
+
+			<ChildItems>
+				<InputField name="{{ИМЯ_ТЧ}}{{ИМЯ_КОЛОНКИ}}" id="17">
+					<DataPath>Объект.{{ИМЯ_ТЧ}}.{{ИМЯ_КОЛОНКИ}}</DataPath>
+					<ContextMenu name="{{ИМЯ_ТЧ}}{{ИМЯ_КОЛОНКИ}}КонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="{{ИМЯ_ТЧ}}{{ИМЯ_КОЛОНКИ}}РасширеннаяПодсказка" id="19"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		-->
+
+	</ChildItems>
+
+	<!-- Реквизиты формы -->
+	<Attributes>
+		<!-- Основной реквизит (объект). Тип: cfg:DocumentObject.ИМЯ или cfg:CatalogObject.ИМЯ -->
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:{{ТИП_ОБЪЕКТА}}.{{ИМЯ_ОБЪЕКТА}}</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+
+	<!-- Команды формы -->
+	<Commands>
+		<!--
+		<Command name="{{ИМЯ_КОМАНДЫ}}" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>{{ЗАГОЛОВОК_КОМАНДЫ}}</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>{{ПОДСКАЗКА_КОМАНДЫ}}</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>{{ИМЯ_ОБРАБОТЧИКА}}</Action>
+		</Command>
+		-->
+	</Commands>
+</Form>

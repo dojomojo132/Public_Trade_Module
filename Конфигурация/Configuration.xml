@@ -313,15 +313,15 @@
 			<Enum>ВидыОплаты</Enum>
 			<Enum>СтатусыЧекаККМ</Enum>
 			<Enum>СтатусыКассовойСмены</Enum>
+			<Enum>ВидыКасс</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<Report>Продажи</Report>
 			<Report>Возвраты</Report>
 			<Report>ДвижениеТоваров</Report>
+			<Report>ВаловаяПрибыль</Report>
+			<Report>ПродажиПоСчетам</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
-			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеЦен</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеШтрихкодов</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>

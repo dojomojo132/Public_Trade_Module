@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ШАБЛОН: Регистр накопления (AccumulationRegister)
+    Инструкция: замени все {{PLACEHOLDER}} реальными значениями.
+    
+    RegisterType: Balance (остатки) или Turnovers (обороты)
+    Измерения (Dimension) — по ним строятся итоги
+    Ресурсы (Resource) — числовые значения
+    Реквизиты (Attribute) — дополнительная информация
+-->
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AccumulationRegister uuid="{{UUID_REGISTER}}">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.{{ИМЯ}}" category="Record">
+				<xr:TypeId>{{UUID_TYPE_RECORD}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_RECORD}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.{{ИМЯ}}" category="Manager">
+				<xr:TypeId>{{UUID_TYPE_MANAGER}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_MANAGER}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.{{ИМЯ}}" category="Selection">
+				<xr:TypeId>{{UUID_TYPE_SELECTION}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_SELECTION}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.{{ИМЯ}}" category="List">
+				<xr:TypeId>{{UUID_TYPE_LIST}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_LIST}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.{{ИМЯ}}" category="RecordSet">
+				<xr:TypeId>{{UUID_TYPE_RECORDSET}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_RECORDSET}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.{{ИМЯ}}" category="RecordKey">
+				<xr:TypeId>{{UUID_TYPE_RECORDKEY}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_RECORDKEY}}</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>{{ИМЯ}}</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>{{СИНОНИМ}}</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<RegisterType>Balance</RegisterType>
+			<EnableTotalsSplitting>true</EnableTotalsSplitting>
+			<DefaultListForm/>
+		</Properties>
+		<ChildObjects>
+			<!-- ИЗМЕРЕНИЯ -->
+			<Dimension uuid="{{UUID_DIM}}">
+				<Properties>
+					<Name>{{ИМЯ_ИЗМЕРЕНИЯ}}</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>{{СИНОНИМ_ИЗМЕРЕНИЯ}}</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>cfg:CatalogRef.{{ИМЯ_СПРАВОЧНИКА}}</v8:Type>
+					</Type>
+					<UseInTotals>true</UseInTotals>
+					<DenyIncompleteValues>true</DenyIncompleteValues>
+					<Indexing>DontIndex</Indexing>
+					<FullTextSearch>Use</FullTextSearch>
+				</Properties>
+			</Dimension>
+
+			<!-- РЕСУРСЫ -->
+			<Resource uuid="{{UUID_RES}}">
+				<Properties>
+					<Name>{{ИМЯ_РЕСУРСА}}</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>{{СИНОНИМ_РЕСУРСА}}</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FullTextSearch>Use</FullTextSearch>
+				</Properties>
+			</Resource>
+		</ChildObjects>
+	</AccumulationRegister>
+</MetaDataObject>

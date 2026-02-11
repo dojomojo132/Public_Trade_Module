@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<!-- {{РЕКВИЗИТЫ}}
+		     Для каждого реквизита справочника добавить блок:
+		<InputField name="{{ИмяРеквизита}}" id="{{N}}">
+			<DataPath>Объект.{{ИмяРеквизита}}</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="{{ИмяРеквизита}}КонтекстноеМеню" id="{{N+1}}"/>
+			<ExtendedTooltip name="{{ИмяРеквизита}}РасширеннаяПодсказка" id="{{N+2}}"/>
+		</InputField>
+
+		     Для булевых реквизитов:
+		<CheckBoxField name="{{ИмяРеквизита}}" id="{{N}}">
+			<DataPath>Объект.{{ИмяРеквизита}}</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="{{ИмяРеквизита}}КонтекстноеМеню" id="{{N+1}}"/>
+			<ExtendedTooltip name="{{ИмяРеквизита}}РасширеннаяПодсказка" id="{{N+2}}"/>
+		</CheckBoxField>
+		-->
+		<!-- {{ТАБЛИЧНАЯ_ЧАСТЬ}}
+		     Если у справочника есть ТЧ — добавить Table.
+		     Нумерация id: Table=N, ContextMenu=N+1, AutoCommandBar=N+2,
+		     ExtendedTooltip=N+3, SearchStringAddition=N+4 (дочерние N+5,N+6),
+		     ViewStatusAddition=N+7 (дочерние N+8,N+9),
+		     SearchControlAddition=N+10 (дочерние N+11,N+12),
+		     затем колонки с шагом 3 (элемент, ContextMenu, ExtendedTooltip)
+		-->
+		<Table name="{{ИмяТЧ}}" id="7">
+			<DataPath>Объект.{{ИмяТЧ}}</DataPath>
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="{{ИмяТЧ}}КонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="{{ИмяТЧ}}КоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="{{ИмяТЧ}}РасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="{{ИмяТЧ}}СтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>{{ИмяТЧ}}</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="{{ИмяТЧ}}СтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="{{ИмяТЧ}}СтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="{{ИмяТЧ}}СостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>{{ИмяТЧ}}</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="{{ИмяТЧ}}СостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="{{ИмяТЧ}}СостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="{{ИмяТЧ}}УправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>{{ИмяТЧ}}</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="{{ИмяТЧ}}УправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="{{ИмяТЧ}}УправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="{{ИмяТЧ}}НомерСтроки" id="20">
+					<DataPath>Объект.{{ИмяТЧ}}.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="{{ИмяТЧ}}НомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="{{ИмяТЧ}}НомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<!-- {{КОЛОНКИ_ТЧ}}
+				     Для каждой колонки:
+				<InputField name="{{ИмяТЧ}}{{ИмяКолонки}}" id="{{N}}">
+					<DataPath>Объект.{{ИмяТЧ}}.{{ИмяКолонки}}</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="{{ИмяТЧ}}{{ИмяКолонки}}КонтекстноеМеню" id="{{N+1}}"/>
+					<ExtendedTooltip name="{{ИмяТЧ}}{{ИмяКолонки}}РасширеннаяПодсказка" id="{{N+2}}"/>
+				</InputField>
+				-->
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.{{ИМЯ_СПРАВОЧНИКА}}</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

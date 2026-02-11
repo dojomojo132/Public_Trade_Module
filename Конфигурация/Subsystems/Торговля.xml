@@ -33,6 +33,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.Продажи</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПродажиПоДисконтнымКартам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ОстаткиТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ВаловаяПрибыль</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ПродажиПоСчетам</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

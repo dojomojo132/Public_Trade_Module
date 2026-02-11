@@ -257,9 +257,6 @@
 			<Subsystem>Все</Subsystem>
 			<Subsystem>Фискал</Subsystem>
 			<Subsystem>Тесты</Subsystem>
-			<Subsystem>Справочники</Subsystem>
-			<Subsystem>Документы</Subsystem>
-			<Subsystem>Касса</Subsystem>
 			<StyleItem>ЦветКнопкиГруппы</StyleItem>
 			<Style>ЧорныйРежим</Style>
 			<Style>Зелёный</Style>
@@ -316,18 +313,18 @@
 			<Enum>ВидыОплаты</Enum>
 			<Enum>СтатусыЧекаККМ</Enum>
 			<Enum>СтатусыКассовойСмены</Enum>
+			<Enum>ВидыКасс</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<Report>Продажи</Report>
 			<Report>Возвраты</Report>
 			<Report>ДвижениеТоваров</Report>
+			<Report>ВаловаяПрибыль</Report>
+			<Report>ПродажиПоСчетам</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
-			<DataProcessor>ЗаполниеТестовойНоменклатуры</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеЦен</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеШтрихкодов</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
-			<DataProcessor>ЗагрузкаТовараИзЕксель</DataProcessor>
+			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>

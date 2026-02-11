@@ -19,9 +19,9 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗаполниеТестовойНоменклатуры</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеЦен</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеШтрихкодов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">202e88ce-9d90-4781-a68c-05c1d918fbf0</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">cae73a74-037f-4dec-8313-e8f06606dbad</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">008602a0-7f2f-4833-802b-7c2a401b4255</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестовоеЗаполнениеДанных</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ИмпортЕкспортНоменклатуры</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ИмпортНоменклатуры</xr:Item>

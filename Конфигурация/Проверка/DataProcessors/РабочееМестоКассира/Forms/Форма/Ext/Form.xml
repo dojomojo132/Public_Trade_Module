@@ -51,6 +51,7 @@
 				</Button>
 				<Button name="ОбновитьНастройки" id="74">
 					<Type>UsualButton</Type>
+					<Visible>false</Visible>
 					<CommandName>Form.Command.ОбновитьНастройки</CommandName>
 					<ExtendedTooltip name="ОбновитьНастройкиРасширеннаяПодсказка" id="75"/>
 				</Button>
@@ -71,6 +72,7 @@
 				</Button>
 				<InputField name="ПолеПоискаТовара" id="4">
 					<DataPath>Объект.ПолеПоискаТовара</DataPath>
+					<Visible>false</Visible>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -85,6 +87,7 @@
 				</InputField>
 				<InputField name="ПолеПоискаТовара2" id="71">
 					<DataPath>Объект.ПолеПоискаТовара2</DataPath>
+					<Visible>false</Visible>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ПолеПоискаТовара2КонтекстноеМеню" id="72"/>
 					<ExtendedTooltip name="ПолеПоискаТовара2РасширеннаяПодсказка" id="73"/>
@@ -207,7 +210,6 @@
 								</InputField>
 								<InputField name="ТЧАкцизнаяМарка" id="64">
 									<DataPath>Объект.ТЧ.АкцизнаяМарка</DataPath>
-									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<Width>20</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
@@ -218,7 +220,6 @@
 								</InputField>
 								<InputField name="ТЧШтрихкод" id="87">
 									<DataPath>Объект.ТЧ.Штрихкод</DataPath>
-									<Visible>false</Visible>
 									<ReadOnly>true</ReadOnly>
 									<Width>15</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
