@@ -33,20 +33,27 @@
 			<ContextMenu name="КассаКонтекстноеМеню" id="10"/>
 			<ExtendedTooltip name="КассаРасширеннаяПодсказка" id="11"/>
 		</InputField>
-		<InputField name="СуммаДокумента" id="12">
+		<InputField name="Контрагент" id="12">
+			<DataPath>Объект.Контрагент</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="КонтрагентКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="14"/>
+		</InputField>
+		<InputField name="СуммаДокумента" id="15">
 			<DataPath>Объект.СуммаДокумента</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="13"/>
-			<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="14"/>
+			<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="17"/>
 		</InputField>
-		<InputField name="Комментарий" id="15">
+		<InputField name="Комментарий" id="18">
 			<DataPath>Объект.Комментарий</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<Height>2</Height>
 			<HorizontalStretch>true</HorizontalStretch>
-			<ContextMenu name="КомментарийКонтекстноеМеню" id="16"/>
-			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="17"/>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="19"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="20"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>
