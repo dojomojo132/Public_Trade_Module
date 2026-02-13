@@ -108,12 +108,7 @@
 					<v8:content>Выбрать неоплаченную задолженность перед контрагентом</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Use>
-				<Condition>InForm</Condition>
-			</Use>
-			<Representation>Auto</Representation>
-			<ModifiesStoredData>true</ModifiesStoredData>
-			<CurrentRowUse>DontUse</CurrentRowUse>
+			<Action>ВыбратьЗадолженность</Action>
 		</Command>
 	</Commands>
 </Form>
