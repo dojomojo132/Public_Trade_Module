@@ -22,5 +22,8 @@
     "github.copilot.chat.codeGeneration.useReferencedFiles": true,
 
     // Автоподтверждение действий агента (без ручного клика)
-    "chat.agent.autoApprove": true
+    "chat.agent.autoApprove": true,
+
+    // Максимальное количество шагов агента за один запрос
+    "chat.agent.maxRequests": 1000
 }
