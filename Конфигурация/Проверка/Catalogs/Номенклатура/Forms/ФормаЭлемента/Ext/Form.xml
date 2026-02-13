@@ -90,7 +90,7 @@
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="ФОПКонтекстноеМеню" id="51"/>
 			<ExtendedTooltip name="ФОПРасширеннаяПодсказка" id="52">
-				<Title>
+				<Title formatted="false">
 					<v8:item>
 						<v8:lang>ru</v8:lang>
 						<v8:content>ФОП, к которому относится товар (для разделения фискальных чеков)</v8:content>

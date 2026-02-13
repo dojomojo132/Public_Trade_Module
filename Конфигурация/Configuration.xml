@@ -329,6 +329,7 @@
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
+			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>

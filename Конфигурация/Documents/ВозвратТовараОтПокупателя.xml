@@ -198,7 +198,6 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
-			<Form>ФормаВыбораРежимаВозврата</Form>
 			<TabularSection uuid="d4e5f678-9012-3456-d7e8-f90123456789">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.ВозвратТовараОтПокупателя.Товары" category="TabularSection">

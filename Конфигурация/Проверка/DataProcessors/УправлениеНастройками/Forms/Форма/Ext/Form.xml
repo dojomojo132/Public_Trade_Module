@@ -135,9 +135,10 @@
 									<v8:content>Фискальные продажи (печать чеков на ККМ)</v8:content>
 								</v8:item>
 							</Title>
+							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ФискальныйРежимКонтекстноеМеню" id="54"/>
 							<ExtendedTooltip name="ФискальныйРежимРасширеннаяПодсказка" id="55">
-								<Title>
+								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Если отключено — продажи проходят без фискализации (без печати чеков на ККМ)</v8:content>
@@ -153,18 +154,19 @@
 									<v8:content>Разделение фискальных чеков (оплата по видам)</v8:content>
 								</v8:item>
 							</Title>
-							<Events>
-								<Event name="OnChange">РазделениеФискальныхЧековПриИзменении</Event>
-							</Events>
+							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="РазделениеФискальныхЧековКонтекстноеМеню" id="57"/>
 							<ExtendedTooltip name="РазделениеФискальныхЧековРасширеннаяПодсказка" id="58">
-								<Title>
+								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
 										<v8:content>Если включено — при оплате выбирается вид оплаты (Наличные/Карта), касса заполняется автоматически</v8:content>
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">РазделениеФискальныхЧековПриИзменении</Event>
+							</Events>
 						</CheckBoxField>
 						<InputField name="КассаНаличных" id="59">
 							<DataPath>КассаНаличных</DataPath>
@@ -177,7 +179,6 @@
 							<ContextMenu name="КассаНаличныхКонтекстноеМеню" id="60"/>
 							<ExtendedTooltip name="КассаНаличныхРасширеннаяПодсказка" id="61"/>
 						</InputField>
-
 					</ChildItems>
 				</Page>
 				<Page name="НастройкиРМК" id="35">
@@ -358,7 +359,6 @@
 				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
 			</Type>
 		</Attribute>
-
 	</Attributes>
 	<Commands>
 		<Command name="Сохранить" id="1">

@@ -98,6 +98,7 @@
 		<Metadata name="DataProcessor.ИмпортЕкспортНоменклатуры.Form.Форма.Form" id="896918cf-4efc-420f-a978-8dd88bb34823.0" configVersion="81f8169ca90ba24387866b858f4174e300000000"/>
 		<Metadata name="DataProcessor.ИмпортНоменклатуры" id="36cae9a8-dc3b-4102-94af-5d920b8bb332" configVersion="33753d54e56d2a4a9f8d25252ce6aebc00000000">
 			<Metadata name="DataProcessor.ИмпортНоменклатуры.Attribute.ПутьКФайлу" id="d7e8f9a0-bcde-f012-3456-789abcdef012"/>
+			<Metadata name="DataProcessor.ИмпортНоменклатуры.ObjectModule" id="36cae9a8-dc3b-4102-94af-5d920b8bb332.0" configVersion="a7b8c9d0e1f2345678901234abcdef0000000000"/>
 		</Metadata>
 		<Metadata name="DataProcessor.ИмпортНоменклатуры.Form.Форма" id="839d0212-fd3e-42f8-a26c-d657eb39a1b8" configVersion="6f46a4f15d08b94b8371e85fe7df4f0800000000"/>
 		<Metadata name="DataProcessor.ИмпортНоменклатуры.Form.Форма.Form" id="839d0212-fd3e-42f8-a26c-d657eb39a1b8.0" configVersion="17c14805eaa30f449b328b57d461361b00000000"/>
@@ -117,6 +118,17 @@
 		</Metadata>
 		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма" id="1876b53a-c567-4e3a-9e12-123456789acd" configVersion="790c24ef7afe464590face4d7394094b00000000"/>
 		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма.Form" id="1876b53a-c567-4e3a-9e12-123456789acd.0" configVersion="7211286bea9db147a3cefe4a5a89882300000000"/>
+		<Metadata name="DataProcessor.ИнформацияНоменклатуры" id="a1b2c3d4-e5f6-4789-abcd-ef0123456789" configVersion="7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d00000000">
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары" id="f6a7b8c9-d0e1-4234-f012-345678901234"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.Артикул" id="55e6f7a8-b9c0-4312-def0-123456789012"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.Наименование" id="66f7a8b9-c0d1-4423-ef01-234567890123"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.ЕдиницаИзмерения" id="77a8b9c0-d1e2-4534-f012-345678901234"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.Цена" id="88b9c0d1-e2f3-4645-0123-456789012345"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.Остаток" id="99c0d1e2-f3a4-4756-1234-567890123456"/>
+			<Metadata name="DataProcessor.ИнформацияНоменклатуры.TabularSection.Товары.Attribute.ШтрихКод" id="aad1e2f3-a4b5-4867-2345-678901234567"/>
+		</Metadata>
+		<Metadata name="DataProcessor.ИнформацияНоменклатуры.Form.Форма" id="bbe2f3a4-b5c6-4978-3456-789012345678" configVersion="8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e00000000"/>
+		<Metadata name="DataProcessor.ИнформацияНоменклатуры.Form.Форма.Form" id="bbe2f3a4-b5c6-4978-3456-789012345678.0" configVersion="9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f00000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba" configVersion="635d2005e67aa74dbc4f54480fe8783c00000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450" configVersion="df0479796b82b648a07c7e282ce0358300000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма.Form" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450.0" configVersion="6451fb8625e34e489bcb297fc171bb9d00000000"/>
@@ -134,7 +146,6 @@
 			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.ФискальныйВозврат" id="c3d4e5f6-7890-1234-c5d6-e7f890123456"/>
 			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары" id="d4e5f678-9012-3456-d7e8-f90123456789"/>
 		</Metadata>
-		<Metadata name="Document.ВозвратТовараОтПокупателя.Form.ФормаВыбораРежимаВозврата" id="f0e1d2c3-b4a5-9687-f1e2-d3c4b5a69788" configVersion="185fff067d9cc7459053e61cca22f5dd00000000"/>
 		<Metadata name="Document.ВозвратТовараОтПокупателя.ObjectModule" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747.0" configVersion="9b4736edb0c90743bb96a98b7677377900000000"/>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="1e27421b0a122845be1e55890eb4f91700000000">
 			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.Склад" id="10b65996-3df1-4425-85cc-4473231e12ea"/>

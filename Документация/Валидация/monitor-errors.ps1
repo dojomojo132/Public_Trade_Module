@@ -107,7 +107,12 @@ function Do-Setup {
     }
 
     # Генерируем logcfg.xml — только EXCP и EXCPCNTX
-    # Минимальное влияние на производительность
+    # Расширенный набор событий для полного перехвата ошибок
+    # EXCP/EXCPCNTX — runtime-исключения (необработанные)
+    # SDBL — ошибки SQL-запросов (блокировки, constraint violations)
+    # CALL/SCALL — ошибки клиент-серверных вызовов
+    # CONN — ошибки подключений
+    # Фильтр по нашей ИБ: processName содержит "Public Trade Module"
     $logcfgContent = @"
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns="http://v8.1c.ru/v8/tech-log">
@@ -117,6 +122,22 @@ function Do-Setup {
         </event>
         <event>
             <eq property="name" value="EXCPCNTX"/>
+        </event>
+        <event>
+            <eq property="name" value="SDBL"/>
+            <like property="Descr" value="%"/>
+        </event>
+        <event>
+            <eq property="name" value="CALL"/>
+            <like property="Descr" value="%"/>
+        </event>
+        <event>
+            <eq property="name" value="SCALL"/>
+            <like property="Descr" value="%"/>
+        </event>
+        <event>
+            <eq property="name" value="CONN"/>
+            <like property="Descr" value="%"/>
         </event>
         <property name="all"/>
     </log>
@@ -145,7 +166,7 @@ function Do-Setup {
     }
 
     Write-Host ""
-    Write-Mon "Мониторинг ТЖ включён! EXCP события будут записываться." "OK"
+    Write-Mon "Мониторинг ТЖ включён! События: EXCP, EXCPCNTX, SDBL, CALL, SCALL, CONN." "OK"
     Write-Mon "Логи ТЖ: $tjLogDir"
     Write-Host ""
     Write-Host "  ВАЖНО: Перезапустите ВСЕ процессы 1С для активации ТЖ:" -ForegroundColor Yellow
@@ -295,9 +316,9 @@ function Read-TJErrors {
             foreach ($line in $lines) {
                 # Новое событие: mm:ss.ffffff-duration,EventName,Level,...
                 if ($line -match '^(\d{2}:\d{2}\.\d+)-(\d+),(\w+),(\d+),(.*)') {
-                    # Сохраняем предыдущее EXCP событие
-                    if ($currentEventName -eq "EXCP" -and $currentText) {
-                        $err = Parse-TJExcpEvent -EventText $currentText -LogFile $logFile
+                    # Сохраняем предыдущее событие с ошибкой
+                    if ($currentEventName -in @("EXCP", "SDBL", "CALL", "SCALL", "CONN") -and $currentText) {
+                        $err = Parse-TJEvent -EventName $currentEventName -EventText $currentText -LogFile $logFile
                         if ($err) { $errors += $err }
                     }
 
@@ -312,8 +333,8 @@ function Read-TJErrors {
             }
 
             # Последнее событие в файле
-            if ($currentEventName -eq "EXCP" -and $currentText) {
-                $err = Parse-TJExcpEvent -EventText $currentText -LogFile $logFile
+            if ($currentEventName -in @("EXCP", "SDBL", "CALL", "SCALL", "CONN") -and $currentText) {
+                $err = Parse-TJEvent -EventName $currentEventName -EventText $currentText -LogFile $logFile
                 if ($err) { $errors += $err }
             }
         } catch {
@@ -322,16 +343,16 @@ function Read-TJErrors {
     }
 
     if ($errors.Count -gt 0) {
-        Write-Mon "ТЖ: Найдено $($errors.Count) исключений (EXCP)" "ERROR"
+        Write-Mon "ТЖ: Найдено $($errors.Count) ошибок (EXCP/SDBL/CALL/SCALL/CONN)" "ERROR"
     } else {
-        Write-Mon "ТЖ: Ошибок EXCP не обнаружено" "OK"
+        Write-Mon "ТЖ: Ошибок не обнаружено" "OK"
     }
 
     return $errors
 }
 
-function Parse-TJExcpEvent {
-    param([string]$EventText, $LogFile)
+function Parse-TJEvent {
+    param([string]$EventName, [string]$EventText, $LogFile)
 
     # Извлекаем Descr (описание ошибки)
     $descr = ""
@@ -341,6 +362,7 @@ function Parse-TJExcpEvent {
         $descr = $Matches[1]
     }
 
+    # Для EXCP — Descr обязателен; для SDBL/CALL/SCALL/CONN — ошибочные события всегда имеют Descr
     if (-not $descr) { return $null }
 
     # Извлекаем processName (путь к базе)
@@ -360,6 +382,19 @@ function Parse-TJExcpEvent {
         $module = $Matches[1]
     }
 
+    # Извлекаем Func (имя функции для CALL/SCALL)
+    $func = ""
+    if ($EventText -match "Func=([^,`r`n]+)") {
+        $func = $Matches[1]
+    }
+
+    # Извлекаем Sql (текст запроса для SDBL)
+    $sql = ""
+    if ($EventName -eq "SDBL" -and $EventText -match "Sql='((?:[^']|'')*)'") {
+        $sql = $Matches[1] -replace "''", "'"
+        if ($sql.Length -gt 200) { $sql = $sql.Substring(0, 200) + "..." }
+    }
+
     # Время из имени файла: YYMMDDhh.log → дата-час
     $fileTime = ""
     if ($LogFile.Name -match "^(\d{2})(\d{2})(\d{2})(\d{2})") {
@@ -372,12 +407,19 @@ function Parse-TJExcpEvent {
         $eventTime = $Matches[1]
     }
 
+    # Формируем контекст
+    $contextParts = @()
+    if ($processName) { $contextParts += $processName }
+    if ($func) { $contextParts += "Func=$func" }
+    if ($sql) { $contextParts += "SQL: $sql" }
+    $context = $contextParts -join " | "
+
     return @{
-        Source      = "ТЖ (EXCP)"
+        Source      = "ТЖ ($EventName)"
         Time        = "$fileTime $eventTime".Trim()
         Module      = $module
         Description = $descr
-        Context     = $processName
+        Context     = $context
     }
 }
 
@@ -446,8 +488,8 @@ function Read-EventLogErrors {
                 $severity = $record.Groups[7].Value
                 $comment = $record.Groups[8].Value
 
-                # Только ошибки (E) — предупреждения (W) пока пропускаем
-                if ($severity -ne "E") { continue }
+                # Только ошибки (E) и предупреждения (W) — для полноты отладки
+                if ($severity -notin @("E", "W")) { continue }
 
                 # Фильтр по времени
                 if ($dateStr -lt $cutoffStr) { continue }
@@ -462,6 +504,13 @@ function Read-EventLogErrors {
                 $eventCode = $record.Groups[6].Value
                 $eventName = if ($eventDict.ContainsKey($eventCode)) { $eventDict[$eventCode] } else { "Event#$eventCode" }
 
+                # Определяем уровень серьёзности для отображения
+                $severityText = switch ($severity) {
+                    "E" { "ОШИБКА" }
+                    "W" { "ПРЕДУПР" }
+                    default { $severity }
+                }
+
                 # Извлекаем дополнительные данные после Comment
                 # В lgp после Comment идёт ,DataSize,Data,...
                 $description = $comment
@@ -470,7 +519,7 @@ function Read-EventLogErrors {
                 }
 
                 $errors += @{
-                    Source      = "ЖР ($eventName)"
+                    Source      = "ЖР ($eventName) [$severityText]"
                     Time        = $displayDate
                     Module      = ""
                     Description = $description

@@ -98,7 +98,7 @@
 					</Synonym>
 					<Comment>Наличная или Банковский счет</Comment>
 					<Type>
-						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:EnumRef.ВидыКасс</v8:Type>
+						<v8:Type>cfg:EnumRef.ВидыКасс</v8:Type>
 					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
@@ -126,6 +126,7 @@
 					<ChoiceForm/>
 					<LinkByType/>
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Use>ForItem</Use>
 					<Indexing>DontIndex</Indexing>
 					<FullTextSearch>Use</FullTextSearch>
 					<DataHistory>Use</DataHistory>
@@ -170,6 +171,7 @@
 					<ChoiceForm/>
 					<LinkByType/>
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Use>ForItem</Use>
 					<Indexing>DontIndex</Indexing>
 					<FullTextSearch>Use</FullTextSearch>
 					<DataHistory>Use</DataHistory>
@@ -208,23 +210,13 @@
 					<FillChecking>DontCheck</FillChecking>
 					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 					<ChoiceParameterLinks/>
-					<ChoiceParameters>
-						<v8:item>
-							<v8:choiceParameter>
-								<v8:name>Отбор.ТипОборудования</v8:name>
-								<v8:value xsi:type="v8:FixedArray">
-									<v8:item xsi:type="cfg:EnumRef.ТипыОборудования">
-										<v8:Value>ККТ</v8:Value>
-									</v8:item>
-								</v8:value>
-							</v8:choiceParameter>
-						</v8:item>
-					</ChoiceParameters>
+					<ChoiceParameters/>
 					<QuickChoice>Auto</QuickChoice>
 					<CreateOnInput>Auto</CreateOnInput>
 					<ChoiceForm/>
 					<LinkByType/>
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Use>ForItem</Use>
 					<Indexing>DontIndex</Indexing>
 					<FullTextSearch>Use</FullTextSearch>
 					<DataHistory>Use</DataHistory>

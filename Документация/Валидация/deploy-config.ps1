@@ -410,6 +410,76 @@ function Format-ErrorBlockForAgent {
 
 # === BACKUP / ROLLBACK ===
 
+function Step-GitBackup {
+    <#
+    .DESCRIPTION
+        Создаёт git-бэкап текущего состояния ПЕРЕД изменениями.
+        Коммитит и пушит ВСЕ файлы: конфигурация (XML/BSL), .dt, документация.
+        Это первый уровень защиты — позволяет откатить файлы конфигурации через git.
+    #>
+    param(
+        [string]$TaskDescription = "изменение конфигурации"
+    )
+
+    Write-Step "GIT-БЭКАП" "Создание git-бэкапа текущего состояния..."
+
+    # Проверка наличия git
+    $gitExists = Get-Command git -ErrorAction SilentlyContinue
+    if (-not $gitExists) {
+        Write-Step "GIT-БЭКАП" "git не найден — git-бэкап пропущен" "WARN"
+        return @{ Success = $true; Skipped = $true }
+    }
+
+    # Проверка что мы в git-репозитории
+    Push-Location $projectRoot
+    try {
+        $isRepo = git rev-parse --is-inside-work-tree 2>$null
+        if ($isRepo -ne "true") {
+            Write-Step "GIT-БЭКАП" "Не git-репозиторий — git-бэкап пропущен" "WARN"
+            return @{ Success = $true; Skipped = $true }
+        }
+
+        # Проверяем есть ли изменения для коммита
+        $status = git status --porcelain 2>$null
+        if (-not $status) {
+            Write-Step "GIT-БЭКАП" "Нет изменений для коммита — git-бэкап пропущен" "INFO"
+            return @{ Success = $true; Skipped = $true }
+        }
+
+        # git add + commit + push
+        $timestamp = Get-Date -Format "yyyy-MM-dd"
+        $commitMessage = "BACKUP: $timestamp перед $TaskDescription"
+
+        git add -A 2>$null
+        $commitResult = git commit -m $commitMessage 2>&1
+        $commitExitCode = $LASTEXITCODE
+
+        if ($commitExitCode -ne 0) {
+            Write-Step "GIT-БЭКАП" "Ошибка git commit (exit: $commitExitCode)" "WARN"
+            Write-Host "  $commitResult" -ForegroundColor DarkGray
+            return @{ Success = $false; Skipped = $false }
+        }
+
+        Write-Step "GIT-БЭКАП" "Коммит создан: $commitMessage" "OK"
+
+        # Push
+        $pushResult = git push 2>&1
+        $pushExitCode = $LASTEXITCODE
+
+        if ($pushExitCode -ne 0) {
+            Write-Step "GIT-БЭКАП" "Ошибка git push (exit: $pushExitCode) — коммит сохранён локально" "WARN"
+            Write-Host "  $pushResult" -ForegroundColor DarkGray
+            return @{ Success = $true; Skipped = $false; PushFailed = $true }
+        }
+
+        Write-Step "GIT-БЭКАП" "Push выполнен успешно" "OK"
+        return @{ Success = $true; Skipped = $false; PushFailed = $false }
+    }
+    finally {
+        Pop-Location
+    }
+}
+
 function Step-Backup {
     <#
     .DESCRIPTION
@@ -837,7 +907,13 @@ switch ($Action) {
     "Full" {
         $startTime = Get-Date
 
-        # Шаг 0: Бэкап текущей ИБ (КРИТИЧНО: сохраняем данные, пользователей, MCP)
+        # Шаг 0a: Git-бэкап (коммит + push файлов конфигурации и .dt)
+        $gitBackupResult = Step-GitBackup -TaskDescription "деплой конфигурации"
+        if (-not $gitBackupResult.Success) {
+            Write-Step "GIT-БЭКАП" "Git-бэкап не удался — продолжаем с DT-бэкапом" "WARN"
+        }
+
+        # Шаг 0b: Бэкап текущей ИБ (КРИТИЧНО: сохраняем данные, пользователей, MCP)
         $backupResult = Step-Backup
         if (-not $backupResult.Success) {
             Write-Host ""

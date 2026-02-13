@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ВыбратьФайл" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыбратьФайл</CommandName>
+				<ExtendedTooltip name="ВыбратьФайлРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ЗагрузитьДанные" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьДанные</CommandName>
+				<ExtendedTooltip name="ЗагрузитьДанныеРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ВыполнитьИмпорт" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыполнитьИмпорт</CommandName>
+				<ExtendedTooltip name="ВыполнитьИмпортРасширеннаяПодсказка" id="6"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ПутьКФайлу" id="7">
+			<DataPath>Объект.ПутьКФайлу</DataPath>
+			<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="СоответствиеЕдиницИзмерения" id="10">
+			<Representation>List</Representation>
+			<DataPath>ДанныеИзФайла</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоответствиеЕдиницИзмеренияКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="СоответствиеЕдиницИзмеренияКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="СоответствиеЕдиницИзмеренияРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="СоответствиеЕдиницИзмеренияСтрокаПоиска" id="35">
+				<AdditionSource>
+					<Item>СоответствиеЕдиницИзмерения</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоответствиеЕдиницИзмеренияСтрокаПоискаКонтекстноеМеню" id="36"/>
+				<ExtendedTooltip name="СоответствиеЕдиницИзмеренияСтрокаПоискаРасширеннаяПодсказка" id="37"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоответствиеЕдиницИзмеренияСостояниеПросмотра" id="38">
+				<AdditionSource>
+					<Item>СоответствиеЕдиницИзмерения</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоответствиеЕдиницИзмеренияСостояниеПросмотраКонтекстноеМеню" id="39"/>
+				<ExtendedTooltip name="СоответствиеЕдиницИзмеренияСостояниеПросмотраРасширеннаяПодсказка" id="40"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоответствиеЕдиницИзмеренияУправлениеПоиском" id="41">
+				<AdditionSource>
+					<Item>СоответствиеЕдиницИзмерения</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоответствиеЕдиницИзмеренияУправлениеПоискомКонтекстноеМеню" id="42"/>
+				<ExtendedTooltip name="СоответствиеЕдиницИзмеренияУправлениеПоискомРасширеннаяПодсказка" id="43"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ДанныеИзФайлаЭтоГруппа" id="14">
+					<DataPath>ДанныеИзФайла.ЭтоГруппа</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаЭтоГруппаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ДанныеИзФайлаЭтоГруппаРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаКод" id="17">
+					<DataPath>ДанныеИзФайла.Код</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаКодКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ДанныеИзФайлаКодРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаНаименование" id="20">
+					<DataPath>ДанныеИзФайла.Наименование</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаНаименованиеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДанныеИзФайлаНаименованиеРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаНазваниеНаЭтикетке" id="23">
+					<DataPath>ДанныеИзФайла.НазваниеНаЭтикетке</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаНазваниеНаЭтикеткеКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДанныеИзФайлаНазваниеНаЭтикеткеРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаЕдиницаИзмерения" id="26">
+					<DataPath>ДанныеИзФайла.ЕдиницаИзмерения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаЕдиницаИзмеренияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДанныеИзФайлаЕдиницаИзмеренияРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаКодРодителя" id="29">
+					<DataPath>ДанныеИзФайла.КодРодителя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаКодРодителяКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДанныеИзФайлаКодРодителяРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ДанныеИзФайлаНаименованиеРодителя" id="32">
+					<DataPath>ДанныеИзФайла.НаименованиеРодителя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДанныеИзФайлаНаименованиеРодителяКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ДанныеИзФайлаНаименованиеРодителяРасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИмпортНоменклатуры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДанныеИзФайла" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные из файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ЭтоГруппа" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это группа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Код" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НазваниеНаЭтикетке" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Название на этикетке</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Единица измерения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КодРодителя" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код родителя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеРодителя" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование родителя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать файл Excel для импорта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьФайл</Action>
+		</Command>
+		<Command name="ЗагрузитьДанные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить данные из файла в таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДанные</Action>
+		</Command>
+		<Command name="ВыполнитьИмпорт" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить импорт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить импорт номенклатуры из файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьИмпорт</Action>
+		</Command>
+	</Commands>
+</Form>
