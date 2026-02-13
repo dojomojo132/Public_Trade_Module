@@ -91,6 +91,12 @@
 							<ContextMenu name="СкладКонтекстноеМеню" id="11"/>
 							<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="12"/>
 						</InputField>
+						<InputField name="ВходящийНомер" id="59">
+							<DataPath>Объект.ВходящийНомер</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ВходящийНомерКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="ВходящийНомерРасширеннаяПодсказка" id="61"/>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<LabelField name="СуммаДокумента" id="13">
