@@ -80,6 +80,7 @@
 					<v8:content>Результат</v8:content>
 				</v8:item>
 			</Title>
+			<Height>20</Height>
 			<HorizontalStretch>true</HorizontalStretch>
 			<VerticalStretch>true</VerticalStretch>
 			<Output>Auto</Output>
