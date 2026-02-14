@@ -143,6 +143,9 @@
 					<v8:content>Результат</v8:content>
 				</v8:item>
 			</Title>
+			<Type>
+				<v8:Type>v8:SpreadsheetDocument</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
