@@ -376,6 +376,8 @@
 		<Metadata name="Report.ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных" id="e97fe0b0-334f-4cad-bb45-c0897d904d32" configVersion="c8b9d0e1f2a3748596b0c1d2e3f4a57800000000"/>
 		<Metadata name="Report.ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e97fe0b0-334f-4cad-bb45-c0897d904d32.0" configVersion="d9c0e1f2a3b4859607c1d2e3f4a5b68900000000"/>
 		<Metadata name="Report.Взаиморасчеты" id="f151f2e8-88a2-4c3f-b1d7-581f6f99ae04" configVersion="e0d1f2a3b4c5960718d2e3f4a5b6c79a00000000"/>
+		<Metadata name="Report.Взаиморасчеты.Form.ФормаОтчета" id="3c8f7a21-e5d4-4b3f-9a16-2d8e0f1b4c59" configVersion="4f7a2b9c3d8e1f0a5b6c7d8e9f0a1b2c00000000"/>
+		<Metadata name="Report.Взаиморасчеты.Form.ФормаОтчета.Form" id="3c8f7a21-e5d4-4b3f-9a16-2d8e0f1b4c59.0" configVersion="5a8b3c4d6e7f0192a3b5c6d7e8f91a2b00000000"/>
 		<Metadata name="Report.Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="27e97231-77c7-40fc-897b-98c503899251" configVersion="f1e2a3b4c5d6071829e3f4a5b6c7d8ab00000000"/>
 		<Metadata name="Report.Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="27e97231-77c7-40fc-897b-98c503899251.0" configVersion="a2f3b4c5d6e718293af4a5b6c7d8e9bc00000000"/>
 		<Metadata name="Role.Администратор" id="709a7ae8-259d-4bd5-9df2-d99294330b75" configVersion="ac0ad2327e94d246bcc14989860f796100000000"/>

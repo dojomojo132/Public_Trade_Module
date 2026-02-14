@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses"
+    xmlns:xr="http://v8.1c.ru/8.3/xcf/readable"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="2.20">
+	<Form uuid="3c8f7a21-e5d4-4b3f-9a16-2d8e0f1b4c59" owner="f151f2e8-88a2-4c3f-b1d7-581f6f99ae04">
+		<Properties>
+			<Name>ФормаОтчета</Name>
+		</Properties>
+	</Form>
+</MetaDataObject>
