@@ -81,6 +81,7 @@
 				</v8:item>
 			</Title>
 			<Height>20</Height>
+			<Width>100</Width>
 			<HorizontalStretch>true</HorizontalStretch>
 			<VerticalStretch>true</VerticalStretch>
 			<Output>Auto</Output>
