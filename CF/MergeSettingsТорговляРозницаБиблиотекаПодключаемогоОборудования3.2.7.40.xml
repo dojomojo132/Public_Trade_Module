@@ -1,0 +1,3666 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.3/config/merge/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" platformVersion="8.3.11">
+	<MainConfiguration>
+		<Name>ТорговляРозница</Name>
+	</MainConfiguration>
+	<SecondConfiguration>
+		<Name>БиблиотекаПодключаемогоОборудования</Name>
+		<Version>3.2.7.40</Version>
+		<Vendor>Фирма "1С"</Vendor>
+	</SecondConfiguration>
+	<Parameters>
+		<ConfigurationsRelation>ConfigurationsNotRelated</ConfigurationsRelation>
+		<AllowMainConfigurationObjectDeletion>false</AllowMainConfigurationObjectDeletion>
+		<CopyObjectsMode>false</CopyObjectsMode>
+	</Parameters>
+	<Objects>
+		<Configuration>
+			<Properties>
+				<Property name="Name">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="Synonym">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DefaultRoles">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="Vendor">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="Version">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="UpdateCatalogAddress">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ManagedApplicationModule">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="SessionModule">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="OrdinaryApplicationModule">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="UseManagedFormInOrdinaryApplication">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="HomePageWorkArea">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="MainSectionCommandInterface">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ClientApplicationInterface">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DefaultStyle">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="BriefInformation">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DetailedInformation">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="Copyright">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="VendorInformationAddress">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ConfigurationInformationAddress">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ModalityUseMode">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="SynchronousPlatformExtensionAndAddInCallUseMode">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+			</Properties>
+		</Configuration>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоПродажи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоСправочнаяИнформация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоТехнологическиеТесты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоОфлайнОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоЭлектронныеСертификатыНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоТехнологическиеТестыМобильный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоПанельАдминистрирования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоЭтикеткиИЦенники">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem._ДемоРаботаСОборудованием.Subsystem._ДемоHttpBridge">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СлужебныеПодсистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СлужебныеПодсистемы.Subsystem.ОбъектыМеждународные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СлужебныеПодсистемы.Subsystem.ОбъектыМобильная">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СлужебныеПодсистемы.Subsystem.ОбъектыЛокализации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СлужебныеПодсистемы.Subsystem.ОбъектыИсключитьИзМобильной">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СтандартныеПодсистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Subsystem.СтандартныеПодсистемы.Subsystem.ГенерацияШтрихкода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture._ДемоРаботаСОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВнешняяКомпонентаДоступна">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВнешняяКомпонентаНеДоступна">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеВертикальноеВерх">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеВертикальноеНиз">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеВертикальноеЦентр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеПоЛевомуКраю">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеПоПравомуКраю">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ВыравниваниеПоЦентру">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ГраницаВокруг">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ГраницаСверху">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ГраницаСлева">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ГраницаСнизу">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ГраницаСправа">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.КурсивноеНачертание">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.НетГраницы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.НовыйПоШтрихкоду">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПодключаемоеОборудованиеВыгрузитьВТСД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПодключаемоеОборудованиеЗагрузитьИзТСД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПодключаемоеОборудованиеТСД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПодобратьТовары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.Подчеркивание">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПолужирноеНачертание">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ПолучитьВесСВесов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ТоварыВыгрузить">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ТоварыЗагрузить">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonPicture.ТоварыОчистить">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.АдминистраторСистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.БазовыеПраваБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.ВыполнениеСинхронизацииДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.ПолныеПрава">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Role.СохранениеДанныхПользователя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СДисплейПокупателя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СПринтерЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СРарусДисплеиПокупателя_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СУстройстваВводаNative">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.Драйвер1СЭлектронныеВесы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверBizerbaВесыСПечатьюЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверCASВесыСПечатьюЭтикеток2х_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверCASЭлектронныеВесы2х_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверIboxProПоддержкаMPosЭквайринга_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверINVERSUMЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверIronLogicСчитывателиБесконтактныхКарт_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверMERTECHСканерШтрихкода_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверMitsu54ФЗ4ФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверMPos2canЭквайринг_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверMSTARККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверPOSUAДисплеиПокупателя_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверRightScanККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверRightScanТерминалыСбораДанных_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверRightScanУниверсальныйДрайверСканера_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверRightScanУстройствоПечати_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверSKAM1CЭквайринговыеСистемы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверSkyPOSЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверTACTILIONЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверWNJIККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАЗУРККТ54ФЗФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАЗУРПлатежнаяСистема_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАтолДисплеиПокупателя8X_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛККТ54ФЗ107X_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12X_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛПринтераЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛСканерШтрихкода_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверАТОЛЭлектронныеВесы8X_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверВерсияТK1Ф54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверВерсияТККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверГексагонПринтераЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверГексагонТерминалыСбораДанных_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверДримкасККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверДримкасККТ54ФЗ44_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверИнитпроККТ54ФЗФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверИнкотексККТ54ФЗМ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверИнкотексККТ54ФЗФФ12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверИскраККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверКАСТОМФ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверККСККТ54ФЗ2Х_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверККТКассатка54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверКлеверенсСканерШтрихкода_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверКлеверенсТерминалыСбораДанных_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМАСЭлектронныеВесы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМертехРаспознавательMertechAI">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМертехЭлектронныеВесы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверМультисофтMSPOS54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверНАИСЭлектронныеВесы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверНЕВА54ФЗ4ФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверПБФЭквайринговыеТерминалы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверПОСЦентрЭлектронныеВесыNG_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикетокVenus_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверРусГардСчитывательМагнитныхКарт_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСервисПлюсЭлектронныеВесы_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканкодДисплеиПокупателяNative_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканпортТерминалСбораДанных_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканситиПринтераЭтикеток_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСканситиУстройстваВвода_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверСчетмашККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверХарвестрТерминалыСбораДанных_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверШтрихМПлатежныйТерминалYarus_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверШтрихМЭлектронныеВесыPOS2_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ДрайверЭвоторККТ54ФЗ_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.КодВидаНоменклатурнойКлассификации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.КомпонентаHttpBridge">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.КомпонентаИнтеграцииНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.КомпонентаПечатиШтрихкодов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.СертификатыНУЦМинцифры_ru">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ШаблонДисплеяПокупателя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonTemplate.ШаблонДисплеяПокупателяЧек">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule._ДемоОфлайнОборудованиеВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule._ДемоПанельАдминистрирования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule._ДемоПодключаемоеОборудованиеВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.HttpBridgeКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ГенерацияШтрихкода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ГенерацияШтрихкодаСерверПовтИсп">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.КассовыеСмены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.КассовыеСменыВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.КассовыеСменыКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.КассовыеСменыКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.КассовыеСменыПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаКлиентПовтИсп">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаПовтИсп">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОборудованияМаркировкаСлужебныйКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияWebСервис">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияВызовСервераПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.МенеджерОфлайнОборудованияПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОбновлениеИнформационнойБазыБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеВесовоеОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеВесовоеОборудованиеКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеВесовоеОборудованиеКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеДисплеиПокупателя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеДисплеиПокупателяКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированное">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированноеВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированноеКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированноеКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированноеКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеНесертифицированноеПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеОблачныеККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПлатежныеСистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПлатежныеСистемыВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПлатежныеСистемыКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПлатежныеСистемыКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПринтерыЭтикеток">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеПринтерыЭтикетокКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеСчитывательRFID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеСчитывательRFIDКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеТерминалыСбораДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеТерминалыСбораДанныхКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеТерминалыСбораДанныхКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеУстройствоРаспознавания">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеУстройствоРаспознаванияКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеУстройствоРаспознаванияКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеАвтономныеУстройстваКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеАвтономныеУстройстваКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеОблачныеККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеОблачныеККТВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеОблачныеККТКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеОблачныеККТПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентЛокализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентСерверЛокализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваЛокализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОборудованиеЧекопечатающиеУстройстваРФКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СККМEDВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СККМEDКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СККМВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СККМКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СЭвоторВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СЭвоторКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СЭвоторКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СЭвоторКлиентСерверПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудование1СЭвоторСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеАтолККМВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеАтолККМКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеОФДВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеОФДКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеОФДСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеШтрихМККМВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ОфлайнОборудованиеШтрихМККМКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ПечатьЭтикетокИЦенниковБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ПечатьЭтикетокИЦенниковБПОКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ПечатьЭтикетокИЦенниковБПОКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ПечатьЭтикетокИЦенниковБПОПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РаспределеннаяФискализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РаспределеннаяФискализацияВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РаспределеннаяФискализацияКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РаспределеннаяФискализацияПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РассылкаЭлектронныхЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РассылкаЭлектронныхЧековВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РассылкаЭлектронныхЧековКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РассылкаЭлектронныхЧековКлиентПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.РассылкаЭлектронныхЧековПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.СертификатыНУЦМинцифры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.СертификатыНУЦМинцифрыКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.СертификатыНУЦМинцифрыПовтИсп">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.СообщенияВСлужбуТехническойПоддержкиБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.СообщенияВСлужбуТехническойПоддержкиБПОКлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ФорматноЛогическийКонтроль">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ФорматноЛогическийКонтрольВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ФорматноЛогическийКонтрольКлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ФорматноЛогическийКонтрольПереопределяемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ШаблоныФискальныхДокументов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ШаблоныФискальныхДокументовЛокализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ШаблоныФискальныхДокументовСлужебный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ЭлектронныеСертификаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ЭлектронныеСертификатыНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ЭлектронныеСертификатыНСПКВызовСервера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ЭлектронныеСертификатыНСПККлиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonModule.ЭлектронныеСертификатыНСПККлиентСервер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.Cashbox_1_21_1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.Cashbox_1_8_6">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_1_0_0_6">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_1_0_0_7">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_2_0_0_3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_3_0_0_0">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_3_0_0_1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_3_0_0_2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.EquipmentService_3_0_0_3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="XDTOPackage.ExchangeMessage">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.Connect">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.Connect.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetDocs">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetDocs.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetDocs.Parameter.DocType">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetDocTypes">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetGood">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetGood.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetGood.Parameter.Barcode">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceList">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceList.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceListPackage">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceListPackage.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceListPackage.Parameter.TransferID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetPriceListPackage.Parameter.Restart">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetSettings">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetSettings.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetVersion">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.GetVersion.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PostDocs">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PostDocs.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PostDocs.Parameter.DocType">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PostDocs.Parameter.Document">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PreparePriceList">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PreparePriceList.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PrepareFullPriceList">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PrepareFullPriceList.Parameter.DeviceID">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="WebService.EquipmentService.Operation.PrepareFullPriceList.Parameter.FullPriceList">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.ОчисткаИсторииОперацийОчередиЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.ОчисткаИсторииОперацийПроверкиКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.ОчисткаИсторииОперацийСОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.ОчисткаИсторииПлатежныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.ОчисткаИсторииФискальныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ScheduledJob.РассылкаЭлектронныхЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="FunctionalOption._ДемоИзолированноеПодключенияВнешнихКомпонент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ВидЦеныБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ДенежнаяСуммаЛюбогоЗнака">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ДенежнаяСуммаНеотрицательная">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.КассаБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.НоменклатураБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ОрганизацияБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ОснованиеФискальнойОперацииБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ПользовательБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.СообщениеЕГАИСвБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.СубъектПерсональныхДанныхБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ТорговыйОбъектБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.УпаковкаБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DefinedType.ХарактеристикаБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand._ДемоОбновлениеИнформационнойБазы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.ВыбратьРМТекущегоСеанса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.ОчередьЧековККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.РегистрПлатежныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.РегистрФискальныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.СверкаИтоговПоКартам">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.УправлениеФискальнымУстройством">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonCommand.УправлениеЭквайринговымТерминалом">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant._ДемоИзолированноеПодключенияВнешнихКомпонент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant._ДемоОбменСПодключаемымОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant._ДемоРаспределеннаяФискализация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.ИдентификаторОбсужденияФискализации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.ИспользуетсяПротоколRDPвБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.ОтправкаЭлектронныхЧековПослеПробитияЧека">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.СрокХраненияОперацийОчередиЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.СрокХраненияОперацийПроверкиКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.СрокХраненияПлатежныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.СрокХраненияФискальныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Constant.ХранитьУспешныеОперацииРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm._ДемоНачало">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.КодВидаНоменклатурнойКлассификации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.НастройкаРегистрацииККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.ПодборСертификатовЭСНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.ПроверкаКонтрольнойМаркиБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.УправлениеФискальнымУстройством">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="CommonForm.УправлениеЭквайринговымТерминалом">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоВидыНоменклатуры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.ЮрФизЛицо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.НомерКарты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.ИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Регион">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Индекс">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Страна">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Город">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Улица">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Дом">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Корпус">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Телефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.ЭлектроннаяПочта">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.Факс">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Attribute.ДополнительнаяИнформация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоКлиенты.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Артикул">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.НаименованиеПолное">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.PLU">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.SKU">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ВидНоменклатуры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Вес">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Весовой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ЕдиницаИзмерения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Качество">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Серия">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.СтавкаНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Характеристика">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Цена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Картинка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОписаниеТовара">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Алкоголь">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Маркируемый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.КодВидаАлкогольнойПродукции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.КодАлкогольнойПродукции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ЕмкостьТары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.Крепость">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ИННПроизводителя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.КПППроизводителя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ПризнакПредметаРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ПризнакАгента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ДанныеПоставщикаТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ДанныеПоставщикаНаименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ДанныеПоставщикаИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ПлатежныйАгентОперация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ПлатежныйАгентТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОператорПереводаТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОператорПереводаНаименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОператорПереводаАдрес">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОператорПереводаИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ОператорПоПриемуПлатежейТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ТипМаркировки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.КонтрольныйИдентификационныйЗнак">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.ГлобальныйИдентификаторТорговойЕдиницы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Attribute.СерийныйНомер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоНоменклатура.Form.ФормаВыбора">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоРегионы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоРегионы.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.Attribute.XMLОписаниеМакета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.Наименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.ТипЗаполнения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.Значение">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.ЗначениеПоУмолчанию">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.Тип">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.Формат">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog._ДемоЭтикеткиИЦенники.Template.ПоляШаблонаЭтикетки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.ОбработчикОфлайнОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.ИдентификаторWebСервисОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.Параметры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.ТипОфлайнОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.ТипПодключенияОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.РабочееМесто">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Attribute.ВидТранспортаОфлайнОбмена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройки1СККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройки1СЭвоторККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройки1СЭвоторККМОфлайнПроизвольногоПериодаЗагрузки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройкиАтолККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройкиШтрихМККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Form.ФормаНастройки1СККМED">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОфлайнОборудование.Command.ОфлайнОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Attribute.ТипРассылки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Attribute.ДатаПостановкиВОчередь">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Attribute.ПараметрыСообщения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Attribute.ПроизошлаОшибкаПередачи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Attribute.ОписаниеОшибки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ОчередьЭлектронныхЧековКОтправке.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДоступностьДорожки1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Префикс1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДлинаКода1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Суффикс1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.РазделительБлоков1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДоступностьДорожки2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Префикс2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДлинаКода2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Суффикс2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.РазделительБлоков2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДоступностьДорожки3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Префикс3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.ДлинаКода3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.Суффикс3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Attribute.РазделительБлоков3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки1.Attribute.Поле">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки1.Attribute.НомерБлока">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки1.Attribute.НомерПервогоСимволаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки1.Attribute.ДлинаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки2.Attribute.Поле">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки2.Attribute.НомерБлока">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки2.Attribute.НомерПервогоСимволаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки2.Attribute.ДлинаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки3.Attribute.Поле">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки3.Attribute.НомерБлока">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки3.Attribute.НомерПервогоСимволаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.TabularSection.ПоляДорожки3.Attribute.ДлинаПоля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныМагнитныхКарт.Form.ФормаПроверкиШаблона">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Attribute.XMLОписаниеМакета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Attribute.СхемаКомпоновкиДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Attribute.ТипЦенника">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Attribute.Макет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.Наименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.ТипЗаполнения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.Значение">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.ЗначениеПоУмолчанию">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.Тип">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.TabularSection.Поля.Attribute.Формат">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.ФормаЭлемента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.РедакторЭтикетокДополнительныеДанные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.РедакторЭтикетокФормаВыбораПоляСКД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.РедакторЭтикетокФормаРедактированияМакета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.РедакторЭтикетокФормаРедактированияПоляМакета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Catalog.ШаблоныЭтикетокИЦенниковБПО.Template.ШаблоныЭтикеток">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullName="Document.КассоваяСмена">
+			<Properties>
+				<Property name="NumberLength">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DefaultObjectForm">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DefaultListForm">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="DefaultChoiceForm">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ObjectModule">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ManagerModule">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="RealTimePosting">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="Help">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ListPresentation">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+				<Property name="ChoiceHistoryOnInput">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+			</Properties>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ДатаПервогоНепереданногоФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ДатаСменыККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.КассаККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.КоличествоНепереданныхФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.КоличествоФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.КоличествоЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.Комментарий">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.НачалоКассовойСмены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.НеобходимаСрочнаяЗаменаФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.НомерСменыККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ОкончаниеКассовойСмены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ПамятьФНПереполнена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ПревышеноВремяОжиданияОтветаОФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.РесурсФНИсчерпан">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ФДОЗакрытииСмены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Attribute.ФискальноеУстройство">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullName="Document.КассоваяСмена.Form.ФормаДокумента">
+			<Properties>
+				<Property name="Form">
+					<MergeRule>DoNotMerge</MergeRule>
+				</Property>
+			</Properties>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Form.ФормаФискальныхДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document.КассоваяСмена.Form.ФормаВыбора">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Attribute.СуммаДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Attribute.ФормаОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Attribute.Кассир">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Attribute.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Attribute.Комментарий">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.Form.ФормаДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.Номенклатура">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.Количество">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.Цена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.Скидка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.Сумма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоОтчетОПродажах.TabularSection.Товары.Attribute.ЕдиницаИзмерения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Архивный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ТипОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Кассир">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Клиент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.КассирИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.НомерСменыККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.НомерЧекаККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Сдача">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Статус">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СуммаБезСкидки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СуммаДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СуммаНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СуммаОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СуммаСкидки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.Комментарий">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.СистемаНалогообложения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ПризнакАгента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ДанныеПоставщикаТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ДанныеПоставщикаНаименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ДанныеПоставщикаИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ПлатежныйАгентОперация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ПлатежныйАгентТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОператорПереводаТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОператорПереводаНаименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОператорПереводаАдрес">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОператорПереводаИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОператорПоПриемуПлатежейТелефон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ТипКоррекции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ОписаниеКоррекции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ДатаКоррекции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.НомерПредписания">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.ДополнительныйРеквизит">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.РеквизитПользователяНаименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Attribute.РеквизитПользователяЗначение">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Form.ФормаДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.Form.ФормированиеЧека">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Номенклатура">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Характеристика">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Количество">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Цена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Сумма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.ЕдиницаИзмерения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.СтавкаНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.СуммаНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.ПроцентРучнойСкидки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.СуммаРучнойСкидки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.СпособРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.ПредметРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.КодСтраныПроисхожденияТовара">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.НомерТаможеннойДекларации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.СуммаАкциза">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.ДополнительныйРеквизит">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.РеквизитКодаТовара">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.Штрихкод">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Товары.Attribute.ОбъемноСортовойУчет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Оплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Оплата.Attribute.ВидОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Оплата.Attribute.СуммаОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Document._ДемоЧек.TabularSection.Оплата.Attribute.Комментарий">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.Архивный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.СуммаДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.Статус">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.ТипОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.НомерСменыККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.НомерЧекаККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.СуммаНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Column.Комментарий">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DocumentJournal._ДемоЧекиККМ.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЕдиницыИзмерения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЕдиницыИзмерения.EnumValue.грамм">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЕдиницыИзмерения.EnumValue.килограмм">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЕдиницыИзмерения.EnumValue.штука">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.БезНДС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС0">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС10">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС18">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС20">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС118">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС110">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС120">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС5">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС7">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС105">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС107">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС22">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтавкиНДС.EnumValue.НДС122">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтатусыЧековККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтатусыЧековККМ.EnumValue.Фискализирован">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтатусыЧековККМ.EnumValue.Отложен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоСтатусыЧековККМ.EnumValue.Коррекция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.EAN8">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.EAN13">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.EAN128">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.ITF14">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.CODE39">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.CODE128">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.EAN13Addon2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.EAN13Addon5">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.GS1DataBarExpandedStacked">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоТипыШтрихкодов.EnumValue.QR">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЮрФизЛицо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЮрФизЛицо.EnumValue.ЮрЛицо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum._ДемоЮрФизЛицо.EnumValue.ФизЛицо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ПаспортГражданинаРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ПаспортГражданинаРФЗаПределамиРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ВременноеУдостоверениеЛичностиГражданинаРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.СвидетельствоОРожденииГражданинаРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ИныеДокументыУдостоверяющиеЛичностьГражданинаРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ПаспортИностранногоГражданина">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ИныеДокументыУдостоверяющимиЛичностьИностранногоГражданина">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ДокументВыданныйИностраннымГосударствомУдостоверяющегоЛичностьБезГражданства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ВидНаЖительствоДляЛицБезГражданства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.РазрешениеНаВременноеПроживаниеДляЛицБезГражданства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.СвидетельствоОРасХодатайстваОПризнанииЛицаБезГражданстваБеженцемНаТерриторииРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.УдостоверениеБеженца">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ИныеДокументыУдостоверяющимиЛичностьЛицБезГражданстваРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидДокументаУдостоверяющегоЛичностьККТ.EnumValue.ДокументУдостовЛичностьЛицаНаПериодРассмотренияЗаявленияОПризнанииГражданиномРФ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидОплатыНаТерминале">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидОплатыНаТерминале.EnumValue.Карта">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидОплатыНаТерминале.EnumValue.СБПQR">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидОплатыНаТерминале.EnumValue.ПлатиQR">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ИзделияИзМеха">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Табак">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Обувь">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ЛегкаяПромышленность">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.МолочнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Шины">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Фотоаппараты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Духи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Велосипеды">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.КреслаКоляски">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.АльтернативныйТабак">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.УпакованнаяВода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Антисептики">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.БАДы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.НикотиносодержащаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Пиво">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.СоковаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.БезалкогольноеПиво">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Морепродукты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.РазливноеПиво">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ВетеринарныеПрепараты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ИгрыИИгрушкиДляДетей">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.РадиоэлектроннаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ТитановаяМеталлопродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.РастительныеМасла">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ОптоволокноИОптоволоконнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ПарфюмерныеИКосметическиеСредстваИБытоваяХимия">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.КормаДляЖивотных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Мясо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ПечатнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.СтроительныеМатериалы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ОтопительныеПриборы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.Бакалея">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ТелефоныИНоутбуки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ПиротехническиеИзделияИСредстваПожарнойБезопасности">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.КабельнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.МоторныеМасла">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.БезалкогольныеНапитки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ТехническиеСредстваРеабилитации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.МедицинскиеИзделия">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.КонсервированнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.КормаДляЖивотныхВлажные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ПолимерныеТрубы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.СладостиИКондитерскиеИзделия">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ПечатныеПлаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.ДезинфицирующиеСредства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.АвтозапчастиИКомплектующиеТранспортныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыМаркированнойПродукцииБПО.EnumValue.АлкогольнаяПродукцияДо9Процентов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыОперацийИзмененияСостоянияФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыОперацийИзмененияСостоянияФН.EnumValue.Регистрация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыОперацийИзмененияСостоянияФН.EnumValue.ИзменениеПараметровРегистрации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыОперацийИзмененияСостоянияФН.EnumValue.Закрытие">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыТранспортаОфлайнОбмена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыТранспортаОфлайнОбмена.EnumValue.FILE">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ВидыТранспортаОфлайнОбмена.EnumValue.WS">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Штука">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Грамм">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Килограмм">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Тонна">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Сантиметр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Дециметр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Метр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.КвадратныйСантиметр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.КвадратныйДециметр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.КвадратныйМетр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Миллилитр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Литр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.КубическийМетр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.КиловаттЧас">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Гигакалория">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.СуткиДень">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Час">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Минута">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Секунда">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Килобайт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Мегабайт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Гигабайт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.Терабайт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.МераКоличестваПредметаРасчетаККТ.EnumValue.ИныеЕдиницыИзмерения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.Обработчик1СККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.Обработчик1СЭвоторККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.ОбработчикАтолККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.ОбработчикШтрихМККМОфлайн">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.Обработчик1СККМED">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОбработчикиОфлайнОборудования.EnumValue.ОбработчикОФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОтветОИСМОСтатусеТовара">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОтветОИСМОСтатусеТовара.EnumValue.ПланируемыйСтатусТовараКорректен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОтветОИСМОСтатусеТовара.EnumValue.ПланируемыйСтатусТовараНекорректен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ОтветОИСМОСтатусеТовара.EnumValue.ОборотТовараПриостановлен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.День">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Неделя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Декада">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Месяц">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Квартал">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Полугодие">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.Год">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПериодХраненияИсторииОпераций.EnumValue.ВсеВремя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.ШтучныйТоварРеализован">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.МерныйТоварВСтадииРеализации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.ШтучныйТоварВозвращен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.ЧастьТовараВозвращена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.ШтучныйТоварВСтадииРеализации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.МерныйТоварРеализован">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПланируемыйСтатусМаркируемогоТовара.EnumValue.СтатусТовараНеИзменился">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПоляШаблоновМагнитныхКарт">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПоляШаблоновМагнитныхКарт.EnumValue.Код">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.БанковскийПлатежныйАгент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.БанковскийПлатежныйСубагент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.ПлатежныйАгент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.ПлатежныйСубагент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.Поверенный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.Комиссионер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиАгента.EnumValue.Агент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Товар">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПодакцизныйТовар">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Работа">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Услуга">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.СтавкаАзартнойИгры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ВыигрышАзартнойИгры">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ЛотерейныйБилет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ВыигрышЛотереи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПредоставлениеРИД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПлатежВыплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.АгентскоеВознаграждение">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.СоставнойПредметРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ИнойПредметРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ИмущественноеПраво">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ВнереализационныйДоход">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.СтраховыеВзносы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ТорговыйСбор">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.КурортныйСбор">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ТуристическийНалог">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Залог">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Платеж">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Выплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.Расход">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ОбязательноеПенсионноеСтрахованиеИП">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ОбязательноеПенсионноеСтрахование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ОбязательноеМедицинскоеСтрахованиеИП">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ОбязательноеМедицинскоеСтрахование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ОбязательноеСоциальноеСтрахование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПлатежКазино">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ВыдачаДенежныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПодакцизныйТоварМаркируемыйСИНеИмеющийКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ПодакцизныйТоварМаркируемыйСИИмеющийКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ТоварМаркируемыйСИНеИмеющийКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиПредметаРасчета.EnumValue.ТоварМаркируемыйСИИмеющийКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.Аванс">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ОплатаКредита">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ПередачаБезОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ПередачаСПолнойОплатой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ПередачаСЧастичнойОплатой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ПредоплатаПолная">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПризнакиСпособаРасчета.EnumValue.ПредоплатаЧастичная">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ЗаменаФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ЗаменаОФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеНаименованияПользователя">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеАдреса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ПереводВРежимПередачиДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ПереводВАвтономныйРежим">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеВерсии">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеСистемНалогообложения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеНомераУстройства">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ПереводВНеавтоматическийРежим">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ПереводВАвтоматическийРежим">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВключениеБСО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВыключениеБСО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВключениеРежимаРасчетовВИнтернет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВыключениеРежимаРасчетовВИнтернет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВключениеРежимаАгента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВыключениеРежимаАгента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВключениеРежимаАзартныхИгр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВыключениеРежимаАзартныхИгр">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВключениеРежимаЛотереи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ВыключениеРежимаЛотереи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.ИзменениеВерсииФФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныИзмененияСведенийККТ.EnumValue.Иное">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныПеререгистрацииФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныПеререгистрацииФН.EnumValue.ЗаменаФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныПеререгистрацииФН.EnumValue.ЗаменаОФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныПеререгистрацииФН.EnumValue.ИзменениеРеквизитов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПричиныПеререгистрацииФН.EnumValue.ИзменениеНастроекККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПротоколОбменаФЭСНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПротоколОбменаФЭСНСПК.EnumValue.ВерсияV1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ПротоколОбменаФЭСНСПК.EnumValue.ВерсияV2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СпособыФорматноЛогическогоКонтроля">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СпособыФорматноЛогическогоКонтроля.EnumValue.РазделятьСтроки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СпособыФорматноЛогическогоКонтроля.EnumValue.ЗачитыватьСуммы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СпособыФорматноЛогическогоКонтроля.EnumValue.НеКонтролировать">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОбработкиЗапросаКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОбработкиЗапросаКМ.EnumValue.КорректныйФормат">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОбработкиЗапросаКМ.EnumValue.НекорректныйФормат">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОбработкиЗапросаКМ.EnumValue.НекорректныйФорматКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее.EnumValue.НеУстановлен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее.EnumValue.ВыполненоУспешно">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее.EnumValue.ОперацияНеВыполнена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее.EnumValue.ОжиданиеОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусОперацииНаДисплее.EnumValue.Информация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее.EnumValue.НеУстановлен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее.EnumValue.СервисныйРежим">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее.EnumValue.РабочееМестоСвободно">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее.EnumValue.РабочееМестоРаботает">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРабочегоМестаНаДисплее.EnumValue.ОшибкаНаРабочемМесте">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРезультатаЗапросаКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРезультатаЗапросаКМ.EnumValue.Получен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРезультатаЗапросаКМ.EnumValue.Ожидается">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусРезультатаЗапросаКМ.EnumValue.НеМожетБытьПолучен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди.EnumValue.Новый">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди.EnumValue.Фискализирован">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди.EnumValue.Ошибка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди.EnumValue.Отменен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусЧекаККТВОчереди.EnumValue.Фискализируется">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусыОперацийВСервисеОблачныхКасс">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусыОперацийВСервисеОблачныхКасс.EnumValue.Выполняется">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусыОперацийВСервисеОблачныхКасс.EnumValue.Выполнена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.СтатусыОперацийВСервисеОблачныхКасс.EnumValue.Ошибка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараНеРаспознан">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеEAN8">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеEAN13">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеITF14">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеDataMatrixGS1">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.ИзделияИзНатуральногоМеха">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеЕГАИС2">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыИдентификаторовТовараККТ.EnumValue.КодТовараВФорматеЕГАИС3">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыМаркировкиККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыМаркировкиККТ.EnumValue.ИзделияИзМеха">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыМаркировкиККТ.EnumValue.ЛекарственныеПрепараты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыМаркировкиККТ.EnumValue.ТабачнаяПродукция">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыМаркировкиККТ.EnumValue.ОбувныеТовары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ.EnumValue.Наличные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ.EnumValue.Электронно">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ.EnumValue.Предоплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ.EnumValue.Постоплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОплатыККТ.EnumValue.ВстречноеПредоставление">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОфлайнОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОфлайнОборудования.EnumValue.ККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОфлайнОборудования.EnumValue.ПрайсЧекер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыОфлайнОборудования.EnumValue.ОФД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПакетнойОперацииВОчередиЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПакетнойОперацииВОчередиЧеков.EnumValue.НеПакетнаяОперация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПакетнойОперацииВОчередиЧеков.EnumValue.ФискализацияЧекаСОплатойКартой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПакетнойОперацииВОчередиЧеков.EnumValue.ПродажаСВыдачейНаличных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПакетнойОперацииВОчередиЧеков.EnumValue.ПокупкаСЗачислением">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПерсональныхДанныхККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПерсональныхДанныхККТ.EnumValue.ИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПерсональныхДанныхККТ.EnumValue.ПаспортныеДанные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежнойСистемыККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежнойСистемыККТ.EnumValue.СистемаБыстрыхПлатежей">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежнойСистемыККТ.EnumValue.SWiP">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежнойСистемыККТ.EnumValue.СертификатНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежнойСистемыККТ.EnumValue.ЮКасса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.АварийнаяОтмена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ВозвратПоПлатежнойКарте">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ВозвратЭС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ОплатаПлатежнойКартой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ОплатаПлатежнойКартойСВыдачейНаличных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ОплатаПлатежнойСистемой">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПокупкаСЗачислением">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ОплатаЭС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ОтменаПлатежаПоПлатежнойКарте">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПередачаДанныхФискальногоЧека">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПолучениеИдентификатораОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПолучениеСоставаКорзины">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПолучениеСпискаЭС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПолучениеСпискаИдентификаторовКорзинПокупокТСП">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПредварительноеОдобрениеВозвратаЭС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыПлатежныхОпераций.EnumValue.ПредварительноеОдобрениеИспользованияЭС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРассылкиЭлектронныхЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРассылкиЭлектронныхЧеков.EnumValue.СообщениеSMS">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРассылкиЭлектронныхЧеков.EnumValue.ЭлектронноеПисьмо">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРасчетаДенежнымиСредствами">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРасчетаДенежнымиСредствами.EnumValue.ПриходДенежныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРасчетаДенежнымиСредствами.EnumValue.ВозвратДенежныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРасчетаДенежнымиСредствами.EnumValue.РасходДенежныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыРасчетаДенежнымиСредствами.EnumValue.ВозвратРасходаДенежныхСредств">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.ОСН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.УСНДоход">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.УСНДоходРасход">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.ЕНВД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.ЕСН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыСистемНалогообложенияККТ.EnumValue.Патент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыФискальныхДокументовККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыФискальныхДокументовККТ.EnumValue.КассовыйЧек">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыФискальныхДокументовККТ.EnumValue.КассовыйЧекКоррекции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыФискальныхДокументовККТ.EnumValue.Внесение">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыФискальныхДокументовККТ.EnumValue.Выемка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыЧековКоррекции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыЧековКоррекции.EnumValue.ПоПредписанию">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Enum.ТипыЧековКоррекции.EnumValue.Самостоятельно">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.TabularSection.ТаблицаПроверки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.TabularSection.ТаблицаПроверки.Attribute.ТипМетаданных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.TabularSection.ТаблицаПроверки.Attribute.ИмяМетаданных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.TabularSection.ТаблицаПроверки.Attribute.Замечание">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.Form.ФормаОтчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="Report._ДемоПроверкаПодсистемБПО.Template.СхемаКомпоновкиДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоHttpBridge">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоHttpBridge.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоВыгрузкаВВесыТСД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоВыгрузкаВВесыТСД.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоВыгрузкаВВесыТСД.Command.ВыгрузкаВВесыТСД">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоКонвертироватьИзBase64вДвоичныйФайл">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоКонвертироватьИзBase64вДвоичныйФайл.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПараметрыОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПараметрыОборудования.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПечатьШтрихкода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПечатьШтрихкода.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПечатьШтрихкода.Template.Макет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПечатьШтрихкода.Template.Эталон">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПечатьШтрихкода.Command.ПечатьШтрихкода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПроверкаМакетовДрайверов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПроверкаМакетовДрайверов.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоПроверкаМакетовДрайверов.Template.Макет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоСписокИспользуемыхДрайверов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоСписокИспользуемыхДрайверов.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеОборудованияМобильный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеОборудованияМобильный.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеПодключаемогоОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеПодключаемогоОборудования.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеПодключаемогоОборудования.Form.ФормаВопросПользователюПриОшибкеОплаты">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеПодключаемогоОборудования.Template.МакетЧеков">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоТестированиеПодключаемогоОборудования.Command.ТестированиеПодключаемогоОборудования">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоУстройствоРаспознавания">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоУстройствоРаспознавания.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоЭлектронныеСертификатыНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor._ДемоЭлектронныеСертификатыНСПК.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ОбменСОфлайнОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ОбменСОфлайнОборудованием.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ОбменСОфлайнОборудованием.Command.ОбменСОфлайнОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.ТорговыйОбъектБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.ПечатьНаОбычномПринтере">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.ВидЦены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.ВидЦеныАкционный">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.КаждаяЭтикеткаНаНовомЛисте">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Attribute.РежимПечати">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.Выбран">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.НоменклатураБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.ХарактеристикаБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.УпаковкаБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.ОрганизацияБПО">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.Цена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.Штрихкод">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.ШаблонЦенникаЭтикетки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.TabularSection.Товары.Attribute.Количество">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Form.Форма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Command.ПечатьЭтикетокИЦенников">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Dimension.Владелец">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Dimension.Штрихкод">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Dimension.ТипШтрихкода">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Dimension.ИспользоватьДляУпаковки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister._ДемоШтрихкоды.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор.Resource.ДатаПоследнейЗакрытойКассовойСмены">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор.Resource.ДатаПоследнейПопыткиЗагрузки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор.Dimension.КассаЭвотор">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор.Dimension.УдалитьКассаЭвотор">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ЗначенияЕМРЦ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ЗначенияЕМРЦ.Resource.Цена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ЗначенияЕМРЦ.Dimension.ОсобенностьУчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ЗапросКодаМаркировки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.РезультатПроверкиКМНаККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.РезультатПроверкиКМНаСервере">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ФлагиПроверкиОИСМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ПокупкаПодтверждена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.Наименование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.АдресСервераЗапросаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ТекстЗапросаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.КодОтветаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.РезультатЗапросаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ИдентификаторЗапросаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ВремяЗапросаРазрешения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ПродажаРазрешена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ПричинаЗапрета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ДополнительныеСведения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ИдентификаторЗапросаЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ПодписьЧекаЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ВходящееСообщениеЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ИсходящееСообщениеЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.СообщениеПереданоЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Resource.ТекстОшибкиЕГАИС">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Attribute.Дата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Attribute.Результат">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Attribute.КодМаркировкиПредставление">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Attribute.Штрихкод">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Dimension.ИдентификаторСессии">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Dimension.ИдентификаторЗапроса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Dimension.ИдентификаторФискальнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Dimension.ГодМесяц">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Dimension.КодМаркировки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОперацииПроверкиКМ.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Resource.Отправлен">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Resource.ДанныеПакета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Resource.ПакетовВсего">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Attribute.Ошибка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Attribute.ОписаниеОшибки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Dimension.ИдентификаторПередачи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Dimension.ОфлайнОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Dimension.ПорядковыйНомер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Dimension.УдалитьОфлайнОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьСообщенийОбменаСОфлайнОборудованием.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.СтатусЧека">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.Дата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ОрганизацияИНН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.СистемаНалогообложения">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ТорговыйОбъект">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ТипДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ТипРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.Сумма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ДанныеЧека">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ТекстОшибки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.Содержание">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ОборудованиеККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.СубъектПерсональныхДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ТипПакетнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ЭквайринговыйТерминал">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.ПараметрыПакетнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.РезультатПакетнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.КассаККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Resource.СтатусыОперацийВСервисеОблачныхКасс">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Dimension.ДокументОснование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Dimension.ИдентификаторЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОчередьЧековККТ.Template.Макет">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОшибкиПодтвержденияНСПК">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОшибкиПодтвержденияНСПК.Resource.КодРезультата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОшибкиПодтвержденияНСПК.Resource.ОписаниеОшибки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОшибкиПодтвержденияНСПК.Dimension.ОснованиеФискальнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ОшибкиПодтвержденияНСПК.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ДатаЗапроса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ТипОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.СуммаОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ОперацияВыполнена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ДанныеЗапроса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ДанныеОтвета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.СсылочныйНомер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.КодАвторизации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ВидОплатыНаТерминале">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ИдентификаторТерминала">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ИдентификаторБанкаЭквайера">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ИдентификаторПлатежнойСистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ИдентификаторБанковскойТранзакции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Resource.ДатаВремяТранзакции">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Dimension.ДокументОснование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Dimension.ИдентификаторОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Dimension.ИдентификаторЗапроса">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Dimension.ИдентификаторФискальнойОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Dimension.ГодМесяц">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ПлатежныеОперации.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.УдалитьНумерацияЧековККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.УдалитьНумерацияЧековККТ.Resource.ПорядковыйНомер">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.УдалитьНумерацияЧековККТ.Dimension.ПодключаемоеОборудование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.УдалитьНумерацияЧековККТ.Dimension.КассоваяСмена">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.УдалитьНумерацияЧековККТ.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.Дата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.Организация">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ТорговыйОбъект">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ТипДокумента">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ТипРасчета">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.НомерЧекаККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.НомерСменыККМ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ФискальныйПризнак">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.Сумма">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ОплатаНаличные">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ОплатаЭлектронно">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ОплатаПостоплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ОплатаПредоплата">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ОплатаВстречноеПредоставление">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.АдресСайтаПроверки">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ЗаводскойНомерФН">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.РегистрационныйНомерККТ">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ДополнительныйРеквизит">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.КорректируемыйДокумент">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ДанныеXML">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.СубъектПерсональныхДанных">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ЕдиныйЧек">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ИдентификаторОплатыПлатежнойСистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Resource.ТипПлатежнойСистемы">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Dimension.ДокументОснование">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Dimension.ИдентификаторЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Form.ФормаСписка">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="InformationRegister.ФискальныеОперации.Form.ФормаЗаписи">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+		<Object fullNameInSecondConfiguration="ChartOfCharacteristicTypes._ДемоТипыШтрихкодов">
+			<MergeRule>DoNotMerge</MergeRule>
+		</Object>
+	</Objects>
+</Settings>

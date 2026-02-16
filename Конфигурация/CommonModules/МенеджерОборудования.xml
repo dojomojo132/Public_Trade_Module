@@ -9,13 +9,13 @@
 					<v8:content>Менеджер оборудования</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment/>
+			<Comment>Серверные процедуры и функции общего назначения</Comment>
 			<Global>false</Global>
-			<ClientManagedApplication>true</ClientManagedApplication>
+			<ClientManagedApplication>false</ClientManagedApplication>
 			<Server>true</Server>
-			<ExternalConnection>false</ExternalConnection>
-			<ClientOrdinaryApplication>false</ClientOrdinaryApplication>
-			<ServerCall>true</ServerCall>
+			<ExternalConnection>true</ExternalConnection>
+			<ClientOrdinaryApplication>true</ClientOrdinaryApplication>
+			<ServerCall>false</ServerCall>
 			<Privileged>false</Privileged>
 			<ReturnValuesReuse>DontUse</ReturnValuesReuse>
 		</Properties>

@@ -6,13 +6,13 @@
 				<xr:TypeId>c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6a</xr:TypeId>
 				<xr:ValueId>c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7a</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="EnumList.ВидыОперацийФискальногоЧека" category="List">
-				<xr:TypeId>c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8a</xr:TypeId>
-				<xr:ValueId>c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9a</xr:ValueId>
-			</xr:GeneratedType>
 			<xr:GeneratedType name="EnumManager.ВидыОперацийФискальногоЧека" category="Manager">
 				<xr:TypeId>c6d7e8f9-a0b1-4c2d-3e4f-5a6b7c8d9e0a</xr:TypeId>
 				<xr:ValueId>c7d8e9f0-a1b2-4c3d-4e5f-6a7b8c9d0e1a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ВидыОперацийФискальногоЧека" category="List">
+				<xr:TypeId>c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8a</xr:TypeId>
+				<xr:ValueId>c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9a</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
