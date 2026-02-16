@@ -21,7 +21,7 @@
 			</Synonym>
 			<Comment/>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>Report.Взаиморасчеты.Form.ФормаОтчета</DefaultForm>
+			<DefaultForm/>
 			<AuxiliaryForm/>
 			<MainDataCompositionSchema>Report.Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
 			<DefaultSettingsForm/>
@@ -35,7 +35,6 @@
 		</Properties>
 		<ChildObjects>
 			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
-			<Form>ФормаОтчета</Form>
 		</ChildObjects>
 	</Report>
 </MetaDataObject>

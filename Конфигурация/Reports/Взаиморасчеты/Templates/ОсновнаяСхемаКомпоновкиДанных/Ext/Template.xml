@@ -14,6 +14,19 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРасчетов</dataPath>
+			<field>ДокументРасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ расчетов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>Регистратор</dataPath>
 			<field>Регистратор</field>
 			<role>
@@ -35,7 +48,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Приход</v8:content>
+					<v8:content>Поставка</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -45,7 +58,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Расход</v8:content>
+					<v8:content>Оплата</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -72,6 +85,7 @@
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ВзаиморасчетыОстаткиИОбороты.Контрагент КАК Контрагент,
+	ВзаиморасчетыОстаткиИОбороты.ДокументРасчетов КАК ДокументРасчетов,
 	ВзаиморасчетыОстаткиИОбороты.Регистратор КАК Регистратор,
 	ВзаиморасчетыОстаткиИОбороты.Период КАК Период,
 	ВзаиморасчетыОстаткиИОбороты.СуммаНачальныйОстаток КАК СуммаНачальныйОстаток,
@@ -128,9 +142,6 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Контрагент</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаНачальныйОстаток</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -159,6 +170,23 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДокументРасчетов</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДокументРасчетов</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
