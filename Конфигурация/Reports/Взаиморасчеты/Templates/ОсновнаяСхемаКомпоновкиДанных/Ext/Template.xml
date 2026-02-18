@@ -37,9 +37,9 @@
 			<dataPath>Период</dataPath>
 			<field>Период</field>
 			<role>
-				<dcscom:periodNumber>1</dcscom:periodNumber>
-				<dcscom:periodType>Main</dcscom:periodType>
 				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:periodType>Main</dcscom:periodType>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
@@ -110,7 +110,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 		<expression>&amp;Период.ДатаНачала</expression>
 	</parameter>
 	<parameter>
@@ -128,7 +128,7 @@
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:nil="true"/>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 		<expression>&amp;Период.ДатаОкончания</expression>
 	</parameter>
 	<settingsVariant>
@@ -140,6 +140,13 @@
 			</v8:item>
 		</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаНачальныйОстаток</dcsset:field>
@@ -154,36 +161,11 @@
 					<dcsset:field>СуммаКонечныйОстаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
-			<dcsset:filter>
-				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:userSettingID>397a468c-900f-47cc-b768-d99e863f5791</dcsset:userSettingID>
-				</dcsset:item>
-			</dcsset:filter>
-			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НачалоПериода</dcscor:parameter>
-					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>78a2219d-c997-473c-83c5-8568a6444ad8</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>КонецПериода</dcscor:parameter>
-					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>ef0569b5-a0a7-422b-a963-3602454f97f7</dcsset:userSettingID>
-				</dcscor:item>
-			</dcsset:dataParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
 						<dcsset:field>Контрагент</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -200,9 +182,6 @@
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>ДокументРасчетов</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
 					<dcsset:order>

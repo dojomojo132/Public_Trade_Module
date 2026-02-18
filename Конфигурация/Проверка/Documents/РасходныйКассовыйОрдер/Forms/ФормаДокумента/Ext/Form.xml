@@ -42,18 +42,19 @@
 		</InputField>
 		<UsualGroup name="ГруппаЗадолженность" id="21">
 			<Representation>None</Representation>
+			<Group>HorizontalIfPossible</Group>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаЗадолженностьРасширеннаяПодсказка" id="22"/>
 			<ChildItems>
 				<Button name="КнопкаВыбратьЗадолженность" id="23">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.ВыбратьЗадолженность</CommandName>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выбрать задолженность</v8:content>
 						</v8:item>
 					</Title>
+					<CommandName>Form.Command.ВыбратьЗадолженность</CommandName>
+					<Representation>Auto</Representation>
 					<ExtendedTooltip name="КнопкаВыбратьЗадолженностьРасширеннаяПодсказка" id="24"/>
 				</Button>
 				<InputField name="ДокументОснование" id="25">
