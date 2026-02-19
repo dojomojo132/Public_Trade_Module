@@ -38,7 +38,7 @@ param(
     [string]$LogDir = "",
     [string]$BackupDir = "",
     [int]$MaxBackups = 5,
-    [int]$TimeoutSeconds = 300
+    [int]$TimeoutSeconds = 180
 )
 
 # === НАСТРОЙКИ ===
