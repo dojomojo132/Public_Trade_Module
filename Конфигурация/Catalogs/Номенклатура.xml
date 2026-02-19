@@ -42,7 +42,7 @@
 			<SubordinationUse>ToItems</SubordinationUse>
 			<CodeLength>9</CodeLength>
 			<DescriptionLength>150</DescriptionLength>
-			<CodeType>Number</CodeType>
+			<CodeType>String</CodeType>
 			<CodeAllowedLength>Variable</CodeAllowedLength>
 			<CodeSeries>WholeCatalog</CodeSeries>
 			<CheckUnique>true</CheckUnique>
