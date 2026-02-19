@@ -61,6 +61,8 @@
 		</Metadata>
 		<Metadata name="Catalog.Номенклатура.Form.ФормаЭлемента" id="3e58ed01-b3ee-4be7-b459-9771633f9f27" configVersion="a75aeb72a5e35d41a2ab60d46c01957f00000000" />
 		<Metadata name="Catalog.Номенклатура.Form.ФормаЭлемента.Form" id="3e58ed01-b3ee-4be7-b459-9771633f9f27.0" configVersion="8ddaa7fe81e4c645a7c04d4412f2960200000000" />
+		<Metadata name="Catalog.Номенклатура.Form.ФормаСписка" id="a4b5c6d7-e8f9-4012-a3b4-c5d6e7f8a9b0" configVersion="c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f600000000" />
+		<Metadata name="Catalog.Номенклатура.Form.ФормаСписка.Form" id="a4b5c6d7-e8f9-4012-a3b4-c5d6e7f8a9b0.0" configVersion="d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a600000000" />
 		<Metadata name="Catalog.Номенклатура.ObjectModule" id="379863f4-aa81-4140-89a8-df74d8755af8.0" configVersion="cbb8212a85cf6545a50106328164679d00000000" />
 		<Metadata name="Catalog.Пользователи" id="687330cf-b16a-4fc8-8469-aede06154929" configVersion="f3990eb0d2f8ec4ab0205d0d32c4a6b800000000">
 			<Metadata name="Catalog.Пользователи.Attribute.РазрешитьПродажуВМинус" id="235290f7-7be4-421d-b813-190eab5ab4e0" />
