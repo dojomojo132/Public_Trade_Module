@@ -777,8 +777,10 @@ function Step-Check {
 
     $parseResult = Parse-1CErrors -LogContent $result.Log -Stdout $result.Stdout -Stderr $result.Stderr -OperationFailed ($result.ExitCode -ne 0)
 
-    # Отсеиваем "ошибки", которые на самом деле [НЕ РАСПОЗНАНО] (когда только предупреждения)
-    $realErrors = @($parseResult.Errors | Where-Object { $_ -notmatch "^\[НЕ РАСПОЗНАНО\]" })
+    # Отсеиваем "ошибки", которые на самом деле предупреждения
+    # [НЕ РАСПОЗНАНО] — парсер не нашёл конкретных ошибок
+    # "Возможно ошибочн" — предупреждения 1С о неразрешённых методах/свойствах (не блокируют запуск)
+    $realErrors = @($parseResult.Errors | Where-Object { $_ -notmatch "^\[НЕ РАСПОЗНАНО\]" -and $_ -notmatch "Возможно ошибочн" })
 
     if ($realErrors.Count -eq 0) {
         # Нет реальных ошибок — только предупреждения
