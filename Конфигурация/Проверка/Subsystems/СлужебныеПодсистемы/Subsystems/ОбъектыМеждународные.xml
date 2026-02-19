@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Subsystem uuid="3b6c568a-641b-445d-9072-a093a37ff36a">
+		<Properties>
+			<Name>ОбъектыМеждународные</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объекты международные</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>International objects</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Технологическая подсистема.
+Включает в себя объекты, относящиеся только к Международной конфигурации.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Technological subsystem.
+It includes objects which belong to the International configuration EM2, CA and TM11 only.</v8:content>
+				</v8:item>
+			</Explanation>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.КассоваяСмена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеВертикальноеНиз</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеВертикальноеЦентр</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПодобратьТовары</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.СверкаИтоговПоКартам</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.УправлениеФискальнымУстройством</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбновлениеИнформационнойБазыБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ДенежнаяСуммаЛюбогоЗнака</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ДенежнаяСуммаНеотрицательная</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ОснованиеФискальнойОперацииБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ТорговыйОбъектБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыЧековКоррекции</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодключаемоеОборудование</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РабочиеМеста</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ШаблоныМагнитныхКарт</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ШаблоныФискальныхДокументовСлужебный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ШаблоныФискальныхДокументовЛокализация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ШаблоныФискальныхДокументов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентСерверЛокализация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентЛокализация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПодключаемоеОборудованиеДрайверКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройстваВвода</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройстваВводаКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройстваВводаВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанныхКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанныхКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеСчитывательRFID</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеСчитывательRFIDКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПринтерыЭтикетокКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемыКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемыКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеДисплеиПокупателяКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудованиеКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудованиеКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияКлиентСерверПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияКлиентПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияКлиентПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияВызовСервераПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.КассовыеСменыПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.КассовыеСменыКлиентПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.КассовыеСменыВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДрайверыОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ОбработчикиДрайверовПодключаемогоОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособПодключенияДрайвера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПодключаемогоОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПодключенияОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройстваЛокализация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.РабочееМестоКлиента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.АдминистраторСистемы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ВыполнениеСинхронизацииДанных</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.СохранениеДанныхПользователя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ОрганизацияБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ПользовательБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.КассаБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.РегистрФискальныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.УправлениеФискальнымУстройством</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусЧекаККТВОчереди</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыКассовойСмены</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыИдентификаторовТовараККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыОплатыККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПакетнойОперацииВОчередиЧеков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПлатежнойСистемыККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыРасчетаДенежнымиСредствами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыСистемНалогообложенияККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыФискальныхДокументовККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ФискальныеОперации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииПлатежныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.УправлениеЭквайринговымТерминалом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.УправлениеЭквайринговымТерминалом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СДисплейПокупателя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СПринтерЧеков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СУстройстваВводаNative</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СЭлектронныеВесы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПлатежныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПлатежныеОперации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.КомпонентаПечатиШтрихкодов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ГенерацияШтрихкода</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ГенерацияШтрихкодаСерверПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПризнакиСпособаРасчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.УдалитьНумерацияЧековККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.СубъектПерсональныхДанныхБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ВыбратьРМТекущегоСеанса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПодключаемоеОборудованиеВыгрузитьВТСД</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПодключаемоеОборудованиеЗагрузитьИзТСД</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПодключаемоеОборудованиеТСД</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВнешняяКомпонентаДоступна</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВнешняяКомпонентаНеДоступна</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПолучитьВесСВесов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеВертикальноеВерх</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеПоЛевомуКраю</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеПоПравомуКраю</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ВыравниваниеПоЦентру</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ГраницаВокруг</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ГраницаСверху</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ГраницаСлева</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ГраницаСнизу</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ГраницаСправа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.КурсивноеНачертание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НетГраницы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Подчеркивание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПолужирноеНачертание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПериодХраненияИсторииОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПоляШаблоновМагнитныхКарт</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудование</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеДисплеиПокупателя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПринтерыЭтикеток</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанных</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеЧекопечатающиеУстройства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ВнешниеКомпонентыБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ВнешниеКомпонентыБПОКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ВнешниеКомпонентыБПОПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ИнтеграцияПодсистемБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ИнтеграцияПодсистемБПОКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ИнтеграцияПодсистемБПОСлужебныйВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ИнтеграцияПодсистемБПОКлиентПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.КассовыеСмены</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЛогированиеОперацийБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЛогированиеОперацийБПОПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЛогированиеОперацийБПОСлужебныйВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПОКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПОКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПОПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПОПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОбщегоНазначенияБПОСлужебныйВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПечатьЭтикетокИЦенниковБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПечатьЭтикетокИЦенниковБПОКлиентПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПечатьЭтикетокИЦенниковБПОКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ПечатьЭтикетокИЦенниковБПОПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.БазовыеПраваБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ПолныеПрава</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииФискальныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ВидЦеныБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.НоменклатураБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.УпаковкаБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ХарактеристикаБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.РегистрПлатежныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НовыйПоШтрихкоду</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ТоварыВыгрузить</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ТоварыЗагрузить</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ТоварыОчистить</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.СрокХраненияПлатежныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.СрокХраненияФискальныхОпераций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ШаблоныЭтикетокИЦенниковБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыТранспортаОфлайнОбмена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыОперацийИзмененияСостоянияФН</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.МераКоличестваПредметаРасчетаККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ОбработчикиОфлайнОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПризнакиАгента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПризнакиПредметаРасчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПричиныИзмененияСведенийККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПричиныПеререгистрацииФН</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыОфлайнОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПечатьЭтикетокИЦенниковБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыМаркировкиККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыМаркированнойПродукцииБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПерсональныхДанныхККТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ДатаЗагрузкиОтчетовКассЭвотор</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЗначенияЕМРЦ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособыФорматноЛогическогоКонтроля</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусРабочегоМестаНаДисплее</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусОперацииНаДисплее</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ШаблонДисплеяПокупателя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ШаблонДисплеяПокупателяЧек</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ВопросОбУстановкеРасширенияРаботыСКомпьютеромБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ИспользуетсяПротоколRDPвБПО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DefinedType.ТипыПодключаемогоОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидОплатыНаТерминале</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЛогированиеОперацийБПОКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудованияГлобальный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииОперацийСОборудованием</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.СрокХраненияОперацийСОборудованием</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ОперацииСПодключаемымОборудованием</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.КассовыеСменыКлиент</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

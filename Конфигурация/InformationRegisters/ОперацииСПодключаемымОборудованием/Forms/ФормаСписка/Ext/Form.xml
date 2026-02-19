@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ГруппаОтправитьВТехПоддержку" id="85">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отправить в тех поддержку</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа отправить в тех поддержку</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ГруппаОтправитьВТехПоддержкуРасширеннаяПодсказка" id="86"/>
+				<ChildItems>
+					<Button name="ФормаОтправитьВТехПоддержкуВыделенные" id="87">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтправитьВТехПоддержкуВыделенные</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выделенные строки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаОтправитьВТехПоддержкуВыделенныеРасширеннаяПодсказка" id="88"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Popup name="ГруппаВыгрузитьВФайл" id="81">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Выгрузить в файл</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа выгрузить в файл</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ГруппаВыгрузитьВФайлРасширеннаяПодсказка" id="82"/>
+				<ChildItems>
+					<Button name="ФормаВыгрузитьВФайлВыделенные" id="83">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВыгрузитьВФайлВыделенные</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выделенные строки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаВыгрузитьВФайлВыделенныеРасширеннаяПодсказка" id="84"/>
+					</Button>
+					<Button name="ФормаВыгрузитьВФайл" id="77">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВыгрузитьВФайл</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Все строки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаВыгрузитьВФайлРасширеннаяПодсказка" id="78"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChangeRowSet>false</ChangeRowSet>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Оборудование" id="16">
+					<DataPath>Список.Оборудование</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ОборудованиеКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ОборудованиеРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="УниверсальнаяДата" id="64">
+					<DataPath>Список.УниверсальнаяДата</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Width>17</Width>
+					<ContextMenu name="УниверсальнаяДатаКонтекстноеМеню" id="65"/>
+					<ExtendedTooltip name="УниверсальнаяДатаРасширеннаяПодсказка" id="66"/>
+				</LabelField>
+				<LabelField name="ТипЗаписи" id="34">
+					<DataPath>Список.ТипЗаписи</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ТипЗаписиКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ТипЗаписиРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="ВерсияКомпонента" id="37">
+					<DataPath>Список.ВерсияКомпонента</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ВерсияКомпонентаКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ВерсияКомпонентаРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="ВерсияДрайвера" id="40">
+					<DataPath>Список.ВерсияДрайвера</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ВерсияДрайвераКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ВерсияДрайвераРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="РевизияИнтерфейса" id="52">
+					<DataPath>Список.РевизияИнтерфейса</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="РевизияИнтерфейсаКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="РевизияИнтерфейсаРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<LabelField name="Операция" id="43">
+					<DataPath>Список.Операция</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ОперацияКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ОперацияРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="ИДУстройства" id="46">
+					<DataPath>Список.ИДУстройства</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ИДУстройстваКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ИДУстройстваРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="ВремяВыполнения" id="49">
+					<DataPath>Список.ВремяВыполнения</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время выполнения, сек</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВремяВыполненияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ВремяВыполненияРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<CheckBoxField name="Результат" id="28">
+					<DataPath>Список.Результат</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="30"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+		<InputField name="ВремяВыполненияВыделенных" id="89">
+			<DataPath>ВремяВыполнения</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ВремяВыполненияВыделенныхКонтекстноеМеню" id="90"/>
+			<ExtendedTooltip name="ВремяВыполненияВыделенныхРасширеннаяПодсказка" id="91"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="67">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="68"/>
+			<ChildItems>
+				<InputField name="ВходящиеПараметрыСтрока" id="69">
+					<DataPath>Items.Список.CurrentData.ВходящиеПараметры</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Входящие параметры</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>10</Height>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ВходящиеПараметрыСтрокаКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="ВходящиеПараметрыСтрокаРасширеннаяПодсказка" id="71"/>
+				</InputField>
+				<InputField name="ИсходящиеПараметрыСтрока" id="72">
+					<DataPath>Items.Список.CurrentData.ИсходящиеПараметры</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исходящие параметры</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИсходящиеПараметрыСтрокаКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="ИсходящиеПараметрыСтрокаРасширеннаяПодсказка" id="74"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.ВходящиеПараметрыСтрока</Field>
+				<Field>Список.ИсходящиеПараметрыСтрока</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РегистрСведенийОперацииСПодключаемымОборудованием.Оборудование КАК Оборудование,
+	РегистрСведенийОперацииСПодключаемымОборудованием.Дата КАК Дата,
+	РегистрСведенийОперацииСПодключаемымОборудованием.НомерОперации КАК НомерОперации,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ГодМесяц КАК ГодМесяц,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ВходящиеПараметры КАК ВходящиеПараметры,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ИсходящиеПараметры КАК ИсходящиеПараметры,
+	РегистрСведенийОперацииСПодключаемымОборудованием.Результат КАК Результат,
+	РегистрСведенийОперацииСПодключаемымОборудованием.Таймкод КАК Таймкод,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ТипЗаписи КАК ТипЗаписи,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ВерсияКомпонента КАК ВерсияКомпонента,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ВерсияДрайвера КАК ВерсияДрайвера,
+	РегистрСведенийОперацииСПодключаемымОборудованием.Операция КАК Операция,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ИДУстройства КАК ИДУстройства,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ВремяВыполнения / 1000 КАК ВремяВыполнения,
+	РегистрСведенийОперацииСПодключаемымОборудованием.РевизияИнтерфейса КАК РевизияИнтерфейса,
+	РегистрСведенийОперацииСПодключаемымОборудованием.Милисекунда КАК Милисекунда,
+	РегистрСведенийОперацииСПодключаемымОборудованием.КодОшибки КАК КодОшибки,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ТекстОшибки КАК ТекстОшибки,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ВходящиеПараметрыСтрока КАК ВходящиеПараметрыСтрока,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ИсходящиеПараметрыСтрока КАК ИсходящиеПараметрыСтрока,
+	РегистрСведенийОперацииСПодключаемымОборудованием.ТекстОшибкиСтрока КАК ТекстОшибкиСтрока
+ИЗ
+	РегистрСведений.ОперацииСПодключаемымОборудованием КАК РегистрСведенийОперацииСПодключаемымОборудованием</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Результат</dcssch:dataPath>
+					<dcssch:field>Результат</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсходящиеПараметры</dcssch:dataPath>
+					<dcssch:field>ИсходящиеПараметры</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Оборудование</dcssch:dataPath>
+					<dcssch:field>Оборудование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Дата</dcssch:dataPath>
+					<dcssch:field>Дата</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерОперации</dcssch:dataPath>
+					<dcssch:field>НомерОперации</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ГодМесяц</dcssch:dataPath>
+					<dcssch:field>ГодМесяц</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Милисекунда</dcssch:dataPath>
+					<dcssch:field>Милисекунда</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Операция</dcssch:dataPath>
+					<dcssch:field>Операция</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВерсияДрайвера</dcssch:dataPath>
+					<dcssch:field>ВерсияДрайвера</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВходящиеПараметры</dcssch:dataPath>
+					<dcssch:field>ВходящиеПараметры</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Таймкод</dcssch:dataPath>
+					<dcssch:field>Таймкод</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТипЗаписи</dcssch:dataPath>
+					<dcssch:field>ТипЗаписи</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВерсияКомпонента</dcssch:dataPath>
+					<dcssch:field>ВерсияКомпонента</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИДУстройства</dcssch:dataPath>
+					<dcssch:field>ИДУстройства</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВремяВыполнения</dcssch:dataPath>
+					<dcssch:field>ВремяВыполнения</dcssch:field>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время выполнения</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</dcssch:valueType>
+					<dcssch:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧЦ=15; ЧДЦ=3; ЧН=0,000</dcscor:value>
+						</dcscor:item>
+					</dcssch:appearance>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>РевизияИнтерфейса</dcssch:dataPath>
+					<dcssch:field>РевизияИнтерфейса</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КодОшибки</dcssch:dataPath>
+					<dcssch:field>КодОшибки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстОшибки</dcssch:dataPath>
+					<dcssch:field>ТекстОшибки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВходящиеПараметрыСтрока</dcssch:dataPath>
+					<dcssch:field>ВходящиеПараметрыСтрока</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ИсходящиеПараметрыСтрока</dcssch:dataPath>
+					<dcssch:field>ИсходящиеПараметрыСтрока</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстОшибкиСтрока</dcssch:dataPath>
+					<dcssch:field>ТекстОшибкиСтрока</dcssch:field>
+				</Field>
+				<CalculatedField>
+					<dcssch:dataPath>УниверсальнаяДата</dcssch:dataPath>
+					<dcssch:expression>Дата</dcssch:expression>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Универсальная дата</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:presentationExpression>Формат(Дата,"ДФ='dd.MM.yyyy HH:mm:ss'")+" : "+Формат(Милисекунда,"ЧЦ=3; ЧН=000; ЧВН=")</dcssch:presentationExpression>
+					<dcssch:orderExpression>
+						<expression xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Дата</expression>
+						<orderType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Asc</orderType>
+						<autoOrder xmlns="http://v8.1c.ru/8.1/data-composition-system/common">false</autoOrder>
+					</dcssch:orderExpression>
+					<dcssch:orderExpression>
+						<expression xmlns="http://v8.1c.ru/8.1/data-composition-system/common">НомерОперации</expression>
+						<orderType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Asc</orderType>
+						<autoOrder xmlns="http://v8.1c.ru/8.1/data-composition-system/common">false</autoOrder>
+					</dcssch:orderExpression>
+					<dcssch:valueType>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</dcssch:valueType>
+				</CalculatedField>
+				<MainTable>InformationRegister.ОперацииСПодключаемымОборудованием</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВремяВыполнения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время выполнения выделенных операций, сек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыгрузитьВФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьВФайл</Action>
+		</Command>
+		<Command name="ОтправитьВТехПоддержку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все записи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить в тех поддержку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьВТехПоддержку</Action>
+		</Command>
+		<Command name="ВыгрузитьВФайлВыделенные" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделенные строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить в файл выделенные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьВФайлВыделенные</Action>
+		</Command>
+		<Command name="ОтправитьВТехПоддержкуВыделенные" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выделенные записи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить в тех поддержку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьВТехПоддержкуВыделенные</Action>
+		</Command>
+	</Commands>
+</Form>
