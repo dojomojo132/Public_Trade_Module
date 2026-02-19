@@ -463,8 +463,11 @@ function Step-GitBackup {
         Write-Step "GIT-БЭКАП" "Коммит создан: $commitMessage" "OK"
 
         # Push
+        $ErrorActionPreference_save = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
         $pushResult = git push 2>&1
         $pushExitCode = $LASTEXITCODE
+        $ErrorActionPreference = $ErrorActionPreference_save
 
         if ($pushExitCode -ne 0) {
             Write-Step "GIT-БЭКАП" "Ошибка git push (exit: $pushExitCode) — коммит сохранён локально" "WARN"
