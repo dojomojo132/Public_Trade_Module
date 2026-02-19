@@ -2445,4 +2445,22 @@
 		<Metadata name="XDTOPackage.ExchangeMessage" id="24a7de1c-1c1f-4987-91ff-02f78f15dd9e" configVersion="31929296f24798469ac82820fb98a7a800000000" />
 		<Metadata name="XDTOPackage.ExchangeMessage.Package" id="24a7de1c-1c1f-4987-91ff-02f78f15dd9e.0" configVersion="ba7487d2eeb7e64a87f652f6987338a600000000" />
 	</ConfigVersions>
+	<Metadata name="Constant._ДемоИзолированноеПодключенияВнешнихКомпонент" id="d3ef9516-2752-4b41-93e6-4fa8e658d4ea" configVersion="db7cbe9ec13d13bc0fff1b0a21c62aae00000000"/>
+	<Metadata name="Constant._ДемоОбменСПодключаемымОборудованием" id="acf2cfa6-b46c-48ac-9d37-5a1c8c30700a" configVersion="7c9812eb75479c0266db252907d5f4e200000000"/>
+	<Metadata name="Constant._ДемоРаспределеннаяФискализация" id="79220bdd-1614-4cad-87a0-229b432b5a0f" configVersion="ba86490f9df4208285ec855fdc251bc700000000"/>
+	<Metadata name="Constant.ИдентификаторОбсужденияФискализации" id="6ae3087f-3c9a-4221-af3d-09b4fd1204d4" configVersion="d2fe5a91938774c64817bca8d9d070eb00000000"/>
+	<Metadata name="Constant.ИспользуетсяПротоколRDPвБПО" id="f0f914c7-7a94-4c76-9eaa-d4f872b756cb" configVersion="c6c53d17f818d99d58ea8d1f80843a9800000000"/>
+	<Metadata name="Constant.ОтправкаЭлектронныхЧековПослеПробитияЧека" id="2628863a-be6d-483d-98b5-3026e5614434" configVersion="bdfbae3308404af3695256aa0f67425d00000000"/>
+	<Metadata name="Constant.СрокХраненияОперацийОчередиЧеков" id="6d06fa26-b91d-4f69-9ada-dee5990cb9b3" configVersion="7199158eb4bfe29a3b616fd0ed30e1de00000000"/>
+	<Metadata name="Constant.СрокХраненияОперацийПроверкиКМ" id="e2d11b39-68a9-4572-88a1-dc2e8aae184c" configVersion="6dadae7cdbab27f701b88c7b80d5528900000000"/>
+	<Metadata name="Constant.СрокХраненияОперацийСОборудованием" id="c7ee32d8-5b6c-48f0-a525-122702c51fb2" configVersion="a744376035dfd6e2af9ee83d64679a0b00000000"/>
+	<Metadata name="Constant.СрокХраненияПлатежныхОпераций" id="702180dc-0efe-4cf3-b0f2-71e1cc5c18dc" configVersion="82b6eff954543346354a1128169f7cfa00000000"/>
+	<Metadata name="Constant.СрокХраненияФискальныхОпераций" id="7ff3ed67-2e6f-4d35-9ac9-7f0e5bc60738" configVersion="9e149526d30a9adb0e524939a4cd152600000000"/>
+	<Metadata name="Constant.ХранитьУспешныеОперацииРазрешения" id="4a186a10-d964-4cb5-9985-f9376213443e" configVersion="ca382b18133ead3f973d3b49b04b37d400000000"/>
+	<Metadata name="DataProcessor._ДемоHttpBridge" id="52e3fe46-36dd-42f3-ba5e-092d36be734a" configVersion="d6c44c37f7189565635a625f1abdd55200000000">
+		<Metadata name="DataProcessor._ДемоHttpBridge.Form.Форма" id="58a09306-d9b3-49c7-9110-ea07042cd166"/>
+	</Metadata>
+	<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД" id="963a1df3-fe03-4c4b-ad79-cc57dc9a1fbd" configVersion="1ab0cdc2c2d60a6830a1a68ba6f734e300000000">
+		<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД.Form.Форма" id="70f4a1df-e321-4ecf-977f-240189a2f833"/>
+	</Metadata>
 </ConfigDumpInfo>
