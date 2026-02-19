@@ -4,8 +4,10 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 	</Events>
 	<ChildItems>
@@ -86,16 +88,6 @@
 						<Event name="OnChange">ПолеПоискаТовараПриИзменении</Event>
 					</Events>
 				</InputField>
-				<InputField name="ПолеПоискаТовара2" id="71">
-					<DataPath>Объект.ПолеПоискаТовара2</DataPath>
-					<Visible>false</Visible>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="ПолеПоискаТовара2КонтекстноеМеню" id="72"/>
-					<ExtendedTooltip name="ПолеПоискаТовара2РасширеннаяПодсказка" id="73"/>
-					<Events>
-						<Event name="OnChange">ПолеПоискаТовара2ПриИзменении</Event>
-					</Events>
-				</InputField>
 				<CheckBoxField name="ПоказатьПанельТоваров" id="5">
 					<DataPath>ПоказатьПанельТоваров</DataPath>
 					<TitleLocation>Right</TitleLocation>
@@ -166,9 +158,6 @@
 								<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="44"/>
 							</SearchControlAddition>
 							<Events>
-								<Event name="OnActivateRow">АктивироватьПоиск</Event>
-								<Event name="OnActivateField">АктивироватьПоиск</Event>
-								<Event name="AfterDeleteRow">АктивироватьПоиск</Event>
 								<Event name="OnChange">ТЧПриИзменении</Event>
 							</Events>
 							<ChildItems>
@@ -478,6 +467,21 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	
+		<Attribute name="ИспользоватьПодключаемоеОборудование" id="100">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоддерживаемыеТипыПодключаемогоОборудования" id="101">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
