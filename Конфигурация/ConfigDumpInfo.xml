@@ -1302,33 +1302,6 @@
 		<Metadata name="CommonTemplate.ШаблонДисплеяПокупателя.Template" id="ad8ec5bb-3d8c-45ec-ae68-4bac063326c8.0" configVersion="de7a93b59d8b794599c7d299a783149000000000" />
 		<Metadata name="CommonTemplate.ШаблонДисплеяПокупателяЧек" id="86975b79-3e5d-4367-957c-f11495c31117" configVersion="af647e73bab0e14f877a23ffb4d9380600000000" />
 		<Metadata name="CommonTemplate.ШаблонДисплеяПокупателяЧек.Template" id="86975b79-3e5d-4367-957c-f11495c31117.0" configVersion="64ef3b777cb4e04ab4f912654dc99d7800000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования" id="7d9eb95e-104f-4595-9eaa-ae812dd59b3c" configVersion="7355cbc65c15d946a4e87efe1077feb800000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.ClientApplicationInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.b" configVersion="286b4e8da697f94aa2d8016c5b0b440000000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.HomePageWorkArea" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.8" configVersion="5895a6a8858afa449cc1cdf95d73f0b000000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.MainSectionCommandInterface" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.9" configVersion="d24ca8a47b3687428bda4919ff144f5d00000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.ManagedApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.6" configVersion="05ff160f74bfa243ab416b217ed8bf4600000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.OrdinaryApplicationModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.0" configVersion="40d26d99364efa42ba1e17b4712dcc7100000000" />
-		<Metadata name="Configuration.БиблиотекаПодключаемогоОборудования.SessionModule" id="b98fe0ee-eac8-476f-8a9e-48b74206bfc7.7" configVersion="97ca35428c05574eb4d296ab6aacb16c00000000" />
-		<Metadata name="Constant._ДемоИзолированноеПодключенияВнешнихКомпонент" id="d3ef9516-2752-4b41-93e6-4fa8e658d4ea" configVersion="712ef1e728a7004bbbe3c480b897acef00000000" />
-		<Metadata name="Constant._ДемоОбменСПодключаемымОборудованием" id="acf2cfa6-b46c-48ac-9d37-5a1c8c30700a" configVersion="e4ec3a020e6ab24087a1e7553389a90e00000000" />
-		<Metadata name="Constant._ДемоРаспределеннаяФискализация" id="79220bdd-1614-4cad-87a0-229b432b5a0f" configVersion="4eba1e8d676b264883d8d70eda453eb500000000" />
-		<Metadata name="Constant.ИдентификаторОбсужденияФискализации" id="6ae3087f-3c9a-4221-af3d-09b4fd1204d4" configVersion="2425ac1f563418479cf861725c347cdb00000000" />
-		<Metadata name="Constant.ИспользуетсяПротоколRDPвБПО" id="f0f914c7-7a94-4c76-9eaa-d4f872b756cb" configVersion="a0cc6de6bd2a0f42b5140084a525459100000000" />
-		<Metadata name="Constant.ОтправкаЭлектронныхЧековПослеПробитияЧека" id="2628863a-be6d-483d-98b5-3026e5614434" configVersion="ebde6061b9e56446913aa47ce561fe7700000000" />
-		<Metadata name="Constant.СрокХраненияОперацийОчередиЧеков" id="6d06fa26-b91d-4f69-9ada-dee5990cb9b3" configVersion="03190965be8b37488616b5485c7eb18500000000" />
-		<Metadata name="Constant.СрокХраненияОперацийПроверкиКМ" id="e2d11b39-68a9-4572-88a1-dc2e8aae184c" configVersion="2a58976577f5c142b33b049cc5ef675a00000000" />
-		<Metadata name="Constant.СрокХраненияОперацийСОборудованием" id="c7ee32d8-5b6c-48f0-a525-122702c51fb2" configVersion="c7f15595c96bad4cbf1aed838882f28b00000000" />
-		<Metadata name="Constant.СрокХраненияПлатежныхОпераций" id="702180dc-0efe-4cf3-b0f2-71e1cc5c18dc" configVersion="d6c838131e13e747bfc37fa0ba74b27e00000000" />
-		<Metadata name="Constant.СрокХраненияФискальныхОпераций" id="7ff3ed67-2e6f-4d35-9ac9-7f0e5bc60738" configVersion="7e405a391d80124688ce3b95e0445cef00000000" />
-		<Metadata name="Constant.ХранитьУспешныеОперацииРазрешения" id="4a186a10-d964-4cb5-9985-f9376213443e" configVersion="889a9a1cbbf388498fd25f138864d8fa00000000" />
-		<Metadata name="Constant.ХранитьУспешныеОперацииРазрешения.ManagerModule" id="4a186a10-d964-4cb5-9985-f9376213443e.1" configVersion="bace7f59d4e8744383e020d1e2ec014200000000" />
-		<Metadata name="Constant.ХранитьУспешныеОперацииРазрешения.ValueManagerModule" id="4a186a10-d964-4cb5-9985-f9376213443e.0" configVersion="a42450c9d050574db9fd1f5212282b2f00000000" />
-		<Metadata name="DataProcessor._ДемоHttpBridge" id="52e3fe46-36dd-42f3-ba5e-092d36be734a" configVersion="aee5f729faff9e4da90c7bfde1af566800000000" />
-		<Metadata name="DataProcessor._ДемоHttpBridge.Form.Форма" id="58a09306-d9b3-49c7-9110-ea07042cd166" configVersion="4504d6099611e34f926cb8d70d9558de00000000" />
-		<Metadata name="DataProcessor._ДемоHttpBridge.Form.Форма.Form" id="58a09306-d9b3-49c7-9110-ea07042cd166.0" configVersion="9ab17037e60aec4dbf34ceed4875f81300000000" />
-		<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД" id="963a1df3-fe03-4c4b-ad79-cc57dc9a1fbd" configVersion="57360c72d90c8b4dbb3ac1f21999ff3b00000000">
-			<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД.Command.ВыгрузкаВВесыТСД" id="9b2de209-5ae1-40a1-a932-c2e90e17540f" />
-		</Metadata>
 		<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД.Command.ВыгрузкаВВесыТСД.CommandModule" id="9b2de209-5ae1-40a1-a932-c2e90e17540f.2" configVersion="a957eb0234fb1f48a00ab48231fb9ca800000000" />
 		<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД.Form.Форма" id="70f4a1df-e321-4ecf-977f-240189a2f833" configVersion="2a3a31320e2feb4abea2bf08e75e0ef000000000" />
 		<Metadata name="DataProcessor._ДемоВыгрузкаВВесыТСД.Form.Форма.Form" id="70f4a1df-e321-4ecf-977f-240189a2f833.0" configVersion="f7abae315105a04797434164b4df899300000000" />

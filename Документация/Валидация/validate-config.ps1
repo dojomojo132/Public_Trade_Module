@@ -389,7 +389,13 @@ if ($formFiles.Count -eq 0) {
             }
             
             switch ($section) {
-                "attributes" { $attributeIds += $id }
+                "attributes" {
+                    # Только прямые потомки <Attributes> (т.е. <Attribute>) — их id уникальны
+                    # Вложенные элементы (Column внутри Attribute/Columns) имеют свой ID-спейс
+                    if ($elem.ParentNode.LocalName -eq "Attributes") {
+                        $attributeIds += $id
+                    }
+                }
                 "commands"   { $commandIds += $id }
                 default      { $visualIds += $id }
             }
