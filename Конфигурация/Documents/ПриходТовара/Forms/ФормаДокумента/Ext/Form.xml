@@ -177,7 +177,7 @@
 				</InputField>
 				<InputField name="ТоварыКоличество" id="35">
 					<DataPath>Объект.Товары.Количество</DataPath>
-					<EditMode>EnterOnInput</EditMode>
+					<EditMode>Enter</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТоварыКоличествоКонтекстноеМеню" id="36"/>
 					<ExtendedTooltip name="ТоварыКоличествоРасширеннаяПодсказка" id="37"/>
