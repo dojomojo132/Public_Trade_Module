@@ -53,6 +53,31 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<InputField name="ПолеВводаШтрихкода" id="68">
+			<DataPath>ПолеВводаШтрихкода</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сканирование (ШК)</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>30</Width>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="ПолеВводаШтрихкодаКонтекстноеМеню" id="69"/>
+			<ExtendedTooltip name="ПолеВводаШтрихкодаРасширеннаяПодсказка" id="70">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Наведите сканер или введите штрихкод вручную</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ПолеВводаШтрихкодаПриИзменении</Event>
+			</Events>
+		</InputField>
 		<UsualGroup name="ГруппаИтоги" id="63">
 			<Title>
 				<v8:item>
@@ -268,6 +293,21 @@
 			<UseAlways>
 				<Field>Объект.RegisterRecords</Field>
 			</UseAlways>
+		</Attribute>
+		<Attribute name="ПолеВводаШтрихкода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сканирование (ШК)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 		<Attribute name="ИтоговаяСумма" id="2">
 			<Title>
