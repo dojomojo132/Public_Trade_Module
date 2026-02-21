@@ -198,6 +198,18 @@
 									<ContextMenu name="ТЧСуммаКонтекстноеМеню" id="51"/>
 									<ExtendedTooltip name="ТЧСуммаРасширеннаяПодсказка" id="52"/>
 								</InputField>
+								<InputField name="ТЧМаркаСтатус" id="91">
+									<DataPath>Объект.ТЧ.МаркаСтатус</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>false</ChoiceButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<ContextMenu name="ТЧМаркаСтатусКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="ТЧМаркаСтатусРасширеннаяПодсказка" id="93"/>
+								</InputField>
 								<InputField name="ТЧАкцизнаяМарка" id="64">
 									<DataPath>Объект.ТЧ.АкцизнаяМарка</DataPath>
 									<EditMode>EnterOnInput</EditMode>
