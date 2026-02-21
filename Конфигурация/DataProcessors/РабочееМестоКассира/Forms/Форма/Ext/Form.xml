@@ -220,6 +220,9 @@
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ТЧАкцизнаяМаркаКонтекстноеМеню" id="65"/>
 									<ExtendedTooltip name="ТЧАкцизнаяМаркаРасширеннаяПодсказка" id="66"/>
+									<Events>
+										<Event name="OnChange">ТЧАкцизнаяМаркаПриИзменении</Event>
+									</Events>
 								</InputField>
 								<InputField name="ТЧШтрихкод" id="90">
 									<DataPath>Объект.ТЧ.Штрихкод</DataPath>
