@@ -124,6 +124,21 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="32"/>
 					<ChildItems>
+						<InputField name="ПолеВводаМарки" id="94">
+							<DataPath>ТекстВводаМарки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отсканируйте или введите марку</v8:content>
+								</v8:item>
+							</Title>
+							<Visible>false</Visible>
+							<ContextMenu name="ПолеВводаМаркиКонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="ПолеВводаМаркиРасширеннаяПодсказка" id="96"/>
+							<Events>
+								<Event name="OnChange">ПолеВводаМаркиПриИзменении</Event>
+							</Events>
+						</InputField>
 						<Table name="ТЧ" id="8">
 							<Representation>List</Representation>
 							<DataPath>Объект.ТЧ</DataPath>
@@ -496,6 +511,15 @@
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
 					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстВводаМарки" id="102">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
