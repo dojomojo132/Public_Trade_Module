@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
+	<Item id="d3e5f7a9-1b2c-4d4e-8f6a-7c9d0e1f2a3b">
+		<Name>НаличнаяКасса</Name>
+		<Code>000000001</Code>
+		<Description>Наличная касса</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>
