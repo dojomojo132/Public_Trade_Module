@@ -159,6 +159,7 @@
 							</SearchControlAddition>
 							<Events>
 								<Event name="OnChange">ТЧПриИзменении</Event>
+								<Event name="Selection">ТЧВыбор</Event>
 							</Events>
 							<ChildItems>
 								<InputField name="ТЧНоменклатура" id="9">
