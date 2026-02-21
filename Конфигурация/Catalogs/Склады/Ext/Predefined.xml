@@ -1,15 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.20">
-	<Item id="9787466a-a3d5-4b21-9293-29c446cbff19">
-		<Name>Розничная</Name>
+	<Item id="c2d4e6f8-7a19-4b3c-8e5f-0d1a2b3c4d05">
+		<Name>ОсновнойСклад</Name>
 		<Code>000000001</Code>
-		<Description>Розничная</Description>
-		<IsFolder>false</IsFolder>
-	</Item>
-	<Item id="a4e5c7d1-6b38-4f2a-9d0e-1c8f3a5b7e02">
-		<Name>Закупочная</Name>
-		<Code>000000002</Code>
-		<Description>Закупочная</Description>
+		<Description>Основной склад</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
 </PredefinedData>

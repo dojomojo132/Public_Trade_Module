@@ -6,4 +6,10 @@
 		<Description>Розничная</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
+	<Item id="a4e5c7d1-6b38-4f2a-9d0e-1c8f3a5b7e02">
+		<Name>Закупочная</Name>
+		<Code>000000002</Code>
+		<Description>Закупочная</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
 </PredefinedData>
