@@ -1,0 +1,58 @@
+﻿{
+  "$schema": "https://1c-syntax.github.io/bsl-language-server/configuration/schema.json",
+  "language": "ru",
+  "diagnostics": {
+    "mode": "all",
+    "computeTrigger": "onSave",
+    "skipSupport": "withSupportLocked",
+    "parameters": {
+      "DeprecatedCurrentDate": true,
+      "UsingModalWindows": true,
+      "UsingServiceTag": true,
+      "MissingCodeTryCatchEx": true,
+      "EmptyCodeBlock": true,
+      "MissingTemporaryFileDeletion": true,
+      "UsingHardcodeNetworkAddress": true,
+      "UsingHardcodeSecretInformation": true,
+      "MissingSpace": true,
+      "CanonicalSpellingKeywords": true,
+      "SemicolonPresence": true,
+      "DeprecatedFind": true,
+      "DeprecatedMessage": true,
+      "DeprecatedMethodCall": true,
+      "DeprecatedAttributes8312": true,
+      "ExtraCommas": true,
+      "MissingVariablesDescription": true,
+      "UnusedLocalMethod": true,
+      "UnusedParameters": true,
+      "CognitiveComplexity": {
+        "complexityThreshold": 20
+      },
+      "CyclomaticComplexity": {
+        "complexityThreshold": 20
+      },
+      "MethodSize": {
+        "maxMethodSize": 200
+      },
+      "NumberOfParams": {
+        "maxParamsCount": 7
+      },
+      "LineLength": {
+        "maxLineLength": 200
+      },
+      "CommentedCode": true,
+      "UsingObjectNotAvailableUnix": true,
+      "UsingGoto": true,
+      "TernaryOperatorUsage": true,
+      "FunctionShouldHaveReturn": true,
+      "MissingReturnedValueDescription": true
+    }
+  },
+  "codeLens": {
+    "showCognitiveComplexity": true,
+    "showCyclomaticComplexity": true
+  },
+  "documentLink": {
+    "showDiagnosticDescription": true
+  }
+}
