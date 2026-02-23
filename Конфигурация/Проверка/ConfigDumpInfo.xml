@@ -139,11 +139,10 @@
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba" configVersion="635d2005e67aa74dbc4f54480fe8783c00000000" />
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450" configVersion="df0479796b82b648a07c7e282ce0358300000000" />
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма.Form" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450.0" configVersion="6451fb8625e34e489bcb297fc171bb9d00000000" />
-		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.ObjectModule" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba.0" configVersion="0eaa043101e5584da3d1bc203d4dc1be00000000" />
+		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.ObjectModule" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba.0" configVersion="0eaa043101e5584da3d1bc203d4dc1be00000000" />
 		<Metadata name="DataProcessor.ТестыРМК" id="f7a8b9c0-d1e2-4f3a-5b6c-7d8e9f0a1b2c" configVersion="a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d600000000" />
 		<Metadata name="DataProcessor.ТестыРМК.Form.Форма" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6" configVersion="b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e700000000" />
 		<Metadata name="DataProcessor.ТестыРМК.Form.Форма.Form" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6.0" configVersion="c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f800000000" />
-
 		<Metadata name="DataProcessor.УправлениеНастройками" id="b7c8d9e0-f1a2-3b4c-5d6e-7f8a9b0c1d2e" configVersion="865163638fd7cc498919b06c302b28ea00000000" />
 		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5" configVersion="57b8c65c9cfdd44cad2ebd1555262b1c00000000" />
 		<Metadata name="DataProcessor.УправлениеНастройками.Form.Форма.Form" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5.0" configVersion="41481e0a011652418edd8ac6af58362c00000000" />

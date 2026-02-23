@@ -323,7 +323,7 @@
 			<Report>Взаиморасчеты</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
+			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ТестыРМК</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
