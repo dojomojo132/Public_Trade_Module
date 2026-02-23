@@ -4,7 +4,7 @@ Git commit helper — обходит проблему кириллицы в Powe
 
 Workflow использования агентом:
   1. Написать сообщение коммита в файл scripts/_commit_msg.txt (через create_file)
-  2. Запустить: python "D:\Git\Public_Trade_Module\scripts\_git_commit.py"
+  2. Запустить: python scripts\\_git_commit.py
 
 Файл _commit_msg.txt сохраняется в UTF-8 через create_file, PowerShell его не повреждает.
 """
@@ -13,7 +13,7 @@ import pathlib
 import sys
 import os
 
-ROOT = pathlib.Path(r"D:\Git\Public_Trade_Module")
+ROOT = pathlib.Path(__file__).parent.parent  # D:\Git\Public_Trade_Module
 MSG_FILE = ROOT / "scripts" / "_commit_msg.txt"
 
 def run(cmd, **kwargs):
