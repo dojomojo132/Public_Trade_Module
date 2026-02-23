@@ -151,6 +151,7 @@
 			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.ДокументОснование" id="a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890" />
 			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.Склад" id="b2c3d4e5-f678-9012-b3c4-d5e6f7890123" />
 			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.ФискальныйВозврат" id="c3d4e5f6-7890-1234-c5d6-e7f890123456" />
+			<Metadata name="Document.ВозвратТовараОтПокупателя.Attribute.Касса" id="d1a2b3c4-5678-4def-9012-3456789abcde" />
 			<Metadata name="Document.ВозвратТовараОтПокупателя.TabularSection.Товары" id="d4e5f678-9012-3456-d7e8-f90123456789" />
 		</Metadata>
 		<Metadata name="Document.ВозвратТовараОтПокупателя.ObjectModule" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747.0" configVersion="9b4736edb0c90743bb96a98b7677377900000000" />
