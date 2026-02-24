@@ -185,6 +185,40 @@ r = call_tool("find_references", {
 })
 results["find_references"] = print_result("find_references (Справочник.Номенклатура, код 000002078)", r)
 
+# === Phase 4 инструменты ===
+
+# 16. get_configuration_overview
+r = call_tool("get_configuration_overview", {})
+results["get_configuration_overview"] = print_result("get_configuration_overview", r)
+
+# 17. get_connected_objects
+r = call_tool("get_connected_objects", {
+    "metaType": "Catalogs",
+    "name": "Номенклатура"
+})
+results["get_connected_objects"] = print_result("get_connected_objects (Номенклатура)", r)
+
+# 18. validate_metadata_integrity
+r = call_tool("validate_metadata_integrity", {
+    "metaType": "Catalogs"
+})
+results["validate_metadata_integrity"] = print_result("validate_metadata_integrity (Catalogs)", r)
+
+# 19. check_document_posting
+r = call_tool("check_document_posting", {
+    "documentType": "ЧекККМ"
+})
+results["check_document_posting"] = print_result("check_document_posting (ЧекККМ)", r)
+
+# === Phase 5 инструменты ===
+
+# 20. get_metadata_structure
+r = call_tool("get_metadata_structure", {
+    "metaType": "Documents",
+    "name": "ЧекККМ"
+})
+results["get_metadata_structure"] = print_result("get_metadata_structure (Documents.ЧекККМ)", r)
+
 # === ИТОГО ===
 print("\n" + "=" * 60)
 print("ИТОГО:")

@@ -22,6 +22,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментМодулиИКод</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментАдминистрирование</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментПоискСсылок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментДиагностика</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментУправлениеДанными</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

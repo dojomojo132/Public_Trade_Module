@@ -86,6 +86,8 @@
 			<DataProcessor>mcp_ИнструментМодулиИКод</DataProcessor>
 			<DataProcessor>mcp_ИнструментАдминистрирование</DataProcessor>
 			<DataProcessor>mcp_ИнструментПоискСсылок</DataProcessor>
+			<DataProcessor>mcp_ИнструментДиагностика</DataProcessor>
+			<DataProcessor>mcp_ИнструментУправлениеДанными</DataProcessor>
 			<DataProcessor>mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</DataProcessor>
 		</ChildObjects>
 	</Configuration>
