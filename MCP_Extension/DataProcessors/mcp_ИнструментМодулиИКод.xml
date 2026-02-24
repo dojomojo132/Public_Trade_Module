@@ -1,28 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Subsystem uuid="41b9e681-c136-4c1a-865d-048761425ac7">
+	<DataProcessor uuid="b1a2c3d4-e5f6-4001-9abc-def012345001">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.mcp_ИнструментМодулиИКод" category="Object">
+				<xr:TypeId>b2c3d4e5-f6a7-4002-abcd-ef0123456002</xr:TypeId>
+				<xr:ValueId>c3d4e5f6-a7b8-4003-bcde-f01234567003</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.mcp_ИнструментМодулиИКод" category="Manager">
+				<xr:TypeId>d4e5f6a7-b8c9-4004-cdef-012345678004</xr:TypeId>
+				<xr:ValueId>e5f6a7b8-c9d0-4005-defa-123456789005</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
 		<Properties>
-			<Name>mcp_КонтейнерыИнструментов</Name>
+			<Name>mcp_ИнструментМодулиИКод</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Контейнеры инструментов</v8:content>
+					<v8:content>Модули и код (инструмент)</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<IncludeHelpInContents>true</IncludeHelpInContents>
-			<IncludeInCommandInterface>false</IncludeInCommandInterface>
-			<UseOneCommand>false</UseOneCommand>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
 			<Explanation/>
-			<Picture/>
-			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментДанныеОКонфигурации</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментЗапросыИДанные</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментСправочнаяИнформация</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментМодулиИКод</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.mcp_ИнструментАдминистрирование</xr:Item>
-			</Content>
 		</Properties>
 		<ChildObjects/>
-	</Subsystem>
+	</DataProcessor>
 </MetaDataObject>

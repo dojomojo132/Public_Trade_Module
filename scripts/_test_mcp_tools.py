@@ -118,6 +118,34 @@ r = call_tool("list_metadata_objects", {
 })
 results["list_metadata_objects"] = print_result("list_metadata_objects (Documents)", r)
 
+# === Phase 2 инструменты ===
+
+# 7. get_object_module — модуль общего модуля
+r = call_tool("get_object_module", {
+    "metaType": "CommonModules",
+    "name": "РаботаСТорговымОборудованием",
+    "moduleType": "ObjectModule"
+})
+results["get_object_module"] = print_result("get_object_module (CommonModules.РаботаСТорговымОборудованием)", r)
+
+# 8. execute_code — простой код
+r = call_tool("execute_code", {
+    "code": "Результат = 2 + 3;"
+})
+results["execute_code"] = print_result("execute_code (2+3)", r)
+
+# 9. get_users_list
+r = call_tool("get_users_list", {})
+results["get_users_list"] = print_result("get_users_list", r)
+
+# 10. get_event_log
+r = call_tool("get_event_log", {
+    "level": "Error",
+    "lastMinutes": 60,
+    "maxRows": 10
+})
+results["get_event_log"] = print_result("get_event_log (Error, 60min)", r)
+
 # === ИТОГО ===
 print("\n" + "=" * 60)
 print("ИТОГО:")
