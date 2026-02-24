@@ -146,10 +146,56 @@ r = call_tool("get_event_log", {
 })
 results["get_event_log"] = print_result("get_event_log (Error, 60min)", r)
 
+# === Phase 3 инструменты ===
+
+# 11. get_form_structure — структура формы документа
+r = call_tool("get_form_structure", {
+    "metaType": "Documents",
+    "name": "ЧекККМ"
+})
+results["get_form_structure(list)"] = print_result("get_form_structure (Documents.ЧекККМ — список форм)", r)
+
+# 12. get_form_structure — конкретная форма
+r = call_tool("get_form_structure", {
+    "metaType": "Documents",
+    "name": "ЧекККМ",
+    "formName": "ФормаДокумента"
+})
+results["get_form_structure(form)"] = print_result("get_form_structure (Documents.ЧекККМ.ФормаДокумента)", r)
+
+# 13. get_subsystem_content — состав подсистемы
+r = call_tool("get_subsystem_content", {
+    "name": "Торговля"
+})
+results["get_subsystem_content"] = print_result("get_subsystem_content (Торговля)", r)
+
+# 14. post_document — проведение документа (может не быть документов, допускаем ошибку)
+r = call_tool("post_document", {
+    "documentType": "ЧекККМ",
+    "documentNumber": "000000001",
+    "action": "post"
+})
+results["post_document"] = print_result("post_document (ЧекККМ, 000000001)", r)
+
+# 15. find_references — поиск ссылок
+r = call_tool("find_references", {
+    "metaType": "Catalogs",
+    "name": "Номенклатура",
+    "searchValue": "000002078"
+})
+results["find_references"] = print_result("find_references (Справочник.Номенклатура, код 000002078)", r)
+
 # === ИТОГО ===
 print("\n" + "=" * 60)
 print("ИТОГО:")
 print("=" * 60)
+passed = 0
+failed = 0
 for name, ok in results.items():
     status = "✓ OK" if ok else "✗ FAIL"
     print(f"  {status}  {name}")
+    if ok:
+        passed += 1
+    else:
+        failed += 1
+print(f"\n  Всего: {passed + failed} | Успешно: {passed} | Ошибки: {failed}")
