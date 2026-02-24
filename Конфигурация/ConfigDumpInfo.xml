@@ -139,7 +139,8 @@
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba" configVersion="635d2005e67aa74dbc4f54480fe8783c00000000" />
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450" configVersion="df0479796b82b648a07c7e282ce0358300000000" />
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма.Form" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450.0" configVersion="6451fb8625e34e489bcb297fc171bb9d00000000" />
-		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.ObjectModule" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba.0" configVersion="0eaa043101e5584da3d1bc203d4dc1be00000000" />
+		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.ObjectModule" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba.0" configVersion="0eaa043101e5584da3d1bc203d4dc1be00000000" />
+
 		<Metadata name="DataProcessor.ТестыРМК" id="f7a8b9c0-d1e2-4f3a-5b6c-7d8e9f0a1b2c" configVersion="a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d600000000" />
 		<Metadata name="DataProcessor.ТестыРМК.Form.Форма" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6" configVersion="b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e700000000" />
 		<Metadata name="DataProcessor.ТестыРМК.Form.Форма.Form" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6.0" configVersion="c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f800000000" />
@@ -2432,6 +2433,11 @@
 			<Metadata name="WebService.EquipmentService.Operation.Connect" id="fd49b777-ecf6-4507-843e-ba126630fea5" />
 		</Metadata>
 		<Metadata name="WebService.EquipmentService.Module" id="c1568f1c-25ab-4328-8e77-e0e84788f10f.0" configVersion="2a293f9869bba74b9c89be3208b7c23100000000" />
+		<Metadata name="HTTPService.ТоварыАПИ" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" configVersion="f4e8a2b6c9d1e3f5a7b9c1d3e5f7a9b100000000">
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара" id="b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e" />
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара.Method.Поиск" id="c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" />
+		</Metadata>
+		<Metadata name="HTTPService.ТоварыАПИ.Module" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.0" configVersion="d7c5b3a1e9f2d4c6b8a0c2e4f6a8b0d200000000" />
 		<Metadata name="XDTOPackage.Cashbox_1_21_1" id="1693e2c3-bf51-4b4b-bbde-7c97d59e9419" configVersion="0debd2dbcd3bed439db3f171595b639100000000" />
 		<Metadata name="XDTOPackage.Cashbox_1_21_1.Package" id="1693e2c3-bf51-4b4b-bbde-7c97d59e9419.0" configVersion="5a6452fb51aabd41a43ac647b4b8fe9d00000000" />
 		<Metadata name="XDTOPackage.Cashbox_1_8_6" id="a95b1ee4-8855-4032-a025-ca85da30d84d" configVersion="7ea1423d7333b148b0af21275b2617de00000000" />
