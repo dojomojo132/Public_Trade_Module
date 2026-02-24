@@ -47,6 +47,36 @@
 					</Method>
 				</ChildObjects>
 			</URLTemplate>
+			<URLTemplate uuid="d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80">
+				<Properties>
+					<Name>СинхронизацияТоваров</Name>
+					<Template>/goods/sync</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091">
+						<Properties>
+							<Name>Синхронизация</Name>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>СинхронизацияТоваровGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102">
+				<Properties>
+					<Name>ПриёмЧека</Name>
+					<Template>/check</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="a7b8c9d0-e1f2-4a3b-4c5d-6e7f80910213">
+						<Properties>
+							<Name>Приём</Name>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>ПриёмЧекаPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
 		</ChildObjects>
 	</HTTPService>
 </MetaDataObject>

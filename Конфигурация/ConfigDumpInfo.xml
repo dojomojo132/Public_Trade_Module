@@ -2436,6 +2436,10 @@
 		<Metadata name="HTTPService.ТоварыАПИ" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" configVersion="f4e8a2b6c9d1e3f5a7b9c1d3e5f7a9b100000000">
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара" id="b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e" />
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара.Method.Поиск" id="c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f" />
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.СинхронизацияТоваров" id="d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80" />
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.СинхронизацияТоваров.Method.Синхронизация" id="e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091" />
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПриёмЧека" id="f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102" />
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПриёмЧека.Method.Приём" id="a7b8c9d0-e1f2-4a3b-4c5d-6e7f80910213" />
 		</Metadata>
 		<Metadata name="HTTPService.ТоварыАПИ.Module" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.0" configVersion="d7c5b3a1e9f2d4c6b8a0c2e4f6a8b0d200000000" />
 		<Metadata name="XDTOPackage.Cashbox_1_21_1" id="1693e2c3-bf51-4b4b-bbde-7c97d59e9419" configVersion="0debd2dbcd3bed439db3f171595b639100000000" />
