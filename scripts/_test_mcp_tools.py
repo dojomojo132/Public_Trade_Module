@@ -4,17 +4,21 @@ import json
 import urllib.request
 import sys
 
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
 MCP_URL = "http://localhost/PTM_Clean/hs/mcp/mcp"
 
 def call_tool(tool_name, arguments):
     """Вызвать MCP-инструмент и вернуть результат."""
+    return call_mcp("tools/call", {"name": tool_name, "arguments": arguments})
+
+
+def call_mcp(method, params):
+    """Вызвать любой MCP-метод и вернуть результат."""
     payload = {
         "jsonrpc": "2.0",
-        "method": "tools/call",
-        "params": {
-            "name": tool_name,
-            "arguments": arguments
-        },
+        "method": method,
+        "params": params,
         "id": 1
     }
     
@@ -218,6 +222,79 @@ r = call_tool("get_metadata_structure", {
     "name": "ЧекККМ"
 })
 results["get_metadata_structure"] = print_result("get_metadata_structure (Documents.ЧекККМ)", r)
+
+# === Phase 6: Resources & Prompts ===
+
+# 21. resources/list
+r = call_mcp("resources/list", {})
+print(f"\n{'='*60}")
+print(f"  resources/list")
+print(f"{'='*60}")
+if "error" in r:
+    print(f"ОШИБКА: {r['error']}")
+    results["resources/list"] = False
+else:
+    res_list = r.get("result", {}).get("resources", [])
+    print(f"Найдено ресурсов: {len(res_list)}")
+    for res_item in res_list:
+        print(f"  - {res_item.get('uri', '?')} ({res_item.get('name', '?')})")
+    results["resources/list"] = len(res_list) > 0
+    print("\n>>> УСПЕХ!" if results["resources/list"] else "\n>>> ОШИБКА: 0 ресурсов!")
+
+# 22. resources/read (ptm://datamodel)
+r = call_mcp("resources/read", {"uri": "ptm://datamodel"})
+print(f"\n{'='*60}")
+print(f"  resources/read (ptm://datamodel)")
+print(f"{'='*60}")
+if "error" in r:
+    print(f"ОШИБКА: {r['error']}")
+    results["resources/read"] = False
+else:
+    contents = r.get("result", {}).get("contents", [])
+    if contents:
+        text = contents[0].get("text", "")
+        print(text[:800])
+        results["resources/read"] = len(text) > 50
+    else:
+        print("Пустой ответ")
+        results["resources/read"] = False
+    print("\n>>> УСПЕХ!" if results["resources/read"] else "\n>>> ОШИБКА!")
+
+# 23. prompts/list
+r = call_mcp("prompts/list", {})
+print(f"\n{'='*60}")
+print(f"  prompts/list")
+print(f"{'='*60}")
+if "error" in r:
+    print(f"ОШИБКА: {r['error']}")
+    results["prompts/list"] = False
+else:
+    prompts_list = r.get("result", {}).get("prompts", [])
+    print(f"Найдено промптов: {len(prompts_list)}")
+    for p in prompts_list:
+        args_list = [a.get("name", "?") for a in p.get("arguments", [])]
+        print(f"  - {p.get('name', '?')} ({', '.join(args_list)})")
+    results["prompts/list"] = len(prompts_list) >= 3
+    print("\n>>> УСПЕХ!" if results["prompts/list"] else "\n>>> ОШИБКА: < 3 промптов!")
+
+# 24. prompts/get (generate_posting_module)
+r = call_mcp("prompts/get", {"name": "generate_posting_module", "arguments": {"documentName": "ЧекККМ"}})
+print(f"\n{'='*60}")
+print(f"  prompts/get (generate_posting_module, ЧекККМ)")
+print(f"{'='*60}")
+if "error" in r:
+    print(f"ОШИБКА: {r['error']}")
+    results["prompts/get"] = False
+else:
+    messages = r.get("result", {}).get("messages", [])
+    if messages:
+        text = messages[0].get("content", {}).get("text", "")
+        print(text[:800])
+        results["prompts/get"] = len(text) > 50
+    else:
+        print("Нет сообщений в ответе")
+        results["prompts/get"] = False
+    print("\n>>> УСПЕХ!" if results["prompts/get"] else "\n>>> ОШИБКА!")
 
 # === ИТОГО ===
 print("\n" + "=" * 60)
