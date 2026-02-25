@@ -318,6 +318,20 @@ $script = Get-ChildItem -Path "D:\Git\Public_Trade_Module" -Recurse -Filter "dep
 powershell -ExecutionPolicy Bypass -File $script.FullName -Action Full
 ```
 
+**ЕСЛИ DT-бэкап невозможен** (MCP-сервис занимает ИБ, монопольная блокировка), выполнять пошаговый деплой:
+```powershell
+# Пошаговый деплой (без DT-бэкапа, без Check — BSL уже проверен через get_errors):
+$script = Get-ChildItem -Path "D:\Git\Public_Trade_Module" -Recurse -Filter "deploy-config.ps1" | Select-Object -First 1
+powershell -ExecutionPolicy Bypass -File $script.FullName -Action Load -User "Admin"
+powershell -ExecutionPolicy Bypass -File $script.FullName -Action Update -User "Admin"
+# ОБЯЗАТЕЛЬНО открыть конфигуратор после успешного деплоя!
+powershell -ExecutionPolicy Bypass -File $script.FullName -Action Designer -User "Admin"
+```
+
+> **Оптимизация:** Check (синтакс-контроль, ~40 сек) пропускается, т.к. BSL проверяется через `get_errors` ПЕРЕД деплоем. CheckConfig запускать ТОЛЬКО при подозрении на ошибки после Load.
+
+**ПРАВИЛО:** После ЛЮБОГО успешного деплоя (Full или пошагового) — ОБЯЗАТЕЛЬНО открыть конфигуратор командой `deploy-config.ps1 -Action Designer -User "Admin"`. Пользователь должен видеть актуальную конфигурацию.
+
 **КРИТИЧНО:** При ошибках загрузки — скрипт выводит структурированный блок ошибок. Агент ОБЯЗАН:
 1. Найти блок `=== ОШИБКИ (для Copilot Agent) ===` в выводе
 2. Прочитать ВСЕ секции: `--- ОШИБКИ ---`, `--- ПОЛНЫЙ ЛОГ 1С ---`, `--- STDOUT ---`, `--- STDERR ---`
