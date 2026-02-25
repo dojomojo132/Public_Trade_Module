@@ -29,7 +29,12 @@
 |---------------|------------|
 | Существование объекта метаданных | `mcp_mcp_1c_torgov_list_metadata_objects` |
 | Структура объекта (реквизиты, ТЧ, измерения) | `mcp_mcp_1c_torgov_get_metadata_structure` |
-| Точное имя формы | `file_search` по `**/Forms/**/` |
+| Обзор конфигурации (все объекты, количества) | `mcp_mcp_1c_torgov_get_configuration_overview` |
+| Связи объекта (кто ссылается, на что ссылается) | `mcp_mcp_1c_torgov_get_connected_objects` |
+| Точное имя формы | `mcp_mcp_1c_torgov_get_form_structure` (без formName → список форм) |
+| Состав подсистемы | `mcp_mcp_1c_torgov_get_subsystem_content` |
+| Значения перечисления | `mcp_mcp_1c_torgov_list_enum_values` |
+| Предопределённые элементы | `mcp_mcp_1c_torgov_get_predefined_values` |
 
 ### 2.2 Обязательные проверки ПОСЛЕ написания кода
 
@@ -39,10 +44,70 @@
 | Диагностики BSL Language Server | `get_errors` на файл .bsl |
 | Валидность XML | `get_errors` на файл .xml |
 | Целостность конфигурации | `run_in_terminal` → `validate-config.ps1` |
+| Целостность метаданных в ИБ | `mcp_mcp_1c_torgov_validate_metadata_integrity` |
+
+### 2.3 Полный каталог MCP-инструментов
+
+**Запросы и данные:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_execute_query` | Выполнить запрос 1С, получить таблицу | `queryText` (обяз.), `maxRows` |
+| `mcp_mcp_1c_torgov_get_register_data` | Остатки/обороты/срез регистра | `registerType`, `name`, `mode` (Balance/Turnovers/SliceLast/All) |
+| `mcp_mcp_1c_torgov_get_document_movements` | Все движения документа по регистрам | `documentType`, `documentNumber` |
+
+**Метаданные и структура:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_list_metadata_objects` | Список объектов метаданных | `metaType` (обяз.), `nameMask`, `maxItems` |
+| `mcp_mcp_1c_torgov_get_metadata_structure` | Структура объекта (реквизиты, ТЧ, типы) | `metaType`, `name` (обяз.) |
+| `mcp_mcp_1c_torgov_get_configuration_overview` | Обзор конфигурации одним вызовом | _(нет)_ |
+| `mcp_mcp_1c_torgov_get_connected_objects` | Граф зависимостей объекта | `metaType`, `name` |
+| `mcp_mcp_1c_torgov_get_form_structure` | Структура формы + пути к файлам | `metaType`, `name`, `formName` (опц.) |
+| `mcp_mcp_1c_torgov_get_subsystem_content` | Состав подсистемы | `name` |
+| `mcp_mcp_1c_torgov_list_enum_values` | Значения перечисления | `name` |
+| `mcp_mcp_1c_torgov_get_predefined_values` | Предопределённые элементы | `metaType`, `name` |
+
+**Код и модули:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_get_object_module` | Путь к BSL-модулю (для read_file) | `metaType`, `name`, `moduleType`, `formName` |
+| `mcp_mcp_1c_torgov_execute_code` | Выполнить BSL-код на сервере | `code` (обяз.), `safeMode` |
+
+**Диагностика:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_validate_metadata_integrity` | Проверка целостности (запрос к каждой таблице) | `metaType` (опц.) |
+| `mcp_mcp_1c_torgov_check_document_posting` | Диагностика проведения документа | `documentType`, `number` (опц.) |
+| `mcp_mcp_1c_torgov_find_references` | Поиск ссылок на элемент в БД | `metaType`, `name`, `searchValue` |
+
+**Администрирование:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_get_users_list` | Пользователи ИБ с ролями | _(нет)_ |
+| `mcp_mcp_1c_torgov_get_event_log` | Журнал регистрации 1С | `level`, `lastMinutes`, `maxRows` |
+| `mcp_mcp_1c_torgov_post_document` | Провести/отменить документ | `documentType`, `documentNumber`, `action` |
+
+**Управление данными:**
+| Инструмент | Описание | Ключевые параметры |
+|-----------|----------|-------------------|
+| `mcp_mcp_1c_torgov_create_catalog_item` | Создать элемент справочника | `catalogName`, `description`, `attributes` (JSON) |
+| `mcp_mcp_1c_torgov_create_document` | Создать и провести документ | `documentType`, `date`, `attributes` (JSON), `post` |
+| `mcp_mcp_1c_torgov_update_register_record` | Запись в регистр сведений | `registerName`, `dimensions` (JSON), `resources` (JSON) |
+
+### 2.4 MCP Resources и Prompts
+
+**Ресурсы** (resources/list → resources/read):
+- `ptm://datamodel` — полная модель данных конфигурации (справочники, документы, регистры, перечисления, константы с типами)
+- `file://resource/syntax_1c.txt` — синтаксис встроенного языка 1С
+
+**Промпты** (prompts/list → prompts/get):
+- `generate_posting_module` — шаблон модуля проведения (аргумент: `documentName`)
+- `create-metadata-object` — чеклист создания объекта (аргументы: `objectType`, `objectName`, `description`)
+- `diagnose-posting-error` — план диагностики ошибки проведения (аргументы: `documentType`, `errorText`)
+
+### 2.5 Правила
 
 **КРИТИЧНО:** После генерации любого .bsl файла — ВСЕГДА вызвать `get_errors` и исправить все найденные проблемы до выдачи результата.
-
-### 2.3 Правила
 
 ```
 ❌ ЗАПРЕЩЕНО: угадывать имена полей/объектов/форм
