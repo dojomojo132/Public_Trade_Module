@@ -450,7 +450,10 @@ function Step-GitBackup {
         $timestamp = Get-Date -Format "yyyy-MM-dd"
         $commitMessage = "BACKUP: $timestamp перед $TaskDescription"
 
+        $ErrorActionPreference_git = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
         git add -A 2>$null
+        $ErrorActionPreference = $ErrorActionPreference_git
         $commitResult = git commit -m $commitMessage 2>&1
         $commitExitCode = $LASTEXITCODE
 

@@ -9,96 +9,163 @@
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<InputField name="Код" id="1">
-			<DataPath>Объект.Code</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
-		</InputField>
+		<UsualGroup name="Группа1" id="53">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="54"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Артикул" id="10">
+					<DataPath>Объект.Артикул</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>23</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="АртикулКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="АртикулРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="Наименование" id="4">
 			<DataPath>Объект.Description</DataPath>
 			<EditMode>EnterOnInput</EditMode>
+			<Width>2</Width>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
 			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
 		</InputField>
+		<UsualGroup name="Группа2" id="57">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<InputField name="ЕдиницаИзмерения" id="13">
+					<DataPath>Объект.ЕдиницаИзмерения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед. изм</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ПроцентНаценки" id="28">
+					<DataPath>Объект.ПроцентНаценки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>% наценки</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПроцентНаценкиКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ПроцентНаценкиРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="Родитель" id="7">
 			<DataPath>Объект.Parent</DataPath>
+			<Visible>false</Visible>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="РодительКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="9"/>
 		</InputField>
-		<InputField name="Артикул" id="10">
-			<DataPath>Объект.Артикул</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="АртикулКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="АртикулРасширеннаяПодсказка" id="12"/>
-		</InputField>
-		<InputField name="ЕдиницаИзмерения" id="13">
-			<DataPath>Объект.ЕдиницаИзмерения</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
-			<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="15"/>
-		</InputField>
-		<InputField name="СтавкаНДС" id="16">
-			<DataPath>Объект.СтавкаНДС</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="17"/>
-			<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="18"/>
-		</InputField>
-		<InputField name="НалоговаяГруппа" id="19">
-			<DataPath>Объект.НалоговаяГруппа</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НалоговаяГруппаКонтекстноеМеню" id="20"/>
-			<ExtendedTooltip name="НалоговаяГруппаРасширеннаяПодсказка" id="21"/>
-		</InputField>
-		<InputField name="КодУКТЗЕД" id="22">
-			<DataPath>Объект.КодУКТЗЕД</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="КодУКТЗЕДКонтекстноеМеню" id="23"/>
-			<ExtendedTooltip name="КодУКТЗЕДРасширеннаяПодсказка" id="24"/>
-		</InputField>
-		<CheckBoxField name="ТребуетАкцизнуюМарку" id="25">
-			<DataPath>Объект.ТребуетАкцизнуюМарку</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="ТребуетАкцизнуюМаркуКонтекстноеМеню" id="26"/>
-			<ExtendedTooltip name="ТребуетАкцизнуюМаркуРасширеннаяПодсказка" id="27"/>
-		</CheckBoxField>
-		<InputField name="ПроцентНаценки" id="28">
-			<DataPath>Объект.ПроцентНаценки</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ПроцентНаценкиКонтекстноеМеню" id="29"/>
-			<ExtendedTooltip name="ПроцентНаценкиРасширеннаяПодсказка" id="30"/>
-		</InputField>
-		<InputField name="ФОП" id="50">
-			<DataPath>Объект.ФОП</DataPath>
+		<UsualGroup name="ПодатковіНалаштування" id="55">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ФОП</v8:content>
+					<v8:content>Налоговие настройки</v8:content>
 				</v8:item>
 			</Title>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ФОПКонтекстноеМеню" id="51"/>
-			<ExtendedTooltip name="ФОПРасширеннаяПодсказка" id="52">
-				<Title formatted="false">
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ФОП, к которому относится товар (для разделения фискальных чеков)</v8:content>
-					</v8:item>
-				</Title>
-			</ExtendedTooltip>
-		</InputField>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Податкові налаштування</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ПодатковіНалаштуванняРасширеннаяПодсказка" id="56"/>
+			<ChildItems>
+				<UsualGroup name="Группа3" id="59">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<InputField name="СтавкаНДС" id="16">
+							<DataPath>Объект.СтавкаНДС</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="КодУКТЗЕД" id="22">
+							<DataPath>Объект.КодУКТЗЕД</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="КодУКТЗЕДКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="КодУКТЗЕДРасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<InputField name="НалоговаяГруппа" id="19">
+							<DataPath>Объект.НалоговаяГруппа</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="НалоговаяГруппаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="НалоговаяГруппаРасширеннаяПодсказка" id="21"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа4" id="61">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<CheckBoxField name="ТребуетАкцизнуюМарку" id="25">
+							<DataPath>Объект.ТребуетАкцизнуюМарку</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТребуетАкцизнуюМаркуКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ТребуетАкцизнуюМаркуРасширеннаяПодсказка" id="27"/>
+						</CheckBoxField>
+						<InputField name="ФОП" id="50">
+							<DataPath>Объект.ФОП</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ФОП</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ФОПКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ФОПРасширеннаяПодсказка" id="52">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>ФОП, к которому относится товар (для разделения фискальных чеков)</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="Штрихкоды" id="31">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>

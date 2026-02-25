@@ -1501,8 +1501,6 @@
 		<Metadata name="Document._ДемоЧек.Form.ФормированиеЧека.Form" id="005d8b0e-ac0c-4672-bb05-7017962bcfec.0" configVersion="3b1e5c262f7d144b9028f86f557507f200000000" />
 		<Metadata name="Document._ДемоЧек.ManagerModule" id="5f9bb626-e368-44e3-8206-e792432a206a.2" configVersion="6d5699093d1ee84c911ecfa85cb60ab900000000" />
 		<Metadata name="Document._ДемоЧек.ObjectModule" id="5f9bb626-e368-44e3-8206-e792432a206a.0" configVersion="b7486c1fb0cc8e4b8d585ad625c0807100000000" />
-		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора" id="358d4aa4-2456-4871-b0d6-43eb4f6b7679" configVersion="b112c07198f6d94f910fae6dd93abaf900000000" />
-		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора.Form" id="358d4aa4-2456-4871-b0d6-43eb4f6b7679.0" configVersion="f411d7addeea71418b5d9144bbd10f9900000000" />
 		<Metadata name="Document.КассоваяСмена.Form.ФормаСписка" id="fe8e56c2-b7ab-471d-a6c1-a93e3ac86bcc" configVersion="25e941ce509aee4ba49bde01a3b86c5000000000" />
 		<Metadata name="Document.КассоваяСмена.Form.ФормаСписка.Form" id="fe8e56c2-b7ab-471d-a6c1-a93e3ac86bcc.0" configVersion="17d579e16eba4649aabd43d34aaa81cf00000000" />
 		<Metadata name="Document.КассоваяСмена.Form.ФормаФискальныхДанных" id="1ed869e2-d595-40b8-ac17-7458adabadf4" configVersion="754e129d50bdaf4c98dfc3aa44f6b15300000000" />

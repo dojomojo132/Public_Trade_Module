@@ -528,17 +528,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.Комментарий</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog._ДемоЭтикеткиИЦенники.Attribute.XMLОписаниеМакета</name>
 		<right>
 			<name>View</name>
@@ -657,17 +646,6 @@
 	</object>
 	<object>
 		<name>Document.КассоваяСмена.StandardAttribute.Number</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.ПревышеноВремяОжиданияОтветаОФД</name>
 		<right>
 			<name>View</name>
 			<value>false</value>
@@ -1150,17 +1128,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.ОкончаниеКассовойСмены</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоОтчетОПродажах.Attribute.Организация</name>
 		<right>
 			<name>View</name>
@@ -1520,17 +1487,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.ФДОЗакрытииСмены</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоЧек.Attribute.НомерСменыККМ</name>
 		<right>
 			<name>View</name>
@@ -1692,17 +1648,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.НомерСменыККТ</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.ОфлайнОборудование.Attribute.РабочееМесто</name>
 		<right>
 			<name>View</name>
@@ -1820,29 +1765,7 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.КоличествоЧеков</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоЧек.Attribute.ОператорПереводаИНН</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.КоличествоНепереданныхФД</name>
 		<right>
 			<name>View</name>
 			<value>false</value>
@@ -2197,17 +2120,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.ПамятьФНПереполнена</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.ДрайверыОборудования.Attribute.ВерсияДрайвера</name>
 		<right>
 			<name>View</name>
@@ -2274,17 +2186,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.ФискальноеУстройство</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog._ДемоНоменклатура.Attribute.КПППроизводителя</name>
 		<right>
 			<name>View</name>
@@ -2304,97 +2205,6 @@
 		<right>
 			<name>Edit</name>
 			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Configuration.БиблиотекаПодключаемогоОборудования</name>
-		<right>
-			<name>Administration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>DataAdministration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>UpdateDataBaseConfiguration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ExclusiveMode</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ActiveUsers</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>EventLog</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ThinClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>WebClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ThickClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ExternalConnection</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Automation</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>TechnicalSpecialistMode</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>CollaborationSystemInfoBaseRegistration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeNormal</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeEmbeddedWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeFullscreenWorkplace</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>MainWindowModeKiosk</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>AnalyticsSystemClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>SaveUserData</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ConfigurationExtensionsAdministration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Output</name>
-			<value>true</value>
 		</right>
 	</object>
 	<object>
@@ -2563,17 +2373,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.ДатаСменыККТ</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.ОфлайнОборудование.Attribute.Параметры</name>
 		<right>
 			<name>View</name>
@@ -2674,17 +2473,6 @@
 	</object>
 	<object>
 		<name>Catalog.ШаблоныЭтикетокИЦенниковБПО.Attribute.СхемаКомпоновкиДанных</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.НеобходимаСрочнаяЗаменаФН</name>
 		<right>
 			<name>View</name>
 			<value>false</value>
@@ -3171,17 +2959,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.НачалоКассовойСмены</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоЧек.Attribute.ДанныеПоставщикаТелефон</name>
 		<right>
 			<name>View</name>
@@ -3398,28 +3175,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.КоличествоФД</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.Организация</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоЧек.Attribute.ОписаниеКоррекции</name>
 		<right>
 			<name>View</name>
@@ -3432,17 +3187,6 @@
 	</object>
 	<object>
 		<name>Catalog._ДемоЭтикеткиИЦенники.TabularSection.Поля.Attribute.ЗначениеПоУмолчанию</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.КассаККМ</name>
 		<right>
 			<name>View</name>
 			<value>false</value>
@@ -3852,17 +3596,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.КассоваяСмена.Attribute.РесурсФНИсчерпан</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
 		<name>Document._ДемоЧек.TabularSection.Товары.Attribute.ЕдиницаИзмерения</name>
 		<right>
 			<name>View</name>
@@ -4051,17 +3784,6 @@
 	</object>
 	<object>
 		<name>Catalog._ДемоКлиенты.Attribute.Индекс</name>
-		<right>
-			<name>View</name>
-			<value>false</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>false</value>
-		</right>
-	</object>
-	<object>
-		<name>Document.КассоваяСмена.Attribute.ДатаПервогоНепереданногоФД</name>
 		<right>
 			<name>View</name>
 			<value>false</value>
