@@ -199,7 +199,7 @@ Workflow проверки проведения:
 ### 4.2 Правила использования `get_event_log`
 
 ```
-✅ ИСПОЛЬЗОВАТЬ ВМЕСТО monitor-errors.ps1 для быстрой проверки:
+✅ ИСПОЛЬЗОВАТЬ ДЛЯ чтения ЖУРНАЛА РЕГИСТРАЦИИ:
   get_event_log(level="Error", lastMinutes=5)
 
 Уровни:
@@ -209,11 +209,64 @@ Workflow проверки проведения:
 
 Workflow мониторинга (УЛУЧШЕННЫЙ):
   ЭТАП 9 (мониторинг): 
-    ВАРИАНТ A: get_event_log(level="Error", lastMinutes=5)     ← MCP (быстрее)
-    ВАРИАНТ Б: monitor-errors.ps1 -Action Check -LastMinutes 5 ← PowerShell (ТЖ + ЖР)
+    ВАРИАНТ A: get_event_log(level="Error", lastMinutes=5)     ← MCP, ЖР (быстрее)
+    ВАРИАНТ Б: get_tech_journal(action="Check", lastMinutes=5) ← MCP, ТЖ (runtime-исключения)
+    ВАРИАНТ ОПТ.: monitor-errors.ps1 -Action Check -LastMinutes 5 ← PowerShell (полный ТЖ + ЖР)
     
-  Рекомендация: Использовать ВАРИАНТ A для быстрой проверки.
-  Если нужен полный анализ (включая ТЖ) — ВАРИАНТ Б.
+  Рекомендация: Для полного мониторинга запускать ОБА инструмента:
+  - get_event_log      → ошибки в ЖР (пользовательские сообщения, отказы в проведении)
+  - get_tech_journal   → runtime-исключения EXCP/SDBL в ТЖ (BSL-исключения, запросы SQL)
+```
+
+### 4.3 Правила использования `get_tech_journal`
+
+```
+Технологический журнал (ТЖ) — источник runtime-ошибок, которые НЕ попадают в ЖР.
+Формат входа: .log-файлы платформы 1С (YYMMDDhh.log).
+
+ДЕЙСТВИЯ:
+  Setup   — Создаёт logcfg.xml в C:\Program Files\1cv8\conf\
+            Отлавливает EXCP, EXCPCNTX, SDBL, CALL, SCALL, CONN
+            После этого обязательно перезапустить Apache/предприятие
+  Stop    — Удаляет logcfg.xml (выключает ТЖ)
+  Status  — Проверяет включён ли ТЖ, кол-во .log файлов, размер
+  Check   — Читает .log файлы, возвращает ошибки с временем, модулем, описанием
+
+ПАРАМЕТРЫ:
+  action      (обяз.)  — действие: "Setup", "Stop", "Status", "Check" (default)
+  lastMinutes (опц.)   — период для action=Check (default: 30)
+  maxRows     (опц.)   — лимит записей (default: 50)
+  eventFilter (опц.)   — фильтр по типу: EXCP, SDBL, CALL, SCALL, CONN
+
+ПУТИ:
+  logcfg.xml : C:\Program Files\1cv8\conf\logcfg.xml
+  Логи   : D:\Git\Public_Trade_Module\Документация\Валидация\logs\tj\
+  Формат  : YYMMDDhh.log, записи mm:ss.ffffff-...,EXCP,...
+
+ТИПЫ СОБЫТИЙ:
+  EXCP    — runtime-исключения BSL (основной тип!)
+  EXCPCNTX— контекст исключения (стек вызовов)
+  SDBL    — ошибки SQL-запросов 1С (включая дедлоки)
+  CALL/SCALL — ошибки RPC-вызовов (клиент-сервер)
+  CONN    — ошибки подключения
+
+ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ:
+  // Первый запуск 1С-сервера:
+  get_tech_journal(action="Setup")                     ← Setup раз в начале
+  // затем перезапустить Apache
+  
+  // Мониторинг в ЦИКЛЕ (ФАЗА 4):
+  get_tech_journal(action="Check", lastMinutes=5)       ← текущие іішибки ТЖ
+  get_event_log(level="Error", lastMinutes=5)           ← ошибки ЖР
+  
+  // Фильтрация:
+  get_tech_journal(action="Check", eventFilter="SDBL")  ← только SQL-ошибки
+  get_tech_journal(action="Check", eventFilter="EXCP")  ← только BSL-исключения
+
+ОГРАНИЧЕНИЯ:
+  - ТЖ не активируется до перезапуска процессов 1С
+  - logcfg.xml требует прав админа (C:\Program Files защищён)
+  - Конфигурация хранит 24 часа логов, затем удаляет
 ```
 
 ---
@@ -248,22 +301,25 @@ Workflow мониторинга (УЛУЧШЕННЫЙ):
 ### 5.3 Сценарий: Диагностика ошибки в работающей системе
 
 ```
-1. get_event_log(level="Error", lastMinutes=30)              → ошибки из ЖР
-2. get_object_module(metaType="...", name="...",              → код, который падает
+1. get_tech_journal(action="Check", lastMinutes=30)          → runtime-ошибки из ТЖ (EXCP, SDBL)
+2. get_event_log(level="Error", lastMinutes=30)              → ошибки из ЖР
+3. get_object_module(metaType="...", name="...",              → код, который падает
                      moduleType="ObjectModule")
-3. execute_query(queryText="ВЫБРАТЬ...")                      → состояние данных
-4. execute_code(code="Результат = ...")                       → тестирование гипотезы
-5. [ИСПРАВИТЬ]
-6. [ДЕПЛОЙ]
-7. get_event_log(level="Error", lastMinutes=5)               → проверка, что ошибка ушла
+4. execute_query(queryText="ВЫБРАТЬ...")                      → состояние данных
+5. execute_code(code="Результат = ...")                       → тестирование гипотезы
+6. [ИСПРАВИТЬ]
+7. [ДЕПЛОЙ]
+8. get_tech_journal(action="Check", lastMinutes=5)           → проверка ТЖ
+9. get_event_log(level="Error", lastMinutes=5)               → проверка ЖР
 ```
 
 ### 5.4 Сценарий: Проверка после деплоя
 
 ```
 1. get_users_list()                                          → пользователи на месте?
-2. get_event_log(level="Error", lastMinutes=5)               → нет ли новых ошибок?
-3. execute_query(queryText="ВЫБРАТЬ КОЛИЧЕСТВО(*) ИЗ         → данные на месте?
+2. get_tech_journal(action="Check", lastMinutes=5)           → runtime-ошибки ТЖ (исключения)
+3. get_event_log(level="Error", lastMinutes=5)               → ошибки ЖР
+4. execute_query(queryText="ВЫБРАТЬ КОЛИЧЕСТВО(*) ИЗ         → данные на месте?
    Справочник.Номенклатура")
 ```
 

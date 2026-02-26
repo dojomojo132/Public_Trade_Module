@@ -236,20 +236,29 @@
 		
 		<Object name="mcp_MCPСервер" synonym="MCP-cервер">
 			<Block name="Purpose">
-				<Content>Служебная подсистема для модуля Model Context Protocol (MCP) расширения IDE.</Content>
+				<Content>Служебная подсистема для модуля Model Context Protocol (MCP) расширения IDE. 42 инструмента, 4 ресурса, 6 промптов.</Content>
 			</Block>
 			<Block name="Logic">
 				<Items>
 					<Item>Содержит утилиты для интеграции с VS Code и автоматизации разработки.</Item>
 					<Item>Расширение MCP_Сервер (AddOn, prefix mcp_) реализует HTTP-сервис на URL /PTM_Clean/hs/mcp/mcp.</Item>
 					<Item>Подсистема mcp_КонтейнерыИнструментов содержит обработки-контейнеры инструментов.</Item>
+					<Item>Подсистема mcp_Ресурсы содержит обработки-контейнеры ресурсов (resources/read).</Item>
+					<Item>Подсистема mcp_Промпты содержит обработки-контейнеры промптов (prompts/get).</Item>
 				</Items>
 			</Block>
 			<Block name="DataModel">
 				<Fields>
-					<Field type="DataProcessor">mcp_ИнструментДанныеОКонфигурации - list_metadata_objects, get_metadata_structure.</Field>
-					<Field type="DataProcessor">mcp_ИнструментЗапросыИДанные - execute_query, get_register_data, get_document_movements.</Field>
-					<Field type="DataProcessor">mcp_ИнструментСправочнаяИнформация - list_enum_values, get_predefined_values.</Field>
+					<Field type="DataProcessor">mcp_ИнструментДанныеОКонфигурации - list_metadata_objects, get_metadata_structure, get_configuration_overview, get_connected_objects, get_form_structure, get_subsystem_content, analyze_module.</Field>
+					<Field type="DataProcessor">mcp_ИнструментЗапросыИДанные - execute_query, get_register_data, get_document_movements, search_data, export_data, get_data_summary.</Field>
+					<Field type="DataProcessor">mcp_ИнструментСправочнаяИнформация - list_enum_values, get_predefined_values, get_object_module.</Field>
+					<Field type="DataProcessor">mcp_ИнструментДиагностика - validate_metadata_integrity, check_document_posting, find_references, run_smoke_test, compare_periods, get_rights_info, get_locks_info.</Field>
+					<Field type="DataProcessor">mcp_ИнструментАдминистрирование - get_users_list, get_event_log, post_document, get_constant_value, set_constant_value, get_scheduled_jobs, get_session_info, clear_deleted, get_data_history.</Field>
+					<Field type="DataProcessor">mcp_ИнструментУправлениеДанными - create_catalog_item, create_document, update_register_record, delete_object, update_catalog_item, update_document, bulk_create, import_data, run_report.</Field>
+					<Field type="DataProcessor">mcp_ИнструментВыполнениеКода - execute_code.</Field>
+					<Field type="DataProcessor">mcp_РесурсPTM - ptm://datamodel, ptm://registers, ptm://business-logic.</Field>
+					<Field type="DataProcessor">mcp_РесурсСинтаксис - file://resource/syntax_1c.txt.</Field>
+					<Field type="DataProcessor">mcp_ПромптыPTM - generate_posting_module, create-metadata-object, diagnose-posting-error, generate_report_module, generate_form_handlers, diagnose_data_integrity.</Field>
 				</Fields>
 			</Block>
 			<Block name="History">
@@ -261,6 +270,18 @@
 					4. list_enum_values - значения перечисления с синонимами и обращением в коде.
 					5. get_predefined_values - предопределённые элементы справочников.
 					Исходники: MCP_Extension/ (выгрузка расширения из ИБ).
+				</Record>
+				<Record date="2026-02-25">Реализация Категорий A-B (инструменты 1-12):
+					Cat A: delete_object, update_catalog_item, update_document, get_constant_value, set_constant_value, search_data.
+					Cat B: get_rights_info, compare_periods, get_scheduled_jobs, run_report, bulk_create, get_locks_info.
+				</Record>
+				<Record date="2026-02-26">Реализация Категории C (инструменты 13-18):
+					import_data (массовый импорт из JSON, updateExisting), clear_deleted (удаление помеченных с проверкой ссылок, dryRun), get_data_history (история из ЖР).
+				</Record>
+				<Record date="2026-02-26">Реализация Категории D (ресурсы + промпты 19-23):
+					Ресурсы: ptm://registers (карта регистров ~9600 симв.), ptm://business-logic (документооборот ~8600 симв.).
+					Промпты: generate_report_module (СКД/Программный), generate_form_handlers (по структуре объекта), diagnose_data_integrity (6-шаговый план).
+					Итого: 42 инструмента, 4 ресурса, 6 промптов.
 				</Record>
 			</Block>
 		</Object>
@@ -449,6 +470,7 @@
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-25">Создание отчета с оборотно-сальдовой структурой. Реализованы фильтры по периоду и товару, разделение возвратов в отдельную колонку, отображение начальных и конечных остатков.</Record>
+				<Record date="2026-02-26">Исправлена ошибка запроса СКД: убрано условие ИЛИ из параметров виртуальной таблицы ОстаткиИОбороты (вызывало ошибку разбора). Фильтрация по Номенклатуре перенесена на уровень отбора СКД. Удалён избыточный параметр Номенклатура из запроса.</Record>
 			</Block>
 		</Object>
 
@@ -1223,6 +1245,7 @@
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
 				<Record date="2026-01-25">Добавлены поля Штрихкод, Цена, Сумма, СуммаНедостачиИзлишков. Реализована логика поиска по штрихкоду, автоматический расчет отклонений и сумм. Добавлена команда печати результатов (пока не полностью реализована).</Record>
+				<Record date="2026-02-25">Исправлена синтаксическая ошибка в запросах цены: литеральные \t заменены на табуляцию в модуле формы (ПолучитьДанныеНоменклатурыНаСервере) и модуле объекта (ПолучитьЗакупочнуюЦену). Ошибка приводила к runtime-крашу при добавлении товара и заполнении по остаткам.</Record>
 			</Block>
 		</Object>
 
@@ -1243,15 +1266,17 @@
 			<Block name="Logic">
 				<Items>
 					<Item event="ПриСозданииНаСервере">Автозаполнение реквизита "ТипЦен" из настроек по умолчанию (НастройкиПоУмолчанию.ПолучитьОсновнойТипЦен()) при создании нового документа.</Item>
-					<Item event="ТоварыШтрихкодПриИзменении">Поиск номенклатуры по штрихкоду в регистре сведений "Штрихкоды". При нахождении заполняется номенклатура, старая цена и новая цена (равная старой).</Item>
+					<Item event="ТоварыШтрихкодПриИзменении">Поиск номенклатуры по штрихкоду в регистре сведений "Штрихкоды". При нахождении заполняется номенклатура, старая цена и новая цена (равная старой). Если товар не найден — предлагает создать новый (как в накладных).</Item>
 					<Item event="ТоварыНоменклатураПриИзменении">Получение текущей цены номенклатуры из регистра "ЦеныНоменклатуры" и заполнение поля "СтараяЦена". Если новая цена = 0, устанавливается равной старой.</Item>
 					<Item event="ТоварыЦенаПриИзменении">Автоматический расчёт процента изменения цены по формуле: ((НоваяЦена - СтараяЦена) / СтараяЦена) * 100.</Item>
 					<Item event="ОбработкаПроведения">Запись в периодический регистр сведений "ЦеныНоменклатуры".</Item>
+					<Item event="ОбработкаОповещения">Аппаратный сканер штрихкодов (БПО): автоматическое добавление товара с текущей ценой, предложение создать при отсутствии.</Item>
 				</Items>
 			</Block>
 			<Block name="History">
 				<Record date="2026-01-15">Создание объекта.</Record>
 				<Record date="2026-01-25">Добавлены реквизиты: "Штрихкод", "СтараяЦена", "ПроцентИзменения". Реализован поиск по штрихкоду и автоматический расчёт процента изменения цены. Добавлено автозаполнение типа цены из настроек по умолчанию.</Record>
+				<Record date="2026-02-25">Доработка сканера как в накладных: ручной ввод штрихкода теперь предлагает создать номенклатуру (вместо предупреждения), добавлен ПослеСозданияНоменклатурыРучно callback, улучшено управление фокусом (АктивироватьЦенуВСтроке + ТекущийЭлемент).</Record>
 			</Block>
 		</Object>
 

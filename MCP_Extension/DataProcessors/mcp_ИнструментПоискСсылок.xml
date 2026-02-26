@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<DataProcessor uuid="c2d3e4f5-a6b7-4010-9abc-def012345010">
+	<DataProcessor uuid="700863b3-5173-4d58-b434-a6185bfe4277">
 		<InternalInfo>
 			<xr:GeneratedType name="DataProcessorObject.mcp_ИнструментПоискСсылок" category="Object">
-				<xr:TypeId>d3e4f5a6-b7c8-4011-abcd-ef0123456011</xr:TypeId>
-				<xr:ValueId>e4f5a6b7-c8d9-4012-bcde-f01234567012</xr:ValueId>
+				<xr:TypeId>e9fbfb2f-94c6-4f26-8032-ce7ffc477213</xr:TypeId>
+				<xr:ValueId>65fdc488-6e20-4221-a799-1ed78adf6be7</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DataProcessorManager.mcp_ИнструментПоискСсылок" category="Manager">
-				<xr:TypeId>f5a6b7c8-d9e0-4013-cdef-012345678013</xr:TypeId>
-				<xr:ValueId>a6b7c8d9-e0f1-4014-defa-123456789014</xr:ValueId>
+				<xr:TypeId>d04a1c30-480f-41e0-b2a9-9774a78dd07a</xr:TypeId>
+				<xr:ValueId>88b33fcf-fcee-461b-9452-adf6281225ae</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>

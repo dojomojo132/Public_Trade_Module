@@ -54,6 +54,8 @@
 | `mcp_mcp_1c_torgov_execute_query` | Выполнить запрос 1С, получить таблицу | `queryText` (обяз.), `maxRows` |
 | `mcp_mcp_1c_torgov_get_register_data` | Остатки/обороты/срез регистра | `registerType`, `name`, `mode` (Balance/Turnovers/SliceLast/All) |
 | `mcp_mcp_1c_torgov_get_document_movements` | Все движения документа по регистрам | `documentType`, `documentNumber` |
+| `mcp_mcp_1c_torgov_search_data` | Поиск по справочникам/документам | `metaType` (обяз.), `searchString`, `maxRows` |
+| `mcp_mcp_1c_torgov_export_data` | Экспорт данных в JSON/CSV | `metaType` (обяз.), `format` (JSON/CSV), `maxRows` |
 
 **Метаданные и структура:**
 | Инструмент | Описание | Ключевые параметры |
@@ -72,13 +74,21 @@
 |-----------|----------|-------------------|
 | `mcp_mcp_1c_torgov_get_object_module` | Путь к BSL-модулю (для read_file) | `metaType`, `name`, `moduleType`, `formName` |
 | `mcp_mcp_1c_torgov_execute_code` | Выполнить BSL-код на сервере | `code` (обяз.), `safeMode` |
+| `mcp_mcp_1c_torgov_analyze_module` | Анализ BSL-кода (процедуры, области, директивы) | `code` (обяз.) |
 
 **Диагностика:**
 | Инструмент | Описание | Ключевые параметры |
 |-----------|----------|-------------------|
 | `mcp_mcp_1c_torgov_validate_metadata_integrity` | Проверка целостности (запрос к каждой таблице) | `metaType` (опц.) |
 | `mcp_mcp_1c_torgov_check_document_posting` | Диагностика проведения документа | `documentType`, `number` (опц.) |
+| `mcp_mcp_1c_torgov_get_tech_journal` | **Технологический журнал (ТЖ)**: EXCP/SDBL/CALL runtime-ошибки. Действия: `Check`, `Setup`, `Stop`, `Status`. Активировать через Setup, затем перезапустить процессы 1С. | `action` (обяз.), `lastMinutes` (30), `maxRows` (50), `eventFilter` |}
 | `mcp_mcp_1c_torgov_find_references` | Поиск ссылок на элемент в БД | `metaType`, `name`, `searchValue` |
+| `mcp_mcp_1c_torgov_run_smoke_test` | Smoke-тест открытия форм объектов | `metaType` (обяз.), `name` (опц.) |
+| `mcp_mcp_1c_torgov_get_data_summary` | Сводка записей по всем таблицам ИБ | `metaType` (опц.) |
+| `mcp_mcp_1c_torgov_compare_periods` | Сравнение остатков/оборотов регистра между периодами | `registerName` (обяз.), `period1`, `period2` |
+| `mcp_mcp_1c_torgov_get_rights_info` | Права и роли пользователя по объекту | `metaType`, `name` |
+| `mcp_mcp_1c_torgov_get_locks_info` | Информация о блокировках (сеансы, транзакции) | _(нет)_ |
+| `mcp_mcp_1c_torgov_get_data_history` | История изменений объекта из ЖР | `metaType` (обяз.), `name` (обяз.), `searchValue`, `lastMinutes`, `maxRows` |
 
 **Администрирование:**
 | Инструмент | Описание | Ключевые параметры |
@@ -86,6 +96,11 @@
 | `mcp_mcp_1c_torgov_get_users_list` | Пользователи ИБ с ролями | _(нет)_ |
 | `mcp_mcp_1c_torgov_get_event_log` | Журнал регистрации 1С | `level`, `lastMinutes`, `maxRows` |
 | `mcp_mcp_1c_torgov_post_document` | Провести/отменить документ | `documentType`, `documentNumber`, `action` |
+| `mcp_mcp_1c_torgov_get_constant_value` | Получить значение константы | `constantName` (обяз.) |
+| `mcp_mcp_1c_torgov_set_constant_value` | Установить значение константы | `constantName` (обяз.), `value` (обяз.) |
+| `mcp_mcp_1c_torgov_get_scheduled_jobs` | Список регламентных заданий | _(нет)_ |
+| `mcp_mcp_1c_torgov_get_session_info` | Информация о текущем сеансе | _(нет)_ |
+| `mcp_mcp_1c_torgov_clear_deleted` | Удаление помеченных на удаление (с проверкой ссылок) | `metaType` (опц.), `dryRun` (опц., default: true) |
 
 **Управление данными:**
 | Инструмент | Описание | Ключевые параметры |
@@ -93,17 +108,28 @@
 | `mcp_mcp_1c_torgov_create_catalog_item` | Создать элемент справочника | `catalogName`, `description`, `attributes` (JSON) |
 | `mcp_mcp_1c_torgov_create_document` | Создать и провести документ | `documentType`, `date`, `attributes` (JSON), `post` |
 | `mcp_mcp_1c_torgov_update_register_record` | Запись в регистр сведений | `registerName`, `dimensions` (JSON), `resources` (JSON) |
+| `mcp_mcp_1c_torgov_delete_object` | Пометить/удалить элемент | `metaType` (обяз.), `name` (обяз.), `searchValue`, `force` |
+| `mcp_mcp_1c_torgov_update_catalog_item` | Обновить элемент справочника | `catalogName`, `searchValue`, `attributes` (JSON) |
+| `mcp_mcp_1c_torgov_update_document` | Обновить реквизиты документа | `documentType`, `documentNumber`, `attributes` (JSON) |
+| `mcp_mcp_1c_torgov_bulk_create` | Пакетное создание элементов (массив за один вызов) | `metaType` (обяз.), `name` (обяз.), `data` (JSON массив) |
+| `mcp_mcp_1c_torgov_import_data` | Импорт данных из JSON (с updateExisting) | `metaType` (обяз.), `name` (обяз.), `data` (JSON), `updateExisting` |
+| `mcp_mcp_1c_torgov_run_report` | Формирование отчёта по имени | `reportName` (обяз.), `params` (JSON, опц.) |
 
 ### 2.4 MCP Resources и Prompts
 
 **Ресурсы** (resources/list → resources/read):
 - `ptm://datamodel` — полная модель данных конфигурации (справочники, документы, регистры, перечисления, константы с типами)
+- `ptm://registers` — подробная карта всех регистров: измерения, ресурсы, реквизиты, регистраторы (~9600 символов)
+- `ptm://business-logic` — карта документооборота: документы → реквизиты → ТЧ → движения → отчёты (~8600 символов)
 - `file://resource/syntax_1c.txt` — синтаксис встроенного языка 1С
 
 **Промпты** (prompts/list → prompts/get):
 - `generate_posting_module` — шаблон модуля проведения (аргумент: `documentName`)
 - `create-metadata-object` — чеклист создания объекта (аргументы: `objectType`, `objectName`, `description`)
 - `diagnose-posting-error` — план диагностики ошибки проведения (аргументы: `documentType`, `errorText`)
+- `generate_report_module` — шаблон модуля отчёта СКД/программный (аргументы: `reportName`, `mode`)
+- `generate_form_handlers` — шаблон обработчиков формы (аргументы: `metaType`, `objectName`)
+- `diagnose_data_integrity` — план расследования нарушения целостности данных (аргументы: `registerName`, `symptom`)
 
 ### 2.5 Правила
 

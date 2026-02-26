@@ -1,7 +1,7 @@
 ﻿# Реализация дополнительных MCP-инструментов для PTM
 
-> **Дата:** 2026-02-24  
-> **Статус:** Спецификация  
+> **Дата:** 2026-02-26  
+> **Статус:** Реализовано (42 инструмента, 4 ресурса, 6 промптов)  
 > **Основа:** Расширение [vladimir-kharin/1c_mcp](https://github.com/vladimir-kharin/1c_mcp)  
 > **Версия расширения:** 1.2 (MCP_Сервер.cfe)
 
@@ -942,30 +942,71 @@ Invoke-RestMethod -Uri "http://localhost/PTM/hs/mcp/mcp" `
 
 ## 6. СВОДНАЯ ТАБЛИЦА ВСЕХ ИНСТРУМЕНТОВ
 
-| # | Инструмент | Приоритет | Сложность | Описание |
-|---|-----------|-----------|-----------|----------|
-| ★ | `list_metadata_objects` | — | — | **ВСТРОЕН** |
-| ★ | `get_metadata_structure` | — | — | **ВСТРОЕН** |
-| ✅ | `execute_query` | P1 | Низкая | **Phase 1** — Выполнить запрос 1С, получить таблицу |
-| ✅ | `get_register_data` | P1 | Средняя | **Phase 1** — Остатки/обороты/срез регистра |
-| ✅ | `get_document_movements` | P1 | Средняя | **Phase 1** — Движения документа по всем регистрам |
-| ✅ | `list_enum_values` | P2 | Низкая | **Phase 1** — Значения перечисления |
-| ✅ | `get_predefined_values` | P2 | Низкая | **Phase 1** — Предопределённые элементы справочника |
-| ✅ | `get_object_module` | P1 | Низкая | **Phase 2** — Резолвер путей к BSL-модулям |
-| ✅ | `execute_code` | P1 | Низкая | **Phase 2** — Выполнить произвольный BSL-код |
-| ✅ | `get_users_list` | P2 | Низкая | **Phase 2** — Пользователи ИБ с ролями |
-| ✅ | `get_event_log` | P3 | Средняя | **Phase 2** — Журнал регистрации с фильтрами |
-| ✅ | `find_references` | P2 | Средняя | **Phase 3** — Поиск ссылок на объект |
-| ✅ | `get_form_structure` | P2 | Средняя | **Phase 3** — Список форм + структура объекта + пути |
-| ✅ | `post_document` | P3 | Низкая | **Phase 3** — Провести/отменить документ |
-| ✅ | `get_subsystem_content` | P3 | Низкая | **Phase 3** — Состав подсистемы |
-| 📋 | `get_configuration_overview` | P1 | Низкая | **Phase 4** — Обзор конфигурации одним вызовом |
-| 📋 | `validate_metadata_integrity` | P1 | Высокая | **Phase 4** — Post-deploy проверка целостности |
-| 📋 | `get_connected_objects` | P2 | Средняя | **Phase 4** — Граф зависимостей объекта |
-| 📋 | `check_document_posting` | P2 | Средняя | **Phase 4** — Диагностика проведения |
-| 📋 | `analyze_bsl_antipatterns` | P2 | Высокая | **Phase 4** — Антипаттерны в BSL (аналог _ptm_analyze) |
-| 📋 | `create_catalog_item` | P2 | Средняя | **Phase 5** — Создать элемент справочника |
-| 📋 | `create_document` | P2 | Средняя | **Phase 5** — Создать и провести документ |
-| 📋 | `update_register_record` | P3 | Средняя | **Phase 5** — Запись в регистр сведений |
-| ✅ | MCP Resources (`ptm://datamodel`) | P3 | Средняя | **Phase 6** — Модель данных конфигурации |
-| ✅ | MCP Prompts (3 промпта) | P3 | Низкая | **Phase 6** — Шаблоны: проведение, создание, диагностика |
+> **Обновлено:** 2026-02-26 | **Итого:** 42 инструмента, 4 ресурса, 6 промптов
+
+| # | Инструмент | Категория | Статус | Описание |
+|---|-----------|-----------|--------|----------|
+| ★ | `list_metadata_objects` | Встроен | ✅ | Список объектов метаданных по типу |
+| ★ | `get_metadata_structure` | Встроен | ✅ | Структура объекта (реквизиты, ТЧ, типы) |
+| 1 | `execute_query` | Phase 1 | ✅ | Выполнить запрос 1С, получить таблицу |
+| 2 | `get_register_data` | Phase 1 | ✅ | Остатки/обороты/срез регистра |
+| 3 | `get_document_movements` | Phase 1 | ✅ | Движения документа по регистрам |
+| 4 | `list_enum_values` | Phase 1 | ✅ | Значения перечисления |
+| 5 | `get_predefined_values` | Phase 1 | ✅ | Предопределённые элементы |
+| 6 | `get_object_module` | Phase 2 | ✅ | Резолвер путей к BSL-модулям |
+| 7 | `execute_code` | Phase 2 | ✅ | Произвольный BSL-код на сервере |
+| 8 | `get_users_list` | Phase 2 | ✅ | Пользователи ИБ с ролями |
+| 9 | `get_event_log` | Phase 2 | ✅ | Журнал регистрации с фильтрами |
+| 10 | `find_references` | Phase 3 | ✅ | Поиск ссылок на объект в БД |
+| 11 | `get_form_structure` | Phase 3 | ✅ | Список форм + структура + пути |
+| 12 | `post_document` | Phase 3 | ✅ | Провести/отменить документ |
+| 13 | `get_subsystem_content` | Phase 3 | ✅ | Состав подсистемы |
+| 14 | `get_configuration_overview` | Phase 4 | ✅ | Обзор конфигурации одним вызовом |
+| 15 | `validate_metadata_integrity` | Phase 4 | ✅ | Post-deploy проверка целостности |
+| 16 | `get_connected_objects` | Phase 4 | ✅ | Граф зависимостей объекта |
+| 17 | `check_document_posting` | Phase 4 | ✅ | Диагностика проведения |
+| 18 | `analyze_module` | Phase 4 | ✅ | Анализ BSL-кода (процедуры, области) |
+| 19 | `create_catalog_item` | Phase 5 | ✅ | Создать элемент справочника |
+| 20 | `create_document` | Phase 5 | ✅ | Создать и провести документ |
+| 21 | `update_register_record` | Phase 5 | ✅ | Запись в регистр сведений |
+| 22 | `run_smoke_test` | Phase 5 | ✅ | Smoke-тест открытия форм |
+| 23 | `get_data_summary` | Phase 5 | ✅ | Сводка записей по таблицам ИБ |
+| 24 | `delete_object` | Cat A | ✅ | Пометка/удаление элемента |
+| 25 | `update_catalog_item` | Cat A | ✅ | Обновить элемент справочника |
+| 26 | `update_document` | Cat A | ✅ | Обновить реквизиты документа |
+| 27 | `get_constant_value` | Cat A | ✅ | Прочитать значение константы |
+| 28 | `set_constant_value` | Cat A | ✅ | Установить значение константы |
+| 29 | `search_data` | Cat A | ✅ | Поиск по справочникам/документам |
+| 30 | `get_rights_info` | Cat B | ✅ | Права и роли по объекту |
+| 31 | `compare_periods` | Cat B | ✅ | Сравнение остатков/оборотов между периодами |
+| 32 | `get_scheduled_jobs` | Cat B | ✅ | Список регламентных заданий |
+| 33 | `run_report` | Cat B | ✅ | Формирование отчёта по имени |
+| 34 | `bulk_create` | Cat B | ✅ | Пакетное создание элементов |
+| 35 | `get_locks_info` | Cat B | ✅ | Информация о блокировках |
+| 36 | `export_data` | Cat C | ✅ | Выгрузка данных JSON/CSV |
+| 37 | `import_data` | Cat C | ✅ | Импорт данных из JSON (с updateExisting) |
+| 38 | `get_session_info` | Cat C | ✅ | Информация о текущем сеансе |
+| 39 | `clear_deleted` | Cat C | ✅ | Удаление помеченных (с проверкой ссылок) |
+| 40 | `get_data_history` | Cat C | ✅ | История изменений из ЖР |
+| 41 | `get_session_info` | Cat C | ✅ | Информация о сеансе |
+| 42 | `analyze_module` | Cat C | ✅ | Анализ BSL-модулей |
+
+### Ресурсы (resources/read)
+
+| # | URI | Статус | Описание | Размер |
+|---|-----|--------|----------|--------|
+| 1 | `ptm://datamodel` | ✅ | Модель данных конфигурации | ~5000 симв. |
+| 2 | `ptm://registers` | ✅ | Карта регистров с измерениями, ресурсами, регистраторами | ~9600 симв. |
+| 3 | `ptm://business-logic` | ✅ | Документооборот: документы → реквизиты → ТЧ → движения | ~8600 симв. |
+| 4 | `file://resource/syntax_1c.txt` | ✅ | Синтаксис встроенного языка 1С | — |
+
+### Промпты (prompts/get)
+
+| # | Имя | Статус | Аргументы | Описание |
+|---|-----|--------|-----------|----------|
+| 1 | `generate_posting_module` | ✅ | `documentName` | Шаблон модуля проведения |
+| 2 | `create-metadata-object` | ✅ | `objectType`, `objectName`, `description` | Чеклист создания объекта |
+| 3 | `diagnose-posting-error` | ✅ | `documentType`, `errorText` | Диагностика ошибки проведения |
+| 4 | `generate_report_module` | ✅ | `reportName`, `mode` | Шаблон модуля отчёта (СКД/Программный) |
+| 5 | `generate_form_handlers` | ✅ | `metaType`, `objectName` | Обработчики формы по структуре объекта |
+| 6 | `diagnose_data_integrity` | ✅ | `registerName`, `symptom` | 6-шаговый план расследования целостности |

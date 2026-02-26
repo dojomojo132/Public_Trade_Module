@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<DataProcessor uuid="b1a2c3d4-e5f6-4001-9abc-def012345001">
+	<DataProcessor uuid="111b484a-1a56-4a42-b70a-929ae5f747c9">
 		<InternalInfo>
 			<xr:GeneratedType name="DataProcessorObject.mcp_ИнструментМодулиИКод" category="Object">
-				<xr:TypeId>b2c3d4e5-f6a7-4002-abcd-ef0123456002</xr:TypeId>
-				<xr:ValueId>c3d4e5f6-a7b8-4003-bcde-f01234567003</xr:ValueId>
+				<xr:TypeId>7e6de1ec-7efc-415c-8756-766fc5247dec</xr:TypeId>
+				<xr:ValueId>d902230a-9fac-4e38-827e-e4f3c7b9ba37</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DataProcessorManager.mcp_ИнструментМодулиИКод" category="Manager">
-				<xr:TypeId>d4e5f6a7-b8c9-4004-cdef-012345678004</xr:TypeId>
-				<xr:ValueId>e5f6a7b8-c9d0-4005-defa-123456789005</xr:ValueId>
+				<xr:TypeId>066abf39-77be-46ba-9cd3-99f764a81027</xr:TypeId>
+				<xr:ValueId>b2ec5e56-dbcc-4d93-8d0e-0d7739c7495f</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>

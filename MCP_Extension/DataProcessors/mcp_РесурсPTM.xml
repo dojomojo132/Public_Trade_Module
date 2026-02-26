@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<DataProcessor uuid="c3d4e5f6-a7b8-4040-9abc-def012340040">
+	<DataProcessor uuid="e39981ab-fefc-48b4-b75c-aa8a32127772">
 		<InternalInfo>
 			<xr:GeneratedType name="DataProcessorObject.mcp_РесурсPTM" category="Object">
-				<xr:TypeId>c3d4e5f6-a7b8-4040-0001-def012340040</xr:TypeId>
-				<xr:ValueId>c3d4e5f6-a7b8-4040-0002-def012340040</xr:ValueId>
+				<xr:TypeId>ab3461b6-e3f9-49f9-b27a-882b8a20f52f</xr:TypeId>
+				<xr:ValueId>c08a9191-d770-4495-b6b3-bf344442be9a</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DataProcessorManager.mcp_РесурсPTM" category="Manager">
-				<xr:TypeId>c3d4e5f6-a7b8-4040-0003-def012340040</xr:TypeId>
-				<xr:ValueId>c3d4e5f6-a7b8-4040-0004-def012340040</xr:ValueId>
+				<xr:TypeId>c555a7ca-816e-4fa6-8af4-5bc4b255cf98</xr:TypeId>
+				<xr:ValueId>50726320-ae8f-491e-92ac-dd4ca465a0eb</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>

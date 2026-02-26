@@ -14,9 +14,14 @@
         "editor.wordWrap": "on"
     },
     
+    "files.exclude": {
+        "**/_backups/**": true
+    },
+
     "search.exclude": {
         "**/node_modules": true,
-        "**/DerivedData": true
+        "**/DerivedData": true,
+        "**/_backups/**": true
     },
     
     "github.copilot.chat.codeGeneration.useReferencedFiles": true,
