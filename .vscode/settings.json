@@ -30,14 +30,5 @@
     "chat.agent.autoApprove": true,
 
     // Максимальное количество шагов агента за один запрос
-    "chat.agent.maxRequests": 1000,
-
-    // Path-specific instructions (.github/instructions/*.instructions.md)
-    "chat.includeApplyingInstructions": true,
-
-    // Подгрузка файлов по Markdown-ссылкам в instructions/prompts
-    "chat.includeReferencedInstructions": true,
-
-    // Рекомендовать промпты при старте нового чата
-    "chat.promptFilesRecommendations": true
+    "chat.agent.maxRequests": 1000
 }
