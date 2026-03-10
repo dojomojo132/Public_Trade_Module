@@ -36,6 +36,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ВаловаяПрибыль</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ПродажиПоСчетам</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">HTTPService.ТоварыАПИ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ВыручкаЗаСмену</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

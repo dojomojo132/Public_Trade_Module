@@ -14,6 +14,16 @@
 			"label": "Git push",
 			"type": "shell",
 			"command": "git add -A; python \"D:\\Git\\Public_Trade_Module\\scripts\\_git_commit.py\""
+		},
+		{
+			"label": "Generate form ПродажиПоКассам",
+			"type": "shell",
+			"command": "python \"D:\\Git\\Public_Trade_Module\\scripts\\_generate_form.py\" --type dataprocessor --object ПродажиПоКассам --form Форма"
+		},
+		{
+			"label": "Generate form ПродажиПоКассам",
+			"type": "shell",
+			"command": "python \"D:\\Git\\Public_Trade_Module\\scripts\\_generate_form.py\" --type dataprocessor --object ПродажиПоКассам --form Форма"
 		}
 	]
 }

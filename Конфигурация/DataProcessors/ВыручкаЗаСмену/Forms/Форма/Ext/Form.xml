@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>true</Autofill>
+		<ChildItems>
+			<Button name="КнопкаПоказать" id="1">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Показать</CommandName>
+				<DefaultButton>true</DefaultButton>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Показать</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="КнопкаПоказатьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Label name="НадписьПусто" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нет открытых кассовых смен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нет открытых кассовых смен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Visible>false</Visible>
+			<ExtendedTooltip name="НадписьПустоРасширеннаяПодсказка" id="4"/>
+		</Label>
+		<Group name="ГруппаЗаголовокРезультата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок результата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заголовок результата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Visible>false</Visible>
+			<Type>UsualGroup</Type>
+			<Grouping>Vertical</Grouping>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаголовокРезультатаРасширеннаяПодсказка" id="6"/>
+			<ChildItems>
+				<Label name="НадписьЗаголовок" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выручка по кассам за текущую смену</v8:content>
+						</v8:item>
+					</Title>
+					<Visible>false</Visible>
+					<ExtendedTooltip name="НадписьЗаголовокРасширеннаяПодсказка" id="8"/>
+					<Font styleName="NormalTextFont" kind="FontSize" size="14"/>
+				</Label>
+			</ChildItems>
+		</Group>
+		<Group name="ГруппаРезультат" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Visible>false</Visible>
+			<Type>UsualGroup</Type>
+			<Grouping>Vertical</Grouping>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="10"/>
+		</Group>
+		<Label name="НадписьИтого" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИТОГО:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Visible>false</Visible>
+			<ExtendedTooltip name="НадписьИтогоРасширеннаяПодсказка" id="12"/>
+			<Font styleName="NormalTextFont" kind="FontSize" size="16"/>
+		</Label>
+	</ChildItems>
+	<CommandList>
+		<Command name="Показать" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать выручку за смену</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Показать</Action>
+		</Command>
+	</CommandList>
+</Form>

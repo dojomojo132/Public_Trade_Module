@@ -1121,6 +1121,9 @@
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Form.Форма" id="075113be-19b5-4efd-be64-963501788199" configVersion="69b2bb5d62d29345a4813c99093be25e00000000"/>
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Form.Форма.Form" id="075113be-19b5-4efd-be64-963501788199.0" configVersion="603c7c8c3c53e94cbed395e744d5589600000000"/>
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.ManagerModule" id="b647814e-42de-4f39-b7d4-8de98bf88a27.2" configVersion="1467246418db1448b01c13fb9d36fb2d00000000"/>
+		<Metadata name="DataProcessor.ВыручкаЗаСмену" id="f3a1b2c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" configVersion="a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d600000000"/>
+		<Metadata name="DataProcessor.ВыручкаЗаСмену.Form.Форма" id="e8f9a0b1-c2d3-4e4f-9a6b-7c8d9e0f1a2b" configVersion="b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e700000000"/>
+		<Metadata name="DataProcessor.ВыручкаЗаСмену.Form.Форма.Form" id="e8f9a0b1-c2d3-4e4f-9a6b-7c8d9e0f1a2b.0" configVersion="c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f800000000"/>
 		<Metadata name="DataProcessor.РабочееМестоКассира" id="1876b53a-c567-4e3a-9e12-123456789abc" configVersion="47973c5f5520944791b4d8691056754800000000">
 			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ТекущаяГруппа" id="1876b53a-c567-4e3a-9e12-123456789ac1"/>
 			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="1876b53a-c567-4e3a-9e12-123456789ac2"/>

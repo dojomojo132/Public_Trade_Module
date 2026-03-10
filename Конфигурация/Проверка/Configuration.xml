@@ -758,6 +758,7 @@
 			<DataProcessor>ОбменСОфлайнОборудованием</DataProcessor>
 			<DataProcessor>ПанельАдминистрированияБПО</DataProcessor>
 			<DataProcessor>ПечатьЭтикетокИЦенниковБПО</DataProcessor>
+			<DataProcessor>ВыручкаЗаСмену</DataProcessor>
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
