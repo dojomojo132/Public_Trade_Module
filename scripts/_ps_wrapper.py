@@ -20,6 +20,7 @@ import subprocess
 import sys
 import pathlib
 import base64
+import os
 
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = PROJECT_ROOT / "Документация" / "Валидация"
@@ -96,6 +97,21 @@ def main():
     if script_name not in SCRIPT_MAP:
         print(f"ОШИБКА: Неизвестный скрипт '{script_name}'. Доступные: {', '.join(SCRIPT_MAP.keys())}")
         sys.exit(1)
+
+    # Подхватываем учётные данные из .env если -User не передан явно
+    if script_name == "deploy" and "-User" not in extra_args:
+        env_file = PROJECT_ROOT / ".env"
+        if env_file.exists():
+            env_vars = {}
+            for line in env_file.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, _, val = line.partition("=")
+                    env_vars[key.strip()] = val.strip()
+            user = env_vars.get("PTM_1C_USER", "")
+            password = env_vars.get("PTM_1C_PASSWORD", "")
+            if user:
+                extra_args = ["-User", user] + (["-Password", password] if password else []) + extra_args
 
     script_path = SCRIPT_MAP[script_name]
     exit_code = run_ps_script(script_path, extra_args)

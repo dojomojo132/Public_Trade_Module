@@ -759,6 +759,7 @@
 			<DataProcessor>ПанельАдминистрированияБПО</DataProcessor>
 			<DataProcessor>ПечатьЭтикетокИЦенниковБПО</DataProcessor>
 			<DataProcessor>ВыручкаЗаСмену</DataProcessor>
+			<DataProcessor>ПродажиПоКассам</DataProcessor>
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
