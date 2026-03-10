@@ -21,14 +21,12 @@
 			</Synonym>
 			<Comment/>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>DataProcessor.ПродажиПоКассам.Form.Форма</DefaultForm>
+			<DefaultForm/>
 			<AuxiliaryForm/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<ExtendedPresentation/>
 			<Explanation/>
 		</Properties>
-		<ChildObjects>
-			<Form>Форма</Form>
-		</ChildObjects>
+		<ChildObjects/>
 	</DataProcessor>
 </MetaDataObject>
