@@ -4,11 +4,11 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
-		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
-		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаШапка" id="1">
@@ -126,13 +126,13 @@
 					<ChildItems>
 						<InputField name="ПолеВводаМарки" id="94">
 							<DataPath>ТекстВводаМарки</DataPath>
+							<Visible>false</Visible>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Отсканируйте или введите марку</v8:content>
 								</v8:item>
 							</Title>
-							<Visible>false</Visible>
 							<ContextMenu name="ПолеВводаМаркиКонтекстноеМеню" id="95"/>
 							<ExtendedTooltip name="ПолеВводаМаркиРасширеннаяПодсказка" id="96"/>
 							<Events>
@@ -173,8 +173,8 @@
 								<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="44"/>
 							</SearchControlAddition>
 							<Events>
-								<Event name="OnChange">ТЧПриИзменении</Event>
 								<Event name="Selection">ТЧВыбор</Event>
+								<Event name="OnChange">ТЧПриИзменении</Event>
 							</Events>
 							<ChildItems>
 								<InputField name="ТЧНоменклатура" id="9">
@@ -250,6 +250,51 @@
 								</InputField>
 							</ChildItems>
 						</Table>
+						<UsualGroup name="ГруппаСдачи" id="97">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расчёт сдачи</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСдачиРасширеннаяПодсказка" id="98"/>
+							<ChildItems>
+								<InputField name="СуммаОтКлиентаПоле" id="99">
+									<DataPath>СуммаОтКлиента</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Внесено:</v8:content>
+										</v8:item>
+									</Title>
+									<Width>12</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Font ref="style:LargeTextFont" height="12" bold="true" kind="StyleItem"/>
+									<ContextMenu name="СуммаОтКлиентаПолеКонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="СуммаОтКлиентаПолеРасширеннаяПодсказка" id="101"/>
+									<Events>
+										<Event name="OnChange">СуммаОтКлиентаПолеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelField name="СуммаСдачиПоле" id="102">
+									<DataPath>СуммаСдачи</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>СДАЧА:</v8:content>
+										</v8:item>
+									</Title>
+									<TextColor>web:Green</TextColor>
+									<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
+									<ContextMenu name="СуммаСдачиПолеКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="СуммаСдачиПолеРасширеннаяПодсказка" id="104"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ПанельКнопок" id="13">
 							<Group>Horizontal</Group>
 							<Representation>None</Representation>
@@ -261,6 +306,16 @@
 									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.Рассчитать</CommandName>
 									<ExtendedTooltip name="РассчитатьРасширеннаяПодсказка" id="54"/>
+								</Button>
+								<Button name="КнопкаСдача" id="105">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.РассчитатьСдачу</CommandName>
+									<ExtendedTooltip name="КнопкаСдачаРасширеннаяПодсказка" id="106"/>
+								</Button>
+								<Button name="ПродажиПоКассам" id="107">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПоказатьПродажиПоКассам</CommandName>
+									<ExtendedTooltip name="ПродажиПоКассамРасширеннаяПодсказка" id="108"/>
 								</Button>
 								<Button name="ЗавершитьРаботу" id="16">
 									<Type>UsualButton</Type>
@@ -500,7 +555,6 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
-	
 		<Attribute name="ИспользоватьПодключаемоеОборудование" id="100">
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -524,7 +578,40 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="СуммаОтКлиента" id="103">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внесено клиентом</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СуммаСдачи" id="104">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сдача</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+
 	<Commands>
 		<Command name="Рассчитать" id="1">
 			<Title>
@@ -708,6 +795,36 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПереключитьПолноэкранныйРежим</Action>
+		</Command>
+		<Command name="РассчитатьСдачу" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СДАЧА</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать сдачу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РассчитатьСдачу</Action>
+		</Command>
+		<Command name="ПоказатьПродажиПоКассам" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПРОДАЖИ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать сумму продаж по кассам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьПродажиПоКассам</Action>
 		</Command>
 	</Commands>
 </Form>

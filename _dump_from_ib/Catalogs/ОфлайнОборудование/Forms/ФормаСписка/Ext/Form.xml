@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>CancelSearch</ExcludedCommand>
+		<ExcludedCommand>ChangeHistory</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+		<ExcludedCommand>Find</ExcludedCommand>
+		<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>ListSettings</ExcludedCommand>
+		<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+		<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Управление" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа управления отборами.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="УправлениеРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<RadioButtonField name="ТипПодключенияОборудования" id="24">
+					<DataPath>ТипПодключенияОборудования</DataPath>
+					<Visible>false</Visible>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Локальное подключение</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыПодключенияОборудования.EnumValue.ЛокальноеПодключение</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В общем доступе</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ТипыПодключенияОборудования.EnumValue.ОбщийДоступ</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ТипПодключенияОборудованияКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ТипПодключенияОборудованияРасширеннаяПодсказка" id="26"/>
+					<Events>
+						<Event name="OnChange">ТипПодключенияОборудованияПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="ИмяКомпьютера" id="30">
+					<DataPath>ИмяКомпьютера</DataPath>
+					<Width>16</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>16</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ИмяКомпьютераКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ИмяКомпьютераРасширеннаяПодсказка" id="32"/>
+					<Events>
+						<Event name="OnChange">ИмяКомпьютераПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="РабочееМесто" id="33">
+					<DataPath>РабочееМесто</DataPath>
+					<Width>18</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>18</MaxWidth>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="РабочееМестоКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="РабочееМестоРасширеннаяПодсказка" id="35"/>
+					<Events>
+						<Event name="OnChange">РабочееМестоПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокУстройств" id="3">
+			<Representation>List</Representation>
+			<DefaultItem>true</DefaultItem>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<SelectionMode>SingleRow</SelectionMode>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>СписокУстройств</DataPath>
+			<RowPictureDataPath>СписокУстройств.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокУстройствКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокУстройствКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ФормаПодключитьНовое" id="36">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Create</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подключить новое</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаПодключитьНовоеРасширеннаяПодсказка" id="37"/>
+					</Button>
+					<Button name="СписокУстройствНастроитьОборудование" id="38">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НастроитьОборудование</CommandName>
+						<ExtendedTooltip name="СписокУстройствНастроитьОборудованиеРасширеннаяПодсказка" id="39"/>
+					</Button>
+					<Button name="СписокУстройствВывестиСписок" id="78">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.OutputList</CommandName>
+						<ExtendedTooltip name="СписокУстройствВывестиСписокРасширеннаяПодсказка" id="79"/>
+					</Button>
+					<Button name="СписокУстройствИзменитьФорму" id="76">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<ExtendedTooltip name="СписокУстройствИзменитьФормуРасширеннаяПодсказка" id="77"/>
+					</Button>
+					<ButtonGroup name="ПодключаемыеКоманды" id="83">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подключаемые команды</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодключаемыеКомандыРасширеннаяПодсказка" id="84"/>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокУстройствРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокУстройствСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>СписокУстройств</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУстройствСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокУстройствСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокУстройствСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>СписокУстройств</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<HorizontalLocation>Left</HorizontalLocation>
+				<ContextMenu name="СписокУстройствСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокУстройствСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУстройствУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>СписокУстройств</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУстройствУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУстройствУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокУстройствПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Ссылка" id="80">
+					<DataPath>СписокУстройств.Ref</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="82"/>
+				</LabelField>
+				<LabelField name="СписокУстройствНаименование" id="43">
+					<DataPath>СписокУстройств.Description</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокУстройствНаименованиеКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="СписокУстройствНаименованиеРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="СписокУстройствОбработчикОфлайнОборудования" id="58">
+					<DataPath>СписокУстройств.ОбработчикОфлайнОборудования</DataPath>
+					<ContextMenu name="СписокУстройствОбработчикОфлайнОборудованияКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="СписокУстройствОбработчикОфлайнОборудованияРасширеннаяПодсказка" id="60"/>
+				</LabelField>
+				<LabelField name="СписокУстройствТипОфлайнОборудования" id="67">
+					<DataPath>СписокУстройств.ТипОфлайнОборудования</DataPath>
+					<ContextMenu name="СписокУстройствТипОфлайнОборудованияКонтекстноеМеню" id="68"/>
+					<ExtendedTooltip name="СписокУстройствТипОфлайнОборудованияРасширеннаяПодсказка" id="69"/>
+				</LabelField>
+				<LabelField name="СписокУстройствИмяКомпьютера" id="73">
+					<DataPath>СписокУстройств.ИмяКомпьютера</DataPath>
+					<Width>20</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="СписокУстройствИмяКомпьютераКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="СписокУстройствИмяКомпьютераРасширеннаяПодсказка" id="75"/>
+				</LabelField>
+				<LabelField name="СписокУстройствРабочееМесто" id="70">
+					<DataPath>СписокУстройств.РабочееМесто</DataPath>
+					<ContextMenu name="СписокУстройствРабочееМестоКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="СписокУстройствРабочееМестоРасширеннаяПодсказка" id="72"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокУстройств" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список устройств</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>СписокУстройств.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникОфлайнОборудование.Ссылка,
+	СправочникОфлайнОборудование.ПометкаУдаления,
+	СправочникОфлайнОборудование.Наименование,
+	СправочникОфлайнОборудование.ОбработчикОфлайнОборудования,
+	СправочникОфлайнОборудование.Организация,
+	СправочникОфлайнОборудование.ИдентификаторWebСервисОборудования,
+	СправочникОфлайнОборудование.Параметры,
+	СправочникОфлайнОборудование.ТипОфлайнОборудования,
+	СправочникОфлайнОборудование.ТипПодключенияОборудования,
+	СправочникОфлайнОборудование.РабочееМесто,
+	СправочникОфлайнОборудование.РабочееМесто.Код КАК РабочееМестоКод,
+	СправочникОфлайнОборудование.РабочееМесто.ИмяКомпьютера КАК ИмяКомпьютера,
+	СправочникОфлайнОборудование.Предопределенный,
+	СправочникОфлайнОборудование.ИмяПредопределенныхДанных
+ИЗ
+	Справочник.ОфлайнОборудование КАК СправочникОфлайнОборудование</QueryText>
+				<MainTable>Catalog.ОфлайнОборудование</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИмяКомпьютера" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компьютер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьДопЭлементы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать доп элементы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РабочееМесто" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочее место</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееИмяКомпьютера" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее имя компьютера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееРабочееМесто" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее рабочее место</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.РабочиеМеста</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТипПодключенияОборудования" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип подключения оборудования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ТипыПодключенияОборудования</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НастроитьОборудование" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить оборудование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьОборудование</Action>
+		</Command>
+	</Commands>
+</Form>

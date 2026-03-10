@@ -1,8 +1,10 @@
 ﻿{
   "$schema": "https://1c-syntax.github.io/bsl-language-server/configuration/schema.json",
   "language": "ru",
+  "configurationRoot": "Конфигурация",
   "diagnostics": {
     "mode": "all",
+    "analyzeOnStart": false,
     "computeTrigger": "onSave",
     "skipSupport": "withSupportLocked",
     "parameters": {

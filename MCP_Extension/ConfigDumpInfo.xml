@@ -29,6 +29,8 @@
 		<Metadata name="DataProcessor.mcp_ИнструментСправочнаяИнформация.ManagerModule" id="05117309-c662-447a-9242-421ba5bb7840.2" configVersion="8e2d262784b80b6e5c12607add301b5abbaf977b"/>
 		<Metadata name="DataProcessor.mcp_ИнструментУправлениеДанными" id="f0f6756a-412f-4644-8299-e1749b4b2923" configVersion="3f5f8301d1689007d59ef97b332370270f1a7764"/>
 		<Metadata name="DataProcessor.mcp_ИнструментУправлениеДанными.ManagerModule" id="f0f6756a-412f-4644-8299-e1749b4b2923.2" configVersion="fc6060ae5ffe271e54173a02df87d9411c5b387a"/>
+		<Metadata name="DataProcessor.mcp_ИнструментГенерацияФорм" id="c4d7e8f0-1a2b-4c3d-9e5f-6a7b8c9d0e1f" configVersion="a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d00000000"/>
+		<Metadata name="DataProcessor.mcp_ИнструментГенерацияФорм.ManagerModule" id="c4d7e8f0-1a2b-4c3d-9e5f-6a7b8c9d0e1f.2" configVersion="b2c3d4e5f6a74b8c9d0e1f2a3b4c5d6e00000000"/>
 		<Metadata name="DataProcessor.mcp_ПромптыPTM" id="118ec40a-fd8a-4ab9-adef-cae6a413825b" configVersion="e49b9865c64cbb6342bc0bdb0fc23e0013cd9af8"/>
 		<Metadata name="DataProcessor.mcp_ПромптыPTM.ManagerModule" id="118ec40a-fd8a-4ab9-adef-cae6a413825b.2" configVersion="565f4ae225efc3a38b29d47456ee5225ebc043d6"/>
 		<Metadata name="DataProcessor.mcp_РесурсPTM" id="e39981ab-fefc-48b4-b75c-aa8a32127772" configVersion="2af50a6a9d7cecbdd6cccefb39c7d949e3999031"/>

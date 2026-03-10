@@ -88,6 +88,7 @@
 			<DataProcessor>mcp_ИнструментПоискСсылок</DataProcessor>
 			<DataProcessor>mcp_ИнструментДиагностика</DataProcessor>
 			<DataProcessor>mcp_ИнструментУправлениеДанными</DataProcessor>
+			<DataProcessor>mcp_ИнструментГенерацияФорм</DataProcessor>
 			<DataProcessor>mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка</DataProcessor>
 			<DataProcessor>mcp_РесурсPTM</DataProcessor>
 			<DataProcessor>mcp_ПромптыPTM</DataProcessor>

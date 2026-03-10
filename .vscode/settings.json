@@ -15,16 +15,60 @@
     },
     
     "files.exclude": {
-        "**/_backups/**": true
+        "**/_backups/**": true,
+        "**/_dump_clean/**": true,
+        "**/_dump_current/**": true,
+        "**/_dump_current_sync/**": true,
+        "**/_dump_from_ib/**": true,
+        "**/_form_temp_backup/**": true,
+        "**/_saved_import/**": true,
+        "**/_test_content_backup/**": true,
+        "**/MCP_Extension/**": true,
+        "**/MCP_Extension_check/**": true,
+        "**/node_modules/**": true,
+        "**/CF/**": true,
+        "**/PTM/**": true
+    },
+
+    // files.watcherExclude — КЛЮЧЕВОЙ параметр: VS Code не отправляет события изменений
+    // языковым серверам (включая BSL LS) для этих папок → сервер их не переиндексирует
+    "files.watcherExclude": {
+        "**/_backups/**": true,
+        "**/_dump_clean/**": true,
+        "**/_dump_current/**": true,
+        "**/_dump_current_sync/**": true,
+        "**/_dump_from_ib/**": true,
+        "**/_form_temp_backup/**": true,
+        "**/_saved_import/**": true,
+        "**/_test_content_backup/**": true,
+        "**/MCP_Extension/**": true,
+        "**/MCP_Extension_check/**": true,
+        "**/node_modules/**": true,
+        "**/_archive/**": true,
+        "**/CF/**": true,
+        "**/PTM/**": true,
+        "**/logs/**": true,
+        "**/ScannerEmulator/**": true
     },
 
     "search.exclude": {
         "**/node_modules": true,
         "**/DerivedData": true,
-        "**/_backups/**": true
+        "**/_backups/**": true,
+        "**/_dump_*/**": true,
+        "**/MCP_Extension/**": true,
+        "**/MCP_Extension_check/**": true,
+        "**/_saved_import/**": true,
+        "**/_form_temp_backup/**": true,
+        "**/CF/**": true,
+        "**/PTM/**": true
     },
     
     "github.copilot.chat.codeGeneration.useReferencedFiles": true,
+
+    // BSL Language Server extension: ограничиваем анализ только Конфигурацией
+    "language-1c-bsl.languageServerConfiguration.configurationRoot": "${workspaceFolder}/Конфигурация",
+    "language-1c-bsl.languageServerConfiguration.analyzeHierarchy": false,
 
     // Автоподтверждение действий агента (без ручного клика)
     "chat.agent.autoApprove": true,

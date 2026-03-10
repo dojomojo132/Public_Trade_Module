@@ -1,12 +1,19 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Открыть спецификацию",
-            "type": "shell",
-            "command": "code",
-            "args": ["${workspaceFolder}/ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).xml"],
-            "problemMatcher": []
-        }
-    ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Открыть спецификацию",
+			"type": "shell",
+			"command": "code",
+			"args": [
+				"${workspaceFolder}/ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).xml"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Git push",
+			"type": "shell",
+			"command": "git add -A; python \"D:\\Git\\Public_Trade_Module\\scripts\\_git_commit.py\""
+		}
+	]
 }

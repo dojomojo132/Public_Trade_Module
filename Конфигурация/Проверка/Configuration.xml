@@ -1,5 +1,5 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:ns4="http://v8.1c.ru/8.2/managed-application/core" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
 	<Configuration uuid="7d9eb95e-104f-4595-9eaa-ae812dd59b3c">
 		<InternalInfo>
 			<xr:ContainedObject>
@@ -39,203 +39,206 @@
 					<v8:content>Торговля розница</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment />
-			<NamePrefix />
+			<Comment/>
+			<NamePrefix/>
 			<ConfigurationExtensionCompatibilityMode>Version8_3_27</ConfigurationExtensionCompatibilityMode>
 			<DefaultRunMode>ManagedApplication</DefaultRunMode>
+			<UsePurposes>
+				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
+			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
-			<DefaultRoles />
-			<Vendor />
-			<Version />
-			<UpdateCatalogAddress />
+			<DefaultRoles/>
+			<Vendor/>
+			<Version/>
+			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
 			<UseOrdinaryFormInManagedApplication>false</UseOrdinaryFormInManagedApplication>
-			<AdditionalFullTextSearchDictionaries />
-			<CommonSettingsStorage />
-			<ReportsUserSettingsStorage />
-			<ReportsVariantsStorage />
-			<FormDataSettingsStorage />
-			<DynamicListsUserSettingsStorage />
-			<URLExternalDataStorage />
-			<Content />
-			<DefaultReportForm />
-			<DefaultReportVariantForm />
-			<DefaultReportSettingsForm />
-			<DefaultReportAppearanceTemplate />
-			<DefaultDynamicListSettingsForm />
-			<DefaultSearchForm />
-			<DefaultDataHistoryChangeHistoryForm />
-			<DefaultDataHistoryVersionDataForm />
-			<DefaultDataHistoryVersionDifferencesForm />
-			<DefaultCollaborationSystemUsersChoiceForm />
-			<RequiredMobileApplicationPermissions />
+			<AdditionalFullTextSearchDictionaries/>
+			<CommonSettingsStorage/>
+			<ReportsUserSettingsStorage/>
+			<ReportsVariantsStorage/>
+			<FormDataSettingsStorage/>
+			<DynamicListsUserSettingsStorage/>
+			<URLExternalDataStorage/>
+			<Content/>
+			<DefaultReportForm/>
+			<DefaultReportVariantForm/>
+			<DefaultReportSettingsForm/>
+			<DefaultReportAppearanceTemplate/>
+			<DefaultDynamicListSettingsForm/>
+			<DefaultSearchForm/>
+			<DefaultDataHistoryChangeHistoryForm/>
+			<DefaultDataHistoryVersionDataForm/>
+			<DefaultDataHistoryVersionDifferencesForm/>
+			<DefaultCollaborationSystemUsersChoiceForm/>
+			<RequiredMobileApplicationPermissions/>
 			<UsedMobileApplicationFunctionalities>
-				<ns4:functionality>
-					<ns4:functionality>Biometrics</ns4:functionality>
-					<ns4:use>true</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Location</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>BackgroundLocation</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>BluetoothPrinters</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>WiFiPrinters</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Contacts</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Calendars</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>PushNotifications</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>LocalNotifications</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>InAppPurchases</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>PersonalComputerFileExchange</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Ads</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>NumberDialing</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>CallProcessing</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>CallLog</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>AutoSendSMS</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>ReceiveSMS</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>SMSLog</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Camera</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Microphone</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>MusicLibrary</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>PictureAndVideoLibraries</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>AudioPlaybackAndVibration</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>BackgroundAudioPlaybackAndVibration</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>InstallPackages</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>OSBackup</ns4:functionality>
-					<ns4:use>true</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>ApplicationUsageStatistics</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>BarcodeScanning</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>BackgroundAudioRecording</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>AllFilesAccess</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Videoconferences</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>NFC</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>DocumentScanning</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>SpeechToText</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>Geofences</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>IncomingShareRequests</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>AllIncomingShareRequestsTypesProcessing</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
-				<ns4:functionality>
-					<ns4:functionality>TextToSpeech</ns4:functionality>
-					<ns4:use>false</ns4:use>
-				</ns4:functionality>
+				<app:functionality>
+					<app:functionality>Biometrics</app:functionality>
+					<app:use>true</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Location</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>BackgroundLocation</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>BluetoothPrinters</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>WiFiPrinters</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Contacts</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Calendars</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>PushNotifications</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>LocalNotifications</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>InAppPurchases</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>PersonalComputerFileExchange</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Ads</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>NumberDialing</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>CallProcessing</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>CallLog</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>AutoSendSMS</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>ReceiveSMS</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>SMSLog</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Camera</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Microphone</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>MusicLibrary</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>PictureAndVideoLibraries</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>AudioPlaybackAndVibration</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>BackgroundAudioPlaybackAndVibration</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>InstallPackages</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>OSBackup</app:functionality>
+					<app:use>true</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>ApplicationUsageStatistics</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>BarcodeScanning</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>BackgroundAudioRecording</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>AllFilesAccess</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Videoconferences</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>NFC</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>DocumentScanning</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>SpeechToText</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>Geofences</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>IncomingShareRequests</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>AllIncomingShareRequestsTypesProcessing</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
+				<app:functionality>
+					<app:functionality>TextToSpeech</app:functionality>
+					<app:use>false</app:use>
+				</app:functionality>
 			</UsedMobileApplicationFunctionalities>
-			<StandaloneConfigurationRestrictionRoles />
-			<MobileApplicationURLs />
-			<AllowedIncomingShareRequestTypes />
+			<StandaloneConfigurationRestrictionRoles/>
+			<MobileApplicationURLs/>
+			<AllowedIncomingShareRequestTypes/>
 			<MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
-			<DefaultInterface />
+			<DefaultInterface/>
 			<DefaultStyle>Style.Черный</DefaultStyle>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
-			<BriefInformation />
-			<DetailedInformation />
-			<Copyright />
-			<VendorInformationAddress />
-			<ConfigurationInformationAddress />
+			<BriefInformation/>
+			<DetailedInformation/>
+			<Copyright/>
+			<VendorInformationAddress/>
+			<ConfigurationInformationAddress/>
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<ObjectAutonumerationMode>NotAutoFree</ObjectAutonumerationMode>
 			<ModalityUseMode>DontUse</ModalityUseMode>
@@ -243,7 +246,7 @@
 			<InterfaceCompatibilityMode>Taxi</InterfaceCompatibilityMode>
 			<DatabaseTablespacesUseMode>DontUse</DatabaseTablespacesUseMode>
 			<CompatibilityMode>Version8_3_24</CompatibilityMode>
-			<DefaultConstantsForm />
+			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
@@ -254,6 +257,10 @@
 			<Subsystem>Все</Subsystem>
 			<Subsystem>Фискал</Subsystem>
 			<Subsystem>Тесты</Subsystem>
+			<Subsystem>_ДемоРаботаСОборудованием</Subsystem>
+			<Subsystem>ПоддержкаОборудования</Subsystem>
+			<Subsystem>СлужебныеПодсистемы</Subsystem>
+			<Subsystem>СтандартныеПодсистемы</Subsystem>
 			<StyleItem>ЦветКнопкиГруппы</StyleItem>
 			<Style>ЧорныйРежим</Style>
 			<Style>Зелёный</Style>
@@ -271,77 +278,6 @@
 			<Style>Белый</Style>
 			<Style>Черный</Style>
 			<CommonPicture>ИконкаПодсистем</CommonPicture>
-			<Role>Администратор</Role>
-			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
-			<CommonModule>ОбщегоНазначения</CommonModule>
-			<CommonModule>МенеджерОборудования</CommonModule>
-			<CommonModule>ОбщегоНазначенияКлиент</CommonModule>
-			<CommonModule>НастройкиПоУмолчанию</CommonModule>
-			<Constant>ПорядокОкругленияЦен</Constant>
-			<Constant>КонтролироватьОстаткиПриСписании</Constant>
-			<Constant>ОсновнойСклад</Constant>
-			<Constant>ОсновнойПоставщик</Constant>
-			<Catalog>НалоговыеГруппы</Catalog>
-			<Catalog>Номенклатура</Catalog>
-			<Catalog>КассовоеОборудование</Catalog>
-			<Catalog>Пользователи</Catalog>
-			<Catalog>Склады</Catalog>
-			<Catalog>Контрагенты</Catalog>
-			<Catalog>ТипыЦен</Catalog>
-			<Catalog>ВидыДисконтныхКарт</Catalog>
-			<Catalog>ДисконтныеКарты</Catalog>
-			<Catalog>Кассы</Catalog>
-			<Catalog>ФОП</Catalog>
-			<Catalog>НастройкиПоУмолчанию</Catalog>
-			<Document>КассоваяСмена</Document>
-			<Document>ЧекККМ</Document>
-			<Document>ВозвратТовараОтПокупателя</Document>
-			<Document>ИнвентаризацияТоваров</Document>
-			<Document>ПриходТовара</Document>
-			<Document>СписаниеТовара</Document>
-			<Document>Переоценка</Document>
-			<Document>ПриходныйКассовыйОрдер</Document>
-			<Document>РасходныйКассовыйОрдер</Document>
-			<Document>ФискальныйЧек</Document>
-			<Enum>СтавкиНДС</Enum>
-			<Enum>ТипыОборудования</Enum>
-			<Enum>ЕдиницыИзмерения</Enum>
-			<Enum>ТипыСкладов</Enum>
-			<Enum>ПорядкиОкругленияЦен</Enum>
-			<Enum>ВидыОплаты</Enum>
-			<Enum>СтатусыЧекаККМ</Enum>
-			<Enum>СтатусыКассовойСмены</Enum>
-			<Enum>ВидыКасс</Enum>
-			<Enum>ВидыОперацийФискальногоЧека</Enum>
-			<Report>ОстаткиТоваров</Report>
-			<Report>Продажи</Report>
-			<Report>Возвраты</Report>
-			<Report>ДвижениеТоваров</Report>
-			<Report>ВаловаяПрибыль</Report>
-			<Report>ПродажиПоСчетам</Report>
-			<Report>ДвижениеДенежныхСредств</Report>
-			<Report>Взаиморасчеты</Report>
-			<DataProcessor>РабочееМестоКассира</DataProcessor>
-			<DataProcessor>УправлениеНастройками</DataProcessor>
-			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
-
-			<DataProcessor>ТестыРМК</DataProcessor>
-			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
-			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
-			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>
-			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
-			<InformationRegister>Штрихкоды</InformationRegister>
-			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
-			<InformationRegister>НастройкиРаспределенияПродаж</InformationRegister>
-			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
-			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
-			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>
-			<AccumulationRegister>ПродажиПоДисконтнымКартам</AccumulationRegister>
-			<AccumulationRegister>Продажи</AccumulationRegister>
-		<Subsystem>_ДемоРаботаСОборудованием</Subsystem>
-			<Subsystem>ПоддержкаОборудования</Subsystem>
-			<Subsystem>СлужебныеПодсистемы</Subsystem>
-			<Subsystem>СтандартныеПодсистемы</Subsystem>
 			<CommonPicture>_ДемоРаботаСОборудованием</CommonPicture>
 			<CommonPicture>ВнешняяКомпонентаДоступна</CommonPicture>
 			<CommonPicture>ВнешняяКомпонентаНеДоступна</CommonPicture>
@@ -370,12 +306,14 @@
 			<CommonPicture>ТоварыЗагрузить</CommonPicture>
 			<CommonPicture>ТоварыОчистить</CommonPicture>
 			<SessionParameter>РабочееМестоКлиента</SessionParameter>
+			<Role>Администратор</Role>
 			<Role>АдминистраторСистемы</Role>
 			<Role>БазовыеПраваБПО</Role>
 			<Role>ВыполнениеСинхронизацииДанных</Role>
 			<Role>ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок</Role>
 			<Role>ПолныеПрава</Role>
 			<Role>СохранениеДанныхПользователя</Role>
+			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonTemplate>Драйвер1СДисплейПокупателя</CommonTemplate>
 			<CommonTemplate>Драйвер1СПринтерЧеков</CommonTemplate>
 			<CommonTemplate>Драйвер1СРарусДисплеиПокупателя_ru</CommonTemplate>
@@ -481,6 +419,10 @@
 			<CommonTemplate>СертификатыНУЦМинцифры_ru</CommonTemplate>
 			<CommonTemplate>ШаблонДисплеяПокупателя</CommonTemplate>
 			<CommonTemplate>ШаблонДисплеяПокупателяЧек</CommonTemplate>
+			<CommonModule>ОбщегоНазначения</CommonModule>
+			<CommonModule>МенеджерОборудования</CommonModule>
+			<CommonModule>ОбщегоНазначенияКлиент</CommonModule>
+			<CommonModule>НастройкиПоУмолчанию</CommonModule>
 			<CommonModule>_ДемоОфлайнОборудованиеВызовСервера</CommonModule>
 			<CommonModule>_ДемоПанельАдминистрирования</CommonModule>
 			<CommonModule>_ДемоПодключаемоеОборудованиеВызовСервера</CommonModule>
@@ -669,6 +611,10 @@
 			<CommonCommand>СверкаИтоговПоКартам</CommonCommand>
 			<CommonCommand>УправлениеФискальнымУстройством</CommonCommand>
 			<CommonCommand>УправлениеЭквайринговымТерминалом</CommonCommand>
+			<Constant>ПорядокОкругленияЦен</Constant>
+			<Constant>КонтролироватьОстаткиПриСписании</Constant>
+			<Constant>ОсновнойСклад</Constant>
+			<Constant>ОсновнойПоставщик</Constant>
 			<Constant>_ДемоИзолированноеПодключенияВнешнихКомпонент</Constant>
 			<Constant>_ДемоОбменСПодключаемымОборудованием</Constant>
 			<Constant>_ДемоРаспределеннаяФискализация</Constant>
@@ -689,6 +635,18 @@
 			<CommonForm>ПроверкаКонтрольнойМаркиБПО</CommonForm>
 			<CommonForm>УправлениеФискальнымУстройством</CommonForm>
 			<CommonForm>УправлениеЭквайринговымТерминалом</CommonForm>
+			<Catalog>НалоговыеГруппы</Catalog>
+			<Catalog>Номенклатура</Catalog>
+			<Catalog>КассовоеОборудование</Catalog>
+			<Catalog>Пользователи</Catalog>
+			<Catalog>Склады</Catalog>
+			<Catalog>Контрагенты</Catalog>
+			<Catalog>ТипыЦен</Catalog>
+			<Catalog>ВидыДисконтныхКарт</Catalog>
+			<Catalog>ДисконтныеКарты</Catalog>
+			<Catalog>Кассы</Catalog>
+			<Catalog>ФОП</Catalog>
+			<Catalog>НастройкиПоУмолчанию</Catalog>
 			<Catalog>_ДемоВидыНоменклатуры</Catalog>
 			<Catalog>_ДемоКлиенты</Catalog>
 			<Catalog>_ДемоНоменклатура</Catalog>
@@ -701,9 +659,29 @@
 			<Catalog>РабочиеМеста</Catalog>
 			<Catalog>ШаблоныМагнитныхКарт</Catalog>
 			<Catalog>ШаблоныЭтикетокИЦенниковБПО</Catalog>
+			<Document>КассоваяСмена</Document>
+			<Document>ЧекККМ</Document>
+			<Document>ВозвратТовараОтПокупателя</Document>
+			<Document>ИнвентаризацияТоваров</Document>
+			<Document>ПриходТовара</Document>
+			<Document>СписаниеТовара</Document>
+			<Document>Переоценка</Document>
+			<Document>ПриходныйКассовыйОрдер</Document>
+			<Document>РасходныйКассовыйОрдер</Document>
+			<Document>ФискальныйЧек</Document>
 			<Document>_ДемоОтчетОПродажах</Document>
 			<Document>_ДемоЧек</Document>
 			<DocumentJournal>_ДемоЧекиККМ</DocumentJournal>
+			<Enum>СтавкиНДС</Enum>
+			<Enum>ТипыОборудования</Enum>
+			<Enum>ЕдиницыИзмерения</Enum>
+			<Enum>ТипыСкладов</Enum>
+			<Enum>ПорядкиОкругленияЦен</Enum>
+			<Enum>ВидыОплаты</Enum>
+			<Enum>СтатусыЧекаККМ</Enum>
+			<Enum>СтатусыКассовойСмены</Enum>
+			<Enum>ВидыКасс</Enum>
+			<Enum>ВидыОперацийФискальногоЧека</Enum>
 			<Enum>_ДемоЕдиницыИзмерения</Enum>
 			<Enum>_ДемоСтавкиНДС</Enum>
 			<Enum>_ДемоСтатусыЧековККМ</Enum>
@@ -750,7 +728,22 @@
 			<Enum>ТипыСистемНалогообложенияККТ</Enum>
 			<Enum>ТипыФискальныхДокументовККТ</Enum>
 			<Enum>ТипыЧековКоррекции</Enum>
+			<Report>ОстаткиТоваров</Report>
+			<Report>Продажи</Report>
+			<Report>Возвраты</Report>
+			<Report>ДвижениеТоваров</Report>
+			<Report>ВаловаяПрибыль</Report>
+			<Report>ПродажиПоСчетам</Report>
+			<Report>ДвижениеДенежныхСредств</Report>
+			<Report>Взаиморасчеты</Report>
 			<Report>_ДемоПроверкаПодсистемБПО</Report>
+			<DataProcessor>РабочееМестоКассира</DataProcessor>
+			<DataProcessor>УправлениеНастройками</DataProcessor>
+			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
+			<DataProcessor>ТестыРМК</DataProcessor>
+			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
+			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
+			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>
 			<DataProcessor>_ДемоHttpBridge</DataProcessor>
 			<DataProcessor>_ДемоВыгрузкаВВесыТСД</DataProcessor>
 			<DataProcessor>_ДемоКонвертироватьИзBase64вДвоичныйФайл</DataProcessor>
@@ -765,6 +758,10 @@
 			<DataProcessor>ОбменСОфлайнОборудованием</DataProcessor>
 			<DataProcessor>ПанельАдминистрированияБПО</DataProcessor>
 			<DataProcessor>ПечатьЭтикетокИЦенниковБПО</DataProcessor>
+			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
+			<InformationRegister>Штрихкоды</InformationRegister>
+			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
+			<InformationRegister>НастройкиРаспределенияПродаж</InformationRegister>
 			<InformationRegister>_ДемоШтрихкоды</InformationRegister>
 			<InformationRegister>АрхивЛоговДрайверовОборудования</InformationRegister>
 			<InformationRegister>ДатаЗагрузкиОтчетовКассЭвотор</InformationRegister>
@@ -777,6 +774,11 @@
 			<InformationRegister>ПлатежныеОперации</InformationRegister>
 			<InformationRegister>УдалитьНумерацияЧековККТ</InformationRegister>
 			<InformationRegister>ФискальныеОперации</InformationRegister>
+			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
+			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
+			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>
+			<AccumulationRegister>ПродажиПоДисконтнымКартам</AccumulationRegister>
+			<AccumulationRegister>Продажи</AccumulationRegister>
 			<ChartOfCharacteristicTypes>_ДемоТипыШтрихкодов</ChartOfCharacteristicTypes>
 		</ChildObjects>
 	</Configuration>

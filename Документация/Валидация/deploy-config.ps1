@@ -20,6 +20,7 @@
 .PARAMETER TimeoutSeconds
     Таймаут выполнения каждой операции 1С (по умолчанию 300 секунд)
 .EXAMPLE
+    .\deploy-config.ps1 -Action Dump
     .\deploy-config.ps1 -Action Full
     .\deploy-config.ps1 -Action Load
     .\deploy-config.ps1 -Action Check
@@ -28,7 +29,7 @@
 #>
 
 param(
-    [ValidateSet("Load", "Check", "Update", "Run", "Designer", "Full", "Info", "Backup", "Rollback")]
+    [ValidateSet("Load", "Check", "Update", "Run", "Designer", "Full", "Info", "Backup", "Rollback", "Dump")]
     [string]$Action = "Full",
 
     [string]$BasePath = "D:\Confiq\Public Trade Module",
@@ -38,7 +39,13 @@ param(
     [string]$LogDir = "",
     [string]$BackupDir = "",
     [int]$MaxBackups = 5,
-    [int]$TimeoutSeconds = 180
+    [int]$TimeoutSeconds = 180,
+
+    # === ОПТИМИЗАЦИЯ ДЕПЛОЯ ===
+    # Пропустить DT-бэкап (для безопасных BSL-правок, когда локальный бэкап достаточен)
+    [switch]$SkipDtBackup,
+    # Пропустить синтакс-контроль CheckConfig (BSL уже проверен через get_errors/BSL LS)
+    [switch]$SkipCheck
 )
 
 # === НАСТРОЙКИ ===
@@ -860,6 +867,49 @@ function Step-OpenDesigner {
     Write-Step "КОНФИГУРАТОР" "Конфигуратор открыт" "OK"
 }
 
+function Step-Dump {
+    param([string]$TargetPath = "")
+    if (-not $TargetPath) { $TargetPath = $ConfigPath }
+
+    Write-Step "ВЫГРУЗКА" "Выгрузка конфигурации из ИБ в файлы..."
+    Write-Step "ВЫГРУЗКА" "Целевая папка: $TargetPath" "INFO"
+
+    # Создать папку если не существует
+    if (-not (Test-Path $TargetPath)) {
+        New-Item -ItemType Directory -Path $TargetPath -Force | Out-Null
+        Write-Step "ВЫГРУЗКА" "Создана папка: $TargetPath" "INFO"
+    }
+
+    $result = Invoke-1C -Mode "DESIGNER" -ExtraArgs @("/DumpConfigToFiles", "`"$TargetPath`"")
+
+    if ($result.ExitCode -eq 0) {
+        # Проверим наличие Configuration.xml в целевой папке
+        $cfgFile = Join-Path $TargetPath "Configuration.xml"
+        if (Test-Path $cfgFile) {
+            Write-Step "ВЫГРУЗКА" "Конфигурация успешно выгружена в: $TargetPath" "OK"
+            Write-Host "  Configuration.xml и ConfigDumpInfo.xml обновлены." -ForegroundColor Green
+            Write-Host "  Файлы на диске теперь соответствуют конфигурации в ИБ." -ForegroundColor Green
+            return @{ Success = $true }
+        } else {
+            Write-Step "ВЫГРУЗКА" "Configuration.xml не найден после выгрузки — нет изменений или пустая конфигурация" "WARN"
+            return @{ Success = $true }
+        }
+    } else {
+        Write-Step "ВЫГРУЗКА" "ОШИБКА выгрузки (exit code: $($result.ExitCode))" "FAIL"
+        Format-ErrorBlockForAgent `
+            -Stage "ВЫГРУЗКА (DumpConfigToFiles)" `
+            -ExitCode $result.ExitCode `
+            -Errors @() `
+            -Warnings @() `
+            -RawLog $result.Log `
+            -LogFile $result.LogFile `
+            -Stdout $result.Stdout `
+            -Stderr $result.Stderr `
+            -TimedOut $result.TimedOut
+        return @{ Success = $false }
+    }
+}
+
 # === MAIN ===
 
 Write-Host ""
@@ -868,6 +918,26 @@ Write-Host "========== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') ==========" -Fo
 Write-Host ""
 
 switch ($Action) {
+    "Dump" {
+        Write-Host ""
+        Write-Host "================================================================" -ForegroundColor Cyan
+        Write-Host "=== ВЫГРУЗКА КОНФИГУРАЦИИ ИБ → ФАЙЛЫ ===" -ForegroundColor Cyan
+        Write-Host "================================================================" -ForegroundColor Cyan
+        Write-Host ""
+        Write-Host "  ЦЕЛЬ: синхронизировать файлы на диске с актуальной конфигурацией в ИБ." -ForegroundColor White
+        Write-Host "  Запускайте ПЕРЕД началом разработки." -ForegroundColor Yellow
+        Write-Host ""
+        $r = Step-Dump
+        if ($r.Success) {
+            Write-Host ""
+            Write-Step "ИТОГ" "Синхронизация завершена. Файлы соответствуют ИБ." "OK"
+            Write-Host "  Теперь можно безопасно вносить изменения в файлы конфигурации." -ForegroundColor Green
+            Write-Host "================================================================" -ForegroundColor Cyan
+        } else {
+            Write-Step "ИТОГ" "Выгрузка ПРОВАЛЕНА." "FAIL"
+            exit 1
+        }
+    }
     "Info" {
         Show-Info
     }
@@ -922,13 +992,19 @@ switch ($Action) {
         }
 
         # Шаг 0b: Бэкап текущей ИБ (КРИТИЧНО: сохраняем данные, пользователей, MCP)
-        $backupResult = Step-Backup
-        if (-not $backupResult.Success) {
-            Write-Host ""
-            Write-Step "ИТОГ" "Бэкап ПРОВАЛЕН. Деплой ОТМЕНЁН для безопасности данных." "FAIL"
-            Write-Host "  ПРИЧИНА: Невозможно гарантировать сохранность данных без бэкапа." -ForegroundColor Red
-            Write-Host "  ДЕЙСТВИЕ: Проверьте доступ к ИБ и повторите." -ForegroundColor Cyan
-            exit 10
+        if ($SkipDtBackup) {
+            Write-Step "БЭКАП" "DT-бэкап ПРОПУЩЕН (-SkipDtBackup). Используйте для безопасных BSL-правок." "WARN"
+            $backupResult = @{ Success = $true; Skipped = $true; File = "" }
+        } else {
+            $backupResult = Step-Backup
+            if (-not $backupResult.Success) {
+                Write-Host ""
+                Write-Step "ИТОГ" "Бэкап ПРОВАЛЕН. Деплой ОТМЕНЁН для безопасности данных." "FAIL"
+                Write-Host "  ПРИЧИНА: Невозможно гарантировать сохранность данных без бэкапа." -ForegroundColor Red
+                Write-Host "  ДЕЙСТВИЕ: Проверьте доступ к ИБ и повторите." -ForegroundColor Cyan
+                Write-Host "  СОВЕТ: Если ИБ занята MCP-сервисом, используйте -SkipDtBackup для пропуска." -ForegroundColor Yellow
+                exit 10
+            }
         }
         $backupFile = $backupResult.File
 
@@ -960,16 +1036,21 @@ switch ($Action) {
         }
 
         # Шаг 3: Синтакс-контроль
-        $checkResult = Step-Check
-        if (-not $checkResult.Success) {
-            Write-Host ""
-            Write-Step "ИТОГ" "Синтакс-контроль ПРОВАЛЕН. Агент ОБЯЗАН исправить BSL-код и повторить деплой." "FAIL"
-            if ($backupFile) {
+        if ($SkipCheck) {
+            Write-Step "CHECK" "Синтакс-контроль ПРОПУЩЕН (-SkipCheck). BSL должен быть проверен через get_errors/BSL LS." "WARN"
+            $checkResult = @{ Success = $true }
+        } else {
+            $checkResult = Step-Check
+            if (-not $checkResult.Success) {
                 Write-Host ""
-                Write-Host "  ВАЖНО: Конфигурация УЖЕ загружена в ИБ но с ошибками в коде." -ForegroundColor Yellow
-                Write-Host "  Для отката: deploy-config.ps1 -Action Rollback" -ForegroundColor Cyan
+                Write-Step "ИТОГ" "Синтакс-контроль ПРОВАЛЕН. Агент ОБЯЗАН исправить BSL-код и повторить деплой." "FAIL"
+                if ($backupFile) {
+                    Write-Host ""
+                    Write-Host "  ВАЖНО: Конфигурация УЖЕ загружена в ИБ но с ошибками в коде." -ForegroundColor Yellow
+                    Write-Host "  Для отката: deploy-config.ps1 -Action Rollback" -ForegroundColor Cyan
+                }
+                exit 3
             }
-            exit 3
         }
 
         # Шаг 4: Обновление БД

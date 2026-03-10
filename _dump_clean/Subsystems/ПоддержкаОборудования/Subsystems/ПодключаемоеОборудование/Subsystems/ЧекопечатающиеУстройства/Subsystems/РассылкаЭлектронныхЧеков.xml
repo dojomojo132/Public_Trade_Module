@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Subsystem uuid="2478bdbd-97b2-4eda-971d-2395726802e9">
+		<Properties>
+			<Name>РассылкаЭлектронныхЧеков</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассылка электронных чеков</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыРассылкиЭлектронныхЧеков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧеков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековКлиентПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">2c298cf9-b3eb-44ff-a9f6-b6b6728abdad</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековПереопределяемый</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">1442e640-5862-4628-9b25-319f59c4fc20</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.РассылкаЭлектронныхЧеков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОтправкаЭлектронныхЧековПослеПробитияЧека</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОчередьЭлектронныхЧековКОтправке</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

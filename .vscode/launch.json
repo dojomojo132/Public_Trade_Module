@@ -10,14 +10,6 @@
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "oscript.exe",
       "internalConsoleOptions": "openOnSessionStart"
-    },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach к 1С через DBG",
-      "port": 1550,
-      "address": "localhost",
-      "restart": true
     }
   ]
 }
