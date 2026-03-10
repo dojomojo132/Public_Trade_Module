@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<dataSource>
 		<name>ИсточникДанных1</name>
@@ -231,11 +231,110 @@
 СГРУППИРОВАТЬ ПО
 	П.Номенклатура</query>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ДетализацияДвижений</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидОперации</dataPath>
+			<field>ВидОперации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид операции</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПриход</dataPath>
+			<field>КоличествоПриход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приход (кол.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоРасход</dataPath>
+			<field>КоличествоРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход (кол.)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ОТ.Период КАК Период,
+	ОТ.Регистратор КАК Документ,
+	ОТ.Склад КАК Склад,
+	ОТ.Номенклатура КАК Номенклатура,
+	ВЫБОР
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ПриходТовара) ТОГДА &quot;Приход товара&quot;
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ЧекККМ) ТОГДА &quot;Продажа&quot;
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ВозвратТовараОтПокупателя) ТОГДА &quot;Возврат&quot;
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.СписаниеТовара) ТОГДА &quot;Списание&quot;
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ИнвентаризацияТоваров) ТОГДА &quot;Инвентаризация&quot;
+		ИНАЧЕ &quot;Прочее&quot;
+	КОНЕЦ КАК ВидОперации,
+	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоПриход,
+	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоРасход
+ИЗ
+	РегистрНакопления.ОстаткиТоваров КАК ОТ
+ГДЕ
+	ОТ.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода</query>
+	</dataSet>
 	<dataSetLink>
 		<sourceDataSet>ДвижениеОстатков</sourceDataSet>
 		<destinationDataSet>ПродажиСуммы</destinationDataSet>
 		<sourceExpression>Номенклатура</sourceExpression>
 		<destinationExpression>Номенклатура</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ДвижениеОстатков</sourceDataSet>
+		<destinationDataSet>ДетализацияДвижений</destinationDataSet>
+		<sourceExpression>Номенклатура</sourceExpression>
+		<destinationExpression>Номенклатура</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>ДвижениеОстатков</sourceDataSet>
+		<destinationDataSet>ДетализацияДвижений</destinationDataSet>
+		<sourceExpression>Склад</sourceExpression>
+		<destinationExpression>Склад</destinationExpression>
 	</dataSetLink>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -375,6 +474,33 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Документ</dcsset:field>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Период</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Период</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВидОперации</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоПриход</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоРасход</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
@@ -472,6 +598,33 @@
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Документ</dcsset:field>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>Период</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Период</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВидОперации</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоПриход</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоРасход</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>

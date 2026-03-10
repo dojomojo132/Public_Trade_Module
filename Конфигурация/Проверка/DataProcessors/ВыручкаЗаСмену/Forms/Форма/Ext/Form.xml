@@ -6,7 +6,7 @@
 			<Button name="КнопкаПоказать" id="1">
 				<Type>CommandBarButton</Type>
 				<Representation>PictureAndText</Representation>
-				<CommandName>Form.Command.Показать</CommandName>
+				<CommandName>Form.Command.ПоказатьВыручку</CommandName>
 				<DefaultButton>true</DefaultButton>
 				<Title>
 					<v8:item>
@@ -105,7 +105,7 @@
 		</Label>
 	</ChildItems>
 	<CommandList>
-		<Command name="Показать" id="13">
+		<Command name="ПоказатьВыручку" id="13">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -118,7 +118,7 @@
 					<v8:content>Показать выручку за смену</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>Показать</Action>
+			<Action>ПоказатьВыручку</Action>
 		</Command>
 	</CommandList>
 </Form>
