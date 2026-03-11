@@ -776,198 +776,109 @@
 		<Metadata name="CommonTemplate.Драйвер1СДисплейПокупателя.Template" id="01417e32-3897-43d5-aea7-9d138159cf74.0" configVersion="ed84ca035899264099d0e7186464b65000000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СПринтерЧеков" id="4d411e77-b001-497e-ba6a-0dfefac52e9d" configVersion="ea883918841b1140888ffe57c746a58900000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СПринтерЧеков.Template" id="4d411e77-b001-497e-ba6a-0dfefac52e9d.0" configVersion="bcc3c765c94bae4f89727250ec815cf500000000"/>
-		<Metadata name="CommonTemplate.Драйвер1СРарусДисплеиПокупателя_ru" id="801f382f-190d-4fe7-a9df-7cf8b24358e9" configVersion="e4fb00c87b4e6d49a41694b5826e348f00000000"/>
-		<Metadata name="CommonTemplate.Драйвер1СРарусДисплеиПокупателя_ru.Template" id="801f382f-190d-4fe7-a9df-7cf8b24358e9.0" configVersion="fc25a94b1322d54dacd9b3b5b0c4ba7000000000"/>
+<Metadata name="CommonTemplate.Драйвер1СРарусДисплеиПокупателя_ru.Template" id="801f382f-190d-4fe7-a9df-7cf8b24358e9.0" configVersion="fc25a94b1322d54dacd9b3b5b0c4ba7000000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958" configVersion="d41523b827b1c247ae41d3cb04dbfc3200000000"/>
 		<Metadata name="CommonTemplate.Драйвер1ССканер.Template" id="0399e3dd-b9c0-4a04-b0f5-0645b38cd958.0" configVersion="e7315fa8ed1ae24bb30cbf4a6b4b164100000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СУстройстваВводаNative" id="151fb808-2c83-4970-b4b4-90343e45171a" configVersion="feca9d2e23c77047ad4a2f70e8e3aab300000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СУстройстваВводаNative.Template" id="151fb808-2c83-4970-b4b4-90343e45171a.0" configVersion="52ec614198077343b66c7af2607de8b400000000"/>
-		<Metadata name="CommonTemplate.Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru" id="e635d288-bd5e-495a-9617-b30e33fae921" configVersion="ca3c4ae01b552644a703051efde6d00600000000"/>
-		<Metadata name="CommonTemplate.Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru.Template" id="e635d288-bd5e-495a-9617-b30e33fae921.0" configVersion="ff74c9d57bdb4246a7ba75ad302e25d700000000"/>
+<Metadata name="CommonTemplate.Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru.Template" id="e635d288-bd5e-495a-9617-b30e33fae921.0" configVersion="ff74c9d57bdb4246a7ba75ad302e25d700000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СЭлектронныеВесы" id="4c6075a0-40c7-4cd6-be25-931940ddbd34" configVersion="f75cbc83daace449b7ca5e6e90fab1ae00000000"/>
 		<Metadata name="CommonTemplate.Драйвер1СЭлектронныеВесы.Template" id="4c6075a0-40c7-4cd6-be25-931940ddbd34.0" configVersion="44cb10b911b8234e95deb2c3912c395200000000"/>
-		<Metadata name="CommonTemplate.ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru" id="4f987bfd-45cf-4596-8906-25b957416a47" configVersion="019ce20f206a5f41aa172d601872442400000000"/>
-		<Metadata name="CommonTemplate.ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru.Template" id="4f987bfd-45cf-4596-8906-25b957416a47.0" configVersion="1dd10e44767bd443ab22721a9a14108b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверBizerbaВесыСПечатьюЭтикеток_ru" id="4ffa002e-c54a-4655-893b-a1aedcd16666" configVersion="ace7022171702b4288d7adb5ffdf85fb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверBizerbaВесыСПечатьюЭтикеток_ru.Template" id="4ffa002e-c54a-4655-893b-a1aedcd16666.0" configVersion="ba016032e2991f49aa70abdda0fdbbe100000000"/>
-		<Metadata name="CommonTemplate.ДрайверCASВесыСПечатьюЭтикеток2х_ru" id="af8c6369-0177-42c1-840b-6d8010d2be4c" configVersion="5a29a328385f9d4da97f58d88e24925200000000"/>
-		<Metadata name="CommonTemplate.ДрайверCASВесыСПечатьюЭтикеток2х_ru.Template" id="af8c6369-0177-42c1-840b-6d8010d2be4c.0" configVersion="31aafb0291f78743a41b867cc64adf1700000000"/>
-		<Metadata name="CommonTemplate.ДрайверCASЭлектронныеВесы2х_ru" id="de2d3622-8d4c-4df3-8e3d-9e37251f2bbc" configVersion="1b644ee2b338e647b2f44e1401c0bb2200000000"/>
-		<Metadata name="CommonTemplate.ДрайверCASЭлектронныеВесы2х_ru.Template" id="de2d3622-8d4c-4df3-8e3d-9e37251f2bbc.0" configVersion="6a6b6fa8e2635e46a7df8623dc63fe7b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверINVERSUMЭквайринговыеТерминалы_ru" id="8ac0a3f5-fa49-4c2e-9c15-af57b31ed8c3" configVersion="ec84ca8a2fdf2e4fa3f67a7d013ec4cc00000000"/>
-		<Metadata name="CommonTemplate.ДрайверINVERSUMЭквайринговыеТерминалы_ru.Template" id="8ac0a3f5-fa49-4c2e-9c15-af57b31ed8c3.0" configVersion="1e4086b4a212af4ca3c46a04d8632beb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверIboxProПоддержкаMPosЭквайринга_ru" id="6a057e6a-61dc-4e68-8f8e-ce6ab4862ed1" configVersion="d8aaa72237b5f04ca108d05e9840245900000000"/>
-		<Metadata name="CommonTemplate.ДрайверIboxProПоддержкаMPosЭквайринга_ru.Template" id="6a057e6a-61dc-4e68-8f8e-ce6ab4862ed1.0" configVersion="340fb04d8dd56945ba16151360a081c600000000"/>
-		<Metadata name="CommonTemplate.ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru" id="8293e3a2-edb5-4923-bf91-d0f542bed054" configVersion="6fd1d4ee66a3764c973c9d716f4e3b0c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru.Template" id="8293e3a2-edb5-4923-bf91-d0f542bed054.0" configVersion="baa5aaf59a074b4d80ac3c2e8e82a09b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверIronLogicСчитывателиБесконтактныхКарт_ru" id="9d8430d9-f489-4b24-a4d8-c7ab1273234d" configVersion="99d0239423d3e94d962435eecbc7b4bd00000000"/>
-		<Metadata name="CommonTemplate.ДрайверIronLogicСчитывателиБесконтактныхКарт_ru.Template" id="9d8430d9-f489-4b24-a4d8-c7ab1273234d.0" configVersion="9281693699b2b245b3e47bb45fa4b64700000000"/>
-		<Metadata name="CommonTemplate.ДрайверMERTECHСканерШтрихкода_ru" id="a3e0068e-95cd-4e7c-8950-6aed9ede5617" configVersion="f5e76cd283363b47b21d39816ce8abf600000000"/>
-		<Metadata name="CommonTemplate.ДрайверMERTECHСканерШтрихкода_ru.Template" id="a3e0068e-95cd-4e7c-8950-6aed9ede5617.0" configVersion="b58fb253c30c6041984c6b9806765a0800000000"/>
-		<Metadata name="CommonTemplate.ДрайверMPos2canЭквайринг_ru" id="f2c1fe43-735a-4bec-a7b9-747cd630b27b" configVersion="7c130cdccc696b4184e59562b386ddc300000000"/>
-		<Metadata name="CommonTemplate.ДрайверMPos2canЭквайринг_ru.Template" id="f2c1fe43-735a-4bec-a7b9-747cd630b27b.0" configVersion="5d16a8c18f57aa44819526d23c6705b300000000"/>
-		<Metadata name="CommonTemplate.ДрайверMSTARККТ54ФЗ_ru" id="c62972c2-612f-4aae-b937-cb8a311901af" configVersion="a91897f6fec0774cbcefe4d0cc9186ee00000000"/>
-		<Metadata name="CommonTemplate.ДрайверMSTARККТ54ФЗ_ru.Template" id="c62972c2-612f-4aae-b937-cb8a311901af.0" configVersion="09ff4859227ce74da1ff12d60c3f48cb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверMitsu54ФЗ4ФФД12_ru" id="b2592e0b-da1a-458f-9178-b3ad3fb9d537" configVersion="4e6268aeb9358649bf9ced2756318eeb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверMitsu54ФЗ4ФФД12_ru.Template" id="b2592e0b-da1a-458f-9178-b3ad3fb9d537.0" configVersion="b99082a3a3082845a274c6a7e21dd57c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверPOSUAДисплеиПокупателя_ru" id="c79f36e5-6d6b-49be-9b50-64e53cf54420" configVersion="14dc3e3c6d90fc48bc3a43132dc39f0f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверPOSUAДисплеиПокупателя_ru.Template" id="c79f36e5-6d6b-49be-9b50-64e53cf54420.0" configVersion="dce40a94ebd6124bb4358f13c172fa2700000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanККТ54ФЗ_ru" id="ecb819d2-ff11-41a5-8e9e-fe07839157da" configVersion="2a9df8b71649204297cf6a4e13a8cd9300000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanККТ54ФЗ_ru.Template" id="ecb819d2-ff11-41a5-8e9e-fe07839157da.0" configVersion="2b0caa0bbd4eb94d9449070e3d968a3d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanТерминалыСбораДанных_ru" id="b6079941-5ecb-416e-a2b7-4f26ae375260" configVersion="4c791f9ef7e071499ae91412026876f700000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanТерминалыСбораДанных_ru.Template" id="b6079941-5ecb-416e-a2b7-4f26ae375260.0" configVersion="41c380916c282b43a7f0c5abc233b22900000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУниверсальныйДрайверСканера_ru" id="3e0520c9-7127-4f5f-9da7-e51f8abb0235" configVersion="2ac3fe91a8c1bb4ca5a0296ac17fbf1600000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУниверсальныйДрайверСканера_ru.Template" id="3e0520c9-7127-4f5f-9da7-e51f8abb0235.0" configVersion="43a86bbfaa95644ab8337aac921baab600000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУстройстваВвода_ru" id="2a1477c5-6a2f-41f1-828b-9db31b1c739b" configVersion="bbcce99858536f409228b33e421e94e100000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУстройстваВвода_ru.Template" id="2a1477c5-6a2f-41f1-828b-9db31b1c739b.0" configVersion="0e3f887bbd163245b4952c77da796ebc00000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУстройствоПечати_ru" id="2d62131c-a779-469f-b613-d8ab6df1735e" configVersion="7b4040fd29c15e459bbf8ad67004335d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверRightScanУстройствоПечати_ru.Template" id="2d62131c-a779-469f-b613-d8ab6df1735e.0" configVersion="a09b264366b64d4cb349a6fb6d8d0f1f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверSKAM1CЭквайринговыеСистемы_ru" id="04e38371-7e76-4317-a59d-5b62f5d85b88" configVersion="ba6bce8a11183949aeb9a8c3d74e765a00000000"/>
-		<Metadata name="CommonTemplate.ДрайверSKAM1CЭквайринговыеСистемы_ru.Template" id="04e38371-7e76-4317-a59d-5b62f5d85b88.0" configVersion="7cb5c77bdb23344b92c20ed2afbeef7900000000"/>
-		<Metadata name="CommonTemplate.ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru" id="cc03a894-5c26-4898-9d13-88ce39d42fb3" configVersion="be27342b302e8f488afa8c53121fdc7300000000"/>
-		<Metadata name="CommonTemplate.ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru.Template" id="cc03a894-5c26-4898-9d13-88ce39d42fb3.0" configVersion="1c0231c951bf35428d8a087b3166c66d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверScanPortУстройстваВвода_ru" id="aaed7ad5-b12e-4513-9c78-34aa7976f49b" configVersion="dce7d5ea6d0a4949bf058bce2a4a6a9f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверScanPortУстройстваВвода_ru.Template" id="aaed7ad5-b12e-4513-9c78-34aa7976f49b.0" configVersion="e3b9c49537e72e4eb51090be939686a700000000"/>
-		<Metadata name="CommonTemplate.ДрайверSkyPOSЭквайринговыеТерминалы_ru" id="f28004fb-d99e-4a8a-a7ae-760850c95609" configVersion="e1dcaae0e865b241ad467ae13b3f3c9000000000"/>
-		<Metadata name="CommonTemplate.ДрайверSkyPOSЭквайринговыеТерминалы_ru.Template" id="f28004fb-d99e-4a8a-a7ae-760850c95609.0" configVersion="f5a5dcbd73aaf243a8130c4e548d617000000000"/>
-		<Metadata name="CommonTemplate.ДрайверTACTILIONЭквайринговыеТерминалы_ru" id="fa2a37d9-c1ca-4ca4-adbc-a085c9ff5c7e" configVersion="38679ec987f7f241afee6a9172ede7c300000000"/>
-		<Metadata name="CommonTemplate.ДрайверTACTILIONЭквайринговыеТерминалы_ru.Template" id="fa2a37d9-c1ca-4ca4-adbc-a085c9ff5c7e.0" configVersion="80b83b7ce721a144b00f8c046b705d7e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru" id="b4758cbf-e5a9-4abf-8196-07791f204a00" configVersion="ebf8cee2c3ae894a9e4b35ce48bb147400000000"/>
-		<Metadata name="CommonTemplate.ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru.Template" id="b4758cbf-e5a9-4abf-8196-07791f204a00.0" configVersion="7d2f5cdf97aa244694ca0c9e1b38239400000000"/>
-		<Metadata name="CommonTemplate.ДрайверWNJIККТ54ФЗ_ru" id="7edea0a9-2daf-4df2-a69b-c8da0c5a6d12" configVersion="59434cd9b461ee49abb246e9fd6a352e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверWNJIККТ54ФЗ_ru.Template" id="7edea0a9-2daf-4df2-a69b-c8da0c5a6d12.0" configVersion="8a90ae159a6e7e4896f2be3cefaa0b7100000000"/>
-		<Metadata name="CommonTemplate.ДрайверАЗУРККТ54ФЗФФД12_ru" id="106e34e5-6a4e-46e2-8821-31fb4adafbf3" configVersion="cc435f4f9eb644459f1dd3fb7bf4286e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАЗУРККТ54ФЗФФД12_ru.Template" id="106e34e5-6a4e-46e2-8821-31fb4adafbf3.0" configVersion="5a5bd2d0c4d5ad4a854a413ecadf755900000000"/>
-		<Metadata name="CommonTemplate.ДрайверАЗУРПлатежнаяСистема_ru" id="5da3f45b-71d0-4185-a4a7-b891d44989f0" configVersion="19afa99928ee9d42b1e8706ac59af28f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАЗУРПлатежнаяСистема_ru.Template" id="5da3f45b-71d0-4185-a4a7-b891d44989f0.0" configVersion="71f1743956f6c346b4456d512698442700000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru" id="db7a9b28-f38b-4204-85e8-5bb1d5f93e41" configVersion="b7bd190e0a59c94a9e52efa42c93716f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru.Template" id="db7a9b28-f38b-4204-85e8-5bb1d5f93e41.0" configVersion="17cc3e51a545fd4cbebfe0c9baec13c700000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru" id="f6fc6c71-0629-4c3f-8569-5779cd2bb0b3" configVersion="cb94981e392fd84e93df0d21fe1df39b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru.Template" id="f6fc6c71-0629-4c3f-8569-5779cd2bb0b3.0" configVersion="8608705ac82e7f4ba87fa45be2ddaf0e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ107X_ru" id="b5223723-02b9-401f-842e-0bc5b2db4b32" configVersion="847e925cfa67eb4ca11aaad87b9ac6ec00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ107X_ru.Template" id="b5223723-02b9-401f-842e-0bc5b2db4b32.0" configVersion="d2fcae4d93bcc1498471433269c4c15f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12X_ru" id="d4b287e9-b047-4dce-bdaf-9322a88f2879" configVersion="8906a581596e8c40ada2c96a324c86eb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12X_ru.Template" id="d4b287e9-b047-4dce-bdaf-9322a88f2879.0" configVersion="c4be4e412c529a46a40ae5861e7fcb1400000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12_ru" id="56ca17b1-363b-4189-b979-8247a2b15795" configVersion="0e09003d65d3fd458499bc7c621ce17100000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12_ru.Template" id="56ca17b1-363b-4189-b979-8247a2b15795.0" configVersion="6df9be77817e904c9245c456c034013000000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛПринтераЭтикеток_ru" id="40b23df2-ce38-4aa5-86d9-f05eeda696eb" configVersion="45c70d30208d9941a5bbe2984d63602d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛПринтераЭтикеток_ru.Template" id="40b23df2-ce38-4aa5-86d9-f05eeda696eb.0" configVersion="eeaca02fe4ad6947b247cbde47268eff00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛСканерШтрихкода_ru" id="de7167de-3cb6-4ace-9c61-157d596b3795" configVersion="10539ca4b4bb9842841bc117f26998d400000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛСканерШтрихкода_ru.Template" id="de7167de-3cb6-4ace-9c61-157d596b3795.0" configVersion="314ed0293e003b45bcf45cbd1c9c7cea00000000"/>
+<Metadata name="CommonTemplate.ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru.Template" id="4f987bfd-45cf-4596-8906-25b957416a47.0" configVersion="1dd10e44767bd443ab22721a9a14108b00000000"/>
+<Metadata name="CommonTemplate.ДрайверBizerbaВесыСПечатьюЭтикеток_ru.Template" id="4ffa002e-c54a-4655-893b-a1aedcd16666.0" configVersion="ba016032e2991f49aa70abdda0fdbbe100000000"/>
+<Metadata name="CommonTemplate.ДрайверCASВесыСПечатьюЭтикеток2х_ru.Template" id="af8c6369-0177-42c1-840b-6d8010d2be4c.0" configVersion="31aafb0291f78743a41b867cc64adf1700000000"/>
+<Metadata name="CommonTemplate.ДрайверCASЭлектронныеВесы2х_ru.Template" id="de2d3622-8d4c-4df3-8e3d-9e37251f2bbc.0" configVersion="6a6b6fa8e2635e46a7df8623dc63fe7b00000000"/>
+<Metadata name="CommonTemplate.ДрайверINVERSUMЭквайринговыеТерминалы_ru.Template" id="8ac0a3f5-fa49-4c2e-9c15-af57b31ed8c3.0" configVersion="1e4086b4a212af4ca3c46a04d8632beb00000000"/>
+<Metadata name="CommonTemplate.ДрайверIboxProПоддержкаMPosЭквайринга_ru.Template" id="6a057e6a-61dc-4e68-8f8e-ce6ab4862ed1.0" configVersion="340fb04d8dd56945ba16151360a081c600000000"/>
+<Metadata name="CommonTemplate.ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru.Template" id="8293e3a2-edb5-4923-bf91-d0f542bed054.0" configVersion="baa5aaf59a074b4d80ac3c2e8e82a09b00000000"/>
+<Metadata name="CommonTemplate.ДрайверIronLogicСчитывателиБесконтактныхКарт_ru.Template" id="9d8430d9-f489-4b24-a4d8-c7ab1273234d.0" configVersion="9281693699b2b245b3e47bb45fa4b64700000000"/>
+<Metadata name="CommonTemplate.ДрайверMERTECHСканерШтрихкода_ru.Template" id="a3e0068e-95cd-4e7c-8950-6aed9ede5617.0" configVersion="b58fb253c30c6041984c6b9806765a0800000000"/>
+<Metadata name="CommonTemplate.ДрайверMPos2canЭквайринг_ru.Template" id="f2c1fe43-735a-4bec-a7b9-747cd630b27b.0" configVersion="5d16a8c18f57aa44819526d23c6705b300000000"/>
+<Metadata name="CommonTemplate.ДрайверMSTARККТ54ФЗ_ru.Template" id="c62972c2-612f-4aae-b937-cb8a311901af.0" configVersion="09ff4859227ce74da1ff12d60c3f48cb00000000"/>
+<Metadata name="CommonTemplate.ДрайверMitsu54ФЗ4ФФД12_ru.Template" id="b2592e0b-da1a-458f-9178-b3ad3fb9d537.0" configVersion="b99082a3a3082845a274c6a7e21dd57c00000000"/>
+<Metadata name="CommonTemplate.ДрайверPOSUAДисплеиПокупателя_ru.Template" id="c79f36e5-6d6b-49be-9b50-64e53cf54420.0" configVersion="dce40a94ebd6124bb4358f13c172fa2700000000"/>
+<Metadata name="CommonTemplate.ДрайверRightScanККТ54ФЗ_ru.Template" id="ecb819d2-ff11-41a5-8e9e-fe07839157da.0" configVersion="2b0caa0bbd4eb94d9449070e3d968a3d00000000"/>
+<Metadata name="CommonTemplate.ДрайверRightScanТерминалыСбораДанных_ru.Template" id="b6079941-5ecb-416e-a2b7-4f26ae375260.0" configVersion="41c380916c282b43a7f0c5abc233b22900000000"/>
+<Metadata name="CommonTemplate.ДрайверRightScanУниверсальныйДрайверСканера_ru.Template" id="3e0520c9-7127-4f5f-9da7-e51f8abb0235.0" configVersion="43a86bbfaa95644ab8337aac921baab600000000"/>
+<Metadata name="CommonTemplate.ДрайверRightScanУстройстваВвода_ru.Template" id="2a1477c5-6a2f-41f1-828b-9db31b1c739b.0" configVersion="0e3f887bbd163245b4952c77da796ebc00000000"/>
+<Metadata name="CommonTemplate.ДрайверRightScanУстройствоПечати_ru.Template" id="2d62131c-a779-469f-b613-d8ab6df1735e.0" configVersion="a09b264366b64d4cb349a6fb6d8d0f1f00000000"/>
+<Metadata name="CommonTemplate.ДрайверSKAM1CЭквайринговыеСистемы_ru.Template" id="04e38371-7e76-4317-a59d-5b62f5d85b88.0" configVersion="7cb5c77bdb23344b92c20ed2afbeef7900000000"/>
+<Metadata name="CommonTemplate.ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru.Template" id="cc03a894-5c26-4898-9d13-88ce39d42fb3.0" configVersion="1c0231c951bf35428d8a087b3166c66d00000000"/>
+<Metadata name="CommonTemplate.ДрайверScanPortУстройстваВвода_ru.Template" id="aaed7ad5-b12e-4513-9c78-34aa7976f49b.0" configVersion="e3b9c49537e72e4eb51090be939686a700000000"/>
+<Metadata name="CommonTemplate.ДрайверSkyPOSЭквайринговыеТерминалы_ru.Template" id="f28004fb-d99e-4a8a-a7ae-760850c95609.0" configVersion="f5a5dcbd73aaf243a8130c4e548d617000000000"/>
+<Metadata name="CommonTemplate.ДрайверTACTILIONЭквайринговыеТерминалы_ru.Template" id="fa2a37d9-c1ca-4ca4-adbc-a085c9ff5c7e.0" configVersion="80b83b7ce721a144b00f8c046b705d7e00000000"/>
+<Metadata name="CommonTemplate.ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru.Template" id="b4758cbf-e5a9-4abf-8196-07791f204a00.0" configVersion="7d2f5cdf97aa244694ca0c9e1b38239400000000"/>
+<Metadata name="CommonTemplate.ДрайверWNJIККТ54ФЗ_ru.Template" id="7edea0a9-2daf-4df2-a69b-c8da0c5a6d12.0" configVersion="8a90ae159a6e7e4896f2be3cefaa0b7100000000"/>
+<Metadata name="CommonTemplate.ДрайверАЗУРККТ54ФЗФФД12_ru.Template" id="106e34e5-6a4e-46e2-8821-31fb4adafbf3.0" configVersion="5a5bd2d0c4d5ad4a854a413ecadf755900000000"/>
+<Metadata name="CommonTemplate.ДрайверАЗУРПлатежнаяСистема_ru.Template" id="5da3f45b-71d0-4185-a4a7-b891d44989f0.0" configVersion="71f1743956f6c346b4456d512698442700000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru.Template" id="db7a9b28-f38b-4204-85e8-5bb1d5f93e41.0" configVersion="17cc3e51a545fd4cbebfe0c9baec13c700000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru.Template" id="f6fc6c71-0629-4c3f-8569-5779cd2bb0b3.0" configVersion="8608705ac82e7f4ba87fa45be2ddaf0e00000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ107X_ru.Template" id="b5223723-02b9-401f-842e-0bc5b2db4b32.0" configVersion="d2fcae4d93bcc1498471433269c4c15f00000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12X_ru.Template" id="d4b287e9-b047-4dce-bdaf-9322a88f2879.0" configVersion="c4be4e412c529a46a40ae5861e7fcb1400000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛККТ54ФЗ10XФФД12_ru.Template" id="56ca17b1-363b-4189-b979-8247a2b15795.0" configVersion="6df9be77817e904c9245c456c034013000000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛПринтераЭтикеток_ru.Template" id="40b23df2-ce38-4aa5-86d9-f05eeda696eb.0" configVersion="eeaca02fe4ad6947b247cbde47268eff00000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛСканерШтрихкода_ru.Template" id="de7167de-3cb6-4ace-9c61-157d596b3795.0" configVersion="314ed0293e003b45bcf45cbd1c9c7cea00000000"/>
 		<Metadata name="CommonTemplate.ДрайверАТОЛУстройстваВвода8X_ru" id="41a7be35-ea5e-474a-94c3-99f6c1efb34c" configVersion="7406ad5beb57994bbd39abc0ed287c9000000000"/>
 		<Metadata name="CommonTemplate.ДрайверАТОЛУстройстваВвода8X_ru.Template" id="41a7be35-ea5e-474a-94c3-99f6c1efb34c.0" configVersion="6700277ef4637b4b8113b68bf50932dc00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛЭлектронныеВесы8X_ru" id="b179e3f9-a29d-49f7-b33a-19952895eed6" configVersion="9c16eaa3b58f284aa7bb6b6473b6929f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАТОЛЭлектронныеВесы8X_ru.Template" id="b179e3f9-a29d-49f7-b33a-19952895eed6.0" configVersion="02d5b9c3d16658478e4d0f76affa34cd00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАтолДисплеиПокупателя8X_ru" id="a9424df3-098b-4a01-92b9-3524831c2a5c" configVersion="16cee7445711ba4582682c53e226264d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверАтолДисплеиПокупателя8X_ru.Template" id="a9424df3-098b-4a01-92b9-3524831c2a5c.0" configVersion="36d1e3d003cabb44857f4853ca276b0400000000"/>
-		<Metadata name="CommonTemplate.ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru" id="f583f5cd-3f57-42d8-b128-ab0046c1853d" configVersion="8a4ed5247a7a9b46ad8af9e34b0988b900000000"/>
-		<Metadata name="CommonTemplate.ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru.Template" id="f583f5cd-3f57-42d8-b128-ab0046c1853d.0" configVersion="405f4b996387bc4eb3e0262d907acde500000000"/>
-		<Metadata name="CommonTemplate.ДрайверВерсияТK1Ф54ФЗ_ru" id="3c4b3575-6e23-4190-ba12-3b915797df3a" configVersion="f1ba14b42a666b48aa278011c16e74a400000000"/>
-		<Metadata name="CommonTemplate.ДрайверВерсияТK1Ф54ФЗ_ru.Template" id="3c4b3575-6e23-4190-ba12-3b915797df3a.0" configVersion="2b17f9c5f5c3f44ba1215bcf2edcdb0600000000"/>
-		<Metadata name="CommonTemplate.ДрайверВерсияТККТ54ФЗ_ru" id="e868c120-e192-4f66-8ccc-ce8bde010395" configVersion="f41b85900cebe547bbb98cb854334bef00000000"/>
-		<Metadata name="CommonTemplate.ДрайверВерсияТККТ54ФЗ_ru.Template" id="e868c120-e192-4f66-8ccc-ce8bde010395.0" configVersion="f2d677352549ad41888cef1bc7024f3f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru" id="81b2397b-38e3-45da-84f0-667d42ff6cb8" configVersion="00cd74280e8c6a4a80519e7d2783050c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru.Template" id="81b2397b-38e3-45da-84f0-667d42ff6cb8.0" configVersion="fde7813111cda24ca3290fb449cf944900000000"/>
-		<Metadata name="CommonTemplate.ДрайверГексагонПринтераЭтикеток_ru" id="a0e2a49a-305c-4ba5-b1ef-778f21054cb1" configVersion="13818f3f14531f4492c5c8f941954a8a00000000"/>
-		<Metadata name="CommonTemplate.ДрайверГексагонПринтераЭтикеток_ru.Template" id="a0e2a49a-305c-4ba5-b1ef-778f21054cb1.0" configVersion="20a2e7d274ecbc40aae2998b2c69e69400000000"/>
-		<Metadata name="CommonTemplate.ДрайверГексагонТерминалыСбораДанных_ru" id="e050b6c4-e7e7-4522-81aa-48fdcc33ee25" configVersion="2245691ed3fbc54387278017979d0d8f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверГексагонТерминалыСбораДанных_ru.Template" id="e050b6c4-e7e7-4522-81aa-48fdcc33ee25.0" configVersion="b77f15f70cbfb74fb027c256e3a3573600000000"/>
-		<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ44_ru" id="1d70d8ab-e45c-46db-8484-1e5f04b61b3d" configVersion="4576a5c552cbbe4c9ad888e1fb19f39b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ44_ru.Template" id="1d70d8ab-e45c-46db-8484-1e5f04b61b3d.0" configVersion="7a998e57096f4b41b5969ced335dd8af00000000"/>
-		<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ_ru" id="65427cf1-1823-4f96-842f-6a81e7f4088b" configVersion="be8e0dd4cc23d44eb6670a68369b612800000000"/>
-		<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ_ru.Template" id="65427cf1-1823-4f96-842f-6a81e7f4088b.0" configVersion="57d4af88f2056e4db694b62cd4d1a89400000000"/>
-		<Metadata name="CommonTemplate.ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru" id="679d7401-29b3-40a8-8a7c-431c3d0e74d5" configVersion="8d8a6e98ebcf3e4b9373205388763e4d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru.Template" id="679d7401-29b3-40a8-8a7c-431c3d0e74d5.0" configVersion="ee5139790b82d04096190fe02f2f3bcb00000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнитпроККТ54ФЗФФД12_ru" id="47706006-d38e-48c0-9380-9c3c3df2c2ec" configVersion="be6e23388874ff43909094e4bc28286c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнитпроККТ54ФЗФФД12_ru.Template" id="47706006-d38e-48c0-9380-9c3c3df2c2ec.0" configVersion="ce730c69d80f21488cdcf542a6e2295200000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗМ_ru" id="52626ff6-acf2-4f19-8efd-2059796799e1" configVersion="25ff042dba366b4ebc8b76a9e380079800000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗМ_ru.Template" id="52626ff6-acf2-4f19-8efd-2059796799e1.0" configVersion="ddf104c7a8468b46a4cac3173d42f64700000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗФФ12_ru" id="d7fb28c1-a19a-41bd-ba2c-02a689541102" configVersion="f60da60f828d284e9ca0dd9148e30a2800000000"/>
-		<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗФФ12_ru.Template" id="d7fb28c1-a19a-41bd-ba2c-02a689541102.0" configVersion="201116109707f74482dfabba35b4a3fa00000000"/>
-		<Metadata name="CommonTemplate.ДрайверИскраККТ54ФЗ_ru" id="8292d040-3f4f-416c-9ccd-39fc8cfd7363" configVersion="daeaf52441072746bdb95e84f0b16fb100000000"/>
-		<Metadata name="CommonTemplate.ДрайверИскраККТ54ФЗ_ru.Template" id="8292d040-3f4f-416c-9ccd-39fc8cfd7363.0" configVersion="dbe69daf723cee48baca6960100c9e9b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверКАСТОМФ54ФЗ_ru" id="c204c930-3149-408b-a5c7-0b81095583bd" configVersion="1b46c31f6bb44941bbf35915a3e5020c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверКАСТОМФ54ФЗ_ru.Template" id="c204c930-3149-408b-a5c7-0b81095583bd.0" configVersion="80eee4cebad9ad4aa24a90b9022563b100000000"/>
-		<Metadata name="CommonTemplate.ДрайверККСККТ54ФЗ2Х_ru" id="a1c6a9dd-2963-4df0-9e93-d052d31365a9" configVersion="2f443548cef1684cabbd3820164b728700000000"/>
-		<Metadata name="CommonTemplate.ДрайверККСККТ54ФЗ2Х_ru.Template" id="a1c6a9dd-2963-4df0-9e93-d052d31365a9.0" configVersion="3244b677a96b464db6059ae74317367300000000"/>
-		<Metadata name="CommonTemplate.ДрайверККТКассатка54ФЗ_ru" id="9b272335-da16-49da-83af-e6b397471543" configVersion="216a28faadf6c7409958e18b2e9dcbd100000000"/>
-		<Metadata name="CommonTemplate.ДрайверККТКассатка54ФЗ_ru.Template" id="9b272335-da16-49da-83af-e6b397471543.0" configVersion="08ac8bddd6f46d4ea574a25ff77a6de600000000"/>
-		<Metadata name="CommonTemplate.ДрайверКлеверенсСканерШтрихкода_ru" id="4fbc198f-efad-462c-bf8b-2b9b5a414e9b" configVersion="632c5364c1eda74db396c867286a3d1400000000"/>
-		<Metadata name="CommonTemplate.ДрайверКлеверенсСканерШтрихкода_ru.Template" id="4fbc198f-efad-462c-bf8b-2b9b5a414e9b.0" configVersion="48ef105560ae6644b6db2bc221f5c29300000000"/>
-		<Metadata name="CommonTemplate.ДрайверКлеверенсТерминалыСбораДанных_ru" id="b1dfaa7c-a77a-4307-85a3-ce4953b26aed" configVersion="e061714ca19b5443a73e3f59e1c474c700000000"/>
-		<Metadata name="CommonTemplate.ДрайверКлеверенсТерминалыСбораДанных_ru.Template" id="b1dfaa7c-a77a-4307-85a3-ce4953b26aed.0" configVersion="4b7d1d2787ed96419492466c5c7c777d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru" id="8520d143-7d71-4774-8f19-3e8e2b8c9169" configVersion="bb90f1ed0e7bfe4dbd3afa89cfad800e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru.Template" id="8520d143-7d71-4774-8f19-3e8e2b8c9169.0" configVersion="ed327c01e0f2ee4cb6c2e808519f6f3e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверМАСЭлектронныеВесы_ru" id="e41ec6c2-d74a-409d-96fe-4896be773e91" configVersion="a1b935891d97e2418470d02e3c46d3d000000000"/>
-		<Metadata name="CommonTemplate.ДрайверМАСЭлектронныеВесы_ru.Template" id="e41ec6c2-d74a-409d-96fe-4896be773e91.0" configVersion="ef26467ccbb6a7449316c79d14ff811100000000"/>
+<Metadata name="CommonTemplate.ДрайверАТОЛЭлектронныеВесы8X_ru.Template" id="b179e3f9-a29d-49f7-b33a-19952895eed6.0" configVersion="02d5b9c3d16658478e4d0f76affa34cd00000000"/>
+<Metadata name="CommonTemplate.ДрайверАтолДисплеиПокупателя8X_ru.Template" id="a9424df3-098b-4a01-92b9-3524831c2a5c.0" configVersion="36d1e3d003cabb44857f4853ca276b0400000000"/>
+<Metadata name="CommonTemplate.ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru.Template" id="f583f5cd-3f57-42d8-b128-ab0046c1853d.0" configVersion="405f4b996387bc4eb3e0262d907acde500000000"/>
+<Metadata name="CommonTemplate.ДрайверВерсияТK1Ф54ФЗ_ru.Template" id="3c4b3575-6e23-4190-ba12-3b915797df3a.0" configVersion="2b17f9c5f5c3f44ba1215bcf2edcdb0600000000"/>
+<Metadata name="CommonTemplate.ДрайверВерсияТККТ54ФЗ_ru.Template" id="e868c120-e192-4f66-8ccc-ce8bde010395.0" configVersion="f2d677352549ad41888cef1bc7024f3f00000000"/>
+<Metadata name="CommonTemplate.ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru.Template" id="81b2397b-38e3-45da-84f0-667d42ff6cb8.0" configVersion="fde7813111cda24ca3290fb449cf944900000000"/>
+<Metadata name="CommonTemplate.ДрайверГексагонПринтераЭтикеток_ru.Template" id="a0e2a49a-305c-4ba5-b1ef-778f21054cb1.0" configVersion="20a2e7d274ecbc40aae2998b2c69e69400000000"/>
+<Metadata name="CommonTemplate.ДрайверГексагонТерминалыСбораДанных_ru.Template" id="e050b6c4-e7e7-4522-81aa-48fdcc33ee25.0" configVersion="b77f15f70cbfb74fb027c256e3a3573600000000"/>
+<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ44_ru.Template" id="1d70d8ab-e45c-46db-8484-1e5f04b61b3d.0" configVersion="7a998e57096f4b41b5969ced335dd8af00000000"/>
+<Metadata name="CommonTemplate.ДрайверДримкасККТ54ФЗ_ru.Template" id="65427cf1-1823-4f96-842f-6a81e7f4088b.0" configVersion="57d4af88f2056e4db694b62cd4d1a89400000000"/>
+<Metadata name="CommonTemplate.ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru.Template" id="679d7401-29b3-40a8-8a7c-431c3d0e74d5.0" configVersion="ee5139790b82d04096190fe02f2f3bcb00000000"/>
+<Metadata name="CommonTemplate.ДрайверИнитпроККТ54ФЗФФД12_ru.Template" id="47706006-d38e-48c0-9380-9c3c3df2c2ec.0" configVersion="ce730c69d80f21488cdcf542a6e2295200000000"/>
+<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗМ_ru.Template" id="52626ff6-acf2-4f19-8efd-2059796799e1.0" configVersion="ddf104c7a8468b46a4cac3173d42f64700000000"/>
+<Metadata name="CommonTemplate.ДрайверИнкотексККТ54ФЗФФ12_ru.Template" id="d7fb28c1-a19a-41bd-ba2c-02a689541102.0" configVersion="201116109707f74482dfabba35b4a3fa00000000"/>
+<Metadata name="CommonTemplate.ДрайверИскраККТ54ФЗ_ru.Template" id="8292d040-3f4f-416c-9ccd-39fc8cfd7363.0" configVersion="dbe69daf723cee48baca6960100c9e9b00000000"/>
+<Metadata name="CommonTemplate.ДрайверКАСТОМФ54ФЗ_ru.Template" id="c204c930-3149-408b-a5c7-0b81095583bd.0" configVersion="80eee4cebad9ad4aa24a90b9022563b100000000"/>
+<Metadata name="CommonTemplate.ДрайверККСККТ54ФЗ2Х_ru.Template" id="a1c6a9dd-2963-4df0-9e93-d052d31365a9.0" configVersion="3244b677a96b464db6059ae74317367300000000"/>
+<Metadata name="CommonTemplate.ДрайверККТКассатка54ФЗ_ru.Template" id="9b272335-da16-49da-83af-e6b397471543.0" configVersion="08ac8bddd6f46d4ea574a25ff77a6de600000000"/>
+<Metadata name="CommonTemplate.ДрайверКлеверенсСканерШтрихкода_ru.Template" id="4fbc198f-efad-462c-bf8b-2b9b5a414e9b.0" configVersion="48ef105560ae6644b6db2bc221f5c29300000000"/>
+<Metadata name="CommonTemplate.ДрайверКлеверенсТерминалыСбораДанных_ru.Template" id="b1dfaa7c-a77a-4307-85a3-ce4953b26aed.0" configVersion="4b7d1d2787ed96419492466c5c7c777d00000000"/>
+<Metadata name="CommonTemplate.ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru.Template" id="8520d143-7d71-4774-8f19-3e8e2b8c9169.0" configVersion="ed327c01e0f2ee4cb6c2e808519f6f3e00000000"/>
+<Metadata name="CommonTemplate.ДрайверМАСЭлектронныеВесы_ru.Template" id="e41ec6c2-d74a-409d-96fe-4896be773e91.0" configVersion="ef26467ccbb6a7449316c79d14ff811100000000"/>
 		<Metadata name="CommonTemplate.ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru" id="7e25956a-3d59-443e-8a2a-8641e779117a" configVersion="bdad076ee7baca47801aa5eccd5d8ba600000000"/>
 		<Metadata name="CommonTemplate.ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru.Template" id="7e25956a-3d59-443e-8a2a-8641e779117a.0" configVersion="acc4a00b15566a41bb7d530bdef5363100000000"/>
 		<Metadata name="CommonTemplate.ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru" id="b6276094-6ed0-4c2f-9972-808ca8599c6a" configVersion="ff2b7c9feb2c8640b1c1b51f95e283cb00000000"/>
 		<Metadata name="CommonTemplate.ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru.Template" id="b6276094-6ed0-4c2f-9972-808ca8599c6a.0" configVersion="a7bd702fbb136246b3f3230ac949302900000000"/>
 		<Metadata name="CommonTemplate.ДрайверМертехРаспознавательMertechAI" id="a0c87560-af14-4a23-85d0-6dcb2a82a25a" configVersion="5f8688530cb4e845a5415796e333ab0500000000"/>
 		<Metadata name="CommonTemplate.ДрайверМертехРаспознавательMertechAI.Template" id="a0c87560-af14-4a23-85d0-6dcb2a82a25a.0" configVersion="bc937d51d751c3439933c05f9595425100000000"/>
-		<Metadata name="CommonTemplate.ДрайверМертехЭлектронныеВесы_ru" id="12738174-bb5b-43fc-b3cc-0f3483598a31" configVersion="b18717470537f64b8cf2ee06f8b4c62c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверМертехЭлектронныеВесы_ru.Template" id="12738174-bb5b-43fc-b3cc-0f3483598a31.0" configVersion="9c0dde34e41f0a4bb134ffe3cea9b58500000000"/>
-		<Metadata name="CommonTemplate.ДрайверМультисофтMSPOS54ФЗ_ru" id="d60331a6-3700-4d18-b2ac-7a5c76b395b5" configVersion="ae86f52aa6911c4695c34db25d6f29b600000000"/>
-		<Metadata name="CommonTemplate.ДрайверМультисофтMSPOS54ФЗ_ru.Template" id="d60331a6-3700-4d18-b2ac-7a5c76b395b5.0" configVersion="f287d4870a154040a8fbe302af77da4e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверНАИСЭлектронныеВесы_ru" id="a7ddc1f9-ee51-46c0-aa70-514e456287a6" configVersion="9e6869be13606d4b8e68d257321c4d9f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверНАИСЭлектронныеВесы_ru.Template" id="a7ddc1f9-ee51-46c0-aa70-514e456287a6.0" configVersion="02902e0d9400594aa3480454ae618a7500000000"/>
-		<Metadata name="CommonTemplate.ДрайверНЕВА54ФЗ4ФФД12_ru" id="cba52194-5f99-475e-bd03-8b82b9e4c5e9" configVersion="2a7c861fa256b44fb9ed1a4d29d4968900000000"/>
-		<Metadata name="CommonTemplate.ДрайверНЕВА54ФЗ4ФФД12_ru.Template" id="cba52194-5f99-475e-bd03-8b82b9e4c5e9.0" configVersion="e2e6bfd21a02ab428a4b352ea245f4a100000000"/>
-		<Metadata name="CommonTemplate.ДрайверПБФЭквайринговыеТерминалы_ru" id="892d921a-6bb4-4d17-98e3-818e6a8e9e2a" configVersion="f50d9c07f08e344a8a954cee7aa5d07f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверПБФЭквайринговыеТерминалы_ru.Template" id="892d921a-6bb4-4d17-98e3-818e6a8e9e2a.0" configVersion="b131ab1a7ec34a4e91653a424e86e44600000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru" id="23d1f5f9-d151-479a-b345-49c5e0e6b4fa" configVersion="4fc39aaaf6f27d44bb3da3046f538cd200000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru.Template" id="23d1f5f9-d151-479a-b345-49c5e0e6b4fa.0" configVersion="2fd4cb7717bcfe4eb7ec221988a975d700000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru" id="63a3566e-badd-4bce-869e-6b9592221494" configVersion="6d830e17c94fe840a8945b077f8d600200000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru.Template" id="63a3566e-badd-4bce-869e-6b9592221494.0" configVersion="8a696823a5048549859f96cbdb3d169e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru" id="1ebb46f8-34cf-42c0-a1e6-bde85e8ea0f8" configVersion="200168c22efa6a4aa934485012bb9b5600000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru.Template" id="1ebb46f8-34cf-42c0-a1e6-bde85e8ea0f8.0" configVersion="000c88f9a3e56444b2ad43701cfb47f400000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрЭлектронныеВесыNG_ru" id="f27da1e0-469f-43ab-a099-2d5cc9622995" configVersion="ef955a78d6e1b645a6800d47ea76608500000000"/>
-		<Metadata name="CommonTemplate.ДрайверПОСЦентрЭлектронныеВесыNG_ru.Template" id="f27da1e0-469f-43ab-a099-2d5cc9622995.0" configVersion="042cd6dd84950447910f4700d8f2356200000000"/>
-		<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикетокVenus_ru" id="c0f1acfe-c4bb-40c8-a404-164665793108" configVersion="c3bf26e8d61e6b418108b841369c857000000000"/>
-		<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикетокVenus_ru.Template" id="c0f1acfe-c4bb-40c8-a404-164665793108.0" configVersion="f8b7cc5e5e88bf49ab83c11a37a9015f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикеток_ru" id="f31170d7-b82c-443e-af29-da3486563593" configVersion="d3ccea5a1b4f6942af96186027ccba9c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикеток_ru.Template" id="f31170d7-b82c-443e-af29-da3486563593.0" configVersion="b3f387b46ff7154ea8097ec8e131390500000000"/>
-		<Metadata name="CommonTemplate.ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru" id="370dbaf4-4da0-4c36-af65-c077eb4b1b30" configVersion="2c9c7b24f7ddf24fa8ef3df4f55e960300000000"/>
-		<Metadata name="CommonTemplate.ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru.Template" id="370dbaf4-4da0-4c36-af65-c077eb4b1b30.0" configVersion="59ee5834ef84bc458a20d7fdae51952400000000"/>
-		<Metadata name="CommonTemplate.ДрайверРусГардСчитывательМагнитныхКарт_ru" id="46cc31ee-49fb-4b11-ae85-265a88955742" configVersion="f6242997897c044593bbfa02ed843a7000000000"/>
-		<Metadata name="CommonTemplate.ДрайверРусГардСчитывательМагнитныхКарт_ru.Template" id="46cc31ee-49fb-4b11-ae85-265a88955742.0" configVersion="afa0129522f8374faf52dbd0784c980400000000"/>
-		<Metadata name="CommonTemplate.ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru" id="ea884928-ff39-44b3-8b29-013569e01343" configVersion="594d32b9426e06419a76ca7ce72a9dc500000000"/>
-		<Metadata name="CommonTemplate.ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru.Template" id="ea884928-ff39-44b3-8b29-013569e01343.0" configVersion="e35c0b1c4fbb7a48994396eab4c2e3e200000000"/>
-		<Metadata name="CommonTemplate.ДрайверСервисПлюсЭлектронныеВесы_ru" id="9e250d53-d42e-4ba5-a46c-f7eb8ff90916" configVersion="085fe749c3ebb840be2767acf3e0f4d900000000"/>
-		<Metadata name="CommonTemplate.ДрайверСервисПлюсЭлектронныеВесы_ru.Template" id="9e250d53-d42e-4ba5-a46c-f7eb8ff90916.0" configVersion="6b932e7b538dc1439c7395c409fce72700000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодДисплеиПокупателяNative_ru" id="4a37d431-9980-4938-8855-69995dc23152" configVersion="09fefec32b72fe4ab61e542df32ff6e300000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодДисплеиПокупателяNative_ru.Template" id="4a37d431-9980-4938-8855-69995dc23152.0" configVersion="6376e77ab9709343a5c58c38e8d3868f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru" id="68a95617-9a5a-45f7-95be-d4593e72dca5" configVersion="36fc35f21c51f24a9bf0be5955de7dc400000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru.Template" id="68a95617-9a5a-45f7-95be-d4593e72dca5.0" configVersion="89cc2da0470138478095ecc02cecdb3d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодСканерШтрихкода_ru" id="ebad8398-5b15-4625-99e6-fb59229115f1" configVersion="05b101b689a0c94ea50773679f05a5c600000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодСканерШтрихкода_ru.Template" id="ebad8398-5b15-4625-99e6-fb59229115f1.0" configVersion="24a1006f65ab8148a8a389600a00f1cf00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru" id="56b66dda-3da0-4316-a518-621b5bd0b408" configVersion="df5febc9e86d09459b81ae786a15250b00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru.Template" id="56b66dda-3da0-4316-a518-621b5bd0b408.0" configVersion="efea76eb397ba84aa24da5a419b28a9900000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканпортТерминалСбораДанных_ru" id="b6542f5f-df7a-4552-aff5-fdeef57a015d" configVersion="b7ff7309cf56134f8f5107ed5d28f41600000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканпортТерминалСбораДанных_ru.Template" id="b6542f5f-df7a-4552-aff5-fdeef57a015d.0" configVersion="5cb0e785a8ac14438198e9e9ba41509000000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиПринтераЭтикеток_ru" id="d2192179-f323-4033-90b8-4c067c3f6ac8" configVersion="38303945f4ac2a46b13526a21d68927d00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиПринтераЭтикеток_ru.Template" id="d2192179-f323-4033-90b8-4c067c3f6ac8.0" configVersion="b38d7eb1e57a8345accc076b50d1308f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru" id="1867be48-9f65-4ded-b7b8-b7065f581a2b" configVersion="eb94eb189f43304f8abfb545cc6677c600000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru.Template" id="1867be48-9f65-4ded-b7b8-b7065f581a2b.0" configVersion="4853e55df3a7dd40922b53892e08510700000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru" id="83698ca9-d38e-4cd5-bd90-58096f6e1cae" configVersion="fc0e90d91d8eb24caa8fb476334406aa00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru.Template" id="83698ca9-d38e-4cd5-bd90-58096f6e1cae.0" configVersion="22f30f12e4623a4a9cfd9da9df49e93400000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиУстройстваВвода_ru" id="94eca0f3-d3c8-4a68-9167-558005a9e56c" configVersion="5cf59f3554ae414fba3603e91c562a6200000000"/>
-		<Metadata name="CommonTemplate.ДрайверСканситиУстройстваВвода_ru.Template" id="94eca0f3-d3c8-4a68-9167-558005a9e56c.0" configVersion="fd127e050b552441821886645caad73c00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСчетмашККТ54ФЗ_ru" id="4170ff83-dfe7-42af-a2e4-ecd853e535fc" configVersion="5dd09c894418784194ab0e8b6a9daa3a00000000"/>
-		<Metadata name="CommonTemplate.ДрайверСчетмашККТ54ФЗ_ru.Template" id="4170ff83-dfe7-42af-a2e4-ecd853e535fc.0" configVersion="dc755497e0834848afa2ae8d9e74bdb000000000"/>
-		<Metadata name="CommonTemplate.ДрайверХарвестрТерминалыСбораДанных_ru" id="c5b40baf-1d51-482d-af96-72d668df0f5d" configVersion="e13f17fa60320149abe3b191cccb3ba800000000"/>
-		<Metadata name="CommonTemplate.ДрайверХарвестрТерминалыСбораДанных_ru.Template" id="c5b40baf-1d51-482d-af96-72d668df0f5d.0" configVersion="6d23ed7443f64448bbca491621d370dd00000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru" id="fc637740-40fc-4f34-b843-1b5154c54faf" configVersion="770e03a5fb327542aa52ee009e8a016000000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru.Template" id="fc637740-40fc-4f34-b843-1b5154c54faf.0" configVersion="1aeefc8f47f921439a39ef3d578f238300000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru" id="733aba99-6bb1-444a-a5cb-c0c59694d0c3" configVersion="e6803a66ea55ec41a48395c40c1b5d7400000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru.Template" id="733aba99-6bb1-444a-a5cb-c0c59694d0c3.0" configVersion="cf41ad11cf50764f916fc4c6de5eeb8a00000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_ru" id="4f2ee9ec-dabd-4756-bc52-fb040c509479" configVersion="761b43e385326d468f90160a937eb71f00000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_ru.Template" id="4f2ee9ec-dabd-4756-bc52-fb040c509479.0" configVersion="6b14aa52872584428cf60019dd8ff6ee00000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМПлатежныйТерминалYarus_ru" id="aa02a4ac-9712-4a9e-8678-44f7563b822a" configVersion="bb3451fc303af243a2a13498075b31e000000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМПлатежныйТерминалYarus_ru.Template" id="aa02a4ac-9712-4a9e-8678-44f7563b822a.0" configVersion="ba01b26a60c72742ad697b766a22cdc500000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМЭлектронныеВесыPOS2_ru" id="839ff398-0fed-4082-932e-7b48464d30e6" configVersion="4f086c6cbfc33043880c5a01b3a68d4e00000000"/>
-		<Metadata name="CommonTemplate.ДрайверШтрихМЭлектронныеВесыPOS2_ru.Template" id="839ff398-0fed-4082-932e-7b48464d30e6.0" configVersion="a03a84f2d0d287468642a0857c14a0ca00000000"/>
+<Metadata name="CommonTemplate.ДрайверМертехЭлектронныеВесы_ru.Template" id="12738174-bb5b-43fc-b3cc-0f3483598a31.0" configVersion="9c0dde34e41f0a4bb134ffe3cea9b58500000000"/>
+<Metadata name="CommonTemplate.ДрайверМультисофтMSPOS54ФЗ_ru.Template" id="d60331a6-3700-4d18-b2ac-7a5c76b395b5.0" configVersion="f287d4870a154040a8fbe302af77da4e00000000"/>
+<Metadata name="CommonTemplate.ДрайверНАИСЭлектронныеВесы_ru.Template" id="a7ddc1f9-ee51-46c0-aa70-514e456287a6.0" configVersion="02902e0d9400594aa3480454ae618a7500000000"/>
+<Metadata name="CommonTemplate.ДрайверНЕВА54ФЗ4ФФД12_ru.Template" id="cba52194-5f99-475e-bd03-8b82b9e4c5e9.0" configVersion="e2e6bfd21a02ab428a4b352ea245f4a100000000"/>
+<Metadata name="CommonTemplate.ДрайверПБФЭквайринговыеТерминалы_ru.Template" id="892d921a-6bb4-4d17-98e3-818e6a8e9e2a.0" configVersion="b131ab1a7ec34a4e91653a424e86e44600000000"/>
+<Metadata name="CommonTemplate.ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru.Template" id="23d1f5f9-d151-479a-b345-49c5e0e6b4fa.0" configVersion="2fd4cb7717bcfe4eb7ec221988a975d700000000"/>
+<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru.Template" id="63a3566e-badd-4bce-869e-6b9592221494.0" configVersion="8a696823a5048549859f96cbdb3d169e00000000"/>
+<Metadata name="CommonTemplate.ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru.Template" id="1ebb46f8-34cf-42c0-a1e6-bde85e8ea0f8.0" configVersion="000c88f9a3e56444b2ad43701cfb47f400000000"/>
+<Metadata name="CommonTemplate.ДрайверПОСЦентрЭлектронныеВесыNG_ru.Template" id="f27da1e0-469f-43ab-a099-2d5cc9622995.0" configVersion="042cd6dd84950447910f4700d8f2356200000000"/>
+<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикетокVenus_ru.Template" id="c0f1acfe-c4bb-40c8-a404-164665793108.0" configVersion="f8b7cc5e5e88bf49ab83c11a37a9015f00000000"/>
+<Metadata name="CommonTemplate.ДрайверРБСВесыCПечатьюЭтикеток_ru.Template" id="f31170d7-b82c-443e-af29-da3486563593.0" configVersion="b3f387b46ff7154ea8097ec8e131390500000000"/>
+<Metadata name="CommonTemplate.ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru.Template" id="370dbaf4-4da0-4c36-af65-c077eb4b1b30.0" configVersion="59ee5834ef84bc458a20d7fdae51952400000000"/>
+<Metadata name="CommonTemplate.ДрайверРусГардСчитывательМагнитныхКарт_ru.Template" id="46cc31ee-49fb-4b11-ae85-265a88955742.0" configVersion="afa0129522f8374faf52dbd0784c980400000000"/>
+<Metadata name="CommonTemplate.ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru.Template" id="ea884928-ff39-44b3-8b29-013569e01343.0" configVersion="e35c0b1c4fbb7a48994396eab4c2e3e200000000"/>
+<Metadata name="CommonTemplate.ДрайверСервисПлюсЭлектронныеВесы_ru.Template" id="9e250d53-d42e-4ba5-a46c-f7eb8ff90916.0" configVersion="6b932e7b538dc1439c7395c409fce72700000000"/>
+<Metadata name="CommonTemplate.ДрайверСканкодДисплеиПокупателяNative_ru.Template" id="4a37d431-9980-4938-8855-69995dc23152.0" configVersion="6376e77ab9709343a5c58c38e8d3868f00000000"/>
+<Metadata name="CommonTemplate.ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru.Template" id="68a95617-9a5a-45f7-95be-d4593e72dca5.0" configVersion="89cc2da0470138478095ecc02cecdb3d00000000"/>
+<Metadata name="CommonTemplate.ДрайверСканкодСканерШтрихкода_ru.Template" id="ebad8398-5b15-4625-99e6-fb59229115f1.0" configVersion="24a1006f65ab8148a8a389600a00f1cf00000000"/>
+<Metadata name="CommonTemplate.ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru.Template" id="56b66dda-3da0-4316-a518-621b5bd0b408.0" configVersion="efea76eb397ba84aa24da5a419b28a9900000000"/>
+<Metadata name="CommonTemplate.ДрайверСканпортТерминалСбораДанных_ru.Template" id="b6542f5f-df7a-4552-aff5-fdeef57a015d.0" configVersion="5cb0e785a8ac14438198e9e9ba41509000000000"/>
+<Metadata name="CommonTemplate.ДрайверСканситиПринтераЭтикеток_ru.Template" id="d2192179-f323-4033-90b8-4c067c3f6ac8.0" configVersion="b38d7eb1e57a8345accc076b50d1308f00000000"/>
+<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru.Template" id="1867be48-9f65-4ded-b7b8-b7065f581a2b.0" configVersion="4853e55df3a7dd40922b53892e08510700000000"/>
+<Metadata name="CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru.Template" id="83698ca9-d38e-4cd5-bd90-58096f6e1cae.0" configVersion="22f30f12e4623a4a9cfd9da9df49e93400000000"/>
+<Metadata name="CommonTemplate.ДрайверСканситиУстройстваВвода_ru.Template" id="94eca0f3-d3c8-4a68-9167-558005a9e56c.0" configVersion="fd127e050b552441821886645caad73c00000000"/>
+<Metadata name="CommonTemplate.ДрайверСчетмашККТ54ФЗ_ru.Template" id="4170ff83-dfe7-42af-a2e4-ecd853e535fc.0" configVersion="dc755497e0834848afa2ae8d9e74bdb000000000"/>
+<Metadata name="CommonTemplate.ДрайверХарвестрТерминалыСбораДанных_ru.Template" id="c5b40baf-1d51-482d-af96-72d668df0f5d.0" configVersion="6d23ed7443f64448bbca491621d370dd00000000"/>
+<Metadata name="CommonTemplate.ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru.Template" id="fc637740-40fc-4f34-b843-1b5154c54faf.0" configVersion="1aeefc8f47f921439a39ef3d578f238300000000"/>
+<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru.Template" id="733aba99-6bb1-444a-a5cb-c0c59694d0c3.0" configVersion="cf41ad11cf50764f916fc4c6de5eeb8a00000000"/>
+<Metadata name="CommonTemplate.ДрайверШтрихМККТ54ФЗ4ФФД12_ru.Template" id="4f2ee9ec-dabd-4756-bc52-fb040c509479.0" configVersion="6b14aa52872584428cf60019dd8ff6ee00000000"/>
+<Metadata name="CommonTemplate.ДрайверШтрихМПлатежныйТерминалYarus_ru.Template" id="aa02a4ac-9712-4a9e-8678-44f7563b822a.0" configVersion="ba01b26a60c72742ad697b766a22cdc500000000"/>
+<Metadata name="CommonTemplate.ДрайверШтрихМЭлектронныеВесыPOS2_ru.Template" id="839ff398-0fed-4082-932e-7b48464d30e6.0" configVersion="a03a84f2d0d287468642a0857c14a0ca00000000"/>
 		<Metadata name="CommonTemplate.ДрайверЭвоторККТ54ФЗ_ru" id="5219362d-0965-44f1-9796-a815c72b43bd" configVersion="43326f7e5b35094b94b504aeffd4d50900000000"/>
 		<Metadata name="CommonTemplate.ДрайверЭвоторККТ54ФЗ_ru.Template" id="5219362d-0965-44f1-9796-a815c72b43bd.0" configVersion="4a21a67d1d0f26489e1b6071ad9f22a800000000"/>
 		<Metadata name="CommonTemplate.КодВидаНоменклатурнойКлассификации" id="c78dcdf6-36eb-43ea-a61e-1eb252d7f94a" configVersion="d637a21ed29daa49ab2d4547e90da60000000000"/>

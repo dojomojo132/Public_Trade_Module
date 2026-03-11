@@ -5,6 +5,10 @@
 Хранит не более MAX_BACKUPS последних бэкапов, старые удаляет автоматически.
 Не попадает в git (_backups/ в .gitignore).
 
+Исключения (не копируются в бэкап, восстанавливаются из эталона):
+  - Конфигурация/Проверка/  (staging-копия, восстанавливается через _smart_sync.py)
+  - Конфигурация/CommonTemplates/  (драйверы БПО, хранятся в _backups/_reference/)
+
 Использование:
     python scripts/_local_backup.py "описание задачи"
     python scripts/_local_backup.py  # описание опционально
@@ -17,12 +21,38 @@ import datetime
 
 ROOT = pathlib.Path(r"D:\Git\Public_Trade_Module")
 BACKUPS_DIR = ROOT / "_backups"
+REFERENCE_DIR = BACKUPS_DIR / "_reference"
 MAX_BACKUPS = 10
 
 SOURCES = [
     ROOT / "Конфигурация",
     ROOT / "MCP_Extension",
 ]
+
+# Папки внутри Конфигурация/, исключаемые из бэкапа
+EXCLUDE_DIRS = {"Проверка", "CommonTemplates"}
+
+
+def _ignore_excluded(directory, contents):
+    """Фильтр для shutil.copytree: исключает EXCLUDE_DIRS из корня Конфигурация/"""
+    dir_path = pathlib.Path(directory)
+    # Исключаем только на верхнем уровне Конфигурация/
+    if dir_path.name == "Конфигурация" or dir_path == ROOT / "Конфигурация":
+        return [c for c in contents if c in EXCLUDE_DIRS]
+    return []
+
+
+def ensure_reference():
+    """Создать эталон CommonTemplates если его ещё нет"""
+    ct_src = ROOT / "Конфигурация" / "CommonTemplates"
+    ct_ref = REFERENCE_DIR / "CommonTemplates"
+    if ct_ref.exists():
+        return  # Эталон уже есть
+    if not ct_src.exists():
+        return
+    REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(ct_src, ct_ref)
+    print(f"  ✓ Эталон CommonTemplates создан: _backups/_reference/CommonTemplates/")
 
 
 def make_backup(description: str = "") -> pathlib.Path:
@@ -36,11 +66,18 @@ def make_backup(description: str = "") -> pathlib.Path:
     if description:
         print(f"    Задача: {description}")
 
+    # Создать эталон CommonTemplates при первом бэкапе
+    ensure_reference()
+
     for src in SOURCES:
         if src.exists():
             dst = backup_dir / src.name
-            shutil.copytree(src, dst)
-            print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/")
+            if src.name == "Конфигурация":
+                shutil.copytree(src, dst, ignore=_ignore_excluded)
+                print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/  (без Проверка/, CommonTemplates/)")
+            else:
+                shutil.copytree(src, dst)
+                print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/")
         else:
             print(f"  - {src.name}/ (не найдена)")
 
@@ -96,6 +133,23 @@ def restore_backup(stamp: str):
             print(f"  ✓ {src_name}/ восстановлена")
         else:
             print(f"  - {src_name}/ отсутствует в бэкапе")
+
+    # Восстановить CommonTemplates из эталона
+    ct_ref = REFERENCE_DIR / "CommonTemplates"
+    ct_dst = ROOT / "Конфигурация" / "CommonTemplates"
+    if ct_ref.exists() and not ct_dst.exists():
+        shutil.copytree(ct_ref, ct_dst)
+        print(f"  ✓ CommonTemplates/ восстановлена из эталона")
+    elif not ct_ref.exists():
+        print(f"  ⚠ Эталон CommonTemplates не найден в _backups/_reference/")
+
+    # Восстановить Проверка/ через smart_sync
+    sync_script = ROOT / "scripts" / "_smart_sync.py"
+    if sync_script.exists():
+        import subprocess
+        subprocess.run([sys.executable, str(sync_script)], cwd=str(ROOT))
+        print(f"  ✓ Проверка/ восстановлена через _smart_sync.py")
+
     print("\n✓ Восстановление завершено.")
 
 

@@ -39,7 +39,7 @@ param(
     [string]$LogDir = "",
     [string]$BackupDir = "",
     [int]$MaxBackups = 5,
-    [int]$TimeoutSeconds = 180,
+    [int]$TimeoutSeconds = 90,
 
     # === ОПТИМИЗАЦИЯ ДЕПЛОЯ ===
     # Пропустить DT-бэкап (для безопасных BSL-правок, когда локальный бэкап достаточен)
