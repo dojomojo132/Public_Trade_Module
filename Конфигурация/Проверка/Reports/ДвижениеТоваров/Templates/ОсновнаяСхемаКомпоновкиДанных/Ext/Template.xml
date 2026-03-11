@@ -297,6 +297,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ОТ.Период КАК Период,
@@ -312,7 +322,12 @@
 		ИНАЧЕ &quot;Прочее&quot;
 	КОНЕЦ КАК ВидОперации,
 	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоПриход,
-	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоРасход
+	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоРасход,
+	ВЫБОР
+		КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход) ТОГДА ОТ.Количество
+		КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход) ТОГДА -ОТ.Количество
+		ИНАЧЕ 0
+	КОНЕЦ КАК Количество
 ИЗ
 	РегистрНакопления.ОстаткиТоваров КАК ОТ
 ГДЕ
@@ -492,10 +507,7 @@
 							<dcsset:field>ВидОперации</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоПриход</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоРасход</dcsset:field>
+							<dcsset:field>Количество</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
 				</dcsset:item>
@@ -614,10 +626,7 @@
 								<dcsset:field>ВидОперации</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоПриход</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоРасход</dcsset:field>
+								<dcsset:field>Количество</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 					</dcsset:item>
