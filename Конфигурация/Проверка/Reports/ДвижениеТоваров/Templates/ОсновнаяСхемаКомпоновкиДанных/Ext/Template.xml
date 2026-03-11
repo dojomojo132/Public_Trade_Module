@@ -475,11 +475,6 @@
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:groupItems>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Документ</dcsset:field>
-						</dcsset:item>
-					</dcsset:groupItems>
 					<dcsset:order>
 						<dcsset:item xsi:type="dcsset:OrderItemField">
 							<dcsset:field>Период</dcsset:field>
@@ -487,6 +482,9 @@
 						</dcsset:item>
 					</dcsset:order>
 					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Документ</dcsset:field>
+						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>Период</dcsset:field>
 						</dcsset:item>
@@ -599,11 +597,6 @@
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
 					<dcsset:item xsi:type="dcsset:StructureItemGroup">
-						<dcsset:groupItems>
-							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Документ</dcsset:field>
-							</dcsset:item>
-						</dcsset:groupItems>
 						<dcsset:order>
 							<dcsset:item xsi:type="dcsset:OrderItemField">
 								<dcsset:field>Период</dcsset:field>
@@ -611,6 +604,9 @@
 							</dcsset:item>
 						</dcsset:order>
 						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Документ</dcsset:field>
+							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>Период</dcsset:field>
 							</dcsset:item>
