@@ -313,15 +313,105 @@
 			<Role>ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок</Role>
 			<Role>ПолныеПрава</Role>
 			<Role>СохранениеДанныхПользователя</Role>
+			<Role>Кассир</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonTemplate>Драйвер1СДисплейПокупателя</CommonTemplate>
 			<CommonTemplate>Драйвер1СПринтерЧеков</CommonTemplate>
+			<CommonTemplate>Драйвер1СРарусДисплеиПокупателя_ru</CommonTemplate>
 			<CommonTemplate>Драйвер1СУстройстваВводаNative</CommonTemplate>
+			<CommonTemplate>Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru</CommonTemplate>
 			<CommonTemplate>Драйвер1СЭлектронныеВесы</CommonTemplate>
+			<CommonTemplate>ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru</CommonTemplate>
+			<CommonTemplate>ДрайверBizerbaВесыСПечатьюЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверCASВесыСПечатьюЭтикеток2х_ru</CommonTemplate>
+			<CommonTemplate>ДрайверCASЭлектронныеВесы2х_ru</CommonTemplate>
+			<CommonTemplate>ДрайверIboxProПоддержкаMPosЭквайринга_ru</CommonTemplate>
+			<CommonTemplate>ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru</CommonTemplate>
+			<CommonTemplate>ДрайверINVERSUMЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверIronLogicСчитывателиБесконтактныхКарт_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMERTECHСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMitsu54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMPos2canЭквайринг_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMSTARККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверPOSUAДисплеиПокупателя_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanТерминалыСбораДанных_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУниверсальныйДрайверСканера_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУстройствоПечати_ru</CommonTemplate>
+			<CommonTemplate>ДрайверScanPortУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверSKAM1CЭквайринговыеСистемы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверSkyPOSЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверTACTILIONЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверWNJIККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАЗУРККТ54ФЗФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАЗУРПлатежнаяСистема_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАтолДисплеиПокупателя8X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ107X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ10XФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ10XФФД12X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru</CommonTemplate>
 			<CommonTemplate>ДрайверАТОЛУстройстваВвода8X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛЭлектронныеВесы8X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверВерсияТK1Ф54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверВерсияТККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверГексагонПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверГексагонТерминалыСбораДанных_ru</CommonTemplate>
+			<CommonTemplate>ДрайверДримкасККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверДримкасККТ54ФЗ44_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнитпроККТ54ФЗФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнкотексККТ54ФЗМ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнкотексККТ54ФЗФФ12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИскраККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКАСТОМФ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверККСККТ54ФЗ2Х_ru</CommonTemplate>
+			<CommonTemplate>ДрайверККТКассатка54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКлеверенсСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКлеверенсТерминалыСбораДанных_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru</CommonTemplate>
 			<CommonTemplate>ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверМАСЭлектронныеВесы_ru</CommonTemplate>
 			<CommonTemplate>ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru</CommonTemplate>
 			<CommonTemplate>ДрайверМертехРаспознавательMertechAI</CommonTemplate>
+			<CommonTemplate>ДрайверМертехЭлектронныеВесы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверМультисофтMSPOS54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверНАИСЭлектронныеВесы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверНЕВА54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПБФЭквайринговыеТерминалы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрЭлектронныеВесыNG_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРБСВесыCПечатьюЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРБСВесыCПечатьюЭтикетокVenus_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРусГардСчитывательМагнитныхКарт_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСервисПлюсЭлектронныеВесы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодДисплеиПокупателяNative_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканпортТерминалСбораДанных_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСчетмашККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверХарвестрТерминалыСбораДанных_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМККТ54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМПлатежныйТерминалYarus_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМЭлектронныеВесыPOS2_ru</CommonTemplate>
 			<CommonTemplate>ДрайверЭвоторККТ54ФЗ_ru</CommonTemplate>
 			<CommonTemplate>КодВидаНоменклатурнойКлассификации</CommonTemplate>
 			<CommonTemplate>КомпонентаHttpBridge</CommonTemplate>
@@ -648,6 +738,7 @@
 			<Report>ДвижениеДенежныхСредств</Report>
 			<Report>Взаиморасчеты</Report>
 			<Report>_ДемоПроверкаПодсистемБПО</Report>
+			<Report>ПродажиЗаСмену</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
@@ -669,8 +760,6 @@
 			<DataProcessor>ОбменСОфлайнОборудованием</DataProcessor>
 			<DataProcessor>ПанельАдминистрированияБПО</DataProcessor>
 			<DataProcessor>ПечатьЭтикетокИЦенниковБПО</DataProcessor>
-			<DataProcessor>ВыручкаЗаСмену</DataProcessor>
-			<DataProcessor>ПродажиПоКассам</DataProcessor>
 			<InformationRegister>НастройкиПоУмолчанию</InformationRegister>
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>

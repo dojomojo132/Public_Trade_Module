@@ -28,13 +28,59 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>К ОПЛАТЕ:</v8:content>
+							<v8:content>К ОПЛАТЕ</v8:content>
 						</v8:item>
 					</Title>
+					<TitleLocation>Left</TitleLocation>
 					<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
 					<ContextMenu name="ИтогСуммаКонтекстноеМеню" id="24"/>
 					<ExtendedTooltip name="ИтогСуммаРасширеннаяПодсказка" id="25"/>
 				</LabelField>
+				<UsualGroup name="ГруппаСдачи" id="97">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчёт сдачи</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСдачиРасширеннаяПодсказка" id="98"/>
+					<ChildItems>
+						<InputField name="СуммаОтКлиентаПоле" id="99">
+							<DataPath>СуммаОтКлиента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Внесено</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Font ref="style:LargeTextFont" height="12" bold="true" kind="StyleItem"/>
+							<ContextMenu name="СуммаОтКлиентаПолеКонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="СуммаОтКлиентаПолеРасширеннаяПодсказка" id="101"/>
+							<Events>
+								<Event name="OnChange">СуммаОтКлиентаПолеПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="СуммаСдачиПоле" id="102">
+							<DataPath>СуммаСдачи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>СДАЧА</v8:content>
+								</v8:item>
+							</Title>
+							<TextColor>web:Green</TextColor>
+							<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
+							<ContextMenu name="СуммаСдачиПолеКонтекстноеМеню" id="103"/>
+							<ExtendedTooltip name="СуммаСдачиПолеРасширеннаяПодсказка" id="104"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
 				<LabelField name="НадписьРежимРаботы" id="82">
 					<DataPath>НадписьРежимРаботы</DataPath>
 					<TitleLocation>None</TitleLocation>
@@ -42,6 +88,18 @@
 					<ContextMenu name="НадписьРежимРаботыКонтекстноеМеню" id="83"/>
 					<ExtendedTooltip name="НадписьРежимРаботыРасширеннаяПодсказка" id="84"/>
 				</LabelField>
+				<Button name="КнопкаСдача" id="105">
+					<Type>UsualButton</Type>
+					<Width>15</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<CommandName>Form.Command.РассчитатьСдачу</CommandName>
+					<TextColor>style:ButtonTextColor</TextColor>
+					<BackColor>style:ToolTipBackColor</BackColor>
+					<BorderColor>style:ButtonBorderColor</BorderColor>
+					<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="КнопкаСдачаРасширеннаяПодсказка" id="106"/>
+				</Button>
 				<Button name="Удалить" id="3">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.Удалить</CommandName>
@@ -216,6 +274,7 @@
 								</InputField>
 								<InputField name="ТЧМаркаСтатус" id="91">
 									<DataPath>Объект.ТЧ.МаркаСтатус</DataPath>
+									<Visible>false</Visible>
 									<ReadOnly>true</ReadOnly>
 									<Width>3</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
@@ -250,51 +309,6 @@
 								</InputField>
 							</ChildItems>
 						</Table>
-						<UsualGroup name="ГруппаСдачи" id="97">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Расчёт сдачи</v8:content>
-								</v8:item>
-							</Title>
-							<Group>Horizontal</Group>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаСдачиРасширеннаяПодсказка" id="98"/>
-							<ChildItems>
-								<InputField name="СуммаОтКлиентаПоле" id="99">
-									<DataPath>СуммаОтКлиента</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Внесено:</v8:content>
-										</v8:item>
-									</Title>
-									<Width>12</Width>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<HorizontalStretch>false</HorizontalStretch>
-									<Font ref="style:LargeTextFont" height="12" bold="true" kind="StyleItem"/>
-									<ContextMenu name="СуммаОтКлиентаПолеКонтекстноеМеню" id="100"/>
-									<ExtendedTooltip name="СуммаОтКлиентаПолеРасширеннаяПодсказка" id="101"/>
-									<Events>
-										<Event name="OnChange">СуммаОтКлиентаПолеПриИзменении</Event>
-									</Events>
-								</InputField>
-								<LabelField name="СуммаСдачиПоле" id="102">
-									<DataPath>СуммаСдачи</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>СДАЧА:</v8:content>
-										</v8:item>
-									</Title>
-									<TextColor>web:Green</TextColor>
-									<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
-									<ContextMenu name="СуммаСдачиПолеКонтекстноеМеню" id="103"/>
-									<ExtendedTooltip name="СуммаСдачиПолеРасширеннаяПодсказка" id="104"/>
-								</LabelField>
-							</ChildItems>
-						</UsualGroup>
 						<UsualGroup name="ПанельКнопок" id="13">
 							<Group>Horizontal</Group>
 							<Representation>None</Representation>
@@ -306,11 +320,6 @@
 									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.Рассчитать</CommandName>
 									<ExtendedTooltip name="РассчитатьРасширеннаяПодсказка" id="54"/>
-								</Button>
-								<Button name="КнопкаСдача" id="105">
-									<Type>UsualButton</Type>
-									<CommandName>Form.Command.РассчитатьСдачу</CommandName>
-									<ExtendedTooltip name="КнопкаСдачаРасширеннаяПодсказка" id="106"/>
 								</Button>
 								<Button name="ПродажиПоКассам" id="107">
 									<Type>UsualButton</Type>
@@ -611,7 +620,6 @@
 			</Type>
 		</Attribute>
 	</Attributes>
-
 	<Commands>
 		<Command name="Рассчитать" id="1">
 			<Title>
