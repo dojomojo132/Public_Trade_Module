@@ -211,6 +211,21 @@ MCP использовать для:
 
 Использовать skill `1c-deploy`. Одна команда — минимум tool calls.
 
+### Шаг 0: Закрыть Конфигуратор (ОБЯЗАТЕЛЬНО перед деплоем)
+
+Открытый Конфигуратор блокирует ИБ → UpdateDBCfg провалится с "Ошибка блокировки".
+
+```bash
+taskkill /IM 1cv8.exe /F 2>nul
+```
+
+Или через Python:
+```python
+import subprocess; subprocess.run(['taskkill', '/IM', '1cv8.exe', '/F'], capture_output=True)
+```
+
+Если 1cv8.exe не найден — OK, просто нет блокировки.
+
 ### Быстрый деплой (BSL уже проверен в Фазе 3)
 
 ```bash
