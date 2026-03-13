@@ -88,6 +88,14 @@
 			&amp;МоментВремени,
 			ТипЦен = &amp;ТипЦенЗакупочная) КАК Цены
 		ПО Остатки.Номенклатура = Цены.Номенклатура</query>
+		<totalField>
+			<dataPath>Количество</dataPath>
+			<expression>Сумма(Количество)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>Сумма</dataPath>
+			<expression>Сумма(Сумма)</expression>
+		</totalField>
 	</dataSet>
 	<parameter>
 		<name>МоментВремени</name>
