@@ -759,6 +759,12 @@ function Step-Load {
         Write-Step "2. ЗАГРУЗКА" "Загружена, но есть предупреждения ($($parseResult.Errors.Count))" "WARN"
         $parseResult.Errors | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
         return @{ Success = $true; Errors = @(); Warnings = $parseResult.Errors }
+    } elseif ($result.ExitCode -eq 1) {
+        # Exit code 1 = загружено с предупреждениями (форматные ошибки форм, события и т.п.)
+        Write-Step "2. ЗАГРУЗКА" "Загружена с предупреждениями (exit code: 1, warnings: $($parseResult.Errors.Count + $parseResult.Warnings.Count))" "WARN"
+        $allWarnings = $parseResult.Errors + $parseResult.Warnings
+        $allWarnings | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+        return @{ Success = $true; Errors = @(); Warnings = $allWarnings }
     } else {
         # Реальная ошибка
         Write-Step "2. ЗАГРУЗКА" "ОШИБКА загрузки (exit code: $($result.ExitCode))" "FAIL"
