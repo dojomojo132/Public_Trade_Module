@@ -215,8 +215,13 @@ description: "Координатор сложных задач PTM. Use when tas
 ## Фаза 6: Завершение
 
 1. Обновить техническую спецификацию (`<Record date="YYYY-MM-DD">`)
-2. Отметить все задачи как completed в todo-листе
-3. Git commit — **ТОЛЬКО** после выбора SELECTED:1 (Закоммитить) в `vscode_askQuestions` (ДИАЛОГ 2)
+2. **Obsidian Knowledge Graph** — обновить/создать заметки затронутых объектов:
+   - Через MCP `obsidian-vault`: `vault.create` (новый) или `edit.window` (изменённый)
+   - Путь: `PTM/{ТипОбъекта}/{Имя}.md` с wikilinks и frontmatter
+   - Структура папок: `PTM/Документы/`, `PTM/Справочники/`, `PTM/Регистры/`, `PTM/Обработки/`, `PTM/Отчёты/`
+   - Префиксы регистров: `РН ` (накопления), `РС ` (сведений)
+3. Отметить все задачи как completed в todo-листе
+4. Git commit — **ТОЛЬКО** после выбора SELECTED:1 (Закоммитить) в `vscode_askQuestions` (ДИАЛОГ 2)
 
 ---
 

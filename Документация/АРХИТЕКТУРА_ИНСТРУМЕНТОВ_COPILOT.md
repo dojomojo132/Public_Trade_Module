@@ -34,8 +34,8 @@
 | skills/ | 6 | 889 | По описанию (on-demand) |
 | agents/ | 5 | 498 | При явном вызове агента |
 | prompts/ | 8 | 252 | При явном вызове пользователем |
-| hooks/ | 1+2 скрипта | 94 | Автоматически (SessionStart, PreToolUse) |
-| **Итого** | **25 файлов** | **~2185** | |
+| hooks/ | 1+6 скриптов | 210 | Автоматически (SessionStart, PreToolUse, PostToolUse) + agent-scoped |
+| **Итого** | **29 файлов** | **~2300** | |
 
 **Ключевые изменения:** copilot-instructions.md сокращён на **90%** (2000→192), skills расширены на **92%** (462→889), агентов стало 5 вместо 2, промпты объединены в один каталог.
 
@@ -157,8 +157,16 @@
 │       Не дублируют процедуры
 │
 Слой 5: hooks/ (автоматическая инжекция)
-│       └── guardrails (лёгкие напоминания при старте/редактировании)
-│       Ответственность: ПАССИВНАЯ БЕЗОПАСНОСТЬ (не блокируют, напоминают)
+│       ├── Workspace-level: guardrails.json (SessionStart, PreToolUse, PostToolUse)
+│       │     session_start.py → регламент PTM
+│       │     pre_edit_check.py → напоминание при BSL/XML редактировании
+│       │     post_tool_audit.py → аудит-лог всех tool calls
+│       └── Agent-scoped: hooks в YAML frontmatter .agent.md
+│             1c-deployer → deployer_pre_check.py (блокировка опасных команд)
+│                         → deployer_post_check.py (анализ ошибок деплоя)
+│             1c-coder    → coder_post_edit.py (напоминание get_errors)
+│             1c-form-builder → form_builder_post_create.py (BOM/multi-file чеклист)
+│       Ответственность: АКТИВНАЯ БЕЗОПАСНОСТЬ (workspace — напоминания, agent-scoped — блокировки)
 ```
 
 ### 2.2а Мультиагентная модель (5 специализированных агентов + Explore)
@@ -477,7 +485,7 @@ User → orchestrator (контекст A)
 
 7. ✅ **Обновлены агенты** — 5 специализированных (architect, coder, form-builder, deployer, orchestrator)
 8. ✅ **Обновлены промпты** — 8 промптов в одном каталоге с единой конвенцией ptm-*
-9. ✅ **Hooks** — guardrails.json + 2 Python-скрипта (SessionStart, PreToolUse)
+9. ✅ **Hooks** — guardrails.json (3 workspace events) + 6 Python-скриптов + agent-scoped hooks в 3 агентах
 10. ✅ **Instructions** — bsl.instructions.md (138 строк) + xml-1c.instructions.md (122 строки)
 
 ---

@@ -98,6 +98,7 @@
 ❌ ЗАПРЕЩЕНО: выдавать код без get_errors → 0 ошибок
 ❌ ЗАПРЕЩЕНО: создавать объект без обновления Configuration.xml И ConfigDumpInfo.xml
 ❌ ЗАПРЕЩЕНО: git commit без явного подтверждения пользователя (ДИАЛОГ 2)
+✅ ОБЯЗАТЕЛЬНО: после изменения метаданных — обновить Obsidian Knowledge Graph (vault.create/edit)
 ✅ ОБЯЗАТЕЛЬНО: ПЕРЕД изменениями — локальный бэкап + Dump + MCP-проверка
 ✅ ОБЯЗАТЕЛЬНО: XML — брать шаблон из Документация/Шаблоны/
 ✅ ОБЯЗАТЕЛЬНО: validate-config.ps1 → deploy-config.ps1 → открыть конфигуратор
@@ -124,6 +125,7 @@
 | 5 | Реестр критических ошибок | `Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md` |
 | 6 | Журнал производительности задач | `Документация/ЖУРНАЛ_ПРОИЗВОДИТЕЛЬНОСТИ.md` |
 | 7 | Архитектура инструментов Copilot | `Документация/АРХИТЕКТУРА_ИНСТРУМЕНТОВ_COPILOT.md` |
+| 8 | Obsidian Knowledge Graph (MCP) | Vault `DojoMojo_Obsidian` → `PTM/` (localhost:3001) |
 
 ### Copilot-инструменты (`.github/`)
 
@@ -166,6 +168,7 @@
 
 ФАЗА 3: ЗАВЕРШЕНИЕ
   → Конфигуратор → Обновить спецификацию → Record в History
+  → Obsidian: обновить/создать заметки затронутых объектов (ОБЯЗАТЕЛЬНО)
 
 ФАЗА 4: МОНИТОРИНГ
   → monitor-errors.ps1 -Action Check → ДИАЛОГ 1/2
@@ -287,6 +290,7 @@ python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5  # монит
 ✓ validate-config.ps1 → 0 ошибок
 ✓ deploy-config.ps1 → успешно → конфигуратор открыт
 ✓ Спецификация обновлена
+✓ Obsidian Knowledge Graph обновлён (PTM/ в vault DojoMojo_Obsidian)
 ✓ monitor-errors.ps1 → 0 ошибок
 ✓ ИНТЕРАКТИВНЫЙ ДИАЛОГ (vscode_askQuestions) — в конце каждого ответа
 ```

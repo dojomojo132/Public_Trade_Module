@@ -74,5 +74,8 @@
     "chat.agent.autoApprove": true,
 
     // Максимальное количество шагов агента за один запрос
-    "chat.agent.maxRequests": 1000
+    "chat.agent.maxRequests": 1000,
+
+    // Agent-scoped hooks в .agent.md файлах (Preview)
+    "chat.useCustomAgentHooks": true
 }

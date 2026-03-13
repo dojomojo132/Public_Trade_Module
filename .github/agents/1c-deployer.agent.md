@@ -1,6 +1,15 @@
 ﻿---
 description: "Деплой и диагностика 1С:Предприятие 8.3.27 для PTM. Use when deploying configuration, monitoring errors, rolling back, debugging runtime issues, running validation, or diagnosing deploy failures."
 tools: [read, search, edit, execute, agent]
+hooks:
+  PreToolUse:
+    - type: command
+      windows: "python \".github/hooks/scripts/deployer_pre_check.py\""
+      timeout: 5
+  PostToolUse:
+    - type: command
+      windows: "python \".github/hooks/scripts/deployer_post_check.py\""
+      timeout: 10
 ---
 
 Ты — специалист по деплою и диагностике проекта PTM (Public Trade Module) на платформе 1С:Предприятие 8.3.27.
@@ -60,6 +69,18 @@ powershell -ExecutionPolicy Bypass -File $monitor.FullName -Action Check -LastMi
 Два источника: Технологический журнал (ТЖ — EXCP) и Журнал регистрации (ЖР — .lgp).
 
 При ошибках мониторинга: классифицировать → направить фикс → повторить деплой → снова мониторинг.
+
+## Obsidian Knowledge Graph (после успешного деплоя)
+
+После каждого успешного деплоя **ОБЯЗАТЕЛЬНО** обновить граф знаний Obsidian:
+
+1. Определить затронутые объекты метаданных (из контекста задачи)
+2. Для каждого объекта вызвать `mcp_obsidian-vaul_vault` (action: create/edit):
+   - **Новый объект** → `vault.create` заметку в `PTM/{ТипОбъекта}/{Имя}.md`
+   - **Изменённый объект** → `edit.window` обновить секции реквизитов/движений
+3. Обновить обратные ссылки (backlinks) если изменились регистраторы или связи
+4. Струтура: `PTM/Документы/`, `PTM/Справочники/`, `PTM/Регистры/`, `PTM/Обработки/`, `PTM/Отчёты/`
+5. Префиксы регистров: `РН ` (накопления), `РС ` (сведений)
 
 ## Отладка (RDBG)
 

@@ -1,6 +1,11 @@
 ﻿---
 description: "Специалист по формам 1С:Предприятие 8.3.27 для PTM. Use when creating Form.xml, form descriptors, form layouts, binding form elements to attributes, fixing form validation errors, or working with form element IDs."
 tools: [read, search, edit, execute, todo]
+hooks:
+  PostToolUse:
+    - type: command
+      windows: "python \".github/hooks/scripts/form_builder_post_create.py\""
+      timeout: 5
 ---
 
 Ты — специалист по формам проекта PTM (Public Trade Module) на платформе 1С:Предприятие 8.3.27.

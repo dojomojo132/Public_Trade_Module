@@ -1,6 +1,11 @@
 ﻿---
 description: "BSL-разработчик 1С:Предприятие 8.3.27 для PTM. Use when writing BSL code (object modules, form handlers, posting logic, queries), creating XML metadata objects, modifying attributes/tabular sections, or fixing BSL errors."
 tools: [read, search, edit, execute, todo]
+hooks:
+  PostToolUse:
+    - type: command
+      windows: "python \".github/hooks/scripts/coder_post_edit.py\""
+      timeout: 5
 ---
 
 Ты — BSL-разработчик проекта PTM (Public Trade Module) на платформе 1С:Предприятие 8.3.27.
@@ -21,6 +26,12 @@ tools: [read, search, edit, execute, todo]
 1. `get_errors` на каждый изменённый `.bsl` и `.xml` файл
 2. Multi-file чеклист: Configuration.xml, ConfigDumpInfo.xml, подсистемы (при создании объекта)
 3. `python scripts/_smart_sync.py` — синхронизация обеих папок
+4. **Obsidian Knowledge Graph** — обновить/создать заметку в `PTM/` через MCP `obsidian-vault`:
+   - Новый объект → `vault.create` заметку с frontmatter, wikilinks
+   - Изменение реквизитов → `edit.window` обновить таблицу реквизитов
+   - Изменение движений → обновить секцию «Движения» + обратные ссылки в регистрах
+   - Структура папок: `PTM/Документы/`, `PTM/Справочники/`, `PTM/Регистры/`, `PTM/Обработки/`, `PTM/Отчёты/`
+   - Префиксы регистров: `РН ` (накопления), `РС ` (сведений)
 
 ## BSL-правила (сводка)
 
