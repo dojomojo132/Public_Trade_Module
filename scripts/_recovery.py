@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 """
-Recovery: restore Конфигурация from last working commit, resync to Проверка.
+Recovery: restore Конфигурация from last working commit.
 Saves current ИмпортНоменклатуры changes before restoration.
 """
 import subprocess
@@ -9,7 +9,6 @@ import shutil
 
 PROJECT = pathlib.Path(r"D:\Git\Public_Trade_Module")
 KONFIG = PROJECT / "Конфигурация"
-PROVERKA = KONFIG / "Проверка"
 
 # Step 1: Save current ИмпортНоменклатуры changes (the only valuable uncommitted work besides report)
 print("=== STEP 1: Save uncommitted ИмпортНоменклатуры changes ===")
@@ -48,23 +47,8 @@ print(f"  Reports in restored config: {config.count('<Report>')}")
 print(f"  ИмпортНоменклатуры present: {'ИмпортНоменклатуры' in config}")
 print(f"  СправочникНоменклатуры present: {'СправочникНоменклатуры' in config}")
 
-# Step 3: Resync Конфигурация -> Проверка (fresh copy)
-print("\n=== STEP 3: Resync to Проверка ===")
-if PROVERKA.exists():
-    shutil.rmtree(PROVERKA)
-for item in KONFIG.iterdir():
-    if item.name in ("Проверка", "README.md"):
-        continue
-    dest = PROVERKA / item.name
-    if item.is_dir():
-        shutil.copytree(item, dest)
-    else:
-        PROVERKA.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(item, dest)
-print("  Fresh Проверка created from git-restored Конфигурация")
-
-# Step 4: Remove report files that were NEW (untracked)
-print("\n=== STEP 4: Cleanup untracked report files from Конфигурация ===")
+# Step 3: Cleanup untracked report files from Конфигурация
+print("\n=== STEP 3: Cleanup untracked report files from Конфигурация ===")
 report_xml = KONFIG / "Reports" / "СправочникНоменклатуры.xml"
 report_dir = KONFIG / "Reports" / "СправочникНоменклатуры"
 if report_xml.exists():
@@ -75,5 +59,5 @@ if report_dir.exists():
     print("  Removed report directory")
 
 print("\n=== DONE ===")
-print("Конфигурация and Проверка restored to last working commit.")
+print("Конфигурация restored to last working commit.")
 print(f"ИмпортНоменклатуры changes saved to: {saved_dir}")

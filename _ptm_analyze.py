@@ -16,7 +16,7 @@ import re
 import sys
 
 # Корень конфигурации
-CONFIG_ROOT = pathlib.Path(r"D:\Git\Public_Trade_Module\Конфигурация\Проверка")
+CONFIG_ROOT = pathlib.Path(r"D:\Git\Public_Trade_Module\Конфигурация")
 
 # Исключаем БПО-модули (начинаются с _)
 def is_ptm_path(path: pathlib.Path) -> bool:
@@ -129,7 +129,7 @@ def scan_file(filepath: pathlib.Path, checks, ptm_only_filter=False):
 
 
 def get_relative_path(filepath: pathlib.Path) -> str:
-    """Получить путь относительно Конфигурация/Проверка/"""
+    """Получить путь относительно Конфигурация/"""
     try:
         return str(filepath.relative_to(CONFIG_ROOT))
     except ValueError:

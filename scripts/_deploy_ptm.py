@@ -6,7 +6,7 @@ import sys
 import datetime
 
 IB_PATH = r"D:\Confiq\Public Trade Module"
-CONFIG_PATH = r"D:\Git\Public_Trade_Module\Конфигурация\Проверка"
+CONFIG_PATH = r"D:\Git\Public_Trade_Module\Конфигурация"
 LOGS_DIR = pathlib.Path(r"D:\Git\Public_Trade_Module\logs")
 BACKUPS_DIR = pathlib.Path(r"D:\Git\Public_Trade_Module\Документация\Валидация\backups")
 V8 = r"C:\Program Files\1cv8\8.3.27.1719\bin\1cv8.exe"

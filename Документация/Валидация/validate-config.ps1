@@ -9,7 +9,7 @@
     Путь к папке с конфигурацией (где лежит Configuration.xml)
 .EXAMPLE
     .\validate-config.ps1
-    .\validate-config.ps1 -ConfigPath "D:\Git\Public_Trade_Module\Конфигурация\Проверка"
+    .\validate-config.ps1 -ConfigPath "D:\Git\Public_Trade_Module\Конфигурация"
 #>
 
 param(
@@ -27,10 +27,7 @@ $OutputEncoding = [System.Text.Encoding]::UTF8
 if (-not $ConfigPath) {
     $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
     $projectRoot = Split-Path -Parent (Split-Path -Parent $scriptDir)
-    $ConfigPath = Join-Path $projectRoot "Конфигурация\Проверка"
-    if (-not (Test-Path $ConfigPath)) {
-        $ConfigPath = Join-Path $projectRoot "Конфигурация"
-    }
+    $ConfigPath = Join-Path $projectRoot "Конфигурация"
 }
 
 $configurationXml = Join-Path $ConfigPath "Configuration.xml"

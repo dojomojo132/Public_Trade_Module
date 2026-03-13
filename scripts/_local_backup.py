@@ -6,7 +6,6 @@
 Не попадает в git (_backups/ в .gitignore).
 
 Исключения (не копируются в бэкап, восстанавливаются из эталона):
-  - Конфигурация/Проверка/  (staging-копия, восстанавливается через _smart_sync.py)
   - Конфигурация/CommonTemplates/  (драйверы БПО, хранятся в _backups/_reference/)
 
 Использование:
@@ -30,7 +29,7 @@ SOURCES = [
 ]
 
 # Папки внутри Конфигурация/, исключаемые из бэкапа
-EXCLUDE_DIRS = {"Проверка", "CommonTemplates"}
+EXCLUDE_DIRS = {"CommonTemplates"}
 
 
 def _ignore_excluded(directory, contents):
@@ -74,7 +73,7 @@ def make_backup(description: str = "") -> pathlib.Path:
             dst = backup_dir / src.name
             if src.name == "Конфигурация":
                 shutil.copytree(src, dst, ignore=_ignore_excluded)
-                print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/  (без Проверка/, CommonTemplates/)")
+                print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/  (без CommonTemplates/)")
             else:
                 shutil.copytree(src, dst)
                 print(f"  ✓ {src.name}/  →  _backups/{stamp}/{src.name}/")
@@ -142,13 +141,6 @@ def restore_backup(stamp: str):
         print(f"  ✓ CommonTemplates/ восстановлена из эталона")
     elif not ct_ref.exists():
         print(f"  ⚠ Эталон CommonTemplates не найден в _backups/_reference/")
-
-    # Восстановить Проверка/ через smart_sync
-    sync_script = ROOT / "scripts" / "_smart_sync.py"
-    if sync_script.exists():
-        import subprocess
-        subprocess.run([sys.executable, str(sync_script)], cwd=str(ROOT))
-        print(f"  ✓ Проверка/ восстановлена через _smart_sync.py")
 
     print("\n✓ Восстановление завершено.")
 

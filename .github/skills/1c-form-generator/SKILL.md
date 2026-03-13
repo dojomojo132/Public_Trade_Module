@@ -1,6 +1,6 @@
 ﻿---
 name: 1c-form-generator
-description: "Generate 1C:Enterprise managed forms (Form.xml, descriptor, Module.bsl). Use when creating new forms for catalogs, documents, or data processors. Covers form structure, element IDs, BOM encoding, required children, and dual-folder synchronization."
+description: "Generate 1C:Enterprise managed forms (Form.xml, descriptor, Module.bsl). Use when creating new forms for catalogs, documents, or data processors. Covers form structure, element IDs, BOM encoding, required children, and file encoding."
 ---
 
 # Генерация управляемых форм 1С
@@ -23,7 +23,7 @@ python scripts/_generate_form.py --type dataprocessor --object Управлен�
 python scripts/_generate_form.py --check
 ```
 
-Генератор создаёт 3 файла в ОБОИХ путях (`Конфигурация/` и `Конфигурация/Проверка/`) и гарантирует корректный BOM + CRLF.
+Генератор создаёт 3 файла в `Конфигурация/` и гарантирует корректный BOM + CRLF.
 
 ## Структура файлов формы
 
@@ -103,8 +103,7 @@ python scripts/_generate_form.py --check
 1. **Родительский объект** — добавить `<Form>ИмяФормы</Form>` в `<ChildObjects>`
 2. **DefaultObjectForm** — заполнить если это основная форма
 3. **ConfigDumpInfo.xml** — добавить `<Metadata name="Тип.Объект.Form.ИмяФормы" id="UUID"/>`
-4. **Двойная структура** — файлы в ОБОИХ каталогах (генератор делает автоматически)
-5. **get_errors** — проверить Form.xml и Module.bsl
+4. **get_errors** — проверить Form.xml и Module.bsl
 
 ## Основные элементы формы
 

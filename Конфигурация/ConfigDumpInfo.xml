@@ -2197,6 +2197,9 @@
 		<Metadata name="Report.Взаиморасчеты" id="f151f2e8-88a2-4c3f-b1d7-581f6f99ae04" configVersion="0f83a8799887354faef9efba13f3249c00000000"/>
 		<Metadata name="Report.Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="27e97231-77c7-40fc-897b-98c503899251" configVersion="a8b1323aefbcd3428ac7aae84e11e56400000000"/>
 		<Metadata name="Report.Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="27e97231-77c7-40fc-897b-98c503899251.0" configVersion="9733a16146161649b3d1b8c430fce59c00000000"/>
+		<Metadata name="Report.ПродажиЗаСмену" id="03da25ca-9272-4bfa-988b-04b4c98b7147" configVersion="5991565621f9384d9ae0ea623ea372d000000000"/>
+		<Metadata name="Report.ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных" id="863207c9-3fe5-4d13-b1f5-1a6b11446fec" configVersion="1b5483455d8e6545804feceb0948629300000000"/>
+		<Metadata name="Report.ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="863207c9-3fe5-4d13-b1f5-1a6b11446fec.0" configVersion="f75f08dcbd3afd4f9c34a9937017a28d00000000"/>
 		<Metadata name="Report.Возвраты" id="9c178ca6-7aea-4fcc-8657-90ba5c5d13de" configVersion="ccf0a2e4798afc4189c3a951c632573f00000000"/>
 		<Metadata name="Report.Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных" id="b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6e" configVersion="29941ecc6827dd4f96273d1429089afb00000000"/>
 		<Metadata name="Report.Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b1c2d3e4-f5a6-7b8c-9d0e-1f2a3b4c5d6e.0" configVersion="16feab0e06f3ec4a93370bf4ccd6538c00000000"/>
@@ -2229,6 +2232,8 @@
 		<Metadata name="Role.ПолныеПрава.Rights" id="fdb012c9-583a-42af-95da-070e75a58078.0" configVersion="b149d884f2bea7499db2fc2f2ef7a39400000000"/>
 		<Metadata name="Role.СохранениеДанныхПользователя" id="b9004626-915c-44c8-9cb7-25e5b627ee83" configVersion="44f7f52ef597354fbf9d44881f105b8100000000"/>
 		<Metadata name="Role.СохранениеДанныхПользователя.Rights" id="b9004626-915c-44c8-9cb7-25e5b627ee83.0" configVersion="398b3182a1d2974aa803a2bce68aee5a00000000"/>
+		<Metadata name="Role.Кассир" id="7424bb4f-a105-4137-bc18-4eb96f5a2b77" configVersion="e036997985a77840803265745538ab0500000000"/>
+		<Metadata name="Role.Кассир.Rights" id="7424bb4f-a105-4137-bc18-4eb96f5a2b77.0" configVersion="bc811ca18c5f8d4b9d2831ee4f38f41a00000000"/>
 		<Metadata name="ScheduledJob.ОчисткаИсторииОперацийОчередиЧеков" id="0cf3cad9-49e3-4070-b6ca-a4bb9ff16dd7" configVersion="6e42b5e53249384f9f4c633d2651e1d400000000"/>
 		<Metadata name="ScheduledJob.ОчисткаИсторииОперацийОчередиЧеков.Schedule" id="0cf3cad9-49e3-4070-b6ca-a4bb9ff16dd7.0" configVersion="9f5d0633a924f04fad36d5edee7ccad300000000"/>
 		<Metadata name="ScheduledJob.ОчисткаИсторииОперацийПроверкиКМ" id="1deaed2d-91ab-41db-921b-79c61740c770" configVersion="989417270514c143883a850d1d6449e900000000"/>

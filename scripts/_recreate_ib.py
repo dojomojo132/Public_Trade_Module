@@ -6,7 +6,7 @@ import shutil
 
 IB_PATH = pathlib.Path(r"D:\Confiq\Public Trade Module")
 BIN_1C = r"C:\Program Files\1cv8\8.3.27.1719\bin\1cv8.exe"
-PROVERKA = pathlib.Path(r"D:\Git\Public_Trade_Module\Конфигурация\Проверка")
+CONFIG_PATH = pathlib.Path(r"D:\Git\Public_Trade_Module\Конфигурация")
 LOG = pathlib.Path(r"D:\Git\Public_Trade_Module\_ib_log.txt")
 
 # Step 1: Delete existing ИБ files
@@ -34,12 +34,12 @@ print(f"  Exit code: {r.returncode}")
 if LOG.exists():
     print(f"  Log: {LOG.read_text(encoding='utf-8').strip()}")
 
-# Step 3: Load config from Проверка (clean commit)
-print("\n=== STEP 3: Load config from Проверка ===")
+# Step 3: Load config from Конфигурация (clean commit)
+print("\n=== STEP 3: Load config from Конфигурация ===")
 r = subprocess.run([
     BIN_1C, "DESIGNER",
     "/F", str(IB_PATH),
-    "/LoadConfigFromFiles", str(PROVERKA),
+    "/LoadConfigFromFiles", str(CONFIG_PATH),
     "/DisableStartupDialogs", "/DisableStartupMessages",
     "/Out", str(LOG)
 ], capture_output=True, timeout=300)

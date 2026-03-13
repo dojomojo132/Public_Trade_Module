@@ -31,9 +31,8 @@ BOM = b'\xef\xbb\xbf'
 PROJECT_ROOT = pathlib.Path(r"D:\Git\Public_Trade_Module")
 TEMPLATES_DIR = PROJECT_ROOT / "Документация" / "Шаблоны" / "binary"
 
-# Два пути — оба ОБЯЗАТЕЛЬНО обновляются
+# Путь конфигурации
 CONFIG_PATHS = [
-    PROJECT_ROOT / "Конфигурация" / "Проверка",
     PROJECT_ROOT / "Конфигурация",
 ]
 
@@ -174,8 +173,6 @@ def generate_form(form_type, object_name, form_name, dry_run=False):
     1. Дескриптор: {TypeFolder}/{Object}/Forms/{FormName}.xml
     2. Form.xml:   {TypeFolder}/{Object}/Forms/{FormName}/Ext/Form.xml
     3. Module.bsl: {TypeFolder}/{Object}/Forms/{FormName}/Ext/Form/Module.bsl
-    
-    В обоих путях (Конфигурация/Проверка/ и Конфигурация/).
     """
     
     form_uuid = generate_uuid()

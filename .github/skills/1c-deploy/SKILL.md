@@ -1,6 +1,6 @@
 ﻿---
 name: 1c-deploy
-description: "Deploy 1C:Enterprise configuration to InfoBase. Use when deploying, validating, rolling back, monitoring errors, running deploy-config.ps1, or managing git commits. Covers backup, dump, load, update, check, rollback, monitoring, smart sync, and git commit workflow."
+description: "Deploy 1C:Enterprise configuration to InfoBase. Use when deploying, validating, rolling back, monitoring errors, running deploy-config.ps1, or managing git commits. Covers backup, dump, load, update, check, rollback, monitoring, and git commit workflow."
 ---
 
 # Деплой конфигурации 1С в информационную базу
@@ -12,7 +12,6 @@ description: "Deploy 1C:Enterprise configuration to InfoBase. Use when deploying
 - Откат после неудачного деплоя
 - Мониторинг ошибок после деплоя (ТЖ + ЖР)
 - Синхронизация файлов с ИБ (Dump)
-- Smart Sync между двойными каталогами
 - Git commit после подтверждения пользователем
 
 ---
@@ -188,25 +187,6 @@ python scripts/_ps_wrapper.py monitor -Action Stop
 ```
 
 При обнаружении ошибок: исправить BSL/XML → повторить деплой → снова мониторинг.
-
----
-
-## Smart Sync (синхронизация двойных каталогов)
-
-В PTM конфигурация хранится в двух каталогах: `Конфигурация/` и `Конфигурация/Проверка/`.
-
-```powershell
-# Синхронизировать только изменённые файлы (по git diff):
-python scripts/_smart_sync.py
-
-# Полная синхронизация:
-python scripts/_smart_sync.py --all
-
-# Только посмотреть что изменилось:
-python scripts/_smart_sync.py --dry-run
-```
-
-Выполнять **ПЕРЕД деплоем** после любых изменений файлов.
 
 ---
 

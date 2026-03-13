@@ -1,5 +1,5 @@
 ﻿---
-description: "Use when creating, editing, or reviewing XML files of 1C:Enterprise 8.3.27 configuration. Covers namespace headers, version requirements, metadata structure, Configuration.xml, ConfigDumpInfo.xml, UUID format, and dual-folder synchronization."
+description: "Use when creating, editing, or reviewing XML files of 1C:Enterprise 8.3.27 configuration. Covers namespace headers, version requirements, metadata structure, Configuration.xml, ConfigDumpInfo.xml, UUID format, and file encoding."
 applyTo: "**/*.xml"
 ---
 
@@ -80,13 +80,10 @@ applyTo: "**/*.xml"
 | Регистр накопления | `AccumulationRegisters/Имя.xml` | `<AccumulationRegister>Имя</AccumulationRegister>` |
 | Регистр сведений | `InformationRegisters/Имя.xml` | `<InformationRegister>Имя</InformationRegister>` |
 
-## Двойная структура каталогов
+## Рабочая папка конфигурации
 
-В проекте PTM конфигурация хранится в двух каталогах:
-- `Конфигурация/` — основная рабочая копия
-- `Конфигурация/Проверка/` — зеркало для загрузки
-
-При изменении файлов — синхронизировать оба каталога через `python scripts/_smart_sync.py`.
+Конфигурация хранится в одном каталоге:
+- `Конфигурация/` — рабочая копия, из неё выполняется деплой в ИБ
 
 ## Формы
 

@@ -58,7 +58,7 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $projectRoot = Split-Path -Parent (Split-Path -Parent $scriptDir)
 
 if (-not $ConfigPath) {
-    $ConfigPath = Join-Path $projectRoot "Конфигурация\Проверка"
+    $ConfigPath = Join-Path $projectRoot "Конфигурация"
 }
 if (-not $ReportDir) {
     $ReportDir = Join-Path $projectRoot "Документация\Тестирование\Отчёты"

@@ -313,6 +313,7 @@
 			<Role>ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок</Role>
 			<Role>ПолныеПрава</Role>
 			<Role>СохранениеДанныхПользователя</Role>
+			<Role>Кассир</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
 			<CommonTemplate>Драйвер1СДисплейПокупателя</CommonTemplate>
 			<CommonTemplate>Драйвер1СПринтерЧеков</CommonTemplate>
@@ -647,6 +648,7 @@
 			<Report>ПродажиПоСчетам</Report>
 			<Report>ДвижениеДенежныхСредств</Report>
 			<Report>Взаиморасчеты</Report>
+			<Report>ПродажиЗаСмену</Report>
 			<Report>_ДемоПроверкаПодсистемБПО</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
