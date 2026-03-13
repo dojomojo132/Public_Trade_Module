@@ -160,8 +160,7 @@
 		<Metadata name="Catalog.Контрагенты.Predefined" id="15806fdf-6c4b-4657-853f-37bf85e5615a.1c" configVersion="95857a42d8a18545951c54e418186c0700000000"/>
 		<Metadata name="Catalog.Контрагенты.Form.ФормаГруппы" id="606b7b80-9b17-48af-a399-8484b56597f3" configVersion="a3f1b2c4d5e6f7089a1b2c3d4e5f607800000000"/>
 		<Metadata name="Catalog.Контрагенты.Form.ФормаГруппы.Form" id="606b7b80-9b17-48af-a399-8484b56597f3.0" configVersion="b4c5d6e7f8091a2b3c4d5e6f708192a300000000"/>
-		<Metadata name="Catalog.Контрагенты.Form.ФормаВыбора" id="269056ab-f467-4c3f-884e-5c95ef7fbba7" configVersion="c7d8e9f0a1b2c3d4e5f6071829304a5b00000000"/>
-		<Metadata name="Catalog.Контрагенты.Form.ФормаВыбора.Form" id="269056ab-f467-4c3f-884e-5c95ef7fbba7.0" configVersion="d8e9f0a1b2c3d4e5f607182930415b6c00000000"/>
+
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="bce21ba2d1933642aa58333cc1367e9a00000000">
 			<Metadata name="Catalog.НалоговыеГруппы.Attribute.КодНалоговойГруппыККТ" id="5646d3e4-a785-42b3-b98f-f5e30e652ba7"/>
 		</Metadata>
