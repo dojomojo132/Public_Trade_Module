@@ -269,7 +269,6 @@
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>Количество</dcsset:field>
 					</dcsset:item>
