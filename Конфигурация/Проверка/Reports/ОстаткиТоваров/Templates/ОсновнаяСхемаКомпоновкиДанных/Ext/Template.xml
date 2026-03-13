@@ -53,15 +53,41 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗакупочнаяЦена</dataPath>
+			<field>ЗакупочнаяЦена</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закупочная цена</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	Остатки.Номенклатура КАК Номенклатура,
 	Остатки.Номенклатура.Родитель КАК Родитель,
 	Остатки.Номенклатура.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
 	Остатки.Склад КАК Склад,
-	ЕСТЬNULL(Остатки.КоличествоОстаток, 0) КАК Количество
+	ЕСТЬNULL(Остатки.КоличествоОстаток, 0) КАК Количество,
+	ЕСТЬNULL(Цены.Цена, 0) КАК ЗакупочнаяЦена,
+	ЕСТЬNULL(Остатки.КоличествоОстаток, 0) * ЕСТЬNULL(Цены.Цена, 0) КАК Сумма
 ИЗ
-	РегистрНакопления.ОстаткиТоваров.Остатки(&amp;МоментВремени, Номенклатура.ЭтоГруппа = ЛОЖЬ) КАК Остатки</query>
+	РегистрНакопления.ОстаткиТоваров.Остатки(&amp;МоментВремени, Номенклатура.ЭтоГруппа = ЛОЖЬ) КАК Остатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+			&amp;МоментВремени,
+			ТипЦен = &amp;ТипЦенЗакупочная) КАК Цены
+		ПО Остатки.Номенклатура = Цены.Номенклатура</query>
 	</dataSet>
 	<parameter>
 		<name>МоментВремени</name>
@@ -139,6 +165,20 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
+	<parameter>
+		<name>ТипЦенЗакупочная</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен (закупочная)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ТипыЦен.Закупочная</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -152,6 +192,12 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗакупочнаяЦена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -203,6 +249,12 @@
 					</dcscor:value>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
@@ -218,6 +270,12 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Сумма</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:order>
