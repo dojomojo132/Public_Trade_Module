@@ -315,14 +315,9 @@
 			<Role>СохранениеДанныхПользователя</Role>
 			<Role>Кассир</Role>
 			<CommonTemplate>Драйвер1ССканер</CommonTemplate>
-			<CommonTemplate>Драйвер1СДисплейПокупателя</CommonTemplate>
 			<CommonTemplate>Драйвер1СПринтерЧеков</CommonTemplate>
 			<CommonTemplate>Драйвер1СУстройстваВводаNative</CommonTemplate>
-			<CommonTemplate>Драйвер1СЭлектронныеВесы</CommonTemplate>
 			<CommonTemplate>ДрайверАТОЛУстройстваВвода8X_ru</CommonTemplate>
-			<CommonTemplate>ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru</CommonTemplate>
-			<CommonTemplate>ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru</CommonTemplate>
-			<CommonTemplate>ДрайверМертехРаспознавательMertechAI</CommonTemplate>
 			<CommonTemplate>ДрайверЭвоторККТ54ФЗ_ru</CommonTemplate>
 			<CommonTemplate>КодВидаНоменклатурнойКлассификации</CommonTemplate>
 			<CommonTemplate>КомпонентаHttpBridge</CommonTemplate>
@@ -331,6 +326,49 @@
 			<CommonTemplate>СертификатыНУЦМинцифры_ru</CommonTemplate>
 			<CommonTemplate>ШаблонДисплеяПокупателя</CommonTemplate>
 			<CommonTemplate>ШаблонДисплеяПокупателяЧек</CommonTemplate>
+			<CommonTemplate>ДрайверIronLogicСчитывателиБесконтактныхКарт_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMERTECHСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMSTARККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверMitsu54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУниверсальныйДрайверСканера_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверRightScanУстройствоПечати_ru</CommonTemplate>
+			<CommonTemplate>ДрайверSKAMUNIPOSЭквайринговыеСистемы_ru</CommonTemplate>
+			<CommonTemplate>ДрайверScanPortУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверWNJIККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАЗУРККТ54ФЗФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ107X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ10XФФД12X_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛККТ54ФЗ10XФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверАТОЛСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверВерсияТK1Ф54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверВерсияТККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверГексагонПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверДримкасККТ54ФЗ44_ru</CommonTemplate>
+			<CommonTemplate>ДрайверДримкасККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнитпроККТ54ФЗФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнкотексККТ54ФЗМ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИнкотексККТ54ФЗФФ12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверИскраККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКАСТОМФ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверККСККТ54ФЗ2Х_ru</CommonTemplate>
+			<CommonTemplate>ДрайверККТКассатка54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверКлеверенсСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверМультисофтMSPOS54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверНЕВА54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрККТ54ФЗ4ФФД12NG_ru</CommonTemplate>
+			<CommonTemplate>ДрайверПОСЦентрККТ54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРРЭлектроККТ54ФЗ4ФФД12_ru</CommonTemplate>
+			<CommonTemplate>ДрайверРусГардСчитывательМагнитныхКарт_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодПринтераЭтикетокGodexEZPL8Native_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканкодСканерШтрихкода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиПринтераЭтикеток_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСканситиУстройстваВвода_ru</CommonTemplate>
+			<CommonTemplate>ДрайверСчетмашККТ54ФЗ_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМККТ54ФЗ4ФФД12_517_ru</CommonTemplate>
+			<CommonTemplate>ДрайверШтрихМККТ54ФЗ4ФФД12_ru</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>
 			<CommonModule>ОбщегоНазначенияКлиент</CommonModule>

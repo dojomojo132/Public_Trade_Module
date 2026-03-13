@@ -17,17 +17,7 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудованиеКлиент</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАТОЛЭлектронныеВесы8X_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверШтрихМЭлектронныеВесыPOS2_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверМассаКЭлектронныеВесыИСПечатьюЭтикеток_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверРБСВесыCПечатьюЭтикеток_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудованиеКлиентСервер</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАТОЛВесыСПечатьюЭтикеток8X_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСервисПлюсЭлектронныеВесы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСервисПлюсВесыСПечатьюЭтикеток_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверМАСЭлектронныеВесы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверBizerbaВесыСПечатьюЭтикеток_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СЭлектронныеВесы</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДрайверыОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РабочиеМеста</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодключаемоеОборудование</xr:Item>
@@ -35,15 +25,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПодключаемогоОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособПодключенияДрайвера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособыФорматноЛогическогоКонтроля</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверCASЭлектронныеВесы2х_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверШтрихМВесыСПечатьюЭтикетокШтрихПринтNG_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверCASВесыСПечатьюЭтикеток2х_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверМертехЭлектронныеВесы_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеВесовоеОборудование</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверРБСВесыCПечатьюЭтикетокVenus_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверНАИСЭлектронныеВесы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверПОСЦентрЭлектронныеВесыNG_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверПОСЦентрВесыСПечатьюЭтикетокNG_ru</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

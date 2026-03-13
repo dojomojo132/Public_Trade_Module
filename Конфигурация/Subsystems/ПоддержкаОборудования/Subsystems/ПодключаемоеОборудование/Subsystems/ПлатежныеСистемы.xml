@@ -19,16 +19,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемыКлиент</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемыКлиентСервер</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.СверкаИтоговПоКартам</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверARCUS2ЭквайринговыеТерминалыIngenico_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверIboxProПоддержкаMPosЭквайринга_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверMPos2canЭквайринг_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверSKAM1CЭквайринговыеСистемы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверUCSEFTPOSЭквайринговыеТерминалы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверГАЗПРОМБАНКЭквайринговыеТерминалы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверШтрихМПлатежныйТерминалYarus_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.УправлениеЭквайринговымТерминалом</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.УправлениеЭквайринговымТерминалом</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СЭквайринговыеТерминалыСбербанк2х_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДрайверыОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РабочиеМеста</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодключаемоеОборудование</xr:Item>
@@ -36,20 +28,12 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПодключаемогоОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособПодключенияДрайвера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособыФорматноЛогическогоКонтроля</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверИНПАСЭквайринговыеТерминалыНСПК_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПлатежнойСистемыККТ</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверПБФЭквайринговыеТерминалы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверSkyPOSЭквайринговыеТерминалы_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверIngenicoЭквайринговыеТерминалыARCUS_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемы</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииПлатежныхОпераций</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.РегистрПлатежныхОпераций</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.СрокХраненияПлатежныхОпераций</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАЗУРПлатежнаяСистема_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАТОЛДрайверПлатежногоЯдраПэй_ru</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверINVERSUMЭквайринговыеТерминалы_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидОплатыНаТерминале</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверTACTILIONЭквайринговыеТерминалы_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПлатежныеОперации</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПлатежныеСистемыВызовСервера</xr:Item>
 			</Content>
