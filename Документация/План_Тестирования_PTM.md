@@ -112,7 +112,7 @@
 | Задача | Инструмент | Описание |
 |--------|-----------|----------|
 | Настроить `.bsl-language-server.json` | BSL LS | Включить все рекомендованные диагностики для PTM-модулей |
-| Добавить проверку в `deploy-config.ps1` | BSL LS CLI | `bsl-language-server -a -s Конфигурация/Проверка/ -r genericIssue` |
+| Добавить проверку в `deploy-config.ps1` | BSL LS CLI | `bsl-language-server -a -s Конфигурация/ -r genericIssue` |
 | Блокировать деплой при ошибках | PowerShell | Проверка `exit code` BSL LS перед загрузкой в ИБ |
 
 **Конфигурация `.bsl-language-server.json`:**

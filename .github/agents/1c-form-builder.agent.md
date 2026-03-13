@@ -39,7 +39,6 @@ python scripts/_generate_form.py --check   # проверить наличие �
 2. Если основная форма — заполнить `<DefaultObjectForm>` / `<DefaultListForm>`
 3. Обновить `ConfigDumpInfo.xml`: `<Metadata name="Тип.Имя.Form.ИмяФормы" id="UUID"/>`
 4. `get_errors` на Form.xml и Module.bsl
-5. `python scripts/_smart_sync.py` — синхронизация обеих папок
 
 ## Правила ID элементов
 

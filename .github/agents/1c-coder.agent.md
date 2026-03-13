@@ -25,8 +25,7 @@ hooks:
 
 1. `get_errors` на каждый изменённый `.bsl` и `.xml` файл
 2. Multi-file чеклист: Configuration.xml, ConfigDumpInfo.xml, подсистемы (при создании объекта)
-3. `python scripts/_smart_sync.py` — синхронизация обеих папок
-4. **Obsidian Knowledge Graph** — обновить/создать заметку в `PTM/` через MCP `obsidian-vault`:
+3. **Obsidian Knowledge Graph** — обновить/создать заметку в `PTM/` через MCP `obsidian-vault`:
    - Новый объект → `vault.create` заметку с frontmatter, wikilinks
    - Изменение реквизитов → `edit.window` обновить таблицу реквизитов
    - Изменение движений → обновить секцию «Движения» + обратные ссылки в регистрах

@@ -32,8 +32,7 @@ if is_create and isinstance(tool_input, dict):
             "2. Module.bsl — создан с BOM\n"
             "3. Дескриптор — без BOM\n"
             "4. XML владельца — <Form>ИмяФормы</Form> в <ChildObjects>\n"
-            "5. ConfigDumpInfo.xml — запись формы\n"
-            "6. _smart_sync.py — синхронизация обеих папок"
+            "5. ConfigDumpInfo.xml — запись формы"
         )
     elif file_path.endswith("module.bsl") and ("form" in file_path or "форм" in file_path):
         output["systemMessage"] = (
