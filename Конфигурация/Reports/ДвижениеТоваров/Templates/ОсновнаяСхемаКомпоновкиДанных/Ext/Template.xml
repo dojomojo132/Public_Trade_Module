@@ -314,12 +314,12 @@
 	ОТ.Склад КАК Склад,
 	ОТ.Номенклатура КАК Номенклатура,
 	ВЫБОР
-		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ПриходТовара) ТОГДА &quot;Приход товара&quot;
-		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ЧекККМ) ТОГДА &quot;Продажа&quot;
-		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ВозвратТовараОтПокупателя) ТОГДА &quot;Возврат&quot;
-		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.СписаниеТовара) ТОГДА &quot;Списание&quot;
-		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ИнвентаризацияТоваров) ТОГДА &quot;Инвентаризация&quot;
-		ИНАЧЕ &quot;Прочее&quot;
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ПриходТовара) ТОГДА "Приход товара"
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ЧекККМ) ТОГДА "Продажа"
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ВозвратТовараОтПокупателя) ТОГДА "Возврат"
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.СписаниеТовара) ТОГДА "Списание"
+		КОГДА ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.ИнвентаризацияТоваров) ТОГДА "Инвентаризация"
+		ИНАЧЕ "Прочее"
 	КОНЕЦ КАК ВидОперации,
 	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоПриход,
 	ВЫБОР КОГДА ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход) ТОГДА ОТ.Количество ИНАЧЕ 0 КОНЕЦ КАК КоличествоРасход,
@@ -481,6 +481,9 @@
 					<dcsset:item xsi:type="dcsset:GroupItemField">
 						<dcsset:field>Номенклатура</dcsset:field>
 						<dcsset:groupType>Hierarchy</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -587,6 +590,10 @@
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
 						<dcsset:field>Склад</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 					</dcsset:item>
 				</dcsset:groupItems>
 				<dcsset:order>
@@ -600,6 +607,9 @@
 						<dcsset:item xsi:type="dcsset:GroupItemField">
 							<dcsset:field>Номенклатура</dcsset:field>
 							<dcsset:groupType>Hierarchy</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
 					<dcsset:order>

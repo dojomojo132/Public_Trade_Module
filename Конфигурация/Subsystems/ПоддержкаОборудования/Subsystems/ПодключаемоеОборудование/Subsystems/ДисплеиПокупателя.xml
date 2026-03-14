@@ -16,7 +16,13 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СДисплейПокупателя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеДисплеиПокупателяКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СРарусДисплеиПокупателя_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверPOSUAДисплеиПокупателя_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАтолДисплеиПокупателя8X_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверКристаллСервисДисплеиПокупателяVikiVision_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСканкодДисплеиПокупателяNative_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДрайверыОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РабочиеМеста</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодключаемоеОборудование</xr:Item>

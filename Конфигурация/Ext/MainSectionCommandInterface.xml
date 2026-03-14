@@ -4,61 +4,73 @@
 		<Command name="Catalog.ПодключаемоеОборудование.Command.ОткрытьПодключаемоеОборудование">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="Catalog.ДрайверыОборудования.StandardCommand.OpenList">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="DataProcessor._ДемоПечатьШтрихкода.Command.ПечатьШтрихкода">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="DataProcessor.ОбменСОфлайнОборудованием.Command.ОбменСОфлайнОборудованием">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand.РегистрФискальныхОпераций">
 			<Visibility>
 				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand.ОчередьЧековККТ">
 			<Visibility>
 				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand.ВыбратьРМТекущегоСеанса">
 			<Visibility>
 				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand.УправлениеФискальнымУстройством">
 			<Visibility>
 				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand.УправлениеЭквайринговымТерминалом">
 			<Visibility>
 				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="CommonCommand._ДемоОбновлениеИнформационнойБазы">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="DataProcessor._ДемоЭлектронныеСертификатыНСПК.StandardCommand.Open">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 		<Command name="DataProcessor._ДемоHttpBridge.StandardCommand.Open">
 			<Visibility>
 				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Кассир">false</xr:Value>
 			</Visibility>
 		</Command>
 	</CommandsVisibility>

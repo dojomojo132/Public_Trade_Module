@@ -17,7 +17,14 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанныхКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверRightScanТерминалыСбораДанных_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверАтолТерминалыСбораДанныхMobileLogistics_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверГексагонТерминалыСбораДанных_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверКлеверенсТерминалыСбораДанных_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСканкодТерминалыСбораДанныхCipherLab8G2_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанныхКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftLite_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСканситиТерминалСбораДанныхCitySoftStandart_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ДрайверыОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РабочиеМеста</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодключаемоеОборудование</xr:Item>
@@ -25,6 +32,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПодключаемогоОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособПодключенияДрайвера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособыФорматноЛогическогоКонтроля</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверХарвестрТерминалыСбораДанных_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверСканпортТерминалСбораДанных_ru</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеТерминалыСбораДанных</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">a786340b-1ca9-48ee-8517-6bd389390bcc</xr:Item>
 			</Content>

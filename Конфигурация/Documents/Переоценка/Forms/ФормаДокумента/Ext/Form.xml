@@ -9,8 +9,6 @@
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
-		<Event name="OnActivate">ПриАктивизации</Event>
-		<Event name="OnDeactivate">ПриДеактивизации</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="Группа1" id="41">

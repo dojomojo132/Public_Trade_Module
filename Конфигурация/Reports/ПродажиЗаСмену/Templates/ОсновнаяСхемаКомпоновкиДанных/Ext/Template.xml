@@ -21,10 +21,6 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Сотрудник</dataPath>
-			<field>Сотрудник</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>КассоваяСмена</dataPath>
 			<field>КассоваяСмена</field>
 			<role>
@@ -32,52 +28,64 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Сумма</dataPath>
-			<field>Сумма</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Себестоимость</dataPath>
-			<field>Себестоимость</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Себестоимость</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Количество</dataPath>
-			<field>Количество</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборот</dataPath>
+			<field>КоличествоОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СебестоимостьОборот</dataPath>
+			<field>СебестоимостьОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборот</dataPath>
+			<field>СуммаОборот</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+    ПродажиОбороты.Период КАК Период,
+    ПродажиОбороты.Регистратор КАК Регистратор,
     ПродажиОбороты.Номенклатура КАК Номенклатура,
     ПродажиОбороты.Касса КАК Касса,
     ПродажиОбороты.КассоваяСмена КАК КассоваяСмена,
-    СУММА(ПродажиОбороты.КоличествоОборот) КАК Количество,
-    СУММА(ПродажиОбороты.СебестоимостьОборот) КАК Себестоимость,
-    СУММА(ПродажиОбороты.СуммаОборот) КАК Сумма
+    ПродажиОбороты.Сотрудник КАК Сотрудник,
+    ПродажиОбороты.КоличествоОборот КАК КоличествоОборот,
+    ПродажиОбороты.СуммаОборот КАК СуммаОборот,
+    ПродажиОбороты.СебестоимостьОборот КАК СебестоимостьОборот
 ИЗ
-    РегистрНакопления.Продажи.Обороты(, , , ) КАК ПродажиОбороты
-ГДЕ
-    ПродажиОбороты.КассоваяСмена = &amp;КассоваяСмена
+    РегистрНакопления.Продажи.Обороты(, , Регистратор, КассоваяСмена = &amp;КассоваяСмена) КАК ПродажиОбороты
 
 СГРУППИРОВАТЬ ПО
-    ПродажиОбороты.Номенклатура,
     ПродажиОбороты.Касса,
-    ПродажиОбороты.КассоваяСмена</query>
+    ПродажиОбороты.Период,
+    ПродажиОбороты.Регистратор,
+    ПродажиОбороты.Номенклатура,
+    ПродажиОбороты.КассоваяСмена,
+    ПродажиОбороты.Сотрудник,
+    ПродажиОбороты.КоличествоОборот,
+    ПродажиОбороты.СуммаОборот,
+    ПродажиОбороты.СебестоимостьОборот</query>
 	</dataSet>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -136,35 +144,48 @@
 					<dcsset:field>Касса</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КассоваяСмена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОборот</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Номенклатура</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Количество</dcsset:field>
+					<dcsset:field>Период</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Себестоимость</dcsset:field>
+					<dcsset:field>Регистратор</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Сумма</dcsset:field>
+					<dcsset:field>СебестоимостьОборот</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОборот</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>НачалоПериода</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardBeginningDate">
-						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisYear</v8:variant>
-					</dcscor:value>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>dad0d43a-517b-4209-bd53-30e692db314d</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>КонецПериода</dcscor:parameter>
-					<dcscor:value xsi:type="v8:StandardBeginningDate">
-						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextYear</v8:variant>
-					</dcscor:value>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>830df62e-1431-493c-8d5c-17d652d6e3dd</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>КассоваяСмена</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>1a780318-7185-490c-a65b-49e602290a8e</dcsset:userSettingID>
+					<dcsset:userSettingID>1debf7cc-90a2-4f50-8cf9-bab3c9c5c4c8</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

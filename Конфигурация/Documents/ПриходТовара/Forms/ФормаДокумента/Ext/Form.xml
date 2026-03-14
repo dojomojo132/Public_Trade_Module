@@ -11,8 +11,6 @@
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnClose">ПриЗакрытии</Event>
-		<Event name="OnActivate">ПриАктивизации</Event>
-		<Event name="OnDeactivate">ПриДеактивизации</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаНомерДата" id="53">

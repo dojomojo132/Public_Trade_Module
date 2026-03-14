@@ -109,8 +109,10 @@ It includes objects which belong to the International configuration EM2, CA and 
 				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииПлатежныхОпераций</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.УправлениеЭквайринговымТерминалом</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.УправлениеЭквайринговымТерминалом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СДисплейПокупателя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СПринтерЧеков</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СУстройстваВводаNative</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1СЭлектронныеВесы</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПлатежныхОпераций</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПлатежныеОперации</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.КомпонентаПечатиШтрихкодов</xr:Item>

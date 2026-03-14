@@ -19,6 +19,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройствоРаспознавания</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройствоРаспознаванияКлиент</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеУстройствоРаспознаванияКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверМертехВесыСПечатьюЭтикетокРаспознаватель_ru</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ДрайверМертехРаспознавательMertechAI</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
