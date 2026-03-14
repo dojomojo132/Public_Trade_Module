@@ -938,6 +938,12 @@
 		</Metadata>
 		<Metadata name="DataProcessor.ИнформацияНоменклатуры.Form.Форма" id="bbe2f3a4-b5c6-4978-3456-789012345678" configVersion="a220ab30a5779741b478f40bb080ff9300000000" />
 		<Metadata name="DataProcessor.ИнформацияНоменклатуры.Form.Форма.Form" id="bbe2f3a4-b5c6-4978-3456-789012345678.0" configVersion="050c9e9ce865bd468367bb49a7af49d100000000" />
+		<Metadata name="DataProcessor.ЗагрузкаЗакупочныхЦен" id="3a8f1b2c-d4e5-4f67-a890-bcdef1234567" configVersion="00000000000000000000000000000000">
+			<Metadata name="DataProcessor.ЗагрузкаЗакупочныхЦен.Attribute.ПутьКФайлу" id="8fd36071-2930-4412-b345-012456789012" />
+		</Metadata>
+		<Metadata name="DataProcessor.ЗагрузкаЗакупочныхЦен.Form.Форма" id="9ae47182-3a41-4523-a456-123567890123" configVersion="00000000000000000000000000000000" />
+		<Metadata name="DataProcessor.ЗагрузкаЗакупочныхЦен.Form.Форма.Form" id="9ae47182-3a41-4523-a456-123567890123.0" configVersion="00000000000000000000000000000000" />
+		<Metadata name="DataProcessor.ЗагрузкаЗакупочныхЦен.ObjectModule" id="3a8f1b2c-d4e5-4f67-a890-bcdef1234567.0" configVersion="00000000000000000000000000000000" />
 		<Metadata name="DataProcessor.ОбменСОфлайнОборудованием" id="cd4ecad4-8940-4908-a61c-3c60c176a665" configVersion="9a50d173c4a4ef40b33feb1ba288fe7a00000000">
 			<Metadata name="DataProcessor.ОбменСОфлайнОборудованием.Command.ОбменСОфлайнОборудованием" id="0562466d-5b42-4f55-99a2-f22e3a2e1067" />
 		</Metadata>

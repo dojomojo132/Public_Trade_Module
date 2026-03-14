@@ -1,4 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
+"""Read Excel file to analyze structure for price import."""
 import pathlib
 
 try:
@@ -8,15 +9,17 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl", "--quiet"])
     import openpyxl
 
-base = pathlib.Path(r"D:\Git\Public_Trade_Module\Import date")
+root = pathlib.Path(r"D:\Git\Public_Trade_Module")
+xlsx = next(root.glob("*.xlsx"))
+print(f"File: {xlsx.name}")
 
-for f in sorted(base.glob("*.xlsx")):
-    print(f"\n=== {f.name} ===")
-    wb = openpyxl.load_workbook(f, read_only=True, data_only=True)
-    ws = wb.active
-    rows = list(ws.iter_rows(max_row=5, values_only=True))
-    for i, row in enumerate(rows):
-        tag = "HEADER" if i == 0 else f"row {i+1}"
-        print(f"  [{tag}] {list(row)}")
-    print(f"  Total rows: {ws.max_row}")
-    wb.close()
+wb = openpyxl.load_workbook(xlsx, data_only=True)
+ws = wb.active
+print(f"Sheet: {ws.title}, Rows: {ws.max_row}, Cols: {ws.max_column}")
+print()
+
+for row in ws.iter_rows(min_row=1, max_row=20, values_only=False):
+    vals = [(c.column_letter, c.value) for c in row if c.value is not None]
+    if vals:
+        print(vals)
+wb.close()

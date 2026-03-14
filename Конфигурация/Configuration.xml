@@ -695,6 +695,7 @@
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
 			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>
+			<DataProcessor>ЗагрузкаЗакупочныхЦен</DataProcessor>
 			<DataProcessor>_ДемоHttpBridge</DataProcessor>
 			<DataProcessor>_ДемоВыгрузкаВВесыТСД</DataProcessor>
 			<DataProcessor>_ДемоКонвертироватьИзBase64вДвоичныйФайл</DataProcessor>

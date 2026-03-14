@@ -35,6 +35,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.Возвраты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.Продажи</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ИнформацияНоменклатуры</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузкаЗакупочныхЦен</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
