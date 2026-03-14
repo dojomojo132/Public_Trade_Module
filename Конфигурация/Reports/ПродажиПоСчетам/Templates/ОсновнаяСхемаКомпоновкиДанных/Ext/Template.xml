@@ -56,20 +56,35 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КассоваяСмена</dataPath>
+			<field>КассоваяСмена</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПродажиОбороты.Касса КАК Касса,
-	ПродажиОбороты.Касса.ВидКассы КАК ВидКассы,
-	ПродажиОбороты.Номенклатура КАК Номенклатура,
-	СУММА(ПродажиОбороты.КоличествоОборот) КАК Количество,
-	СУММА(ПродажиОбороты.СуммаОборот) КАК Сумма
+    ПродажиОбороты.Касса КАК Касса,
+    ПродажиОбороты.Касса.ВидКассы КАК ВидКассы,
+    ПродажиОбороты.Номенклатура КАК Номенклатура,
+    СУММА(ПродажиОбороты.КоличествоОборот) КАК Количество,
+    СУММА(ПродажиОбороты.СуммаОборот) КАК Сумма
 ИЗ
-	РегистрНакопления.Продажи.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ПродажиОбороты
+    РегистрНакопления.Продажи.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК ПродажиОбороты
+
 СГРУППИРОВАТЬ ПО
-	ПродажиОбороты.Касса,
-	ПродажиОбороты.Касса.ВидКассы,
-	ПродажиОбороты.Номенклатура</query>
+    ПродажиОбороты.Касса,
+    ПродажиОбороты.Касса.ВидКассы,
+    ПродажиОбороты.Номенклатура</query>
 	</dataSet>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+		<group>Сумма</group>
+		<group>ОбщийИтог</group>
+	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
@@ -146,6 +161,12 @@
 					<dcsset:userSettingID>b6c7d8e9-f0a1-4b2c-3d4e-5f6a7b8c9d0e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

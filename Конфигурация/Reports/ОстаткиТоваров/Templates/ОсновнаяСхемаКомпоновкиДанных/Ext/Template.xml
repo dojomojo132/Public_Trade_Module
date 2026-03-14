@@ -73,6 +73,10 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипЦен</dataPath>
+			<field>ТипЦен</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	Остатки.Номенклатура КАК Номенклатура,
@@ -255,9 +259,14 @@
 					<dcscor:value xsi:type="v8:StandardBeginningDate">
 						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
 					</dcscor:value>
+					<dcsset:userSettingID>5df729cf-2b14-494f-95c4-21fcd6e67c5f</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
@@ -277,12 +286,7 @@
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Количество</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>Сумма</dcsset:field>
-					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:order>

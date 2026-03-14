@@ -24,12 +24,6 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НовыйПоШтрихкоду</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor._ДемоУстройствоРаспознавания</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor._ДемоСписокИспользуемыхДрайверов</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">5353ffe4-6858-4974-9d81-012dba83c317</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">06979d6a-3845-4659-a2ed-51404639d6b3</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">c3636ff6-589b-492d-9ef9-31111e270f54</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">f3919913-f55f-4f84-b704-47b82e45ee29</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">4f8331af-8a62-451d-84b5-9cdc00f05231</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">e2e00ccc-1060-42b3-9c93-c2d7f1c6b728</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

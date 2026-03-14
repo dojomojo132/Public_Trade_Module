@@ -13,11 +13,7 @@
 			<Group>ActionsPanelTools</Group>
 			<Representation>PictureAndText</Representation>
 			<ToolTip/>
-			<Picture>
-				<xr:Ref>0</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-				<xr:TransparentPixel x="12" y="2"/>
-			</Picture>
+			<Picture/>
 			<Shortcut/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<CommandParameterType/>

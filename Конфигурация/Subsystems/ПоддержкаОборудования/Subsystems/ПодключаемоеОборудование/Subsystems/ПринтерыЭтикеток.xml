@@ -29,7 +29,6 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособПодключенияДрайвера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СпособыФорматноЛогическогоКонтроля</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОборудованиеПринтерыЭтикеток</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">a786340b-1ca9-48ee-8517-6bd389390bcc</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects>

@@ -18,62 +18,95 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<ChildItems>
-		<InputField name="Номер" id="1">
-			<DataPath>Объект.Number</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
-		</InputField>
-		<InputField name="Дата" id="4">
-			<DataPath>Объект.Date</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
-		</InputField>
-		<InputField name="КассоваяСмена" id="7">
-			<DataPath>Объект.КассоваяСмена</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="КассоваяСменаКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="КассоваяСменаРасширеннаяПодсказка" id="9"/>
-		</InputField>
-		<InputField name="Касса" id="10">
-			<DataPath>Объект.Касса</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="КассаКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="КассаРасширеннаяПодсказка" id="12"/>
-		</InputField>
-		<InputField name="СуммаДокумента" id="13">
+		<UsualGroup name="Группа1" id="94">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="95"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="96">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="97"/>
+			<ChildItems>
+				<InputField name="Касса" id="10">
+					<DataPath>Объект.Касса</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КассаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="КассаРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<InputField name="КассоваяСмена" id="7">
+					<DataPath>Объект.КассоваяСмена</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="КассоваяСменаКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="КассоваяСменаРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДополнительнаяИнформация" id="98">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ДополнительнаяИнформацияРасширеннаяПодсказка" id="99"/>
+			<ChildItems>
+				<InputField name="Склад" id="16">
+					<DataPath>Объект.Склад</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СкладКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="ДисконтнаяКарта" id="19">
+					<DataPath>Объект.ДисконтнаяКарта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДисконтнаяКартаКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ДисконтнаяКартаРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="Статус" id="22">
+					<DataPath>Объект.Статус</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СтатусКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="24"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="СуммаДокумента" id="13">
 			<DataPath>Объект.СуммаДокумента</DataPath>
+			<TitleFont ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<Font ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 			<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="14"/>
 			<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="15"/>
-		</InputField>
-		<InputField name="Склад" id="16">
-			<DataPath>Объект.Склад</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="СкладКонтекстноеМеню" id="17"/>
-			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="18"/>
-		</InputField>
-		<InputField name="ДисконтнаяКарта" id="19">
-			<DataPath>Объект.ДисконтнаяКарта</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ДисконтнаяКартаКонтекстноеМеню" id="20"/>
-			<ExtendedTooltip name="ДисконтнаяКартаРасширеннаяПодсказка" id="21"/>
-		</InputField>
-		<InputField name="Статус" id="22">
-			<DataPath>Объект.Статус</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="СтатусКонтекстноеМеню" id="23"/>
-			<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="24"/>
-		</InputField>
+		</LabelField>
 		<Pages name="Страницы" id="25">
 			<Title>
 				<v8:item>

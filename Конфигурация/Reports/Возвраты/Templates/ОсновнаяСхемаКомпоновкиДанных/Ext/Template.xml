@@ -152,6 +152,12 @@
 					<dcsset:userSettingID>c6d7e8f9-a0b1-2c3d-4e5f-6a7b8c9d0e1f</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

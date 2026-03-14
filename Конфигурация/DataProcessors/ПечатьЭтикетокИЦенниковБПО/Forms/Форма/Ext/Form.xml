@@ -511,12 +511,6 @@
 				<v8:Type>cfg:DataProcessorObject.ПечатьЭтикетокИЦенниковБПО</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
-			<Save>
-				<Field>1/0:34c2c3c8-95f8-4cbd-90c6-5516c6b25c70</Field>
-				<Field>1/0:7eb47a9b-11cb-41ac-b0cf-065d7d9b819e</Field>
-				<Field>1/0:c24639bc-06a2-4c2c-b659-b686ed6f8e6c</Field>
-				<Field>1/0:f39c9615-68c4-46f8-8696-4849ab7b5291</Field>
-			</Save>
 		</Attribute>
 		<Attribute name="ПереопределенаФормаПодбора" id="2">
 			<Title>

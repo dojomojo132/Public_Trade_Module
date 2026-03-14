@@ -1,36 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<CommandsVisibility>
-		<Command name="0:13086071-e570-0141-8086-34130b6fdb98">
-			<Visibility>
-				<xr:Common>false</xr:Common>
-			</Visibility>
-		</Command>
-		<Command name="0:0077e45c-56e8-1326-0000-0000d4e37700">
-			<Visibility>
-				<xr:Common>false</xr:Common>
-			</Visibility>
-		</Command>
-		<Command name="0:0077e45c-56e8-1326-0000-0000d4e37700">
-			<Visibility>
-				<xr:Common>false</xr:Common>
-			</Visibility>
-		</Command>
-	</CommandsVisibility>
-	<CommandsOrder>
-		<Command name="0:0077e45c-56e8-1326-0000-0000d4e37700">
-			<CommandGroup>NavigationPanelImportant</CommandGroup>
-		</Command>
-		<Command name="0:0077e45c-56e8-1326-0000-0000e006f523">
-			<CommandGroup>NavigationPanelOrdinary</CommandGroup>
-		</Command>
-		<Command name="0:0077e45c-56e8-1326-0000-00000807f523">
-			<CommandGroup>ActionsPanelTools</CommandGroup>
-		</Command>
-		<Command name="0:0077e45c-56e8-1326-0000-00003007f523">
-			<CommandGroup>ActionsPanelTools</CommandGroup>
-		</Command>
-	</CommandsOrder>
 	<GroupsOrder>
 		<Group>NavigationPanelImportant</Group>
 		<Group>NavigationPanelOrdinary</Group>

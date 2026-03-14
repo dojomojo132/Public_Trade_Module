@@ -19,11 +19,7 @@
 					<v8:content>Подсистема поддержки оборудования</v8:content>
 				</v8:item>
 			</Explanation>
-			<Picture>
-				<xr:Ref>0</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-				<xr:TransparentPixel x="21" y="3"/>
-			</Picture>
+			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Role.СохранениеДанныхПользователя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПлатежныхОпераций</xr:Item>

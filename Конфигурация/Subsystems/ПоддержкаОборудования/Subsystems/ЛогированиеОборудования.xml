@@ -16,7 +16,6 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">a0f8c954-9877-4b52-9172-02b76aebb903</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.ОчисткаИсторииОперацийСОборудованием</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.СрокХраненияОперацийСОборудованием</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ОперацииСПодключаемымОборудованием</xr:Item>

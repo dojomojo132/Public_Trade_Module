@@ -89,6 +89,18 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Касса</dataPath>
+			<field>Касса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КассоваяСмена</dataPath>
+			<field>КассоваяСмена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ПродажиОбороты.Период КАК Период,
@@ -195,6 +207,12 @@
 					<dcsset:userSettingID>b7c8d9e0-f1a2-4b3c-8d5e-6f7a8b9c0d1e</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

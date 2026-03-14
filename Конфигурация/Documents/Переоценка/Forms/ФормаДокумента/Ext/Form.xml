@@ -84,6 +84,8 @@
 				<InputField name="ТоварыШтрихкод" id="32">
 					<DataPath>Объект.Товары.Штрихкод</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<Width>16</Width>
+					<HorizontalStretch>false</HorizontalStretch>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТоварыШтрихкодКонтекстноеМеню" id="33"/>
 					<ExtendedTooltip name="ТоварыШтрихкодРасширеннаяПодсказка" id="34"/>
@@ -94,6 +96,7 @@
 				<InputField name="ТоварыНоменклатура" id="26">
 					<DataPath>Объект.Товары.Номенклатура</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="27"/>
 					<ExtendedTooltip name="ТоварыНоменклатураРасширеннаяПодсказка" id="28"/>

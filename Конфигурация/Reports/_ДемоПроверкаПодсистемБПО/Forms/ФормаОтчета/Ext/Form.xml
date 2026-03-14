@@ -58,9 +58,6 @@
 				<v8:Type>cfg:ReportObject._ДемоПроверкаПодсистемБПО</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
-			<Save>
-				<Field>1/0:707a9058-6477-454a-8189-690bbe342b45</Field>
-			</Save>
 		</Attribute>
 		<Attribute name="Результат" id="2">
 			<Title>

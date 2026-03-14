@@ -72,6 +72,7 @@
 			<ChildItems>
 				<LabelField name="Касса" id="19">
 					<DataPath>Список.Касса</DataPath>
+					<Visible>false</Visible>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="КассаКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="КассаРасширеннаяПодсказка" id="21"/>

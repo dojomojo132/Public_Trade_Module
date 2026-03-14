@@ -16,10 +16,6 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">8af7d2d4-6d24-4eac-96f8-cb4873d1077d</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">0eb3a215-9c42-4e9d-b3c8-2ac057833482</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">4419d2ca-b93a-4193-9cf2-1a7bdcae11d6</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">c2280cdf-7620-4c63-8516-1d0f1d9e69f4</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПолужирноеНачертание</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Подчеркивание</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.НетГраницы</xr:Item>

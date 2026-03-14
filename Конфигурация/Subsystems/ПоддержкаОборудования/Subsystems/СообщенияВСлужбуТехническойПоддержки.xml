@@ -17,7 +17,6 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.СообщенияВСлужбуТехническойПоддержкиБПОКлиент</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">f8bd5115-994a-4e1c-90e9-60b26d82bc1c</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.СообщенияВСлужбуТехническойПоддержкиБПО</xr:Item>
 			</Content>
 		</Properties>

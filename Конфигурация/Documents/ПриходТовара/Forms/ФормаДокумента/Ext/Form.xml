@@ -44,6 +44,18 @@
 					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
 				</InputField>
+				<InputField name="ВходящийНомер" id="59">
+					<DataPath>Объект.ВходящийНомер</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер накладной</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВходящийНомерКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ВходящийНомерРасширеннаяПодсказка" id="61"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаРеквизиты" id="55">
@@ -76,7 +88,7 @@
 							<v8:content>Группа склад контрагент</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>Vertical</Group>
+					<Group>AlwaysHorizontal</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаСкладКонтрагентРасширеннаяПодсказка" id="58"/>
@@ -95,23 +107,19 @@
 							<ContextMenu name="СкладКонтекстноеМеню" id="11"/>
 							<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="12"/>
 						</InputField>
-						<InputField name="ВходящийНомер" id="59">
-							<DataPath>Объект.ВходящийНомер</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ВходящийНомерКонтекстноеМеню" id="60"/>
-							<ExtendedTooltip name="ВходящийНомерРасширеннаяПодсказка" id="61"/>
-						</InputField>
 					</ChildItems>
 				</UsualGroup>
-				<LabelField name="СуммаДокумента" id="13">
-					<DataPath>Объект.СуммаДокумента</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="14"/>
-					<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="15"/>
-				</LabelField>
 			</ChildItems>
 		</UsualGroup>
+		<LabelField name="СуммаДокумента" id="13">
+			<DataPath>Объект.СуммаДокумента</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<EditMode>EnterOnInput</EditMode>
+			<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="15"/>
+		</LabelField>
 		<Table name="Товары" id="16">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>

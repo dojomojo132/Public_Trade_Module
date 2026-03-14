@@ -31,8 +31,10 @@
 							<v8:content>К ОПЛАТЕ</v8:content>
 						</v8:item>
 					</Title>
-					<TitleLocation>Left</TitleLocation>
-					<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
+					<TitleFont ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+					<TitleLocation>Top</TitleLocation>
+					<TextColor>web:Green</TextColor>
+					<Font ref="style:LargeTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ContextMenu name="ИтогСуммаКонтекстноеМеню" id="24"/>
 					<ExtendedTooltip name="ИтогСуммаРасширеннаяПодсказка" id="25"/>
 				</LabelField>
@@ -48,24 +50,6 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаСдачиРасширеннаяПодсказка" id="98"/>
 					<ChildItems>
-						<InputField name="СуммаОтКлиентаПоле" id="99">
-							<DataPath>СуммаОтКлиента</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Внесено</v8:content>
-								</v8:item>
-							</Title>
-							<Width>12</Width>
-							<AutoMaxWidth>false</AutoMaxWidth>
-							<HorizontalStretch>false</HorizontalStretch>
-							<Font ref="style:LargeTextFont" height="12" bold="true" kind="StyleItem"/>
-							<ContextMenu name="СуммаОтКлиентаПолеКонтекстноеМеню" id="100"/>
-							<ExtendedTooltip name="СуммаОтКлиентаПолеРасширеннаяПодсказка" id="101"/>
-							<Events>
-								<Event name="OnChange">СуммаОтКлиентаПолеПриИзменении</Event>
-							</Events>
-						</InputField>
 						<LabelField name="СуммаСдачиПоле" id="102">
 							<DataPath>СуммаСдачи</DataPath>
 							<Title>
@@ -74,11 +58,34 @@
 									<v8:content>СДАЧА</v8:content>
 								</v8:item>
 							</Title>
-							<TextColor>web:Green</TextColor>
-							<Font ref="style:LargeTextFont" height="14" bold="true" kind="StyleItem"/>
+							<TitleFont ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
+							<TitleLocation>Top</TitleLocation>
+							<TextColor>style:NegativeTextColor</TextColor>
+							<Font ref="style:LargeTextFont" height="16" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem"/>
 							<ContextMenu name="СуммаСдачиПолеКонтекстноеМеню" id="103"/>
 							<ExtendedTooltip name="СуммаСдачиПолеРасширеннаяПодсказка" id="104"/>
 						</LabelField>
+						<InputField name="СуммаОтКлиентаПоле" id="99">
+							<DataPath>СуммаОтКлиента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Внесено</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+							<TitleLocation>Top</TitleLocation>
+							<GroupVerticalAlign>Top</GroupVerticalAlign>
+							<Width>18</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Font ref="style:LargeTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="СуммаОтКлиентаПолеКонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="СуммаОтКлиентаПолеРасширеннаяПодсказка" id="101"/>
+							<Events>
+								<Event name="OnChange">СуммаОтКлиентаПолеПриИзменении</Event>
+							</Events>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<LabelField name="НадписьРежимРаботы" id="82">
@@ -96,18 +103,20 @@
 					<TextColor>style:ButtonTextColor</TextColor>
 					<BackColor>style:ToolTipBackColor</BackColor>
 					<BorderColor>style:ButtonBorderColor</BorderColor>
-					<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<Shape>Oval</Shape>
 					<ExtendedTooltip name="КнопкаСдачаРасширеннаяПодсказка" id="106"/>
 				</Button>
 				<Button name="Удалить" id="3">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.Удалить</CommandName>
+					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ExtendedTooltip name="УдалитьРасширеннаяПодсказка" id="26"/>
 				</Button>
 				<Button name="Поиск" id="15">
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.Поиск</CommandName>
+					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ExtendedTooltip name="ПоискРасширеннаяПодсказка" id="55"/>
 				</Button>
 				<Button name="ОбновитьНастройки" id="74">
@@ -120,7 +129,7 @@
 					<Type>UsualButton</Type>
 					<CommandName>Form.Command.Возврат</CommandName>
 					<BackColor>web:Tomato</BackColor>
-					<Font ref="style:LargeTextFont" height="10" bold="true" kind="StyleItem"/>
+					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ExtendedTooltip name="ВозвратРасширеннаяПодсказка" id="79"/>
 				</Button>
 				<Button name="Продажа" id="80">
@@ -150,6 +159,7 @@
 					<DataPath>ПоказатьПанельТоваров</DataPath>
 					<TitleLocation>Right</TitleLocation>
 					<CheckBoxType>Switcher</CheckBoxType>
+					<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 					<ContextMenu name="ПоказатьПанельТоваровКонтекстноеМеню" id="29"/>
 					<ExtendedTooltip name="ПоказатьПанельТоваровРасширеннаяПодсказка" id="30"/>
 					<Events>
@@ -319,21 +329,31 @@
 									<Type>UsualButton</Type>
 									<DefaultButton>true</DefaultButton>
 									<CommandName>Form.Command.Рассчитать</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 									<ExtendedTooltip name="РассчитатьРасширеннаяПодсказка" id="54"/>
 								</Button>
 								<Button name="ПродажиПоКассам" id="107">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ПоказатьПродажиПоКассам</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 									<ExtendedTooltip name="ПродажиПоКассамРасширеннаяПодсказка" id="108"/>
 								</Button>
 								<Button name="ЗавершитьРаботу" id="16">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ЗавершитьРаботу</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 									<ExtendedTooltip name="ЗавершитьРаботуРасширеннаяПодсказка" id="56"/>
 								</Button>
 								<Button name="ЗакрытьСмену" id="76">
 									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
 									<CommandName>Form.Command.ЗакрытьСмену</CommandName>
+									<BackColor>style:ToolTipBackColor</BackColor>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Picture>
+										<xr:Ref>CommonPicture.ВнешняяКомпонентаНеДоступна</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
 									<ExtendedTooltip name="ЗакрытьСменуРасширеннаяПодсказка" id="77"/>
 								</Button>
 							</ChildItems>
@@ -362,12 +382,23 @@
 								<Button name="Назад" id="19">
 									<Type>UsualButton</Type>
 									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<CommandName>Form.Command.Назад</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Назад</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="НазадРасширеннаяПодсказка" id="59"/>
 								</Button>
 								<Button name="ПредыдущаяСтраница" id="20">
 									<Type>UsualButton</Type>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<CommandName>Form.Command.ПредыдущаяСтраница</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -379,12 +410,18 @@
 								<LabelField name="НомерСтраницы" id="21">
 									<DataPath>НомерСтраницы</DataPath>
 									<TitleLocation>None</TitleLocation>
+									<HorizontalAlign>Center</HorizontalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<Font ref="style:NormalTextFont" height="20" bold="true" italic="false" underline="true" strikeout="false" kind="StyleItem" scale="100"/>
 									<ContextMenu name="НомерСтраницыКонтекстноеМеню" id="61"/>
 									<ExtendedTooltip name="НомерСтраницыРасширеннаяПодсказка" id="62"/>
 								</LabelField>
 								<Button name="КнопкаВперед" id="69">
 									<Type>UsualButton</Type>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<CommandName>Form.Command.КнопкаВперед</CommandName>
+									<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>

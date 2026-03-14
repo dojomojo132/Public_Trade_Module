@@ -21,9 +21,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековВызовСервера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековКлиент</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековКлиентПереопределяемый</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">2c298cf9-b3eb-44ff-a9f6-b6b6728abdad</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.РассылкаЭлектронныхЧековПереопределяемый</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">1442e640-5862-4628-9b25-319f59c4fc20</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">ScheduledJob.РассылкаЭлектронныхЧеков</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОтправкаЭлектронныхЧековПослеПробитияЧека</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОчередьЭлектронныхЧековКОтправке</xr:Item>

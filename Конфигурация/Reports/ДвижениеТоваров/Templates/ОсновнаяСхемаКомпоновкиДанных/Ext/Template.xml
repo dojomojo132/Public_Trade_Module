@@ -110,6 +110,36 @@
 				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
 			</role>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвентаризацияПриход</dataPath>
+			<field>ИнвентаризацияПриход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентаризация приход</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеКоличество</dataPath>
+			<field>СписаниеКоличество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списание количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвентаризацияРасход</dataPath>
+			<field>ИнвентаризацияРасход</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентаризация расход</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ОИО.Склад КАК Склад,
@@ -207,6 +237,10 @@
 					<v8:content>Себестоимость продаж</v8:content>
 				</v8:item>
 			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
@@ -476,6 +510,12 @@
 					<dcsset:userSettingID>c3d4e5f6-a7b8-4012-cdef-123456789012</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">

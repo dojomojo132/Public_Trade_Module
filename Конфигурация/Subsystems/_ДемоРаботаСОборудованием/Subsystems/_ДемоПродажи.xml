@@ -14,10 +14,7 @@
 			<IncludeInCommandInterface>true</IncludeInCommandInterface>
 			<UseOneCommand>false</UseOneCommand>
 			<Explanation/>
-			<Picture>
-				<xr:Ref>0</xr:Ref>
-				<xr:LoadTransparent>false</xr:LoadTransparent>
-			</Picture>
+			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor._ДемоВыгрузкаВВесыТСД</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DocumentJournal._ДемоЧекиККМ</xr:Item>

@@ -35,16 +35,21 @@
 		</InputField>
 		<InputField name="СуммаДокумента" id="12">
 			<DataPath>Объект.СуммаДокумента</DataPath>
+			<TitleFont ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<Font ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 			<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="13"/>
 			<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="14"/>
 		</InputField>
 		<InputField name="Комментарий" id="15">
 			<DataPath>Объект.Комментарий</DataPath>
 			<EditMode>EnterOnInput</EditMode>
-			<Height>2</Height>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>3</Height>
+			<AutoMaxHeight>false</AutoMaxHeight>
 			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
 			<ContextMenu name="КомментарийКонтекстноеМеню" id="16"/>
 			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="17"/>
 		</InputField>
