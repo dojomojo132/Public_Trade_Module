@@ -1,0 +1,24 @@
+{
+  "_comment": "Конфигурация ptm-debug MCP Server. ОБЯЗАТЕЛЬНО заполните platform.root и infoBase.path!",
+  "_platform_root_hint": "Точный путь к установке 1С (содержит bin/dbgs.exe, bin/1cv8c.exe). Примеры: C:\\Program Files\\1cv8\\8.3.27.XXXX. Обновлять при смене версии платформы!",
+  "_ib_path_hint": "Путь к папке файловой ИБ PTM (содержит 1Cv8.1CD). Примеры: D:\\Bases\\PTM или C:\\Users\\User\\1c\\bases\\ptm",
+  "platform": {
+    "root": "C:\\Program Files\\1cv8\\8.3.27.1741",
+    "dbgs": "bin\\dbgs.exe",
+    "client": "bin\\1cv8c.exe"
+  },
+  "infoBase": {
+    "path": "D:\\Bases\\PTM",
+    "user": "Admin",
+    "password": ""
+  },
+  "debug": {
+    "host": "localhost",
+    "portRange": [1550, 1560],
+    "attachTimeout": 10,
+    "pollInterval": 0.5
+  },
+  "workspace": {
+    "configRoot": "D:\\Git\\Public_Trade_Module\\Конфигурация"
+  }
+}
