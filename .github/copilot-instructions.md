@@ -76,7 +76,8 @@
 - **Вариант 1 выбран** → выполнить действие варианта 1 текущего диалога
 - **Вариант 2 выбран** → выполнить действие варианта 2 текущего диалога
 - **Вариант 3 выбран** → выполнить действие варианта 3 текущего диалога
-- **Вариант 4 выбран** ("Остановить сессию") → завершить
+- **Вариант 4 выбран** → выполнить действие варианта 4 текущего диалога
+- **Вариант 5 выбран** ("Остановить сессию") → завершить
 - **Произвольный текст** → обработать как свободный запрос пользователя
 
 ### Кастомный диалог (для нестандартных ситуаций):
@@ -90,7 +91,7 @@
 ### Приоритет: ИБ (MCP) > Файлы на диске
 
 Конфигурация в ИБ — **единственный источник истины**. XML/BSL на диске — рабочая копия.
-ПЕРЕД любыми изменениями: `deploy-config.ps1 -Action Dump` → MCP `get_metadata_structure`.
+ПЕРЕД любыми изменениями: `python scripts/_ps_wrapper.py deploy -Action Dump` → MCP `get_metadata_structure`.
 
 ### Запреты и обязательства
 
@@ -103,7 +104,7 @@
 ✅ ОБЯЗАТЕЛЬНО: после изменения метаданных — обновить Obsidian Knowledge Graph (vault.create/edit)
 ✅ ОБЯЗАТЕЛЬНО: ПЕРЕД изменениями — локальный бэкап + Dump + MCP-проверка
 ✅ ОБЯЗАТЕЛЬНО: XML — брать шаблон из Документация/Шаблоны/
-✅ ОБЯЗАТЕЛЬНО: validate-config.ps1 → deploy-config.ps1 → открыть конфигуратор
+✅ ОБЯЗАТЕЛЬНО: validate-config.ps1 → deploy-config.ps1 → открыть конфигуратор  ← вызывать через python scripts/_ps_wrapper.py
 ✅ ОБЯЗАТЕЛЬНО: ПЕРЕД деплоем — проверить Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md
 ✅ ОБЯЗАТЕЛЬНО: при нарушении целостности — записать в КРИТИЧЕСКИЕ_ОШИБКИ.md
 ✅ ОБЯЗАТЕЛЬНО: замерять время каждой фазы задачи → записать в ЖУРНАЛ_ПРОИЗВОДИТЕЛЬНОСТИ.md
@@ -158,24 +159,31 @@
 ФАЗА 0: ЗАЩИТА ДАННЫХ
   → python scripts/_local_backup.py "описание"
   → Прочитать КРИТИЧЕСКИЕ_ОШИБКИ.md
-  → deploy-config.ps1 -Action Dump
+  → python scripts/_ps_wrapper.py deploy -Action Dump  ← НЕ вызывать .ps1 напрямую!
 
 ФАЗА 1: РЕАЛИЗАЦИЯ
   → MCP: проверить метаданные → BSL/XML из шаблонов → get_errors
   → Multi-file: Configuration.xml + ConfigDumpInfo.xml + Подсистемы
 
 ФАЗА 2: ДЕПЛОЙ
-  → validate-config.ps1 → deploy-config.ps1 -Action Full
+  → python scripts/_ps_wrapper.py validate
+  → python scripts/_ps_wrapper.py deploy -Action Full
   → Разбор ошибок → Исправление → Повтор (макс. 2 попытки → ОТКАТ)
+
+ФАЗА 2.5: ИНТЕРАКТИВНАЯ ОТЛАДКА (только при необходимости)
+  → Триггер: runtime-ошибка не диагностируется по ТЖ за 2 попытки
+  → Загрузить skill 1c-debug → debug_connect → debug_set_breakpoints
+  → debug_get_variables → фикс → debug_disconnect → вернуться к ФАЗЕ 2
 
 ФАЗА 3: ЗАВЕРШЕНИЕ
   → Конфигуратор → Обновить спецификацию → Record в History
   → Obsidian: обновить/создать заметки затронутых объектов (ОБЯЗАТЕЛЬНО)
 
 ФАЗА 4: МОНИТОРИНГ
-  → monitor-errors.ps1 -Action Check → ДИАЛОГ 1/2
+  → python scripts/_ps_wrapper.py monitor -Action Check → ДИАЛОГ 1/2
 
-ФАЗА 5: ЗАМЕР ПРОИЗВОДИТЕЛЬНОСТИ (ОБЯЗАТЕЛЬНО)
+ФАЗА 5: ЗАМЕР ПРОИЗВОДИТЕЛЬНОСТИ
+  → НЕ замерять: мониторинг без изменений, Q&A, задачи < 5 мин без деплоя
   → Записать в Документация/ЖУРНАЛ_ПРОИЗВОДИТЕЛЬНОСТИ.md:
     - Время каждой фазы (Бэкап, Анализ, Реализация, QC, Деплой, Мониторинг)
     - Метрики деплоя (validate, load, check, update, monitor в секундах)
@@ -186,10 +194,11 @@
 
 ФАЗА R: СВЕРКА КОНФИГУРАЦИИ (отдельный workflow)
   → Когда: пользователь вручную изменил конфигурацию в конфигураторе
-  → Dump ИБ → файлы → Запрос списка объектов у пользователя
+  → python scripts/_ps_wrapper.py deploy -Action Dump → файлы
+  → Запрос списка объектов у пользователя
   → MCP-анализ каждого объекта (структура, связи, формы)
   → Obsidian: обновить/создать заметки затронутых объектов
-  → validate-config.ps1 → ДИАЛОГ 2
+  → python scripts/_ps_wrapper.py validate → ДИАЛОГ 2
   → Подробности → orchestrator.agent.md, Фаза R
 ```
 
@@ -297,8 +306,8 @@ python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5  # монит
 ✓ MCP: метаданные проверены
 ✓ get_errors → 0 ошибок (BSL + XML)
 ✓ Multi-file: Configuration.xml + ConfigDumpInfo.xml + Подсистемы
-✓ validate-config.ps1 → 0 ошибок
-✓ deploy-config.ps1 → успешно → конфигуратор открыт
+✓ validate-config.ps1 → 0 ошибок  (через python scripts/_ps_wrapper.py validate)
+✓ deploy-config.ps1 → успешно → конфигуратор открыт  (через python scripts/_ps_wrapper.py deploy -Action Full)
 ✓ Спецификация обновлена
 ✓ Obsidian Knowledge Graph обновлён (PTM/ в vault DojoMojo_Obsidian)
 ✓ monitor-errors.ps1 → 0 ошибок

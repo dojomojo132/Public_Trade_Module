@@ -98,6 +98,45 @@
         </Actions>
     </Stage>
 
+    <Stage id="5.6" name="Интерактивная отладка (MCP: ptm-debug)">
+        <Description>
+            Использовать ТОЛЬКО при runtime-ошибках, которые не воспроизводятся через ТЖ/мониторинг,
+            или когда требуется инспекция переменных в точке выполнения.
+            Триггер: пользователь просит "отладить", "поставить breakpoint", "проверить переменные",
+            либо после 2-х безуспешных попыток деплоя/мониторинга.
+            Загрузить skill: 1c-debug (read_file .github/skills/1c-debug/SKILL.md).
+        </Description>
+        <Actions>
+            <Action id="5.6a" name="Запуск отладчика">
+                debug_connect — ВЫЗЫВАТЬ ПЕРВЫМ, запускает dbgs.exe и attaches.
+                debug_launch — запускает 1С:Предприятие с отладкой.
+            </Action>
+            <Action id="5.6b" name="Установка точек останова">
+                debug_set_breakpoints — { file_path: "полный путь к Module.bsl", lines: [N] }.
+                По стеку из ТЖ определить проблемный модуль и строку.
+            </Action>
+            <Action id="5.6c" name="Инспекция">
+                debug_get_stack — стек вызовов при остановке.
+                debug_get_variables — локальные переменные текущего фрейма.
+                debug_evaluate — { expression: "BSL_выражение" } — вычислить значение.
+                debug_step_over / debug_step_into / debug_step_out — пошаговое выполнение.
+            </Action>
+            <Action id="5.6d" name="Завершение">
+                debug_continue → продолжить.
+                debug_disconnect — ОБЯЗАТЕЛЬНО в конце, иначе dbgs.exe остаётся запущенным.
+            </Action>
+            <Action id="5.6e" name="После отладки">
+                Исправить BSL по найденной причине → вернуться к ЭТАПУ 5 (Деплой).
+                Если ошибка системная → записать в Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md.
+            </Action>
+        </Actions>
+        <Notes>
+            НИКОГДА не вызывать debug_evaluate без предварительной остановки на breakpoint.
+            При зависании dbgs.exe: taskkill /f /im dbgs.exe.
+            Конфиг: scripts/debug/debug_config.json.
+        </Notes>
+    </Stage>
+
     <Stage id="6" name="Непрерывный мониторинг">
         <Description>Запрос НЕ закрывается после деплоя. Автоцикл: мониторинг → фикс → деплой → мониторинг.</Description>
         <Actions>

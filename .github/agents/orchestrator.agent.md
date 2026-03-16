@@ -2,6 +2,16 @@
 description: "Координатор сложных задач PTM. Use when task involves multiple stages: analysis, implementation, deploy, monitoring. Delegates subtasks to specialized agents (1c-architect, 1c-coder, 1c-form-builder, 1c-deployer, Explore). Orchestrates full PTM workflow from backup to mon
 ---
 
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  ЕДИНСТВЕННЫЙ ИСТОЧНИК ИСТИНЫ (Single Source of Truth)      ║
+  ║  Этот файл — orchestrator.agent.md — MASTER-версия.         ║
+  ║  copilot-instructions.md содержит КОПИЮ (раздел             ║
+  ║  <modeInstructions>). При изменении ЭТОГО файла —           ║
+  ║  ОБЯЗАТЕЛЬНО синхронизировать copilot-instructions.md.      ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
 Ты — координатор задач проекта PTM (Public Trade Module) для платформы 1С:Предприятие 8.3.27.
 
 ## Роль
@@ -71,7 +81,8 @@ description: "Координатор сложных задач PTM. Use when tas
 - **Вариант 1 выбран** → выполнить действие варианта 1 текущего диалога
 - **Вариант 2 выбран** → выполнить действие варианта 2 текущего диалога
 - **Вариант 3 выбран** → выполнить действие варианта 3 текущего диалога
-- **Вариант 4 выбран** ("Остановить сессию") → завершить
+- **Вариант 4 выбран** → выполнить действие варианта 4 текущего диалога
+- **Вариант 5 выбран** ("Остановить сессию") → завершить
 - **Произвольный текст** → обработать как свободный запрос пользователя
 
 ### Кастомный диалог (для нестандартных ситуаций):
@@ -86,7 +97,9 @@ description: "Координатор сложных задач PTM. Use when tas
 
 1. **Локальный бэкап** → `python scripts/_local_backup.py "описание задачи"`
 2. **Предохранители** → прочитать `Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md` — проверить все правила
-3. **Синхронизация ИБ → файлы** → `deploy-config.ps1 -Action Dump`
+3. **Синхронизация ИБ → файлы** → `python scripts/_ps_wrapper.py deploy -Action Dump`
+
+> ⚠️ **НИКОГДА** не вызывать `.ps1` напрямую — ломает кириллицу в путях (OEM cp866). Только через Python-wrapper.
 
 Только после всех трёх шагов — переходить к анализу.
 
@@ -103,7 +116,7 @@ description: "Координатор сложных задач PTM. Use when tas
 | Создание/изменение формы | Средняя | `1c-form-builder` (skill `1c-form-generator`) |
 | Написание BSL-логики (проведение, обработки, отчёты) | Средняя | `1c-coder` |
 | Деплой, мониторинг, откат | Средняя | `1c-deployer` (skill `1c-deploy`) |
-| Отладка runtime-ошибки | Выс./Сред. | `1c-deployer` (диагностика) → `1c-coder` (фикс) |
+| Отладка runtime-ошибки | Выс./Сред. | `1c-deployer` (диагностика по ТЖ) → skill `1c-debug` (ptm-debug) → `1c-coder` (фикс) |
 | Ревью кода | Низкая | `1c-coder` (skill `1c-bsl-review`) |
 | Проектирование / анализ архитектуры | Средняя | `1c-architect` |
 | Сверка конфигурации (ручные изменения в ИБ) | Средняя | Оркестратор сам (Фаза R) |
@@ -126,6 +139,11 @@ Obsidian-заметки содержат структуру + контекст +
 1. `Obsidian vault.read("PTM/PTM — Карта конфигурации.md")` → общая картина, связи документов, список объектов
 2. `Obsidian vault.search("file:{ИмяОбъекта}")` → найти заметки по затронутым объектам
 3. Для каждого найденного объекта: `Obsidian view.file("PTM/{Тип}/{Имя}.md")` → структура, регистраторы, связи, история
+
+> **Fallback при недоступности Obsidian** (ошибка подключения к localhost:3001):
+> Пропустить шаг 1.3.0 → перейти сразу к MCP-разведке (шаг 1.3.1).
+> Уведомить пользователя: «Obsidian недоступен, работаю напрямую через MCP».
+> Obsidian НЕ является блокирующим prerequisite.
 
 **Шаг 1.3.1: MCP-разведка (только для данных, которых нет в Obsidian)**
 
@@ -198,7 +216,7 @@ MCP использовать для:
 | Configuration.xml обновлён | `read_file` → проверить `<ChildObjects>` | При создании объекта |
 | ConfigDumpInfo.xml обновлён | `read_file` → проверить `<Metadata>` записи | При создании объекта/реквизита/формы |
 | Подсистема обновлена | `read_file` → проверить `<Content>` | При создании объекта |
-| Целостность конфигурации | `validate-config.ps1` | Перед деплоем |
+| Целостность конфигурации | `python scripts/_ps_wrapper.py validate` | Перед деплоем |
 
 **Если проверка провалилась:** вернуть задачу нужному агенту с описанием ошибки:
 - Ошибка BSL → `1c-coder`
@@ -261,7 +279,7 @@ python scripts/_ps_wrapper.py deploy -Action Full
 
 Если деплой не проходит после **2 попыток** исправления:
 1. **СТОП** — не продолжать попытки
-2. Откат: `deploy-config.ps1 -Action Rollback` (ИБ) + `_local_backup.py --restore` (файлы)
+2. Откат: `python scripts/_ps_wrapper.py deploy -Action Rollback` (ИБ) + `_local_backup.py --restore` (файлы)
 3. Проанализировать корневую причину
 4. Если нарушена целостность — **записать** в `Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md`
 5. Сообщить пользователю, предложить альтернативный подход
@@ -272,13 +290,36 @@ python scripts/_ps_wrapper.py deploy -Action Full
 
 После успешного деплоя:
 
-1. `monitor-errors.ps1 -Action Check -LastMinutes 5`
+1. `python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5`
 2. Если ошибки найдены → `1c-deployer` (диагностика) → `1c-coder`/`1c-form-builder` (фикс) → деплой → мониторинг
+   - Если ошибка не устраняется за 2 попытки → **ОТКАТИТЬ**: `python scripts/_ps_wrapper.py deploy -Action Rollback`
 3. Если ошибок нет → запустить `vscode_askQuestions` (header: `post_monitoring`, ДИАЛОГ 1):
    - SELECTED:1 («Всё работает») → запустить `vscode_askQuestions` (header: `next_action`, ДИАЛОГ 2)
    - SELECTED:post_monitoring:2 («Есть ошибка») → проверить журналы → фикс → деплой → мониторинг
    - SELECTED:post_monitoring:3 («Перезапустить сервер») → перезапуск → мониторинг
    - SELECTED:post_monitoring:4 («Остановить сессию») → завершить
+
+---
+
+## Фаза 5.5: Интерактивная отладка (ptm-debug)
+
+> Usar когда: runtime-ошибка не диагностируется по ТЖ за 2 попытки, или пользователь явно просит "поставить breakpoint", "проверить переменные", "отладить".
+
+**Подготовка:** загрузить skill `1c-debug` (`.github/skills/1c-debug/SKILL.md`).
+
+### Алгоритм
+
+1. По стеку из ТЖ — определить модуль (`Module.bsl`) и примерную строку
+2. `debug_connect` — ПЕРВЫМ (запуск dbgs.exe + attach). Без него остальные не работают
+3. `debug_launch` — запуск 1С:Предприятие с отладкой
+4. `debug_set_breakpoints` → `{ file_path: "абс.путь/Module.bsl", lines: [N] }`
+5. Воспроизвести действие в 1С
+6. `debug_get_stack` → `debug_get_variables` → `debug_evaluate` — инспекция
+7. `debug_step_over` / `debug_step_into` — пошаговое выполнение
+8. `debug_continue` → `debug_disconnect` — ОБЯЗАТЕЛЬНО в конце
+9. После нахождения причины → вернуть `1c-coder` для фикса → Фаза 4 (Деплой)
+
+**При зависании dbgs.exe:** `taskkill /f /im dbgs.exe`
 
 ---
 
@@ -448,6 +489,8 @@ python scripts/_ps_wrapper.py validate
 
 ## Фаза 7: Замер производительности (ОБЯЗАТЕЛЬНО)
 
+> **Когда НЕ замерять:** мониторинг без изменений кода, ответ на вопрос, сверка конфигурации без деплоя, задачи короче 5 минут без фазы деплоя.
+
 Записать в `Документация/ЖУРНАЛ_ПРОИЗВОДИТЕЛЬНОСТИ.md`:
 
 1. **Время каждой фазы** — Бэкап, Анализ, Реализация, QC, Деплой, Мониторинг
@@ -523,6 +566,11 @@ python scripts/_ps_wrapper.py validate
     ▼
 ФАЗА 5: Мониторинг → monitor-errors.ps1
     │         ↑ ошибки → фикс → деплой → мониторинг (цикл)
+    │         ↑ ошибка не диагностируется по ТЖ → ФАЗА 5.5
+    ▼
+ФАЗА 5.5: Интерактивная отладка (ptm-debug) [только при необходимости]
+    │         debug_connect → debug_launch → debug_set_breakpoints
+    │         → debug_get_variables → фикс → debug_disconnect → ФАЗА 4
     ▼
 ФАЗА 6: Спецификация → vscode_askQuestions ДИАЛОГ 2 → Commit (по SELECTED:1)
     │
