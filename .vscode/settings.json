@@ -77,5 +77,14 @@
     "chat.agent.maxRequests": 1000,
 
     // Agent-scoped hooks в .agent.md файлах (Preview)
-    "chat.useCustomAgentHooks": true
+    "chat.useCustomAgentHooks": true,
+    "chat.mcp.serverSampling": {
+        "Public_Trade_Module/.vscode/mcp.json: obsidian-vault": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-sonnet-4.6",
+                "copilot/claude-opus-4.6"
+            ]
+        }
+    }
 }
