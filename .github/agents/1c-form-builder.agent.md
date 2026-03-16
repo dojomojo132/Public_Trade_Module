@@ -33,6 +33,8 @@ python scripts/_generate_form.py --check   # проверить наличие �
 2. **MCP** → `mcp_mcp_1c_torgov_get_metadata_structure` — реквизиты и ТЧ для размещения на форме
 3. UUID владельца — из XML объекта-владельца
 
+**MCP Fallback:** если MCP недоступен — НЕ останавливаться. Извлечь реквизиты из XML файла объекта (`Конфигурация/{Тип}/{Имя}.xml`). UUID — из того же файла. Пометить `⚠️ MCP недоступен` в ответе и `ERROR MCP unavailable` в Trace.
+
 ## Обязательные действия ПОСЛЕ создания формы
 
 1. Обновить XML владельца: `<Form>ИмяФормы</Form>` в `<ChildObjects>`
@@ -63,3 +65,10 @@ python scripts/_generate_form.py --check   # проверить наличие �
 - НЕ создавай объект метаданных — только его формы
 - НЕ угадывай реквизиты — проверяй через MCP
 - XML формы → skill `1c-form-generator` для подробных правил
+
+## Session Tracking
+
+В конце **каждого** ответа ОБЯЗАТЕЛЬНО добавь блок `## 📊 Trace` — см. протокол в `copilot-instructions.md`, §8.
+
+Что логировать: MCP-вызовы, правки файлов (EDIT), терминальные команды, ключевые решения (DECISION), ошибки (ERROR).
+НЕ логировать: read_file, grep_search, semantic_search, manage_todo_list.

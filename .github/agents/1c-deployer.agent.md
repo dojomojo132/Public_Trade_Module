@@ -70,6 +70,14 @@ powershell -ExecutionPolicy Bypass -File $monitor.FullName -Action Check -LastMi
 
 При ошибках мониторинга: классифицировать → направить фикс → повторить деплой → снова мониторинг.
 
+## MCP Fallback
+
+Если MCP недоступен во время деплоя/мониторинга:
+- **Деплой** → продолжать без MCP (деплой не зависит от MCP, только от файлов на диске)
+- **Мониторинг** → `monitor-errors.ps1` работает без MCP (читает ЖР и ТЖ с диска)
+- **Obsidian** → если Obsidian MCP недоступен, записать заметки в `/memories/session/obsidian-pending.md` для ручного переноса позже
+- **Пометить** `⚠️ MCP недоступен` в ответе и `ERROR MCP unavailable` в Trace
+
 ## Obsidian Knowledge Graph (после успешного деплоя)
 
 После каждого успешного деплоя **ОБЯЗАТЕЛЬНО** обновить граф знаний Obsidian:
@@ -97,3 +105,10 @@ debug_connect → debug_launch → debug_set_breakpoints → [breakpoint сра�
 - НЕ продолжай деплой после 2 неудач — откатывай
 - НЕ пересоздавай ИБ (CREATEINFOBASE) без разрешения пользователя
 - ВСЕГДА открывай конфигуратор после успешного деплоя (`-Action Designer`)
+
+## Session Tracking
+
+В конце **каждого** ответа ОБЯЗАТЕЛЬНО добавь блок `## 📊 Trace` — см. протокол в `copilot-instructions.md`, §8.
+
+Что логировать: MCP-вызовы, терминальные команды (деплой/мониторинг/откат), маршрутизацию ошибок (DECISION), ошибки (ERROR).
+НЕ логировать: read_file, grep_search, semantic_search, manage_todo_list.
