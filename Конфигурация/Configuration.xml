@@ -743,6 +743,7 @@
 			<DataProcessor>УправлениеНастройками</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ТестыРМК</DataProcessor>
+			<DataProcessor>ОткрытьКассу</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
 			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>
