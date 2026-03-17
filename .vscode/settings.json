@@ -27,7 +27,11 @@
         "**/MCP_Extension_check/**": true,
         "**/node_modules/**": true,
         "**/CF/**": true,
-        "**/PTM/**": true
+        "**/PTM/**": true,
+        "**/.venv/**": true,
+        "**/logs/**": true,
+        "**/tools/**": true,
+        "**/Документация/Валидация/backups/**": true
     },
 
     // files.watcherExclude — КЛЮЧЕВОЙ параметр: VS Code не отправляет события изменений
@@ -48,7 +52,10 @@
         "**/CF/**": true,
         "**/PTM/**": true,
         "**/logs/**": true,
-        "**/ScannerEmulator/**": true
+        "**/ScannerEmulator/**": true,
+        "**/.venv/**": true,
+        "**/tools/**": true,
+        "**/Документация/Валидация/backups/**": true
     },
 
     "search.exclude": {
@@ -61,7 +68,11 @@
         "**/_saved_import/**": true,
         "**/_form_temp_backup/**": true,
         "**/CF/**": true,
-        "**/PTM/**": true
+        "**/PTM/**": true,
+        "**/.venv/**": true,
+        "**/logs/**": true,
+        "**/tools/**": true,
+        "**/Документация/Валидация/backups/**": true
     },
     
     "github.copilot.chat.codeGeneration.useReferencedFiles": true,
