@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<DataProcessor uuid="1876b53a-c567-4e3a-9e12-123456789abc">
+	<DataProcessor uuid="02501dd2-84fb-458e-a636-8803a57f7f38">
 		<InternalInfo>
-			<xr:GeneratedType name="DataProcessorObject.РабочееМестоКассира" category="Object">
-				<xr:TypeId>1876b53a-c567-4e3a-9e12-123456789abd</xr:TypeId>
-				<xr:ValueId>1876b53a-c567-4e3a-9e12-123456789abe</xr:ValueId>
+			<xr:GeneratedType name="DataProcessorObject.Анл_РабочееМестоКассира" category="Object">
+				<xr:TypeId>4e42acd6-fb47-4163-b279-44486449c29e</xr:TypeId>
+				<xr:ValueId>c0cce5ef-7d6d-4de9-83d2-78845817b81d</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DataProcessorManager.РабочееМестоКассира" category="Manager">
-				<xr:TypeId>1876b53a-c567-4e3a-9e12-123456789abf</xr:TypeId>
-				<xr:ValueId>1876b53a-c567-4e3a-9e12-123456789ac0</xr:ValueId>
+			<xr:GeneratedType name="DataProcessorManager.Анл_РабочееМестоКассира" category="Manager">
+				<xr:TypeId>20a26857-a76a-4554-a8f9-f4c1fb640d6b</xr:TypeId>
+				<xr:ValueId>de7c4555-1f56-4eec-af03-bcec9d1fb78b</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>РабочееМестоКассира</Name>
+			<Name>Анл_РабочееМестоКассира</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -21,14 +21,14 @@
 			</Synonym>
 			<Comment/>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>DataProcessor.РабочееМестоКассира.Form.Форма</DefaultForm>
+			<DefaultForm>DataProcessor.Анл_РабочееМестоКассира.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<ExtendedPresentation/>
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789ac1">
+			<Attribute uuid="d2d1afb1-c297-4aca-a747-5924d1228396">
 				<Properties>
 					<Name>ТекущаяГруппа</Name>
 					<Synonym>
@@ -62,7 +62,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789ac2">
+			<Attribute uuid="7b850f27-3202-47ae-a7a7-1cfa79c5d714">
 				<Properties>
 					<Name>ПолеПоискаТовара</Name>
 					<Synonym>
@@ -100,7 +100,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789ac3">
+			<Attribute uuid="56cd6ecb-2b40-4fc5-9949-741b3b96267f">
 				<Properties>
 					<Name>ПолеПоискаТовара2</Name>
 					<Synonym>
@@ -138,7 +138,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="71108e12-679f-48ad-9d68-dda816773b62">
+			<Attribute uuid="90aa2ade-18e4-46bc-951a-34d8d788124b">
 				<Properties>
 					<Name>Касса</Name>
 					<Synonym>
@@ -172,7 +172,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="40639cd1-a22f-4f1c-af2c-3dfb81250c8a">
+			<Attribute uuid="be9db05f-25f7-4820-b5b8-5d83ae905c84">
 				<Properties>
 					<Name>КассоваяСмена</Name>
 					<Synonym>
@@ -206,15 +206,15 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
-			<TabularSection uuid="1876b53a-c567-4e3a-9e12-123456789ac4">
+			<TabularSection uuid="21d9d66a-aa10-47c5-8fd4-8cddfbb68768">
 				<InternalInfo>
-					<xr:GeneratedType name="DataProcessorTabularSection.РабочееМестоКассира.ТЧ" category="TabularSection">
-						<xr:TypeId>1876b53a-c567-4e3a-9e12-123456789ac5</xr:TypeId>
-						<xr:ValueId>1876b53a-c567-4e3a-9e12-123456789ac6</xr:ValueId>
+					<xr:GeneratedType name="DataProcessorTabularSection.Анл_РабочееМестоКассира.ТЧ" category="TabularSection">
+						<xr:TypeId>1bc5fe0b-b426-4d3e-9795-74a0464096e3</xr:TypeId>
+						<xr:ValueId>85ec5caa-23f2-40c1-ad45-60f516a3fb44</xr:ValueId>
 					</xr:GeneratedType>
-					<xr:GeneratedType name="DataProcessorTabularSectionRow.РабочееМестоКассира.ТЧ" category="TabularSectionRow">
-						<xr:TypeId>1876b53a-c567-4e3a-9e12-123456789ac7</xr:TypeId>
-						<xr:ValueId>1876b53a-c567-4e3a-9e12-123456789ac8</xr:ValueId>
+					<xr:GeneratedType name="DataProcessorTabularSectionRow.Анл_РабочееМестоКассира.ТЧ" category="TabularSectionRow">
+						<xr:TypeId>91880754-8e05-40d8-96ec-82a31a26749f</xr:TypeId>
+						<xr:ValueId>b8ae6b8a-ed63-493d-8863-89faba61b6f9</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -230,7 +230,7 @@
 					<FillChecking>DontCheck</FillChecking>
 				</Properties>
 				<ChildObjects>
-					<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789ac9">
+					<Attribute uuid="38ac68db-ca80-4377-bbdb-050c57f86154">
 						<Properties>
 							<Name>Номенклатура</Name>
 							<Synonym>
@@ -266,7 +266,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789aca">
+					<Attribute uuid="cec4f437-859a-4841-835e-86e26f25d4a1">
 						<Properties>
 							<Name>Количество</Name>
 							<Synonym>
@@ -307,7 +307,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789acb">
+					<Attribute uuid="f0f0c1c3-4ba1-40bf-8f7a-e30c6cf55ef9">
 						<Properties>
 							<Name>Цена</Name>
 							<Synonym>
@@ -348,7 +348,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="1876b53a-c567-4e3a-9e12-123456789acc">
+					<Attribute uuid="de4efafe-2bc6-4d3c-9361-1ed4c5c5e981">
 						<Properties>
 							<Name>Сумма</Name>
 							<Synonym>
@@ -389,7 +389,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="400bbbd8-e76d-46da-856c-03d4f823e3b8">
+					<Attribute uuid="4bf44115-9b99-414e-9bd9-46f4f9522f34">
 						<Properties>
 							<Name>АкцизнаяМарка</Name>
 							<Synonym>
@@ -429,7 +429,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="500bbbd8-e76d-46da-856c-03d4f823e3c9">
+					<Attribute uuid="43b7c026-36cb-4b8d-8fce-212db054800e">
 						<Properties>
 							<Name>Штрихкод</Name>
 							<Synonym>
@@ -469,7 +469,7 @@
 							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="601ccce9-f87e-47eb-967d-14e5f934f4da">
+					<Attribute uuid="696b0e34-0c31-4f6c-a926-bfb069af2853">
 						<Properties>
 							<Name>МаркаСтатус</Name>
 							<Synonym>

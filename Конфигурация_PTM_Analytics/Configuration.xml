@@ -65,6 +65,7 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<Subsystem>Анл_Аналитика</Subsystem>
 			<Role>Анл_ОсновнаяРоль</Role>
 			<Report>Анл_АнализПродаж</Report>
 			<Report>Анл_Возвраты</Report>
@@ -73,6 +74,7 @@
 			<Report>Анл_ДвижениеДенежныхСредств</Report>
 			<Report>Анл_ПродажиЗаСмену</Report>
 			<Report>Анл_ДвижениеТоваров</Report>
+			<DataProcessor>Анл_РабочееМестоКассира</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

@@ -1,29 +1,46 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
 	<ConfigVersions>
-		<Metadata name="Configuration.PTM_Analytics" id="f8045122-25ca-4513-881c-317cb30361c3" configVersion="2fd770ae6fbe1fff73471d1420fe736086390a2d"/>
+		<Metadata name="Configuration.PTM_Analytics" id="f8045122-25ca-4513-881c-317cb30361c3" configVersion="6d510ce6ea536a9cdabe7acefd2014ebc4cbcf3e"/>
 		<Metadata name="Language.Русский" id="d11ebbde-8b83-4b37-9782-fb99a0bc3060" configVersion="48a80ec4d46d7f7a5012d19b88e2e8e72ba98143"/>
-		<Metadata name="Report.Анл_АнализПродаж" id="68a67104-791b-4e06-ac4e-93e66f7051c2" configVersion="e32ed2fefb31cee2973eb0aab9310d0d2feed985"/>
+		<Metadata name="Report.Анл_АнализПродаж" id="68a67104-791b-4e06-ac4e-93e66f7051c2" configVersion="035d19829440007d26657a15c2d812cf44c4ab2d"/>
 		<Metadata name="Report.Анл_АнализПродаж.Template.ОсновнаяСхемаКомпоновкиДанных" id="620dbca6-4d8e-46e3-a04f-493a05bcb70b" configVersion="2dc2dc3cc70645efb293a1e3ad35f4322f4cce45"/>
 		<Metadata name="Report.Анл_АнализПродаж.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="620dbca6-4d8e-46e3-a04f-493a05bcb70b.0" configVersion="c0b9a78e134ee7526da75515c040c58728d73a63"/>
-		<Metadata name="Role.Анл_ОсновнаяРоль" id="d7621e79-6e8e-4343-b11f-25c31ac8f48f" configVersion="86cd73cb8a846095a26b25cdd244852cc8c82829"/>
-			<Metadata name="Report.Анл_Возвраты" id="5335f0c3-e03a-4a84-b65d-53248df5d43a" configVersion="ada05c43b9f949e69844b8d9036b51cb"/>
-		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных" id="de5701df-199a-4201-859b-7446aa2e6b25" configVersion="beb0c70d1a6c42db906069feab12ff80"/>
-		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="de5701df-199a-4201-859b-7446aa2e6b25.0" configVersion="92207cbb6ce2421ba418f1e791d2960c"/>
-		<Metadata name="Report.Анл_ВаловаяПрибыль" id="911ce2db-0954-4445-a9ba-8740e82fe141" configVersion="13217b2334bb47da815af4165b28d365"/>
-		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных" id="62ae8e9d-7cb4-42ab-b653-f6cf1dedb9b8" configVersion="0fd930496b9c4feb982ae8593c3d0b11"/>
-		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="62ae8e9d-7cb4-42ab-b653-f6cf1dedb9b8.0" configVersion="17f323a0ec184004b582b2b54850f40c"/>
-		<Metadata name="Report.Анл_ПродажиПоСчетам" id="44048771-039b-466f-adf6-6d2c39eea83f" configVersion="60f800bfc2f34d9bbdff54cc15e5e8e7"/>
-		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных" id="51164cf4-6450-4b7c-8d06-1d35d5564675" configVersion="943ff4258eec4688b6e919eef4c0e9b5"/>
-		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="51164cf4-6450-4b7c-8d06-1d35d5564675.0" configVersion="bcb7cd2308634ad3907db6ea9649c278"/>
-		<Metadata name="Report.Анл_ДвижениеДенежныхСредств" id="0ef89fa3-08c3-43a4-8c8f-3f91e4226947" configVersion="9edaa74bacfd4f6ab5549ec03725f2a9"/>
-		<Metadata name="Report.Анл_ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных" id="cf4f714f-9c94-4fe5-b264-50bcee30ca34" configVersion="398f07e14a8a44ef99c32fe1ebcc9fbf"/>
-		<Metadata name="Report.Анл_ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="cf4f714f-9c94-4fe5-b264-50bcee30ca34.0" configVersion="0183c28a299449d588411a486ef548d9"/>
-		<Metadata name="Report.Анл_ПродажиЗаСмену" id="2ce2d528-c59d-47bb-9d74-535247a0dd3a" configVersion="2ce882d5c17a4b1a8b24706464170f03"/>
-		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных" id="d33adf0f-0970-44cc-ae63-1505830d2327" configVersion="5a4bef0d0fde41ccad7fcaad907ca3b2"/>
-		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d33adf0f-0970-44cc-ae63-1505830d2327.0" configVersion="6b48913a96134c26ad48d7cb5aae2bbc"/>
-		<Metadata name="Report.Анл_ДвижениеТоваров" id="0b35ee78-9f14-4eca-ba27-669f93107ef4" configVersion="ccd08fcc55fe41ba9a2184750364cab8"/>
-		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных" id="cc69681b-f767-457c-8ba4-0dd7b77068d4" configVersion="0a62c947e1404359b84ac84596594781"/>
-		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="cc69681b-f767-457c-8ba4-0dd7b77068d4.0" configVersion="866c924e220942b2b26a523ce6f4f67e"/>
+		<Metadata name="Report.Анл_ВаловаяПрибыль" id="6c3b2e81-a43f-42af-ab11-8082cd1d338c" configVersion="fa5d81f0921ad7f29fd67e233f307dfa46a2163d"/>
+		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных" id="e4c31160-edb9-458a-af78-83023139fbf6" configVersion="b96d17d2dbdc7dd0b79d1827c7a7b2600272104c"/>
+		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e4c31160-edb9-458a-af78-83023139fbf6.0" configVersion="9ac9eb4ec8b35903c2c92beb4b58bddbf8d72b09"/>
+		<Metadata name="Report.Анл_Возвраты" id="108c8083-0854-427e-acf8-358d599c4530" configVersion="83a59bb62a88f547a34d17df267c44ea6c3a1b51"/>
+		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных" id="c7599fbf-2522-447e-9b08-6de07eb93faa" configVersion="ce5689e36ce659bf1f8a3f8fc95e8a186d3cb083"/>
+		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="c7599fbf-2522-447e-9b08-6de07eb93faa.0" configVersion="7a194b71324d0031aa77d37e6cbe114be98e8418"/>
+		<Metadata name="Report.Анл_ДвижениеДенежныхСредств" id="b3700765-1f46-42cb-95e3-f9181c15edfd" configVersion="620ee93e91dcc0dc71612686354d33a563ba88ac"/>
+		<Metadata name="Report.Анл_ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных" id="47ff3f99-75db-479a-8d12-6bcb79e7f1af" configVersion="c0c14d9c914b3d75d06618563b0b9863bfef6c86"/>
+		<Metadata name="Report.Анл_ДвижениеДенежныхСредств.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="47ff3f99-75db-479a-8d12-6bcb79e7f1af.0" configVersion="4d095fb5bd4f1505ca10a86870f2502ddc5a017d"/>
+		<Metadata name="Report.Анл_ДвижениеТоваров" id="5796f9ad-eb9e-4e1a-a601-2df178b84e26" configVersion="793127dfc18bf8aaa46354b343889151865039b5"/>
+		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных" id="d89913c0-3f95-45fa-a1fc-b70c89fa6728" configVersion="0b29e94b65b20cc191cfa6860da7e997d5f6ab5d"/>
+		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d89913c0-3f95-45fa-a1fc-b70c89fa6728.0" configVersion="c9dfb36084de900d25d7b1eb3e9da27eec7a0d66"/>
+		<Metadata name="Report.Анл_ПродажиЗаСмену" id="eb54448a-98db-4397-9074-a2f1f70be6df" configVersion="b21ba3b22361c67c144c8295706e280d1dc8a0ae"/>
+		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных" id="46dc573e-df80-41f6-a699-e77b7fd45205" configVersion="e4301d932c4c76371a115ae1fabb11ccc8b9c917"/>
+		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="46dc573e-df80-41f6-a699-e77b7fd45205.0" configVersion="8a96dded6a9acf70f69aaa5a78f01f0ba5c56d20"/>
+		<Metadata name="Report.Анл_ПродажиПоСчетам" id="85b8f7d2-1bbc-4b54-ad58-83bebe4cd69e" configVersion="4cf3c01a326968143c1f68d7179950d86a952ba5"/>
+		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных" id="5c8b27fd-4203-4727-b374-6e9b042c5440" configVersion="3bc5b82c12f3b6d4a70f4ee39dd5a55560b7c3da"/>
+		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="5c8b27fd-4203-4727-b374-6e9b042c5440.0" configVersion="6ad379a6adbbefb80bc5ebfd689fd383714eee1d"/>
+		<Metadata name="Role.Анл_ОсновнаяРоль" id="d7621e79-6e8e-4343-b11f-25c31ac8f48f" configVersion="a30d63ee7e1e8b8537cf586a1982d977c43e120c"/>
+		<Metadata name="Subsystem.Анл_Аналитика" id="a3b7c1d2-5e4f-4a89-b6c3-8d9e0f1a2b3c" configVersion="7fa4361407a2c4f7c329d4af3a27fdd50eb05ef2"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира" id="02501dd2-84fb-458e-a636-8803a57f7f38" configVersion="43a8e89127ef42cbb2492b89e8479ab2"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ТекущаяГруппа" id="d2d1afb1-c297-4aca-a747-5924d1228396"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="7b850f27-3202-47ae-a7a7-1cfa79c5d714"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара2" id="56cd6ecb-2b40-4fc5-9949-741b3b96267f"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.Касса" id="90aa2ade-18e4-46bc-951a-34d8d788124b"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.КассоваяСмена" id="be9db05f-25f7-4820-b5b8-5d83ae905c84"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ" id="21d9d66a-aa10-47c5-8fd4-8cddfbb68768"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Номенклатура" id="38ac68db-ca80-4377-bbdb-050c57f86154"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Количество" id="cec4f437-859a-4841-835e-86e26f25d4a1"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Цена" id="f0f0c1c3-4ba1-40bf-8f7a-e30c6cf55ef9"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Сумма" id="de4efafe-2bc6-4d3c-9361-1ed4c5c5e981"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.АкцизнаяМарка" id="4bf44115-9b99-414e-9bd9-46f4f9522f34"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Штрихкод" id="43b7c026-36cb-4b8d-8fce-212db054800e"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.МаркаСтатус" id="696b0e34-0c31-4f6c-a926-bfb069af2853"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8" configVersion="34e586424ccf4bf2bb494c22b629e6fc"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма.Form" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8.0" configVersion="bb2dc1235f7e433396fffff7a995aa27"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

@@ -19,7 +19,6 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.РабочееМестоКассира</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ЧекККМ</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ВозвратТовараОтПокупателя</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Номенклатура</xr:Item>

@@ -1128,23 +1128,7 @@
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Form.Форма" id="075113be-19b5-4efd-be64-963501788199" configVersion="0e4fa397a35c0a4faa802f38dc2bab9900000000"/>
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.Form.Форма.Form" id="075113be-19b5-4efd-be64-963501788199.0" configVersion="ba48eba7b11b4e44899b41a600217e4200000000"/>
 		<Metadata name="DataProcessor.ПечатьЭтикетокИЦенниковБПО.ManagerModule" id="b647814e-42de-4f39-b7d4-8de98bf88a27.2" configVersion="d0c5f167971aa14aa97685c81807a3c400000000"/>
-		<Metadata name="DataProcessor.РабочееМестоКассира" id="1876b53a-c567-4e3a-9e12-123456789abc" configVersion="ff0b96bd763473489144e5352aa1764a00000000">
-			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ТекущаяГруппа" id="1876b53a-c567-4e3a-9e12-123456789ac1"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="1876b53a-c567-4e3a-9e12-123456789ac2"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.ПолеПоискаТовара2" id="1876b53a-c567-4e3a-9e12-123456789ac3"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ" id="1876b53a-c567-4e3a-9e12-123456789ac4"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.Номенклатура" id="1876b53a-c567-4e3a-9e12-123456789ac9"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.Количество" id="1876b53a-c567-4e3a-9e12-123456789aca"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.Цена" id="1876b53a-c567-4e3a-9e12-123456789acb"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.Сумма" id="1876b53a-c567-4e3a-9e12-123456789acc"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.АкцизнаяМарка" id="400bbbd8-e76d-46da-856c-03d4f823e3b8"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.КассоваяСмена" id="40639cd1-a22f-4f1c-af2c-3dfb81250c8a"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.Штрихкод" id="500bbbd8-e76d-46da-856c-03d4f823e3c9"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.TabularSection.ТЧ.Attribute.МаркаСтатус" id="601ccce9-f87e-47eb-967d-14e5f934f4da"/>
-			<Metadata name="DataProcessor.РабочееМестоКассира.Attribute.Касса" id="71108e12-679f-48ad-9d68-dda816773b62"/>
 		</Metadata>
-		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма" id="1876b53a-c567-4e3a-9e12-123456789acd" configVersion="f0bb444be01c0f4bbe46b45c951564a200000000"/>
-		<Metadata name="DataProcessor.РабочееМестоКассира.Form.Форма.Form" id="1876b53a-c567-4e3a-9e12-123456789acd.0" configVersion="97bed93266774c4f8d60453eb84f995900000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных" id="4562ecee-34ca-43f6-a8ac-d5fd03eebcba" configVersion="e2622df5e9d38f4aa222a3b45a7b71ec00000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450" configVersion="342cf381eb98564c89705956abfe01c000000000"/>
 		<Metadata name="DataProcessor.ТестовоеЗаполнениеДанных.Form.Форма.Form" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450.0" configVersion="6fbf746e66760b4e995103b9c754a2c500000000"/>

@@ -733,7 +733,6 @@
 			<Report>Продажи</Report>
 			<Report>Взаиморасчеты</Report>
 			<Report>_ДемоПроверкаПодсистемБПО</Report>
-			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ТестыРМК</DataProcessor>
