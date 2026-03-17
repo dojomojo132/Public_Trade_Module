@@ -30,10 +30,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.ОсновнойПоставщик</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.КонтролироватьОстаткиПриСписании</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ОстаткиТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ДвижениеТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.Возвраты</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.Продажи</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>				<xr:Item xsi:type="xr:MDObjectRef">Report.Продажи</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ИнформацияНоменклатуры</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузкаЗакупочныхЦен</xr:Item>
 			</Content>

@@ -731,19 +731,12 @@
 			<Enum>ТипыЧековКоррекции</Enum>
 			<Report>ОстаткиТоваров</Report>
 			<Report>Продажи</Report>
-			<Report>Возвраты</Report>
-			<Report>ДвижениеТоваров</Report>
-			<Report>ВаловаяПрибыль</Report>
-			<Report>ПродажиПоСчетам</Report>
-			<Report>ДвижениеДенежныхСредств</Report>
 			<Report>Взаиморасчеты</Report>
 			<Report>_ДемоПроверкаПодсистемБПО</Report>
-			<Report>ПродажиЗаСмену</Report>
 			<DataProcessor>РабочееМестоКассира</DataProcessor>
 			<DataProcessor>УправлениеНастройками</DataProcessor>
 			<DataProcessor>ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>ТестыРМК</DataProcessor>
-			<DataProcessor>ОткрытьКассу</DataProcessor>
 			<DataProcessor>ИмпортЕкспортНоменклатуры</DataProcessor>
 			<DataProcessor>ИмпортНоменклатуры</DataProcessor>
 			<DataProcessor>ИнформацияНоменклатуры</DataProcessor>

@@ -182,7 +182,10 @@
   → Multi-file: Configuration.xml + ConfigDumpInfo.xml + Подсистемы
 
 ФАЗА 2: ДЕПЛОЙ
-  → validate-config.ps1 → deploy-config.ps1 -Action Full
+  ⚡ Если объект в РАСШИРЕНИИ (Reports/DataProcessors/CommonModules расширения):
+     → python scripts/deploy_ext.py --ext <НазваниеРасширения> --action Full (~15 сек)
+  🐢 Если объект в ОСНОВНОЙ КОНФИГУРАЦИИ (Documents/Catalogs/Registers):
+     → validate-config.ps1 → deploy-config.ps1 -Action Full (~100 сек)
   → Разбор ошибок → Исправление → Повтор (макс. 2 попытки → ОТКАТ)
 
 ФАЗА 3: ЗАВЕРШЕНИЕ
@@ -301,6 +304,21 @@ python scripts/_ps_wrapper.py deploy -Action Rollback # откат
 python scripts/_ps_wrapper.py validate                # валидация XML
 python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5  # мониторинг
 ```
+
+### Расширения конфигурации (deploy_ext.py)
+
+```bash
+# Деплой расширения (~15 сек вместо ~100 сек для основной конфигурации):
+python scripts/deploy_ext.py --ext PTM_Analytics --action Full     # Load + UpdateDB
+python scripts/deploy_ext.py --ext PTM_Analytics --action Dump     # выгрузить из ИБ
+python scripts/deploy_ext.py --ext PTM_Analytics --action Load     # загрузить в ИБ
+python scripts/deploy_ext.py --ext PTM_Analytics --action Update   # только UpdateDBCfg
+python scripts/deploy_ext.py --ext MCP_Сервер    --action Full     # MCP расширение
+# Переопределить папку: --dir <путь>
+```
+
+**Когда использовать:** объект создан в расширении (отчёт, обработка, общий модуль).
+**Когда НЕ использовать:** изменения в документах, справочниках, регистрах → основная конфигурация.
 
 Для файловых операций с кириллическими путями: создать `.py` файл → запустить `python script.py`.
 **ЗАПРЕЩЕНО:** прямой вызов `.ps1` скриптов из `Документация/Валидация/` через терминал.

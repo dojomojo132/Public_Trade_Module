@@ -49,10 +49,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходныйКассовыйОрдер</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.РасходныйКассовыйОрдер</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.РабочееМестоКассира</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ПродажиПоСчетам</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.ДвижениеДенежныхСредств</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Report.Взаиморасчеты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваров</xr:Item>				<xr:Item xsi:type="xr:MDObjectRef">Report.Взаиморасчеты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтавкиНДС</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ЕдиницыИзмерения</xr:Item>
