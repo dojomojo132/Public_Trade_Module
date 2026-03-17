@@ -683,6 +683,8 @@
 			<Enum>СтатусыКассовойСмены</Enum>
 			<Enum>ВидыКасс</Enum>
 			<Enum>ВидыОперацийФискальногоЧека</Enum>
+			<Enum>ТипыДрайверовПРРО</Enum>
+			<Enum>СтатусыФискализации</Enum>
 			<Enum>_ДемоЕдиницыИзмерения</Enum>
 			<Enum>_ДемоСтавкиНДС</Enum>
 			<Enum>_ДемоСтатусыЧековККМ</Enum>
@@ -758,6 +760,7 @@
 			<InformationRegister>Штрихкоды</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>НастройкиРаспределенияПродаж</InformationRegister>
+			<InformationRegister>РаспределениеНалоговыхГрупп</InformationRegister>
 			<InformationRegister>_ДемоШтрихкоды</InformationRegister>
 			<InformationRegister>АрхивЛоговДрайверовОборудования</InformationRegister>
 			<InformationRegister>ДатаЗагрузкиОтчетовКассЭвотор</InformationRegister>

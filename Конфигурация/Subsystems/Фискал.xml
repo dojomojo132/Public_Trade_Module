@@ -24,6 +24,9 @@
 				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.МенеджерОборудования</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.Драйвер1ССканер</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыОборудования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыДрайверовПРРО</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыФискализации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РаспределениеНалоговыхГрупп</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
