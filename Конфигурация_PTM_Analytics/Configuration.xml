@@ -75,6 +75,11 @@
 			<Report>Анл_ПродажиЗаСмену</Report>
 			<Report>Анл_ДвижениеТоваров</Report>
 			<DataProcessor>Анл_РабочееМестоКассира</DataProcessor>
+			<Report>Анл_Продажи</Report>
+			<Report>Анл_Взаиморасчеты</Report>
+			<DataProcessor>Анл_УправлениеНастройками</DataProcessor>
+			<DataProcessor>Анл_ТестовоеЗаполнениеДанных</DataProcessor>
+			<DataProcessor>Анл_ТестыРМК</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

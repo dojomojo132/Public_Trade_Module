@@ -42,5 +42,20 @@
 		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.МаркаСтатус" id="696b0e34-0c31-4f6c-a926-bfb069af2853"/>
 		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8" configVersion="34e586424ccf4bf2bb494c22b629e6fc"/>
 		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма.Form" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8.0" configVersion="bb2dc1235f7e433396fffff7a995aa27"/>
+		<Metadata name="Report.Анл_Продажи" id="e510e9bf-82ca-4efc-887f-6738bb1cff91"/>
+		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных" id="a2585a6a-3852-49e4-832a-3f4b078425a2"/>
+		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="a2585a6a-3852-49e4-832a-3f4b078425a2.0"/>
+		<Metadata name="Report.Анл_Взаиморасчеты" id="494ff9d9-c081-4559-9f33-6b8d2620d649"/>
+		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="de9c3011-e919-4903-88e7-bc2478e5a1cb"/>
+		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="de9c3011-e919-4903-88e7-bc2478e5a1cb.0"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками" id="ebf35522-407a-428e-99eb-6dc6ebcd8b00"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма" id="27bea011-fc31-47bd-93a2-54dbf7208ff7"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма.Form" id="27bea011-fc31-47bd-93a2-54dbf7208ff7.0"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных" id="6bbed024-f469-4566-bb77-7fc614a8433e"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма" id="c4ebadaf-9b9d-40ca-9048-42ffe7a677d9"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма.Form" id="c4ebadaf-9b9d-40ca-9048-42ffe7a677d9.0"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК" id="ad67a835-1c9b-461e-8bb2-20f11a62c438"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма" id="a6a1b3a1-4472-4670-aa4b-d6a4b0ecde08"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма.Form" id="a6a1b3a1-4472-4670-aa4b-d6a4b0ecde08.0"/>
 	</ConfigVersions>
 </ConfigDumpInfo>
