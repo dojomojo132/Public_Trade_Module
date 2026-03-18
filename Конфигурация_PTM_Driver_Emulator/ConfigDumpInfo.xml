@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.Эмл_ДрайверПРРО" id="cbe32a11-35bf-487a-bbf2-81855960af98" configVersion="1504194e27089b902e9249ff230f6bccdb87a58a"/>
+		<Metadata name="CommonModule.Эмл_ДрайверПРРО.Module" id="cbe32a11-35bf-487a-bbf2-81855960af98.0" configVersion="60f5cfaaa5bc01502a49fee8a58462ef3499f41e"/>
+		<Metadata name="Configuration.PTM_Driver_Emulator" id="aeb93aa0-d774-454d-82b1-8a788383cc99" configVersion="c4498ea6ba428e4a30f0e27f48f392a76c773933"/>
+		<Metadata name="Language.Русский" id="ff143173-71b7-4385-9abd-be966c1a5001" configVersion="677dd5b4fd9cad32e8d7ced209d9ee3aefb7815f"/>
+		<Metadata name="Role.Эмл_ОсновнаяРоль" id="ffdffdc2-e0a9-4611-be24-01850df8412f" configVersion="3d126655b565f152e51c9fae30a7aa130e2dc005"/>
+		<Metadata name="Subsystem.Эмл_Эмуляция" id="1efcd73a-149a-497c-93ca-febd681cb66e" configVersion="ae6aea2fccf0d6fde3ce727bcebe0648a1b152cf"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
