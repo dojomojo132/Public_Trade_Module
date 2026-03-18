@@ -2266,7 +2266,7 @@
 		<Metadata name="InformationRegister.ФискальныеОперации.ManagerModule" id="3c1c25ab-8458-4f2b-8485-6471eb235795.2" configVersion="26a38a862944c34c9ac95577c57db99500000000"/>
 		<Metadata name="InformationRegister.Анл_МобильнаяКорзина" id="0a870b11-a74e-43e5-8d42-51b152b71a03" configVersion="">
 			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Dimension.ИдСессии" id="b1f58009-bf0b-4d99-8a6b-f4ca24a78eaf"/>
-			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Dimension.НомерСтроки" id="2f78d20a-2077-4d37-b142-51826eca7313"/>
+			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Dimension.НомерПозиции" id="2f78d20a-2077-4d37-b142-51826eca7313"/>
 			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Resource.Штрихкод" id="a767e360-b021-4330-95fe-515932a39880"/>
 			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Resource.Наименование" id="a94012ee-6f95-43f0-a44b-6901dfc6b743"/>
 			<Metadata name="InformationRegister.Анл_МобильнаяКорзина.Resource.Количество" id="5fb67c40-a23b-452b-900e-911e6c714c99"/>

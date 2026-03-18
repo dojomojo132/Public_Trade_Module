@@ -113,11 +113,11 @@
 			</Dimension>
 			<Dimension uuid="2f78d20a-2077-4d37-b142-51826eca7313">
 				<Properties>
-					<Name>НомерСтроки</Name>
+					<Name>НомерПозиции</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Номер строки</v8:content>
+							<v8:content>Номер позиции</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
