@@ -234,27 +234,27 @@
 		</Attribute>
 		<Attribute name="ОсновнойСклад" id="2">
 			<Type>
-				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+				<v8:TypeId>cef3d6b1-2017-4a1f-9319-cb76505a2cb6</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="ОсновнойПоставщик" id="3">
 			<Type>
-				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+				<v8:TypeId>89636646-8836-4bc0-a384-c41658c08b71</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="ОсновнаяКасса" id="4">
 			<Type>
-				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+				<v8:TypeId>6705e88d-5128-456e-820a-7c3eee025f53</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="ОсновнойТипЦен" id="5">
 			<Type>
-				<v8:Type>cfg:CatalogRef.ТипыЦен</v8:Type>
+				<v8:TypeId>c26a1029-c4b3-4bd0-8b17-10729ab3f4ee</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="ПорядокОкругленияЦен" id="6">
 			<Type>
-				<v8:Type>cfg:EnumRef.ПорядкиОкругленияЦен</v8:Type>
+				<v8:TypeId>7d3b8e30-4f1d-442e-9b23-745eb7bc41b2</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="КонтролироватьОстаткиПриСписании" id="7">
@@ -356,7 +356,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+				<v8:TypeId>6705e88d-5128-456e-820a-7c3eee025f53</v8:TypeId>
 			</Type>
 		</Attribute>
 	</Attributes>

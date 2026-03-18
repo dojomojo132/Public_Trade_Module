@@ -39,7 +39,7 @@
 					</Synonym>
 					<Comment/>
 					<Type>
-						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+						<v8:TypeId>0dc61d3b-62ee-4c5f-aff7-7d8e43eb97da</v8:TypeId>
 					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
@@ -149,7 +149,7 @@
 					</Synonym>
 					<Comment/>
 					<Type>
-						<v8:Type>cfg:CatalogRef.Кассы</v8:Type>
+						<v8:TypeId>6705e88d-5128-456e-820a-7c3eee025f53</v8:TypeId>
 					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
@@ -183,7 +183,7 @@
 					</Synonym>
 					<Comment/>
 					<Type>
-						<v8:Type>cfg:DocumentRef.КассоваяСмена</v8:Type>
+						<v8:TypeId>7c76109a-0b04-4515-b92b-2e2876cc34b2</v8:TypeId>
 					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
@@ -241,7 +241,7 @@
 							</Synonym>
 							<Comment/>
 							<Type>
-								<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+								<v8:TypeId>0dc61d3b-62ee-4c5f-aff7-7d8e43eb97da</v8:TypeId>
 							</Type>
 							<PasswordMode>false</PasswordMode>
 							<Format/>
@@ -499,6 +499,46 @@
 							<MaxValue xsi:nil="true"/>
 							<FillFromFillingValue>false</FillFromFillingValue>
 							<FillValue xsi:type="xs:decimal">0</FillValue>
+							<FillChecking>DontCheck</FillChecking>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceParameterLinks/>
+							<ChoiceParameters/>
+							<QuickChoice>Auto</QuickChoice>
+							<CreateOnInput>Auto</CreateOnInput>
+							<ChoiceForm/>
+							<LinkByType/>
+							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567890">
+						<Properties>
+							<Name>ФОП</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ФОП</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>50</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<PasswordMode>false</PasswordMode>
+							<Format/>
+							<EditFormat/>
+							<ToolTip/>
+							<MarkNegatives>false</MarkNegatives>
+							<Mask/>
+							<MultiLine>false</MultiLine>
+							<ExtendedEdit>false</ExtendedEdit>
+							<MinValue xsi:nil="true"/>
+							<MaxValue xsi:nil="true"/>
+							<FillFromFillingValue>false</FillFromFillingValue>
+							<FillValue xsi:type="xs:string"/>
 							<FillChecking>DontCheck</FillChecking>
 							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
 							<ChoiceParameterLinks/>

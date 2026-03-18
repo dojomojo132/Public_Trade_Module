@@ -773,6 +773,7 @@
 			<InformationRegister>ПлатежныеОперации</InformationRegister>
 			<InformationRegister>УдалитьНумерацияЧековККТ</InformationRegister>
 			<InformationRegister>ФискальныеОперации</InformationRegister>
+			<InformationRegister>Анл_МобильнаяКорзина</InformationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
 			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>

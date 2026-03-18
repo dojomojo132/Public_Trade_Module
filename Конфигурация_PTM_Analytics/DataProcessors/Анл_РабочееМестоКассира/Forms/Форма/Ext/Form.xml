@@ -119,6 +119,13 @@
 					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 					<ExtendedTooltip name="ПоискРасширеннаяПодсказка" id="55"/>
 				</Button>
+				<Button name="МобильнаяКасса" id="112">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.МобильнаяКасса</CommandName>
+					<BackColor>web:DodgerBlue</BackColor>
+					<Font ref="style:LargeTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ExtendedTooltip name="МобильнаяКассаРасширеннаяПодсказка" id="113"/>
+				</Button>
 				<Button name="ОбновитьНастройки" id="74">
 					<Type>UsualButton</Type>
 					<Visible>false</Visible>
@@ -281,6 +288,16 @@
 									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ТЧСуммаКонтекстноеМеню" id="51"/>
 									<ExtendedTooltip name="ТЧСуммаРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<InputField name="ТЧФОП" id="109">
+									<DataPath>Объект.ТЧ.ФОП</DataPath>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>15</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ТЧФОПКонтекстноеМеню" id="110"/>
+									<ExtendedTooltip name="ТЧФОПРасширеннаяПодсказка" id="111"/>
 								</InputField>
 								<InputField name="ТЧМаркаСтатус" id="91">
 									<DataPath>Объект.ТЧ.МаркаСтатус</DataPath>
@@ -488,7 +505,7 @@
 		</Attribute>
 		<Attribute name="ТекущаяГруппа" id="4">
 			<Type>
-				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+				<v8:TypeId>0dc61d3b-62ee-4c5f-aff7-7d8e43eb97da</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="НомерСтраницыПараметр" id="5">
@@ -561,7 +578,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+				<v8:TypeId>cef3d6b1-2017-4a1f-9319-cb76505a2cb6</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="РежимРаботы" id="11">
@@ -587,7 +604,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:DocumentRef.ЧекККМ</v8:Type>
+				<v8:TypeId>85f3930b-183a-4062-83b2-e4f6578612d1</v8:TypeId>
 			</Type>
 		</Attribute>
 		<Attribute name="ПолноэкранныйРежим" id="13">
@@ -665,6 +682,21 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдМобильнойСессии" id="106">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ID мобильной сессии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -881,6 +913,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьПродажиПоКассам</Action>
+		</Command>
+		<Command name="МобильнаяКасса" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>📱 Моб.касса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключить мобильную кассу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>МобильнаяКассаНажатие</Action>
 		</Command>
 	</Commands>
 </Form>

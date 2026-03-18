@@ -1,7 +1,35 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
 	<ConfigVersions>
-		<Metadata name="Configuration.PTM_Analytics" id="f8045122-25ca-4513-881c-317cb30361c3" configVersion="6d510ce6ea536a9cdabe7acefd2014ebc4cbcf3e"/>
+		<Metadata name="Configuration.PTM_Analytics" id="f8045122-25ca-4513-881c-317cb30361c3" configVersion="ccf1c6f7b202784338bfc31d9e8033a2acf4288c"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира" id="02501dd2-84fb-458e-a636-8803a57f7f38" configVersion="d60382bda2ac982453755cc76168bfca593179a3">
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ" id="21d9d66a-aa10-47c5-8fd4-8cddfbb68768"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Номенклатура" id="38ac68db-ca80-4377-bbdb-050c57f86154"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Штрихкод" id="43b7c026-36cb-4b8d-8fce-212db054800e"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.АкцизнаяМарка" id="4bf44115-9b99-414e-9bd9-46f4f9522f34"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара2" id="56cd6ecb-2b40-4fc5-9949-741b3b96267f"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.МаркаСтатус" id="696b0e34-0c31-4f6c-a926-bfb069af2853"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="7b850f27-3202-47ae-a7a7-1cfa79c5d714"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.Касса" id="90aa2ade-18e4-46bc-951a-34d8d788124b"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.ФОП" id="a1b2c3d4-e5f6-7890-abcd-ef1234567890"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.КассоваяСмена" id="be9db05f-25f7-4820-b5b8-5d83ae905c84"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Количество" id="cec4f437-859a-4841-835e-86e26f25d4a1"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ТекущаяГруппа" id="d2d1afb1-c297-4aca-a747-5924d1228396"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Сумма" id="de4efafe-2bc6-4d3c-9361-1ed4c5c5e981"/>
+			<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Цена" id="f0f0c1c3-4ba1-40bf-8f7a-e30c6cf55ef9"/>
+		</Metadata>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8" configVersion="99588169b2736d31b192fb823e33488d06bd5ba6"/>
+		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма.Form" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8.0" configVersion="52a537435b7b32c8bfbd807a2a3e2846c726bd39"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных" id="6bbed024-f469-4566-bb77-7fc614a8433e" configVersion="93ae02684e6f29c7d0aa95912ea26418edbd4062"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450" configVersion="816af2ec5bba991d9acc627f0694b4c4326181e9"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма.Form" id="e1ce7f02-3276-4b40-b566-2d3a85bb4450.0" configVersion="e64912f6245721baf340f54056bd1aba7dc58b1c"/>
+		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.ObjectModule" id="6bbed024-f469-4566-bb77-7fc614a8433e.0" configVersion="a29ca6815b6822b093a50e5eeb090515e4a032d3"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК" id="ad67a835-1c9b-461e-8bb2-20f11a62c438" configVersion="ec3d1016d5037ecb74535458a65ae793f95a7f86"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6" configVersion="32fc81fa9856d1ee0c5146a472b8d2270ee48708"/>
+		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма.Form" id="a2b3c4d5-e6f7-4a8b-9c0d-e1f2a3b4c5d6.0" configVersion="33a9d0a1724a5cd2ffb8e076d6ad47fca66057a5"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками" id="ebf35522-407a-428e-99eb-6dc6ebcd8b00" configVersion="93a573ea50eb0a81109df3acb7743ddce22cf56e"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5" configVersion="072863de17991db2adb1b1e88b7eccb1ed2db70d"/>
+		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма.Form" id="d59106e1-c5fa-4129-973a-8ff05a6d4cc5.0" configVersion="504f0806f5b36922d299bfec682b29c93f10bab5"/>
 		<Metadata name="Language.Русский" id="d11ebbde-8b83-4b37-9782-fb99a0bc3060" configVersion="48a80ec4d46d7f7a5012d19b88e2e8e72ba98143"/>
 		<Metadata name="Report.Анл_АнализПродаж" id="68a67104-791b-4e06-ac4e-93e66f7051c2" configVersion="035d19829440007d26657a15c2d812cf44c4ab2d"/>
 		<Metadata name="Report.Анл_АнализПродаж.Template.ОсновнаяСхемаКомпоновкиДанных" id="620dbca6-4d8e-46e3-a04f-493a05bcb70b" configVersion="2dc2dc3cc70645efb293a1e3ad35f4322f4cce45"/>
@@ -9,6 +37,9 @@
 		<Metadata name="Report.Анл_ВаловаяПрибыль" id="6c3b2e81-a43f-42af-ab11-8082cd1d338c" configVersion="fa5d81f0921ad7f29fd67e233f307dfa46a2163d"/>
 		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных" id="e4c31160-edb9-458a-af78-83023139fbf6" configVersion="b96d17d2dbdc7dd0b79d1827c7a7b2600272104c"/>
 		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e4c31160-edb9-458a-af78-83023139fbf6.0" configVersion="9ac9eb4ec8b35903c2c92beb4b58bddbf8d72b09"/>
+		<Metadata name="Report.Анл_Взаиморасчеты" id="494ff9d9-c081-4559-9f33-6b8d2620d649" configVersion="66b9a4314ce1ce4ce5da51beb2bb1fcf322b3e63"/>
+		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="27e97231-77c7-40fc-897b-98c503899251" configVersion="21f8c16566320a141f67f644684cd1e186d3ff03"/>
+		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="27e97231-77c7-40fc-897b-98c503899251.0" configVersion="1bc9953b0c30131f788ef74c1072c2ba42684d6a"/>
 		<Metadata name="Report.Анл_Возвраты" id="108c8083-0854-427e-acf8-358d599c4530" configVersion="83a59bb62a88f547a34d17df267c44ea6c3a1b51"/>
 		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных" id="c7599fbf-2522-447e-9b08-6de07eb93faa" configVersion="ce5689e36ce659bf1f8a3f8fc95e8a186d3cb083"/>
 		<Metadata name="Report.Анл_Возвраты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="c7599fbf-2522-447e-9b08-6de07eb93faa.0" configVersion="7a194b71324d0031aa77d37e6cbe114be98e8418"/>
@@ -18,6 +49,9 @@
 		<Metadata name="Report.Анл_ДвижениеТоваров" id="5796f9ad-eb9e-4e1a-a601-2df178b84e26" configVersion="793127dfc18bf8aaa46354b343889151865039b5"/>
 		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных" id="d89913c0-3f95-45fa-a1fc-b70c89fa6728" configVersion="0b29e94b65b20cc191cfa6860da7e997d5f6ab5d"/>
 		<Metadata name="Report.Анл_ДвижениеТоваров.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="d89913c0-3f95-45fa-a1fc-b70c89fa6728.0" configVersion="c9dfb36084de900d25d7b1eb3e9da27eec7a0d66"/>
+		<Metadata name="Report.Анл_Продажи" id="e510e9bf-82ca-4efc-887f-6738bb1cff91" configVersion="269cbf1ee90e5ed944da12c91b9db6dcdced5694"/>
+		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных" id="a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d" configVersion="d05991c6d532febaa4393583b6a6d2b730c3c9db"/>
+		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d.0" configVersion="5981ae5add2b52cdbd532413b1e04783b52da6ab"/>
 		<Metadata name="Report.Анл_ПродажиЗаСмену" id="eb54448a-98db-4397-9074-a2f1f70be6df" configVersion="b21ba3b22361c67c144c8295706e280d1dc8a0ae"/>
 		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных" id="46dc573e-df80-41f6-a699-e77b7fd45205" configVersion="e4301d932c4c76371a115ae1fabb11ccc8b9c917"/>
 		<Metadata name="Report.Анл_ПродажиЗаСмену.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="46dc573e-df80-41f6-a699-e77b7fd45205.0" configVersion="8a96dded6a9acf70f69aaa5a78f01f0ba5c56d20"/>
@@ -25,37 +59,17 @@
 		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных" id="5c8b27fd-4203-4727-b374-6e9b042c5440" configVersion="3bc5b82c12f3b6d4a70f4ee39dd5a55560b7c3da"/>
 		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="5c8b27fd-4203-4727-b374-6e9b042c5440.0" configVersion="6ad379a6adbbefb80bc5ebfd689fd383714eee1d"/>
 		<Metadata name="Role.Анл_ОсновнаяРоль" id="d7621e79-6e8e-4343-b11f-25c31ac8f48f" configVersion="a30d63ee7e1e8b8537cf586a1982d977c43e120c"/>
-		<Metadata name="Subsystem.Анл_Аналитика" id="a3b7c1d2-5e4f-4a89-b6c3-8d9e0f1a2b3c" configVersion="7fa4361407a2c4f7c329d4af3a27fdd50eb05ef2"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира" id="02501dd2-84fb-458e-a636-8803a57f7f38" configVersion="43a8e89127ef42cbb2492b89e8479ab2"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ТекущаяГруппа" id="d2d1afb1-c297-4aca-a747-5924d1228396"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара" id="7b850f27-3202-47ae-a7a7-1cfa79c5d714"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.ПолеПоискаТовара2" id="56cd6ecb-2b40-4fc5-9949-741b3b96267f"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.Касса" id="90aa2ade-18e4-46bc-951a-34d8d788124b"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Attribute.КассоваяСмена" id="be9db05f-25f7-4820-b5b8-5d83ae905c84"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ" id="21d9d66a-aa10-47c5-8fd4-8cddfbb68768"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Номенклатура" id="38ac68db-ca80-4377-bbdb-050c57f86154"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Количество" id="cec4f437-859a-4841-835e-86e26f25d4a1"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Цена" id="f0f0c1c3-4ba1-40bf-8f7a-e30c6cf55ef9"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Сумма" id="de4efafe-2bc6-4d3c-9361-1ed4c5c5e981"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.АкцизнаяМарка" id="4bf44115-9b99-414e-9bd9-46f4f9522f34"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.Штрихкод" id="43b7c026-36cb-4b8d-8fce-212db054800e"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.TabularSection.ТЧ.Attribute.МаркаСтатус" id="696b0e34-0c31-4f6c-a926-bfb069af2853"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8" configVersion="34e586424ccf4bf2bb494c22b629e6fc"/>
-		<Metadata name="DataProcessor.Анл_РабочееМестоКассира.Form.Форма.Form" id="829dcb6e-ba3c-4027-a5ed-6c2d2d00f4a8.0" configVersion="bb2dc1235f7e433396fffff7a995aa27"/>
-		<Metadata name="Report.Анл_Продажи" id="e510e9bf-82ca-4efc-887f-6738bb1cff91"/>
-		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных" id="a2585a6a-3852-49e4-832a-3f4b078425a2"/>
-		<Metadata name="Report.Анл_Продажи.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="a2585a6a-3852-49e4-832a-3f4b078425a2.0"/>
-		<Metadata name="Report.Анл_Взаиморасчеты" id="494ff9d9-c081-4559-9f33-6b8d2620d649"/>
-		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="de9c3011-e919-4903-88e7-bc2478e5a1cb"/>
-		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="de9c3011-e919-4903-88e7-bc2478e5a1cb.0"/>
-		<Metadata name="DataProcessor.Анл_УправлениеНастройками" id="ebf35522-407a-428e-99eb-6dc6ebcd8b00"/>
-		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма" id="27bea011-fc31-47bd-93a2-54dbf7208ff7"/>
-		<Metadata name="DataProcessor.Анл_УправлениеНастройками.Form.Форма.Form" id="27bea011-fc31-47bd-93a2-54dbf7208ff7.0"/>
-		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных" id="6bbed024-f469-4566-bb77-7fc614a8433e"/>
-		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма" id="c4ebadaf-9b9d-40ca-9048-42ffe7a677d9"/>
-		<Metadata name="DataProcessor.Анл_ТестовоеЗаполнениеДанных.Form.Форма.Form" id="c4ebadaf-9b9d-40ca-9048-42ffe7a677d9.0"/>
-		<Metadata name="DataProcessor.Анл_ТестыРМК" id="ad67a835-1c9b-461e-8bb2-20f11a62c438"/>
-		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма" id="a6a1b3a1-4472-4670-aa4b-d6a4b0ecde08"/>
-		<Metadata name="DataProcessor.Анл_ТестыРМК.Form.Форма.Form" id="a6a1b3a1-4472-4670-aa4b-d6a4b0ecde08.0"/>
+		<Metadata name="Subsystem.Анл_Аналитика" id="a3b7c1d2-5e4f-4a89-b6c3-8d9e0f1a2b3c" configVersion="fb953abaa63252bdf366579b8fb60e1319b7374c"/>
+		<Metadata name="HTTPService.Анл_МобильнаяКасса" id="e97e5256-d377-4b3e-8ae9-0f700c14276e" configVersion="">
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ГлавнаяСтраница" id="f33bb852-de2c-49f7-a06c-5f698eca7639"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ГлавнаяСтраница.Method.Получить" id="fafb3c68-8fab-4981-81f2-c23b27e3608e"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина" id="6c3d5714-dee0-4cd7-82d1-ae73d75b2d70"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.Получить" id="f1b87461-cb00-4c88-a1e8-e0fa7a7aebc2"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.Добавить" id="eed72f1f-8221-4b83-b89e-536cd8ab6569"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.Очистить" id="8be24638-892b-4872-8135-3a4e2f899ab0"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка" id="7d54352f-f7cb-4aab-a223-59c07e817434"/>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка.Method.Отправить" id="6314f3e2-0fe9-4c90-a9d9-4422831d6918"/>
+		</Metadata>
+		<Metadata name="HTTPService.Анл_МобильнаяКасса.Module" id="e97e5256-d377-4b3e-8ae9-0f700c14276e.0" configVersion=""/>
 	</ConfigVersions>
 </ConfigDumpInfo>
