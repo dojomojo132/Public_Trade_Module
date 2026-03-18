@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.Фскл_ФискализацияСервер" id="bf98b144-f1b5-4aa1-a9a8-c11ef2d0208a" configVersion="c2e6d5b9dd2590fb9b575d92861cc61a03a69edc"/>
+		<Metadata name="CommonModule.Фскл_ФискализацияСервер.Module" id="bf98b144-f1b5-4aa1-a9a8-c11ef2d0208a.0" configVersion="c50b9fe461cc10a0a6b4862c9682f9e8fae2dce1"/>
+		<Metadata name="Configuration.PTM_Fiscal" id="bca84e16-4909-49b0-8b66-47b2ea29f0b3" configVersion="5d366598e9fa4f13416dc59ee4f6420a0fcd5e86"/>
+		<Metadata name="DataProcessor.Фскл_НастройкиФискализации" id="3872e152-aa2c-4781-ab10-06b36814d87b" configVersion="300a27f88a1cd1041deab569ea3d73dfc5598980"/>
+		<Metadata name="DataProcessor.Фскл_НастройкиФискализации.ObjectModule" id="3872e152-aa2c-4781-ab10-06b36814d87b.0" configVersion="2a23420f53cae58a2abe40b499302607b20f0bf5"/>
+		<Metadata name="Language.Русский" id="ac6a44df-4571-4888-8b2a-7cf44e77f4be" configVersion="018d5ceff80ff91dab2f308f297f23fd008c9683"/>
+		<Metadata name="Role.Фскл_ОсновнаяРоль" id="f9493788-b888-4c56-a3e8-29a6f716e8f6" configVersion="4fa74ffcf6eff3f028c2e60d9601e196c637a412"/>
+		<Metadata name="Subsystem.Фскл_Фискализация" id="59fdda99-31ba-4ba9-9129-ac495aec1c2f" configVersion="ca8ca6dccff77677285054aea28f36b421acffb4"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
