@@ -15,25 +15,6 @@
 			<SessionMaxAge>20</SessionMaxAge>
 		</Properties>
 		<ChildObjects>
-			<URLTemplate uuid="8c03e73d-df20-4b03-8ad1-146d33a07bb4">
-				<Properties>
-					<Name>ГлавнаяСтраница</Name>
-					<Synonym/>
-					<Comment/>
-					<Template>/</Template>
-				</Properties>
-				<ChildObjects>
-					<Method uuid="06285706-9ffc-4c61-8dcb-a1e1cd065b02">
-						<Properties>
-							<Name>ГлавнаяПолучить</Name>
-							<Synonym/>
-							<Comment/>
-							<HTTPMethod>GET</HTTPMethod>
-							<Handler>mainGET</Handler>
-						</Properties>
-					</Method>
-				</ChildObjects>
-			</URLTemplate>
 			<URLTemplate uuid="829d7eee-0741-4285-83c4-6a23345a69eb">
 				<Properties>
 					<Name>Корзина</Name>
