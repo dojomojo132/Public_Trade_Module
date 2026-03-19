@@ -17,7 +17,7 @@
 		<ChildObjects>
 			<URLTemplate uuid="8c03e73d-df20-4b03-8ad1-146d33a07bb4">
 				<Properties>
-					<Name>main</Name>
+					<Name>ГлавнаяСтраница</Name>
 					<Synonym/>
 					<Comment/>
 					<Template>/</Template>
@@ -25,7 +25,7 @@
 				<ChildObjects>
 					<Method uuid="06285706-9ffc-4c61-8dcb-a1e1cd065b02">
 						<Properties>
-							<Name>GET</Name>
+							<Name>ГлавнаяПолучить</Name>
 							<Synonym/>
 							<Comment/>
 							<HTTPMethod>GET</HTTPMethod>
@@ -36,7 +36,7 @@
 			</URLTemplate>
 			<URLTemplate uuid="829d7eee-0741-4285-83c4-6a23345a69eb">
 				<Properties>
-					<Name>cart</Name>
+					<Name>Корзина</Name>
 					<Synonym/>
 					<Comment/>
 					<Template>/cart</Template>
@@ -44,7 +44,7 @@
 				<ChildObjects>
 					<Method uuid="d46ef4f2-026f-4b70-92af-dc47ddd7420e">
 						<Properties>
-							<Name>GET</Name>
+							<Name>КорзинаПолучить</Name>
 							<Synonym/>
 							<Comment/>
 							<HTTPMethod>GET</HTTPMethod>
@@ -53,7 +53,7 @@
 					</Method>
 					<Method uuid="fcfb8fb6-02a0-4a25-ab82-a1df744152e9">
 						<Properties>
-							<Name>POST</Name>
+							<Name>КорзинаДобавить</Name>
 							<Synonym/>
 							<Comment/>
 							<HTTPMethod>POST</HTTPMethod>
@@ -62,7 +62,7 @@
 					</Method>
 					<Method uuid="977a4dd6-bb55-4fd9-9d2e-e34fbc5e426f">
 						<Properties>
-							<Name>DELETE</Name>
+							<Name>КорзинаОчистить</Name>
 							<Synonym/>
 							<Comment/>
 							<HTTPMethod>DELETE</HTTPMethod>
@@ -73,7 +73,7 @@
 			</URLTemplate>
 			<URLTemplate uuid="325e71f2-2fe2-4939-92a9-45c6270c0666">
 				<Properties>
-					<Name>send</Name>
+					<Name>Отправка</Name>
 					<Synonym/>
 					<Comment/>
 					<Template>/send</Template>
@@ -81,7 +81,7 @@
 				<ChildObjects>
 					<Method uuid="a8d8e172-52be-4e07-9b3a-b2944fcef6c3">
 						<Properties>
-							<Name>POST</Name>
+							<Name>ОтправкаЧека</Name>
 							<Synonym/>
 							<Comment/>
 							<HTTPMethod>POST</HTTPMethod>
