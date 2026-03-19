@@ -174,16 +174,21 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ password: hashHex })
         });
+        if (!r.ok && r.status === 500) {
+          const text = await r.text();
+          showNotification('Ошибка сервера: ' + (text.length > 120 ? text.substring(0, 120) : text), 'error');
+          return;
+        }
         const d = await r.json();
         if (d.success) {
           currentUser = d.user;
           document.getElementById('passwordInput').value = '';
           loadSessions();
         } else {
-          showNotification('Неверный пароль', 'error');
+          showNotification(d.error || 'Неверный пароль', 'error');
         }
       } catch(e) {
-        showNotification('Ошибка связи с сервером', 'error');
+        showNotification('Ошибка связи с сервером: ' + e.message, 'error');
       }
     }
 
