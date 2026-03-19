@@ -60,5 +60,18 @@
 		<Metadata name="Report.Анл_ПродажиПоСчетам.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="5c8b27fd-4203-4727-b374-6e9b042c5440.0" configVersion="6ad379a6adbbefb80bc5ebfd689fd383714eee1d"/>
 		<Metadata name="Role.Анл_ОсновнаяРоль" id="d7621e79-6e8e-4343-b11f-25c31ac8f48f" configVersion="a30d63ee7e1e8b8537cf586a1982d977c43e120c"/>
 		<Metadata name="Subsystem.Анл_Аналитика" id="a3b7c1d2-5e4f-4a89-b6c3-8d9e0f1a2b3c" configVersion="9b7e27783ca34e3769de41fea47fd450afefd1ec"/>
+		<Metadata name="HTTPService.Анл_МобильнаяКасса" id="751bc469-1191-473b-84a8-bfb9aa0053f6" configVersion="00000000000000000000000000000000000000001">
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ГлавнаяСтраница" id="d20c1e63-e7c3-4e92-a3d6-0c701241a02f">
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ГлавнаяСтраница.Method.ГлавнаяПолучить" id="c4ebcd5b-3ee1-40a9-b064-a034fa0e222c"/>
+			</Metadata>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина" id="7c34c09b-0cea-43fb-9f81-5e015b8aee70">
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаПолучить" id="20eafc99-0247-4565-b01e-574edc52ec9c"/>
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаДобавить" id="ed2c55c5-9571-40b6-bd4f-66391d5bb075"/>
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаОчистить" id="7bb4ded6-1661-4ab9-a6f1-869eebe0f707"/>
+			</Metadata>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка" id="77572ed2-7c05-4629-b719-a25323efc5cc">
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка.Method.ОтправкаЧека" id="62bac918-2a0b-4d53-9d51-cd10440b9d0f"/>
+			</Metadata>
+		</Metadata>
 	</ConfigVersions>
 </ConfigDumpInfo>

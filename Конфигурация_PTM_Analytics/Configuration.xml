@@ -80,6 +80,7 @@
 			<DataProcessor>Анл_УправлениеНастройками</DataProcessor>
 			<DataProcessor>Анл_ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>Анл_ТестыРМК</DataProcessor>
+			<HTTPService>Анл_МобильнаяКасса</HTTPService>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

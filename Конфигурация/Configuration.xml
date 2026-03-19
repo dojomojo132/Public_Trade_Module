@@ -583,7 +583,6 @@
 			<XDTOPackage>ExchangeMessage</XDTOPackage>
 			<WebService>EquipmentService</WebService>
 			<HTTPService>ТоварыАПИ</HTTPService>
-			<HTTPService>МобильнаяКасса</HTTPService>
 			<ScheduledJob>ОчисткаИсторииОперацийОчередиЧеков</ScheduledJob>
 			<ScheduledJob>ОчисткаИсторииОперацийПроверкиКМ</ScheduledJob>
 			<ScheduledJob>ОчисткаИсторииОперацийСОборудованием</ScheduledJob>

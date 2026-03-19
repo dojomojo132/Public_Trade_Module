@@ -2032,17 +2032,6 @@
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПриёмЧека" id="f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102"/>
 		</Metadata>
 		<Metadata name="HTTPService.ТоварыАПИ.Module" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.0" configVersion="f118cf0951a56e4aad12c3d82b7bf31a00000000"/>
-		<Metadata name="HTTPService.МобильнаяКасса" id="76271fac-319e-4b17-889f-34a7639775c9" configVersion="0000000000000000000000000000000000000000">
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.ГлавнаяСтраница" id="8c03e73d-df20-4b03-8ad1-146d33a07bb4"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.ГлавнаяСтраница.Method.ГлавнаяПолучить" id="06285706-9ffc-4c61-8dcb-a1e1cd065b02"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Корзина" id="829d7eee-0741-4285-83c4-6a23345a69eb"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаПолучить" id="d46ef4f2-026f-4b70-92af-dc47ddd7420e"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаДобавить" id="fcfb8fb6-02a0-4a25-ab82-a1df744152e9"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Корзина.Method.КорзинаОчистить" id="977a4dd6-bb55-4fd9-9d2e-e34fbc5e426f"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Отправка" id="325e71f2-2fe2-4939-92a9-45c6270c0666"/>
-			<Metadata name="HTTPService.МобильнаяКасса.URLTemplate.Отправка.Method.ОтправкаЧека" id="a8d8e172-52be-4e07-9b3a-b2944fcef6c3"/>
-		</Metadata>
-		<Metadata name="HTTPService.МобильнаяКасса.Module" id="76271fac-319e-4b17-889f-34a7639775c9.0" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="InformationRegister._ДемоШтрихкоды" id="dd6bfd89-fc63-4cd8-82b9-51f22dd721ac" configVersion="e52d2b45dfc86844a02ccbf5d5c986cb00000000">
 			<Metadata name="InformationRegister._ДемоШтрихкоды.Dimension.Владелец" id="58d18ed2-cc97-4534-98d1-0253d5b97383"/>
 			<Metadata name="InformationRegister._ДемоШтрихкоды.Dimension.Штрихкод" id="6255aea4-d834-4978-b836-67894ba8e2fd"/>

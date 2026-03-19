@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<HTTPService uuid="76271fac-319e-4b17-889f-34a7639775c9">
+	<HTTPService uuid="751bc469-1191-473b-84a8-bfb9aa0053f6">
 		<Properties>
-			<Name>МобильнаяКасса</Name>
+			<Name>Анл_МобильнаяКасса</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -15,7 +15,7 @@
 			<SessionMaxAge>20</SessionMaxAge>
 		</Properties>
 		<ChildObjects>
-			<URLTemplate uuid="8c03e73d-df20-4b03-8ad1-146d33a07bb4">
+			<URLTemplate uuid="d20c1e63-e7c3-4e92-a3d6-0c701241a02f">
 				<Properties>
 					<Name>ГлавнаяСтраница</Name>
 					<Synonym/>
@@ -23,7 +23,7 @@
 					<Template>/*</Template>
 				</Properties>
 				<ChildObjects>
-					<Method uuid="06285706-9ffc-4c61-8dcb-a1e1cd065b02">
+					<Method uuid="c4ebcd5b-3ee1-40a9-b064-a034fa0e222c">
 						<Properties>
 							<Name>ГлавнаяПолучить</Name>
 							<Synonym/>
@@ -34,7 +34,7 @@
 					</Method>
 				</ChildObjects>
 			</URLTemplate>
-			<URLTemplate uuid="829d7eee-0741-4285-83c4-6a23345a69eb">
+			<URLTemplate uuid="7c34c09b-0cea-43fb-9f81-5e015b8aee70">
 				<Properties>
 					<Name>Корзина</Name>
 					<Synonym/>
@@ -42,7 +42,7 @@
 					<Template>/cart</Template>
 				</Properties>
 				<ChildObjects>
-					<Method uuid="d46ef4f2-026f-4b70-92af-dc47ddd7420e">
+					<Method uuid="20eafc99-0247-4565-b01e-574edc52ec9c">
 						<Properties>
 							<Name>КорзинаПолучить</Name>
 							<Synonym/>
@@ -51,7 +51,7 @@
 							<Handler>cartGET</Handler>
 						</Properties>
 					</Method>
-					<Method uuid="fcfb8fb6-02a0-4a25-ab82-a1df744152e9">
+					<Method uuid="ed2c55c5-9571-40b6-bd4f-66391d5bb075">
 						<Properties>
 							<Name>КорзинаДобавить</Name>
 							<Synonym/>
@@ -60,7 +60,7 @@
 							<Handler>cartPOST</Handler>
 						</Properties>
 					</Method>
-					<Method uuid="977a4dd6-bb55-4fd9-9d2e-e34fbc5e426f">
+					<Method uuid="7bb4ded6-1661-4ab9-a6f1-869eebe0f707">
 						<Properties>
 							<Name>КорзинаОчистить</Name>
 							<Synonym/>
@@ -71,7 +71,7 @@
 					</Method>
 				</ChildObjects>
 			</URLTemplate>
-			<URLTemplate uuid="325e71f2-2fe2-4939-92a9-45c6270c0666">
+			<URLTemplate uuid="77572ed2-7c05-4629-b719-a25323efc5cc">
 				<Properties>
 					<Name>Отправка</Name>
 					<Synonym/>
@@ -79,7 +79,7 @@
 					<Template>/send</Template>
 				</Properties>
 				<ChildObjects>
-					<Method uuid="a8d8e172-52be-4e07-9b3a-b2944fcef6c3">
+					<Method uuid="62bac918-2a0b-4d53-9d51-cd10440b9d0f">
 						<Properties>
 							<Name>ОтправкаЧека</Name>
 							<Synonym/>
