@@ -1,0 +1,28 @@
+{
+  "task_id": "967196c6-c392-47fd-9707-ad7138b07a4d",
+  "created_at": "2026-03-19T20:05:37.475272Z",
+  "updated_at": "2026-03-19T20:05:37.475294Z",
+  "priority": 1,
+  "direction": "backend",
+  "assigned_to": null,
+  "status": "pending",
+  "command": {
+    "type": "implement",
+    "title": "Создать API endpoint /api/analytics",
+    "description": "Реализовать REST endpoint с агрегацией данных за период",
+    "acceptance_criteria": [
+      "GET /api/analytics?from=&to= работает",
+      "Возвращает JSON с полями total, by_day"
+    ],
+    "files_scope": [],
+    "branch": null,
+    "constraints": [],
+    "depends_on": [],
+    "blocks": [],
+    "estimated_minutes": 5,
+    "context": {}
+  },
+  "result": null,
+  "error": null,
+  "metrics": {}
+}

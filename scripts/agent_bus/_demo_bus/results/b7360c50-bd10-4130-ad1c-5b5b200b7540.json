@@ -1,0 +1,11 @@
+{
+  "task_id": "b7360c50-bd10-4130-ad1c-5b5b200b7540",
+  "agent_id": "agent-docs",
+  "finished_at": "2026-03-19T20:05:40.440435Z",
+  "success": true,
+  "result": {
+    "summary": "Done: Написать документацию API /api/analytics",
+    "files_changed": [],
+    "_elapsed_sec": 2.7
+  }
+}

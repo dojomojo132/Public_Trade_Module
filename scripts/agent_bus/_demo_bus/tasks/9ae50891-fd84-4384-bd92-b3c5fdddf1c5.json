@@ -1,0 +1,27 @@
+{
+  "task_id": "9ae50891-fd84-4384-bd92-b3c5fdddf1c5",
+  "created_at": "2026-03-19T20:11:05.158083Z",
+  "updated_at": "2026-03-19T20:11:05.158086Z",
+  "priority": 2,
+  "direction": "tests",
+  "assigned_to": null,
+  "status": "pending",
+  "command": {
+    "type": "test",
+    "title": "E2E тест страницы аналитики",
+    "description": "Playwright тест: открыть страницу, проверить данные",
+    "acceptance_criteria": [],
+    "files_scope": [],
+    "branch": null,
+    "constraints": [],
+    "depends_on": [
+      "af18e0d0-0158-41b1-8ade-74b250824a51"
+    ],
+    "blocks": [],
+    "estimated_minutes": 3,
+    "context": {}
+  },
+  "result": null,
+  "error": null,
+  "metrics": {}
+}

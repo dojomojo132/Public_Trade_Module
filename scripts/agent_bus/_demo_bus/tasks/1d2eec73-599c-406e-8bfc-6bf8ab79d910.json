@@ -1,0 +1,27 @@
+{
+  "task_id": "1d2eec73-599c-406e-8bfc-6bf8ab79d910",
+  "created_at": "2026-03-19T20:05:37.475327Z",
+  "updated_at": "2026-03-19T20:05:37.475330Z",
+  "priority": 1,
+  "direction": "frontend",
+  "assigned_to": null,
+  "status": "pending",
+  "command": {
+    "type": "implement",
+    "title": "Страница аналитики — компонент AnalyticsPage",
+    "description": "Vue3 компонент, использующий /api/analytics",
+    "acceptance_criteria": [],
+    "files_scope": [],
+    "branch": null,
+    "constraints": [],
+    "depends_on": [
+      "967196c6-c392-47fd-9707-ad7138b07a4d"
+    ],
+    "blocks": [],
+    "estimated_minutes": 4,
+    "context": {}
+  },
+  "result": null,
+  "error": null,
+  "metrics": {}
+}

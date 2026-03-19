@@ -1,0 +1,25 @@
+{
+  "task_id": "3142434d-b225-49b1-af6e-7b23aa1f9294",
+  "created_at": "2026-03-19T20:11:05.158058Z",
+  "updated_at": "2026-03-19T20:11:05.158063Z",
+  "priority": 1,
+  "direction": "docs",
+  "assigned_to": null,
+  "status": "pending",
+  "command": {
+    "type": "document",
+    "title": "Написать документацию API /api/analytics",
+    "description": "OpenAPI описание нового endpoint",
+    "acceptance_criteria": [],
+    "files_scope": [],
+    "branch": null,
+    "constraints": [],
+    "depends_on": [],
+    "blocks": [],
+    "estimated_minutes": 3,
+    "context": {}
+  },
+  "result": null,
+  "error": null,
+  "metrics": {}
+}
