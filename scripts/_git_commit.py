@@ -69,5 +69,18 @@ def main():
     # Очистить файл после успешного коммита
     MSG_FILE.write_text("", encoding="utf-8")
 
+    # Показать GitHub rate limit после push
+    _show_rate_limit()
+
+def _show_rate_limit():
+    """Показывает текущие лимиты GitHub API после push."""
+    rate_script = pathlib.Path(__file__).parent / "github_rate_limit.py"
+    if not rate_script.exists():
+        return
+    print()
+    print("=== GitHub Rate Limit (после push) ===")
+    subprocess.run([sys.executable, str(rate_script)],
+                   encoding="utf-8", errors="replace")
+
 if __name__ == "__main__":
     main()
