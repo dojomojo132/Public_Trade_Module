@@ -406,7 +406,7 @@
 	Стр = Стр + "            formatsToSupport: [Html5QrcodeSupportedFormats.EAN_13, Html5QrcodeSupportedFormats.EAN_8," + Символы.ПС;
 	Стр = Стр + "              Html5QrcodeSupportedFormats.CODE_128, Html5QrcodeSupportedFormats.CODE_39," + Символы.ПС;
 	Стр = Стр + "              Html5QrcodeSupportedFormats.UPC_A, Html5QrcodeSupportedFormats.QR_CODE] }," + Символы.ПС;
-	Стр = Стр + "          function(decoded) { addByBarcodeValue(decoded); }" + Символы.ПС;
+	Стр = Стр + "          function(decoded) { toggleScanner(); addByBarcodeValue(decoded); }" + Символы.ПС;
 	Стр = Стр + "        ).then(function() { scannerActive = true; }).catch(function(err) {" + Символы.ПС;
 	Стр = Стр + "          area.innerHTML = '<p style=""color:#f44336;padding:16px"">Камера недоступна: ' + err + '</p>';" + Символы.ПС;
 	Стр = Стр + "          btn.textContent = '📷 Сканировать';" + Символы.ПС;
