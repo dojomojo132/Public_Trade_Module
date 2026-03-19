@@ -1,0 +1,929 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Альтернативы сканера штрихкодов — PTM</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d0d1a; color: #e0e0f0; min-height: 100vh; }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    .hdr {
+      background: linear-gradient(135deg, #12122e 0%, #0d0d1a 100%);
+      padding: 14px 16px 10px;
+      text-align: center;
+      border-bottom: 1px solid #1e1e4a;
+    }
+    .hdr h1 { font-size: 17px; color: #8899ff; margin-bottom: 3px; }
+    .hdr p  { font-size: 11px; color: #555; }
+
+    /* ─── CARDS GRID ──────────────────────────────── */
+    .cards {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 8px;
+    }
+
+    .card {
+      background: #13132a;
+      border: 1.5px solid #1e1e42;
+      border-radius: 10px;
+      padding: 10px 10px 8px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, transform .1s;
+    }
+    .card:active    { transform: scale(.97); }
+    .card.active    { border-color: #8899ff; background: #1616thirty; }
+    .card.active::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #8899ff, #66aaff);
+    }
+    .card.has-error { border-color: #cc3333; }
+
+    .card-badge-current {
+      position: absolute; top: 6px; right: 6px;
+      font-size: 8px; font-weight: 700;
+      background: #3a2200; color: #ffaa00;
+      padding: 1px 4px; border-radius: 3px;
+      line-height: 1.5;
+    }
+    .card-icon    { font-size: 20px; margin-bottom: 4px; }
+    .card-name    { font-size: 12px; font-weight: 700; color: #dde; line-height: 1.3; }
+    .card-version { font-size: 10px; color: #555; margin-bottom: 5px; }
+    .card-badges  { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px; }
+    .badge {
+      font-size: 9px; font-weight: 600;
+      padding: 1px 5px; border-radius: 3px;
+    }
+    .bg  { background: #0c280c; color: #4caf50; border: 1px solid #1a4a1a; }
+    .bb  { background: #0c1e38; color: #64b5f6; border: 1px solid #1a3a6a; }
+    .br  { background: #280c0c; color: #ef5350; border: 1px solid #4a1a1a; }
+    .bo  { background: #281800; color: #ff9800; border: 1px solid #4a3000; }
+    .bp  { background: #1c0c2a; color: #ce93d8; border: 1px solid #381a4e; }
+    .card-desc {
+      font-size: 10px; color: #666; line-height: 1.45;
+      margin-bottom: 7px; min-height: 28px;
+    }
+    .start-btn {
+      width: 100%; padding: 7px 0;
+      background: #2a2a6a; color: #aabbff;
+      border: 1px solid #3a3a8a; border-radius: 6px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      transition: background .15s;
+    }
+    .start-btn:active        { background: #222260; }
+    .card.active .start-btn  { background: #3a0c0c; color: #ff6666; border-color: #6a2020; }
+    .card.loading .start-btn { background: #1a1a3a; color: #555; cursor: wait; }
+    .card.has-error .start-btn { background: #2a0a0a; color: #cc4444; border-color: #4a1616; }
+
+    /* ─── ACTIVE SCANNER SECTION ──────────────────── */
+    .scanner-section { display: none; }
+    .scanner-section.visible { display: block; }
+
+    .scn-header {
+      background: #12122e;
+      padding: 8px 14px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid #1e1e42;
+    }
+    .scn-title { font-size: 13px; font-weight: 700; color: #8899ff; }
+    .stop-btn {
+      padding: 5px 12px;
+      background: #2a0c0c; color: #ee5555;
+      border: 1px solid #550000;
+      border-radius: 6px; font-size: 11px; cursor: pointer;
+    }
+
+    /* ─── VIEWPORT ────────────────────────────────── */
+    .viewport {
+      position: relative;
+      width: 100%; aspect-ratio: 4 / 3;
+      background: #000; overflow: hidden;
+    }
+    .viewport #sharedVideo {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    /* lib-managed scanners (html5-qrcode, Quagga2) */
+    .viewport #libSlot {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: none;
+    }
+    /* Quagga / html5-qrcode inner videos */
+    .viewport #libSlot video,
+    .viewport #libSlot canvas { display: block; }
+    .viewport #libSlot > div { width: 100%; height: 100%; }
+
+    /* scanning overlay — always on top */
+    .scan-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10;
+    }
+    .scan-frame {
+      width: 72%; height: 42%;
+      border: 2px solid rgba(136, 153, 255, .9);
+      border-radius: 8px;
+      box-shadow: 0 0 0 9999px rgba(0,0,0,.35);
+      position: relative; overflow: hidden;
+    }
+    .scan-line {
+      position: absolute; left: 0; right: 0; height: 2px;
+      background: #8899ff;
+      box-shadow: 0 0 10px 2px #8899ff;
+      animation: moving 2s ease-in-out infinite;
+      top: 10%;
+    }
+    @keyframes moving { 0%,100% { top: 10%; } 50% { top: 88%; } }
+
+    /* loading overlay */
+    .loading-overlay {
+      display: none;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,13,26,.85);
+      z-index: 20;
+      align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px;
+      font-size: 13px; color: #888;
+    }
+    .loading-overlay.visible { display: flex; }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid #1e1e42;
+      border-top-color: #8899ff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── STATS BAR ───────────────────────────────── */
+    .stats-bar {
+      background: #10102a;
+      padding: 8px 16px;
+      display: flex; gap: 24px; justify-content: center;
+      border-top: 1px solid #1a1a40;
+    }
+    .stat { text-align: center; }
+    .stat .val { font-size: 20px; font-weight: 700; color: #8899ff; }
+    .stat .lbl { font-size: 10px; color: #555; }
+
+    /* ─── INFO / RESULTS ──────────────────────────── */
+    .info-box {
+      margin: 8px 12px;
+      padding: 8px 10px;
+      background: #10102a;
+      border-left: 3px solid #8899ff;
+      border-radius: 0 6px 6px 0;
+      font-size: 11px; color: #888; line-height: 1.6;
+    }
+    .info-box strong { color: #aabbff; }
+    .info-box.error { border-left-color: #cc3333; }
+    .info-box.error strong { color: #ff6666; }
+
+    .results-wrap { padding: 6px 12px 16px; }
+    .result-item {
+      background: #10102a;
+      border-left: 3px solid #4caf50;
+      padding: 9px 12px;
+      margin-bottom: 5px;
+      border-radius: 0 6px 6px 0;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .result-body { flex: 1; min-width: 0; }
+    .result-code {
+      font-size: 15px; font-weight: 700;
+      font-family: 'Courier New', monospace;
+      word-break: break-all; color: #ddeeff;
+    }
+    .result-meta { font-size: 10px; color: #555; margin-top: 1px; }
+    .result-ms {
+      font-size: 12px; font-weight: 700;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* ─── COMPARISON TABLE ────────────────────────── */
+    .tbl-section { padding: 10px 12px 20px; }
+    .tbl-toggle {
+      width: 100%; padding: 9px 12px;
+      background: #10102a; color: #666;
+      border: 1px solid #1e1e42; border-radius: 6px;
+      font-size: 12px; text-align: left; cursor: pointer;
+    }
+    .cmp-wrap { display: none; overflow-x: auto; margin-top: 8px; }
+    .cmp-wrap.visible { display: block; }
+    table.cmp {
+      width: 100%; border-collapse: collapse;
+      font-size: 11px; white-space: nowrap;
+    }
+    table.cmp th {
+      background: #12122e; color: #8899ff;
+      padding: 6px 8px; border: 1px solid #1e1e42; text-align: left;
+    }
+    table.cmp td { padding: 6px 8px; border: 1px solid #151530; }
+    table.cmp tr:nth-child(odd)  td { background: #0d0d1e; }
+    table.cmp tr:nth-child(even) td { background: #10101e; }
+    .ck { color: #4caf50; font-weight: 700; }
+    .cx { color: #ef5350; font-weight: 700; }
+    .tag { font-size: 9px; font-weight: 600; padding: 1px 4px; border-radius: 3px; }
+    .tag-cur { background:#3a2200; color:#ffaa00; }
+  </style>
+</head>
+<body>
+
+<!-- ──────────────── HEADER ──────────────── -->
+<div class="hdr">
+  <h1>🔬 Альтернативы библиотек сканирования штрихкодов</h1>
+  <p>7 вариантов · нажмите карточку, чтобы запустить живую демонстрацию</p>
+</div>
+
+<!-- ──────────────── CARDS ──────────────── -->
+<div class="cards" id="cards"></div>
+
+<!-- ──────────────── ACTIVE SCANNER ──────────────── -->
+<div class="scanner-section" id="scannerSection">
+
+  <div class="scn-header">
+    <span class="scn-title" id="scnTitle">—</span>
+    <button class="stop-btn" onclick="deactivate()">⏹ Стоп</button>
+  </div>
+
+  <!-- camera + overlay -->
+  <div class="viewport" id="viewport">
+    <video id="sharedVideo" autoplay playsinline muted></video>
+    <div id="libSlot"></div>
+    <div class="scan-overlay">
+      <div class="scan-frame"><div class="scan-line"></div></div>
+    </div>
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="spinner"></div>
+      <span id="loadingMsg">Загрузка библиотеки…</span>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div class="stats-bar">
+    <div class="stat"><div class="val" id="sCnt">0</div><div class="lbl">Сканирований</div></div>
+    <div class="stat"><div class="val" id="sAvg">—</div><div class="lbl">Среднее (мс)</div></div>
+    <div class="stat"><div class="val" id="sLst">—</div><div class="lbl">Последнее (мс)</div></div>
+  </div>
+
+  <!-- info -->
+  <div class="info-box" id="infoBox">Выберите библиотеку выше</div>
+
+  <!-- results -->
+  <div class="results-wrap" id="resultsWrap"></div>
+</div>
+
+<!-- ──────────────── COMPARISON TABLE ──────────────── -->
+<div class="tbl-section">
+  <button class="tbl-toggle" onclick="toggleTable()">📊 Сравнительная таблица всех библиотек ▼</button>
+  <div class="cmp-wrap" id="cmpWrap">
+    <table class="cmp">
+      <tr>
+        <th>Библиотека</th><th>Версия</th><th>Лицензия</th>
+        <th>EAN-13</th><th>QR</th><th>Code128</th>
+        <th>Размер</th><th>Двигатель</th><th>Safari iOS</th><th>Firefox</th>
+      </tr>
+      <tr>
+        <td>🌐 BarcodeDetector <span class="tag tag-cur">⚡ быстрый</span></td>
+        <td>Web API</td><td>Free</td>
+        <td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td>
+        <td><b>0 KB</b></td><td>Native Browser</td>
+        <td class="cx">✗</td><td class="cx">✗</td>
+      </tr>
+      <tr>
+        <td>📦 html5-qrcode <span class="tag tag-cur">PTM</span></td>
+        <td>v2.3.8</td><td>Apache 2.0</td>
+        <td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td>
+        <td>1.5 MB</td><td>ZXing-js</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+      <tr>
+        <td>🔷 @zxing/library</td>
+        <td>v0.21.3</td><td>Apache 2.0</td>
+        <td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td>
+        <td>800 KB</td><td>ZXing (TypeScript)</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+      <tr>
+        <td>🦅 Quagga2</td>
+        <td>v1.12.1</td><td>MIT</td>
+        <td class="ck">✓</td><td class="cx">✗</td><td class="ck">✓</td>
+        <td>200 KB</td><td>Native JS</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+      <tr>
+        <td>🔧 zbar.wasm <span class="tag tag-cur">⚡ быстрый</span></td>
+        <td>v0.10.1</td><td>LGPL 2.1</td>
+        <td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td>
+        <td>450 KB</td><td>ZBar (WebAssembly)</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+      <tr>
+        <td>💡 jsQR</td>
+        <td>v1.4.0</td><td>Apache 2.0</td>
+        <td class="cx">✗</td><td class="ck">✓</td><td class="cx">✗</td>
+        <td><b>52 KB</b></td><td>Native JS</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+      <tr>
+        <td>⚡ qr-scanner</td>
+        <td>v1.4.2</td><td>MIT</td>
+        <td class="cx">✗</td><td class="ck">✓</td><td class="cx">✗</td>
+        <td><b>59 KB</b></td><td>ZXing + WebWorker</td>
+        <td class="ck">✓</td><td class="ck">✓</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+//  LIBRARY REGISTRY
+// ════════════════════════════════════════════════════════════
+const LIBS = [
+  {
+    id: 'native',
+    icon: '🌐',
+    name: 'BarcodeDetector API',
+    version: 'Web API',
+    license: 'Free',
+    sizes: [{ cls:'bg', txt:'0 KB' }],
+    formats: ['EAN-13','QR','Code128','DataMatrix'],
+    fmtCls: 'bg',
+    desc: 'Нативный API браузера (Chrome 83+, Edge, Samsung). Самый быстрый: аппаратное ускорение. ❌ Не работает в Firefox и Safari.',
+    info: '<strong>Native BarcodeDetector API</strong> — встроен в Chrome/Chromium 83+.<br>Нулевая нагрузка JS, работает через GPU. Поддерживает EAN-13, QR, Code128, DataMatrix и другие.<br>⚠️ iOS Safari и Firefox не поддерживают этот API.',
+    ownCamera: false,
+    cdnUrl: null,
+  },
+  {
+    id: 'html5qr',
+    icon: '📦',
+    name: 'html5-qrcode',
+    version: 'v2.3.8',
+    license: 'Apache 2.0',
+    sizes: [{ cls:'bo', txt:'1.5 MB' }, { cls:'bo', txt:'ТЕКУЩАЯ' }],
+    formats: ['EAN-13','QR','Code128','EAN-8'],
+    fmtCls: 'bb',
+    desc: 'Сейчас используется в кассе PTM. Обёртка над ZXing-js. Широкая совместимость браузеров.',
+    info: '<strong>html5-qrcode v2.3.8</strong> — текущая библиотека мобильной кассы PTM.<br>ZXing-js обёртка. FPS настроен на 15. Поддерживает все браузеры.',
+    ownCamera: true,
+    cdnUrl: 'https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js',
+    isCurrent: true,
+  },
+  {
+    id: 'zxing',
+    icon: '🔷',
+    name: '@zxing/library',
+    version: 'v0.21.3',
+    license: 'Apache 2.0',
+    sizes: [{ cls:'bo', txt:'800 KB' }],
+    formats: ['EAN-13','QR','Code128','PDF417'],
+    fmtCls: 'bb',
+    desc: 'Прямой TypeScript порт ZXing. Больше контроля над форматами, чем у html5-qrcode. Тот же ZXing движок.',
+    info: '<strong>@zxing/library v0.21.3</strong> — TypeScript порт ZXing, без обёртки.<br>Позволяет точно настроить форматы и параметры сканирования. Тот же базовый алгоритм что у html5-qrcode.',
+    ownCamera: false,
+    cdnUrl: 'https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js',
+  },
+  {
+    id: 'quagga2',
+    icon: '🦅',
+    name: 'Quagga2',
+    version: 'v1.12.1',
+    license: 'MIT',
+    sizes: [{ cls:'bg', txt:'200 KB' }],
+    formats: ['EAN-13','Code128','Code39','UPC-A'],
+    fmtCls: 'bg',
+    desc: 'Оптимизирован под 1D штрихкоды (EAN). Native JS-локализация, быстрее ZXing для EAN-13. Без QR.',
+    info: '<strong>Quagga2 v1.12.1</strong> — fork QuaggaJS, активно поддерживается.<br>Нативная JS-локализация штрихкодов без WASM. Отличается высокой скоростью для EAN-13 в рознице. QR не поддерживается.',
+    ownCamera: true,
+    cdnUrl: 'https://cdn.jsdelivr.net/npm/@ericblade/quagga2@1.12.1/dist/quagga.min.js',
+  },
+  {
+    id: 'zbarwasm',
+    icon: '🔧',
+    name: 'zbar.wasm',
+    version: 'v0.10.1',
+    license: 'LGPL 2.1',
+    sizes: [{ cls:'bp', txt:'450 KB' }, { cls:'bg', txt:'WASM ⚡' }],
+    formats: ['EAN-13','QR','Code128','PDF417','EAN-8'],
+    fmtCls: 'bp',
+    desc: 'WebAssembly порт библиотеки ZBar (на C). Очень быстрый для EAN-13. Широкая поддержка форматов.',
+    info: '<strong>@undecaf/zbar-wasm v0.10.1</strong> — WebAssembly порт ZBar.<br>Компилирован из C → WASM. Высокая скорость декодирования EAN-13, QR, Code128, PDF417 и других форматов.',
+    ownCamera: false,
+    cdnUrl: null,
+    cdnEsm: 'https://cdn.jsdelivr.net/npm/@undecaf/zbar-wasm@0.10.1/+esm',
+  },
+  {
+    id: 'jsqr',
+    icon: '💡',
+    name: 'jsQR',
+    version: 'v1.4.0',
+    license: 'Apache 2.0',
+    sizes: [{ cls:'bg', txt:'52 KB' }],
+    formats: ['QR only'],
+    fmtCls: 'bb',
+    desc: 'Ультралёгкая библиотека только для QR-кодов. Без зависимостей, без WebWorker. Только QR.',
+    info: '<strong>jsQR v1.4.0</strong> — минималистичная QR-библиотека, 52 KB.<br>Работает синхронно на каждом кадре. Подходит если нужен только QR. EAN-13 не поддерживается.',
+    ownCamera: false,
+    cdnUrl: 'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
+  },
+  {
+    id: 'qrscanner',
+    icon: '⚡',
+    name: 'qr-scanner',
+    version: 'v1.4.2',
+    license: 'MIT',
+    sizes: [{ cls:'bg', txt:'59 KB' }, { cls:'bp', txt:'Worker' }],
+    formats: ['QR only'],
+    fmtCls: 'bp',
+    desc: 'От Nimiq. WebWorker + WASM. Не блокирует UI. Авто-переключение на нативный BarcodeDetector если доступен.',
+    info: '<strong>qr-scanner v1.4.2</strong> (Nimiq) — только QR, 59 KB.<br>Использует WebWorker для фонового сканирования (UI не замораживается). Автоматически использует нативный BarcodeDetector API если браузер поддерживает.',
+    ownCamera: false,
+    cdnUrl: 'https://cdn.jsdelivr.net/npm/qr-scanner@1.4.2/qr-scanner.umd.min.js',
+  },
+];
+
+// ════════════════════════════════════════════════════════════
+//  GLOBAL STATE
+// ════════════════════════════════════════════════════════════
+let activeId   = null;
+let scanning   = false;
+let sharedStream = null;
+let stopFn     = null;
+let results    = [];
+let times      = [];
+let lastCode   = '';
+let lastCodeTs = 0;
+
+// ════════════════════════════════════════════════════════════
+//  RENDER CARDS
+// ════════════════════════════════════════════════════════════
+function renderCards() {
+  document.getElementById('cards').innerHTML = LIBS.map(lib => `
+    <div class="card" id="card-${lib.id}" onclick="activate('${lib.id}')">
+      ${lib.isCurrent ? '<div class="card-badge-current">ТЕКУЩАЯ</div>' : ''}
+      <div class="card-icon">${lib.icon}</div>
+      <div class="card-name">${lib.name}</div>
+      <div class="card-version">${lib.version} · ${lib.license}</div>
+      <div class="card-badges">
+        ${lib.sizes.map(s => `<span class="badge ${s.cls}">${s.txt}</span>`).join('')}
+        ${lib.formats.map(f => `<span class="badge ${lib.fmtCls}">${f}</span>`).join('')}
+      </div>
+      <div class="card-desc">${lib.desc}</div>
+      <button class="start-btn" id="btn-${lib.id}">▶ Запустить</button>
+    </div>
+  `).join('');
+}
+
+// ════════════════════════════════════════════════════════════
+//  HELPERS
+// ════════════════════════════════════════════════════════════
+function loadScript(url) {
+  return new Promise((res, rej) => {
+    if (document.querySelector(`script[src="${url}"]`)) { res(); return; }
+    const s = document.createElement('script');
+    s.src = url;
+    s.onload = res;
+    s.onerror = () => rej(new Error('Не удалось загрузить:\n' + url));
+    document.head.appendChild(s);
+  });
+}
+
+async function startSharedCamera() {
+  if (sharedStream) return;
+  sharedStream = await navigator.mediaDevices.getUserMedia({
+    video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } },
+    audio: false
+  });
+  const v = document.getElementById('sharedVideo');
+  v.srcObject = sharedStream;
+  await v.play();
+}
+
+function stopSharedCamera() {
+  if (!sharedStream) return;
+  sharedStream.getTracks().forEach(t => t.stop());
+  sharedStream = null;
+  const v = document.getElementById('sharedVideo');
+  v.srcObject = null;
+}
+
+function showVideo(yes)  { document.getElementById('sharedVideo').style.display = yes ? 'block' : 'none'; }
+function showSlot(yes)   { document.getElementById('libSlot').style.display = yes ? 'block' : 'none'; }
+function showLoading(msg){ const o = document.getElementById('loadingOverlay'); o.classList.add('visible'); document.getElementById('loadingMsg').textContent = msg || 'Загрузка…'; }
+function hideLoading()   { document.getElementById('loadingOverlay').classList.remove('visible'); }
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function onDetected(code, format, ms) {
+  const now = Date.now();
+  if (code === lastCode && now - lastCodeTs < 2000) return;
+  lastCode = code;
+  lastCodeTs = now;
+
+  times.push(ms);
+  results.unshift({ code, format, ms, ts: new Date() });
+  if (results.length > 12) results.pop();
+  updateStats();
+  renderResults();
+  if (navigator.vibrate) navigator.vibrate(80);
+}
+
+function updateStats() {
+  document.getElementById('sCnt').textContent = times.length;
+  if (times.length) {
+    const avg = Math.round(times.reduce((a,b) => a+b, 0) / times.length);
+    document.getElementById('sAvg').textContent = avg;
+    document.getElementById('sLst').textContent = times[times.length - 1];
+  } else {
+    document.getElementById('sAvg').textContent = '—';
+    document.getElementById('sLst').textContent = '—';
+  }
+}
+
+function renderResults() {
+  document.getElementById('resultsWrap').innerHTML = results.map(r => {
+    const c = r.ms < 100 ? '#4caf50' : r.ms < 300 ? '#ff9800' : '#ef5350';
+    return `<div class="result-item">
+      <div class="result-body">
+        <div class="result-code">${esc(r.code)}</div>
+        <div class="result-meta">${esc(r.format)} · ${r.ts.toLocaleTimeString()}</div>
+      </div>
+      <div class="result-ms" style="color:${c}">${r.ms} мс</div>
+    </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════════
+//  SCANNER IMPLEMENTATIONS
+// ════════════════════════════════════════════════════════════
+
+// 1. Native BarcodeDetector API
+async function launchNative() {
+  if (!('BarcodeDetector' in window)) {
+    throw new Error('BarcodeDetector API не поддерживается в этом браузере.\nТребуется Chrome 83+ на Android или Edge 83+.');
+  }
+  await startSharedCamera();
+  showVideo(true); showSlot(false);
+
+  const detector = new BarcodeDetector({
+    formats: ['ean_13','ean_8','code_128','code_39','upc_a','qr_code','data_matrix']
+  });
+  const video = document.getElementById('sharedVideo');
+  let running = true, t0 = performance.now();
+
+  async function loop() {
+    if (!running) return;
+    if (video.readyState >= 2) {
+      try {
+        const codes = await detector.detect(video);
+        const ms = Math.round(performance.now() - t0);
+        t0 = performance.now();
+        codes.forEach(c => onDetected(c.rawValue, c.format, ms));
+      } catch(e) {}
+    }
+    setTimeout(() => { if (running) requestAnimationFrame(loop); }, 55);
+  }
+  requestAnimationFrame(loop);
+  return () => { running = false; stopSharedCamera(); };
+}
+
+// 2. html5-qrcode (manages its own camera)
+async function launchHtml5Qr() {
+  showLoading('Загрузка html5-qrcode…');
+  await loadScript('https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js');
+
+  showVideo(false);
+  const slot = document.getElementById('libSlot');
+  slot.innerHTML = '<div id="h5qReader" style="width:100%;height:100%"></div>';
+  showSlot(true);
+
+  const scanner = new Html5Qrcode('h5qReader');
+  let t0 = performance.now();
+
+  await scanner.start(
+    { facingMode: 'environment' },
+    {
+      fps: 15,
+      qrbox: { width: 280, height: 120 },
+      disableFlip: true,
+      formatsToSupport: [
+        Html5QrcodeSupportedFormats.EAN_13,
+        Html5QrcodeSupportedFormats.EAN_8,
+        Html5QrcodeSupportedFormats.CODE_128,
+        Html5QrcodeSupportedFormats.QR_CODE,
+        Html5QrcodeSupportedFormats.UPC_A,
+      ]
+    },
+    (text, result) => {
+      const ms = Math.round(performance.now() - t0);
+      t0 = performance.now();
+      onDetected(text, result.result.format.formatName, ms);
+    },
+    null
+  );
+
+  return async () => {
+    try { await scanner.stop(); } catch(e) {}
+    slot.innerHTML = '';
+    showSlot(false);
+    showVideo(true);
+  };
+}
+
+// 3. @zxing/library (uses shared video)
+async function launchZXing() {
+  showLoading('Загрузка @zxing/library (800 KB)…');
+  await loadScript('https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js');
+  await startSharedCamera();
+  showVideo(true); showSlot(false);
+
+  const hints = new Map();
+  hints.set(ZXing.DecodeHintType.POSSIBLE_FORMATS, [
+    ZXing.BarcodeFormat.EAN_13,
+    ZXing.BarcodeFormat.EAN_8,
+    ZXing.BarcodeFormat.CODE_128,
+    ZXing.BarcodeFormat.QR_CODE,
+    ZXing.BarcodeFormat.UPC_A,
+  ]);
+  const reader = new ZXing.BrowserMultiFormatReader(hints, 100);
+  const video = document.getElementById('sharedVideo');
+  let t0 = performance.now();
+
+  reader.decodeFromVideoElementContinuously(video, (result, err) => {
+    if (result) {
+      const ms = Math.round(performance.now() - t0);
+      t0 = performance.now();
+      onDetected(result.getText(), result.getBarcodeFormat().toString(), ms);
+    }
+  });
+
+  return () => { try { reader.reset(); } catch(e) {} stopSharedCamera(); };
+}
+
+// 4. Quagga2 (manages its own camera)
+async function launchQuagga2() {
+  showLoading('Загрузка Quagga2…');
+  await loadScript('https://cdn.jsdelivr.net/npm/@ericblade/quagga2@1.12.1/dist/quagga.min.js');
+
+  showVideo(false);
+  const slot = document.getElementById('libSlot');
+  slot.innerHTML = '';
+  showSlot(true);
+
+  let t0 = performance.now();
+
+  await new Promise((resolve, reject) => {
+    Quagga.init({
+      inputStream: {
+        name: 'Live', type: 'LiveStream', target: slot,
+        constraints: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } },
+        area: { top: '15%', right: '5%', left: '5%', bottom: '15%' }
+      },
+      locate: true,
+      frequency: 15,
+      decoder: {
+        readers: ['ean_reader','ean_8_reader','code_128_reader','code_39_reader','upc_reader']
+      },
+      locator: { halfSample: true, patchSize: 'medium' }
+    }, err => err ? reject(err) : resolve());
+  });
+
+  Quagga.start();
+  t0 = performance.now();
+
+  Quagga.onDetected(r => {
+    const ms = Math.round(performance.now() - t0);
+    t0 = performance.now();
+    onDetected(r.codeResult.code, r.codeResult.format, ms);
+  });
+
+  return () => {
+    try { Quagga.stop(); } catch(e) {}
+    try { Quagga.offDetected(); } catch(e) {}
+    const vid = slot.querySelector('video');
+    if (vid && vid.srcObject) vid.srcObject.getTracks().forEach(t => t.stop());
+    slot.innerHTML = '';
+    showSlot(false);
+    showVideo(true);
+  };
+}
+
+// 5. zbar.wasm via ESM dynamic import (canvas loop)
+async function launchZbarWasm() {
+  showLoading('Загрузка zbar.wasm (~450 KB)…');
+  // ESM dynamic import — WASM + wrapper
+  const { scanImageData } = await import('https://cdn.jsdelivr.net/npm/@undecaf/zbar-wasm@0.10.1/+esm');
+
+  await startSharedCamera();
+  showVideo(true); showSlot(false);
+
+  const video = document.getElementById('sharedVideo');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  let running = true;
+
+  async function loop() {
+    if (!running) return;
+    if (video.readyState >= 2 && video.videoWidth > 0) {
+      canvas.width  = video.videoWidth;
+      canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0);
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const t0 = performance.now();
+      try {
+        const symbols = await scanImageData(imgData);
+        const ms = Math.round(performance.now() - t0);
+        symbols.forEach(s => {
+          const fmt = (s.typeName || 'UNKNOWN').replace('ZBAR_', '');
+          onDetected(s.decode('utf-8'), fmt, ms);
+        });
+      } catch(e) {}
+    }
+    if (running) requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  return () => { running = false; stopSharedCamera(); };
+}
+
+// 6. jsQR (canvas loop, QR only)
+async function launchJsQR() {
+  showLoading('Загрузка jsQR (52 KB)…');
+  await loadScript('https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js');
+  await startSharedCamera();
+  showVideo(true); showSlot(false);
+
+  const video = document.getElementById('sharedVideo');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  let running = true;
+
+  function loop() {
+    if (!running) return;
+    if (video.readyState >= 2 && video.videoWidth > 0) {
+      canvas.width  = video.videoWidth;
+      canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0);
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const t0 = performance.now();
+      const code = jsQR(imgData.data, imgData.width, imgData.height, {
+        inversionAttempts: 'dontInvert'
+      });
+      const ms = Math.round(performance.now() - t0);
+      if (code) onDetected(code.data, 'QR_CODE', ms);
+    }
+    if (running) requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  return () => { running = false; stopSharedCamera(); };
+}
+
+// 7. qr-scanner by Nimiq (UMD, WebWorker, QR only)
+async function launchQrScanner() {
+  showLoading('Загрузка qr-scanner (59 KB)…');
+  await loadScript('https://cdn.jsdelivr.net/npm/qr-scanner@1.4.2/qr-scanner.umd.min.js');
+  // qr-scanner manages its own camera via the video element
+  showVideo(true); showSlot(false);
+
+  const video = document.getElementById('sharedVideo');
+  let t0 = performance.now();
+
+  const scanner = new QrScanner(
+    video,
+    result => {
+      const ms = Math.round(performance.now() - t0);
+      t0 = performance.now();
+      const data = (typeof result === 'string') ? result : result.data;
+      onDetected(data, 'QR_CODE', ms);
+    },
+    {
+      returnDetailedScanResult: true,
+      preferredCamera: 'environment',
+      maxScansPerSecond: 20,
+      highlightScanRegion: false,
+      highlightCodeOutline: false,
+    }
+  );
+
+  await scanner.start();
+
+  return () => {
+    scanner.stop();
+    scanner.destroy();
+    // qr-scanner owns the stream — clear srcObject
+    if (video.srcObject) {
+      video.srcObject.getTracks().forEach(t => t.stop());
+      video.srcObject = null;
+    }
+    sharedStream = null;
+  };
+}
+
+// ════════════════════════════════════════════════════════════
+//  DISPATCH TABLE
+// ════════════════════════════════════════════════════════════
+const LAUNCHERS = {
+  native:    launchNative,
+  html5qr:   launchHtml5Qr,
+  zxing:     launchZXing,
+  quagga2:   launchQuagga2,
+  zbarwasm:  launchZbarWasm,
+  jsqr:      launchJsQR,
+  qrscanner: launchQrScanner,
+};
+
+// ════════════════════════════════════════════════════════════
+//  MAIN FLOW
+// ════════════════════════════════════════════════════════════
+async function activate(libId) {
+  // Toggle off if clicking the same lib that's running
+  if (activeId === libId && scanning) { await deactivate(); return; }
+
+  await deactivate();
+
+  const lib = LIBS.find(l => l.id === libId);
+  activeId = libId;
+
+  // Reset state
+  results = []; times = []; lastCode = ''; lastCodeTs = 0;
+  updateStats();
+  document.getElementById('resultsWrap').innerHTML = '';
+  document.getElementById('infoBox').className = 'info-box';
+  document.getElementById('infoBox').innerHTML = lib.info;
+
+  // UI: mark card active
+  const card = document.getElementById('card-' + libId);
+  card.classList.add('active', 'loading');
+  document.getElementById('btn-' + libId).textContent = '⌛ Загрузка…';
+
+  // Show scanner section
+  document.getElementById('scnTitle').textContent = lib.icon + ' ' + lib.name;
+  document.getElementById('scannerSection').classList.add('visible');
+
+  showLoading('Инициализация…');
+
+  try {
+    stopFn = await LAUNCHERS[libId]();
+    scanning = true;
+    hideLoading();
+    card.classList.remove('loading');
+    document.getElementById('btn-' + libId).textContent = '⏹ Стоп';
+  } catch(err) {
+    hideLoading();
+    scanning = false;
+    card.classList.remove('active', 'loading');
+    card.classList.add('has-error');
+    document.getElementById('btn-' + libId).textContent = '▶ Запустить';
+    activeId = null;
+
+    const msg = err && err.message ? err.message : String(err);
+    document.getElementById('infoBox').className = 'info-box error';
+    document.getElementById('infoBox').innerHTML = '<strong>⛔ Ошибка:</strong> ' + esc(msg);
+    console.error('[scanner-benchmark]', libId, err);
+
+    // Auto-clear error frame
+    setTimeout(() => { card.classList.remove('has-error'); }, 4000);
+  }
+}
+
+async function deactivate() {
+  if (stopFn) {
+    try { await stopFn(); } catch(e) { console.error(e); }
+    stopFn = null;
+  }
+  scanning = false;
+  hideLoading();
+
+  if (activeId) {
+    const card = document.getElementById('card-' + activeId);
+    if (card) {
+      card.classList.remove('active', 'loading', 'has-error');
+      document.getElementById('btn-' + activeId).textContent = '▶ Запустить';
+    }
+    activeId = null;
+  }
+  // Clean up any orphaned streams
+  stopSharedCamera();
+}
+
+function toggleTable() {
+  const w = document.getElementById('cmpWrap');
+  w.classList.toggle('visible');
+  document.querySelector('.tbl-toggle').textContent = w.classList.contains('visible')
+    ? '📊 Скрыть сравнительную таблицу ▲'
+    : '📊 Сравнительная таблица всех библиотек ▼';
+}
+
+// ── BOOT ──
+renderCards();
+</script>
+</body>
+</html>

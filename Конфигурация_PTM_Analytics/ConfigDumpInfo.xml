@@ -72,6 +72,12 @@
 			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка" id="77572ed2-7c05-4629-b719-a25323efc5cc">
 				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Отправка.Method.ОтправкаЧека" id="62bac918-2a0b-4d53-9d51-cd10440b9d0f"/>
 			</Metadata>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ПоискТовара" id="a3f1b2c4-d5e6-4f78-9012-3456789abcde">
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.ПоискТовара.Method.ПоискПолучить" id="b4c2d3e5-f6a7-4089-1234-56789abcdef0"/>
+			</Metadata>
+			<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Статус" id="c5d6e7f8-a1b2-4c3d-9e0f-123456789abc">
+				<Metadata name="HTTPService.Анл_МобильнаяКасса.URLTemplate.Статус.Method.СтатусПолучить" id="d6e7f8a9-b2c3-4d4e-0f1a-23456789abcd"/>
+			</Metadata>
 		</Metadata>
 	</ConfigVersions>
 </ConfigDumpInfo>

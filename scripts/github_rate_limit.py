@@ -15,8 +15,9 @@ import urllib.request
 import urllib.error
 import json
 
-# ─── ТОКЕН (заполни здесь, файл не коммитится) ────────────────────────────────
-_TOKEN = "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"
+# ─── ТОКЕН: задай через переменную окружения GITHUB_TOKEN ────────────────────
+# Пример: set GITHUB_TOKEN=ghp_xxx...  (или передай --token ghp_xxx...)
+_TOKEN = ""
 # ──────────────────────────────────────────────────────────────────────────────
 
 

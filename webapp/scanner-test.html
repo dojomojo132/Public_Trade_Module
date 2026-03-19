@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Тест сканеров штрихкодов</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; }
+    .header { background: #16213e; padding: 14px 16px; text-align: center; border-bottom: 2px solid #0f3460; }
+    .header h1 { font-size: 18px; color: #e94560; }
+    .header p { font-size: 12px; color: #888; margin-top: 4px; }
+    .tabs { display: flex; gap: 0; padding: 0; background: #16213e; }
+    .tab { flex: 1; padding: 12px 8px; text-align: center; border: none; font-size: 13px; font-weight: 600; cursor: pointer; color: #aaa; background: #16213e; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .tab.active { color: #e94560; border-bottom-color: #e94560; background: #1a1a2e; }
+    .tab:disabled { color: #555; cursor: not-allowed; }
+    .tab-badge { font-size: 10px; display: block; color: #666; margin-top: 2px; }
+    .tab.active .tab-badge { color: #e94560; }
+    .scanner-viewport { position: relative; width: 100%; aspect-ratio: 4/3; background: #000; overflow: hidden; }
+    .scanner-viewport video { width: 100%; height: 100%; object-fit: cover; }
+    .scanner-viewport canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .scan-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .scan-line { width: 70%; height: 2px; background: #e94560; box-shadow: 0 0 12px #e94560; animation: scanPulse 1.5s ease-in-out infinite; }
+    @keyframes scanPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+    .controls { padding: 12px 16px; display: flex; gap: 8px; }
+    .btn { flex: 1; padding: 14px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .btn-start { background: #e94560; color: white; }
+    .btn-start:active { background: #c73e54; }
+    .btn-stop { background: #333; color: #e94560; border: 2px solid #e94560; }
+    .results { padding: 0 16px 16px; }
+    .result-item { background: #16213e; padding: 12px; margin-bottom: 6px; border-radius: 8px; border-left: 4px solid #4caf50; display: flex; justify-content: space-between; align-items: center; }
+    .result-item .code { font-size: 16px; font-weight: 600; font-family: monospace; word-break: break-all; }
+    .result-item .meta { font-size: 11px; color: #888; margin-top: 2px; }
+    .result-item .time-badge { font-size: 12px; color: #4caf50; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+    .stats { padding: 8px 16px; background: #16213e; display: flex; gap: 16px; justify-content: center; border-top: 1px solid #0f3460; }
+    .stat { text-align: center; }
+    .stat .val { font-size: 20px; font-weight: bold; color: #e94560; }
+    .stat .lbl { font-size: 11px; color: #888; }
+    .info-box { margin: 8px 16px; padding: 10px; background: #0f3460; border-radius: 8px; font-size: 12px; color: #aaa; line-height: 1.5; }
+    .info-box strong { color: #e94560; }
+    .unsupported { text-align: center; padding: 40px 16px; color: #888; }
+    .unsupported .icon { font-size: 48px; margin-bottom: 12px; }
+    #reader-html5qrcode { width: 100%; }
+    /* quagga canvas */
+    #scanner-quagga video, #scanner-quagga canvas { display: block; }
+    #scanner-quagga { position: relative; }
+    #scanner-quagga canvas.drawingBuffer { position: absolute; top: 0; left: 0; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔬 Тест сканеров штрихкодов</h1>
+  <p>Сравнение 3 движков: html5-qrcode, Quagga2, BarcodeDetector API</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('html5qrcode')" id="tab-html5qrcode">
+    📦 html5-qrcode
+    <span class="tab-badge">ZXing-js</span>
+  </button>
+  <button class="tab" onclick="switchTab('quagga2')" id="tab-quagga2">
+    🦅 Quagga2
+    <span class="tab-badge">Нативный</span>
+  </button>
+  <button class="tab" onclick="switchTab('native')" id="tab-native">
+    🌐 BarcodeDetector
+    <span class="tab-badge">Web API</span>
+  </button>
+</div>
+
+<!-- ======== Tab 1: html5-qrcode ======== -->
+<div class="tab-content" id="content-html5qrcode">
+  <div class="scanner-viewport" id="viewport-html5qrcode">
+    <div id="reader-html5qrcode"></div>
+  </div>
+  <div class="info-box">
+    <strong>html5-qrcode v2.3.8</strong> — обёртка над ZXing-js. Поддержка QR + 1D.
+    FPS по умолчанию = 2 (медленно). Здесь: fps=10, только нужные форматы.
+  </div>
+</div>
+
+<!-- ======== Tab 2: Quagga2 ======== -->
+<div class="tab-content" id="content-quagga2" style="display:none">
+  <div class="scanner-viewport" id="viewport-quagga2">
+    <div id="scanner-quagga" style="width:100%;height:100%;"></div>
+  </div>
+  <div class="info-box">
+    <strong>Quagga2 v1.12.1</strong> — нативная локализация штрихкодов, активно поддерживается.
+    Только 1D форматы. Для QR нужен отдельный плагин. Быстрое обнаружение.
+  </div>
+</div>
+
+<!-- ======== Tab 3: BarcodeDetector API ======== -->
+<div class="tab-content" id="content-native" style="display:none">
+  <div class="scanner-viewport" id="viewport-native">
+    <video id="video-native" autoplay playsinline muted></video>
+    <div class="scan-overlay"><div class="scan-line"></div></div>
+  </div>
+  <div class="info-box" id="native-info">
+    <strong>BarcodeDetector API</strong> — нативный Web API (Chrome 83+).
+    Без библиотеки, 0 KB. Самый быстрый на поддерживаемых устройствах.
+    ⚠️ НЕ работает: iOS Safari, Firefox.
+  </div>
+</div>
+
+<div class="controls">
+  <button class="btn btn-start" id="btnStart" onclick="startScanner()">▶ Запустить сканер</button>
+  <button class="btn btn-stop" id="btnStop" onclick="stopScanner()" style="display:none">⏹ Остановить</button>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="val" id="statScans">0</div><div class="lbl">Сканирований</div></div>
+  <div class="stat"><div class="val" id="statAvg">—</div><div class="lbl">Средн. время (мс)</div></div>
+  <div class="stat"><div class="val" id="statLast">—</div><div class="lbl">Послед. (мс)</div></div>
+</div>
+
+<div class="results" id="results"></div>
+
+<!-- CDN Libraries -->
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2@1.12.1/dist/quagga.min.js"></script>
+
+<script>
+// === State ===
+var activeTab = 'html5qrcode';
+var scanning = false;
+var scanResults = [];
+var scanTimes = [];
+var html5Qr = null;
+var nativeStream = null;
+var nativeDetector = null;
+var nativeRAF = null;
+
+// === Tab switching ===
+function switchTab(tab) {
+  if (scanning) stopScanner();
+  activeTab = tab;
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(function(c) { c.style.display = 'none'; });
+  document.getElementById('content-' + tab).style.display = 'block';
+
+  // Check BarcodeDetector support
+  if (tab === 'native' && !('BarcodeDetector' in window)) {
+    document.getElementById('native-info').innerHTML =
+      '<strong style="color:#f44336">⛔ BarcodeDetector API НЕ поддерживается</strong> в этом браузере.<br>' +
+      'Требуется: Chrome Android 83+, Edge 83+. НЕ работает: iOS Safari, Firefox.';
+    document.getElementById('btnStart').disabled = true;
+  } else {
+    document.getElementById('btnStart').disabled = false;
+  }
+}
+
+// === Start/Stop ===
+function startScanner() {
+  scanning = true;
+  document.getElementById('btnStart').style.display = 'none';
+  document.getElementById('btnStop').style.display = 'flex';
+  scanResults = [];
+  scanTimes = [];
+  updateStats();
+  document.getElementById('results').innerHTML = '';
+
+  if (activeTab === 'html5qrcode') startHtml5Qrcode();
+  else if (activeTab === 'quagga2') startQuagga2();
+  else if (activeTab === 'native') startNative();
+}
+
+function stopScanner() {
+  scanning = false;
+  document.getElementById('btnStart').style.display = 'flex';
+  document.getElementById('btnStop').style.display = 'none';
+
+  if (activeTab === 'html5qrcode') stopHtml5Qrcode();
+  else if (activeTab === 'quagga2') stopQuagga2();
+  else if (activeTab === 'native') stopNative();
+}
+
+// === html5-qrcode ===
+function startHtml5Qrcode() {
+  if (!html5Qr) {
+    html5Qr = new Html5Qrcode('reader-html5qrcode');
+  }
+  var t0 = performance.now();
+  html5Qr.start(
+    { facingMode: 'environment' },
+    {
+      fps: 10,
+      qrbox: { width: 280, height: 120 },
+      disableFlip: true,
+      formatsToSupport: [
+        Html5QrcodeSupportedFormats.EAN_13,
+        Html5QrcodeSupportedFormats.EAN_8,
+        Html5QrcodeSupportedFormats.CODE_128,
+        Html5QrcodeSupportedFormats.CODE_39,
+        Html5QrcodeSupportedFormats.UPC_A,
+        Html5QrcodeSupportedFormats.QR_CODE
+      ]
+    },
+    function(decodedText, decodedResult) {
+      var dt = Math.round(performance.now() - t0);
+      t0 = performance.now();
+      onCodeDetected(decodedText, decodedResult.result.format.formatName, dt);
+    },
+    function() {} // error — ignore
+  ).catch(function(err) {
+    console.error('html5-qrcode start error:', err);
+  });
+}
+
+function stopHtml5Qrcode() {
+  if (html5Qr) {
+    html5Qr.stop().catch(function() {});
+  }
+}
+
+// === Quagga2 ===
+function startQuagga2() {
+  var t0 = performance.now();
+  Quagga.init({
+    inputStream: {
+      name: 'Live',
+      type: 'LiveStream',
+      target: document.getElementById('scanner-quagga'),
+      constraints: {
+        facingMode: 'environment',
+        width: { ideal: 1280 },
+        height: { ideal: 720 }
+      },
+      area: {
+        top: '20%',
+        right: '10%',
+        left: '10%',
+        bottom: '20%'
+      }
+    },
+    locate: true,
+    frequency: 15,
+    decoder: {
+      readers: [
+        'ean_reader',
+        'ean_8_reader',
+        'code_128_reader',
+        'code_39_reader',
+        'upc_reader'
+      ]
+    },
+    locator: {
+      halfSample: true,
+      patchSize: 'medium'
+    }
+  }, function(err) {
+    if (err) { console.error('Quagga init error:', err); return; }
+    Quagga.start();
+    t0 = performance.now();
+  });
+
+  Quagga.onDetected(function(result) {
+    var dt = Math.round(performance.now() - t0);
+    t0 = performance.now();
+    var code = result.codeResult.code;
+    var format = result.codeResult.format;
+    onCodeDetected(code, format, dt);
+  });
+}
+
+function stopQuagga2() {
+  try { Quagga.stop(); } catch(e) {}
+  Quagga.offDetected();
+  // Clean up the container
+  var container = document.getElementById('scanner-quagga');
+  var video = container.querySelector('video');
+  if (video && video.srcObject) {
+    video.srcObject.getTracks().forEach(function(t) { t.stop(); });
+  }
+  container.innerHTML = '';
+}
+
+// === BarcodeDetector API (native) ===
+function startNative() {
+  if (!('BarcodeDetector' in window)) return;
+
+  nativeDetector = new BarcodeDetector({
+    formats: ['ean_13', 'ean_8', 'code_128', 'code_39', 'upc_a', 'qr_code']
+  });
+
+  var video = document.getElementById('video-native');
+  navigator.mediaDevices.getUserMedia({
+    video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
+  }).then(function(stream) {
+    nativeStream = stream;
+    video.srcObject = stream;
+    video.play();
+    detectLoop();
+  }).catch(function(err) {
+    console.error('Camera error:', err);
+  });
+}
+
+function detectLoop() {
+  if (!scanning || !nativeDetector) return;
+  var video = document.getElementById('video-native');
+  if (video.readyState < 2) {
+    nativeRAF = requestAnimationFrame(detectLoop);
+    return;
+  }
+  var t0 = performance.now();
+  nativeDetector.detect(video).then(function(barcodes) {
+    var dt = Math.round(performance.now() - t0);
+    barcodes.forEach(function(b) {
+      onCodeDetected(b.rawValue, b.format, dt);
+    });
+    if (scanning) {
+      // Throttle to ~15 fps
+      setTimeout(function() {
+        nativeRAF = requestAnimationFrame(detectLoop);
+      }, 66);
+    }
+  }).catch(function() {
+    if (scanning) nativeRAF = requestAnimationFrame(detectLoop);
+  });
+}
+
+function stopNative() {
+  if (nativeRAF) cancelAnimationFrame(nativeRAF);
+  nativeRAF = null;
+  nativeDetector = null;
+  var video = document.getElementById('video-native');
+  if (video.srcObject) {
+    video.srcObject.getTracks().forEach(function(t) { t.stop(); });
+    video.srcObject = null;
+  }
+}
+
+// === Common ===
+var lastCode = '';
+var lastCodeTime = 0;
+
+function onCodeDetected(code, format, timeMs) {
+  // Deduplicate: ignore same code within 2 seconds
+  var now = Date.now();
+  if (code === lastCode && (now - lastCodeTime) < 2000) return;
+  lastCode = code;
+  lastCodeTime = now;
+
+  scanTimes.push(timeMs);
+  scanResults.unshift({ code: code, format: format, time: timeMs, ts: new Date() });
+  if (scanResults.length > 20) scanResults.pop();
+
+  updateStats();
+  renderResults();
+
+  // Vibrate feedback
+  if (navigator.vibrate) navigator.vibrate(100);
+}
+
+function updateStats() {
+  document.getElementById('statScans').textContent = scanTimes.length;
+  if (scanTimes.length > 0) {
+    var sum = 0;
+    scanTimes.forEach(function(t) { sum += t; });
+    document.getElementById('statAvg').textContent = Math.round(sum / scanTimes.length);
+    document.getElementById('statLast').textContent = scanTimes[scanTimes.length - 1];
+  } else {
+    document.getElementById('statAvg').textContent = '—';
+    document.getElementById('statLast').textContent = '—';
+  }
+}
+
+function renderResults() {
+  var html = '';
+  scanResults.forEach(function(r) {
+    var timeColor = r.time < 100 ? '#4caf50' : r.time < 300 ? '#ff9800' : '#f44336';
+    html += '<div class="result-item">' +
+      '<div><div class="code">' + escapeHtml(r.code) + '</div>' +
+      '<div class="meta">' + escapeHtml(r.format) + ' · ' + r.ts.toLocaleTimeString() + '</div></div>' +
+      '<div class="time-badge" style="color:' + timeColor + '">' + r.time + ' мс</div>' +
+      '</div>';
+  });
+  document.getElementById('results').innerHTML = html;
+}
+
+function escapeHtml(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+</script>
+</body>
+</html>

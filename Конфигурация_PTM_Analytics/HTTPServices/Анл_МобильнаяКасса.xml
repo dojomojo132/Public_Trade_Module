@@ -90,6 +90,101 @@
 					</Method>
 				</ChildObjects>
 			</URLTemplate>
+			<URLTemplate uuid="a3f1b2c4-d5e6-4f78-9012-3456789abcde">
+				<Properties>
+					<Name>ПоискТовара</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/search</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="b4c2d3e5-f6a7-4089-1234-56789abcdef0">
+						<Properties>
+							<Name>ПоискПолучить</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>searchGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="c5d6e7f8-a1b2-4c3d-9e0f-123456789abc">
+				<Properties>
+					<Name>Статус</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/status</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="d6e7f8a9-b2c3-4d4e-0f1a-23456789abcd">
+						<Properties>
+							<Name>СтатусПолучить</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>statusGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="e7f8a9b0-c3d4-4e5f-1a2b-3456789abcde">
+				<Properties>
+					<Name>Авторизация</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/login</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="f8a9b0c1-d4e5-4f60-2b3c-456789abcdef">
+						<Properties>
+							<Name>АвторизацияПост</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>loginPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="a9b0c1d2-e5f6-4071-3c4d-56789abcdef0">
+				<Properties>
+					<Name>ТоварыРМК</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/rmk-items</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="b0c1d2e3-f607-4182-4d5e-6789abcdef01">
+						<Properties>
+							<Name>ТоварыРМКПолучить</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>rmkItemsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="c1d2e3f4-0718-4293-5e6f-789abcdef012">
+				<Properties>
+					<Name>СписокСессий</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/sessions</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="d2e3f405-1829-43a4-6f70-89abcdef0123">
+						<Properties>
+							<Name>СписокСессийПолучить</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>sessionsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
 		</ChildObjects>
 	</HTTPService>
 </MetaDataObject>
