@@ -37,7 +37,7 @@ import time
 IB_PATH   = r"D:\Confiq\Public Trade Module"
 PROJ_ROOT = pathlib.Path(__file__).resolve().parent.parent
 LOGS_DIR  = PROJ_ROOT / "logs"
-USER      = "Админ"
+USER      = "Admin"
 
 # Маппинг нестандартных папок для известных расширений
 _KNOWN_EXT_DIRS: dict[str, str] = {
