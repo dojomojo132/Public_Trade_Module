@@ -165,12 +165,13 @@
 		<Metadata name="Catalog.Контрагенты.Predefined" id="15806fdf-6c4b-4657-853f-37bf85e5615a.1c" configVersion="1e26ffdfd7f28e4f8b13ac31d799bcd900000000"/>
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="924e68a5e370d2439c160e4e6020ea6c00000000">
 			<Metadata name="Catalog.НалоговыеГруппы.Attribute.КодНалоговойГруппыККТ" id="5646d3e4-a785-42b3-b98f-f5e30e652ba7"/>
-			<Metadata name="Catalog.НалоговыеГруппы.Attribute.СтавкаНДС" id="56e1f87e-e895-4024-9d83-9e94d5e0a94f"/>
 		</Metadata>
 		<Metadata name="Catalog.НастройкиПоУмолчанию" id="e1234567-890a-bcde-f123-4567890abcde" configVersion="08ecf6cc6ba0434989f71acf7021f51c00000000"/>
 		<Metadata name="Catalog.НастройкиПоУмолчанию.Predefined" id="e1234567-890a-bcde-f123-4567890abcde.1c" configVersion="b10ceb36b2da574ba161fef0572d802100000000"/>
 		<Metadata name="Catalog.Номенклатура" id="379863f4-aa81-4140-89a8-df74d8755af8" configVersion="9c6c48bece3e3f43975397e5644da46800000000">
 			<Metadata name="Catalog.Номенклатура.Attribute.ПроцентНаценки" id="21135baf-f71f-4c33-aa0b-f06257164d9c"/>
+			<Metadata name="Catalog.Номенклатура.Attribute.ФОП" id="3a4b5c6d-7e8f-4901-a2b3-c4d5e6f7a8b9"/>
+			<Metadata name="Catalog.Номенклатура.Attribute.СтавкаНДС" id="67b1bf26-c26f-464f-b445-9ad9545e8425"/>
 			<Metadata name="Catalog.Номенклатура.Attribute.ТребуетАкцизнуюМарку" id="69be4717-4129-4532-9a76-22cea469942e"/>
 			<Metadata name="Catalog.Номенклатура.TabularSection.Штрихкоды.Attribute.Штрихкод" id="a3f7e2d1-5b4c-4a8e-9d2f-1c6e8a7b9f3e"/>
 			<Metadata name="Catalog.Номенклатура.TabularSection.Штрихкоды" id="b28ea44b-3095-49d9-988f-4903d3e5524e"/>

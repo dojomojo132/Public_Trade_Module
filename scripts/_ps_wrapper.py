@@ -21,9 +21,19 @@ import sys
 import pathlib
 import base64
 import os
+import datetime
+import glob
 
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = PROJECT_ROOT / "Документация" / "Валидация"
+DT_BACKUP_DIR = SCRIPTS_DIR / "backups"
+
+
+def _dt_backup_exists_today() -> bool:
+    """Проверяет, есть ли DT-бэкап за сегодня (PTM-backup-YYYYMMDD*.dt)."""
+    today = datetime.date.today().strftime("%Y%m%d")
+    pattern = str(DT_BACKUP_DIR / f"PTM-backup-{today}*.dt")
+    return len(glob.glob(pattern)) > 0
 
 SCRIPT_MAP = {
     "deploy": SCRIPTS_DIR / "deploy-config.ps1",
@@ -112,6 +122,29 @@ def main():
             password = env_vars.get("PTM_1C_PASSWORD", "")
             if user:
                 extra_args = ["-User", user] + (["-Password", password] if password else []) + extra_args
+
+    # Автоматическая логика DT-бэкапа: один раз в день.
+    # Если DT-бэкап за сегодня уже существует — SkipDtBackup (не дублировать).
+    # Если не существует — создать бэкап (убрать -SkipDtBackup если передан).
+    if script_name == "deploy":
+        skip_flag = "-SkipDtBackup"
+        force_action = "-Action" in extra_args and "Full" in extra_args
+        if "-Action" in extra_args:
+            action_idx = extra_args.index("-Action")
+            action_val = extra_args[action_idx + 1] if (action_idx + 1) < len(extra_args) else ""
+            force_action = action_val in ("Full",)
+
+        if force_action:
+            if _dt_backup_exists_today():
+                # Бэкап уже есть сегодня — пропустить DT, сэкономить время
+                if skip_flag not in extra_args:
+                    extra_args = [skip_flag] + extra_args
+                    print(f"[DT-бэкап] Бэкап за сегодня уже существует → -SkipDtBackup добавлен автоматически")
+            else:
+                # Бэкапа за сегодня нет — убрать SkipDtBackup, чтобы создался
+                if skip_flag in extra_args:
+                    extra_args = [a for a in extra_args if a != skip_flag]
+                print(f"[DT-бэкап] Бэкап за сегодня отсутствует → будет создан DT-бэкап")
 
     script_path = SCRIPT_MAP[script_name]
     exit_code = run_ps_script(script_path, extra_args)
