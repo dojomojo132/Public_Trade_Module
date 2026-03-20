@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.Вчсн_ДрайверПРРО" id="e97a8449-3002-4f48-9402-b8c087ca769f" configVersion="8e02f6483d1c4306b6a73f0d1144d1ffb7035a53"/>
+		<Metadata name="CommonModule.Вчсн_ДрайверПРРО.Module" id="e97a8449-3002-4f48-9402-b8c087ca769f.0" configVersion="8356af6a454d46358f52da6a334676d836154e9e"/>
+		<Metadata name="Configuration.PTM_Driver_Vchasno" id="22d7c83c-9bc4-44d9-a19a-ec758bce09fd" configVersion="e2ba498908e7201a6aa78fe15c737693d695eb86"/>
+		<Metadata name="Language.Русский" id="8d00b5c1-20e5-4df6-bec0-c7f1788839b8" configVersion="6d4f9230bf8872bd6b5dfd1be3824d5223051166"/>
+		<Metadata name="Role.Вчсн_ОсновнаяРоль" id="8037c9ef-835b-4be4-b04b-732433ae3bb6" configVersion="1264ea2b00f5360ea073e7eab98333fe735d5baa"/>
+		<Metadata name="Subsystem.Вчсн_ВчасноКаса" id="7a8b5c6c-bc2d-4fec-81a9-0617811e9737" configVersion="396dfc42b67dc764bac27bbe693eae73ff76fc8b"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

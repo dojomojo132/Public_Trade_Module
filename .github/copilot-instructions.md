@@ -308,7 +308,9 @@ python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5  # монит
 ### Расширения конфигурации (deploy_ext.py)
 
 ```bash
-# Деплой расширения (~15 сек вместо ~100 сек для основной конфигурации):
+# Деплой расширения (~15 сек, таймаут 30 сек):
+# ⚠️ Если >30 сек — 1С зависла при деплое расширения! Убить процесс, разбирать причину.
+# Для основной конфигурации таймаут другой (~180 сек) — это нормально.
 python scripts/deploy_ext.py --ext PTM_Analytics --action Full     # Load + UpdateDB
 python scripts/deploy_ext.py --ext PTM_Analytics --action Dump     # выгрузить из ИБ
 python scripts/deploy_ext.py --ext PTM_Analytics --action Load     # загрузить в ИБ

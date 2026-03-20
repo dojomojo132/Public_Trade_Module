@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="8799ea13-c77a-40cd-bcc1-544ec31da5ff">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ОбработчикиДрайверовПодключаемогоОборудования" category="Ref">
+				<xr:TypeId>4a3e41ae-2623-493a-86c5-24fc8bcee8f6</xr:TypeId>
+				<xr:ValueId>3fdb33ad-c049-49ed-aad1-04343a0dacec</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ОбработчикиДрайверовПодключаемогоОборудования" category="Manager">
+				<xr:TypeId>756cfafe-fc16-4f68-b8c4-51336a8837d7</xr:TypeId>
+				<xr:ValueId>04058e99-f5b4-40b6-b056-b95a24ef6b5c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ОбработчикиДрайверовПодключаемогоОборудования" category="List">
+				<xr:TypeId>c1e7a9ee-8551-4e65-a4e1-ca58dba17d05</xr:TypeId>
+				<xr:ValueId>785ffa36-8073-4579-9e74-16d3f5eaed9b</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ОбработчикиДрайверовПодключаемогоОборудования</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>a332ead0-386e-4cfa-ba70-a56a66e9d098</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="6df76a44-8fd0-45af-a6dc-252542344271">
+				<Properties>
+					<Name>ОбработчикВчасноКасаФискальныйРегистратор</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вчасно.Каса</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Вчасно.Каса</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>ФискальныйРегистратор</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

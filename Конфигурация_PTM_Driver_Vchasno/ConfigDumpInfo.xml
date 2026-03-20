@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.Вчсн_ДрайверПРРО" id="e97a8449-3002-4f48-9402-b8c087ca769f" configVersion="8e02f6483d1c4306b6a73f0d1144d1ffb7035a53"/>
+		<Metadata name="CommonModule.Вчсн_ДрайверПРРО.Module" id="e97a8449-3002-4f48-9402-b8c087ca769f.0" configVersion="cddd925b819019b4f2b5bb24162fd98e4ea3c319"/>
+		<Metadata name="Configuration.PTM_Driver_Vchasno" id="22d7c83c-9bc4-44d9-a19a-ec758bce09fd" configVersion="0bea382e61bb93b62b0a7b2e1b529c08ccc278a0"/>
+		<Metadata name="DataProcessor.Вчсн_КассаПанель" id="2883ee47-4938-49f5-9e22-ecdc7da45143" configVersion="e6f942e85c44fa8a9d57627d76030684978e3547"/>
+		<Metadata name="DataProcessor.Вчсн_КассаПанель.Form.Форма" id="f0187071-42d3-41f9-829a-72619dd94cb3" configVersion="7a40603ab03d0bed06714f594851ed405e422b2a"/>
+		<Metadata name="DataProcessor.Вчсн_КассаПанель.Form.Форма.Form" id="f0187071-42d3-41f9-829a-72619dd94cb3.0" configVersion="97748e5b730fc4ab5dc429391176e0c210f6f6ad"/>
+		<Metadata name="DataProcessor.Вчсн_КассаПанель.ObjectModule" id="2883ee47-4938-49f5-9e22-ecdc7da45143.0" configVersion="6799c0f7832b965cc22070395d83cbccfc1400b4"/>
+		<Metadata name="Language.Русский" id="8d00b5c1-20e5-4df6-bec0-c7f1788839b8" configVersion="6d4f9230bf8872bd6b5dfd1be3824d5223051166"/>
+		<Metadata name="Role.Вчсн_ОсновнаяРоль" id="8037c9ef-835b-4be4-b04b-732433ae3bb6" configVersion="1264ea2b00f5360ea073e7eab98333fe735d5baa"/>
+		<Metadata name="Subsystem.Вчсн_ВчасноКаса" id="7a8b5c6c-bc2d-4fec-81a9-0617811e9737" configVersion="3ea7a7f6617b45a2e6864f45e5d3224dd7b7f362"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

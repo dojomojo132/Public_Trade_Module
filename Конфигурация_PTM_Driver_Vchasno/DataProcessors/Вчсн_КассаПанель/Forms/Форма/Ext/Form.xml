@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="КассовоеОборудование" id="1">
+			<DataPath>КассовоеОборудование</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кассовое оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="КассовоеОборудованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КассовоеОборудованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Сумма" id="4">
+			<DataPath>Сумма</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаКнопок" id="7">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопокРасширеннаяПодсказка" id="8"/>
+			<ChildItems>
+				<Button name="ОткрытьСмену" id="9">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОткрытьСмену</CommandName>
+					<ExtendedTooltip name="ОткрытьСменуРасширеннаяПодсказка" id="10"/>
+				</Button>
+				<Button name="XОтчет" id="11">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.XОтчет</CommandName>
+					<ExtendedTooltip name="XОтчетРасширеннаяПодсказка" id="12"/>
+				</Button>
+				<Button name="ZОтчет" id="13">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ZОтчет</CommandName>
+					<ExtendedTooltip name="ZОтчетРасширеннаяПодсказка" id="14"/>
+				</Button>
+				<Button name="Внесение" id="15">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Внесение</CommandName>
+					<ExtendedTooltip name="ВнесениеРасширеннаяПодсказка" id="16"/>
+				</Button>
+				<Button name="Изъятие" id="17">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Изъятие</CommandName>
+					<ExtendedTooltip name="ИзъятиеРасширеннаяПодсказка" id="18"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="СтрокаСтатуса" id="19">
+			<DataPath>СтрокаСтатуса</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="СтрокаСтатусаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="СтрокаСтатусаРасширеннаяПодсказка" id="21"/>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="100">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Вчсн_КассаПанель</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КассовоеОборудование" id="101">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кассовое оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>a3b5b127-84d6-4f11-aafa-90224ef9acf3</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="Сумма" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокаСтатуса" id="103">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьСмену" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть смену</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьСмену</Action>
+		</Command>
+		<Command name="XОтчет" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>X-отчет</v8:content>
+				</v8:item>
+			</Title>
+			<Action>XОтчет</Action>
+		</Command>
+		<Command name="ZОтчет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Z-отчет (закрыть смену)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ZОтчет</Action>
+		</Command>
+		<Command name="Внесение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внесение</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Внесение</Action>
+		</Command>
+		<Command name="Изъятие" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изъятие</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Изъятие</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,11 @@
+{
+  "task_id": "c02fa08c-c037-46b8-8e1b-3ac120de1128",
+  "agent_id": "agent-tests",
+  "finished_at": "2026-03-19T23:18:10.498226Z",
+  "success": true,
+  "result": {
+    "summary": "Done: E2E тест страницы аналитики",
+    "files_changed": [],
+    "_elapsed_sec": 2.3
+  }
+}

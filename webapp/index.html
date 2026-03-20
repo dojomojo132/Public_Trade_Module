@@ -141,6 +141,10 @@
   <div class="notification" id="notification"></div>
 
   <script>
+    // Автоматический редирект HTTP → HTTPS (crypto.subtle требует secure context)
+    if (location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https://' + location.host + location.pathname + location.search);
+    }
     const API_MOBILE = '/ptm/hs/mobile';
     const API_SEARCH = '/ptm/hs/api/search';
     let sessionId = '';
@@ -153,21 +157,89 @@
     let zbarScanImageData = null;   // zbar.wasm fallback, кешируем после первой загрузки
     let nativeDetector = null;      // BarcodeDetector API (Chrome 83+)
 
+    // Сохранение/восстановление состояния через localStorage
+    function saveState() {
+      try {
+        localStorage.setItem('ptm_session', JSON.stringify({
+          sessionId: sessionId,
+          currentUser: currentUser,
+          items: items
+        }));
+      } catch(e) {}
+    }
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('ptm_session'));
+        if (saved && saved.sessionId) {
+          sessionId = saved.sessionId;
+          currentUser = saved.currentUser || '';
+          items = saved.items || [];
+          return true;
+        }
+      } catch(e) {}
+      return false;
+    }
+    function clearState() {
+      try { localStorage.removeItem('ptm_session'); } catch(e) {}
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('session')) {
       // Совместимость: прямой вход по session в URL
       sessionId = urlParams.get('session');
       document.getElementById('loginScreen').style.display = 'none';
       activateUI();
+      loadRmkItems();
+    } else if (loadState()) {
+      // Восстановление после обновления страницы — проверяем что сессия ещё активна
+      document.getElementById('loginScreen').style.display = 'none';
+      validateAndRestore();
+    }
+
+    async function validateAndRestore() {
+      try {
+        const r = await fetch(API_MOBILE + '/sessions');
+        const d = await r.json();
+        if (d.success && d.sessions && d.sessions.some(function(s) { return s.id === sessionId; })) {
+          activateUI();
+          loadRmkItems();
+        } else {
+          // Сессия больше не активна — показываем список
+          showNotification('РМК не найдена. Выберите кассу заново.', 'error');
+          loadSessions();
+        }
+      } catch(e) {
+        // Сервер недоступен — показываем локальную корзину
+        activateUI();
+      }
+    }
+
+    async function loadRmkItems() {
+      if (!sessionId) return;
+      try {
+        const r = await fetch(API_MOBILE + '/rmk-items?session=' + encodeURIComponent(sessionId));
+        const d = await r.json();
+        if (d.success) { rmkItems = d.items || []; renderReceipt(); }
+      } catch(e) {}
     }
 
     async function login() {
       const pwd = document.getElementById('passwordInput').value;
       if (!pwd) { showNotification('Введите пароль', 'error'); return; }
-      // SHA-256 через встроенный Web Crypto API (без библиотек)
-      const encoded = new TextEncoder().encode(pwd);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', encoded);
-      const hashHex = Array.from(new Uint8Array(hashBuffer)).map(function(b) { return b.toString(16).padStart(2,'0'); }).join('');
+      // SHA-256 хеширование
+      var hashHex;
+      try {
+        if (!window.crypto || !window.crypto.subtle) {
+          showNotification('Требуется HTTPS. Откройте: https://' + location.hostname + '/mobile/', 'error');
+          return;
+        }
+        const encoded = new TextEncoder().encode(pwd);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', encoded);
+        hashHex = Array.from(new Uint8Array(hashBuffer)).map(function(b) { return b.toString(16).padStart(2,'0'); }).join('');
+      } catch(e) {
+        showNotification('Ошибка шифрования: ' + e.message, 'error');
+        return;
+      }
       try {
         const r = await fetch(API_MOBILE + '/login', {
           method: 'POST',
@@ -227,11 +299,13 @@
         if (d.success) { rmkItems = d.items || []; }
       } catch(e) {}
       document.getElementById('sessionsScreen').style.display = 'none';
+      saveState();
       activateUI();
     }
 
     function showLogin() {
       sessionId = ''; rmkItems = []; items = [];
+      clearState();
       if (scannerActive) stopScanner();
       document.getElementById('sessionsScreen').style.display = 'none';
       document.getElementById('loginScreen').style.display = 'block';
@@ -381,6 +455,7 @@
       const existing = items.find(function(i) { return i.barcode === barcode; });
       if (existing) {
         existing.qty++;
+        saveState();
         renderReceipt();
         showNotification(existing.name + ' ×' + existing.qty, 'success');
         return;
@@ -398,6 +473,7 @@
             price: product.price || 0,
             qty: 1
           });
+          saveState();
           renderReceipt();
           showNotification(product.name + ' добавлен', 'success');
         } else {
@@ -410,6 +486,7 @@
 
     function removeItem(index) {
       const removed = items.splice(index, 1);
+      saveState();
       renderReceipt();
       if (removed.length) showNotification(removed[0].name + ' удалён', 'success');
     }
@@ -419,6 +496,7 @@
       if (items[index].qty <= 0) {
         items.splice(index, 1);
       }
+      saveState();
       renderReceipt();
     }
 
@@ -508,6 +586,7 @@
           const totalQty = items.reduce(function(s, i) { return s + i.qty; }, 0);
           showNotification('✅ Отправлено в кассу (' + totalQty + ' позиций)', 'success');
           items = [];
+          saveState();
           renderReceipt();
         } else {
           showNotification(data.error || 'Ошибка отправки', 'error');

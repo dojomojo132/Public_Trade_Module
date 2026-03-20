@@ -1,0 +1,11 @@
+{
+  "task_id": "81f69ff3-ad2d-45a8-ba09-757b7e12649e",
+  "agent_id": "agent-backend",
+  "finished_at": "2026-03-19T23:18:11.645873Z",
+  "success": true,
+  "result": {
+    "summary": "Done: Деплой в staging",
+    "files_changed": [],
+    "_elapsed_sec": 1.0
+  }
+}
