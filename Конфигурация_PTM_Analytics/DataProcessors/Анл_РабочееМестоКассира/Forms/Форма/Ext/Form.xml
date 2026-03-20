@@ -299,6 +299,16 @@
 									<ContextMenu name="ТЧФОПКонтекстноеМеню" id="110"/>
 									<ExtendedTooltip name="ТЧФОПРасширеннаяПодсказка" id="111"/>
 								</InputField>
+								<InputField name="ТЧНалГруппа" id="114">
+									<DataPath>Объект.ТЧ.НалоговаяГруппа</DataPath>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>10</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ТЧНалГруппаКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="ТЧНалГруппаРасширеннаяПодсказка" id="116"/>
+								</InputField>
 								<InputField name="ТЧМаркаСтатус" id="91">
 									<DataPath>Объект.ТЧ.МаркаСтатус</DataPath>
 									<Visible>false</Visible>

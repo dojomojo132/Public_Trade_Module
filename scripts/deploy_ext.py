@@ -71,9 +71,9 @@ def _get_ext_dir(ext_name: str, override: str = None) -> pathlib.Path:
     return PROJ_ROOT / rel
 
 
-def _run_1c(v8exe: str, tag: str, extra_args: list, timeout: int = 30) -> int:
+def _run_1c(v8exe: str, tag: str, extra_args: list, timeout: int = 60) -> int:
     """Запускает Designer с указанными аргументами, пишет лог, возвращает exit code.
-    Таймаут 30 сек: если 1С не завершилась — зависла, надо убить и разбираться."""
+    Таймаут 60 сек: если 1С не завершилась — зависла, надо убить и разбираться."""
     LOGS_DIR.mkdir(exist_ok=True)
     log_file = LOGS_DIR / f"ext-{tag}-{int(time.time())}.log"
 
@@ -153,7 +153,7 @@ def do_load(v8exe: str, ext_name: str, ext_path: pathlib.Path) -> bool:
     code = _run_1c(v8exe, "load", [
         "/LoadConfigFromFiles", str(ext_path),
         "-Extension", ext_name,
-    ], timeout=30)
+    ], timeout=60)
 
     if code not in (0, 1):
         print(f"\n❌ ОШИБКА загрузки (exit {code})")

@@ -67,6 +67,8 @@
 			<Language>Русский</Language>
 			<Subsystem>Анл_Аналитика</Subsystem>
 			<Role>Анл_ОсновнаяРоль</Role>
+			<HTTPService>Анл_МобильнаяКасса</HTTPService>
+			<Catalog>Номенклатура</Catalog>
 			<Report>Анл_АнализПродаж</Report>
 			<Report>Анл_Возвраты</Report>
 			<Report>Анл_ВаловаяПрибыль</Report>
@@ -80,7 +82,6 @@
 			<DataProcessor>Анл_УправлениеНастройками</DataProcessor>
 			<DataProcessor>Анл_ТестовоеЗаполнениеДанных</DataProcessor>
 			<DataProcessor>Анл_ТестыРМК</DataProcessor>
-			<HTTPService>Анл_МобильнаяКасса</HTTPService>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

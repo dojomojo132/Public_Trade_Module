@@ -164,11 +164,6 @@
 					<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="13"/>
 					<ExtendedTooltip name="ЕдиницаИзмеренияExtendedTooltip" id="71"/>
 				</LabelField>
-				<LabelField name="СтавкаНДС" id="14">
-					<DataPath>Список.СтавкаНДС</DataPath>
-					<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="СтавкаНДСExtendedTooltip" id="72"/>
-				</LabelField>
 			</ChildItems>
 		</Table>
 	</ChildItems>

@@ -107,13 +107,6 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="60"/>
 					<ChildItems>
-						<InputField name="СтавкаНДС" id="16">
-							<DataPath>Объект.СтавкаНДС</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="18"/>
-						</InputField>
 						<InputField name="КодУКТЗЕД" id="22">
 							<DataPath>Объект.КодУКТЗЕД</DataPath>
 							<EditMode>EnterOnInput</EditMode>
@@ -142,26 +135,6 @@
 							<ContextMenu name="ТребуетАкцизнуюМаркуКонтекстноеМеню" id="26"/>
 							<ExtendedTooltip name="ТребуетАкцизнуюМаркуРасширеннаяПодсказка" id="27"/>
 						</CheckBoxField>
-						<InputField name="ФОП" id="50">
-							<DataPath>Объект.ФОП</DataPath>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>ФОП</v8:content>
-								</v8:item>
-							</Title>
-							<EditMode>EnterOnInput</EditMode>
-							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-							<ContextMenu name="ФОПКонтекстноеМеню" id="51"/>
-							<ExtendedTooltip name="ФОПРасширеннаяПодсказка" id="52">
-								<Title formatted="false">
-									<v8:item>
-										<v8:lang>ru</v8:lang>
-										<v8:content>ФОП, к которому относится товар (для разделения фискальных чеков)</v8:content>
-									</v8:item>
-								</Title>
-							</ExtendedTooltip>
-						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
