@@ -165,7 +165,7 @@
 		<Metadata name="Catalog.Контрагенты.Predefined" id="15806fdf-6c4b-4657-853f-37bf85e5615a.1c" configVersion="1e26ffdfd7f28e4f8b13ac31d799bcd900000000"/>
 		<Metadata name="Catalog.НалоговыеГруппы" id="0c3f99fe-4a1a-41c8-be66-01758d43d125" configVersion="924e68a5e370d2439c160e4e6020ea6c00000000">
 			<Metadata name="Catalog.НалоговыеГруппы.Attribute.КодНалоговойГруппыККТ" id="5646d3e4-a785-42b3-b98f-f5e30e652ba7"/>
-			<Metadata name="Catalog.НалоговыеГруппы.Attribute.СтавкаНДС" id="a1b2c3d4-e5f6-4789-abcd-ef0123456789"/>
+			<Metadata name="Catalog.НалоговыеГруппы.Attribute.СтавкаНДС" id="56e1f87e-e895-4024-9d83-9e94d5e0a94f"/>
 		</Metadata>
 		<Metadata name="Catalog.НастройкиПоУмолчанию" id="e1234567-890a-bcde-f123-4567890abcde" configVersion="08ecf6cc6ba0434989f71acf7021f51c00000000"/>
 		<Metadata name="Catalog.НастройкиПоУмолчанию.Predefined" id="e1234567-890a-bcde-f123-4567890abcde.1c" configVersion="b10ceb36b2da574ba161fef0572d802100000000"/>
