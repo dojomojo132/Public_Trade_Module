@@ -241,15 +241,15 @@
 				</Properties>
 			</Attribute>
 
-			<TabularSection uuid="8f3a7b2e-c4d5-4e6f-9a1b-3c5d7e9f0a2b">
+			<TabularSection uuid="a0829625-ab7f-4d49-8cde-dbdedebccd73">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.КассоваяСмена.ЧекиККМ" category="TabularSection">
-						<xr:TypeId>f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c</xr:TypeId>
-						<xr:ValueId>a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d</xr:ValueId>
+						<xr:TypeId>879e78b2-31af-49ce-840c-349d78b42644</xr:TypeId>
+						<xr:ValueId>f2177c5a-9920-43c1-98a2-1e847b9af9df</xr:ValueId>
 					</xr:GeneratedType>
 					<xr:GeneratedType name="DocumentTabularSectionRow.КассоваяСмена.ЧекиККМ" category="TabularSectionRow">
-						<xr:TypeId>b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e</xr:TypeId>
-						<xr:ValueId>c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f</xr:ValueId>
+						<xr:TypeId>ab4eb05d-4c42-49a0-9eac-89385035b7fa</xr:TypeId>
+						<xr:ValueId>46f91543-d6dd-45d6-b4cd-6a06e5214d7c</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -266,7 +266,7 @@
 					<LineNumberLength>5</LineNumberLength>
 				</Properties>
 				<ChildObjects>
-				<Attribute uuid="a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d">
+				<Attribute uuid="dd3a00e3-b001-4987-a118-3dd7e4086efd">
 					<Properties>
 						<Name>Касса</Name>
 						<Synonym>
@@ -303,7 +303,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d">
+				<Attribute uuid="25a5ebde-9eb3-4325-9426-62a58b1463eb">
 					<Properties>
 						<Name>ЧекККМ</Name>
 						<Synonym>
@@ -340,7 +340,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d">
+				<Attribute uuid="099b2094-f8fc-45ed-8e2b-f920d9c9583f">
 					<Properties>
 						<Name>Сумма</Name>
 						<Synonym>
@@ -382,7 +382,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d">
+				<Attribute uuid="419b06a0-6c5c-46b3-bf51-87b78ce33026">
 					<Properties>
 						<Name>СуммаСкидки</Name>
 						<Synonym>
@@ -426,15 +426,15 @@
 				</Attribute>
 				</ChildObjects>
 			</TabularSection>
-			<TabularSection uuid="b1c2d3e4-f5a6-4b7c-8d9e-2a3b4c5d6e7f">
+			<TabularSection uuid="b1fbde53-53b2-448a-aef0-eb87a3b2d33c">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.КассоваяСмена.ФискальныеЧеки" category="TabularSection">
-						<xr:TypeId>d4e5f6a7-b8c9-4d0e-1f23-4a5b6c7d8e9f</xr:TypeId>
-						<xr:ValueId>e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b</xr:ValueId>
+						<xr:TypeId>e3b02f5a-c3f3-4e06-9ed5-f1e0692ee9a9</xr:TypeId>
+						<xr:ValueId>b0a3e0a7-e74d-4f2f-bd48-a6ab46462871</xr:ValueId>
 					</xr:GeneratedType>
 					<xr:GeneratedType name="DocumentTabularSectionRow.КассоваяСмена.ФискальныеЧеки" category="TabularSectionRow">
-						<xr:TypeId>f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c</xr:TypeId>
-						<xr:ValueId>a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d</xr:ValueId>
+						<xr:TypeId>6c886bee-b3de-4e46-854f-4982ef42eebe</xr:TypeId>
+						<xr:ValueId>7408f625-5908-4224-9082-6214fb46668f</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -451,7 +451,7 @@
 					<LineNumberLength>5</LineNumberLength>
 				</Properties>
 				<ChildObjects>
-				<Attribute uuid="c8d9e0f1-a2b3-4c4d-5e6f-7a8b9c0d1e2f">
+				<Attribute uuid="2783cf18-a066-4b3c-b105-aa2cc6748fda">
 					<Properties>
 						<Name>ВидОперации</Name>
 						<Synonym>
@@ -488,7 +488,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="b2c3d4e5-f6a7-4b8c-9d0e-3a4b5c6d7e8f">
+				<Attribute uuid="39badb3b-59a2-4197-80f8-1bdcec778c19">
 					<Properties>
 						<Name>ФОП</Name>
 						<Synonym>
@@ -525,7 +525,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="b3c4d5e6-f7a8-4b9c-0d1e-4a5b6c7d8e9f">
+				<Attribute uuid="730d464f-59b6-4fd9-8a68-32249b292ee5">
 					<Properties>
 						<Name>ФискальныйНомер</Name>
 						<Synonym>
@@ -566,7 +566,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="b4c5d6e7-f8a9-4b0c-1d2e-5a6b7c8d9e0f">
+				<Attribute uuid="75b5a4e1-aff4-4ef4-b55b-acc3463abaf5">
 					<Properties>
 						<Name>Сумма</Name>
 						<Synonym>
@@ -608,7 +608,7 @@
 						<DataHistory>Use</DataHistory>
 					</Properties>
 				</Attribute>
-				<Attribute uuid="b5c6d7e8-f9a0-4b1c-2d3e-6a7b8c9d0e1f">
+				<Attribute uuid="dea62c95-4eb2-4276-b9b0-df084ab37c8d">
 					<Properties>
 						<Name>ФискальныйЧек</Name>
 						<Synonym>

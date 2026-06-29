@@ -154,7 +154,7 @@
 			<Metadata name="Catalog.КассовоеОборудование.Attribute.АдресСервера" id="e6ed2ea6-e566-4bda-9d18-df977a34ce3a"/>
 		</Metadata>
 		<Metadata name="Catalog.Кассы" id="ec334888-87fd-42b9-8d09-97bf81837541" configVersion="8044508dca82a94f868879d3c0d1c88100000000">
-			<Metadata name="Catalog.Кассы.Attribute.ДоступнаПриРасчете" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"/>
+			<Metadata name="Catalog.Кассы.Attribute.ДоступнаПриРасчете" id="f2177c5a-9920-43c1-98a2-1e847b9af9df"/>
 			<Metadata name="Catalog.Кассы.Attribute.Оборудование" id="b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e"/>
 			<Metadata name="Catalog.Кассы.Attribute.ВидКассы" id="c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f"/>
 		</Metadata>
@@ -1274,17 +1274,17 @@
 			<Metadata name="Document.КассоваяСмена.Attribute.ДатаОкончания" id="b1163afd-7f00-4e59-a521-be43c31f821a"/>
 			<Metadata name="Document.КассоваяСмена.Attribute.ДатаНачала" id="cbba5721-834d-40c9-91e4-957718a4d424"/>
 			<Metadata name="Document.КассоваяСмена.Attribute.Касса" id="ce733a7f-7b7c-45f5-a290-a0cf6c2990e0"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ" id="8f3a7b2e-c4d5-4e6f-9a1b-3c5d7e9f0a2b"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Касса" id="a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.ЧекККМ" id="a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Сумма" id="a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.СуммаСкидки" id="a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки" id="b1c2d3e4-f5a6-4b7c-8d9e-2a3b4c5d6e7f"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ВидОперации" id="c8d9e0f1-a2b3-4c4d-5e6f-7a8b9c0d1e2f"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФОП" id="b2c3d4e5-f6a7-4b8c-9d0e-3a4b5c6d7e8f"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйНомер" id="b3c4d5e6-f7a8-4b9c-0d1e-4a5b6c7d8e9f"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.Сумма" id="b4c5d6e7-f8a9-4b0c-1d2e-5a6b7c8d9e0f"/>
-			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйЧек" id="b5c6d7e8-f9a0-4b1c-2d3e-6a7b8c9d0e1f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ" id="a0829625-ab7f-4d49-8cde-dbdedebccd73"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Касса" id="dd3a00e3-b001-4987-a118-3dd7e4086efd"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.ЧекККМ" id="25a5ebde-9eb3-4325-9426-62a58b1463eb"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Сумма" id="099b2094-f8fc-45ed-8e2b-f920d9c9583f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.СуммаСкидки" id="419b06a0-6c5c-46b3-bf51-87b78ce33026"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки" id="b1fbde53-53b2-448a-aef0-eb87a3b2d33c"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ВидОперации" id="2783cf18-a066-4b3c-b105-aa2cc6748fda"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФОП" id="39badb3b-59a2-4197-80f8-1bdcec778c19"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйНомер" id="730d464f-59b6-4fd9-8a68-32249b292ee5"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.Сумма" id="75b5a4e1-aff4-4ef4-b55b-acc3463abaf5"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйЧек" id="dea62c95-4eb2-4276-b9b0-df084ab37c8d"/>
 		</Metadata>
 		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора" id="eaf6e1c9-9ff3-4202-a75d-c47cc70385c4" configVersion="6a5096f243b05940b9c13558d97f992600000000"/>
 		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора.Form" id="eaf6e1c9-9ff3-4202-a75d-c47cc70385c4.0" configVersion="e8a5e2e8056c4449bc8e4bda793d26bb00000000"/>
@@ -1386,7 +1386,7 @@
 			<Metadata name="Document.ЧекККМ.TabularSection.Оплата" id="940d5070-1c93-4b4c-9c3f-6c2df54f8845"/>
 			<Metadata name="Document.ЧекККМ.Attribute.Статус" id="a775a6e9-3f65-4272-baca-892fd183bd4b"/>
 			<Metadata name="Document.ЧекККМ.TabularSection.Товары.Attribute.Количество" id="ad376bd8-f424-4104-a0ff-9028b2082fd7"/>
-			<Metadata name="Document.ЧекККМ.TabularSection.Оплата.Attribute.КассаОплаты" id="b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e"/>
+			<Metadata name="Document.ЧекККМ.TabularSection.Оплата.Attribute.КассаОплаты" id="ab4eb05d-4c42-49a0-9eac-89385035b7fa"/>
 			<Metadata name="Document.ЧекККМ.TabularSection.Товары.Attribute.НалоговаяГруппа" id="dd6dfe38-854e-46de-ad89-6537e1f547fa"/>
 			<Metadata name="Document.ЧекККМ.TabularSection.Товары.Attribute.СуммаСкидки" id="e11f2423-0e09-4f22-8446-38606e159dd0"/>
 			<Metadata name="Document.ЧекККМ.Attribute.ДисконтнаяКарта" id="f0b41832-b81c-48d7-9c9b-2cab59c8e69d"/>
@@ -1536,7 +1536,7 @@
 			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.Продажа" id="d1e2f3a4-b5c6-4d7e-8f90-1a2b3c4d5e6f"/>
 			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.Возврат" id="d2e3f4a5-b6c7-4d8e-9f01-2a3b4c5d6e7f"/>
 			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.Внесение" id="d3e4f5a6-b7c8-4d9e-0f12-3a4b5c6d7e8f"/>
-			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.Изъятие" id="d4e5f6a7-b8c9-4d0e-1f23-4a5b6c7d8e9f"/>
+			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.Изъятие" id="e3b02f5a-c3f3-4e06-9ed5-f1e0692ee9a9"/>
 			<Metadata name="Enum.ВидыОперацийФискальногоЧека.EnumValue.ZОтчет" id="d5e6f7a8-b9c0-4d1e-2f34-5a6b7c8d9e0f"/>
 		</Metadata>
 		<Metadata name="Enum.ВидыОплаты" id="88886a4e-be50-4ade-9113-363f3f5513db" configVersion="a0ce5ce1be922846883f3eaf857bba1e00000000">
@@ -2037,15 +2037,15 @@
 			<Metadata name="Enum.ТипыЧековКоррекции.EnumValue.Самостоятельно" id="309e6151-ac46-40d7-9326-67f35caccf15"/>
 		</Metadata>
 		<Metadata name="FunctionalOption._ДемоИзолированноеПодключенияВнешнихКомпонент" id="d8a5dfff-a56c-4fa4-ba4d-03d007f21faf" configVersion="09b7d94ed859794fb3c6eab7462f9b9a00000000"/>
-		<Metadata name="HTTPService.ТоварыАПИ" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" configVersion="98565a513cd00544979182aa8bb287b800000000">
+		<Metadata name="HTTPService.ТоварыАПИ" id="f2177c5a-9920-43c1-98a2-1e847b9af9df" configVersion="98565a513cd00544979182aa8bb287b800000000">
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПриёмЧека.Method.Приём" id="a7b8c9d0-e1f2-4a3b-4c5d-6e7f80910213"/>
-			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара" id="b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e"/>
-			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара.Method.Поиск" id="c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"/>
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара" id="ab4eb05d-4c42-49a0-9eac-89385035b7fa"/>
+			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПоискТовара.Method.Поиск" id="46f91543-d6dd-45d6-b4cd-6a06e5214d7c"/>
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.СинхронизацияТоваров" id="d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80"/>
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.СинхронизацияТоваров.Method.Синхронизация" id="e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091"/>
 			<Metadata name="HTTPService.ТоварыАПИ.URLTemplate.ПриёмЧека" id="f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102"/>
 		</Metadata>
-		<Metadata name="HTTPService.ТоварыАПИ.Module" id="a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d.0" configVersion="639e95e26dff0443add55de444b0976700000000"/>
+		<Metadata name="HTTPService.ТоварыАПИ.Module" id="f2177c5a-9920-43c1-98a2-1e847b9af9df.0" configVersion="639e95e26dff0443add55de444b0976700000000"/>
 		<Metadata name="InformationRegister._ДемоШтрихкоды" id="dd6bfd89-fc63-4cd8-82b9-51f22dd721ac" configVersion="b33d463f8805a545bc5a8f0b9a6c7ee900000000">
 			<Metadata name="InformationRegister._ДемоШтрихкоды.Dimension.Владелец" id="58d18ed2-cc97-4534-98d1-0253d5b97383"/>
 			<Metadata name="InformationRegister._ДемоШтрихкоды.Dimension.Штрихкод" id="6255aea4-d834-4978-b836-67894ba8e2fd"/>
