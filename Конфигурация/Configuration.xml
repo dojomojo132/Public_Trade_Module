@@ -665,6 +665,7 @@
 			<Document>ВозвратТовараОтПокупателя</Document>
 			<Document>ИнвентаризацияТоваров</Document>
 			<Document>ПриходТовара</Document>
+			<Document>ФискальныйПриходТоваров</Document>
 			<Document>СписаниеТовара</Document>
 			<Document>Переоценка</Document>
 			<Document>ПриходныйКассовыйОрдер</Document>
@@ -774,6 +775,7 @@
 			<InformationRegister>УдалитьНумерацияЧековККТ</InformationRegister>
 			<InformationRegister>ФискальныеОперации</InformationRegister>
 			<InformationRegister>Анл_МобильнаяКорзина</InformationRegister>
+			<AccumulationRegister>ФискальныеОстатки</AccumulationRegister>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 			<AccumulationRegister>Взаиморасчеты</AccumulationRegister>
 			<AccumulationRegister>ДенежныеСредства</AccumulationRegister>

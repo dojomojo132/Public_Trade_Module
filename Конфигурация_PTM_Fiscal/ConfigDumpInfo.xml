@@ -3,6 +3,8 @@
 	<ConfigVersions>
 		<Metadata name="CommonModule.Фскл_ФискализацияСервер" id="bf98b144-f1b5-4aa1-a9a8-c11ef2d0208a" configVersion="c2e6d5b9dd2590fb9b575d92861cc61a03a69edc"/>
 		<Metadata name="CommonModule.Фскл_ФискализацияСервер.Module" id="bf98b144-f1b5-4aa1-a9a8-c11ef2d0208a.0" configVersion="cb9b0d6b01c05d0bdee0e374d0d53365c409e66c"/>
+		<Metadata name="CommonModule.Фскл_ОстаткиСервер" id="d6e7f809-1234-4345-d6e7-f8091a2b3c4e" configVersion="f1a2b3c4d5e6478901234567890abcdef00000000"/>
+		<Metadata name="CommonModule.Фскл_ОстаткиСервер.Module" id="d6e7f809-1234-4345-d6e7-f8091a2b3c4e.0" configVersion="a2b3c4d5e6f748901234567890abcdef00000001"/>
 		<Metadata name="Configuration.PTM_Fiscal" id="bca84e16-4909-49b0-8b66-47b2ea29f0b3" configVersion="50a368db4971d25ece1d1e3ed28e51da3436a237"/>
 		<Metadata name="DataProcessor.Фскл_НастройкиФискализации" id="3872e152-aa2c-4781-ab10-06b36814d87b" configVersion="300a27f88a1cd1041deab569ea3d73dfc5598980"/>
 		<Metadata name="DataProcessor.Фскл_НастройкиФискализации.ObjectModule" id="3872e152-aa2c-4781-ab10-06b36814d87b.0" configVersion="61491b04604d422be5910c576668e12734930ed7"/>

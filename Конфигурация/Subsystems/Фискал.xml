@@ -27,6 +27,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыДрайверовПРРО</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыФискализации</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РаспределениеНалоговыхГрупп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ФискальныеОстатки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ФискальныйПриходТоваров</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

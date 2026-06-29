@@ -68,6 +68,7 @@
 			<Subsystem>Фскл_Фискализация</Subsystem>
 			<Role>Фскл_ОсновнаяРоль</Role>
 			<CommonModule>Фскл_ФискализацияСервер</CommonModule>
+			<CommonModule>Фскл_ОстаткиСервер</CommonModule>
 			<DataProcessor>Фскл_НастройкиФискализации</DataProcessor>
 		</ChildObjects>
 	</Configuration>

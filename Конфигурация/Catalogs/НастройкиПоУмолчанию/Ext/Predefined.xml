@@ -84,4 +84,10 @@
 		<Description>Касса безналичных</Description>
 		<IsFolder>false</IsFolder>
 	</Item>
+	<Item id="e5f6a7b8-c9d0-4123-5678-901234efabcd">
+		<Name>КонтролироватьФискальныеОстатки</Name>
+		<Code>000000016</Code>
+		<Description>Контролировать фискальные остатки</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
 </PredefinedData>
