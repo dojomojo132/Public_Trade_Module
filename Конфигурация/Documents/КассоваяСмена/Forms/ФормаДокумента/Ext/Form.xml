@@ -80,6 +80,30 @@
 							<ContextMenu name="ЧекиККМКонтекстноеМеню" id="35"/>
 							<AutoCommandBar name="ЧекиККМКоманднаяПанель" id="36"/>
 							<ExtendedTooltip name="ЧекиККМРасширеннаяПодсказка" id="37"/>
+							<SearchStringAddition name="ЧекиККМСтрокаПоиска" id="77">
+								<AdditionSource>
+									<Item>ЧекиККМ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекиККМСтрокаПоискаКонтекстноеМеню" id="78"/>
+								<ExtendedTooltip name="ЧекиККМСтрокаПоискаРасширеннаяПодсказка" id="79"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЧекиККМСостояниеПросмотра" id="80">
+								<AdditionSource>
+									<Item>ЧекиККМ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекиККМСостояниеПросмотраКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="ЧекиККМСостояниеПросмотраРасширеннаяПодсказка" id="82"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЧекиККМУправлениеПоиском" id="83">
+								<AdditionSource>
+									<Item>ЧекиККМ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекиККМУправлениеПоискомКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="ЧекиККМУправлениеПоискомРасширеннаяПодсказка" id="85"/>
+							</SearchControlAddition>
 							<ChildItems>
 								<LabelField name="ЧекиККМНомерСтроки" id="38">
 									<DataPath>Объект.ЧекиККМ.LineNumber</DataPath>
@@ -135,6 +159,30 @@
 							<ContextMenu name="ФискальныеЧекиКонтекстноеМеню" id="56"/>
 							<AutoCommandBar name="ФискальныеЧекиКоманднаяПанель" id="57"/>
 							<ExtendedTooltip name="ФискальныеЧекиРасширеннаяПодсказка" id="58"/>
+							<SearchStringAddition name="ФискальныеЧекиСтрокаПоиска" id="86">
+								<AdditionSource>
+									<Item>ФискальныеЧеки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ФискальныеЧекиСтрокаПоискаКонтекстноеМеню" id="87"/>
+								<ExtendedTooltip name="ФискальныеЧекиСтрокаПоискаРасширеннаяПодсказка" id="88"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ФискальныеЧекиСостояниеПросмотра" id="89">
+								<AdditionSource>
+									<Item>ФискальныеЧеки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ФискальныеЧекиСостояниеПросмотраКонтекстноеМеню" id="90"/>
+								<ExtendedTooltip name="ФискальныеЧекиСостояниеПросмотраРасширеннаяПодсказка" id="91"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ФискальныеЧекиУправлениеПоиском" id="92">
+								<AdditionSource>
+									<Item>ФискальныеЧеки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ФискальныеЧекиУправлениеПоискомКонтекстноеМеню" id="93"/>
+								<ExtendedTooltip name="ФискальныеЧекиУправлениеПоискомРасширеннаяПодсказка" id="94"/>
+							</SearchControlAddition>
 							<ChildItems>
 								<LabelField name="ФискальныеЧекиНомерСтроки" id="59">
 									<DataPath>Объект.ФискальныеЧеки.LineNumber</DataPath>
