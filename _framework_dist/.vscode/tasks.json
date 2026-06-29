@@ -1,0 +1,41 @@
+﻿{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Git push",
+            "type": "shell",
+            "command": "git add -A; python scripts/_git_commit.py",
+            "problemMatcher": []
+        },
+        {
+            "label": "Deploy — Full (Load + UpdateDB)",
+            "type": "shell",
+            "command": "python scripts/_ps_wrapper.py deploy -Action Full",
+            "problemMatcher": []
+        },
+        {
+            "label": "Deploy — Dump (ИБ → файлы)",
+            "type": "shell",
+            "command": "python scripts/_ps_wrapper.py deploy -Action Dump",
+            "problemMatcher": []
+        },
+        {
+            "label": "Validate config",
+            "type": "shell",
+            "command": "python scripts/_ps_wrapper.py validate",
+            "problemMatcher": []
+        },
+        {
+            "label": "Monitor errors",
+            "type": "shell",
+            "command": "python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 10",
+            "problemMatcher": []
+        },
+        {
+            "label": "Local backup",
+            "type": "shell",
+            "command": "python scripts/_local_backup.py \"manual-backup\"",
+            "problemMatcher": []
+        }
+    ]
+}

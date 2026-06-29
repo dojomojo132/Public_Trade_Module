@@ -1,0 +1,14 @@
+{
+  "name": "configurator_screenshot",
+  "description": "Сделать скриншот окна Конфигуратора 1С. Возвращает base64 PNG. window_only=true захватывает только окно, false — весь экран. Используй для проверки текущего состояния и визуальной навигации.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "window_only": {
+        "type": "boolean",
+        "description": "True = только окно Конфигуратора, False = весь экран",
+        "default": true
+      }
+    }
+  }
+}

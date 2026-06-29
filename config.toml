@@ -1,0 +1,76 @@
+model = "deepseek-v4-pro:cloud"
+provider = "ollama"
+
+[display]
+show_context_meter = true
+show_status_bar = true
+
+[http_headers]
+
+[mcp_servers.playwright]
+args = ["@playwright/mcp@latest"]
+command = "npx"
+
+[models.flash]
+model = "deepseek-v4-flash:cloud"
+provider = "ollama"
+
+[notifications]
+events = [
+    "task_complete",
+    "error",
+]
+method = "bel"
+
+[projects.'\\?\C:\Users\vgume']
+trust_level = "trusted"
+
+[projects.'\\?\D:\Git\AdminReport\AdminReport_Project']
+trust_level = "trusted"
+
+[projects.'\\?\D:\Git\EquipmentManager']
+trust_level = "trusted"
+
+[projects.'\\?\D:\Git\Public_Trade_Module']
+trust_level = "trusted"
+
+[projects.'\\?\D:\Git\Test_DEEPSEAK']
+trust_level = "trusted"
+
+[projects.'\\?\D:\Git\Test_DEEPSEAK\shopbox']
+trust_level = "trusted"
+
+[providers.atlascloud.http_headers]
+
+[providers.deepseek.http_headers]
+
+[providers.fireworks.http_headers]
+
+[providers.novita.http_headers]
+
+[providers.nvidia_nim.http_headers]
+
+[providers.ollama]
+base_url = "http://localhost:11434"
+
+[providers.ollama.http_headers]
+
+[providers.openai.http_headers]
+
+[providers.openrouter]
+api_key = "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"
+
+[providers.openrouter.http_headers]
+
+[providers.sglang.http_headers]
+
+[providers.vllm.http_headers]
+
+[sidebar]
+auto_switch_on_checklist = true
+default_tab = "work"
+width = 32
+
+[ui]
+collapse_thinking = true
+collapse_tools = true

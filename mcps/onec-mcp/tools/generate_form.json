@@ -1,0 +1,49 @@
+{
+  "name": "generate_form",
+  "description": "Генерирует XML-код формы 1С на основе метаданных объекта. Возвращает 3 блока: descriptor XML, Form.xml и Module.bsl. Агент ОБЯЗАН сохранить файлы через create_file в оба пути (Конфигурация/Проверка/ и Конфигурация/). Form.xml содержит элементы InputField для реквизитов и Table для табличных частей. Все id элементов, xmlns, BOM, CRLF - корректны.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных (Catalogs, Documents, DataProcessors, Reports)",
+        "enum": [
+          "Catalogs",
+          "Documents",
+          "DataProcessors",
+          "Reports",
+          "ChartsOfCharacteristicTypes"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта метаданных"
+      },
+      "formType": {
+        "type": "string",
+        "description": "Тип формы: element (форма элемента справочника), group (форма группы справочника), list (форма списка), document (форма документа), dataprocessor (форма обработки/отчёта)",
+        "default": "element",
+        "enum": [
+          "element",
+          "group",
+          "list",
+          "document",
+          "dataprocessor"
+        ]
+      },
+      "formName": {
+        "type": "string",
+        "description": "Имя формы (по умолчанию генерируется автоматически: ФормаЭлемента, ФормаГруппы, ФормаСписка, ФормаДокумента)"
+      },
+      "formSynonym": {
+        "type": "string",
+        "description": "Синоним формы (по умолчанию генерируется из имени формы)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name",
+      "formType"
+    ]
+  }
+}

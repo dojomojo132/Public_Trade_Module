@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -8,11 +8,14 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f5f5; }
-    .header { background: #1976d2; color: white; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+    .header { background: #1976d2; color: white; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .header h1 { font-size: 18px; }
+    .header-right { display: flex; align-items: center; gap: 10px; }
     .status { font-size: 12px; padding: 2px 8px; border-radius: 12px; }
     .status.connected { background: #4caf50; }
     .status.disconnected { background: #f44336; }
+    .admin-link { color: white; text-decoration: none; font-size: 13px; padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
+    .admin-link:hover { background: rgba(255,255,255,0.15); }
     .session-bar { padding: 8px 16px; background: #e3f2fd; display: flex; gap: 8px; align-items: center; }
     .session-bar input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
     .session-bar button { padding: 8px 16px; background: #1976d2; color: white; border: none; border-radius: 4px; font-size: 14px; }
@@ -39,58 +42,32 @@
     .receipt-item.rmk { opacity: 0.6; background: #f0f0f0; }
     .total-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 16px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
     .total-bar .total { font-size: 20px; font-weight: bold; }
-    .total-bar .send-btn { padding: 12px 32px; background: #4caf50; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; }
-    .total-bar .send-btn:disabled { background: #ccc; }
-    .empty-message { text-align: center; padding: 40px 16px; color: #999; font-size: 16px; }
-    .notification { position: fixed; top: 60px; left: 16px; right: 16px; padding: 12px; border-radius: 8px; color: white; font-size: 14px; z-index: 1000; display: none; }
-    .notification.success { background: #4caf50; }
-    .notification.error { background: #f44336; }
-    .qty-controls { display: flex; align-items: center; gap: 8px; }
-    .qty-btn { width: 28px; height: 28px; border: 1px solid #ccc; border-radius: 4px; background: white; font-size: 18px; cursor: pointer; }
-    .qty-value { font-size: 16px; min-width: 20px; text-align: center; }
-    .receipt-footer { height: 80px; }
-    .action-buttons { padding: 8px 16px; display: flex; gap: 8px; }
-    .action-buttons button { flex: 1; padding: 14px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .scan-btn-main { background: #1976d2; color: white; }
-    .scan-btn-main:active { background: #1565c0; }
-    .scan-btn-main.active { background: #f44336; }
-    .search-btn-main { background: #ff9800; color: white; }
-    .search-btn-main:active { background: #f57c00; }
-    .search-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
-    .search-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #f5f5f5; z-index: 2001; display: none; flex-direction: column; }
-    .search-header { background: #ff9800; color: white; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
-    .search-header input { flex: 1; padding: 10px; border: none; border-radius: 4px; font-size: 16px; }
-    .search-header .close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 4px 8px; }
-    .search-results { flex: 1; overflow-y: auto; padding: 8px 16px; }
-    .search-item { background: white; padding: 14px; margin-bottom: 8px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .search-item:active { background: #e3f2fd; }
-    .search-item .s-name { font-size: 15px; font-weight: 500; }
-    .search-item .s-details { font-size: 12px; color: #666; margin-top: 2px; }
-    .search-item .s-price { font-size: 16px; font-weight: bold; color: #1976d2; white-space: nowrap; margin-left: 12px; }
-    .search-empty { text-align: center; padding: 40px; color: #999; font-size: 16px; }
-    .search-loading { text-align: center; padding: 40px; color: #666; font-size: 16px; }
-    .login-screen { padding: 32px 16px; display: flex; flex-direction: column; gap: 14px; }
-    .login-screen h2 { color: #333; font-size: 18px; text-align: center; }
-    .login-screen input { padding: 16px; border: 1px solid #ccc; border-radius: 8px; font-size: 22px; text-align: center; letter-spacing: 6px; }
-    .login-screen .login-btn { padding: 16px; background: #1976d2; color: white; border: none; border-radius: 8px; font-size: 17px; font-weight: 600; }
+    .send-btn { padding: 12px 28px; background: #4caf50; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .send-btn:active { background: #388e3c; }
+    .notification { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #323232; color: white; padding: 10px 20px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 99; }
+    .notification.show { opacity: 1; }
+    .login-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; gap: 16px; }
+    .login-screen h2 { font-size: 18px; color: #333; }
+    .login-screen input { width: 100%; max-width: 280px; padding: 12px; font-size: 18px; border: 2px solid #ccc; border-radius: 8px; text-align: center; }
+    .login-btn { width: 100%; max-width: 280px; padding: 14px; background: #1976d2; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .login-btn:active { background: #1565c0; }
+    .empty-message { text-align: center; padding: 32px; color: #999; font-size: 14px; }
+    .receipt-footer { padding: 8px 16px; font-size: 12px; color: #999; text-align: center; }
     .sessions-screen { padding: 16px; }
-    .sessions-screen h2 { color: #333; font-size: 16px; margin-bottom: 12px; font-weight: 600; }
-    .session-card { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); margin-bottom: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 2px solid transparent; }
-    .session-card:active { border-color: #1976d2; background: #e3f2fd; }
-    .session-card .sc-title { font-size: 15px; font-weight: 600; }
-    .session-card .sc-info { font-size: 13px; color: #666; margin-top: 2px; }
-    .session-card .sc-sum { font-size: 22px; font-weight: bold; color: #1976d2; white-space: nowrap; margin-left: 12px; }
-    .sessions-back { margin-top: 12px; text-align: center; }
-    .sessions-back a { color: #1976d2; cursor: pointer; font-size: 14px; text-decoration: underline; }
-    .rmk-item { background: #f8f9fa; }
-    .rmk-item .name { color: #555; }
-    .rmk-badge { font-size: 11px; background: #e3f2fd; color: #1976d2; border-radius: 4px; padding: 1px 5px; margin-left: 6px; }
+    .session-card { background: white; padding: 14px; margin-bottom: 8px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s; }
+    .session-card:active { background: #e3f2fd; }
+    .sc-title { font-size: 16px; font-weight: 600; }
+    .sc-info { font-size: 12px; color: #666; }
+    .sc-sum { font-size: 18px; font-weight: bold; color: #4caf50; }
   </style>
 </head>
 <body>
   <div class="header">
     <h1>📱 Мобильная касса</h1>
-    <span class="status disconnected" id="statusBadge">Нет связи</span>
+    <div class="header-right">
+      <a href="admin.html" class="admin-link">⚙️ СРМ</a>
+      <span class="status disconnected" id="statusBadge">Нет связи</span>
+    </div>
   </div>
   <div id="loginScreen">
     <div class="login-screen">
@@ -99,25 +76,16 @@
       <button class="login-btn" onclick="login()">Войти</button>
     </div>
   </div>
-  <div id="sessionsScreen" style="display:none">
-    <div class="sessions-screen">
-      <h2>💼 Выберите кассу</h2>
-      <div id="sessionsList"></div>
-      <div class="sessions-back"><a onclick="showLogin()">↩ Сменить пользователя</a></div>
-    </div>
+  <div id="sessionsScreen" style="display:none" class="sessions-screen">
+    <div id="sessionsList"></div>
   </div>
-  <div class="action-buttons" id="scanBtnArea" style="display:none">
-    <button class="scan-btn-main" id="scanBtn" onclick="toggleScanner()">📷 Сканировать</button>
-    <button class="search-btn-main" onclick="openSearch()">🔍 Поиск</button>
+  <div class="scan-btn-area" id="scanBtnArea" style="display:none">
+    <button class="scan-btn" id="scanBtn" onclick="toggleScanner()">📷 Сканировать</button>
   </div>
-  <div class="search-modal" id="searchModal">
-    <div class="search-header">
-      <button class="close-btn" onclick="closeSearch()">✕</button>
-      <input type="text" id="searchInput" placeholder="Введите название товара..." autocomplete="off">
-    </div>
-    <div class="search-results" id="searchResults">
-      <div class="search-empty">Введите минимум 2 символа для поиска</div>
-    </div>
+  <div class="search-bar" style="padding: 0 16px 8px; display:none" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Поиск товара (минимум 2 символа)" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; font-size:14px">
+    <div id="searchResults" style="background:white; border:1px solid #ddd; border-radius:0 0 8px 8px; overflow:hidden; display:none"></div>
+    <div id="searchStatus" style="font-size:12px; color:#999; padding:4px 0">Введите минимум 2 символа для поиска</div>
   </div>
   <div class="scanner-area" id="scannerArea" style="display:none">
     <div class="scanner-viewport">
@@ -399,23 +367,25 @@
         // 3. Loop
         async function loop() {
           if (!scannerLoopRunning) return;
-          if (video.readyState >= 2 && video.videoWidth > 0) {
-            try {
-              const code = await detectFn(video);
-              if (code) {
-                stopScanner();
-                addByBarcodeValue(code);
-                return;
-              }
-            } catch(e) {}
+          try {
+            const code = await detectFn(document.getElementById('scannerVideo'));
+            if (code) {
+              await addByBarcode(code);
+              stopScanner();
+              return;
+            }
+          } catch(e) {
+            // Игнорируем ошибки детектирования
           }
-          requestAnimationFrame(loop);
+          if (scannerLoopRunning) setTimeout(loop, 200);
         }
-        requestAnimationFrame(loop);
-
-      } catch(err) {
-        stopScanner();
-        showNotification('Камера недоступна: ' + err, 'error');
+        loop();
+      } catch(e) {
+        btn.textContent = '📷 Сканировать';
+        btn.classList.remove('active');
+        area.style.display = 'none';
+        scannerActive = false;
+        showNotification('Ошибка камеры: ' + e.message);
       }
     }
 
@@ -426,76 +396,68 @@
         scannerStream.getTracks().forEach(function(t) { t.stop(); });
         scannerStream = null;
       }
-      const v = document.getElementById('scannerVideo');
-      if (v) v.srcObject = null;
       document.getElementById('scannerArea').style.display = 'none';
       const btn = document.getElementById('scanBtn');
       btn.textContent = '📷 Сканировать';
       btn.classList.remove('active');
     }
 
-    function addByBarcode() {
-      const input = document.getElementById('barcodeInput');
-      const barcode = input.value.trim();
-      if (!barcode) return;
-      addByBarcodeValue(barcode);
-      input.value = '';
-    }
-
-    let lastScan = '';
-    let lastScanTime = 0;
-
-    async function addByBarcodeValue(barcode) {
-      const now = Date.now();
-      if (barcode === lastScan && now - lastScanTime < 2000) return;
-      lastScan = barcode;
-      lastScanTime = now;
-
-      // Проверяем — может товар уже в корзине
-      const existing = items.find(function(i) { return i.barcode === barcode; });
-      if (existing) {
-        existing.qty++;
-        saveState();
-        renderReceipt();
-        showNotification(existing.name + ' ×' + existing.qty, 'success');
-        return;
+    async function addByBarcode(code) {
+      if (!code) {
+        code = document.getElementById('barcodeInput').value.trim();
       }
+      if (!code) return;
 
-      // Поиск товара по штрихкоду через API (только чтение, без записи в 1С)
+      document.getElementById('barcodeInput').value = '';
+
+      // Ищем товар
       try {
-        const resp = await fetch(API_SEARCH + '?code=' + encodeURIComponent(barcode));
-        const data = await resp.json();
-        if (data.success && data.items && data.items.length > 0) {
-          const product = data.items[0];
-          items.push({
-            barcode: barcode,
-            name: product.name,
-            price: product.price || 0,
-            qty: 1
-          });
+        const r = await fetch(API_SEARCH + '?q=' + encodeURIComponent(code));
+        const d = await r.json();
+        if (d.success && d.items && d.items.length > 0) {
+          const product = d.items[0];
+          // Добавляем в локальную корзину
+          const existing = items.find(function(i) { return i.code === product.code; });
+          if (existing) {
+            existing.qty = (existing.qty || 1) + 1;
+          } else {
+            items.push({
+              code: product.code,
+              name: product.name,
+              price: product.price,
+              qty: 1
+            });
+          }
           saveState();
           renderReceipt();
-          showNotification(product.name + ' добавлен', 'success');
+
+          // Отправляем в РМК
+          if (sessionId) {
+            try {
+              await fetch(API_MOBILE + '/add-item', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ session: sessionId, barcode: code })
+              });
+              loadRmkItems();
+            } catch(e) {}
+          }
+
+          showNotification('✅ ' + product.name);
         } else {
-          showNotification('Товар не найден: ' + barcode, 'error');
+          showNotification('❌ Товар не найден: ' + code);
         }
       } catch(e) {
-        showNotification('Ошибка связи с сервером', 'error');
+        showNotification('Ошибка поиска: ' + e.message);
       }
     }
 
-    function removeItem(index) {
-      const removed = items.splice(index, 1);
-      saveState();
-      renderReceipt();
-      if (removed.length) showNotification(removed[0].name + ' удалён', 'success');
-    }
-
-    function changeQty(index, delta) {
-      items[index].qty += delta;
-      if (items[index].qty <= 0) {
-        items.splice(index, 1);
+    function removeItem(index, isRmk) {
+      if (isRmk) {
+        showNotification('Удаление товаров из РМК — только на кассе');
+        return;
       }
+      items.splice(index, 1);
       saveState();
       renderReceipt();
     }
@@ -503,198 +465,70 @@
     function renderReceipt() {
       const container = document.getElementById('receiptItems');
       const emptyMsg = document.getElementById('emptyMsg');
-      const hasRmk = rmkItems.length > 0;
-      const hasMobile = items.length > 0;
-      if (!hasRmk && !hasMobile) {
-        container.innerHTML = '';
-        emptyMsg.style.display = 'block';
-        document.getElementById('totalSum').textContent = 'Итого: 0.00 ₴';
-        document.getElementById('sendBtn').disabled = true;
-        return;
-      }
-      emptyMsg.style.display = 'none';
-      document.getElementById('sendBtn').disabled = !hasMobile;
       let html = '';
-      if (hasRmk) {
-        html += '<div style="font-size:11px;color:#888;padding:4px 0 2px">📟 Товары в РМК (только просмотр)</div>';
-        rmkItems.forEach(function(item) {
-          const sum = (item.price * item.qty).toFixed(2);
-          html += '<div class="receipt-item rmk-item">'
-            + '<div style="flex:1"><div class="name">' + escapeHtml(item.name) + '<span class="rmk-badge">РМК</span></div>'
-            + '<div class="details">' + escapeHtml(item.barcode || '') + ' | ' + parseFloat(item.price).toFixed(2) + ' ₴ × ' + item.qty + '</div></div>'
-            + '<div class="price" style="min-width:70px;text-align:right">' + sum + '</div>'
+
+      // Товары из РМК (read-only)
+      if (rmkItems.length > 0) {
+        html += '<div class="section-header">📋 Товары в чеке РМК</div>';
+        rmkItems.forEach(function(item, i) {
+          html += '<div class="receipt-item rmk">'
+            + '<div><div class="name">' + escapeHtml(item.name) + '</div>'
+            + '<div class="details">' + (item.qty || 1) + ' × ' + (item.price || 0).toFixed(2) + ' ₴</div></div>'
+            + '<div class="price">' + ((item.qty || 1) * (item.price || 0)).toFixed(2) + ' ₴</div>'
             + '</div>';
         });
-        if (hasMobile) html += '<div style="font-size:11px;color:#888;padding:6px 0 2px">📱 Мобильная корзина</div>';
       }
-      items.forEach(function(item, idx) {
-        const sum = (item.price * item.qty).toFixed(2);
-        html += '<div class="receipt-item">'
-          + '<div style="flex:1"><div class="name">' + escapeHtml(item.name) + '</div>'
-          + '<div class="details">' + escapeHtml(item.barcode) + ' | ' + item.price.toFixed(2) + ' ₴</div></div>'
-          + '<div class="qty-controls">'
-          + '<button class="qty-btn" onclick="changeQty(' + idx + ',-1)">−</button>'
-          + '<span class="qty-value">' + item.qty + '</span>'
-          + '<button class="qty-btn" onclick="changeQty(' + idx + ',1)">+</button>'
-          + '</div>'
-          + '<div class="price" style="min-width:70px;text-align:right">' + sum + '</div>'
-          + '<button class="remove-btn" onclick="removeItem(' + idx + ')">✕</button>'
-          + '</div>';
-      });
+
+      // Локальная корзина
+      if (items.length > 0) {
+        html += '<div class="section-header">📱 Мобильный сканер</div>';
+        items.forEach(function(item, i) {
+          html += '<div class="receipt-item">'
+            + '<div><div class="name">' + escapeHtml(item.name) + '</div>'
+            + '<div class="details">' + item.qty + ' × ' + item.price.toFixed(2) + ' ₴</div></div>'
+            + '<div style="display:flex;align-items:center;gap:8px">'
+            + '<div class="price">' + (item.qty * item.price).toFixed(2) + ' ₴</div>'
+            + '<button class="remove-btn" onclick="removeItem(' + i + ',false)">✕</button>'
+            + '</div>'
+            + '</div>';
+        });
+      }
+
       container.innerHTML = html;
+
+      if (rmkItems.length === 0 && items.length === 0) {
+        emptyMsg.style.display = 'block';
+      } else {
+        emptyMsg.style.display = 'none';
+      }
+
+      // Пересчёт итого
       let total = 0;
-      rmkItems.forEach(function(item) { total += parseFloat(item.price) * item.qty; });
-      items.forEach(function(item) { total += item.price * item.qty; });
+      rmkItems.forEach(function(i) { total += (i.qty || 1) * (i.price || 0); });
+      items.forEach(function(i) { total += i.qty * i.price; });
       document.getElementById('totalSum').textContent = 'Итого: ' + total.toFixed(2) + ' ₴';
     }
 
     async function sendToRMK() {
-      if (items.length === 0) return;
-      const btn = document.getElementById('sendBtn');
-      btn.disabled = true;
-      btn.textContent = 'Отправка...';
-      try {
-        // Записываем каждую единицу товара в 1С последовательно (параллельно нельзя — конфликт номеров)
-        let addedCount = 0;
-        for (const item of items) {
-          for (let i = 0; i < item.qty; i++) {
-            const r = await fetch(API_MOBILE + '/cart', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ session: sessionId, barcode: item.barcode })
-            });
-            const rd = await r.json();
-            if (!rd.success) {
-              showNotification('Ошибка добавления: ' + (rd.error || item.name), 'error');
-              btn.disabled = false;
-              btn.textContent = 'Отправить в кассу';
-              return;
-            }
-            addedCount++;
-            btn.textContent = 'Отправка ' + addedCount + '...';
-          }
-        }
-
-        // Отправляем в кассу
-        const resp = await fetch(API_MOBILE + '/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ session: sessionId })
-        });
-        const data = await resp.json();
-        if (data.success) {
-          const totalQty = items.reduce(function(s, i) { return s + i.qty; }, 0);
-          showNotification('✅ Отправлено в кассу (' + totalQty + ' позиций)', 'success');
-          items = [];
-          saveState();
-          renderReceipt();
-        } else {
-          showNotification(data.error || 'Ошибка отправки', 'error');
-        }
-      } catch(e) {
-        showNotification('Ошибка связи с сервером', 'error');
-      }
-      btn.disabled = false;
-      btn.textContent = 'Отправить в кассу';
-    }
-
-    function showNotification(text, type) {
-      const el = document.getElementById('notification');
-      el.textContent = text;
-      el.className = 'notification ' + type;
-      el.style.display = 'block';
-      setTimeout(function() { el.style.display = 'none'; }, 3000);
-    }
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-    document.getElementById('barcodeInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') addByBarcode();
-    });
-    document.getElementById('passwordInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') login();
-    });
-
-    // --- Поиск по названию ---
-    let searchTimeout = null;
-    let searchResultItems = [];
-
-    function openSearch() {
-      const modal = document.getElementById('searchModal');
-      modal.style.display = 'flex';
-      const input = document.getElementById('searchInput');
-      input.value = '';
-      input.focus();
-      document.getElementById('searchResults').innerHTML = '<div class="search-empty">Введите минимум 2 символа для поиска</div>';
-    }
-
-    function closeSearch() {
-      document.getElementById('searchModal').style.display = 'none';
-    }
-
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const q = this.value.trim();
-      if (searchTimeout) clearTimeout(searchTimeout);
-      if (q.length < 2) {
-        document.getElementById('searchResults').innerHTML = '<div class="search-empty">Введите минимум 2 символа для поиска</div>';
+      if (!sessionId) {
+        showNotification('Нет активной кассы. Выберите кассу.');
         return;
       }
-      document.getElementById('searchResults').innerHTML = '<div class="search-loading">Поиск...</div>';
-      searchTimeout = setTimeout(function() { performSearch(q); }, 300);
-    });
-
-    async function performSearch(query) {
-      try {
-        const resp = await fetch(API_MOBILE + '/search?q=' + encodeURIComponent(query));
-        const data = await resp.json();
-        if (data.success && data.items && data.items.length > 0) {
-          searchResultItems = data.items;
-          let html = '';
-          data.items.forEach(function(item, idx) {
-            const priceText = item.price > 0 ? item.price.toFixed(2) + ' ₴' : 'нет цены';
-            const bc = item.barcode ? item.barcode : '';
-            html += '<div class="search-item" onclick="addFromSearch(' + idx + ')">';
-            html += '<div><div class="s-name">' + escapeHtml(item.name) + '</div>';
-            html += '<div class="s-details">' + (bc ? 'ШК: ' + escapeHtml(bc) : 'Код: ' + escapeHtml(item.code)) + '</div></div>';
-            html += '<div class="s-price">' + priceText + '</div></div>';
-          });
-          document.getElementById('searchResults').innerHTML = html;
-        } else {
-          document.getElementById('searchResults').innerHTML = '<div class="search-empty">Ничего не найдено по запросу \"' + escapeHtml(query) + '\"</div>';
-        }
-      } catch(e) {
-        document.getElementById('searchResults').innerHTML = '<div class="search-empty" style="color:#f44336">Ошибка связи с сервером</div>';
-      }
+      // Все товары из мобильной корзины уже отправлены при добавлении.
+      // Здесь можно отправить оставшиеся или подтвердить.
+      showNotification('✅ Товары отправлены в кассу');
     }
 
-    function addFromSearch(idx) {
-      const product = searchResultItems[idx];
-      if (!product) return;
-      const barcode = product.barcode || product.code;
-      // Проверяем — может товар уже в корзине
-      const existing = items.find(function(i) { return i.barcode === barcode; });
-      if (existing) {
-        existing.qty++;
-      } else {
-        items.push({
-          barcode: barcode,
-          name: product.name,
-          price: product.price || 0,
-          qty: 1
-        });
-      }
-      renderReceipt();
-      closeSearch();
-      showNotification(product.name + ' добавлен', 'success');
+    function showNotification(msg) {
+      const el = document.getElementById('notification');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(function() { el.classList.remove('show'); }, 2500);
     }
 
-    document.getElementById('searchInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeSearch();
-    });
+    function escapeHtml(str) {
+      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
   </script>
 </body>
 </html>

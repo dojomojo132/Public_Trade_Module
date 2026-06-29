@@ -1,0 +1,18 @@
+{
+  "name": "configurator_inspect",
+  "description": "Инспекция UI-элементов окна Конфигуратора. Возвращает дерево контролов с именами, типами, координатами. Используй для поиска элементов перед кликом.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "max_depth": {
+        "type": "integer",
+        "description": "Глубина обхода (0-4, по умолчанию 2)",
+        "default": 2
+      },
+      "filter_type": {
+        "type": "string",
+        "description": "Фильтр по типу контрола: TreeView, Button, Edit, etc."
+      }
+    }
+  }
+}

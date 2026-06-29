@@ -1,0 +1,21 @@
+{
+  "name": "get_connected_objects",
+  "description": "Анализ связей объекта метаданных: какие объекты ссылаются на него и на какие объекты он ссылается. Показывает реквизиты, табличные части, измерения/ресурсы регистров.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных (Catalogs, Documents, InformationRegisters, AccumulationRegisters, Enums, ChartsOfCharacteristicTypes)"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта метаданных (например: Номенклатура, ПриходТовара)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

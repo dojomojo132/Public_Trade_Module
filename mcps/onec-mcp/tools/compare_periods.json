@@ -1,0 +1,36 @@
+{
+  "name": "compare_periods",
+  "description": "Сравнить данные регистра между двумя периодами. Для регистров накопления - сравнение остатков на две даты. Для регистров сведений - сравнение срезов последних на две даты.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "registerType": {
+        "type": "string",
+        "description": "Тип регистра: AccumulationRegisters или InformationRegisters"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя регистра"
+      },
+      "period1": {
+        "type": "string",
+        "description": "Дата первого периода в формате ГГГГММДД или ГГГГММДДЧЧММСС"
+      },
+      "period2": {
+        "type": "string",
+        "description": "Дата второго периода в формате ГГГГММДД или ГГГГММДДЧЧММСС"
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум строк результата (по умолчанию 50)",
+        "default": 50
+      }
+    },
+    "required": [
+      "registerType",
+      "name",
+      "period1",
+      "period2"
+    ]
+  }
+}

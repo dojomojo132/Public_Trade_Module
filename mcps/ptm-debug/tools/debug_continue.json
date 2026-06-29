@@ -1,0 +1,8 @@
+{
+  "name": "debug_continue",
+  "description": "Продолжить выполнение (аналог F5). Работает при остановке на breakpoint.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

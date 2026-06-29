@@ -1274,6 +1274,17 @@
 			<Metadata name="Document.КассоваяСмена.Attribute.ДатаОкончания" id="b1163afd-7f00-4e59-a521-be43c31f821a"/>
 			<Metadata name="Document.КассоваяСмена.Attribute.ДатаНачала" id="cbba5721-834d-40c9-91e4-957718a4d424"/>
 			<Metadata name="Document.КассоваяСмена.Attribute.Касса" id="ce733a7f-7b7c-45f5-a290-a0cf6c2990e0"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ" id="8f3a7b2e-c4d5-4e6f-9a1b-3c5d7e9f0a2b"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Касса" id="a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.ЧекККМ" id="a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.Сумма" id="a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ЧекиККМ.Attribute.СуммаСкидки" id="a5b6c7d8-e9f0-4a1b-2c3d-4e5f6a7b8c9d"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки" id="b1c2d3e4-f5a6-4b7c-8d9e-2a3b4c5d6e7f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ВидОперации" id="c8d9e0f1-a2b3-4c4d-5e6f-7a8b9c0d1e2f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФОП" id="b2c3d4e5-f6a7-4b8c-9d0e-3a4b5c6d7e8f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйНомер" id="b3c4d5e6-f7a8-4b9c-0d1e-4a5b6c7d8e9f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.Сумма" id="b4c5d6e7-f8a9-4b0c-1d2e-5a6b7c8d9e0f"/>
+			<Metadata name="Document.КассоваяСмена.TabularSection.ФискальныеЧеки.Attribute.ФискальныйЧек" id="b5c6d7e8-f9a0-4b1c-2d3e-6a7b8c9d0e1f"/>
 		</Metadata>
 		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора" id="eaf6e1c9-9ff3-4202-a75d-c47cc70385c4" configVersion="6a5096f243b05940b9c13558d97f992600000000"/>
 		<Metadata name="Document.КассоваяСмена.Form.ФормаВыбора.Form" id="eaf6e1c9-9ff3-4202-a75d-c47cc70385c4.0" configVersion="e8a5e2e8056c4449bc8e4bda793d26bb00000000"/>

@@ -1,0 +1,45 @@
+{
+  "name": "export_data",
+  "description": "Экспорт данных объекта в формате JSON или CSV. Поддерживает справочники, документы, регистры сведений и накопления.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта: Catalogs, Documents, InformationRegisters, AccumulationRegisters",
+        "enum": [
+          "Catalogs",
+          "Documents",
+          "InformationRegisters",
+          "AccumulationRegisters"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например: Номенклатура, ПриходТовара)"
+      },
+      "format": {
+        "type": "string",
+        "description": "Формат: json или csv",
+        "default": "json",
+        "enum": [
+          "json",
+          "csv"
+        ]
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум строк (по умолчанию 100)",
+        "default": 100
+      },
+      "fields": {
+        "type": "string",
+        "description": "Список полей через запятую (если не указан - все поля)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

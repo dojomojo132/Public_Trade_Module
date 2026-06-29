@@ -1,0 +1,16 @@
+{
+  "name": "dev_backup",
+  "description": "Локальный бэкап папки Конфигурация/ → _backups/<timestamp>/. Без обращения к ИБ. Быстро (~1-3 сек).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "Короткое описание для info.txt"
+      }
+    },
+    "required": [
+      "description"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "get_rights_info",
+  "description": "Получить права доступа пользователя к конкретному объекту метаданных. Показывает все доступные операции (чтение, добавление, изменение, удаление, проведение и т.д.)",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта: Catalogs, Documents, DataProcessors, Reports, InformationRegisters, AccumulationRegisters"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта метаданных"
+      },
+      "userName": {
+        "type": "string",
+        "description": "Имя пользователя ИБ (если не указано - текущий пользователь)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

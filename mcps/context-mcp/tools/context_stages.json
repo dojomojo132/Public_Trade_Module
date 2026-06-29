@@ -1,0 +1,8 @@
+{
+  "name": "context_stages",
+  "description": "Текущий каталог stages из STAGE_CATALOG + статистика проблемных stages.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

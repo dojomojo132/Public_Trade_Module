@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "onec-mcp": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\onec_http_mcp_proxy.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "context-mcp": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\context_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "dev-mcp": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\dev_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "tg-dashboard": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\tg_dashboard_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "onec-configurator": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\configurator_bridge.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "ptm-debug": {
+      "command": "D:\\Git\\Public_Trade_Module\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Git\\Public_Trade_Module\\scripts\\debug\\debug_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:\\Git\\Public_Trade_Module",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}

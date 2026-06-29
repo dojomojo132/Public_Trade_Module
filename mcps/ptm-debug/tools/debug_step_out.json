@@ -1,0 +1,8 @@
+{
+  "name": "debug_step_out",
+  "description": "Шаг из (Shift+F11) — выйти из текущей процедуры/функции.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

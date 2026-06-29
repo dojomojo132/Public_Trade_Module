@@ -1,0 +1,37 @@
+{
+  "name": "get_metadata_structure",
+  "description": "Получение структуры объекта метаданных (реквизиты, табличные части, измерения, ресурсы)",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных",
+        "enum": [
+          "Catalogs",
+          "Documents",
+          "InformationRegisters",
+          "AccumulationRegisters",
+          "AccountingRegisters",
+          "CalculationRegisters",
+          "Reports",
+          "DataProcessors",
+          "ChartsOfCharacteristicTypes",
+          "ChartsOfAccounts",
+          "ChartsOfCalculationTypes",
+          "BusinessProcesses",
+          "Tasks",
+          "ExchangePlans"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Точное имя объекта метаданных (без учета регистра)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

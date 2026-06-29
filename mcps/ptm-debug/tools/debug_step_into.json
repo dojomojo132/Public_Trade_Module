@@ -1,0 +1,8 @@
+{
+  "name": "debug_step_into",
+  "description": "Шаг в (F11) — войти внутрь вызываемой процедуры/функции.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

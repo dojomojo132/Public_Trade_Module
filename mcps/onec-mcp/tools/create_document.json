@@ -1,0 +1,29 @@
+{
+  "name": "create_document",
+  "description": "Создание нового документа указанного типа. Позволяет установить дату, реквизиты и опционально провести.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "documentType": {
+        "type": "string",
+        "description": "Тип документа (например: ПриходТовара)"
+      },
+      "date": {
+        "type": "string",
+        "description": "Дата документа в формате YYYY-MM-DD. Если не указана - текущая дата."
+      },
+      "attributes": {
+        "type": "string",
+        "description": "JSON-строка с реквизитами: {\"ИмяРеквизита\": \"Значение\", ...}"
+      },
+      "post": {
+        "type": "boolean",
+        "description": "Провести документ после создания",
+        "default": false
+      }
+    },
+    "required": [
+      "documentType"
+    ]
+  }
+}

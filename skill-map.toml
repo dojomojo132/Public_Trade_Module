@@ -1,0 +1,42 @@
+# skill-map.toml — карта навыков для типов запросов
+
+[bug]
+skills = ["systematic-debugging", "1c-workflow", "1c-debug", "1c-verify"]
+
+[feature]
+skills = ["task-orchestrator", "delegate", "1c-workflow", "1c-bsl-coding", "1c-verify"]
+
+[idea]
+skills = ["brainstorming", "1c-workflow"]
+
+[discussion]
+skills = ["brainstorming"]
+
+[small-task]
+skills = ["1c-bsl-coding", "1c-verify"]
+
+[continue]
+skills = ["1c-workflow"]
+
+[status]
+skills = ["1c-workflow"]
+
+[adhoc]
+skills = ["1c-workflow"]
+
+[capture]
+skills = []
+
+[graphify]
+skills = []
+
+# Явные 1С-интенты (если роутер поддерживает произвольные ключи)
+[1c-code]
+skills = ["1c-bsl-coding", "1c-anti-patterns", "1c-verify"]
+
+[1c-review]
+skills = ["1c-bsl-review", "1c-anti-patterns", "1c-verify"]
+
+[1c-deploy]
+skills = ["1c-workflow", "1c-deploy", "1c-bsl-review", "1c-verify"]
+

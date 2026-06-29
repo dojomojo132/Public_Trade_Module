@@ -1,0 +1,34 @@
+{
+  "name": "get_event_log",
+  "description": "Прочитать журнал регистрации 1С. Возвращает ошибки, предупреждения и другие события за указанный период. Прямой доступ к ЖР без monitor-errors.ps1.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "level": {
+        "type": "string",
+        "description": "Уровень событий",
+        "default": "Error",
+        "enum": [
+          "Error",
+          "Warning",
+          "Information",
+          "Note"
+        ]
+      },
+      "lastMinutes": {
+        "type": "number",
+        "description": "За последние N минут (по умолчанию 30)",
+        "default": 30
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимальное количество записей (по умолчанию 50)",
+        "default": 50
+      },
+      "eventFilter": {
+        "type": "string",
+        "description": "Фильтр по имени события (подстрока)"
+      }
+    }
+  }
+}

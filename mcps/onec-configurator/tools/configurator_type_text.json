@@ -1,0 +1,21 @@
+{
+  "name": "configurator_type_text",
+  "description": "Ввести текст в активный элемент Конфигуратора (через буфер обмена, поддержка кириллицы). Перед вводом убедись что нужное поле активно.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Текст для ввода"
+      },
+      "clear_first": {
+        "type": "boolean",
+        "description": "Очистить поле перед вводом (Ctrl+A → Delete)",
+        "default": false
+      }
+    },
+    "required": [
+      "text"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+﻿{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "oscript",
+      "request": "launch",
+      "name": "Отладка BSL через OneScript",
+      "program": "${file}",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "oscript.exe",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "configurator_tree_navigate",
+  "description": "Навигация по дереву конфигурации. path — путь через '/' (напр. 'Справочники/Номенклатура'). action: select | expand | open (двойной клик) | context_menu (правый клик). Дерево должно быть видимо.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Путь в дереве через '/'"
+      },
+      "action": {
+        "type": "string",
+        "description": "select | expand | open | context_menu",
+        "default": "select"
+      }
+    },
+    "required": [
+      "path"
+    ]
+  }
+}

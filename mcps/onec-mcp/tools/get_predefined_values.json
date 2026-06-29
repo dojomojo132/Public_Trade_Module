@@ -1,0 +1,27 @@
+{
+  "name": "get_predefined_values",
+  "description": "Получить список предопределённых элементов справочника или плана видов характеристик.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных",
+        "enum": [
+          "Catalogs",
+          "ChartsOfCharacteristicTypes",
+          "ChartsOfAccounts",
+          "ChartsOfCalculationTypes"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например, Номенклатура, Склады)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

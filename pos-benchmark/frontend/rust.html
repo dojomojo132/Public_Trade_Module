@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POS — Rust (3001)</title>
+<style>
+  :root { --bg:#1a1a2e; --panel-bg:#16213e; --card-bg:#0f3460; --accent:#e94560; --text:#eee; --text-dim:#8899aa; --green:#00c853; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden}
+  .left{width:38%;background:var(--panel-bg);display:flex;flex-direction:column;border-right:2px solid #2a2a4a}
+  .left h2{padding:16px 20px 8px;font-size:18px;letter-spacing:1px;border-bottom:1px solid #2a2a4a}
+  .items{flex:1;overflow-y:auto;padding:8px 0}
+  .item{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;border-bottom:1px solid #1e1e3a;font-size:14px}
+  .item .nm{flex:1}.item .qt{color:var(--text-dim);margin:0 12px;min-width:40px;text-align:center}
+  .item .pr{color:var(--text-dim);margin-right:12px;min-width:70px;text-align:right}
+  .item .rm{color:var(--accent);cursor:pointer;font-weight:bold;font-size:16px;user-select:none}
+  .total{padding:16px 20px;border-top:2px solid var(--accent);font-size:20px;font-weight:bold;display:flex;justify-content:space-between}
+  .right{flex:1;display:flex;flex-direction:column;padding:16px}
+  .pagi{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
+  .pagi button{background:var(--card-bg);color:var(--text);border:1px solid #3a3a5a;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:15px}
+  .pagi button:hover{background:var(--accent)}
+  .pagi span{font-size:15px;color:var(--text-dim);min-width:100px;text-align:center}
+  .grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:10px}
+  .card{background:var(--card-bg);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .1s,box-shadow .1s;padding:4px}
+  .card:hover{transform:scale(1.03);box-shadow:0 0 12px rgba(233,69,96,.4)}
+  .card .nm{font-size:13px;text-align:center;margin-bottom:4px}
+  .card .pr{font-size:14px;color:var(--green);font-weight:bold}
+  .btn{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;padding:16px;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;letter-spacing:2px}
+  .btn:hover{background:#ff1a40}
+  .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:100;justify-content:center;align-items:center}
+  .modal.s{display:flex}
+  .modal>div{background:var(--panel-bg);padding:32px;border-radius:12px;text-align:center;min-width:320px}
+  .modal h2{color:var(--green);margin-bottom:16px}
+  .modal button{background:var(--accent);color:#fff;border:none;padding:10px 30px;border-radius:6px;font-size:16px;cursor:pointer;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="left">
+  <h2>🦀 Rust — ЧЕК</h2>
+  <div class="items" id="items"></div>
+  <div class="total"><span>ИТОГО:</span><span id="sum">0.00 ₴</span></div>
+</div>
+<div class="right">
+  <div class="pagi">
+    <button onclick="go(-1)">◀ Назад</button>
+    <span id="pageTxt">...</span>
+    <button onclick="go(1)">Вперёд ▶</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <button class="btn" onclick="calc()">РАССЧИТАТЬ</button>
+</div>
+<div class="modal" id="mod">
+  <div><h2>✅ Чек закрыт</h2><p style="font-size:24px;font-weight:bold;margin:8px 0" id="modAmt">0.00</p><button onclick="cls()">Новый чек</button></div>
+</div>
+<script>
+const API='http://localhost:3001/api';
+let pg=1,tp=1,cart=[],prodCache={};
+async function load(p){
+  let r=await fetch(`${API}/products?page=${p}`),d=await r.json();
+  pg=d.page;tp=d.total_pages;
+  document.getElementById('pageTxt').textContent=`Стр. ${pg} из ${tp}`;
+  let g=document.getElementById('grid');g.innerHTML='';
+  for(let x of d.products){
+    prodCache[x.id]=x;
+    let c=document.createElement('div');c.className='card';c.onclick=()=>add(x.id);
+    c.innerHTML=`<div class="nm">${x.name}</div><div class="pr">${x.price} ₴</div>`;g.appendChild(c);
+  }
+}
+function go(d){let np=pg+d;if(np>=1&&np<=tp)load(np)}
+function add(id){
+  let f=cart.find(i=>i.id===id);
+  if(f)f.qty++;else{let p=prodCache[id];cart.push({id,pname:p.name,price:p.price,qty:1})}
+  render();
+}
+function rm(i){cart.splice(i,1);render()}
+function render(){
+  let c=document.getElementById('items'),s=document.getElementById('sum'),h='',t=0;
+  cart.forEach((x,i)=>{let st=x.price*x.qty;t+=st;h+=`<div class="item"><span class="nm">${x.pname}</span><span class="qt">×${x.qty}</span><span class="pr">${st} ₴</span><span class="rm" onclick="rm(${i})">✕</span></div>`});
+  c.innerHTML=h||'<div style="padding:20px;color:#556;text-align:center">Чек пуст</div>';
+  s.textContent=t+' ₴';
+}
+async function calc(){
+  if(!cart.length)return;
+  let r=await fetch(`${API}/checkout`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:cart.map(x=>({product_id:x.id,quantity:x.qty}))})});
+  let d=await r.json();
+  document.getElementById('modAmt').textContent=d.total+' ₴';
+  document.getElementById('mod').classList.add('s');
+}
+function cls(){document.getElementById('mod').classList.remove('s');cart=[];render()}
+load(1);
+</script>
+</body>
+</html>

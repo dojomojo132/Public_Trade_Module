@@ -1,0 +1,34 @@
+{
+  "name": "create_catalog_item",
+  "description": "Создание нового элемента или группы справочника. Позволяет установить наименование, код и произвольные реквизиты.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "catalogName": {
+        "type": "string",
+        "description": "Имя справочника (например: Номенклатура, Контрагенты)"
+      },
+      "description": {
+        "type": "string",
+        "description": "Наименование элемента"
+      },
+      "code": {
+        "type": "string",
+        "description": "Код элемента. Если не указан - назначается автоматически."
+      },
+      "attributes": {
+        "type": "string",
+        "description": "JSON-строка с реквизитами: {\"ИмяРеквизита\": \"Значение\", ...}"
+      },
+      "isFolder": {
+        "type": "boolean",
+        "description": "Создать группу (папку) вместо элемента",
+        "default": false
+      }
+    },
+    "required": [
+      "catalogName",
+      "description"
+    ]
+  }
+}

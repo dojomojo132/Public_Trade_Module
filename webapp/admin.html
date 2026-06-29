@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTM — Панель управления</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1976d2; --primary-dark: #1565c0;
+      --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-secondary: #666;
+      --border: #e0e0e0; --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12); --radius: 12px; --transition: 0.2s ease;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column;
+    }
+    .topbar { background: var(--primary); color: white; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    .topbar .logo { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
+    .topbar .logo-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .topbar .user-area { font-size: 13px; opacity: 0.85; }
+    .breadcrumbs { padding: 12px 20px; font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; flex-shrink: 0; background: white; border-bottom: 1px solid var(--border); min-height: 44px; flex-wrap: wrap; }
+    .breadcrumbs .sep { color: #999; }
+    .breadcrumb-link { color: var(--primary); cursor: pointer; transition: color var(--transition); }
+    .breadcrumb-link:hover { color: var(--primary-dark); text-decoration: underline; }
+    .breadcrumb-current { color: var(--text); font-weight: 600; }
+    .main { flex: 1; padding: 24px 20px; max-width: 1200px; width: 100%; margin: 0 auto; }
+    .tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .tile-grid.large-tiles { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .tile-grid.xlarge-tiles { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .tile { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px 20px; cursor: pointer; transition: transform var(--transition), box-shadow var(--transition); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; border: 1px solid transparent; user-select: none; }
+    .tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+    .tile:active { transform: translateY(0); }
+    .tile-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+    .tile-icon.blue{background:#e3f2fd;color:#1976d2} .tile-icon.green{background:#e8f5e9;color:#388e3c} .tile-icon.orange{background:#fff3e0;color:#ef6c00} .tile-icon.purple{background:#f3e5f5;color:#7b1fa2} .tile-icon.red{background:#ffebee;color:#c62828} .tile-icon.teal{background:#e0f2f1;color:#00695c} .tile-icon.amber{background:#fff8e1;color:#f9a825} .tile-icon.indigo{background:#e8eaf6;color:#283593}
+    .tile-label { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .tile-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+    .section-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .back-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--primary); cursor: pointer; margin-bottom: 16px; padding: 6px 0; transition: color var(--transition); background: none; border: none; font-family: inherit; }
+    .back-btn:hover { color: var(--primary-dark); }
+
+    /* Catalog list (tree) */
+    .cat-toolbar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .btn { padding: 8px 18px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-family: inherit; transition: background var(--transition); }
+    .btn-primary { background: var(--primary); color: white; } .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline { background: white; color: var(--primary); border: 1px solid var(--primary); } .btn-outline:hover { background: #e3f2fd; }
+    .btn-success { background: #4caf50; color: white; } .btn-success:hover { background: #388e3c; }
+    .btn-danger { background: #f44336; color: white; } .btn-danger:hover { background: #c62828; }
+    .cat-table { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .cat-row { display: flex; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background var(--transition); gap: 10px; }
+    .cat-row:last-child { border-bottom: none; }
+    .cat-row:hover { background: #f5f8ff; }
+    .cat-row.up-level { color: var(--primary); font-weight: 500; }
+    .cat-row.up-level:hover { background: #e3f2fd; }
+    .cat-icon { font-size: 18px; flex-shrink: 0; width: 28px; text-align: center; }
+    .cat-code { width: 100px; flex-shrink: 0; font-size: 13px; color: var(--text-secondary); font-family: 'SF Mono', 'Fira Code', monospace; }
+    .cat-name { flex: 1; font-size: 14px; } .cat-name.group { font-weight: 600; }
+    .cat-empty { text-align: center; padding: 40px 20px; color: #999; font-size: 14px; }
+
+    /* Catalog item form (card) */
+    .card { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .card-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-header h3 { font-size: 18px; }
+    .card-body { padding: 20px; }
+    .field-group { margin-bottom: 14px; }
+    .field-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.3px; }
+    .field-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; color: var(--text); background: white; transition: border-color var(--transition); }
+    .field-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(25,118,210,0.15); }
+    .field-input:read-only { background: #f8f9fa; border-style: dashed; }
+    textarea.field-input { min-height: 80px; resize: vertical; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card-footer { padding: 16px 20px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; }
+    .notification { position: fixed; bottom: 20px; right: 20px; background: #323232; color: white; padding: 12px 20px; border-radius: 8px; font-size: 14px; opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: none; z-index: 999; max-width: 360px; }
+    .notification.show { opacity: 1; transform: translateY(0); }
+    .login-screen {
+      position: fixed; inset: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #1565c0 0%, #1976d2 50%, #2196f3 100%);
+    }
+    .login-card {
+      background: white; border-radius: 16px; padding: 40px 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3); width: 360px; max-width: 90vw;
+    }
+    .login-card .logo { font-size: 40px; text-align: center; margin-bottom: 8px; }
+    .login-card h1 { text-align: center; font-size: 20px; color: var(--text); margin-bottom: 4px; }
+    .login-card p { text-align: center; font-size: 13px; color: #888; margin-bottom: 28px; }
+    .login-card .field-group { margin-bottom: 16px; }
+    .login-card label { font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .login-card input { width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; }
+    .login-card input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(25,118,210,0.15); }
+    .login-card .btn-login { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 8px; }
+    .login-card .btn-login:hover { background: var(--primary-dark); }
+    .login-card .btn-login:disabled { opacity: 0.5; cursor: not-allowed; }
+    .login-card .login-error { color: #f44336; font-size: 13px; text-align: center; margin-top: 12px; display: none; }
+    .login-card .login-hint { text-align: center; font-size: 11px; color: #aaa; margin-top: 16px; }
+
+    .admin-wrapper { display: none; flex-direction: column; min-height: 100vh; }
+    .admin-wrapper.visible { display: flex; }
+
+    @media (max-width: 600px) {
+      .main { padding: 16px 10px; } .tile-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .tile { padding: 16px 12px; gap: 8px; } .tile-icon { width: 44px; height: 44px; font-size: 22px; border-radius: 10px; }
+      .tile-label { font-size: 13px; } .tile-desc { display: none; }
+      .cat-code { width: 60px; font-size: 11px; } .field-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script src="js/doc-meta.js"></script>
+  <script src="js/doc-ui.js"></script>
+</head>
+<body>
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="logo">📦</div>
+      <h1>PTM · Панель управления</h1>
+      <p>Войдите для доступа к управлению</p>
+      <div class="field-group">
+        <label>Логин</label>
+        <input type="text" id="loginUser" placeholder="admin" autocomplete="username">
+      </div>
+      <div class="field-group">
+        <label>Пароль</label>
+        <input type="password" id="loginPass" placeholder="****" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <button class="btn-login" id="loginBtn" onclick="doLogin()">Войти</button>
+      <div class="login-error" id="loginError">Неверный логин или пароль</div>
+      <div class="login-hint">admin / admin (тестовые)</div>
+    </div>
+  </div>
+
+  <!-- ADMIN WRAPPER -->
+  <div class="admin-wrapper" id="adminWrapper">
+    <div class="topbar">
+      <div class="logo"><div class="logo-icon">📦</div>PTM · Управление</div>
+      <div class="user-area" id="userArea">👤 <span id="userName">--</span> <a href="#" onclick="doLogout();return false" style="color:rgba(255,255,255,0.7);text-decoration:none;margin-left:12px;font-size:12px">[выход]</a></div>
+    </div>
+    <div class="breadcrumbs" id="breadcrumbs"></div>
+    <div class="main" id="mainContent"></div>
+    <div class="notification" id="notification"></div>
+  </div>
+
+  <script>
+    /* ═══════════════════════════════════════════ MENU ═══════════════════════════════════════════ */
+    var MENU = {
+      root: { title:'Главное меню', items: [
+        { id:'pos', icon:'🛒', color:'blue', label:'Касса', desc:'Рабочее место кассира', action:'redirect', url:'index.html' },
+        { id:'crm', icon:'⚙️', color:'purple', label:'СРМ', desc:'Документы, справочники, отчёты', action:'navigate', target:'crm' }
+      ]},
+      crm: { title:'СРМ', items: [
+        { id:'documents', icon:'📄', color:'blue', label:'Документы', desc:'Приходные, расходные, чеки', action:'navigate', target:'documents' },
+        { id:'catalogs', icon:'📚', color:'green', label:'Справочники', desc:'Номенклатура, контрагенты, склады', action:'navigate', target:'catalogs' },
+        { id:'reports', icon:'📊', color:'orange', label:'Отчёты', desc:'Продажи, остатки, взаиморасчёты', action:'navigate', target:'reports' },
+        { id:'admin', icon:'🔧', color:'teal', label:'Администрирование', desc:'Пользователи, права, настройки', action:'navigate', target:'admin' }
+      ]},
+      documents: { title:'Документы', items: [
+        { id:'doc_receipt', icon:'📥', color:'blue', label:'Приходная накладная', action:'document', document:'receipt' },
+        { id:'doc_expense', icon:'📤', color:'red', label:'Расходная накладная', action:'document', document:'expense' },
+        { id:'doc_transfer', icon:'🔄', color:'teal', label:'Перемещение', action:'document', document:'transfer' },
+        { id:'doc_writeoff', icon:'🗑️', color:'orange', label:'Списание', action:'document', document:'writeoff' },
+        { id:'doc_return', icon:'↩️', color:'purple', label:'Возврат', action:'document', document:'return' },
+        { id:'doc_kkk', icon:'🧾', color:'green', label:'Чек ККМ', action:'document', document:'kkk' }
+      ]},
+      catalogs: { title:'Справочники', items: [
+        { id:'cat_goods', icon:'🏷️', color:'blue', label:'Номенклатура', action:'catalog', catalog:'goods' },
+        { id:'cat_counterparties', icon:'👥', color:'green', label:'Контрагенты', action:'catalog', catalog:'counterparties' },
+        { id:'cat_warehouses', icon:'🏭', color:'orange', label:'Склады', action:'catalog', catalog:'warehouses' },
+        { id:'cat_discount', icon:'💳', color:'purple', label:'Дисконтные карты', action:'catalog', catalog:'discountCards' },
+        { id:'cat_users', icon:'👤', color:'teal', label:'Пользователи', action:'catalog', catalog:'users' }
+      ]},
+      reports: { title:'Отчёты', items: [
+        { id:'rep_sales', icon:'📈', color:'blue', label:'Продажи', action:'placeholder' },
+        { id:'rep_stock', icon:'📦', color:'green', label:'Остатки', action:'placeholder' },
+        { id:'rep_settlements', icon:'💰', color:'amber', label:'Взаиморасчёты', action:'placeholder' },
+        { id:'rep_shift', icon:'🕐', color:'indigo', label:'Кассовая смена', action:'placeholder' }
+      ]},
+      admin: { title:'Администрирование', items: [
+        { id:'adm_users', icon:'👥', color:'blue', label:'Пользователи', action:'placeholder' },
+        { id:'adm_roles', icon:'🔐', color:'purple', label:'Права и роли', action:'placeholder' },
+        { id:'adm_settings', icon:'⚙️', color:'teal', label:'Настройки', action:'placeholder' }
+      ]}
+    };
+
+    /* ═══════════════════════════════════════════ API LAYER ════════════════════════════════════════════ */
+    var API_BASE = 'http://localhost:3001';
+    var API_TOKEN = localStorage.getItem('ptm_admin_token') || '';
+    var _currentUser = null;
+
+    async function doLogin() {
+      var btn = document.getElementById('loginBtn');
+      var errEl = document.getElementById('loginError');
+      var user = document.getElementById('loginUser').value.trim();
+      var pass = document.getElementById('loginPass').value;
+      if (!user || !pass) { errEl.textContent = 'Введите логин и пароль'; errEl.style.display = 'block'; return; }
+      btn.disabled = true; btn.textContent = 'Вход...'; errEl.style.display = 'none';
+      try {
+        var data = await fetch(API_BASE + '/api/auth/login', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: user, password: pass })
+        });
+        var json = await data.json();
+        if (json.success) {
+          API_TOKEN = json.token;
+          _currentUser = json.user;
+          localStorage.setItem('ptm_admin_token', API_TOKEN);
+          localStorage.setItem('ptm_admin_user', JSON.stringify(json.user));
+          document.getElementById('loginScreen').style.display = 'none';
+          document.getElementById('adminWrapper').classList.add('visible');
+          document.getElementById('userName').textContent = _currentUser.name || _currentUser.login;
+          document.getElementById('loginPass').value = '';
+        } else {
+          errEl.textContent = json.error || 'Неверный логин или пароль';
+          errEl.style.display = 'block';
+        }
+      } catch(e) {
+        errEl.textContent = 'Ошибка связи с сервером. Убедитесь, что сервер запущен на ' + API_BASE;
+        errEl.style.display = 'block';
+      }
+      btn.disabled = false; btn.textContent = 'Войти';
+    }
+
+    function doLogout() {
+      API_TOKEN = '';
+      _currentUser = null;
+      localStorage.removeItem('ptm_admin_token');
+      localStorage.removeItem('ptm_admin_user');
+      document.getElementById('adminWrapper').classList.remove('visible');
+      document.getElementById('loginScreen').style.display = 'flex';
+      navStack.length = 0;
+    }
+
+    async function apiFetch(path, opts) {
+      var headers = { 'Content-Type': 'application/json' };
+      if (API_TOKEN) headers['Authorization'] = 'Bearer ' + API_TOKEN;
+      var r = await fetch(API_BASE + path, { headers: headers, ...(opts || {}) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }
+
+    function _mapApiItems(catalogId, rawItems) {
+      if (catalogId === 'goods') {
+        return rawItems.map(function(p, i) {
+          return {
+            id: p.id || ('api_' + i),
+            code: p.code,
+            name: p.name,
+            article: p.article || '',
+            unit: p.unit || 'шт',
+            price: 0,
+            isGroup: false,
+            parent: null
+          };
+        });
+      }
+      if (catalogId === 'counterparties') {
+        return rawItems.map(function(c, i) {
+          return {
+            id: c.id || ('api_c_' + i),
+            code: String(i + 1).padStart(5, '0'),
+            name: c.name,
+            inn: '',
+            phone: '',
+            email: '',
+            address: '',
+            isGroup: false,
+            parent: null
+          };
+        });
+      }
+      if (catalogId === 'warehouses') {
+        return rawItems.map(function(w, i) {
+          return {
+            id: w.id || ('api_w_' + i),
+            code: String(i + 1).padStart(5, '0'),
+            name: w.name,
+            address: '',
+            responsible: '',
+            isGroup: false,
+            parent: null
+          };
+        });
+      }
+      if (catalogId === 'discountCards') {
+        return rawItems.map(function(d, i) {
+          return {
+            id: d.id || ('api_d_' + i),
+            code: String(i + 1).padStart(5, '0'),
+            name: d.name || 'Карта ' + d.card_number,
+            cardNumber: d.card_number || '',
+            discount: d.discount_pct || 0,
+            isGroup: false,
+            parent: null
+          };
+        });
+      }
+      return [];
+    }
+
+    var _apiEndpoints = {
+      goods: '/api/products?page=1&per_page=200',
+      counterparties: '/api/counterparties',
+      warehouses: '/api/warehouses',
+      discountCards: '/api/discount-cards'
+    };
+
+    function _apiResultKey(catalogId) {
+      if (catalogId === 'goods') return 'products';
+      if (catalogId === 'counterparties') return 'counterparties';
+      if (catalogId === 'warehouses') return 'warehouses';
+      if (catalogId === 'discountCards') return 'cards';
+      return null;
+    }
+
+    async function loadCatalogFromApi(catalogId) {
+      var endpoint = _apiEndpoints[catalogId];
+      var resultKey = _apiResultKey(catalogId);
+      if (!endpoint || !resultKey) return false;
+      try {
+        var data = await apiFetch(endpoint);
+        if (data && data[resultKey]) {
+          CATALOG_DATA[catalogId] = _mapApiItems(catalogId, data[resultKey]);
+          _apiLoadedCatalogs[catalogId] = true;
+          return true;
+        }
+      } catch(e) { console.warn('API load failed for ' + catalogId + ', using mock', e); }
+      delete _apiLoadedCatalogs[catalogId];
+      return false;
+    }
+
+    /* ═══════════════════════════════════════════ CATALOG META ═══════════════════════════════════════════ */
+    var CATALOG_META = {
+      goods: { code:'goods', name:'Номенклатура', fields: [
+        { id:'code', label:'Код', type:'string', required:true },
+        { id:'name', label:'Наименование', type:'string', required:true },
+        { id:'article', label:'Артикул', type:'string' },
+        { id:'unit', label:'Единица измерения', type:'string' },
+        { id:'price', label:'Цена', type:'number' },
+        { id:'vat', label:'НДС, %', type:'number' },
+        { id:'description', label:'Описание', type:'text' }
+      ]},
+      counterparties: { code:'counterparties', name:'Контрагенты', fields: [
+        { id:'code', label:'Код', type:'string', required:true },
+        { id:'name', label:'Наименование', type:'string', required:true },
+        { id:'inn', label:'ИНН', type:'string' },
+        { id:'phone', label:'Телефон', type:'string' },
+        { id:'email', label:'Email', type:'string' },
+        { id:'address', label:'Адрес', type:'text' }
+      ]},
+      warehouses: { code:'warehouses', name:'Склады', fields: [
+        { id:'code', label:'Код', type:'string', required:true },
+        { id:'name', label:'Наименование', type:'string', required:true },
+        { id:'address', label:'Адрес', type:'text' },
+        { id:'responsible', label:'Ответственный', type:'string' }
+      ]},
+      discountCards: { code:'discountCards', name:'Дисконтные карты', fields: [
+        { id:'code', label:'Код', type:'string', required:true },
+        { id:'name', label:'Наименование', type:'string', required:true },
+        { id:'cardNumber', label:'Номер карты', type:'string' },
+        { id:'discount', label:'Скидка, %', type:'number' }
+      ]},
+      users: { code:'users', name:'Пользователи', fields: [
+        { id:'code', label:'Код', type:'string', required:true },
+        { id:'name', label:'ФИО', type:'string', required:true },
+        { id:'login', label:'Логин', type:'string' },
+        { id:'role', label:'Роль', type:'string' },
+        { id:'phone', label:'Телефон', type:'string' }
+      ]}
+    };
+
+    /* ═══════════════════════════════════════════ CATALOG DATA ═══════════════════════════════════════════ */
+    var CATALOG_DATA = {
+      goods: [
+        { id:'g1', code:'00001', name:'Продукты', isGroup:true, parent:null },
+        { id:'g2', code:'00002', name:'Молочные изделия', isGroup:true, parent:'g1' },
+        { id:'g3', code:'00003', name:'Молоко 3.2% 1л', isGroup:false, parent:'g2', article:'МЛК-001', unit:'шт', price:45.00, vat:20, description:'Молоко пастеризованное' },
+        { id:'g4', code:'00004', name:'Кефир 2.5% 0.5л', isGroup:false, parent:'g2', article:'КФР-001', unit:'шт', price:38.00, vat:20 },
+        { id:'g5', code:'00005', name:'Сыр Голландский', isGroup:false, parent:'g2', article:'СЫР-001', unit:'кг', price:320.00, vat:20, description:'Полутвёрдый сыр' },
+        { id:'g6', code:'00006', name:'Хлебобулочные', isGroup:true, parent:'g1' },
+        { id:'g7', code:'00007', name:'Хлеб белый', isGroup:false, parent:'g6', article:'ХЛБ-001', unit:'шт', price:22.00, vat:10 },
+        { id:'g8', code:'00008', name:'Батон нарезной', isGroup:false, parent:'g6', article:'БТН-001', unit:'шт', price:18.00, vat:10 },
+        { id:'g9', code:'00009', name:'Напитки', isGroup:true, parent:'g1' },
+        { id:'g10',code:'00010', name:'Вода минеральная 1.5л', isGroup:false, parent:'g9', article:'ВОД-001', unit:'шт', price:28.00, vat:20 },
+        { id:'g11',code:'00011', name:'Сок яблочный 1л', isGroup:false, parent:'g9', article:'СОК-001', unit:'шт', price:55.00, vat:20 },
+        { id:'g12',code:'00012', name:'Бытовая химия', isGroup:true, parent:null },
+        { id:'g13',code:'00013', name:'Стиральный порошок 3кг', isGroup:false, parent:'g12', article:'ПОР-001', unit:'шт', price:180.00, vat:20 }
+      ],
+      counterparties: [
+        { id:'c1', code:'00001', name:'Поставщики', isGroup:true, parent:null },
+        { id:'c2', code:'00002', name:'ООО "Молокозавод"', isGroup:false, parent:'c1', inn:'7700123456', phone:'+7(495)123-45-67', email:'milk@example.com', address:'г. Москва, ул. Молочная, 1' },
+        { id:'c3', code:'00003', name:'ИП Иванов А.А.', isGroup:false, parent:'c1', inn:'7700654321', phone:'+7(495)765-43-21', address:'г. Москва, ул. Хлебная, 5' },
+        { id:'c4', code:'00004', name:'Покупатели', isGroup:true, parent:null },
+        { id:'c5', code:'00005', name:'ООО "Супермаркет"', isGroup:false, parent:'c4', inn:'7700987654', phone:'+7(495)111-22-33', email:'super@example.com' }
+      ],
+      warehouses: [
+        { id:'w1', code:'00001', name:'Основной склад', isGroup:false, parent:null, address:'г. Москва, ул. Складская, 10', responsible:'Петров П.П.' },
+        { id:'w2', code:'00002', name:'Торговый зал', isGroup:false, parent:null, address:'г. Москва, ул. Торговая, 3', responsible:'Сидорова А.И.' },
+        { id:'w3', code:'00003', name:'Удалённые склады', isGroup:true, parent:null },
+        { id:'w4', code:'00004', name:'Склад №2 (юг)', isGroup:false, parent:'w3', address:'г. Подольск, ул. Южная, 15', responsible:'Козлов В.Н.' }
+      ],
+      discountCards: [
+        { id:'d1', code:'00001', name:'Стандарт', isGroup:false, parent:null, cardNumber:'DC-0001', discount:5 },
+        { id:'d2', code:'00002', name:'Серебро', isGroup:false, parent:null, cardNumber:'DC-0002', discount:10 },
+        { id:'d3', code:'00003', name:'Золото', isGroup:false, parent:null, cardNumber:'DC-0003', discount:15 }
+      ],
+      users: [
+        { id:'u1', code:'00001', name:'Иванов Иван Иванович', isGroup:false, parent:null, login:'ivanov', role:'Администратор', phone:'+7(900)111-22-33' },
+        { id:'u2', code:'00002', name:'Петрова Анна Сергеевна', isGroup:false, parent:null, login:'petrova', role:'Кассир', phone:'+7(900)222-33-44' },
+        { id:'u3', code:'00003', name:'Сидоров Михаил', isGroup:false, parent:null, login:'sidorov', role:'Менеджер', phone:'+7(900)333-44-55' }
+      ]
+    };
+
+    /* ═══════════════════════════════════════════ STATE ═══════════════════════════════════════════ */
+    var navStack = [];
+    var currentSection = null;
+    var catState = { catalogId:null, groupPath:[], editingItemId:null, isNewItem:false, editData:null };
+
+    var docState = { docType:null, editingId:null, isNew:false, editData:null };
+
+    /* ═══════════════════════════════════════════ UTILS ═══════════════════════════════════════════ */
+    function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function escAttr(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    var _nt = null;
+    function notify(msg) {
+      var el = document.getElementById('notification');
+      el.textContent = msg; el.classList.add('show');
+      if (_nt) clearTimeout(_nt);
+      _nt = setTimeout(function() { el.classList.remove('show'); }, 2500);
+    }
+    function topOfStack() { return navStack.length > 0 ? navStack[navStack.length - 1] : null; }
+    function findItem(arr, id) { for (var i = 0; i < arr.length; i++) { if (arr[i].id === id) return arr[i]; } return null; }
+
+    /* ═══════════════════════════════════════════ RENDER ═══════════════════════════════════════════ */
+    function render() {
+      var top = topOfStack();
+      currentSection = top ? top.id : 'root';
+      renderBreadcrumbs();
+      // CRITICAL: also handle catalog_item so card forms render
+      if (top && (top.type === 'catalog_view' || top.type === 'catalog_item' || top.type === 'doc_view' || top.type === 'doc_form')) { renderDoc(); return; }
+      var section = MENU[currentSection];
+      if (section) renderContent(section);
+    }
+
+    function renderBreadcrumbs() {
+      var bc = document.getElementById('breadcrumbs');
+      if (navStack.length === 0) {
+        bc.innerHTML = '<span class="breadcrumb-current">🏠 Главное меню</span>'; return;
+      }
+      var html = '<span class="breadcrumb-link" data-nav="root">🏠 Главная</span>';
+      navStack.forEach(function(e, i) {
+        html += ' <span class="sep">›</span> ';
+        html += (i === navStack.length - 1)
+          ? '<span class="breadcrumb-current">' + esc(e.title) + '</span>'
+          : '<span class="breadcrumb-link" data-nav="' + e.id + '">' + esc(e.title) + '</span>';
+      });
+      bc.innerHTML = html;
+      bc.querySelectorAll('.breadcrumb-link').forEach(function(el) {
+        el.addEventListener('click', function() { navigateToCrumb(el.getAttribute('data-nav')); });
+      });
+    }
+
+    function renderContent(section) {
+      var main = document.getElementById('mainContent');
+      var backHtml = navStack.length > 0 ? '<button class="back-btn" id="backBtn">← Назад</button>' : '';
+      var icon = navStack.length === 0 ? '🏠' : '📋';
+      var titleHtml = '<div class="section-title"><span class="st-icon">' + icon + '</span>' + esc(section.title) + '</div>';
+      var tileClass = navStack.length === 0 ? 'xlarge-tiles' : navStack.length === 1 ? 'large-tiles' : '';
+      var itemsHtml = '';
+      section.items.forEach(function(item) {
+        itemsHtml += '<div class="tile" data-item="' + item.id + '">' +
+          '<div class="tile-icon ' + (item.color||'blue') + '">' + (item.icon||'📋') + '</div>' +
+          '<div class="tile-label">' + esc(item.label) + '</div>' +
+          (item.desc ? '<div class="tile-desc">' + esc(item.desc) + '</div>' : '') + '</div>';
+      });
+      main.innerHTML = backHtml + titleHtml + '<div class="tile-grid ' + tileClass + '">' + itemsHtml + '</div>';
+      var backBtn = document.getElementById('backBtn');
+      if (backBtn) backBtn.addEventListener('click', goBack);
+      main.querySelectorAll('.tile').forEach(function(el) {
+        el.addEventListener('click', function() { handleClick(el.getAttribute('data-item')); });
+      });
+    }
+
+    /* ═══════════════════════════════════════════ NAVIGATION ═══════════════════════════════════════════ */
+    function navigateTo(sectionId) {
+      var section = MENU[sectionId]; if (!section) return;
+      navStack.push({ id: sectionId, title: section.title, type: 'menu' });
+      render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goBack() {
+      if (navStack.length === 0) return;
+      var top = topOfStack();
+      if (top && (top.type === 'catalog_view' || top.type === 'catalog_item' || top.type === 'doc_view' || top.type === 'doc_form')) {
+        catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+        if (top.type === 'catalog_view') { catState.catalogId = null; catState.groupPath = []; }
+        navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
+      }
+      navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function navigateToCrumb(targetId) {
+      if (targetId === 'root') { navStack.length = 0; render(); return; }
+      for (var i = 0; i < navStack.length; i++) {
+        if (navStack[i].id === targetId) {
+          var hasCatalog = false;
+          for (var j = i + 1; j < navStack.length; j++) {
+            if (navStack[j].type === 'catalog_view' || navStack[j].type === 'catalog_item' || navStack[j].type === 'doc_view' || navStack[j].type === 'doc_form') hasCatalog = true;
+          }
+          if (hasCatalog) { catState.catalogId = null; catState.groupPath = []; catState.editingItemId = null; catState.isNewItem = false; catState.editData = null; }
+          navStack.length = i + 1;
+          render(); window.scrollTo({ top: 0, behavior: 'smooth' }); return;
+        }
+      }
+    }
+
+    function handleClick(itemId) {
+      var section = MENU[currentSection]; if (!section) return;
+      var item = findItem(section.items, itemId); if (!item) return;
+      switch (item.action) {
+        case 'navigate': navigateTo(item.target); break;
+        case 'redirect': if (item.url) window.location.href = item.url; break;
+        case 'catalog': openCatalog(item.catalog); break;
+        case 'document': openDocument(item.document); break;
+        case 'placeholder': notify('Раздел «' + item.label + '» будет реализован позже'); break;
+      }
+    }
+
+    /* ═══════════════════════════════════════════ CATALOG OPEN ═══════════════════════════════════════════ */
+    var _catLoading = {};
+    var _apiLoadedCatalogs = {};
+    var _docsLoaded = false;
+
+    async function loadDocumentsFromApi() {
+      if (_docsLoaded) return true;
+      try {
+        var data = await apiFetch('/api/documents');
+        if (data && data.documents) {
+          for (var key in data.documents) {
+            if (data.documents.hasOwnProperty(key) && typeof DOCUMENT_DATA !== 'undefined') {
+              DOCUMENT_DATA[key] = data.documents[key];
+            }
+          }
+          _docsLoaded = true;
+          return true;
+        }
+      } catch(e) { console.warn('API load failed for documents, using mock', e); }
+      return false;
+    }
+
+    // Override: preload documents before opening any document view
+    var _origOpenDocument = typeof openDocument !== 'undefined' ? openDocument : null;
+    function openDocument(docType) {
+      var meta = (typeof DOCUMENT_META !== 'undefined') ? DOCUMENT_META[docType] : null;
+      if (!meta) return;
+      if (typeof docState === 'undefined') { docState = { docType: null, editingId: null, isNew: false, editData: null }; }
+      docState.docType = docType; docState.editingId = null; docState.isNew = false; docState.editData = null;
+      navStack.push({ id: 'doc_' + docType, title: meta.name, type: 'doc_view', docType: docType });
+      render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      loadDocumentsFromApi().then(function() { if (docState.docType === docType) render(); });
+    }
+
+    // Override save: send new documents to API
+    function saveDocument(docType, meta) {
+      if (typeof docState === 'undefined' || !docState.editData) return;
+      var data = docState.editData;
+      meta.header.forEach(function(f) {
+        if (f.ro && f.id === 'total') return;
+        var el = document.getElementById('dfld_' + f.id);
+        if (el) { data[f.id] = el.value; if (f.type === 'number' && data[f.id] !== '') data[f.id] = parseFloat(data[f.id]); }
+      });
+      var rows = data.rows || [];
+      for (var ri = 0; ri < rows.length; ri++) {
+        var gEl = document.getElementById('docRowGoods_' + ri);
+        var qEl = document.getElementById('docRowQty_' + ri);
+        var pEl = document.getElementById('docRowPrice_' + ri);
+        if (gEl) rows[ri].goods = gEl.value;
+        if (qEl) rows[ri].qty = parseFloat(qEl.value) || 0;
+        if (pEl) rows[ri].price = parseFloat(pEl.value) || 0;
+        rows[ri].sum = rows[ri].qty * rows[ri].price;
+      }
+      var total = 0; rows.forEach(function(r) { total += r.sum; });
+      data.total = Math.round(total * 100) / 100;
+
+      for (var i = 0; i < meta.header.length; i++) {
+        if (meta.header[i].required && !data[meta.header[i].id]) { notify('Поле "' + meta.header[i].label + '" обязательно'); return; }
+      }
+
+      if (docState.isNew && _docsLoaded) {
+        // Async create via API
+        (async function() {
+          try {
+            var body = { doc_type: docType, lines: rows.map(function(r) { return { product_name: r.goods, quantity: r.qty, price: r.price }; }) };
+            var res = await apiFetch('/api/documents', { method: 'POST', body: JSON.stringify(body) });
+            if (res.success) notify('Документ создан: ' + (res.number || res.document_id));
+            else notify('Ошибка создания документа');
+          } catch(e) { notify('Ошибка: ' + e.message); }
+        })();
+      } else {
+        // Fallback: local save
+        var arr = DOCUMENT_DATA[docType] || [];
+        var maxNum = 0;
+        arr.forEach(function(d) { var n = parseInt(d.number.replace(/\D/g,'')) || 0; if (n > maxNum) maxNum = n; });
+        var prefixes = { receipt:'ПН-', expense:'РН-', transfer:'ПЕР-', writeoff:'СП-', return_doc:'ВОЗ-', kkk:'ЧЕК-' };
+        data.number = (prefixes[docType] || 'ДОК-') + String(maxNum + 1).padStart(5, '0');
+        data.id = docType.charAt(0) + (arr.length + 1);
+        data.posted = false;
+        DOCUMENT_DATA[docType] = arr;
+        arr.push(JSON.parse(JSON.stringify(data)));
+        notify('Документ "' + data.number + '" создан (локально)');
+      }
+      docState.editingId = null; docState.isNew = false; docState.editData = null;
+      navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Override togglePost: send post/unpost to API
+    function togglePost(docType) {
+      var data = docState.editData; if (!data) return;
+      if (_docsLoaded) {
+        var endpoint = data.posted ? '/api/documents/' + data.id + '/unpost' : '/api/documents/' + data.id + '/post';
+        (async function() {
+          try {
+            var res = await apiFetch(endpoint, { method: 'POST' });
+            if (res.success) { data.posted = !data.posted; notify(data.posted ? 'Документ проведен' : 'Проведение отменено'); renderDocForm(); }
+            else notify('Ошибка: ' + (res.error || 'неизвестная'));
+          } catch(e) { notify('Ошибка связи'); }
+        })();
+      } else {
+        data.posted = !data.posted;
+        var doc = typeof findDoc !== 'undefined' ? findDoc(docType, data.id || docState.editingId) : null;
+        if (doc) doc.posted = data.posted;
+        notify(data.posted ? 'Документ проведен' : 'Проведение отменено');
+        renderDocForm();
+      }
+    }
+
+    function openCatalog(catalogId) {
+      var meta = CATALOG_META[catalogId]; if (!meta) return;
+      catState.catalogId = catalogId; catState.groupPath = []; catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+      navStack.push({ id: 'cat_' + catalogId, title: meta.name, type: 'catalog_view', catalogId: catalogId });
+      _catLoading[catalogId] = true; render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      loadCatalogFromApi(catalogId).then(function() {
+        _catLoading[catalogId] = false;
+        if (catState.catalogId === catalogId) render();
+      });
+    }
+
+    /* ═══════════════════════════════════════════ CATALOG LIST (tree) ═══════════════════════════════════════════ */
+    function getChildren(catalogId, parentId) {
+      return (CATALOG_DATA[catalogId] || []).filter(function(item) { return (item.parent || null) === (parentId || null); });
+    }
+
+    function renderCatalog() {
+      var top = topOfStack(); if (!top) return;
+      var catalogId = (top.type === 'catalog_view') ? top.catalogId : top.catalogId;
+      var meta = CATALOG_META[catalogId]; if (!meta) return;
+      var main = document.getElementById('mainContent');
+
+      // If editing an item, render the card
+      if (catState.editingItemId || catState.isNewItem) { renderCatalogItem(catalogId, meta); return; }
+
+      var parentId = catState.groupPath.length > 0 ? catState.groupPath[catState.groupPath.length - 1].id : null;
+      var items = getChildren(catalogId, parentId);
+      var groupTitle = catState.groupPath.length > 0 ? catState.groupPath[catState.groupPath.length - 1].name : meta.name;
+      var inGroup = catState.groupPath.length > 0;
+
+      // — loading state —
+      if (_catLoading[catalogId]) {
+        main.innerHTML = '<div style="text-align:center;padding:60px 20px;color:#999">⏳ Загрузка...</div>';
+        return;
+      }
+
+      var isApiLoaded = !!_apiLoadedCatalogs[catalogId];
+
+      var html = '';
+      html += '<button class="back-btn" id="catListBack">← Назад</button>';
+      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">';
+      html += '<div class="section-title" style="margin:0;flex:1">📚 ' + esc(groupTitle) + '</div>';
+      if (isApiLoaded) {
+        html += '<span style="font-size:11px;color:#888">' + items.length + ' товаров</span>';
+      }
+      html += '</div>';
+      html += '<div class="cat-toolbar">';
+      html += '<button class="btn btn-primary" id="catAddElem">+ Элемент</button>';
+      if (!isApiLoaded) {
+        html += '<button class="btn btn-outline" id="catAddGroup">📁 Группа</button>';
+      }
+      html += '</div><div class="cat-table">';
+
+      // ".." row to go up one level
+      if (inGroup) {
+        html += '<div class="cat-row up-level" id="catUpRow">' +
+          '<div class="cat-icon">↩</div>' +
+          '<div class="cat-code"></div>' +
+          '<div class="cat-name">.. (на уровень выше)</div>' +
+          '</div>';
+      }
+
+      if (items.length === 0 && !inGroup) {
+        html += '<div class="cat-empty">📭 Справочник пуст</div>';
+      } else if (items.length === 0 && inGroup) {
+        html += '<div class="cat-empty">📭 Группа пуста</div>';
+      } else {
+        items.forEach(function(item) {
+          html += '<div class="cat-row" data-id="' + item.id + '" data-group="' + item.isGroup + '">' +
+            '<div class="cat-icon">' + (item.isGroup ? '📁' : '📄') + '</div>' +
+            '<div class="cat-code">' + esc(item.code || '') + '</div>' +
+            '<div class="cat-name' + (item.isGroup ? ' group' : '') + '">' + esc(item.name) + '</div>' +
+            '</div>';
+        });
+      }
+      html += '</div>';
+      main.innerHTML = html;
+
+      // Up-level row handler
+      var upRow = document.getElementById('catUpRow');
+      if (upRow) {
+        upRow.addEventListener('click', function(e) {
+          catState.groupPath.pop();
+          render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+          e.stopPropagation();
+        });
+      }
+
+      document.getElementById('catListBack').addEventListener('click', function() {
+        if (catState.groupPath.length > 0) { catState.groupPath.pop(); }
+        else { catState.catalogId = null; navStack.pop(); }
+        render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      document.getElementById('catAddElem').addEventListener('click', function() { startNewItem(catalogId, false); });
+      var addGroupBtn = document.getElementById('catAddGroup');
+      if (addGroupBtn) addGroupBtn.addEventListener('click', function() { startNewItem(catalogId, true); });
+      main.querySelectorAll('.cat-row:not(.up-level)').forEach(function(row) {
+        row.addEventListener('click', function(e) {
+          var itemId = row.getAttribute('data-id');
+          var isGroup = row.getAttribute('data-group') === 'true';
+          var item = findCatItem(catalogId, itemId); if (!item) return;
+          if (isGroup) { catState.groupPath.push({ id: item.id, name: item.name }); render(); }
+          else { openCatalogItem(catalogId, item); }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          e.stopPropagation();
+        });
+      });
+    }
+
+    function findCatItem(catalogId, itemId) { return findItem(CATALOG_DATA[catalogId] || [], itemId); }
+
+    /* ═══════════════════════════════════════════ CATALOG ITEM (card) ═══════════════════════════════════════════ */
+    function openCatalogItem(catalogId, item) {
+      catState.editingItemId = item.id; catState.isNewItem = false;
+      catState.editData = {};
+      var meta = CATALOG_META[catalogId];
+      meta.fields.forEach(function(f) { catState.editData[f.id] = item[f.id] !== undefined ? item[f.id] : ''; });
+      catState.editData._id = item.id; catState.editData._isGroup = item.isGroup; catState.editData._parent = item.parent;
+      navStack.push({ id: 'cat_item_' + item.id, title: item.name, type: 'catalog_item', catalogId: catalogId });
+      render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function startNewItem(catalogId, isGroup) {
+      catState.editingItemId = null; catState.isNewItem = true;
+      catState.editData = { _isGroup: isGroup, _parent: catState.groupPath.length > 0 ? catState.groupPath[catState.groupPath.length - 1].id : null };
+      var meta = CATALOG_META[catalogId];
+      meta.fields.forEach(function(f) { catState.editData[f.id] = ''; });
+      navStack.push({ id: 'cat_new', title: isGroup ? 'Новая группа' : 'Новый элемент', type: 'catalog_item', catalogId: catalogId });
+      render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderCatalogItem(catalogId, meta) {
+      var main = document.getElementById('mainContent');
+      var data = catState.editData;
+      var isNew = catState.isNewItem;
+
+      var html = '';
+      html += '<button class="back-btn" id="catItemBack">← К списку</button>';
+      html += '<div class="card">';
+      html += '<div class="card-header"><h3>' + (isNew ? (data._isGroup ? '📁 Новая группа' : '📄 Новый элемент') : '📄 ' + esc(data.name || data.code || 'Карточка')) + '</h3>';
+      if (!isNew) html += '<span style="font-size:12px;color:var(--text-secondary)">Код: ' + esc(data.code || '—') + '</span>';
+      html += '</div><div class="card-body">';
+
+      var fieldIdx = 0;
+      meta.fields.forEach(function(f) {
+        var val = data[f.id] !== undefined ? data[f.id] : '';
+        var ro = (!isNew && f.id === 'code');
+        var inputHtml = (f.type === 'text')
+          ? '<textarea class="field-input" id="fld_' + f.id + '" ' + (ro ? 'readonly' : '') + '>' + esc(val) + '</textarea>'
+          : '<input class="field-input" id="fld_' + f.id + '" value="' + escAttr(val) + '" type="' + (f.type === 'number' ? 'number' : 'text') + '" ' + (ro ? 'readonly' : '') + '>';
+        if (fieldIdx % 2 === 0) html += '<div class="field-row">';
+        html += '<div class="field-group"><div class="field-label">' + esc(f.label) + (f.required ? ' *' : '') + '</div>' + inputHtml + '</div>';
+        if (fieldIdx % 2 === 1 || fieldIdx === meta.fields.length - 1) html += '</div>';
+        fieldIdx++;
+      });
+
+      html += '</div><div class="card-footer">';
+      if (isNew) {
+        html += '<button class="btn btn-primary" id="catSave">💾 Сохранить</button>';
+        html += '<button class="btn btn-outline" id="catCancel">Отмена</button>';
+      } else {
+        html += '<button class="btn btn-primary" id="catSave">💾 Сохранить</button>';
+        html += '<button class="btn btn-danger" id="catDelete">🗑 Удалить</button>';
+      }
+      html += '</div></div>';
+      main.innerHTML = html;
+
+      document.getElementById('catItemBack').addEventListener('click', function() {
+        catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+        navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      document.getElementById('catSave').addEventListener('click', function() { saveCatalogItem(catalogId, meta); });
+      if (isNew) {
+        document.getElementById('catCancel').addEventListener('click', function() {
+          catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+          navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      } else {
+        document.getElementById('catDelete').addEventListener('click', function() {
+          if (confirm('Удалить элемент «' + (data.name || data.code) + '»?')) deleteCatalogItem(catalogId);
+        });
+      }
+    }
+
+    function saveCatalogItem(catalogId, meta) {
+      var data = catState.editData;
+      meta.fields.forEach(function(f) {
+        var el = document.getElementById('fld_' + f.id);
+        if (el) { var val = el.value; if (f.type === 'number' && val !== '') val = parseFloat(val); data[f.id] = val; }
+      });
+      for (var i = 0; i < meta.fields.length; i++) {
+        if (meta.fields[i].required && !data[meta.fields[i].id]) {
+          notify('Поле «' + meta.fields[i].label + '» обязательно'); return;
+        }
+      }
+
+      if (catState.isNewItem) {
+        var arr = CATALOG_DATA[catalogId];
+        var maxCode = 0;
+        arr.forEach(function(item) { var c = parseInt(item.code, 10); if (c > maxCode) maxCode = c; });
+        var newCode = String(maxCode + 1).padStart(5, '0');
+        var newId = catalogId.charAt(0) + (arr.length + 1);
+        var newItem = { id: newId, code: newCode, name: data.name, isGroup: data._isGroup, parent: data._parent };
+        meta.fields.forEach(function(f) { if (f.id !== 'code' && f.id !== 'name') newItem[f.id] = data[f.id]; });
+        arr.push(newItem);
+        notify((data._isGroup ? 'Группа' : 'Элемент') + ' «' + data.name + '» создан(а)');
+      } else {
+        var item = findCatItem(catalogId, data._id);
+        if (item) {
+          meta.fields.forEach(function(f) { item[f.id] = data[f.id]; });
+          var ttop = topOfStack();
+          if (ttop && ttop.type === 'catalog_item') ttop.title = item.name;
+        }
+        notify('Изменения сохранены');
+      }
+      catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+      navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function deleteCatalogItem(catalogId) {
+      var data = catState.editData;
+      var arr = CATALOG_DATA[catalogId];
+      var idx = -1;
+      for (var i = 0; i < arr.length; i++) { if (arr[i].id === data._id) { idx = i; break; } }
+      if (idx >= 0) {
+        var idsToDelete = [arr[idx].id];
+        if (arr[idx].isGroup) {
+          function collectChildren(pid) {
+            arr.forEach(function(item) {
+              if (item.parent === pid) { idsToDelete.push(item.id); if (item.isGroup) collectChildren(item.id); }
+            });
+          }
+          collectChildren(arr[idx].id);
+        }
+        CATALOG_DATA[catalogId] = arr.filter(function(item) { return idsToDelete.indexOf(item.id) === -1; });
+        notify('Элемент удалён');
+      }
+      catState.editingItemId = null; catState.isNewItem = false; catState.editData = null;
+      navStack.pop(); render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ═══════════════════════════════════════════ INIT ═══════════════════════════════════════════ */
+    document.addEventListener('DOMContentLoaded', function() {
+      if (API_TOKEN) {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('adminWrapper').classList.add('visible');
+        var saved = localStorage.getItem('ptm_admin_user');
+        if (saved) { try { _currentUser = JSON.parse(saved); document.getElementById('userName').textContent = _currentUser.name; } catch(e) {} }
+        var hash = window.location.hash.replace('#', '');
+        if (hash && MENU[hash]) buildStackFor(hash);
+        render();
+      }
+    });
+
+    function buildStackFor(sectionId) {
+      navStack.length = 0;
+      if (MENU.root && MENU.root.items) {
+        for (var i = 0; i < MENU.root.items.length; i++) {
+          if (MENU.root.items[i].target === sectionId && MENU[sectionId]) {
+            navStack.push({ id: sectionId, title: MENU[sectionId].title, type: 'menu' }); return;
+          }
+        }
+      }
+      for (var pid in MENU) {
+        if (!MENU.hasOwnProperty(pid) || pid === 'root' || pid === sectionId) continue;
+        var parent = MENU[pid]; if (!parent.items) continue;
+        for (var j = 0; j < parent.items.length; j++) {
+          if (parent.items[j].target === sectionId) {
+            if (MENU.root && MENU.root.items) {
+              for (var k = 0; k < MENU.root.items.length; k++) {
+                if (MENU.root.items[k].target === pid) {
+                  navStack.push({ id: pid, title: parent.title, type: 'menu' });
+                  navStack.push({ id: sectionId, title: MENU[sectionId].title, type: 'menu' }); return;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

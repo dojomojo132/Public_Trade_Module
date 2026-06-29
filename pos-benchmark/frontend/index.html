@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рабочее место кассира — POS Benchmark</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --panel-bg: #16213e;
+    --card-bg: #0f3460;
+    --accent: #e94560;
+    --text: #eee;
+    --text-dim: #8899aa;
+    --green: #00c853;
+    --checkout-bg: #1a1a2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* LEFT — receipt panel */
+  .receipt-panel {
+    width: 38%;
+    background: var(--panel-bg);
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #2a2a4a;
+  }
+  .receipt-panel h2 {
+    padding: 16px 20px 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #2a2a4a;
+  }
+  .receipt-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+  }
+  .receipt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    border-bottom: 1px solid #1e1e3a;
+    font-size: 14px;
+  }
+  .receipt-item .name { flex: 1; }
+  .receipt-item .qty { color: var(--text-dim); margin: 0 12px; min-width: 40px; text-align: center; }
+  .receipt-item .price { color: var(--text-dim); margin-right: 12px; min-width: 70px; text-align: right; }
+  .receipt-item .remove { color: var(--accent); cursor: pointer; font-weight: bold; font-size: 16px; user-select: none; }
+
+  .receipt-total {
+    padding: 16px 20px;
+    border-top: 2px solid var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* RIGHT — products panel */
+  .products-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  .pagination-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .pagination-top button {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid #3a3a5a;
+    padding: 6px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .pagination-top button:hover { background: var(--accent); }
+  .pagination-top .page-indicator { font-size: 15px; color: var(--text-dim); min-width: 100px; text-align: center; }
+
+  .products-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .product-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    padding: 4px;
+  }
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(233,69,96,0.4);
+  }
+  .product-card .pname {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .product-card .pprice {
+    font-size: 14px;
+    color: var(--green);
+    font-weight: bold;
+  }
+
+  .checkout-btn {
+    margin-top: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+  .checkout-btn:hover { background: #ff1a40; }
+  .checkout-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.show { display: flex; }
+  .modal-content {
+    background: var(--panel-bg);
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 320px;
+  }
+  .modal-content h2 { color: var(--green); margin-bottom: 16px; }
+  .modal-content button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="receipt-panel">
+  <h2>🧾 ЧЕК</h2>
+  <div class="receipt-items" id="receiptItems"></div>
+  <div class="receipt-total">
+    <span>ИТОГО:</span>
+    <span id="receiptTotal">0.00 ₴</span>
+  </div>
+</div>
+
+<div class="products-panel">
+  <div class="pagination-top">
+    <button onclick="prevPage()">◀ Назад</button>
+    <span class="page-indicator" id="pageIndicator">Стр. 1 из 5</span>
+    <button onclick="nextPage()">Вперёд ▶</button>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+  <button class="checkout-btn" id="checkoutBtn" onclick="checkout()">РАССЧИТАТЬ</button>
+</div>
+
+<div class="modal" id="checkoutModal">
+  <div class="modal-content">
+    <h2>✅ Чек закрыт</h2>
+    <p style="font-size:24px;font-weight:bold;margin:8px 0" id="checkoutAmount">0.00 ₴</p>
+    <button onclick="closeModal()">Новый чек</button>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG =====
+// const API = 'http://localhost:3001/api';  // Rust
+const API = 'http://localhost:3002/api';      // Go
+
+// ===== STATE =====
+let currentPage = 1;
+let totalPages = 1;
+let cart = [];  // { product_id, name, price, quantity }
+
+async function fetchProducts(page) {
+  const resp = await fetch(`${API}/products?page=${page}`);
+  const data = await resp.json();
+  currentPage = data.page;
+  totalPages = data.total_pages;
+  document.getElementById('pageIndicator').textContent =
+    `Стр. ${currentPage} из ${totalPages}`;
+  renderProducts(data.products);
+}
+
+function renderProducts(products) {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = '';
+  for (const p of products) {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.onclick = () => addToCart(p);
+    card.innerHTML = `
+      <div class="pname">${p.name}</div>
+      <div class="pprice">${p.price} ₴</div>
+    `;
+    grid.appendChild(card);
+  }
+}
+
+function addToCart(product) {
+  const existing = cart.find(c => c.product_id === product.id);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ product_id: product.id, name: product.name, price: product.price, quantity: 1 });
+  }
+  renderReceipt();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderReceipt();
+}
+
+function renderReceipt() {
+  const container = document.getElementById('receiptItems');
+  const totalEl = document.getElementById('receiptTotal');
+  let html = '';
+  let total = 0;
+  cart.forEach((item, i) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    html += `
+      <div class="receipt-item">
+        <span class="name">${item.name}</span>
+        <span class="qty">×${item.quantity}</span>
+        <span class="price">${subtotal} ₴</span>
+        <span class="remove" onclick="removeFromCart(${i})">✕</span>
+      </div>`;
+  });
+  container.innerHTML = html || '<div style="padding:20px;color:#556;text-align:center">Чек пуст</div>';
+  totalEl.textContent = total + ' ₴';
+}
+
+async function checkout() {
+  if (cart.length === 0) return;
+  const body = { items: cart.map(c => ({ product_id: c.product_id, quantity: c.quantity })) };
+  const resp = await fetch(`${API}/checkout`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const data = await resp.json();
+  document.getElementById('checkoutAmount').textContent = data.total + ' ₴';
+  document.getElementById('checkoutModal').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('checkoutModal').classList.remove('show');
+  cart = [];
+  renderReceipt();
+}
+
+function prevPage() {
+  if (currentPage > 1) fetchProducts(currentPage - 1);
+}
+function nextPage() {
+  if (currentPage < totalPages) fetchProducts(currentPage + 1);
+}
+
+// Init
+fetchProducts(1);
+</script>
+</body>
+</html>

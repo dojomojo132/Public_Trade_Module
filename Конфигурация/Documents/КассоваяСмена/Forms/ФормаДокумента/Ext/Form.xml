@@ -51,6 +51,133 @@
 			<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="17"/>
 			<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="18"/>
 		</InputField>
+		<Pages name="СтраницыСмены" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения смены</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыСменыРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<Page name="СтраницаЧекиККМ" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Чеки ККМ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЧекиККМРасширеннаяПодсказка" id="33"/>
+					<ChildItems>
+						<Table name="ЧекиККМ" id="34">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>false</AutoInsertNewRow>
+							<EnableStartDrag>false</EnableStartDrag>
+							<EnableDrag>false</EnableDrag>
+							<DataPath>Объект.ЧекиККМ</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЧекиККМКонтекстноеМеню" id="35"/>
+							<AutoCommandBar name="ЧекиККМКоманднаяПанель" id="36"/>
+							<ExtendedTooltip name="ЧекиККМРасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<LabelField name="ЧекиККМНомерСтроки" id="38">
+									<DataPath>Объект.ЧекиККМ.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧекиККМНомерСтрокиКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ЧекиККМНомерСтрокиРасширеннаяПодсказка" id="40"/>
+								</LabelField>
+								<InputField name="ЧекиККМКасса" id="41">
+									<DataPath>Объект.ЧекиККМ.Касса</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧекиККМКассаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ЧекиККМКассаРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<InputField name="ЧекиККМЧекККМ" id="44">
+									<DataPath>Объект.ЧекиККМ.ЧекККМ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧекиККМЧекККМКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ЧекиККМЧекККМРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="ЧекиККМСумма" id="47">
+									<DataPath>Объект.ЧекиККМ.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧекиККМСуммаКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ЧекиККМСуммаРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="ЧекиККМСуммаСкидки" id="50">
+									<DataPath>Объект.ЧекиККМ.СуммаСкидки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЧекиККМСуммаСкидкиКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ЧекиККМСуммаСкидкиРасширеннаяПодсказка" id="52"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаФискальныеЧеки" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фискальные чеки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаФискальныеЧекиРасширеннаяПодсказка" id="54"/>
+					<ChildItems>
+						<Table name="ФискальныеЧеки" id="55">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>false</AutoInsertNewRow>
+							<EnableStartDrag>false</EnableStartDrag>
+							<EnableDrag>false</EnableDrag>
+							<DataPath>Объект.ФискальныеЧеки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ФискальныеЧекиКонтекстноеМеню" id="56"/>
+							<AutoCommandBar name="ФискальныеЧекиКоманднаяПанель" id="57"/>
+							<ExtendedTooltip name="ФискальныеЧекиРасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<LabelField name="ФискальныеЧекиНомерСтроки" id="59">
+									<DataPath>Объект.ФискальныеЧеки.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиНомерСтрокиКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ФискальныеЧекиНомерСтрокиРасширеннаяПодсказка" id="61"/>
+								</LabelField>
+								<InputField name="ФискальныеЧекиВидОперации" id="62">
+									<DataPath>Объект.ФискальныеЧеки.ВидОперации</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиВидОперацииКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ФискальныеЧекиВидОперацииРасширеннаяПодсказка" id="64"/>
+								</InputField>
+								<InputField name="ФискальныеЧекиФОП" id="65">
+									<DataPath>Объект.ФискальныеЧеки.ФОП</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиФОПКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="ФискальныеЧекиФОПРасширеннаяПодсказка" id="67"/>
+								</InputField>
+								<InputField name="ФискальныеЧекиФискальныйНомер" id="68">
+									<DataPath>Объект.ФискальныеЧеки.ФискальныйНомер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиФискальныйНомерКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ФискальныеЧекиФискальныйНомерРасширеннаяПодсказка" id="70"/>
+								</InputField>
+								<InputField name="ФискальныеЧекиСумма" id="71">
+									<DataPath>Объект.ФискальныеЧеки.Сумма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиСуммаКонтекстноеМеню" id="72"/>
+									<ExtendedTooltip name="ФискальныеЧекиСуммаРасширеннаяПодсказка" id="73"/>
+								</InputField>
+								<InputField name="ФискальныеЧекиФискальныйЧек" id="74">
+									<DataPath>Объект.ФискальныеЧеки.ФискальныйЧек</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ФискальныеЧекиФискальныйЧекКонтекстноеМеню" id="75"/>
+									<ExtendedTooltip name="ФискальныеЧекиФискальныйЧекРасширеннаяПодсказка" id="76"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">

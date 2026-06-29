@@ -1,0 +1,16 @@
+{
+  "name": "get_constant_value",
+  "description": "Получить текущее значение константы конфигурации. Возвращает имя, тип и значение.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Имя константы (например: ОсновнойСклад, КонтролироватьОстаткиПриСписании)"
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

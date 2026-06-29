@@ -1,0 +1,8 @@
+{
+  "name": "debug_disconnect",
+  "description": "Остановить сессию отладки: polling → detach → stop dbgs.exe/1cv8c.exe.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

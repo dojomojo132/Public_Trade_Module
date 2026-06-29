@@ -1,0 +1,35 @@
+{
+  "name": "delete_object",
+  "description": "Удаление элемента справочника или документа. По умолчанию ставит пометку удаления. С force=true — физическое удаление.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта: Catalogs или Documents",
+        "enum": [
+          "Catalogs",
+          "Documents"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя справочника или документа (например: Контрагенты, ПриходТовара)"
+      },
+      "searchValue": {
+        "type": "string",
+        "description": "Код/Наименование справочника или Номер документа для поиска"
+      },
+      "force": {
+        "type": "boolean",
+        "description": "Непосредственное удаление (true) или пометка удаления (false, по умолчанию)",
+        "default": false
+      }
+    },
+    "required": [
+      "metaType",
+      "name",
+      "searchValue"
+    ]
+  }
+}

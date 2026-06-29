@@ -33,14 +33,14 @@ scripts/debug/session.py (Session Manager + Polling Thread)
 | Параметр | Описание | Пример |
 |----------|----------|--------|
 | `platform.root` | Путь к установке 1С | `C:\Program Files\1cv8\8.3.27.1234` |
-| `infoBase.path` | Путь к файловой ИБ | `D:\Bases\PTM` |
+| `infoBase.path` | Путь к файловой ИБ | `{config.paths.infobase}` |
 | `debug.host` | Хост dbgs.exe | `localhost` |
 | `debug.portRange` | Диапазон портов | `[1550, 1560]` |
-| `workspace.configRoot` | Путь к выгруженной конфигурации | `D:\Git\Public_Trade_Module\Конфигурация` |
+| `workspace.configRoot` | Путь к выгруженной конфигурации | `Конфигурация` |
 
 **ВАЖНО:** Обновлять `platform.root` при смене версии 1С!
 
-## Инструменты отладки (MCP Server: ptm-debug)
+## Инструменты отладки (MCP Server: {config.mcp.debug.prefix})
 
 | Инструмент | Описание | Параметры |
 |-----------|----------|-----------|

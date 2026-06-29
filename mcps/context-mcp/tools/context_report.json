@@ -1,0 +1,8 @@
+{
+  "name": "context_report",
+  "description": "Агрегаты по feedback: problem_stages, trim_candidates, wrong_resolves, общая статистика.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

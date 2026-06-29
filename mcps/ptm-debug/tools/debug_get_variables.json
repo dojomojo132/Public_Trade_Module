@@ -1,0 +1,13 @@
+{
+  "name": "debug_get_variables",
+  "description": "Получить локальные переменные текущего фрейма (или указанного).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "frame_index": {
+        "type": "integer",
+        "description": "Индекс фрейма в стеке (0 = текущий, по умолчанию 0)"
+      }
+    }
+  }
+}

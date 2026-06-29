@@ -1,0 +1,75 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e180]:
+      - generic [ref=e181]:
+        - generic [ref=e183]: 🛒
+        - generic [ref=e184]:
+          - generic [ref=e185]: PTM Касса
+          - generic [ref=e186]: 00:42:08
+      - navigation [ref=e187]:
+        - link "Администрирование" [ref=e188] [cursor=pointer]:
+          - /url: /admin
+        - link "Продажи" [ref=e189] [cursor=pointer]:
+          - /url: /accountant
+        - link "Приход" [ref=e190] [cursor=pointer]:
+          - /url: /accountant/income
+        - link "Остатки" [ref=e191] [cursor=pointer]:
+          - /url: /accountant/stock
+      - generic [ref=e192]:
+        - generic [ref=e193]: ● Онлайн
+        - generic [ref=e194]:
+          - generic [ref=e195]: Администратор
+          - generic [ref=e196]: Смена открыта
+        - link "Выйти" [ref=e197] [cursor=pointer]:
+          - /url: /login
+    - main [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - generic [ref=e202]: С даты
+            - textbox "С даты" [ref=e203]
+          - generic [ref=e204]:
+            - generic [ref=e205]: По дату
+            - textbox "По дату" [ref=e206]
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - generic [ref=e209]: Выручка
+            - generic [ref=e210]: 1 800,50 ₽
+          - generic [ref=e211]:
+            - generic [ref=e212]: Чеков
+            - generic [ref=e213]: "3"
+          - generic [ref=e214]:
+            - generic [ref=e215]: Синхронизировано
+            - generic [ref=e216]: 0 / 3
+        - table [ref=e218]:
+          - rowgroup [ref=e219]:
+            - row "ID Дата/Время Кассир Позиций Сумма Статус" [ref=e220]:
+              - columnheader "ID" [ref=e221]
+              - columnheader "Дата/Время" [ref=e222]
+              - columnheader "Кассир" [ref=e223]
+              - columnheader "Позиций" [ref=e224]
+              - columnheader "Сумма" [ref=e225]
+              - columnheader "Статус" [ref=e226]
+          - rowgroup [ref=e227]:
+            - row "5ab0c454… 22.05.2026, 00:34 Кассир Иванова 2 370,50 ₽ ✗ Ошибка" [ref=e228]:
+              - cell "5ab0c454…" [ref=e229]
+              - cell "22.05.2026, 00:34" [ref=e230]
+              - cell "Кассир Иванова" [ref=e231]
+              - cell "2" [ref=e232]
+              - cell "370,50 ₽" [ref=e233]
+              - cell "✗ Ошибка" [ref=e234]
+            - row "d656bb75… 22.05.2026, 00:29 Кассир Иванова 5 245,00 ₽ ✗ Ошибка" [ref=e235]:
+              - cell "d656bb75…" [ref=e236]
+              - cell "22.05.2026, 00:29" [ref=e237]
+              - cell "Кассир Иванова" [ref=e238]
+              - cell "5" [ref=e239]
+              - cell "245,00 ₽" [ref=e240]
+              - cell "✗ Ошибка" [ref=e241]
+            - row "989c9302… 22.05.2026, 00:29 Кассир Иванова 5 1 185,00 ₽ ✗ Ошибка" [ref=e242]:
+              - cell "989c9302…" [ref=e243]
+              - cell "22.05.2026, 00:29" [ref=e244]
+              - cell "Кассир Иванова" [ref=e245]
+              - cell "5" [ref=e246]
+              - cell "1 185,00 ₽" [ref=e247]
+              - cell "✗ Ошибка" [ref=e248]
+  - generic [ref=e19]: PTM — Бухгалтерия

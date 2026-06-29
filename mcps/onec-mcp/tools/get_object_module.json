@@ -1,0 +1,46 @@
+{
+  "name": "get_object_module",
+  "description": "Возвращает путь к файлу BSL-модуля объекта метаданных на диске. Для CommonModules параметр moduleType игнорируется. Для FormModule необходим параметр formName. Используйте read_file для чтения содержимого по возвращённому пути.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных",
+        "enum": [
+          "Catalogs",
+          "Documents",
+          "DataProcessors",
+          "Reports",
+          "CommonModules",
+          "InformationRegisters",
+          "AccumulationRegisters",
+          "ChartsOfCharacteristicTypes"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта метаданных"
+      },
+      "moduleType": {
+        "type": "string",
+        "description": "Тип модуля (по умолчанию ObjectModule)",
+        "default": "ObjectModule",
+        "enum": [
+          "ObjectModule",
+          "ManagerModule",
+          "FormModule",
+          "RecordSetModule"
+        ]
+      },
+      "formName": {
+        "type": "string",
+        "description": "Имя формы (обязательно если moduleType=FormModule)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

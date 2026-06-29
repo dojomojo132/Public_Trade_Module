@@ -1,0 +1,30 @@
+{
+  "name": "context_session_append",
+  "description": "Дописать структурированный блок в активную сессию (kind задаёт шаблон форматирования).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "kind": {
+        "type": "string",
+        "enum": [
+          "task_header",
+          "recon_step",
+          "delivered",
+          "coverage",
+          "excess",
+          "missing",
+          "decision",
+          "free_markdown"
+        ]
+      },
+      "payload": {
+        "type": "object",
+        "description": "Структура соответствует kind, см. спецификацию §4"
+      }
+    },
+    "required": [
+      "kind",
+      "payload"
+    ]
+  }
+}

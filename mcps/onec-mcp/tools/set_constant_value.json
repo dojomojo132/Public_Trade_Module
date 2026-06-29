@@ -1,0 +1,21 @@
+{
+  "name": "set_constant_value",
+  "description": "Установить значение константы конфигурации. Для ссылочных типов (справочники) выполняет поиск по коду или наименованию.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Имя константы"
+      },
+      "value": {
+        "type": "string",
+        "description": "Новое значение (строка, число, булево). Для ссылочных типов - код или наименование."
+      }
+    },
+    "required": [
+      "name",
+      "value"
+    ]
+  }
+}

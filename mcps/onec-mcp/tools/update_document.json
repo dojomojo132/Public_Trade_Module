@@ -1,0 +1,31 @@
+{
+  "name": "update_document",
+  "description": "Обновление существующего документа по номеру. Позволяет изменить реквизиты и при необходимости перепровести.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "documentType": {
+        "type": "string",
+        "description": "Тип документа (например: ПриходТовара)"
+      },
+      "number": {
+        "type": "string",
+        "description": "Номер документа"
+      },
+      "attributes": {
+        "type": "string",
+        "description": "JSON-строка с реквизитами для обновления: {\"ИмяРеквизита\": \"НовоеЗначение\", ...}"
+      },
+      "repost": {
+        "type": "boolean",
+        "description": "Перепровести документ после обновления",
+        "default": false
+      }
+    },
+    "required": [
+      "documentType",
+      "number",
+      "attributes"
+    ]
+  }
+}

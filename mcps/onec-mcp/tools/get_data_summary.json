@@ -1,0 +1,13 @@
+{
+  "name": "get_data_summary",
+  "description": "Сводка по количеству записей в каждом справочнике, документе и регистре. Полезно для диагностики состояния базы данных.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Фильтр по типу: Catalogs, Documents, InformationRegisters, AccumulationRegisters. Если не указан - все типы."
+      }
+    }
+  }
+}

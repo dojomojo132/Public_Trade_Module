@@ -1,0 +1,8 @@
+{
+  "name": "dev_validate",
+  "description": "Валидация XML-структуры в Конфигурация/ без обращения к ИБ. Быстро. Запускать ПЕРЕД dev_deploy.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

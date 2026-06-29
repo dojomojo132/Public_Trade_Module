@@ -1,0 +1,16 @@
+{
+  "name": "get_subsystem_content",
+  "description": "Получить состав подсистемы: список включённых объектов метаданных и дочерних подсистем.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Имя подсистемы (для вложенных - через точку: РозничнаяТорговля.Касса)"
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

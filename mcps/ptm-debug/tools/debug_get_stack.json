@@ -1,0 +1,8 @@
+{
+  "name": "debug_get_stack",
+  "description": "Получить стек вызовов. Возвращает массив фреймов с номером строки и путём к BSL-файлу (если есть).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

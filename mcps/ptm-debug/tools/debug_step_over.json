@@ -1,0 +1,8 @@
+{
+  "name": "debug_step_over",
+  "description": "Шаг через (F10) — выполнить текущую строку, перейти к следующей.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

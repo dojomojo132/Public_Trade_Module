@@ -1,0 +1,8 @@
+{
+  "name": "debug_connect",
+  "description": "Запустить сессию отладки: dbgs.exe → attach → init → polling. Вызывать ПЕРВЫМ перед любыми действиями отладки.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

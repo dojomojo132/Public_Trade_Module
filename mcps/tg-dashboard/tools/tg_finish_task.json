@@ -1,0 +1,27 @@
+{
+  "name": "tg_finish_task",
+  "description": "Финализировать задачу. Вызывает только closer.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "task_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "done",
+          "cancelled",
+          "failed"
+        ]
+      },
+      "summary": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "task_id",
+      "status"
+    ]
+  }
+}

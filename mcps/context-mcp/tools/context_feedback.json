@@ -1,0 +1,67 @@
+{
+  "name": "context_feedback",
+  "description": "Запись обратной связи по context_id (использовалось ли, что лишнее, чего не хватило).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "context_id": {
+        "type": "string"
+      },
+      "result": {
+        "type": "string",
+        "enum": [
+          "perfect",
+          "enough",
+          "excessive",
+          "insufficient",
+          "wrong"
+        ]
+      },
+      "rating": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+      },
+      "sections": {
+        "type": "object",
+        "description": "Map: section_name -> 'used'|'partial'|'unused'",
+        "additionalProperties": {
+          "type": "string",
+          "enum": [
+            "used",
+            "partial",
+            "unused"
+          ]
+        }
+      },
+      "extras": {
+        "type": "object",
+        "properties": {
+          "files_read": {
+            "type": "integer"
+          },
+          "searches": {
+            "type": "integer"
+          },
+          "mcp_calls": {
+            "type": "integer"
+          }
+        }
+      },
+      "missing": {
+        "type": "string"
+      },
+      "excess": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "context_id",
+      "result",
+      "rating"
+    ]
+  }
+}

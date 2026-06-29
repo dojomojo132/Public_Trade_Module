@@ -1,6 +1,8 @@
 ﻿---
 name: 1c-metadata-check
 description: "Verify 1C:Enterprise metadata objects via MCP before making changes. Use when checking if an object exists, verifying its structure, attributes, tabular sections, forms, or connected objects. Ensures InfoBase is the source of truth, not disk files."
+
+# ⚠️ При старте — прочитай `.github/project-config.yml` (config.*)
 ---
 
 # Проверка метаданных 1С через MCP
@@ -24,9 +26,8 @@ description: "Verify 1C:Enterprise metadata objects via MCP before making change
 
 ### 1. Синхронизация (ОБЯЗАТЕЛЬНО перед работой)
 
-```powershell
-$script = Get-ChildItem -Path "D:\Git\Public_Trade_Module" -Recurse -Filter "deploy-config.ps1" | Select-Object -First 1
-powershell -ExecutionPolicy Bypass -File $script.FullName -Action Dump
+```bash
+mcp_dev-mcp_dev_dump
 ```
 
 Гарантирует: файлы на диске = ИБ.
@@ -34,7 +35,7 @@ powershell -ExecutionPolicy Bypass -File $script.FullName -Action Dump
 ### 2. Проверка существования объекта
 
 ```
-MCP → mcp_mcp_1c_torgov_list_metadata_objects
+MCP → mcp_1c_list_metadata_objects
       metaType: "Catalog" / "Document" / "AccumulationRegister" / ...
       nameMask: "ИмяОбъекта"
 ```
@@ -42,7 +43,7 @@ MCP → mcp_mcp_1c_torgov_list_metadata_objects
 ### 3. Проверка структуры объекта
 
 ```
-MCP → mcp_mcp_1c_torgov_get_metadata_structure
+MCP → mcp_1c_get_metadata_structure
       metaType: "Catalog" / "Document" / ...
       name: "ИмяОбъекта"
 ```
@@ -52,7 +53,7 @@ MCP → mcp_mcp_1c_torgov_get_metadata_structure
 ### 4. Проверка форм объекта
 
 ```
-MCP → mcp_mcp_1c_torgov_get_form_structure
+MCP → mcp_1c_get_form_structure
       metaType: "Catalog" / "Document" / ...
       name: "ИмяОбъекта"
       formName: "" (пустой → список всех форм)
@@ -61,7 +62,7 @@ MCP → mcp_mcp_1c_torgov_get_form_structure
 ### 5. Проверка связей
 
 ```
-MCP → mcp_mcp_1c_torgov_get_connected_objects
+MCP → mcp_1c_get_connected_objects
       metaType: "Catalog" / "Document" / ...
       name: "ИмяОбъекта"
 ```
@@ -71,7 +72,7 @@ MCP → mcp_mcp_1c_torgov_get_connected_objects
 ### 6. Обзор конфигурации
 
 ```
-MCP → mcp_mcp_1c_torgov_get_configuration_overview
+MCP → mcp_1c_get_configuration_overview
 ```
 
 Возвращает: все объекты конфигурации с количествами.
@@ -155,9 +156,9 @@ MCP → mcp_mcp_1c_torgov_get_configuration_overview
 
 | URI | Описание |
 |-----|----------|
-| `ptm://datamodel` | Полная модель данных конфигурации |
-| `ptm://registers` | Карта регистров: измерения, ресурсы, реквизиты |
-| `ptm://business-logic` | Карта документооборота: документы → движения → отчёты |
+| `{config.resources.prefix}://datamodel` | Полная модель данных конфигурации |
+| `{config.resources.prefix}://registers` | Карта регистров: измерения, ресурсы, реквизиты |
+| `{config.resources.prefix}://business-logic` | Карта документооборота: документы → движения → отчёты |
 | `file://resource/syntax_1c.txt` | Синтаксис встроенного языка 1С |
 
 ### MCP Prompts

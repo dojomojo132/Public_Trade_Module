@@ -1,29 +1,57 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Открыть спецификацию",
-			"type": "shell",
-			"command": "code",
-			"args": [
-				"${workspaceFolder}/ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).xml"
-			],
-			"problemMatcher": []
-		},
-		{
-			"label": "Git push",
-			"type": "shell",
-			"command": "git add -A; python \"D:\\Git\\Public_Trade_Module\\scripts\\_git_commit.py\""
-		},
-		{
-			"label": "Generate form ПродажиПоКассам",
-			"type": "shell",
-			"command": "python \"D:\\Git\\Public_Trade_Module\\scripts\\_generate_form.py\" --type dataprocessor --object ПродажиПоКассам --form Форма"
-		},
-		{
-			"label": "Generate form ПродажиПоКассам",
-			"type": "shell",
-			"command": "python \"D:\\Git\\Public_Trade_Module\\scripts\\_generate_form.py\" --type dataprocessor --object ПродажиПоКассам --form Форма"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PTM: Bootstrap",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["scripts/project_bootstrap.py"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "runOptions": { "runOn": "folderOpen" },
+      "presentation": { "reveal": "silent", "panel": "shared", "close": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "PTM: Obsidian Sync Watcher",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["scripts/obsidian_sync_watcher.py"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "runOptions": { "runOn": "folderOpen" },
+      "isBackground": true,
+      "presentation": { "reveal": "silent", "panel": "dedicated", "close": false },
+      "problemMatcher": {
+        "owner": "obsidian-watcher",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Watcher старт",
+          "endsPattern": "Watcher старт"
+        }
+      }
+    },
+    {
+      "label": "PTM: Sync Obsidian (manual)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["sync_1c_obsidian.py"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Открыть спецификацию",
+      "type": "shell",
+      "command": "code",
+      "args": [
+        "${workspaceFolder}/Документация/Спецификации/ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).xml"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Git push",
+      "type": "shell",
+      "command": "git add -A; python \"${workspaceFolder}/scripts/_git_commit.py\""
+    }
+  ]
 }

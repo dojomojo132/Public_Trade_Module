@@ -1,0 +1,35 @@
+{
+  "name": "search_data",
+  "description": "Полнотекстовый поиск элементов справочника или документов по подстроке в Наименовании/Коде/Номере. Быстрый способ найти объект.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта: Catalogs, Documents",
+        "enum": [
+          "Catalogs",
+          "Documents"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например: Номенклатура, ПриходТовара)"
+      },
+      "searchText": {
+        "type": "string",
+        "description": "Текст для поиска (ищет в Наименовании/Коде/Номере)"
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум результатов (по умолчанию 50)",
+        "default": 50
+      }
+    },
+    "required": [
+      "metaType",
+      "name",
+      "searchText"
+    ]
+  }
+}

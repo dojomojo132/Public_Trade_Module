@@ -1,0 +1,16 @@
+{
+  "name": "configurator_hotkey",
+  "description": "Отправить горячую клавишу в Конфигуратор. Формат pywinauto: ^ = Ctrl, + = Shift, % = Alt. Примеры: '{F7}', '^s', '{ENTER}', '%{F4}', '^+n'. Клавиши: {F1}-{F12}, {ENTER}, {TAB}, {DELETE}, {ESCAPE}, {UP}, {DOWN}, {LEFT}, {RIGHT}, {HOME}, {END}.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "keys": {
+        "type": "string",
+        "description": "Комбинация клавиш"
+      }
+    },
+    "required": [
+      "keys"
+    ]
+  }
+}

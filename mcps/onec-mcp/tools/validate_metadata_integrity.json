@@ -1,0 +1,13 @@
+{
+  "name": "validate_metadata_integrity",
+  "description": "Проверка целостности метаданных: для каждого объекта выполняет тестовый запрос к БД, проверяет доступность таблиц и табличных частей. Выявляет неконсистентные состояния.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип метаданных для проверки (Catalogs, Documents, InformationRegisters, AccumulationRegisters). Если не указан - проверяются все типы."
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "post_document",
+  "description": "Провести или отменить проведение документа. Используйте для тестирования модулей проведения и исправления данных.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "documentType": {
+        "type": "string",
+        "description": "Имя типа документа (например, ЧекККМ, ПриходТовара)"
+      },
+      "documentNumber": {
+        "type": "string",
+        "description": "Номер документа"
+      },
+      "action": {
+        "type": "string",
+        "description": "Действие: post (провести) или unpost (отменить проведение)",
+        "default": "post",
+        "enum": [
+          "post",
+          "unpost"
+        ]
+      }
+    },
+    "required": [
+      "documentType",
+      "documentNumber",
+      "action"
+    ]
+  }
+}

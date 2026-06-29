@@ -1,0 +1,19 @@
+{
+  "name": "dev_deploy",
+  "description": "Деплой основной конфигурации: LoadConfigFromFiles + UpdateDBCfg. Долго (~100 сек). DT-бэкап создаётся автоматически 1 раз в день.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "skip_check": {
+        "type": "boolean",
+        "default": true,
+        "description": "Пропустить CheckConfig (ускоряет деплой)"
+      },
+      "force_dt_backup": {
+        "type": "boolean",
+        "default": false,
+        "description": "Принудительно создать DT-бэкап даже если он есть за сегодня"
+      }
+    }
+  }
+}

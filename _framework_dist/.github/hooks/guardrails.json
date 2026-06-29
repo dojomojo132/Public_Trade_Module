@@ -1,0 +1,25 @@
+﻿{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "windows": "python \".github/hooks/scripts/session_start.py\"",
+        "timeout": 5
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+        "windows": "python \".github/hooks/scripts/pre_edit_check.py\"",
+        "timeout": 5
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "windows": "python \".github/hooks/scripts/post_tool_audit.py\"",
+        "timeout": 10
+      }
+    ]
+  }
+}

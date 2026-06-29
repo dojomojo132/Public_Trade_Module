@@ -1,0 +1,25 @@
+{
+  "name": "run_report",
+  "description": "Выполнить отчет по имени с параметрами и получить результат. Используется СхемаКомпоновкиДанных отчета с настройками по умолчанию.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "reportName": {
+        "type": "string",
+        "description": "Имя отчета (например: ОстаткиТоваров, Продажи)"
+      },
+      "parameters": {
+        "type": "string",
+        "description": "JSON с параметрами отчета: {\"Период\": \"20260101\", \"Склад\": \"Основной\"}"
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум строк результата (по умолчанию 100)",
+        "default": 100
+      }
+    },
+    "required": [
+      "reportName"
+    ]
+  }
+}

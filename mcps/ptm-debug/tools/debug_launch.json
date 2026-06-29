@@ -1,0 +1,8 @@
+{
+  "name": "debug_launch",
+  "description": "Запустить 1С:Предприятие с подключением к отладчику. Вызывать ПОСЛЕ debug_connect.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

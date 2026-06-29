@@ -1,0 +1,8 @@
+{
+  "name": "dev_status",
+  "description": "Health-check: проверяет наличие venv, ИБ, vault Obsidian, PS-скриптов, последний бэкап, последний DT-бэкап.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

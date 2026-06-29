@@ -1,0 +1,35 @@
+{
+  "name": "get_data_history",
+  "description": "История изменений объектов из Журнала регистрации. Показывает кто, когда и как менял данные.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип: Catalogs, Documents"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например: Номенклатура)"
+      },
+      "searchValue": {
+        "type": "string",
+        "description": "Наименование или номер для поиска конкретного элемента"
+      },
+      "lastMinutes": {
+        "type": "number",
+        "description": "За последние N минут (по умолчанию 1440 = 24 часа)",
+        "default": 1440
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум записей (по умолчанию 50)",
+        "default": 50
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

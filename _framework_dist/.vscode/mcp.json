@@ -1,0 +1,41 @@
+﻿{
+    "servers": {
+        // ── 1С MCP (SSE) ──────────────────────────────────────────────────────
+        // URL вида: http://localhost/<ИМЯ_ИБ>/hs/mcp/mcp
+        // Раскомментировать и заменить <ИМЯ_ИБ> на имя публикации ИБ
+        // "1c-mcp": {
+        //     "type": "sse",
+        //     "url": "http://localhost/<ИМЯ_ИБ>/hs/mcp/mcp"
+        // },
+
+        // ── RDBG Отладчик (stdio Python) ──────────────────────────────────────
+        // Раскомментировать для включения HTTP-отладки BSL через VS Code
+        // "ptm-debug": {
+        //     "type": "stdio",
+        //     "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+        //     "args": ["scripts/debug/debug_mcp_server.py"],
+        //     "cwd": "${workspaceFolder}",
+        //     "env": { "PYTHONPATH": "${workspaceFolder}" }
+        // },
+
+        // ── Управление Конфигуратором (stdio Python) ──────────────────────────
+        // Скриншоты, клики, навигация в окне Конфигуратора.
+        // Требует: pip install pywinauto Pillow mss pywin32
+        // "1c-configurator": {
+        //     "type": "stdio",
+        //     "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+        //     "args": ["scripts/configurator_bridge.py"],
+        //     "cwd": "${workspaceFolder}",
+        //     "env": { "PYTHONPATH": "${workspaceFolder}" }
+        // },
+
+        // ── Obsidian Knowledge Graph (SSE) ────────────────────────────────────
+        // Требует: плагин Obsidian Local REST API (https://github.com/coddingtonbear/obsidian-local-rest-api)
+        // Заменить <ВАШ_ТОКЕН> на значение из настроек плагина
+        // "obsidian-vault": {
+        //     "type": "sse",
+        //     "url": "http://localhost:3001/mcp",
+        //     "headers": { "Authorization": "Bearer <ВАШ_ТОКЕН>" }
+        // }
+    }
+}

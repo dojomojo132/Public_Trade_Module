@@ -1,0 +1,21 @@
+{
+  "name": "bulk_create",
+  "description": "Пакетное создание нескольких элементов справочника за один вызов. Каждый элемент массива: {description, code (опц.), attributes (опц., JSON с реквизитами)}. Удобно для наполнения тестовыми данными.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "catalogName": {
+        "type": "string",
+        "description": "Имя справочника (например: Номенклатура, Контрагенты)"
+      },
+      "items": {
+        "type": "string",
+        "description": "JSON-массив элементов: [{\"description\": \"Имя1\"}, {\"description\": \"Имя2\", \"attributes\": {\"Артикул\": \"123\"}}]"
+      }
+    },
+    "required": [
+      "catalogName",
+      "items"
+    ]
+  }
+}

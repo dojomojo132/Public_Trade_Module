@@ -1,0 +1,29 @@
+# Project Map — CodeWhale Workflow
+# Managed by project-workflow skill. Do not edit manually unless you know what you're doing.
+
+# toolchain: optional path to .deepseek/toolchain.md
+# set automatically on first setup-env when user provides a tool list
+
+[projects.EquipmentManager]
+vault = "EquipmentManager"
+repo = "D:/Git/EquipmentManager"
+initialized = true
+domain = "node-typescript"
+
+[projects.AdminReport]
+vault = "AdminReporty"
+repo = "D:/Git/AdminReport"
+initialized = true
+domain = "1c"
+
+[projects.PublicTradeModule]
+vault = "Public_Trade_Module"
+repo = "D:/Git/Public_Trade_Module"
+initialized = true
+domain = "1c"
+
+[projects.ptm-workspace]
+vault = "ptm-workspace"
+repo = "D:/Git/ptm-workspace"
+initialized = true
+domain = "rust"

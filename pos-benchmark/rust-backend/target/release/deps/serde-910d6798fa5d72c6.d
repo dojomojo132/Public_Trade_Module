@@ -1,0 +1,14 @@
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\libserde-910d6798fa5d72c6.rmeta: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\build\serde-c4ab1b57602a3bc1\out/private.rs
+
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\libserde-910d6798fa5d72c6.rlib: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\build\serde-c4ab1b57602a3bc1\out/private.rs
+
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\serde-910d6798fa5d72c6.d: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\build\serde-c4ab1b57602a3bc1\out/private.rs
+
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\build\serde-c4ab1b57602a3bc1\out/private.rs:
+
+# env-dep:OUT_DIR=D:\\Git\\Public_Trade_Module\\pos-benchmark\\rust-backend\\target\\release\\build\\serde-c4ab1b57602a3bc1\\out

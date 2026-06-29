@@ -1,0 +1,26 @@
+{
+  "name": "get_document_movements",
+  "description": "Получить все движения (записи регистров) конкретного документа. Показывает по каким регистрам и какие записи создал документ при проведении.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "documentType": {
+        "type": "string",
+        "description": "Имя типа документа (например, ЧекККМ, ПриходТовара)"
+      },
+      "documentNumber": {
+        "type": "string",
+        "description": "Номер документа"
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимальное количество строк на каждый регистр (по умолчанию 50)",
+        "default": 50
+      }
+    },
+    "required": [
+      "documentType",
+      "documentNumber"
+    ]
+  }
+}

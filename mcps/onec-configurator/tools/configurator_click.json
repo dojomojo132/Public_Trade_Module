@@ -1,0 +1,31 @@
+{
+  "name": "configurator_click",
+  "description": "Клик мышью по абсолютным экранным координатам. Сначала сделай screenshot чтобы определить координаты, после клика — ещё один для проверки.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "x": {
+        "type": "integer",
+        "description": "X координата (абсолютная)"
+      },
+      "y": {
+        "type": "integer",
+        "description": "Y координата (абсолютная)"
+      },
+      "button": {
+        "type": "string",
+        "description": "left | right | middle",
+        "default": "left"
+      },
+      "double": {
+        "type": "boolean",
+        "description": "True для двойного клика",
+        "default": false
+      }
+    },
+    "required": [
+      "x",
+      "y"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "dev_sync_obsidian",
+  "description": "Синхронизация Конфигурация/ → Obsidian vault (граф знаний). Запускать ПОСЛЕ изменений метаданных.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

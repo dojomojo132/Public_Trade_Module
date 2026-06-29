@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ШАБЛОН: Документ (Document)
+    Инструкция: замени все {{PLACEHOLDER}} реальными значениями.
+    UUID: генерировать уникальные в формате xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
+    
+    Обязательные GeneratedType категории: Object, Ref, Selection, List, Manager
+    Для табличных частей — дополнительно категории TabularSection и TabularSectionRow.
+    RegisterRecords — список регистров, по которым документ делает движения.
+-->
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Document uuid="{{UUID_DOCUMENT}}">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.{{ИМЯ}}" category="Object">
+				<xr:TypeId>{{UUID_TYPE_OBJECT}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_OBJECT}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.{{ИМЯ}}" category="Ref">
+				<xr:TypeId>{{UUID_TYPE_REF}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_REF}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.{{ИМЯ}}" category="Selection">
+				<xr:TypeId>{{UUID_TYPE_SELECTION}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_SELECTION}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.{{ИМЯ}}" category="List">
+				<xr:TypeId>{{UUID_TYPE_LIST}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_LIST}}</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.{{ИМЯ}}" category="Manager">
+				<xr:TypeId>{{UUID_TYPE_MANAGER}}</xr:TypeId>
+				<xr:ValueId>{{UUID_VALUE_MANAGER}}</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>{{ИМЯ}}</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>{{СИНОНИМ}}</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<Numerator/>
+			<NumberType>String</NumberType>
+			<NumberLength>9</NumberLength>
+			<NumberAllowedLength>Variable</NumberAllowedLength>
+			<NumberPeriodicity>Nonperiodical</NumberPeriodicity>
+			<CheckUnique>true</CheckUnique>
+			<Autonumbering>true</Autonumbering>
+			<Characteristics/>
+			<BasedOn/>
+			<InputByString>
+				<xr:Field>Document.{{ИМЯ}}.StandardAttribute.Number</xr:Field>
+			</InputByString>
+			<CreateOnInput>Use</CreateOnInput>
+			<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>
+			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
+			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
+			<DefaultObjectForm/>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryObjectForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<Posting>Allow</Posting>
+			<RealTimePosting>Allow</RealTimePosting>
+			<RegisterRecordsDeletion>AutoDeleteOnUnpost</RegisterRecordsDeletion>
+			<RegisterRecordsWritingOnPost>WriteSelected</RegisterRecordsWritingOnPost>
+			<!-- Регистры движений: раскомментировать и указать нужные -->
+			<!--
+			<RegisterRecords>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.{{ИМЯ_РЕГИСТРА}}</xr:Item>
+			</RegisterRecords>
+			-->
+		</Properties>
+		<ChildObjects>
+			<!-- РЕКВИЗИТЫ ШАПКИ: раскомментировать и заполнить -->
+			<!--
+			<Attribute uuid="{{UUID_ATTRIBUTE}}">
+				<Properties>
+					<Name>{{ИМЯ_РЕКВИЗИТА}}</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>{{СИНОНИМ_РЕКВИЗИТА}}</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>cfg:CatalogRef.{{ИМЯ_СПРАВОЧНИКА}}</v8:Type>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+					<Indexing>DontIndex</Indexing>
+					<FullTextSearch>Use</FullTextSearch>
+					<DataHistory>Use</DataHistory>
+				</Properties>
+			</Attribute>
+			-->
+
+			<!-- ТАБЛИЧНАЯ ЧАСТЬ: раскомментировать и заполнить -->
+			<!--
+			<TabularSection uuid="{{UUID_TS}}">
+				<InternalInfo>
+					<xr:GeneratedType name="DocumentTabularSection.{{ИМЯ}}.{{ИМЯ_ТЧ}}" category="TabularSection">
+						<xr:TypeId>{{UUID_TYPE_TS}}</xr:TypeId>
+						<xr:ValueId>{{UUID_VALUE_TS}}</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="DocumentTabularSectionRow.{{ИМЯ}}.{{ИМЯ_ТЧ}}" category="TabularSectionRow">
+						<xr:TypeId>{{UUID_TYPE_TSROW}}</xr:TypeId>
+						<xr:ValueId>{{UUID_VALUE_TSROW}}</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>{{ИМЯ_ТЧ}}</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>{{СИНОНИМ_ТЧ}}</v8:content>
+						</v8:item>
+					</Synonym>
+					<ToolTip/>
+					<FillChecking>DontCheck</FillChecking>
+					<StandardAttributes>
+						<StandardAttribute name="LineNumber">
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер строки</v8:content>
+								</v8:item>
+							</Synonym>
+						</StandardAttribute>
+					</StandardAttributes>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="{{UUID_TS_ATTR}}">
+						<Properties>
+							<Name>{{ИМЯ_КОЛОНКИ}}</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>{{СИНОНИМ_КОЛОНКИ}}</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+							</Type>
+							<PasswordMode>false</PasswordMode>
+							<Format/>
+							<EditFormat/>
+							<ToolTip/>
+							<MarkNegatives>false</MarkNegatives>
+							<Mask/>
+							<MultiLine>false</MultiLine>
+							<ExtendedEdit>false</ExtendedEdit>
+							<MinValue xsi:nil="true"/>
+							<MaxValue xsi:nil="true"/>
+							<FillChecking>DontCheck</FillChecking>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<ChoiceParameterLinks/>
+							<ChoiceParameters/>
+							<QuickChoice>Auto</QuickChoice>
+							<CreateOnInput>Auto</CreateOnInput>
+							<ChoiceForm/>
+							<LinkByType/>
+							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+							<Indexing>DontIndex</Indexing>
+							<FullTextSearch>Use</FullTextSearch>
+							<DataHistory>Use</DataHistory>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			-->
+		</ChildObjects>
+	</Document>
+</MetaDataObject>

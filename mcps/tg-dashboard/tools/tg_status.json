@@ -1,0 +1,8 @@
+{
+  "name": "tg_status",
+  "description": "Health-check: настроен ли бот, активные задачи, task_id для overlay-вызовов.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

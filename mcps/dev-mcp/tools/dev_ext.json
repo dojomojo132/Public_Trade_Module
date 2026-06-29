@@ -1,0 +1,31 @@
+{
+  "name": "dev_ext",
+  "description": "Операции с расширением конфигурации: Full (Load+Update), Dump, Load, Update. Быстро (~15 сек). Таймаут 30 сек — если дольше, расширение зависло.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Имя расширения (например, PTM_Analytics)"
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "Full",
+          "Dump",
+          "Load",
+          "Update",
+          "Check"
+        ]
+      },
+      "dir": {
+        "type": "string",
+        "description": "Опционально: путь к папке расширения"
+      }
+    },
+    "required": [
+      "name",
+      "action"
+    ]
+  }
+}

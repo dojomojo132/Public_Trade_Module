@@ -1,0 +1,21 @@
+# Бэкапы
+_backups/
+
+# 1С
+*.dt
+*.cf
+*.log
+
+# Временные файлы
+_*_out.txt
+_*_err.txt
+_commit_msg.txt
+_framework_dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Логи
+logs/

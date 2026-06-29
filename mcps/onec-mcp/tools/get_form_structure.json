@@ -1,0 +1,35 @@
+{
+  "name": "get_form_structure",
+  "description": "Получить структуру формы: реквизиты формы с типами, элементы (поля, группы, таблицы, кнопки), команды формы. Используйте для анализа существующих форм ПЕРЕД модификацией.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта метаданных (для общих форм - CommonForms)",
+        "enum": [
+          "Catalogs",
+          "Documents",
+          "DataProcessors",
+          "Reports",
+          "CommonForms",
+          "ChartsOfCharacteristicTypes",
+          "InformationRegisters",
+          "AccumulationRegisters"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта метаданных (для CommonForms - имя формы)"
+      },
+      "formName": {
+        "type": "string",
+        "description": "Имя формы (не нужно для CommonForms)"
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

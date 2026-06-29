@@ -1,0 +1,8 @@
+{
+  "name": "context_session_close",
+  "description": "Закрыть активную сессию (футер + снять отметку активной).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

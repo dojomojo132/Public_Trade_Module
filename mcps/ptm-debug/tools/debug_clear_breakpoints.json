@@ -1,0 +1,13 @@
+{
+  "name": "debug_clear_breakpoints",
+  "description": "Очистить breakpoints. Если file_path указан — только для этого файла, иначе все.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "file_path": {
+        "type": "string",
+        "description": "Путь к .bsl файлу (опционально)"
+      }
+    }
+  }
+}

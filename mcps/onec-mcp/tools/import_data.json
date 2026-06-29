@@ -1,0 +1,31 @@
+{
+  "name": "import_data",
+  "description": "Массовая загрузка данных из JSON. Поддерживает справочники и документы с реквизитами и табличными частями.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип: Catalogs, Documents"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например: Номенклатура)"
+      },
+      "data": {
+        "type": "string",
+        "description": "JSON-массив: [{\"description\":\"Имя\",\"attributes\":{...},\"tabularSections\":{\"ТЧ\":[{...}]}}]"
+      },
+      "updateExisting": {
+        "type": "boolean",
+        "description": "Обновлять существующие при совпадении по Наименованию/Номеру (по умолчанию false)",
+        "default": false
+      }
+    },
+    "required": [
+      "metaType",
+      "name",
+      "data"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "get_tech_journal",
+  "description": "Технологический журнал 1С (ТЖ): чтение runtime-ошибок (EXCP, SDBL, CALL, SCALL, CONN). ТЖ ловит исключения, которые НЕ попадают в Журнал регистрации (get_event_log). Действия: Check (получить ошибки), Setup (включить ТЖ, создать logcfg.xml), Stop (выключить ТЖ, удалить logcfg.xml), Status (проверить включён ли ТЖ). ВАЖНО: после Setup/Stop нужно ПЕРЕЗАПУСТИТЬ все процессы 1С!",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "description": "Действие: Check (чтение ошибок, default), Setup (включить ТЖ), Stop (выключить ТЖ), Status (статус ТЖ)."
+      },
+      "lastMinutes": {
+        "type": "number",
+        "description": "Период в минутах для чтения (default: 30). Используется при action=Check."
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимум записей (default: 50). Используется при action=Check."
+      },
+      "eventFilter": {
+        "type": "string",
+        "description": "Фильтр по типу события: EXCP, SDBL, CALL, SCALL, CONN. Если не указан - все."
+      }
+    },
+    "required": [
+      "action"
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 ﻿---
 name: 1c-deploy
-description: "Deploy 1C:Enterprise configuration to InfoBase. Use when deploying, validating, rolling back, monitoring errors, running deploy-config.ps1, or managing git commits. Covers backup, dump, load, update, check, rollback, monitoring, and git commit workflow."
+description: "Deploy 1C:Enterprise configuration to InfoBase via dev-mcp tools. Use when deploying, validating, rolling back, monitoring errors, or managing git commits. Covers backup, dump, load, update, rollback, monitoring, and git commit workflow."
 ---
 
-# Деплой конфигурации 1С в информационную базу
+# Деплой конфигурации 1С через dev-mcp
 
 ## Когда использовать
 
@@ -16,46 +16,30 @@ description: "Deploy 1C:Enterprise configuration to InfoBase. Use when deploying
 
 ---
 
-## Все команды через Python-wrapper
+## ВСЕ операции — через MCP-tools dev-mcp
 
-> **ВАЖНО:** PowerShell ломает кириллицу в путях (OEM cp866 vs UTF-8).
-> **ВСЕГДА** используй `python scripts/_ps_wrapper.py` вместо прямого вызова `.ps1` скриптов.
+> ⚠️ **Терминал и PowerShell ЗАПРЕЩЕНЫ** для рутинных операций деплоя/бэкапа/мониторинга.
+> Все операции вызываются как MCP-tools — без терминала, без проблем с кириллицей.
 
-```bash
-# Полный цикл деплоя
-python scripts/_ps_wrapper.py deploy -Action Full
+| Операция | MCP-tool |
+|----------|----------|
+| Health-check | `mcp_dev-mcp_dev_status` |
+| Локальный бэкап | `mcp_dev-mcp_dev_backup({description: "..."})` |
+| Выгрузка ИБ → файлы | `mcp_dev-mcp_dev_dump` |
+| Валидация XML | `mcp_dev-mcp_dev_validate` |
+| Деплой основной | `mcp_dev-mcp_dev_deploy({skip_check: true})` |
+| Деплой расширения | `mcp_dev-mcp_dev_ext({name, action: "Full"})` |
+| Мониторинг журнала | `mcp_dev-mcp_dev_monitor({last_minutes: 5})` |
+| Sync Obsidian | `mcp_dev-mcp_dev_sync_obsidian` |
 
-# Выгрузка из ИБ в файлы (ПЕРЕД началом разработки!)
-python scripts/_ps_wrapper.py deploy -Action Dump
+### Параметры dev_deploy
 
-# Бэкап текущей ИБ
-python scripts/_ps_wrapper.py deploy -Action Backup
+| Параметр | По умолчанию | Описание |
+|----------|--------------|----------|
+| `skip_check` | `true` | Пропустить CheckConfig (~40 сек) — ускоряет деплой |
+| `force_dt_backup` | `false` | Принудительный DT-бэкап (по умолчанию 1 раз в день) |
 
-# Откат к последнему стабильному бэкапу
-python scripts/_ps_wrapper.py deploy -Action Rollback
-
-# Информация о среде
-python scripts/_ps_wrapper.py deploy -Action Info
-
-# Открыть конфигуратор
-python scripts/_ps_wrapper.py deploy -Action Designer
-
-# Валидация XML-структуры
-python scripts/_ps_wrapper.py validate
-
-# Мониторинг ошибок
-python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5
-python scripts/_ps_wrapper.py monitor -Action Setup
-python scripts/_ps_wrapper.py monitor -Action Status
-```
-
-### Флаги оптимизации
-
-| Флаг | Описание | Когда использовать |
-|------|----------|--------------------|
-| `-SkipDtBackup` | Пропустить DT-бэкап (монопольная блокировка MCP) | Когда MCP-сервис блокирует ИБ |
-| `-SkipCheck` | Пропустить CheckConfig (~40 сек) | Когда BSL уже проверен через get_errors |
-| `-User "Admin"` | Указать пользователя ИБ | Для пошагового деплоя |
+DT-бэкап создаётся автоматически при первом `dev_deploy` за день. Повторные деплои за тот же день DT-бэкап пропускают.
 
 ---
 
@@ -63,33 +47,23 @@ python scripts/_ps_wrapper.py monitor -Action Status
 
 ### Этап 1: Защита данных (ПЕРЕД любыми изменениями)
 
-**Двухуровневый бэкап:**
 1. **Локальный бэкап** — копия XML/BSL файлов в `_backups/` (не в git, 10 последних)
-2. **DT-бэкап** — выгрузка .dt копии ИБ через deploy-config.ps1
+2. **Прочитать** `Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md`
+3. **Dump** — синхронизация ИБ → файлы (файлы = ИБ = единственный источник истины)
 
-```powershell
-# 1. Локальный бэкап XML/BSL файлов
-python "D:\Git\Public_Trade_Module\scripts\_local_backup.py" "описание задачи"
-
-# Посмотреть список бэкапов:
-python "D:\Git\Public_Trade_Module\scripts\_local_backup.py" --list
-
-# 2. Проверить правила-предохранители
-# Прочитать: Документация/КРИТИЧЕСКИЕ_ОШИБКИ.md
-
-# 3. Синхронизация: ИБ → файлы на диске (файлы = ИБ = единственный источник истины)
-python scripts/_ps_wrapper.py deploy -Action Dump
+```
+mcp_dev-mcp_dev_backup({description: "<краткое описание задачи>"})
+mcp_dev-mcp_dev_dump
 ```
 
-**Что копируется бэкапом:** `Конфигурация/` и `MCP_Extension/`
-**Где хранится:** `_backups/YYYY-MM-DD_HHMMSS/` (в `.gitignore`, не в git)
-**Лимит:** 10 последних бэкапов, старые удаляются автоматически
+**Что копируется бэкапом:** `Конфигурация/`
+**Где хранится:** `_backups/YYYY-MM-DD_HHMMSS/` (в `.gitignore`)
+**Лимит:** 10 последних, старые удаляются автоматически
 
 ### Этап 2: Валидация (ПЕРЕД загрузкой)
 
-```bash
-# Валидация XML-структуры
-python scripts/_ps_wrapper.py validate
+```
+mcp_dev-mcp_dev_validate
 ```
 
 Результат должен быть: **0 ошибок**. При наличии ошибок — исправить и перезапустить.
@@ -99,45 +73,55 @@ python scripts/_ps_wrapper.py validate
 ### Этап 3: Деплой
 
 **Полный цикл (рекомендуется):**
-```bash
-python scripts/_ps_wrapper.py deploy -Action Full
+```
+mcp_dev-mcp_dev_deploy({skip_check: true})
 ```
 
-Включает: DT-бэкап → валидация XML → загрузка → синтакс-контроль → обновление БД → конфигуратор.
+Включает: DT-бэкап (если первый за день) → валидация XML → загрузка → обновление БД → конфигуратор.
 
-**Быстрый деплой (если BSL уже проверен через get_errors):**
-```bash
-python scripts/_ps_wrapper.py deploy -Action Full -SkipDtBackup -SkipCheck
+**Если BSL не проверен через get_errors:**
+```
+mcp_dev-mcp_dev_deploy({skip_check: false})
 ```
 
-**Пошаговый (если MCP блокирует ИБ):**
-```bash
-python scripts/_ps_wrapper.py deploy -Action Load -User Админ
-python scripts/_ps_wrapper.py deploy -Action Update -User Админ
-# ОБЯЗАТЕЛЬНО открыть конфигуратор после успешного деплоя!
-python scripts/_ps_wrapper.py deploy -Action Designer -User Админ
-```
+> **Оптимизация:** `skip_check=true` пропускает CheckConfig (~40 сек), т.к. BSL проверяется через `get_errors` ПЕРЕД деплоем. Запускать с `skip_check=false` ТОЛЬКО при подозрении на ошибки.
 
-> **Оптимизация:** Check (синтакс-контроль, ~40 сек) пропускается, т.к. BSL проверяется через `get_errors` ПЕРЕД деплоем. CheckConfig запускать ТОЛЬКО при подозрении на ошибки после Load.
-
-**ПРАВИЛО:** После ЛЮБОГО успешного деплоя — ОБЯЗАТЕЛЬНО открыть конфигуратор.
+**ПРАВИЛО:** После ЛЮБОГО успешного деплоя — конфигуратор открывается автоматически.
 
 ### Этап 4: Разбор ошибок деплоя
 
-**КРИТИЧНО:** При ошибках загрузки — скрипт выводит структурированный блок ошибок. Агент ОБЯЗАН:
-1. Найти блок `=== ОШИБКИ (для Copilot Agent) ===` в выводе
-2. Прочитать ВСЕ секции: `--- ОШИБКИ ---`, `--- ПОЛНЫЙ ЛОГ 1С ---`, `--- STDOUT ---`, `--- STDERR ---`
-3. Разобрать КАЖДУЮ конкретную ошибку (номерованный список `[1]`, `[2]`...)
-4. Исправить XML/BSL файлы
-5. Запустить деплой повторно
-6. Повторять цикл пока Deploy не завершится УСПЕШНО (exit code 0)
-7. НЕ останавливаться если ошибки непонятны — анализировать ПОЛНЫЙ ЛОГ 1С
+Результат `dev_deploy` содержит `stdout`, `stderr`, `exit_code`, `ok`. При `ok: false` агент ОБЯЗАН:
+1. Прочитать `stdout` целиком — там структурированный блок `=== ОШИБКИ (для Copilot Agent) ===`
+2. Разобрать КАЖДУЮ конкретную ошибку (номерованный список `[1]`, `[2]`...)
+3. Исправить XML/BSL файлы
+4. Запустить деплой повторно
+5. Повторять цикл пока `ok: true` (exit_code 0)
+6. НЕ останавливаться если ошибки непонятны — анализировать `--- ПОЛНЫЙ ЛОГ 1С ---`
+
+### Stop-triggers — НЕМЕДЛЕННЫЙ блокирующий диалог пользователю
+
+> Корневая ошибка сессии `hotfix3-nomeklatura-form` (2026-05-05): после `Ошибка блокировки
+> информационной базы` агент сделал ещё 2 deploy-вызова подряд, прежде чем спросить пользователя
+> закрыть Конфигуратор. Лишние ~24 сек MCP-времени и загрязнение `deploy_log.txt`.
+
+При появлении в `stdout`/`stderr` любого `dev_deploy`/`dev_validate` любой из подстрок:
+- `Ошибка блокировки информационной базы`
+- `информационная база уже открыта Конфигуратором`
+- `Database is locked`
+- `Не удалось захватить монопольную блокировку`
+
+→ **НЕ повторять** deploy. Сразу:
+1. Блок `## 🛑 НУЖНО ОТ ПОЛЬЗОВАТЕЛЯ` с инструкцией «Закройте Конфигуратор / завершите все клиентские сеансы».
+2. `vscode_askQuestions(header: "user_action_pending")` — `✅ Готово` / `❌ Отменить`.
+3. Только после `✅` — повторный `dev_deploy`.
+
+Аналогично для подстрок про активные сеансы (`Активные сеансы пользователей`, `Active user sessions`) — нужен `mcp_dev-mcp_dev_status` или ручное завершение.
 
 ### Расшифровка типичных ошибок
 
 | Ошибка в логе | Причина | Что исправить |
 |--------------|---------|---------------|
-| `[ДИАЛОГ ЗАБЛОКИРОВАН] Запрещено использование окон` | 1С пыталась показать диалог-ошибку | Критическая ошибка XML. validate-config.ps1, исправить ВСЕ |
+| `[ДИАЛОГ ЗАБЛОКИРОВАН] Запрещено использование окон` | 1С пыталась показать диалог-ошибку | Критическая ошибка XML. `dev_validate`, исправить ВСЕ |
 | `[ПУСТОЙ ЛОГ]` | Лог-файл пуст после неудачной операции | Проверить путь к ИБ, права доступа, наличие 1cv8.exe |
 | `[НЕ РАСПОЗНАНО]` | Парсер не нашёл конкретных ошибок | Читать `--- ПОЛНЫЙ ЛОГ 1С ---` целиком |
 | `[ТАЙМАУТ]` | Процесс 1С завис (вероятно на диалоге) | XML критически повреждён |
@@ -150,13 +134,11 @@ python scripts/_ps_wrapper.py deploy -Action Designer -User Админ
 
 ### Этап 5: Откат
 
-```bash
-# Откат ИБ из DT-бэкапа
-python scripts/_ps_wrapper.py deploy -Action Rollback
-
-# Откат файлов из локального бэкапа
-python "D:\Git\Public_Trade_Module\scripts\_local_backup.py" --restore <метка>
-```
+> ⚠️ Откат пока остался ручным (нет dev_rollback). Использовать терминал с пометкой
+> `⚠️ dev-mcp: rollback не покрыт — ручной вызов`:
+>
+> - Откат ИБ из DT-бэкапа: `python scripts/_ps_wrapper.py deploy -Action Rollback`
+> - Откат файлов: `python scripts/_local_backup.py --restore <метка>`
 
 **Правила отката:**
 1. Если деплой провалился и ошибки не решаются за 2 попытки — ОТКАТИТЬ
@@ -169,24 +151,30 @@ python "D:\Git\Public_Trade_Module\scripts\_local_backup.py" --restore <метк
 ### Этап 6: Мониторинг после деплоя
 
 **Два источника ошибок:**
-1. **Технологический журнал (ТЖ)** — ловит EXCP (runtime-исключения). Нужна однократная настройка (Setup).
+1. **Технологический журнал (ТЖ)** — ловит EXCP (runtime-исключения). Нужна однократная настройка (Setup, через PS).
 2. **Журнал регистрации (ЖР)** — читает ошибки из .lgp файлов базы. Работает без настройки.
 
-```bash
-# Однократная настройка ТЖ (нужны права администратора):
-python scripts/_ps_wrapper.py monitor -Action Setup
-
-# Проверить ошибки за последние N минут
-python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5
-
-# Статус мониторинга
-python scripts/_ps_wrapper.py monitor -Action Status
-
-# Выключить ТЖ (после завершения отладки)
-python scripts/_ps_wrapper.py monitor -Action Stop
+```
+mcp_dev-mcp_dev_monitor({last_minutes: 5})
 ```
 
 При обнаружении ошибок: исправить BSL/XML → повторить деплой → снова мониторинг.
+
+> Однократная настройка ТЖ (Setup/Status/Stop) пока через PS — `python scripts/_ps_wrapper.py monitor -Action Setup`. Используется редко.
+
+---
+
+## Расширения конфигурации
+
+```
+mcp_dev-mcp_dev_ext({name: "PTM_Analytics", action: "Full"})
+```
+
+Действия: `Full` (Load+Update), `Dump`, `Load`, `Update`, `Check`.
+Время: ~15 сек, таймаут 60 сек. Если дольше — расширение зависло.
+
+**Когда использовать:** объект создан в расширении (отчёт, обработка, общий модуль).
+**Когда НЕ использовать:** изменения в документах, справочниках, регистрах → основная конфигурация.
 
 ---
 
@@ -209,22 +197,35 @@ FEAT: Добавлен документ Заказ (заголовок)
 
 Шаг 2: Запустить Python-хелпер:
 ```powershell
-git add -A; python "D:\Git\Public_Trade_Module\scripts\_git_commit.py"
+git add -A; python scripts/_git_commit.py
 ```
 
 **Правила:**
 - `scripts/_commit_msg.txt` — в `.gitignore`, не коммитится
 - Формат: `FEAT: <заголовок>\n\n<подробный список что сделано>`
-- НИКОГДА не делать BACKUP-коммиты — бэкап через `_local_backup.py`
+- НИКОГДА не делать BACKUP-коммиты — бэкап через `mcp_dev-mcp_dev_backup`
 - НИКОГДА git commit без явного подтверждения пользователя
 
 ---
 
 ## Обновление спецификации
 
-При любом изменении конфигурации — обновить затронутые блоки в
-`Документация/Спецификации/ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ КОНФИГУРАЦИИ PTM (Public Trade Module).xml`
-и добавить:
+При любом изменении конфигурации — обновить затронутые блоки в спецификации
+(см. `config.spec.path`) и добавить запись в `<History>`:
 ```xml
 <Record date="YYYY-MM-DD">Описание изменения</Record>
 ```
+
+---
+
+## Аварийный режим (dev-mcp недоступен)
+
+Если `mcp_dev-mcp_dev_status` недоступен:
+1. Залогировать `ERROR MCP dev-mcp unavailable` в Trace
+2. Fallback на скрипты с пометкой `⚠️ dev-mcp недоступен`:
+   - Бэкап: `python scripts/_local_backup.py "..."`
+   - Деплой: `python scripts/_ps_wrapper.py deploy -Action Full`
+   - Валидация: `python scripts/_ps_wrapper.py validate`
+   - Мониторинг: `python scripts/_ps_wrapper.py monitor -Action Check -LastMinutes 5`
+   - Расширение: `python scripts/deploy_ext.py --ext <Имя> --action Full`
+3. Предупредить пользователя в ответе

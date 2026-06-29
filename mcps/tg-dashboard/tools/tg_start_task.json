@@ -1,0 +1,26 @@
+{
+  "name": "tg_start_task",
+  "description": "Явный старт задачи. Если watcher уже создал задачу по этому файлу — обновит agent/notes. Вызывать только если авто-старт не подошёл.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "plan_path": {
+        "type": "string",
+        "description": "Абсолютный путь к .md файлу плана в vault."
+      },
+      "task_name": {
+        "type": "string",
+        "description": "Переопределить заголовок (иначе берётся из H1). Опц."
+      },
+      "agent": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "plan_path"
+    ]
+  }
+}

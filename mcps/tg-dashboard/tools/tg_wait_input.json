@@ -1,0 +1,24 @@
+{
+  "name": "tg_wait_input",
+  "description": "Пометить шаг как «жду ответа» (⏸) с текстом вопроса. Вызывать ПЕРЕД vscode_askQuestions.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "task_id": {
+        "type": "string"
+      },
+      "index": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "question": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "task_id",
+      "index",
+      "question"
+    ]
+  }
+}

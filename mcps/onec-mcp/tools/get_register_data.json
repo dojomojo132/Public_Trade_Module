@@ -1,0 +1,41 @@
+{
+  "name": "get_register_data",
+  "description": "Получить данные регистра накопления (остатки, обороты) или регистра сведений (срез последних, все записи). Удобно для проверки остатков товаров, цен, настроек.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "registerType": {
+        "type": "string",
+        "description": "Тип регистра",
+        "enum": [
+          "AccumulationRegisters",
+          "InformationRegisters"
+        ]
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя регистра"
+      },
+      "mode": {
+        "type": "string",
+        "description": "Режим чтения: Balance (остатки), Turnovers (обороты), SliceLast (срез последних), All (все записи)",
+        "default": "All",
+        "enum": [
+          "Balance",
+          "Turnovers",
+          "SliceLast",
+          "All"
+        ]
+      },
+      "maxRows": {
+        "type": "number",
+        "description": "Максимальное количество строк результата (по умолчанию 100)",
+        "default": 100
+      }
+    },
+    "required": [
+      "registerType",
+      "name"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "context_moc",
+  "description": "Список объектов метаданных одного типа с фильтром. Используется когда context_resolve вернул ambiguous/not_found.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "Documents",
+          "Catalogs",
+          "DataProcessors",
+          "CommonModules",
+          "Reports",
+          "InformationRegisters",
+          "AccumulationRegisters",
+          "Enums",
+          "HTTPServices",
+          "Constants",
+          "Subsystems",
+          "Roles",
+          "DocumentJournals",
+          "BusinessProcesses",
+          "Tasks",
+          "CommonPictures",
+          "CommonTemplates",
+          "Languages",
+          "Styles"
+        ]
+      },
+      "filter": {
+        "type": "string",
+        "description": "Подстрока для фильтрации имён"
+      }
+    },
+    "required": [
+      "type"
+    ]
+  }
+}

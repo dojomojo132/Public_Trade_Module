@@ -110,7 +110,7 @@ Reports/
 
 ## MCP-инструмент для формирования
 
-`mcp_mcp_1c_torgov_run_report`:
+`mcp_1c_run_report`:
 - Аргументы: `reportName`, `params` (JSON)
 - Формирует отчёт и возвращает результат
 

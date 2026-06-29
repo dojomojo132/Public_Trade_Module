@@ -1,0 +1,35 @@
+{
+  "name": "tg_update_step",
+  "description": "Agent overlay для шага — интерактивная информация поверх состояния файла. Использовать для: in_progress, error, blocked, skipped. НЕ заменяет [x] в файле — файл остаётся источником истины.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "task_id": {
+        "type": "string"
+      },
+      "index": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "in_progress",
+          "done",
+          "error",
+          "skipped",
+          "blocked",
+          "pending"
+        ]
+      },
+      "note": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "task_id",
+      "index",
+      "status"
+    ]
+  }
+}

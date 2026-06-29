@@ -1,0 +1,8 @@
+{
+  "name": "debug_status",
+  "description": "Полный статус сессии отладки: подключение, процессы, breakpoints, остановка.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

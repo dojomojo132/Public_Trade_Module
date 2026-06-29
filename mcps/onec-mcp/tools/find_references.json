@@ -1,0 +1,30 @@
+{
+  "name": "find_references",
+  "description": "Найти все ссылки на конкретный элемент справочника/документа в информационной базе. Показывает где используется объект. Полезно для рефакторинга и проверки зависимостей.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "metaType": {
+        "type": "string",
+        "description": "Тип объекта (Catalogs, Documents и т.д.)"
+      },
+      "name": {
+        "type": "string",
+        "description": "Имя объекта (например, Номенклатура)"
+      },
+      "searchValue": {
+        "type": "string",
+        "description": "Значение для поиска: код, наименование или номер элемента. Если не указано - ищет ВСЕ ссылки на тип."
+      },
+      "maxResults": {
+        "type": "number",
+        "description": "Максимум результатов (по умолчанию 50)",
+        "default": 50
+      }
+    },
+    "required": [
+      "metaType",
+      "name"
+    ]
+  }
+}

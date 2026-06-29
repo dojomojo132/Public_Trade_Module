@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "search_replace|edit_files|create_file|Write|Edit|MultiEdit|StrReplace",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe D:/Git/Public_Trade_Module/.grok/hooks/scripts/bsl_post_edit.py",
+            "timeout": 5,
+            "env": {
+              "PYTHONIOENCODING": "utf-8"
+            }
+          },
+          {
+            "type": "command",
+            "command": "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe D:/Git/Public_Trade_Module/.grok/hooks/scripts/sync_graph_after_edit.py",
+            "timeout": 15,
+            "env": {
+              "PYTHONIOENCODING": "utf-8"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

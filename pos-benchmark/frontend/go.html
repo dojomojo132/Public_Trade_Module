@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POS — Go (3002)</title>
+<style>:root{--bg:#1a1a2e;--pb:#16213e;--cb:#0f3460;--ac:#e94560;--tx:#eee;--td:#8899aa;--gn:#00c853}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);display:flex;height:100vh;overflow:hidden}.l{width:38%;background:var(--pb);display:flex;flex-direction:column;border-right:2px solid #2a2a4a}.l h2{padding:16px 20px 8px;font-size:18px;letter-spacing:1px;border-bottom:1px solid #2a2a4a}.it{flex:1;overflow-y:auto;padding:8px 0}.itm{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;border-bottom:1px solid #1e1e3a;font-size:14px}.itm .n{flex:1}.itm .q{color:var(--td);margin:0 12px;min-width:40px;text-align:center}.itm .p{color:var(--td);margin-right:12px;min-width:70px;text-align:right}.itm .r{color:var(--ac);cursor:pointer;font-weight:bold;font-size:16px;user-select:none}.tot{padding:16px 20px;border-top:2px solid var(--ac);font-size:20px;font-weight:bold;display:flex;justify-content:space-between}.r{flex:1;display:flex;flex-direction:column;padding:16px}.pg{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}.pg button{background:var(--cb);color:var(--tx);border:1px solid #3a3a5a;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:15px}.pg button:hover{background:var(--ac)}.pg span{font-size:15px;color:var(--td);min-width:100px;text-align:center}.g{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:10px}.c{background:var(--cb);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .1s,box-shadow .1s;padding:4px}.c:hover{transform:scale(1.03);box-shadow:0 0 12px rgba(233,69,96,.4)}.c .n{font-size:13px;text-align:center;margin-bottom:4px}.c .p{font-size:14px;color:var(--gn);font-weight:bold}.btn{width:100%;margin-top:12px;background:var(--ac);color:#fff;border:none;padding:16px;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;letter-spacing:2px}.btn:hover{background:#ff1a40}.mod{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:100;justify-content:center;align-items:center}.mod.s{display:flex}.mod>div{background:var(--pb);padding:32px;border-radius:12px;text-align:center;min-width:320px}.mod h2{color:var(--gn);margin-bottom:16px}.mod button{background:var(--ac);color:#fff;border:none;padding:10px 30px;border-radius:6px;font-size:16px;cursor:pointer;margin-top:16px}</style>
+</head>
+<body>
+<div class="l"><h2>🐹 Go — ЧЕК</h2><div class="it" id="it"></div><div class="tot"><span>ИТОГО:</span><span id="sm">0.00 ₴</span></div></div>
+<div class="r"><div class="pg"><button onclick="g(-1)">◀ Назад</button><span id="pt">...</span><button onclick="g(1)">Вперёд ▶</button></div><div class="g" id="gr"></div><button class="btn" onclick="calc()">РАССЧИТАТЬ</button></div>
+<div class="mod" id="md"><div><h2>✅ Чек закрыт</h2><p style="font-size:24px;font-weight:bold;margin:8px 0" id="ma">0.00</p><button onclick="cls()">Новый чек</button></div></div>
+<script>
+const A='http://localhost:3002/api';
+let p=1,t=1,c=[],pc={};
+async function ld(n){let r=await fetch(A+'/products?page='+n),d=await r.json();p=d.page;t=d.total_pages;document.getElementById('pt').textContent='Стр. '+p+' из '+t;let g=document.getElementById('gr');g.innerHTML='';for(let x of d.products){pc[x.id]=x;let e=document.createElement('div');e.className='c';e.onclick=()=>ad(x.id);e.innerHTML='<div class="n">'+x.name+'</div><div class="p">'+x.price+' ₴</div>';g.appendChild(e)}}
+function g(d){let n=p+d;if(n>=1&&n<=t)ld(n)}
+function ad(id){let f=c.find(i=>i.id===id);if(f)f.q++;else{let x=pc[id];c.push({id,n:x.name,pr:x.price,q:1})}rr()}
+function rm(i){c.splice(i,1);rr()}
+function rr(){let e=document.getElementById('it'),s=document.getElementById('sm'),h='',tt=0;c.forEach((x,i)=>{let st=x.pr*x.q;tt+=st;h+='<div class="itm"><span class="n">'+x.n+'</span><span class="q">×'+x.q+'</span><span class="p">'+st+' ₴</span><span class="r" onclick="rm('+i+')">✕</span></div>'});e.innerHTML=h||'<div style="padding:20px;color:#556;text-align:center">Чек пуст</div>';s.textContent=tt+' ₴'}
+async function calc(){if(!c.length)return;let r=await fetch(A+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:c.map(x=>({product_id:x.id,quantity:x.q}))})}),d=await r.json();document.getElementById('ma').textContent=d.total+' ₴';document.getElementById('md').classList.add('s')}
+function cls(){document.getElementById('md').classList.remove('s');c=[];rr()}
+ld(1);
+</script></body></html>

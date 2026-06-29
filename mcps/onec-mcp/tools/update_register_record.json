@@ -1,0 +1,39 @@
+{
+  "name": "update_register_record",
+  "description": "Запись данных в независимый регистр сведений. Устанавливает измерения и ресурсы. Для периодических регистров можно указать период.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "registerType": {
+        "type": "string",
+        "description": "Тип регистра: InformationRegisters или AccumulationRegisters",
+        "enum": [
+          "InformationRegisters",
+          "AccumulationRegisters"
+        ]
+      },
+      "registerName": {
+        "type": "string",
+        "description": "Имя регистра (например: Цены)"
+      },
+      "dimensions": {
+        "type": "string",
+        "description": "JSON-строка с измерениями: {\"Номенклатура\": \"Код123\", ...}"
+      },
+      "resources": {
+        "type": "string",
+        "description": "JSON-строка с ресурсами: {\"Цена\": 100, ...}"
+      },
+      "period": {
+        "type": "string",
+        "description": "Период записи в формате YYYY-MM-DD (для периодических регистров)."
+      }
+    },
+    "required": [
+      "registerType",
+      "registerName",
+      "dimensions",
+      "resources"
+    ]
+  }
+}

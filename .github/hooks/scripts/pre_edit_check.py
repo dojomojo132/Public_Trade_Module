@@ -40,14 +40,14 @@ if is_edit and is_config_file and is_bsl_or_xml:
     messages = []
     if file_lower.endswith(".bsl"):
         messages.append(
-            "[PTM GUARDRAIL] Редактирование BSL в конфигурации. "
+            "[1C GUARDRAIL] Редактирование BSL в конфигурации. "
             "После завершения: вызови get_errors на этот файл."
         )
     if file_lower.endswith(".xml"):
         messages.append(
-            "[PTM GUARDRAIL] Редактирование XML конфигурации. "
+            "[1C GUARDRAIL] Редактирование XML конфигурации. "
             "Не забудь: Configuration.xml, ConfigDumpInfo.xml, подсистемы. "
-            "После завершения: get_errors + validate-config.ps1."
+            "После завершения: get_errors + mcp_dev-mcp_dev_validate."
         )
     if messages:
         output["systemMessage"] = "\n".join(messages)

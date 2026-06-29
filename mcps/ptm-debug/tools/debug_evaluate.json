@@ -1,0 +1,20 @@
+{
+  "name": "debug_evaluate",
+  "description": "Вычислить BSL-выражение в контексте текущей остановки. Например: 'Объект.Наименование', 'ТекущаяДатаСеанса()', 'Сумма + НДС'.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "expression": {
+        "type": "string",
+        "description": "BSL-выражение для вычисления"
+      },
+      "frame_index": {
+        "type": "integer",
+        "description": "Индекс фрейма (0 = текущий)"
+      }
+    },
+    "required": [
+      "expression"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "context_resolve",
+  "description": "Резолвит свободную строку запроса в кандидатов метаданных 1С. Возвращает status + список кандидатов с object_id и score.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Свободная формулировка задачи или название объекта"
+      }
+    },
+    "required": [
+      "query"
+    ]
+  }
+}

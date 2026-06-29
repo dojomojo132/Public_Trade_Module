@@ -1,0 +1,15 @@
+{
+    "obsidian_vault_path": "D:\\Git\\ObsidianVaults\\Public_Trade_Module",
+    "obsidian_index_folder": "99-Meta/1C-Index",
+    "obsidian_task_folders": ["05-Планы", "06-Фичи", "07-Баги"],
+    "obsidian_sessions_folder": "99-Meta/Sessions",
+    "project_paths": {
+        "Основная": "D:\\Git\\Public_Trade_Module\\Конфигурация",
+        "MCP_Extension": "D:\\Git\\Public_Trade_Module\\MCP_Extension",
+        "PTM_Analytics": "D:\\Git\\Public_Trade_Module\\Конфигурация_PTM_Analytics"
+    },
+    "tg_dashboard": {
+        "_comment": "bot_token и chat_id берутся из .env (TG_BOT_TOKEN, TG_CHAT_ID). См. .env.example",
+        "parse_mode": "HTML"
+    }
+}

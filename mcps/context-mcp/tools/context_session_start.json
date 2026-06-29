@@ -1,0 +1,13 @@
+{
+  "name": "context_session_start",
+  "description": "Открыть новую аудит-сессию: создать Тесты/ContextSandbox/sessions/<YYYY-MM-DD_HHMM>__session.md и пометить активной.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "description": "Опциональное название сессии"
+      }
+    }
+  }
+}

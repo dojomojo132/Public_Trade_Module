@@ -1,0 +1,56 @@
+{
+  "name": "context_get",
+  "description": "Собирает контекст под выбранного кандидата. Указывайте либо select (object_id), либо candidate (номер из context_resolve).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string"
+      },
+      "task": {
+        "type": "string",
+        "enum": [
+          "bugfix",
+          "posting",
+          "form-change",
+          "attribute-change",
+          "common-module-change",
+          "review",
+          "report",
+          "query",
+          "integration"
+        ]
+      },
+      "select": {
+        "type": "string",
+        "description": "Точный object_id (приоритет над candidate)"
+      },
+      "candidate": {
+        "type": "integer",
+        "description": "Номер кандидата из context_resolve"
+      },
+      "depth": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "shallow",
+          "medium",
+          "deep"
+        ],
+        "default": "auto"
+      },
+      "stage": {
+        "type": "string",
+        "description": "Явный stage из STAGE_CATALOG"
+      },
+      "budget_tokens": {
+        "type": "integer",
+        "description": "Override бюджета токенов"
+      }
+    },
+    "required": [
+      "query",
+      "task"
+    ]
+  }
+}

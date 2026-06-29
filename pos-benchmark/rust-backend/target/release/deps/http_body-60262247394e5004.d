@@ -1,0 +1,9 @@
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\libhttp_body-60262247394e5004.rmeta: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\frame.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\size_hint.rs
+
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\libhttp_body-60262247394e5004.rlib: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\frame.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\size_hint.rs
+
+D:\Git\Public_Trade_Module\pos-benchmark\rust-backend\target\release\deps\http_body-60262247394e5004.d: C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\lib.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\frame.rs C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\size_hint.rs
+
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\lib.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\frame.rs:
+C:\Users\vgume\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\http-body-1.0.1\src\size_hint.rs:

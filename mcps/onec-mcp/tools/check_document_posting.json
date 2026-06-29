@@ -1,0 +1,20 @@
+{
+  "name": "check_document_posting",
+  "description": "Проверка проведения документа: находит документ, показывает регистры движений, считает количество записей в каждом регистре. Определяет статус проведения.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "documentType": {
+        "type": "string",
+        "description": "Тип документа (имя, например: ПриходТовара)"
+      },
+      "number": {
+        "type": "string",
+        "description": "Номер документа для проверки. Если не указан - берётся последний."
+      }
+    },
+    "required": [
+      "documentType"
+    ]
+  }
+}

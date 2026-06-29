@@ -1,0 +1,16 @@
+﻿{
+    "recommendations": [
+        // 1С BSL Language Server — подсветка синтаксиса, автодополнение, проверка ошибок BSL
+        "1c-syntax.language-1c-bsl",
+        // GitHub Copilot — AI-ассистент
+        "github.copilot",
+        // GitHub Copilot Chat — агентный режим (ОБЯЗАТЕЛЬНО для фреймворка)
+        "github.copilot-chat",
+        // YAML — редактирование project-config.yml
+        "redhat.vscode-yaml",
+        // Python — для работы со скриптами в scripts/
+        "ms-python.python",
+        // GitLens — расширенная работа с Git
+        "eamodio.gitlens"
+    ]
+}

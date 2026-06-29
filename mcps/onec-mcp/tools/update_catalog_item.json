@@ -1,0 +1,34 @@
+{
+  "name": "update_catalog_item",
+  "description": "Обновление существующего элемента справочника. Ищет по коду или наименованию, обновляет указанные реквизиты.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "catalogName": {
+        "type": "string",
+        "description": "Имя справочника (например: Номенклатура, Контрагенты)"
+      },
+      "searchValue": {
+        "type": "string",
+        "description": "Код или Наименование существующего элемента для поиска"
+      },
+      "attributes": {
+        "type": "string",
+        "description": "JSON-строка с реквизитами для обновления: {\"ИмяРеквизита\": \"НовоеЗначение\", ...}"
+      },
+      "newDescription": {
+        "type": "string",
+        "description": "Новое наименование (если нужно изменить)"
+      },
+      "newCode": {
+        "type": "string",
+        "description": "Новый код (если нужно изменить)"
+      }
+    },
+    "required": [
+      "catalogName",
+      "searchValue",
+      "attributes"
+    ]
+  }
+}

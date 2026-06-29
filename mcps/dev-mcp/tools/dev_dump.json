@@ -1,0 +1,8 @@
+{
+  "name": "dev_dump",
+  "description": "Выгрузка конфигурации из ИБ в Конфигурация/ (DumpConfigToFiles). Перезаписывает рабочую копию. Использовать ПЕРЕД ручным анализом или правками.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  }
+}

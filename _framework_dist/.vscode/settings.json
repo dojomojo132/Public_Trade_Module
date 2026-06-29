@@ -1,0 +1,48 @@
+﻿{
+    "editor.formatOnSave": false,
+    "files.encoding": "utf8bom",
+    "files.autoSave": "onFocusChange",
+
+    // ── BSL (1C) ─────────────────────────────────────────────────────────────
+    "files.associations": {
+        "*.bsl": "bsl",
+        "*.os": "bsl"
+    },
+    "[bsl]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.wordWrap": "on"
+    },
+    // Анализировать только папку конфигурации (из project-config.yml → paths.config_root)
+    "language-1c-bsl.languageServerConfiguration.configurationRoot": "${workspaceFolder}/Конфигурация",
+    "language-1c-bsl.languageServerConfiguration.analyzeHierarchy": false,
+
+    // ── Copilot Agent ─────────────────────────────────────────────────────────
+    "github.copilot.chat.codeGeneration.useReferencedFiles": true,
+    "chat.agent.autoApprove": true,
+    "chat.agent.maxRequests": 1000,
+    "chat.useCustomAgentHooks": true,
+
+    // ── Исключения из дерева файлов ──────────────────────────────────────────
+    "files.exclude": {
+        "**/_backups/**": true,
+        "**/node_modules/**": true,
+        "**/.venv/**": true,
+        "**/logs/**": true,
+        "**/__pycache__/**": true
+    },
+    "files.watcherExclude": {
+        "**/_backups/**": true,
+        "**/node_modules/**": true,
+        "**/.venv/**": true,
+        "**/logs/**": true,
+        "**/__pycache__/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/DerivedData": true,
+        "**/_backups/**": true,
+        "**/.venv/**": true,
+        "**/logs/**": true
+    }
+}
