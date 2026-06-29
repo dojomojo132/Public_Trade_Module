@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Document uuid="c5d6e7f8-0912-4234-c5d6-e7f8091a2b3c">
+	<Document uuid="fd2b5ce5-7f33-44cf-ab6e-b2950c871a9f">
 		<InternalInfo>
 			<xr:GeneratedType name="DocumentObject.ФискальныйПриходТоваров" category="Object">
-				<xr:TypeId>d6e7f809-1234-4345-d6e7-f8091a2b3c4d</xr:TypeId>
-				<xr:ValueId>e7f80912-3456-4456-e7f8-091a2b3c4d5e</xr:ValueId>
+				<xr:TypeId>270348e5-0517-4d0a-bec5-c2facdb6e530</xr:TypeId>
+				<xr:ValueId>08ee4521-e4d4-468b-884c-e1180e6c90b2</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DocumentRef.ФискальныйПриходТоваров" category="Ref">
-				<xr:TypeId>f8091a2b-3c4d-4567-e7f8-091a2b3c4d5e6</xr:TypeId>
-				<xr:ValueId>091a2b3c-4d5e-4678-f809-1a2b3c4d5e6f</xr:ValueId>
+				<xr:TypeId>54e638d1-676d-4b2e-8f51-495f20f0524d</xr:TypeId>
+				<xr:ValueId>23195390-f1b1-430d-8d41-b96d0c190ff6</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DocumentSelection.ФискальныйПриходТоваров" category="Selection">
-				<xr:TypeId>1a2b3c4d-5e6f-4789-091a-2b3c4d5e6f70</xr:TypeId>
-				<xr:ValueId>2b3c4d5e-6f70-4890-1a2b-3c4d5e6f7081</xr:ValueId>
+				<xr:TypeId>dba7bdd9-c212-47d9-8bc9-dcb76181a4f9</xr:TypeId>
+				<xr:ValueId>a5991cf4-ade2-42f0-9049-595630e9098f</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DocumentList.ФискальныйПриходТоваров" category="List">
-				<xr:TypeId>3c4d5e6f-7081-4901-2b3c-4d5e6f708192</xr:TypeId>
-				<xr:ValueId>4d5e6f70-8192-4012-3c4d-5e6f708192a3</xr:ValueId>
+				<xr:TypeId>5fc2c9a3-f8c6-4eb4-99bb-56fa79017de7</xr:TypeId>
+				<xr:ValueId>60f67c09-fe68-434d-84c7-ed3dc232af0d</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="DocumentManager.ФискальныйПриходТоваров" category="Manager">
-				<xr:TypeId>5e6f7081-92a3-4123-4d5e-6f708192a3b4</xr:TypeId>
-				<xr:ValueId>6f708192-a3b4-4234-d5e6-f708192a3b4c</xr:ValueId>
+				<xr:TypeId>f23524a5-bf11-4367-a08c-f03b9523c2a6</xr:TypeId>
+				<xr:ValueId>bea3a10f-e960-4a1a-b7b7-63cb2bfe003e</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -80,7 +80,7 @@
 			<ExecuteAfterWriteDataHistoryVersionProcessing>false</ExecuteAfterWriteDataHistoryVersionProcessing>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="708192a3-b4c5-4345-e6f7-08192a3b4c5d">
+			<Attribute uuid="afa76381-e533-4e7b-b1ce-0a908158fc95">
 				<Properties>
 					<Name>ФОП</Name>
 					<Synonym>
@@ -119,7 +119,7 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="8192a3b4-c5d6-4456-f708-192a3b4c5d6e">
+			<Attribute uuid="a2fb29df-b515-415d-8ff7-4f7f8735f42c">
 				<Properties>
 					<Name>Комментарий</Name>
 					<Synonym>
@@ -163,15 +163,15 @@
 				</Properties>
 			</Attribute>
 			<Form>ФормаДокумента</Form>
-			<TabularSection uuid="92a3b4c5-d6e7-4567-0819-2a3b4c5d6e7f">
+			<TabularSection uuid="dbdcb58a-239f-47ac-b6dd-2159daeae7c7">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.ФискальныйПриходТоваров.Товары" category="TabularSection">
-						<xr:TypeId>a3b4c5d6-e7f8-4678-192a-3b4c5d6e7f80</xr:TypeId>
-						<xr:ValueId>b4c5d6e7-f809-4789-2a3b-4c5d6e7f8091</xr:ValueId>
+						<xr:TypeId>053832ce-2af2-483f-92b0-acad54f35dee</xr:TypeId>
+						<xr:ValueId>0b30e15a-6b18-4d66-90b0-896e95121d75</xr:ValueId>
 					</xr:GeneratedType>
 					<xr:GeneratedType name="DocumentTabularSectionRow.ФискальныйПриходТоваров.Товары" category="TabularSectionRow">
-						<xr:TypeId>c5d6e7f8-0912-4890-3b4c-5d6e7f8091a2</xr:TypeId>
-						<xr:ValueId>d6e7f809-1234-4901-4c5d-6e7f8091a2b3</xr:ValueId>
+						<xr:TypeId>d4fd8994-a36e-43f0-80b2-b2d299f7a86d</xr:TypeId>
+						<xr:ValueId>b8d6fd10-6dba-4e09-8806-c303549b72bf</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -188,7 +188,7 @@
 					<LineNumberLength>5</LineNumberLength>
 				</Properties>
 				<ChildObjects>
-					<Attribute uuid="e7f80912-3456-4012-5d6e-7f8091a2b3c4">
+					<Attribute uuid="0ae3ac44-b978-4766-8c35-7367897353bb">
 						<Properties>
 							<Name>Номенклатура</Name>
 							<Synonym>
@@ -225,7 +225,7 @@
 							<DataHistory>Use</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="f8091a2b-3c4d-4123-6e7f-8091a2b3c4d5">
+					<Attribute uuid="c7b2275c-7892-49be-9493-c93b1e57b6ec">
 						<Properties>
 							<Name>Количество</Name>
 							<Synonym>

@@ -3,28 +3,28 @@
 	<AccumulationRegister uuid="e1f2a3b4-c5d6-4e7f-8091-a2b3c4d5e6f7">
 		<InternalInfo>
 			<xr:GeneratedType name="AccumulationRegisterRecord.ФискальныеОстатки" category="Record">
-				<xr:TypeId>f2a3b4c5-d6e7-4f80-91a2-b3c4d5e6f708</xr:TypeId>
-				<xr:ValueId>a3b4c5d6-e7f8-4901-a2b3-c4d5e6f70819</xr:ValueId>
+				<xr:TypeId>5ffd1261-e7c1-4226-9547-5669ab42a6f9</xr:TypeId>
+				<xr:ValueId>3bf925d8-4f0a-4475-a03e-6b73aa6751f6</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="AccumulationRegisterManager.ФискальныеОстатки" category="Manager">
-				<xr:TypeId>b4c5d6e7-f809-4123-b4c5-d6e7f8091a2b</xr:TypeId>
-				<xr:ValueId>c5d6e7f8-0912-4234-c5d6-e7f8091a2b3c</xr:ValueId>
+				<xr:TypeId>dacdca05-db6b-4179-81c7-39a4046677f1</xr:TypeId>
+				<xr:ValueId>846b0c94-f0ac-4ef2-a618-69170335b5e8</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="AccumulationRegisterSelection.ФискальныеОстатки" category="Selection">
-				<xr:TypeId>d6e7f809-1234-4345-d6e7-f8091a2b3c4d</xr:TypeId>
-				<xr:ValueId>e7f80912-3456-4456-e7f8-091a2b3c4d5e</xr:ValueId>
+				<xr:TypeId>cd532b5c-6160-452d-a1fe-6e9aa038a592</xr:TypeId>
+				<xr:ValueId>eda8dcdc-d8e0-44cc-b53b-1738d0bf9aab</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="AccumulationRegisterList.ФискальныеОстатки" category="List">
-				<xr:TypeId>f8091a2b-3c4d-4567-e7f8-091a2b3c4d5e6</xr:TypeId>
-				<xr:ValueId>091a2b3c-4d5e-4678-f809-1a2b3c4d5e6f</xr:ValueId>
+				<xr:TypeId>b271dbe0-02ee-465a-8e14-f601dd619a7c</xr:TypeId>
+				<xr:ValueId>6cbea19a-8d99-4b01-a682-26b226f27a7b</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="AccumulationRegisterRecordSet.ФискальныеОстатки" category="RecordSet">
-				<xr:TypeId>1a2b3c4d-5e6f-4789-091a-2b3c4d5e6f70</xr:TypeId>
-				<xr:ValueId>2b3c4d5e-6f70-4890-1a2b-3c4d5e6f7081</xr:ValueId>
+				<xr:TypeId>7cf06cbc-4aa7-40c7-83b0-919683b83a17</xr:TypeId>
+				<xr:ValueId>bd214f28-f6cd-4f83-95f1-01394a85ca56</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="AccumulationRegisterRecordKey.ФискальныеОстатки" category="RecordKey">
-				<xr:TypeId>3c4d5e6f-7081-4901-2b3c-4d5e6f708192</xr:TypeId>
-				<xr:ValueId>4d5e6f70-8192-4012-3c4d-5e6f708192a3</xr:ValueId>
+				<xr:TypeId>872efed0-4f28-48b2-938f-a867fdc0b74b</xr:TypeId>
+				<xr:ValueId>cfec789f-f66d-4895-b924-15f6cbaf1440</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -49,7 +49,7 @@
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
-			<Resource uuid="5e6f7081-92a3-4123-4d5e-6f708192a3b4">
+			<Resource uuid="e7a0817d-d88d-4661-adf4-0c600aeed2de">
 				<Properties>
 					<Name>Количество</Name>
 					<Synonym>
@@ -89,7 +89,7 @@
 					<FullTextSearch>Use</FullTextSearch>
 				</Properties>
 			</Resource>
-			<Dimension uuid="6f708192-a3b4-4234-d5e6-f708192a3b4c">
+			<Dimension uuid="2b8d91e5-751e-472a-980e-33447ba893c8">
 				<Properties>
 					<Name>ФОП</Name>
 					<Synonym>
@@ -127,7 +127,7 @@
 					<UseInTotals>true</UseInTotals>
 				</Properties>
 			</Dimension>
-			<Dimension uuid="708192a3-b4c5-4345-e6f7-08192a3b4c5d">
+			<Dimension uuid="bcbe3615-ec9a-4328-8c15-6822a8a75523">
 				<Properties>
 					<Name>Номенклатура</Name>
 					<Synonym>
