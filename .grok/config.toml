@@ -20,14 +20,6 @@ args = [
 env = { PYTHONPATH = "D:/Git/Public_Trade_Module", PYTHONIOENCODING = "utf-8" }
 enabled = true
 
-[mcp_servers."tg-dashboard"]
-command = "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe"
-args = [
-  "D:/Git/Public_Trade_Module/scripts/tg_dashboard_mcp_server.py"
-]
-env = { PYTHONPATH = "D:/Git/Public_Trade_Module", PYTHONIOENCODING = "utf-8" }
-enabled = true
-
 [mcp_servers."onec-configurator"]
 command = "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe"
 args = [
@@ -40,14 +32,6 @@ enabled = true
 command = "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe"
 args = [
   "D:/Git/Public_Trade_Module/scripts/onec_http_mcp_proxy.py"
-]
-env = { PYTHONPATH = "D:/Git/Public_Trade_Module", PYTHONIOENCODING = "utf-8" }
-enabled = true
-
-[mcp_servers."ptm-debug"]
-command = "D:/Git/Public_Trade_Module/.venv/Scripts/python.exe"
-args = [
-  "D:/Git/Public_Trade_Module/scripts/debug/debug_mcp_server.py"
 ]
 env = { PYTHONPATH = "D:/Git/Public_Trade_Module", PYTHONIOENCODING = "utf-8" }
 enabled = true

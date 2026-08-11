@@ -52,7 +52,7 @@ mcp:
 
   # Telegram-дашборд задач (токены из .env)
   tg_dashboard:
-    enabled: true
+    enabled: false
 
   # Управление Конфигуратором — скриншоты, клики, навигация
   configurator:
@@ -60,7 +60,7 @@ mcp:
 
   # RDBG Отладчик BSL
   debug:
-    enabled: true
+    enabled: false
     prefix: "mcp_debug"
 
   # Obsidian REST MCP — НЕ ИСПОЛЬЗУЕТСЯ (требует постоянно запущенный Obsidian).

@@ -1,0 +1,80 @@
+# Профили MCP — Public_Trade_Module (PTM_Clean)
+# Применение: python scripts/mcp_apply_profile.py <profile>
+
+default: standard
+
+profiles:
+  minimal:
+    description: "Ежедневная BSL-работа: контекст + dev + onec"
+    servers:
+      context: true
+      dev: true
+      configurator: false
+      debug: false
+      tg_dashboard: false
+    plugins:
+      enable: []
+      disable:
+        - chrome-devtools-mcp
+        - cloudflare
+        - sentry
+
+  standard:
+    description: "Обычная сессия 1С (рекомендуется)"
+    servers:
+      context: true
+      dev: true
+      configurator: true
+      debug: false
+      tg_dashboard: false
+    plugins:
+      enable: []
+      disable:
+        - chrome-devtools-mcp
+        - cloudflare
+        - sentry
+
+  debug:
+    description: "Отладка BSL + конфигуратор"
+    servers:
+      context: true
+      dev: true
+      configurator: true
+      debug: true
+      tg_dashboard: false
+    plugins:
+      enable: []
+      disable:
+        - chrome-devtools-mcp
+        - cloudflare
+        - sentry
+
+  full:
+    description: "Все проектные MCP + tg-dashboard"
+    servers:
+      context: true
+      dev: true
+      configurator: true
+      debug: true
+      tg_dashboard: true
+    plugins:
+      enable: []
+      disable:
+        - chrome-devtools-mcp
+        - cloudflare
+        - sentry
+
+  extras:
+    description: "Веб/Cloudflare/Sentry — не для обычной 1С"
+    servers:
+      context: true
+      dev: true
+      configurator: true
+      debug: false
+      tg_dashboard: false
+    plugins:
+      enable:
+        - chrome-devtools-mcp
+        - cloudflare
+        - sentry
+      disable: []
