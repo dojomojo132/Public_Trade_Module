@@ -1,0 +1,395 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+
+content = r'''<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Группа</dataPath>
+			<field>Группа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Себестоимость</dataPath>
+			<field>Себестоимость</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Себестоимость</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПродажнаяСумма</dataPath>
+			<field>ПродажнаяСумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продажная сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВаловаяПрибыль</dataPath>
+			<field>ВаловаяПрибыль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валовая прибыль</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РентабельностьПродаж</dataPath>
+			<field>РентабельностьПродаж</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рент. продаж, %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаноКоличество</dataPath>
+			<field>СписаноКоличество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списано (кол-во)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаСписаний</dataPath>
+			<field>СуммаСписаний</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма списаний</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрибыльСкорректированная</dataPath>
+			<field>ПрибыльСкорректированная</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прибыль скорр.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РентабельностьСкорректированная</dataPath>
+			<field>РентабельностьСкорректированная</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рент. скорр., %</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	База.Номенклатура КАК Номенклатура,
+	База.Номенклатура.Родитель КАК Группа,
+	База.Количество КАК Количество,
+	База.Себестоимость КАК Себестоимость,
+	База.ПродажнаяСумма КАК ПродажнаяСумма,
+	База.ВаловаяПрибыль КАК ВаловаяПрибыль,
+	ВЫБОР
+		КОГДА База.ПродажнаяСумма &gt; 0
+			ТОГДА База.ВаловаяПрибыль / База.ПродажнаяСумма * 100
+		ИНАЧЕ 0
+	КОНЕЦ КАК РентабельностьПродаж,
+	База.СписаноКоличество КАК СписаноКоличество,
+	База.СписаноКоличество * ЕСТЬNULL(Цены.Цена, 0) КАК СуммаСписаний,
+	База.ВаловаяПрибыль - База.СписаноКоличество * ЕСТЬNULL(Цены.Цена, 0) КАК ПрибыльСкорректированная,
+	ВЫБОР
+		КОГДА База.ПродажнаяСумма &gt; 0
+			ТОГДА (База.ВаловаяПрибыль - База.СписаноКоличество * ЕСТЬNULL(Цены.Цена, 0)) / База.ПродажнаяСумма * 100
+		ИНАЧЕ 0
+	КОНЕЦ КАК РентабельностьСкорректированная
+ИЗ
+	(ВЫБРАТЬ
+		ЕСТЬNULL(Продажи.Номенклатура, Списания.Номенклатура) КАК Номенклатура,
+		ЕСТЬNULL(Продажи.Количество, 0) КАК Количество,
+		ЕСТЬNULL(Продажи.Себестоимость, 0) КАК Себестоимость,
+		ЕСТЬNULL(Продажи.ПродажнаяСумма, 0) КАК ПродажнаяСумма,
+		ЕСТЬNULL(Продажи.ВаловаяПрибыль, 0) КАК ВаловаяПрибыль,
+		ЕСТЬNULL(Списания.СписаноКоличество, 0) КАК СписаноКоличество
+	ИЗ
+		(ВЫБРАТЬ
+			П.Номенклатура КАК Номенклатура,
+			СУММА(П.КоличествоОборот) КАК Количество,
+			СУММА(П.СебестоимостьОборот) КАК Себестоимость,
+			СУММА(П.СуммаОборот) КАК ПродажнаяСумма,
+			СУММА(П.СуммаОборот - П.СебестоимостьОборот) КАК ВаловаяПрибыль
+		ИЗ
+			РегистрНакопления.Продажи.Обороты(&amp;НачалоПериода, &amp;КонецПериода, , ) КАК П
+		СГРУППИРОВАТЬ ПО
+			П.Номенклатура) КАК Продажи
+			ПОЛНОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+				ОТ.Номенклатура КАК Номенклатура,
+				СУММА(ОТ.Количество) КАК СписаноКоличество
+			ИЗ
+				РегистрНакопления.ОстаткиТоваров КАК ОТ
+			ГДЕ
+				ОТ.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+				И ОТ.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход)
+				И ТИПЗНАЧЕНИЯ(ОТ.Регистратор) = ТИП(Документ.СписаниеТовара)
+			СГРУППИРОВАТЬ ПО
+				ОТ.Номенклатура) КАК Списания
+			ПО Продажи.Номенклатура = Списания.Номенклатура) КАК База
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(&amp;КонецПериода, ТипЦен = &amp;ТипЦенЗакупочная) КАК Цены
+		ПО База.Номенклатура = Цены.Номенклатура</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Себестоимость</dataPath>
+		<expression>Сумма(Себестоимость)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПродажнаяСумма</dataPath>
+		<expression>Сумма(ПродажнаяСумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВаловаяПрибыль</dataPath>
+		<expression>Сумма(ВаловаяПрибыль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РентабельностьПродаж</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(ПродажнаяСумма) &gt; 0 ТОГДА Сумма(ВаловаяПрибыль) / Сумма(ПродажнаяСумма) * 100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СписаноКоличество</dataPath>
+		<expression>Сумма(СписаноКоличество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаСписаний</dataPath>
+		<expression>Сумма(СуммаСписаний)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрибыльСкорректированная</dataPath>
+		<expression>Сумма(ПрибыльСкорректированная)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РентабельностьСкорректированная</dataPath>
+		<expression>ВЫБОР КОГДА Сумма(ПродажнаяСумма) &gt; 0 ТОГДА Сумма(ПрибыльСкорректированная) / Сумма(ПродажнаяСумма) * 100 ИНАЧЕ 0 КОНЕЦ</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТипЦенЗакупочная</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип цен (закупочная)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыЦен</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ТипыЦен.Закупочная</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Себестоимость</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПродажнаяСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВаловаяПрибыль</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РентабельностьПродаж</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СписаноКоличество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаСписаний</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрибыльСкорректированная</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РентабельностьСкорректированная</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПрибыльСкорректированная</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рентабельность с учётом списаний</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Группа</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemField">
+						<dcsset:field>Группа</dcsset:field>
+						<dcsset:orderType>Asc</dcsset:orderType>
+					</dcsset:item>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ПрибыльСкорректированная</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
+'''
+
+path = Path(
+    r"D:\Git\Public_Trade_Module\Конфигурация_PTM_Analytics\Reports"
+    r"\Анл_РентабельностьСоСписаниями\Templates\ОсновнаяСхемаКомпоновкиДанных\Ext\Template.xml"
+)
+path.parent.mkdir(parents=True, exist_ok=True)
+path.write_bytes(b"\xef\xbb\xbf" + content.replace("\n", "\r\n").encode("utf-8"))
+print("OK", path, path.stat().st_size)

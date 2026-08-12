@@ -62,6 +62,9 @@
 		<Metadata name="Report.Анл_ВаловаяПрибыль" id="6c3b2e81-a43f-42af-ab11-8082cd1d338c" configVersion="fa5d81f0921ad7f29fd67e233f307dfa46a2163d"/>
 		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных" id="e4c31160-edb9-458a-af78-83023139fbf6" configVersion="b96d17d2dbdc7dd0b79d1827c7a7b2600272104c"/>
 		<Metadata name="Report.Анл_ВаловаяПрибыль.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="e4c31160-edb9-458a-af78-83023139fbf6.0" configVersion="9ac9eb4ec8b35903c2c92beb4b58bddbf8d72b09"/>
+		<Metadata name="Report.Анл_РентабельностьСоСписаниями" id="332729b9-d318-4eb2-8a34-a6a6dce5d516" configVersion="0000000000000000000000000000000000000000"/>
+		<Metadata name="Report.Анл_РентабельностьСоСписаниями.Template.ОсновнаяСхемаКомпоновкиДанных" id="b8f856bc-61a0-4fc4-ac17-1cc4f8ce3593" configVersion="0000000000000000000000000000000000000000"/>
+		<Metadata name="Report.Анл_РентабельностьСоСписаниями.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b8f856bc-61a0-4fc4-ac17-1cc4f8ce3593.0" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="Report.Анл_Взаиморасчеты" id="494ff9d9-c081-4559-9f33-6b8d2620d649" configVersion="66b9a4314ce1ce4ce5da51beb2bb1fcf322b3e63"/>
 		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных" id="27e97231-77c7-40fc-897b-98c503899251" configVersion="21f8c16566320a141f67f644684cd1e186d3ff03"/>
 		<Metadata name="Report.Анл_Взаиморасчеты.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="27e97231-77c7-40fc-897b-98c503899251.0" configVersion="1bc9953b0c30131f788ef74c1072c2ba42684d6a"/>

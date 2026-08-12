@@ -72,6 +72,7 @@
 			<Report>Анл_АнализПродаж</Report>
 			<Report>Анл_Возвраты</Report>
 			<Report>Анл_ВаловаяПрибыль</Report>
+			<Report>Анл_РентабельностьСоСписаниями</Report>
 			<Report>Анл_ПродажиПоСчетам</Report>
 			<Report>Анл_ДвижениеДенежныхСредств</Report>
 			<Report>Анл_ПродажиЗаСмену</Report>
