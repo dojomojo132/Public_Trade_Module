@@ -50,6 +50,7 @@ Set-Location D:\Git\Public_Trade_Module
 | Тип работы | Скилл |
 |------------|-------|
 | BSL код | `1c-bsl-coding` → `1c-verify` |
+| Внешний REST API / OpenAPI / HTTP-сервис | `1c-api-design` → `1c-bsl-coding` → `1c-verify` |
 | Ревью | `1c-bsl-review` |
 | Деплой | `dev-mcp` + агент `closer` |
 | XML объекта | `1c-xml-editor` |

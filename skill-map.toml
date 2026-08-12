@@ -34,6 +34,9 @@ skills = []
 [1c-code]
 skills = ["1c-bsl-coding", "1c-anti-patterns", "1c-verify"]
 
+[1c-api]
+skills = ["1c-api-design", "1c-bsl-coding", "1c-verify"]
+
 [1c-review]
 skills = ["1c-bsl-review", "1c-anti-patterns", "1c-verify"]
 

@@ -1,0 +1,1887 @@
+openapi: 3.0.3
+info:
+  title: PTM External API
+  description: |
+    Универсальный внешний REST API Public Trade Module (1С 8.3.27).
+
+    **Source of truth** после freeze. Детали решений: `METHODS-v1.md`, `ADR-001-REST-OpenAPI.md`.
+
+    ## Правила
+    - Один list-метод на ресурс; фильтры — query (AND).
+    - Пагинация: `limit` (default 100, max 1000), `offset`.
+    - Path `/{id}` — только UUID.
+    - Период `dateFrom`+`dateTo` обязателен для `/sales` и всех document-list.
+    - Max период одного запроса: **31 день**; длиннее → `400 period_too_long` (клиент бьёт на несколько запросов).
+    - Документы: `detail=header|full` (list default header; get-by-id default full).
+    - Регистры — primary; документы — secondary.
+    - Auth: `X-Api-Key` (кроме `/health`).
+  version: 1.0.0
+  contact:
+    name: PTM
+
+servers:
+  - url: http://localhost/PTM_Clean/hs/ptm/v1
+    description: Local DEV (Apache /PTM_Clean)
+  - url: /hs/ptm/v1
+    description: Relative to 1C publication
+
+tags:
+  - name: health
+  - name: products
+    description: Справочник Номенклатура
+  - name: warehouses
+  - name: cash-registers
+  - name: counterparties
+  - name: price-types
+  - name: barcodes
+    description: РС Штрихкоды
+  - name: prices
+    description: РС ЦеныНоменклатуры (slice / history)
+  - name: stocks
+    description: РН ОстаткиТоваров (primary)
+  - name: sales
+    description: РН Продажи (primary, period required)
+  - name: cash-balances
+  - name: settlements
+  - name: goods-receipts
+    description: Документ ПриходТовара (secondary)
+  - name: write-offs
+  - name: inventories
+  - name: repricings
+  - name: cash-in
+  - name: cash-out
+  - name: receipts
+    description: Документ ЧекККМ (secondary read)
+
+security:
+  - ApiKeyAuth: []
+
+paths:
+  /health:
+    get:
+      tags: [health]
+      operationId: getHealth
+      summary: Liveness probe
+      security: []
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  # ── Master: products ──────────────────────────────────────────
+  /products:
+    get:
+      tags: [products]
+      operationId: listProducts
+      summary: List products (optional filters)
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: code
+          in: query
+          schema: { type: string }
+        - name: article
+          in: query
+          schema: { type: string }
+        - name: barcode
+          in: query
+          schema: { type: string }
+        - name: name
+          in: query
+          description: Substring match
+          schema: { type: string }
+        - name: groupId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: isFolder
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - name: requiresExciseStamp
+          in: query
+          schema: { type: boolean }
+      responses:
+        "200":
+          $ref: "#/components/responses/ProductList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /products/{id}:
+    get:
+      tags: [products]
+      operationId: getProduct
+      summary: Get product by UUID
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Product
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── warehouses ────────────────────────────────────────────────
+  /warehouses:
+    get:
+      tags: [warehouses]
+      operationId: listWarehouses
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/FilterId"
+        - $ref: "#/components/parameters/FilterCode"
+        - $ref: "#/components/parameters/FilterName"
+        - $ref: "#/components/parameters/FilterDeletionMark"
+      responses:
+        "200":
+          $ref: "#/components/responses/WarehouseList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /warehouses/{id}:
+    get:
+      tags: [warehouses]
+      operationId: getWarehouse
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Warehouse
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Warehouse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── cash-registers ────────────────────────────────────────────
+  /cash-registers:
+    get:
+      tags: [cash-registers]
+      operationId: listCashRegisters
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/FilterId"
+        - $ref: "#/components/parameters/FilterCode"
+        - $ref: "#/components/parameters/FilterName"
+        - $ref: "#/components/parameters/FilterDeletionMark"
+      responses:
+        "200":
+          $ref: "#/components/responses/CashRegisterList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /cash-registers/{id}:
+    get:
+      tags: [cash-registers]
+      operationId: getCashRegister
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Cash register
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CashRegister"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── counterparties ────────────────────────────────────────────
+  /counterparties:
+    get:
+      tags: [counterparties]
+      operationId: listCounterparties
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/FilterId"
+        - $ref: "#/components/parameters/FilterCode"
+        - $ref: "#/components/parameters/FilterName"
+        - name: groupId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: isFolder
+          in: query
+          schema: { type: boolean }
+        - $ref: "#/components/parameters/FilterDeletionMark"
+      responses:
+        "200":
+          $ref: "#/components/responses/CounterpartyList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /counterparties/{id}:
+    get:
+      tags: [counterparties]
+      operationId: getCounterparty
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Counterparty
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Counterparty"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── price-types ───────────────────────────────────────────────
+  /price-types:
+    get:
+      tags: [price-types]
+      operationId: listPriceTypes
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/FilterId"
+        - $ref: "#/components/parameters/FilterCode"
+        - $ref: "#/components/parameters/FilterName"
+        - $ref: "#/components/parameters/FilterDeletionMark"
+      responses:
+        "200":
+          $ref: "#/components/responses/PriceTypeList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /price-types/{id}:
+    get:
+      tags: [price-types]
+      operationId: getPriceType
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Price type
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PriceType"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── barcodes ──────────────────────────────────────────────────
+  /barcodes:
+    get:
+      tags: [barcodes]
+      operationId: listBarcodes
+      summary: List barcode register rows
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - name: barcode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/ProductId"
+        - $ref: "#/components/parameters/ProductCode"
+      responses:
+        "200":
+          description: Barcode list
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BarcodeListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── prices ────────────────────────────────────────────────────
+  /prices:
+    get:
+      tags: [prices]
+      operationId: listPrices
+      summary: Price slice (onDate) or history (dateFrom+dateTo)
+      description: |
+        **slice** (default): no dateFrom/dateTo; optional onDate (default now).
+        **history**: both dateFrom and dateTo required; max 31 days.
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/ProductId"
+        - $ref: "#/components/parameters/ProductCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: onDate
+          in: query
+          description: Slice date (slice mode)
+          schema: { type: string, format: date-time }
+        - $ref: "#/components/parameters/DateFromOptional"
+        - $ref: "#/components/parameters/DateToOptional"
+        - name: recorderId
+          in: query
+          schema: { type: string, format: uuid }
+      responses:
+        "200":
+          description: Prices
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PriceListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── stocks ────────────────────────────────────────────────────
+  /stocks:
+    get:
+      tags: [stocks]
+      operationId: listStocks
+      summary: Stock balances snapshot (primary)
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - $ref: "#/components/parameters/ProductId"
+        - $ref: "#/components/parameters/ProductCode"
+        - name: onDate
+          in: query
+          schema: { type: string, format: date-time }
+        - name: onlyNonZero
+          in: query
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Stocks
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StockListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── sales ─────────────────────────────────────────────────────
+  /sales:
+    get:
+      tags: [sales]
+      operationId: listSales
+      summary: Sales turnovers (period required, max 31 days)
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/ProductId"
+        - $ref: "#/components/parameters/ProductCode"
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: employeeId
+          in: query
+          schema: { type: string, format: uuid }
+      responses:
+        "200":
+          description: Sales
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SaleListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── cash-balances ─────────────────────────────────────────────
+  /cash-balances:
+    get:
+      tags: [cash-balances]
+      operationId: listCashBalances
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: onDate
+          in: query
+          schema: { type: string, format: date-time }
+        - name: onlyNonZero
+          in: query
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Cash balances
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CashBalanceListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── settlements ───────────────────────────────────────────────
+  /settlements:
+    get:
+      tags: [settlements]
+      operationId: listSettlements
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - name: documentId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: onDate
+          in: query
+          schema: { type: string, format: date-time }
+        - name: onlyNonZero
+          in: query
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Settlements
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SettlementListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  # ── Documents (secondary) ─────────────────────────────────────
+  /goods-receipts:
+    get:
+      tags: [goods-receipts]
+      operationId: listGoodsReceipts
+      summary: Goods receipts journal (period required)
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/GoodsReceiptList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /goods-receipts/{id}:
+    get:
+      tags: [goods-receipts]
+      operationId: getGoodsReceipt
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document (default detail=full)
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GoodsReceipt"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /write-offs:
+    get:
+      tags: [write-offs]
+      operationId: listWriteOffs
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/WriteOffList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /write-offs/{id}:
+    get:
+      tags: [write-offs]
+      operationId: getWriteOff
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WriteOff"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /inventories:
+    get:
+      tags: [inventories]
+      operationId: listInventories
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/InventoryList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /inventories/{id}:
+    get:
+      tags: [inventories]
+      operationId: getInventory
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Inventory"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /repricings:
+    get:
+      tags: [repricings]
+      operationId: listRepricings
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/RepricingList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /repricings/{id}:
+    get:
+      tags: [repricings]
+      operationId: getRepricing
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Repricing"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /cash-in:
+    get:
+      tags: [cash-in]
+      operationId: listCashIn
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/CashInList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /cash-in/{id}:
+    get:
+      tags: [cash-in]
+      operationId: getCashIn
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CashDocument"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /cash-out:
+    get:
+      tags: [cash-out]
+      operationId: listCashOut
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/CashOutList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /cash-out/{id}:
+    get:
+      tags: [cash-out]
+      operationId: getCashOut
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Document
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CashDocument"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /receipts:
+    get:
+      tags: [receipts]
+      operationId: listReceipts
+      summary: Receipts journal (period required)
+      parameters:
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/XRequestId"
+        - $ref: "#/components/parameters/DateFromRequired"
+        - $ref: "#/components/parameters/DateToRequired"
+        - $ref: "#/components/parameters/Detail"
+        - name: id
+          in: query
+          schema: { type: string, format: uuid }
+        - name: number
+          in: query
+          schema: { type: string }
+        - name: posted
+          in: query
+          schema: { type: boolean }
+        - name: deletionMark
+          in: query
+          schema: { type: boolean, default: false }
+        - $ref: "#/components/parameters/WarehouseId"
+        - $ref: "#/components/parameters/WarehouseCode"
+        - name: counterpartyId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: counterpartyCode
+          in: query
+          schema: { type: string }
+        - $ref: "#/components/parameters/CashRegisterId"
+        - $ref: "#/components/parameters/CashRegisterCode"
+        - name: priceTypeId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: priceTypeCode
+          in: query
+          schema: { type: string }
+        - name: shiftId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/ReceiptList"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+  /receipts/{id}:
+    get:
+      tags: [receipts]
+      operationId: getReceipt
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/DetailOptional"
+        - $ref: "#/components/parameters/XRequestId"
+      responses:
+        "200":
+          description: Receipt (default detail=full)
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Receipt"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+
+  headers:
+    X-Request-Id:
+      description: Correlation id (echo or generated)
+      schema:
+        type: string
+        format: uuid
+
+  parameters:
+    XRequestId:
+      name: X-Request-Id
+      in: header
+      required: false
+      schema:
+        type: string
+        format: uuid
+
+    IdPath:
+      name: id
+      in: path
+      required: true
+      description: Object UUID only
+      schema:
+        type: string
+        format: uuid
+
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 100
+
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+
+    FilterId:
+      name: id
+      in: query
+      schema: { type: string, format: uuid }
+
+    FilterCode:
+      name: code
+      in: query
+      schema: { type: string }
+
+    FilterName:
+      name: name
+      in: query
+      schema: { type: string }
+
+    FilterDeletionMark:
+      name: deletionMark
+      in: query
+      schema: { type: boolean, default: false }
+
+    ProductId:
+      name: productId
+      in: query
+      schema: { type: string, format: uuid }
+
+    ProductCode:
+      name: productCode
+      in: query
+      schema: { type: string }
+
+    WarehouseId:
+      name: warehouseId
+      in: query
+      schema: { type: string, format: uuid }
+
+    WarehouseCode:
+      name: warehouseCode
+      in: query
+      schema: { type: string }
+
+    CashRegisterId:
+      name: cashRegisterId
+      in: query
+      schema: { type: string, format: uuid }
+
+    CashRegisterCode:
+      name: cashRegisterCode
+      in: query
+      schema: { type: string }
+
+    DateFromRequired:
+      name: dateFrom
+      in: query
+      required: true
+      description: Period start (inclusive). With dateTo max 31 days.
+      schema:
+        type: string
+        format: date-time
+
+    DateToRequired:
+      name: dateTo
+      in: query
+      required: true
+      description: Period end (inclusive). With dateFrom max 31 days.
+      schema:
+        type: string
+        format: date-time
+
+    DateFromOptional:
+      name: dateFrom
+      in: query
+      description: History mode when both dateFrom and dateTo set (max 31 days)
+      schema:
+        type: string
+        format: date-time
+
+    DateToOptional:
+      name: dateTo
+      in: query
+      schema:
+        type: string
+        format: date-time
+
+    Detail:
+      name: detail
+      in: query
+      description: header = header only; full = header + tabular sections
+      schema:
+        type: string
+        enum: [header, full]
+        default: header
+
+    DetailOptional:
+      name: detail
+      in: query
+      description: Default full for GET by id
+      schema:
+        type: string
+        enum: [header, full]
+        default: full
+
+
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status, version]
+      properties:
+        status:
+          type: string
+          enum: [ok]
+        version:
+          type: string
+          example: "1.0.0"
+        time:
+          type: string
+          format: date-time
+
+    ListMeta:
+      type: object
+      required: [items, count, limit, offset]
+      properties:
+        count:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+        total:
+          type: integer
+          nullable: true
+
+    ErrorResponse:
+      type: object
+      required: [code, message, requestId]
+      properties:
+        code:
+          type: string
+          description: |
+            Stable codes include: period_required, period_invalid, period_too_long,
+            validation_error, unauthorized, not_found, internal_error
+          example: period_required
+        message:
+          type: string
+        requestId:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+
+    Product:
+      type: object
+      required: [id, code, name]
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        name: { type: string }
+        article: { type: string }
+        unit: { type: string }
+        vatRate: { type: string }
+        taxGroupId: { type: string, format: uuid }
+        codeUKTZED: { type: string }
+        requiresExciseStamp: { type: boolean }
+        markupPercent: { type: number }
+        parentId: { type: string, format: uuid, nullable: true }
+        isFolder: { type: boolean }
+        deletionMark: { type: boolean }
+        barcodes:
+          type: array
+          items: { type: string }
+
+    ProductListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Product"
+
+    Warehouse:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        name: { type: string }
+        deletionMark: { type: boolean }
+
+    WarehouseListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Warehouse"
+
+    CashRegister:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        name: { type: string }
+        deletionMark: { type: boolean }
+
+    CashRegisterListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/CashRegister"
+
+    Counterparty:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        name: { type: string }
+        parentId: { type: string, format: uuid, nullable: true }
+        isFolder: { type: boolean }
+        deletionMark: { type: boolean }
+
+    CounterpartyListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Counterparty"
+
+    PriceType:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        name: { type: string }
+        deletionMark: { type: boolean }
+
+    PriceTypeListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/PriceType"
+
+    BarcodeRow:
+      type: object
+      required: [barcode, productId]
+      properties:
+        barcode: { type: string }
+        productId: { type: string, format: uuid }
+        productCode: { type: string }
+        productName: { type: string }
+
+    BarcodeListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/BarcodeRow"
+
+    PriceRow:
+      type: object
+      required: [productId, price]
+      properties:
+        productId: { type: string, format: uuid }
+        productCode: { type: string }
+        priceTypeId: { type: string, format: uuid }
+        priceTypeCode: { type: string }
+        price: { type: number }
+        period: { type: string, format: date-time }
+        recorderId: { type: string, format: uuid, nullable: true }
+
+    PriceListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/PriceRow"
+
+    StockRow:
+      type: object
+      required: [productId, warehouseId, quantity]
+      properties:
+        warehouseId: { type: string, format: uuid }
+        warehouseCode: { type: string }
+        productId: { type: string, format: uuid }
+        productCode: { type: string }
+        quantity: { type: number }
+        onDate: { type: string, format: date-time }
+
+    StockListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/StockRow"
+
+    SaleRow:
+      type: object
+      required: [productId, quantity, amount]
+      properties:
+        productId: { type: string, format: uuid }
+        productCode: { type: string }
+        cashRegisterId: { type: string, format: uuid }
+        cashRegisterCode: { type: string }
+        shiftId: { type: string, format: uuid, nullable: true }
+        employeeId: { type: string, format: uuid, nullable: true }
+        quantity: { type: number }
+        amount: { type: number }
+        cost: { type: number }
+        period: { type: string, format: date-time }
+
+    SaleListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/SaleRow"
+
+    CashBalanceRow:
+      type: object
+      required: [cashRegisterId, amount]
+      properties:
+        cashRegisterId: { type: string, format: uuid }
+        cashRegisterCode: { type: string }
+        amount: { type: number }
+        onDate: { type: string, format: date-time }
+
+    CashBalanceListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/CashBalanceRow"
+
+    SettlementRow:
+      type: object
+      required: [counterpartyId, amount]
+      properties:
+        counterpartyId: { type: string, format: uuid }
+        counterpartyCode: { type: string }
+        documentId: { type: string, format: uuid, nullable: true }
+        amount: { type: number }
+        onDate: { type: string, format: date-time }
+
+    SettlementListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/SettlementRow"
+
+    DocumentHeader:
+      type: object
+      required: [id, number, date, posted]
+      properties:
+        id: { type: string, format: uuid }
+        number: { type: string }
+        date: { type: string, format: date-time }
+        posted: { type: boolean }
+        deletionMark: { type: boolean }
+        warehouseId: { type: string, format: uuid, nullable: true }
+        warehouseCode: { type: string }
+        counterpartyId: { type: string, format: uuid, nullable: true }
+        counterpartyCode: { type: string }
+        cashRegisterId: { type: string, format: uuid, nullable: true }
+        amount: { type: number }
+        comment: { type: string }
+
+    DocumentLine:
+      type: object
+      properties:
+        lineNumber: { type: integer }
+        productId: { type: string, format: uuid }
+        productCode: { type: string }
+        quantity: { type: number }
+        price: { type: number }
+        amount: { type: number }
+
+    GoodsReceipt:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            lines:
+              type: array
+              description: Present when detail=full
+              items:
+                $ref: "#/components/schemas/DocumentLine"
+
+    WriteOff:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            lines:
+              type: array
+              items:
+                $ref: "#/components/schemas/DocumentLine"
+
+    Inventory:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            lines:
+              type: array
+              items:
+                $ref: "#/components/schemas/DocumentLine"
+
+    Repricing:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            priceTypeId: { type: string, format: uuid }
+            lines:
+              type: array
+              items:
+                $ref: "#/components/schemas/DocumentLine"
+
+    CashDocument:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            lines:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+
+    Receipt:
+      allOf:
+        - $ref: "#/components/schemas/DocumentHeader"
+        - type: object
+          properties:
+            shiftId: { type: string, format: uuid, nullable: true }
+            status: { type: string }
+            items:
+              type: array
+              description: Present when detail=full
+              items:
+                $ref: "#/components/schemas/DocumentLine"
+            payments:
+              type: array
+              description: Present when detail=full
+              items:
+                type: object
+                properties:
+                  type: { type: string }
+                  amount: { type: number }
+
+    GoodsReceiptListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/GoodsReceipt"
+
+    WriteOffListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/WriteOff"
+
+    InventoryListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Inventory"
+
+    RepricingListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Repricing"
+
+    CashInListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/CashDocument"
+
+    CashOutListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/CashDocument"
+
+    ReceiptListResponse:
+      allOf:
+        - $ref: "#/components/schemas/ListMeta"
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Receipt"
+
+  responses:
+    BadRequest:
+      description: |
+        Validation / period errors.
+        Codes: period_required, period_invalid, period_too_long, validation_error
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    Unauthorized:
+      description: Missing or invalid X-Api-Key
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    NotFound:
+      description: Resource not found
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    InternalError:
+      description: Unexpected server error
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    ProductList:
+      description: Product page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ProductListResponse"
+    WarehouseList:
+      description: Warehouse page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/WarehouseListResponse"
+    CashRegisterList:
+      description: Cash register page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CashRegisterListResponse"
+    CounterpartyList:
+      description: Counterparty page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CounterpartyListResponse"
+    PriceTypeList:
+      description: Price type page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/PriceTypeListResponse"
+    GoodsReceiptList:
+      description: Goods receipt page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/GoodsReceiptListResponse"
+    WriteOffList:
+      description: Write-off page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/WriteOffListResponse"
+    InventoryList:
+      description: Inventory page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/InventoryListResponse"
+    RepricingList:
+      description: Repricing page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RepricingListResponse"
+    CashInList:
+      description: Cash-in page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CashInListResponse"
+    CashOutList:
+      description: Cash-out page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CashOutListResponse"
+    ReceiptList:
+      description: Receipt page
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ReceiptListResponse"

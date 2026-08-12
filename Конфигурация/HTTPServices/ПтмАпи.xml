@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<HTTPService uuid="ac99f4c0-cd9a-46e6-803f-28eef8f8498c">
+		<Properties>
+			<Name>ПтмАпи</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>PTM External API</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Universal API /hs/ptm/v1 — see Документация/API</Comment>
+			<RootURL>ptm</RootURL>
+			<ReuseSessions>DontUse</ReuseSessions>
+			<SessionMaxAge>20</SessionMaxAge>
+		</Properties>
+		<ChildObjects>
+			<URLTemplate uuid="71ef4a05-1bd9-4a67-8be7-231d51758cc7">
+				<Properties>
+					<Name>Health</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/health</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="8088f6e9-82f6-4ff7-b831-f6ddc20ec6de">
+						<Properties>
+							<Name>Health</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>HealthGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="80070ccd-560f-4b28-b8be-6b9b6501a769">
+				<Properties>
+					<Name>Stocks</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/stocks</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="41ae8644-8503-4db3-96b3-c26054d9f762">
+						<Properties>
+							<Name>Stocks</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>StocksGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="0a231d1e-8b1b-4b96-99cb-b10cdbb0d40f">
+				<Properties>
+					<Name>Sales</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/sales</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="29dfa0ec-edca-407b-8648-de8be9b479a5">
+						<Properties>
+							<Name>Sales</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>SalesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="2b89d414-9ffa-49e3-987c-e120b740f001">
+				<Properties>
+					<Name>CashBalances</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-balances</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="ac92277e-e60d-4d39-82db-0a1aa8a1f9a4">
+						<Properties>
+							<Name>CashBalances</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashBalancesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="cce3e2dc-e359-4ddd-bd11-df85a1e7c885">
+				<Properties>
+					<Name>Settlements</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/settlements</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="ea0af899-893b-46fd-83a8-aac43dcbb82a">
+						<Properties>
+							<Name>Settlements</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>SettlementsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="0557b576-16fd-40df-8494-b0218edbb9da">
+				<Properties>
+					<Name>Barcodes</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/barcodes</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="67cae98c-fadd-42b7-ac02-0f6d224d5bc4">
+						<Properties>
+							<Name>Barcodes</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>BarcodesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="4d37f1ba-fc72-4f83-951b-b90a6efba682">
+				<Properties>
+					<Name>Prices</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/prices</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="62db7506-1bdc-4608-8995-987426faa6cc">
+						<Properties>
+							<Name>Prices</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>PricesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="ea73c933-c6cf-4899-9511-923f9aad70bb">
+				<Properties>
+					<Name>Products</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/products</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="1ab8a15c-e2b0-4630-8cd4-44c431e482f5">
+						<Properties>
+							<Name>Products</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ProductsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="9b38d205-8dc7-4cf8-9693-a83736e9b926">
+				<Properties>
+					<Name>ProductById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/products/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="568a0e9a-284d-4afd-a6b3-9a65b4ce2877">
+						<Properties>
+							<Name>ProductById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ProductByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="95a09fa9-c711-4519-bcca-d5e7c6c5dbd6">
+				<Properties>
+					<Name>Warehouses</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/warehouses</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="ef7f7e98-8bca-4381-8105-aa3b7003449f">
+						<Properties>
+							<Name>Warehouses</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>WarehousesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="822841ee-308c-4f83-a45b-b5b93bc9e133">
+				<Properties>
+					<Name>WarehouseById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/warehouses/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="d67dedac-1f02-4a19-bc63-1b9b1910bd35">
+						<Properties>
+							<Name>WarehouseById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>WarehouseByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="b84c5534-d088-4286-b519-b317547e5943">
+				<Properties>
+					<Name>CashRegisters</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-registers</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="5588dc45-2b09-4a6b-a5d5-551b1dbbd6e8">
+						<Properties>
+							<Name>CashRegisters</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashRegistersGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="37292e0b-d4cd-4c85-8aa8-e7cfd2af2c1e">
+				<Properties>
+					<Name>CashRegisterById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-registers/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="8b2822dd-1679-4161-aa35-a40e568749e0">
+						<Properties>
+							<Name>CashRegisterById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashRegisterByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="5b9649f1-703b-4fc3-810e-4cbf33e9247d">
+				<Properties>
+					<Name>Counterparties</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/counterparties</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="13924415-7068-4291-a297-aac6e328573d">
+						<Properties>
+							<Name>Counterparties</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CounterpartiesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="4ad80c5c-823f-4d0b-826e-ca1bfd54682c">
+				<Properties>
+					<Name>CounterpartyById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/counterparties/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="4905eef3-efdb-4257-8cb0-363e4ce2de93">
+						<Properties>
+							<Name>CounterpartyById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CounterpartyByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="1ef980cf-d239-40db-9aff-979162d69f7a">
+				<Properties>
+					<Name>PriceTypes</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/price-types</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="36583b25-9a9a-4e3b-b545-6ce3926dac82">
+						<Properties>
+							<Name>PriceTypes</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>PriceTypesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="24f72ff8-1756-4a8f-bb58-2cf035df7939">
+				<Properties>
+					<Name>PriceTypeById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/price-types/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="03690e4c-8a09-4b2e-9cfd-8353b386a509">
+						<Properties>
+							<Name>PriceTypeById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>PriceTypeByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="803a0f30-05e7-4fe7-b2e2-f929274e9095">
+				<Properties>
+					<Name>GoodsReceipts</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/goods-receipts</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="1dfd43e2-a634-4a49-ad82-9e1fdd804af5">
+						<Properties>
+							<Name>GoodsReceipts</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>GoodsReceiptsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="05372d38-cb7d-453f-bc9d-4fce1b1fd209">
+				<Properties>
+					<Name>GoodsReceiptById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/goods-receipts/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="c66c2c9c-ff03-4408-834f-8a710e095daa">
+						<Properties>
+							<Name>GoodsReceiptById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>GoodsReceiptByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="2ecb88c6-70a0-4158-9167-91eea5fde4e3">
+				<Properties>
+					<Name>WriteOffs</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/write-offs</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="d4d1c33b-f100-410b-bd62-7c7d866adea6">
+						<Properties>
+							<Name>WriteOffs</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>WriteOffsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="e5be65f3-2afd-43a7-9781-e1575ddc2efd">
+				<Properties>
+					<Name>WriteOffById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/write-offs/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="5d574edf-d239-4782-b18a-ae591c24c85c">
+						<Properties>
+							<Name>WriteOffById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>WriteOffByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="f6783d1f-4858-48af-b7d0-195fbbf7e918">
+				<Properties>
+					<Name>Inventories</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/inventories</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="03d081f1-7b9c-4f38-ba6a-6423cc431e6a">
+						<Properties>
+							<Name>Inventories</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>InventoriesGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="17162451-f5b3-4334-a0e3-0679024a5a87">
+				<Properties>
+					<Name>InventoryById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/inventories/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="a501a015-20f0-40d6-b679-255548c7947b">
+						<Properties>
+							<Name>InventoryById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>InventoryByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="ea55b76a-35b6-4092-af78-1e7cea64364b">
+				<Properties>
+					<Name>Repricings</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/repricings</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="5fb97fa1-0391-46dc-a7f8-f534c642bd8d">
+						<Properties>
+							<Name>Repricings</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>RepricingsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="a2347ba7-d36e-4659-a022-3b2437b95a16">
+				<Properties>
+					<Name>RepricingById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/repricings/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="16ad71dd-cb7c-48b6-95ef-5645e8399208">
+						<Properties>
+							<Name>RepricingById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>RepricingByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="ebacff10-b47d-4514-b116-2c17270c5cc0">
+				<Properties>
+					<Name>CashIn</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-in</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="b44a99a9-2e86-4ba5-8cd4-886463300635">
+						<Properties>
+							<Name>CashIn</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashInGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="73889df6-5146-4cc8-9c12-965227fa3039">
+				<Properties>
+					<Name>CashInById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-in/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="99df5019-afff-46d7-8887-4558eaa5de9e">
+						<Properties>
+							<Name>CashInById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashInByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="e876d90b-4c44-4344-9118-ca8c591ecaef">
+				<Properties>
+					<Name>CashOut</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-out</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="52e299e6-3517-4899-a010-b30616777b41">
+						<Properties>
+							<Name>CashOut</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashOutGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="b603ffb9-e3fd-43f0-a93a-a688f9171079">
+				<Properties>
+					<Name>CashOutById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/cash-out/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="67cb2ee4-a7e3-4e88-a0ab-cf3db1a8101c">
+						<Properties>
+							<Name>CashOutById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>CashOutByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="3122a083-f687-4db0-ab50-6b546ef52b31">
+				<Properties>
+					<Name>Receipts</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/receipts</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="8c6967ea-4e14-4517-be7f-01928a47f37d">
+						<Properties>
+							<Name>Receipts</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ReceiptsGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="1a7a9296-8ce6-4506-a329-260a63b9575a">
+				<Properties>
+					<Name>ReceiptById</Name>
+					<Synonym/>
+					<Comment/>
+					<Template>/v1/receipts/{id}</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="0ad7623b-d8f5-467d-b885-691c56c747b8">
+						<Properties>
+							<Name>ReceiptById</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ReceiptByIdGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+		</ChildObjects>
+	</HTTPService>
+</MetaDataObject>

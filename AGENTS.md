@@ -76,6 +76,7 @@ Grok: `.grok/skills/`. Copilot/Cursor: `.github/skills/`.
 | Задача | Скилл |
 |--------|-------|
 | Любая правка `.bsl` | `1c-bsl-coding` → затем `1c-verify` |
+| Внешний REST API / OpenAPI / HTTP-сервис | `1c-api-design` → `1c-bsl-coding` → `1c-verify` |
 | Ревью / pre-deploy | `1c-bsl-review` |
 | Антипаттерны | `1c-anti-patterns` |
 | Деплой, мониторинг | `dev-mcp` + агент `closer` |
