@@ -18,7 +18,11 @@ metadata:
 | ADR | `Документация/API/ADR-001-REST-OpenAPI.md` |
 | Методы/фильтры | `Документация/API/METHODS-v1.md` |
 | Контракт | `Документация/API/openapi-v1.yaml` |
+| Реализация | **расширение** `Конфигурация_PTM_API/` (`PTM_API`), не основная конф |
 | Ревью legacy | `Документация/API/review-ТоварыАПИ.md` |
+
+**Имена в расширении (префикс `Апи_`):** HTTP `Апи_Внешний`, ОМ `Апи_Транспорт` / `Апи_Регистры` / `Апи_Справочники`, константа `Апи_Ключ`.  
+Deploy: `python scripts/deploy_ext.py --ext PTM_API --action Full` (или dev-mcp `dev_ext`).
 
 **List-паттерн:** один `GET /{resource}`; ширина — query-фильтры. Пагинация `limit`/`offset`.
 

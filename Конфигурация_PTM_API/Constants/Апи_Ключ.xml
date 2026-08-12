@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Constant uuid="2a724bdc-c9d0-440d-ae26-f3835a87d68c">
+	<Constant uuid="1cbde416-75c0-4960-a02b-96e80e6a619f">
 		<InternalInfo>
-			<xr:GeneratedType name="ConstantManager.ПтмАпиКлюч" category="Manager">
-				<xr:TypeId>19d270cf-2d8f-49e4-a0c0-f2401d9ca1fe</xr:TypeId>
-				<xr:ValueId>70956f2b-5754-4a40-8ac5-070c2b570d65</xr:ValueId>
+			<xr:GeneratedType name="ConstantManager.Апи_Ключ" category="Manager">
+				<xr:TypeId>571f9e50-733e-4bbf-8261-c7845a2fcc70</xr:TypeId>
+				<xr:ValueId>1c85f7c5-47ae-4743-8f67-c8a49697792a</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ConstantValueManager.ПтмАпиКлюч" category="ValueManager">
-				<xr:TypeId>8ea8def1-f25b-4705-abb7-419c780bbc8e</xr:TypeId>
-				<xr:ValueId>8958c9e9-fe58-4876-a582-3787d89df0ec</xr:ValueId>
+			<xr:GeneratedType name="ConstantValueManager.Апи_Ключ" category="ValueManager">
+				<xr:TypeId>15e06888-e404-4210-9975-62ac10de5891</xr:TypeId>
+				<xr:ValueId>65e51b15-f8ce-437f-b77b-8e730cd42f33</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="ConstantValueKey.ПтмАпиКлюч" category="ValueKey">
-				<xr:TypeId>fe7f5dd8-6815-4c9a-bb44-a1a55b29cb16</xr:TypeId>
-				<xr:ValueId>bc36306e-b557-4621-9892-134786b9143d</xr:ValueId>
+			<xr:GeneratedType name="ConstantValueKey.Апи_Ключ" category="ValueKey">
+				<xr:TypeId>4d64b792-a6b7-4c49-bc42-bf730a18c8ed</xr:TypeId>
+				<xr:ValueId>71360604-28a2-45b8-aff3-07abf91aab3c</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ПтмАпиКлюч</Name>
+			<Name>Апи_Ключ</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>PTM API Key (X-Api-Key)</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>Ключ внешнего API v1. Пустое значение — auth отключён (только DEV).</Comment>
+			<Comment>Ключ внешнего API v1. Пустое — auth off (DEV).</Comment>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>

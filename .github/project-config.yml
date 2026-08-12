@@ -84,6 +84,8 @@ extensions:
     dir: "MCP_Extension"                         # Папка выгрузки (относительно корня)
   - name: "PTM_Analytics"
     dir: "Конфигурация_PTM_Analytics"
+  - name: "PTM_API"
+    dir: "Конфигурация_PTM_API"
 
 # ── MCP Resources (опционально) ──────────────────────────────────────────────
 resources:

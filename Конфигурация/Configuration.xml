@@ -421,9 +421,6 @@
 			<CommonTemplate>ШаблонДисплеяПокупателя</CommonTemplate>
 			<CommonTemplate>ШаблонДисплеяПокупателяЧек</CommonTemplate>
 			<CommonModule>ОбщегоНазначения</CommonModule>
-			<CommonModule>ПтмАпи</CommonModule>
-			<CommonModule>ПтмАпиРегистры</CommonModule>
-			<CommonModule>ПтмАпиСправочники</CommonModule>
 			<CommonModule>МенеджерОборудования</CommonModule>
 			<CommonModule>ОбщегоНазначенияКлиент</CommonModule>
 			<CommonModule>НастройкиПоУмолчанию</CommonModule>
@@ -586,7 +583,6 @@
 			<XDTOPackage>ExchangeMessage</XDTOPackage>
 			<WebService>EquipmentService</WebService>
 			<HTTPService>ТоварыАПИ</HTTPService>
-			<HTTPService>ПтмАпи</HTTPService>
 			<ScheduledJob>ОчисткаИсторииОперацийОчередиЧеков</ScheduledJob>
 			<ScheduledJob>ОчисткаИсторииОперацийПроверкиКМ</ScheduledJob>
 			<ScheduledJob>ОчисткаИсторииОперацийСОборудованием</ScheduledJob>
@@ -619,7 +615,6 @@
 			<Constant>ПорядокОкругленияЦен</Constant>
 			<Constant>КонтролироватьОстаткиПриСписании</Constant>
 			<Constant>ОсновнойСклад</Constant>
-			<Constant>ПтмАпиКлюч</Constant>
 			<Constant>ОсновнойПоставщик</Constant>
 			<Constant>_ДемоИзолированноеПодключенияВнешнихКомпонент</Constant>
 			<Constant>_ДемоОбменСПодключаемымОборудованием</Constant>
