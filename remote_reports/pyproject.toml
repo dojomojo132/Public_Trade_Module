@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptm-remote-reports-inventory"
+version = "0.2.0"
+description = "Inventory recount module for PTM remote reports"
+requires-python = ">=3.11"
+dependencies = [
+    "starlette>=0.37",
+    "uvicorn[standard]>=0.27",
+    "httpx>=0.27",
+    "itsdangerous>=2.1",
+    "python-multipart>=0.0.9",
+    "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["inventory/static/*", "static/*", "templates/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

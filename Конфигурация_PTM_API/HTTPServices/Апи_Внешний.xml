@@ -431,6 +431,15 @@
 							<Handler>InventoriesGET</Handler>
 						</Properties>
 					</Method>
+					<Method uuid="f0c62f39-efa1-44c4-ae36-19ea0cf04c74">
+						<Properties>
+							<Name>InventoriesCreate</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>InventoriesPOST</Handler>
+						</Properties>
+					</Method>
 				</ChildObjects>
 			</URLTemplate>
 			<URLTemplate uuid="17162451-f5b3-4334-a0e3-0679024a5a87">
@@ -448,6 +457,15 @@
 							<Comment/>
 							<HTTPMethod>GET</HTTPMethod>
 							<Handler>InventoryByIdGET</Handler>
+						</Properties>
+					</Method>
+					<Method uuid="4ecf91aa-b2af-459e-84d8-89c5184a5f94">
+						<Properties>
+							<Name>InventoryReplace</Name>
+							<Synonym/>
+							<Comment/>
+							<HTTPMethod>PUT</HTTPMethod>
+							<Handler>InventoryByIdPUT</Handler>
 						</Properties>
 					</Method>
 				</ChildObjects>

@@ -1260,6 +1260,9 @@
 		<Metadata name="Document.ВозвратТовараОтПокупателя.ObjectModule" id="2d9211b2-68e3-41c7-a1d4-67ac516cc747.0" configVersion="6cfd372fbefe1d45acb7a4a89d616e4e00000000"/>
 		<Metadata name="Document.ИнвентаризацияТоваров" id="cc1aaca2-01c4-475c-9f06-36d320999fff" configVersion="4056b8c6a017fe48b78cbd759d78405a00000000">
 			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.Склад" id="10b65996-3df1-4425-85cc-4473231e12ea"/>
+			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.ВнешнийИд" id="ef5e4eca-1067-43f8-892e-dde28eccdba3"/>
+			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.АвторИмя" id="ef56aefb-411e-4f00-9801-a7c7fba93341"/>
+			<Metadata name="Document.ИнвентаризацияТоваров.Attribute.Комментарий" id="b1d3faef-6fa6-4eba-875b-4341d979dbdb"/>
 			<Metadata name="Document.ИнвентаризацияТоваров.TabularSection.Товары.Attribute.Отклонение" id="464b5138-cc74-479a-acd3-b8170f6b843d"/>
 			<Metadata name="Document.ИнвентаризацияТоваров.TabularSection.Товары" id="4fc555be-b6b0-4dee-8235-16266990f0a4"/>
 			<Metadata name="Document.ИнвентаризацияТоваров.TabularSection.Товары.Attribute.Номенклатура" id="5982c9ed-0340-4ffd-9a41-597cfb197433"/>

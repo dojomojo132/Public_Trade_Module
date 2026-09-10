@@ -273,7 +273,27 @@ GET /goods-receipts/{uuid}?detail=header  → только шапка
 | `/cash-out` | РКО | cashRegister*, counterparty* |
 | `/receipts` | ЧекККМ | cashRegister*, warehouse*, shiftId, status |
 
-**Write:** `POST /receipts` — вне read-спеки; обсуждается отдельно.
+**Write (inventories, remote cache):** см. §7.4. `POST /receipts` — вне этой спеки.
+
+### 7.4. Write `inventories` (черновик удалённого переучёта)
+
+Контракт: `openapi-v1.yaml`. ADR: `ADR-002-remote-inventory-cache.md`.
+
+| Метод | Смысл | Успех |
+|-------|--------|--------|
+| `POST /inventories` | создать непроведённый или upsert по `externalId` | 201 (новый) / 200 (уже был) |
+| `PUT /inventories/{id}` | заменить шапку+ТЧ непроведённого | 200 |
+
+Тело `InventoryWriteRequest`: `externalId` (обязателен на POST), `warehouseId`, `comment`, `authorName`, `items[{productId, barcode, qty}]`.
+
+Правила:
+
+- Не проводить.
+- Повторный POST с тем же `externalId` обновляет существующий непроведённый документ (реквизит `ВнешнийИд`).
+- Документ проведён / помечен на удаление → `409 conflict`.
+- Неизвестный `warehouseId` / `productId` → `400 validation_error`.
+- `qty` < 0 → `400`.
+- GET списка/карточки инвентаризаций в этом этапе **не** реализуется (может остаться 501).
 
 ---
 

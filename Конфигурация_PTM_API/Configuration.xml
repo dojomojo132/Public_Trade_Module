@@ -70,6 +70,7 @@
 			<CommonModule>Апи_Транспорт</CommonModule>
 			<CommonModule>Апи_Регистры</CommonModule>
 			<CommonModule>Апи_Справочники</CommonModule>
+			<CommonModule>Апи_Документы</CommonModule>
 			<HTTPService>Апи_Внешний</HTTPService>
 			<Constant>Апи_Ключ</Constant>
 		</ChildObjects>
