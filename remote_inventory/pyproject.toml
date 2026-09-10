@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptm-remote-inventory"
+version = "0.1.0"
+description = "Remote cache server for PTM mobile inventory recounts"
+requires-python = ">=3.11"
+dependencies = [
+    "starlette>=0.37",
+    "uvicorn[standard]>=0.27",
+    "httpx>=0.27",
+    "itsdangerous>=2.1",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["static/*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

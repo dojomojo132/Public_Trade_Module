@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; }
+body { max-width: 480px; margin: 0 auto; min-height: 100dvh; background: #fff; }
+header { padding: 12px 16px; background: #1a4f8b; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+.screen { padding: 16px; display: none; }
+.screen.active { display: block; }
+.banner { padding: 8px 12px; margin-bottom: 12px; border-radius: 8px; font-size: 13px; }
+.banner.off { background: #ffe8e8; color: #8a1f1f; }
+.banner.on { background: #e7f6e7; color: #1f6b1f; }
+input, button, select { font: inherit; }
+input[type=text], input[type=password], input[type=number] {
+  width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin: 6px 0 12px;
+}
+button {
+  width: 100%; padding: 12px; border: 0; border-radius: 8px; background: #1a4f8b; color: #fff; margin: 6px 0;
+}
+button.secondary { background: #eee; color: #222; }
+button.danger { background: #b42318; }
+.card { border: 1px solid #e2e2e2; border-radius: 10px; padding: 12px; margin-bottom: 10px; background: #fafafa; }
+.card .meta { color: #666; font-size: 13px; }
+.line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+.line.active { background: #fff7d6; margin: 0 -8px; padding: 8px; }
+.error { color: #b42318; font-size: 14px; min-height: 1.2em; }
+#qtyBox { position: sticky; bottom: 0; background: #fff; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); }
