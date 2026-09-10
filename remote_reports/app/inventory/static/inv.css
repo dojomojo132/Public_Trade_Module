@@ -1,0 +1,11 @@
+.screen[hidden] { display: none !important; }
+.form-card .btn, .toolbar .btn { min-height: 44px; }
+#lines .line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+#lines .line.active { background: var(--accent-soft); margin: 0 -8px; padding: 10px 8px; border-radius: 8px; }
+#qtyBox { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }

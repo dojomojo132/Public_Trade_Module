@@ -98,7 +98,7 @@
 - Реализация BSL-каркаса (отдельная задача).
 - OAuth2 / JWT (следующий ADR при появлении user-delegated clients).
 - Event/webhooks (отдельный ADR + AsyncAPI при необходимости).
-- Write инвентаризаций с удалённого кеш-сервера — [ADR-002](./ADR-002-remote-inventory-cache.md).
+- Write инвентаризаций с кеша отчётов (`reports.dojomyassiste.uno/inv`) — [ADR-002](./ADR-002-remote-inventory-cache.md).
 
 ## Ссылки
 

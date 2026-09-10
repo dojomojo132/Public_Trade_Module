@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>Переучёт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css?v=16">
+  <link rel="stylesheet" href="/inv/static/inv.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">
+      <span class="mark">P</span>
+      <span class="brand-name">Отчёты PTM</span>
+    </a>
+    <span class="ib-status" id="ib-status">Кеш</span>
+    <nav class="nav-links">
+      <a class="nav-link is-on" href="/inv">Переучёт</a>
+      <a class="nav-link" href="/">Отчёты</a>
+      <a class="nav-link" href="/settings">Настройки</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="page-head">
+      <p class="crumb"><a href="/">Отчёты</a> / Переучёт</p>
+      <h1>Переучёт</h1>
+      <p class="lede">Скан идёт в кеш этого сервера. В 1С черновик уходит по кнопке «Синхронизировать» — тот же туннель, что у отчётов.</p>
+    </div>
+
+    <section id="nameScreen" class="screen">
+      <div class="panel form-card">
+        <h2>Кто считает</h2>
+        <p class="hint">Имя попадёт в документ. Учётка сервиса уже из входа в отчёты.</p>
+        <div class="stack">
+          <label>Имя
+            <input id="authorName" type="text" autocomplete="nickname">
+          </label>
+          <button class="btn" id="nameGo" type="button">Дальше</button>
+        </div>
+        <p id="nameError" class="flash-err" hidden></p>
+      </div>
+    </section>
+
+    <section id="whScreen" class="screen" hidden>
+      <div class="toolbar panel">
+        <button class="btn" id="syncBtn" type="button">Синхронизировать с 1С</button>
+      </div>
+      <p id="whError" class="flash-err" hidden></p>
+      <div id="whList" class="report-grid"></div>
+    </section>
+
+    <section id="docsScreen" class="screen" hidden>
+      <p><a href="#" id="backWh">← Склады</a></p>
+      <h2 id="docsTitle">Черновики</h2>
+      <div class="panel form-card stack">
+        <label>Участок / отдел
+          <input id="newComment" type="text">
+        </label>
+        <button class="btn" id="createDoc" type="button">Создать</button>
+      </div>
+      <p id="docsError" class="flash-err" hidden></p>
+      <div id="docsList" class="report-grid" style="margin-top:16px"></div>
+    </section>
+
+    <section id="docScreen" class="screen" hidden>
+      <p><a href="#" id="backDocs">← Список</a></p>
+      <h2 id="docTitle"></h2>
+      <p id="docMeta" class="lede"></p>
+      <div class="panel form-card">
+        <div class="stack">
+          <label>Штрихкод
+            <input id="barcodeInput" type="text" inputmode="numeric" autocomplete="off">
+          </label>
+          <button class="btn" id="scanBtn" type="button">Найти</button>
+        </div>
+        <p id="docError" class="flash-err" hidden></p>
+        <div id="lines"></div>
+        <div id="qtyBox" hidden>
+          <p id="qtyLabel"></p>
+          <label>Количество
+            <input id="qtyInput" type="number" inputmode="decimal" step="0.001" min="0">
+          </label>
+          <button class="btn" id="qtySave" type="button">Записать</button>
+        </div>
+        <button class="ghost" id="deleteDoc" type="button">Удалить черновик</button>
+      </div>
+    </section>
+  </div>
+  <script src="/inv/static/inv.js"></script>
+</body>
+</html>

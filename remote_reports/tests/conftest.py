@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
+import sqlite3
 from pathlib import Path
 
 import pytest
 from starlette.testclient import TestClient
 
-from app.catalog import apply_catalog
-from app.config import Settings
-from app.db import connect, init_schema
-from app.main import create_app
+from app.inventory.catalog import apply_catalog
+from app.inventory.demo_app import create_demo_app
+from app.inventory.ptm import PtmApiError
 
 WH = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
 PID = "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+BARCODE = "4820001111111"
+CATALOG_BC = [{"barcode": BARCODE, "productId": PID, "productName": "Молоко", "productCode": "0001"}]
+CATALOG_WH = [{"id": WH, "name": "Основной", "code": "000000001"}]
 
 
 class FakePtm:
@@ -26,18 +29,16 @@ class FakePtm:
         return self.health
 
     async def pull_barcodes(self) -> list[dict]:
-        return [{"barcode": "4820001111111", "productId": PID, "productName": "Молоко", "productCode": "0001"}]
+        return list(CATALOG_BC)
 
     async def pull_warehouses(self) -> list[dict]:
-        return [{"id": WH, "name": "Основной", "code": "000000001"}]
+        return list(CATALOG_WH)
 
     async def pull_products(self) -> list[dict]:
         return [{"id": PID, "name": "Молоко", "code": "0001"}]
 
     async def create_inventory(self, body: dict) -> dict:
         if self.fail_create:
-            from app.ptm_client import PtmApiError
-
             raise PtmApiError("1C down", status_code=502)
         self.created.append(body)
         return {"id": "cccccccc-cccc-cccc-cccc-cccccccccccc", "number": "000000001", "created": True}
@@ -47,6 +48,12 @@ class FakePtm:
         return {"id": inventory_id, "number": "000000001", "created": False}
 
 
+def _conn(tmp_path: Path) -> sqlite3.Connection:
+    conn = sqlite3.connect(tmp_path / "t.db", check_same_thread=False)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
 @pytest.fixture
 def fake_ptm() -> FakePtm:
     return FakePtm()
@@ -54,28 +61,19 @@ def fake_ptm() -> FakePtm:
 
 @pytest.fixture
 def client(tmp_path: Path, fake_ptm: FakePtm) -> TestClient:
-    conn = connect(tmp_path / "test.db")
-    init_schema(conn)
-    apply_catalog(
-        conn,
-        [{"barcode": "4820001111111", "productId": PID, "productName": "Молоко", "productCode": "0001"}],
-        [{"id": WH, "name": "Основной", "code": "000000001"}],
-    )
-    settings = Settings(
-        secret="test-secret",
-        db_path=tmp_path / "test.db",
-        port=8091,
-        cookie_secure=False,
-        ptm_base_url="http://example.invalid/hs/ptm/v1",
-        ptm_api_key="k",
-        pull_sec=900,
-        push_sec=180,
-    )
-    app = create_app(settings=settings, conn=conn, client_factory=lambda: fake_ptm, enable_background=False)
+    conn = _conn(tmp_path)
+    app = create_demo_app(conn, "test-secret", lambda: fake_ptm)
     with TestClient(app) as test_client:
+        test_client.post("/login", json={"username": "admin", "password": "secret"})
+        uid = int(conn.execute("SELECT id FROM users WHERE username = 'admin'").fetchone()["id"])
+        apply_catalog(conn, uid, CATALOG_BC, CATALOG_WH)
         yield test_client
 
 
-def login(client: TestClient) -> None:
-    resp = client.post("/login", json={"username": "admin", "password": "secret"})
-    assert resp.status_code == 200, resp.text
+@pytest.fixture
+def client_no_ib(tmp_path: Path) -> TestClient:
+    conn = _conn(tmp_path)
+    app = create_demo_app(conn, "test-secret", lambda: None)
+    with TestClient(app) as test_client:
+        test_client.post("/login", json={"username": "admin", "password": "secret"})
+        yield test_client
