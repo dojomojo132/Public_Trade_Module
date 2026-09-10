@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
-import sqlite3
 from pathlib import Path
 
 import pytest
 from starlette.testclient import TestClient
 
+from app.config import Settings
+from app.db import connect, init_schema
 from app.inventory.catalog import apply_catalog
-from app.inventory.demo_app import create_demo_app
 from app.inventory.ptm import PtmApiError
+from app.main import create_app
 
 WH = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
 PID = "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
@@ -27,6 +28,9 @@ class FakePtm:
 
     async def ping_health(self) -> bool:
         return self.health
+
+    async def fetch_all_pages(self, path: str, params=None):
+        return []
 
     async def pull_barcodes(self) -> list[dict]:
         return list(CATALOG_BC)
@@ -48,21 +52,20 @@ class FakePtm:
         return {"id": inventory_id, "number": "000000001", "created": False}
 
 
-def _conn(tmp_path: Path) -> sqlite3.Connection:
-    conn = sqlite3.connect(tmp_path / "t.db", check_same_thread=False)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
 @pytest.fixture
 def fake_ptm() -> FakePtm:
     return FakePtm()
 
 
+def _settings(tmp_path: Path) -> Settings:
+    return Settings(secret="test-secret", db_path=tmp_path / "t.db", cookie_secure=False, port=8000)
+
+
 @pytest.fixture
 def client(tmp_path: Path, fake_ptm: FakePtm) -> TestClient:
-    conn = _conn(tmp_path)
-    app = create_demo_app(conn, "test-secret", lambda: fake_ptm)
+    conn = connect(tmp_path / "t.db")
+    init_schema(conn)
+    app = create_app(_settings(tmp_path), conn=conn, client_factory=lambda: fake_ptm)
     with TestClient(app) as test_client:
         test_client.post("/login", json={"username": "admin", "password": "secret"})
         uid = int(conn.execute("SELECT id FROM users WHERE username = 'admin'").fetchone()["id"])
@@ -72,8 +75,9 @@ def client(tmp_path: Path, fake_ptm: FakePtm) -> TestClient:
 
 @pytest.fixture
 def client_no_ib(tmp_path: Path) -> TestClient:
-    conn = _conn(tmp_path)
-    app = create_demo_app(conn, "test-secret", lambda: None)
+    conn = connect(tmp_path / "t.db")
+    init_schema(conn)
+    app = create_app(_settings(tmp_path), conn=conn, client_factory=lambda: None)
     with TestClient(app) as test_client:
         test_client.post("/login", json={"username": "admin", "password": "secret"})
         yield test_client

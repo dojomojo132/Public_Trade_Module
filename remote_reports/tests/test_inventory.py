@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
+from app.auth import hash_password
 from tests.conftest import BARCODE, WH
 
 
@@ -84,7 +85,10 @@ def test_users_do_not_share_cache(client) -> None:
     created = client.post("/inv/docs", json={"warehouse": WH, "comment": "Только админ", "author": "Иван"})
     assert created.status_code == 200
     conn = client.app.state.conn
-    conn.execute("INSERT INTO users(username, password) VALUES (?, ?)", ("other", "pw"))
+    conn.execute(
+        "INSERT INTO users(username, password_hash) VALUES (?, ?)",
+        ("other", hash_password("pw")),
+    )
     conn.commit()
     client.cookies.clear()
     login = client.post("/login", json={"username": "other", "password": "pw"})
