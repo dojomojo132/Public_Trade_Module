@@ -11,6 +11,8 @@
 		<Metadata name="CommonModule.Апи_Регистры.Module" id="7cc5e616-2831-4c28-b4d5-969365fc5fc2.0" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="CommonModule.Апи_Справочники" id="32a2d439-9c34-40ec-8329-d79a0dfaf218" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="CommonModule.Апи_Справочники.Module" id="32a2d439-9c34-40ec-8329-d79a0dfaf218.0" configVersion="0000000000000000000000000000000000000000"/>
+		<Metadata name="CommonModule.Апи_Документы" id="4de0e7c6-1188-49b8-88e0-8874d491dfa6" configVersion="0000000000000000000000000000000000000000"/>
+		<Metadata name="CommonModule.Апи_Документы.Module" id="4de0e7c6-1188-49b8-88e0-8874d491dfa6.0" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="Constant.Апи_Ключ" id="1cbde416-75c0-4960-a02b-96e80e6a619f" configVersion="0000000000000000000000000000000000000000"/>
 		<Metadata name="HTTPService.Апи_Внешний" id="03d83c58-4106-4410-845d-89598e6939cf" configVersion="0000000000000000000000000000000000000000">
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Health" id="71ef4a05-1bd9-4a67-8be7-231d51758cc7"/>
@@ -57,8 +59,10 @@
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.WriteOffById.Method.WriteOffById" id="5d574edf-d239-4782-b18a-ae591c24c85c"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Inventories" id="f6783d1f-4858-48af-b7d0-195fbbf7e918"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Inventories.Method.Inventories" id="03d081f1-7b9c-4f38-ba6a-6423cc431e6a"/>
+			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Inventories.Method.InventoriesCreate" id="f0c62f39-efa1-44c4-ae36-19ea0cf04c74"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.InventoryById" id="17162451-f5b3-4334-a0e3-0679024a5a87"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.InventoryById.Method.InventoryById" id="a501a015-20f0-40d6-b679-255548c7947b"/>
+			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.InventoryById.Method.InventoryReplace" id="4ecf91aa-b2af-459e-84d8-89c5184a5f94"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Repricings" id="ea55b76a-35b6-4092-af78-1e7cea64364b"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.Repricings.Method.Repricings" id="5fb97fa1-0391-46dc-a7f8-f534c642bd8d"/>
 			<Metadata name="HTTPService.Апи_Внешний.URLTemplate.RepricingById" id="a2347ba7-d36e-4659-a022-3b2437b95a16"/>

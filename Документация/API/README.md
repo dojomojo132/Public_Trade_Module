@@ -20,6 +20,6 @@ Skill агента: `.grok/skills/1c-api-design` (`/1c-api-design`).
 | Deploy | `python scripts/deploy_ext.py --ext PTM_API --action Full` |
 
 Реализовано: health, products, warehouses, cash-registers, counterparties, price-types, barcodes, prices, stocks, sales, cash-balances, settlements.  
-Документы: URL есть, `501 not_implemented`.
+Документы: URL GET есть, `501 not_implemented`, кроме **write** `POST/PUT /inventories` (удалённый переучёт, ADR-002).
 
 **Не в основной конф** — только расширение.

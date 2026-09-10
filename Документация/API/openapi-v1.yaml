@@ -787,6 +787,51 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "500":
           $ref: "#/components/responses/InternalError"
+    post:
+      tags: [inventories]
+      operationId: createInventory
+      summary: Create or upsert an unpublished inventory draft
+      description: |
+        Writes an unpublished `ИнвентаризацияТоваров`.
+        Same `externalId` updates the existing draft (idempotent). Does not post.
+      parameters:
+        - $ref: "#/components/parameters/XRequestId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryWriteRequest"
+      responses:
+        "201":
+          description: Created
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+            Location:
+              schema: { type: string }
+              description: `/hs/ptm/v1/inventories/{id}`
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryWriteResponse"
+        "200":
+          description: Existing draft updated by externalId
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryWriteResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "500":
+          $ref: "#/components/responses/InternalError"
 
   /inventories/{id}:
     get:
@@ -810,6 +855,39 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalError"
+    put:
+      tags: [inventories]
+      operationId: replaceInventory
+      summary: Replace header and lines of an unpublished inventory
+      parameters:
+        - $ref: "#/components/parameters/IdPath"
+        - $ref: "#/components/parameters/XRequestId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryWriteRequest"
+      responses:
+        "200":
+          description: Replaced
+          headers:
+            X-Request-Id:
+              $ref: "#/components/headers/X-Request-Id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryWriteResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
         "500":
           $ref: "#/components/responses/InternalError"
 
@@ -1322,7 +1400,7 @@ components:
           type: string
           description: |
             Stable codes include: period_required, period_invalid, period_too_long,
-            validation_error, unauthorized, not_found, internal_error
+            validation_error, unauthorized, not_found, conflict, internal_error
           example: period_required
         message:
           type: string
@@ -1625,6 +1703,39 @@ components:
               items:
                 $ref: "#/components/schemas/DocumentLine"
 
+    InventoryWriteItem:
+      type: object
+      required: [productId, qty]
+      properties:
+        productId: { type: string, format: uuid }
+        barcode: { type: string }
+        qty: { type: number, minimum: 0 }
+
+    InventoryWriteRequest:
+      type: object
+      required: [warehouseId, items]
+      properties:
+        externalId:
+          type: string
+          format: uuid
+          description: Client session id; stored as ВнешнийИд
+        warehouseId: { type: string, format: uuid }
+        comment: { type: string, maxLength: 150 }
+        authorName: { type: string, maxLength: 100 }
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/InventoryWriteItem"
+
+    InventoryWriteResponse:
+      type: object
+      required: [id, number, created]
+      properties:
+        id: { type: string, format: uuid }
+        number: { type: string }
+        externalId: { type: string, format: uuid, nullable: true }
+        created: { type: boolean }
+
     Repricing:
       allOf:
         - $ref: "#/components/schemas/DocumentHeader"
@@ -1761,6 +1872,15 @@ components:
             $ref: "#/components/schemas/ErrorResponse"
     NotFound:
       description: Resource not found
+      headers:
+        X-Request-Id:
+          $ref: "#/components/headers/X-Request-Id"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    Conflict:
+      description: Document posted, deletion-marked, or otherwise not writable
       headers:
         X-Request-Id:
           $ref: "#/components/headers/X-Request-Id"
